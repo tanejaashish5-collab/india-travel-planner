@@ -1,0 +1,573 @@
+{
+  "batch": "B11",
+  "researched_on": "2026-10-09",
+  "methodology_note": "WebSearch quota was exhausted, so no search-engine discovery. Figures come from pages fetched directly. TAXI is the strongest part: the Leh Taxi Union 2025-26 printed rate card (24 booklet pages) was downloaded as images from discoverwithdheeraj.com and read by eye, so every taxi figure below is a union fare, not a blogger estimate. STAY: Cleartrip Hunder/Diskit/Alchi/Sumur/Turtuk pages are for 13-14 Nov 2026 (pre-tax, discounted sale price; Nov is the off-season, most Nubra/Turtuk camps and hotels were SOLD OUT/closed, so only winter-capable properties show prices); other stay figures are single-blogger (Discover with Dheeraj, 2026 pages) ranges, mostly undated or 2019, and are labelled low confidence. FOOD: only one blogger menu survey (Discover with Dheeraj food guide, updated 6 Oct 2026) plus Wikivoyage; Tripadvisor shows price symbols only; Zomato timed out, restaurant-guru and MakeMyTrip/Booking pages returned empty or timed out and were not bypassed. USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches). Leh stay omitted (stay_observed true).",
+  "destinations": {
+    "leh": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3407,
+        "vehicle": "Innova/XUV (SUV class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh: Shanti Stupa + Leh Palace + Market (same-day return)",
+            "inr": 1522,
+            "range": "Innova/XUV 1,522; Xylo/Scorpio/Ertiga 1,446; Eeco/Van 1,312"
+          },
+          {
+            "route": "Leh: Shey + Thiksey + Hemis (same-day return)",
+            "inr": 3194,
+            "range": "Innova/XUV 3,194; Xylo/Scorpio/Ertiga 3,034; Eeco/Van 2,469"
+          },
+          {
+            "route": "Leh: Hall of Fame + Magnetic Hill + Pathar Sahib + Sangam + Spituk",
+            "inr": 3408,
+            "range": "Innova/XUV 3,408; Xylo/Scorpio/Ertiga 3,238; Eeco/Van 2,935"
+          },
+          {
+            "route": "Leh: Shey-Thiksey-Hemis-Stakna-Stok-Matho-Chemday-Thakthok big loop",
+            "inr": 5036,
+            "range": "Innova/XUV 5,036; Xylo/Scorpio/Ertiga 4,784; Eeco/Van 4,338"
+          },
+          {
+            "route": "Airport to places within 7 km of Leh (one-way drop)",
+            "inr": 606,
+            "range": "Innova/XUV drop 606, return 850"
+          }
+        ],
+        "basis": "Union 'full day' (8 h) rate for an Innova/XUV on the 2025-26 card = 3,407; half day (4 h) = 1,703. Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence. Card terms (p.23): full day = 8 h, half day = 4 h; full-day Innova/XUV 3,407 (Fortuner 4,122; Crysta/Scorpio-N 3,747; Xylo/Scorpio/Ertiga 3,237; Eeco/Van 2,935), half-day Innova/XUV 1,703; first waiting hour free then Rs 345/h; night halt Rs 385; AC on demand Rs 9/km paid to driver; extra detour up to 8 km Rs 345. Per-km tariff is not published: fares are fixed per route.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-24.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-13.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-14.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-12.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+        ],
+        "notes": "Ladakh has no sedan class on the union card: cheapest class is Eeco/Van (full day 2,935), then Xylo/Scorpio/Ertiga 3,237, Innova/XUV 3,407, Crysta/Scorpio-N 3,747. The 8 h rate is the card's extra-day/full-day rate; most Leh sightseeing is sold as fixed packages (listed). Corroboration: Discover with Dheeraj summary table says 'Leh local sightseeing Rs 2,000-4,000' (page updated 17 Aug 2026), consistent with the card. That blog also says drivers booked directly often give 10-15% off, and agents add 10-15%. Outside-Ladakh taxis cannot do local sightseeing."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 1000,
+        "basis": "Budget: simple breakfast ~150 + veg thukpa 100-180 or Neha-Snacks-type thali 120-250 + dinner at Tenzing Dickey/Norlakh 150-300 = ~550-650; blogger 'backpacker' band 500-800/day. Standard: cafe breakfast 150-300 (Jeevan Cafe) + lunch 150-300 + dinner at Gesmo 250-450 / Chopsticks 250-400 / Lamayuru restaurant 250-400 = ~800-1,050; blogger 'comfortable' band 1,000-1,500/day. Rounded to 600 and 1,000.",
+        "sources": [
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/",
+          "https://www.tripadvisor.in/Restaurants-g297625-Leh_Leh_District_Ladakh_Jammu_and_Kashmir.html",
+          "https://en.wikivoyage.org/wiki/Leh"
+        ],
+        "notes": "Single-source menu survey (Discover with Dheeraj, 'Updated Oct 6, 2026'): veg thukpa 100-180, non-veg thukpa 180-280, momos (6-8) 80-180, skyu 200-400, butter tea 30-80; per-person restaurant spend: Tenzing Dickey 150-300, Norlakh 150-280, Gesmo 250-450, Alchi Kitchen 300-600, splurge Tsas by Dolkhar 800-1,500. Tripadvisor Leh list shows only price symbols (Neha Snacks/De Khambir/Crafty Beanz = low tier; most others mid tier), no rupee amounts. Wikivoyage (undated) puts a bazaar thali at about 100. Treat as ~+-25%."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "omitted (observed)",
+        "taxi": "high",
+        "food": "low"
+      },
+      "unverified": [
+        "Food: no second independent menu source (Zomato timed out; restaurant-guru had no Leh menu data); budget/standard are derived from one blogger survey",
+        "Official ladakhtaxiunion.com unreachable; the card was read from photographed pages, not the union's own site"
+      ]
+    },
+    "nubra-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2859,
+        "mid_n": 9,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-hunder",
+          "https://www.cleartrip.com/hotels/hotels-in-diskit"
+        ],
+        "budget_hotel_median_inr": 1500,
+        "budget_n": 8,
+        "budget_sources": [
+          "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        ],
+        "homestay_median_inr": 1400,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        ],
+        "dorm_median_inr": 450,
+        "dorm_n": 2,
+        "dorm_sources": [
+          "https://en.wikivoyage.org/wiki/Nubra_Valley"
+        ],
+        "price_basis": "MID: Cleartrip Hunder + Diskit, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted sale price, 3-star-tagged properties only: Hotel Real Siachen 1,385; The Snow Peak Hunder 1,778; Hotel Caravan Nubra 2,202; Hotel Onpo 2,368; The Wooden Nest 2,859; Himalayan Desert Villa 2,989; Nubra Leisure Camp 3,246; Hill Crest Nubra 3,582; Summer Retreat 4,005 (median 2,859; n=9). Excluded as outliers/other class: Stonehedge 17,771 (4-star), Stone Hedge 15,480 (5-star), Dream Ville 44,000, Shyok camp 24,150, Camp Silversand 9,492. BUDGET: Discover with Dheeraj 'Where to stay in Nubra' (page updated 14 Sep 2026, 'as of 2025-2026, verify locally') range MIDPOINTS for guesthouses: Olthang 1,500-2,500, Sand Dunes 1,000-1,800, Yourdum 1,200-1,800, Galaxy 1,500-2,500, Goba 1,200-1,800, Himalayan GH (attached bath) 1,500-2,000, Sumur A O 1,000-1,500, K-Sar 1,200-1,800 (median of midpoints 1,500). HOMESTAY: same blogger, 'Panamik homestays and guest houses 800-2,000' (midpoint 1,400, one range, no property names). DORM: Wikivoyage Nubra Valley: Himalayan Bunker (Hunder, 6-bed tents) 400, The Nunchi Huts & Hostel (Hunder) 500, 'hostels 400-500' as of 2023.",
+        "notes": "SEASON MATTERS: Nubra camps and most hotels run roughly June to early October (blogger: close by early October). The Cleartrip Nov dates therefore only show winter-capable hotels at discounted prices; the same pages show struck-through list prices for the same properties with median 4,375 (Wooden Nest 4,400, Desert Villa 4,375, Leisure Camp 4,800, Onpo 4,000, Hill Crest 5,400, Summer Retreat 4,500, Real Siachen 3,000, Caravan 3,500, Snow Peak 2,700). Peak (Jul-Aug) is dearer: blogger quotes Hotel Nubra Sarai Swiss-tent camp 3,400-4,350, Chamba Deluxe Camp 2,400-3,900, Sten Del (Diskit) 3,000-5,000, glamping camps 5,000-15,000+ per night in peak 'usually including meals'. Treat 2,859 as a shoulder/off-peak mid price and ~4,000-4,400 as a peak-season listed price for the same class. BUNDLING: village homestays and camps normally include dinner + breakfast; the blogger quotes homestay meals at 200-400 per meal; luxury camps 'with meals'. Wikivoyage (as of 2023) Turtuk-style homestays 700-1,000 per person incl. dinner and breakfast. CONFLICT (about 3x): TripClap 'onwards per night' (undated) lists TIH camps 6,490-7,139, Royal Riders Camp 4,720, MH Colours of Sumur Homestay 5,782, MH Rock Art Homestay 4,672, Wooden Nest 4,720; these look like branded/meal-inclusive rates and were NOT used (median of everything seen would be ~4,700 for homestays). The Cleartrip 2-star tier (Yeti Resort 2,527, Northern Valley Camp 2,812, Nubra Delight & Camps 2,976, Desert Oasis Camp 3,571; camps price like hotels) is not used for budget because blogger guesthouse ranges are lower. Leh district homestay registry (Jan 2025 PDF, no tariffs) confirms registered homestays at Hunder (Umbok) among others."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3407,
+        "vehicle": "Innova/XUV (SUV class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Diskit + Hunder and back, 1 day (package)",
+            "inr": 9744,
+            "range": "Innova/XUV 9,744; Xylo/Scorpio/Ertiga 9,257; Eeco/Van 8,431; Crysta 10,718"
+          },
+          {
+            "route": "Leh to Diskit + Hunder, 2 days incl. night halt (package)",
+            "inr": 11807,
+            "range": "Innova/XUV 11,807; Xylo/Scorpio/Ertiga 11,217; Eeco/Van 10,170"
+          },
+          {
+            "route": "Leh to Diskit + Hunder + Sumur + Panamik, 2 days (package)",
+            "inr": 14062,
+            "range": "Innova/XUV 14,062; Xylo/Scorpio/Ertiga 13,359; Eeco/Van 12,114"
+          },
+          {
+            "route": "Leh to Diskit, one-way drop",
+            "inr": 7033,
+            "range": "Innova/XUV drop 7,033, return 9,142; Hunder drop 7,187 / return 9,344; Panamik drop 7,380 / return 9,594"
+          },
+          {
+            "route": "Diskit to Hunder and back (Nubra-based cab, class unlabelled)",
+            "inr": 663,
+            "range": "drop 511"
+          },
+          {
+            "route": "Diskit to Panamik and back (Nubra-based cab, class unlabelled)",
+            "inr": 3775,
+            "range": "drop 2,904"
+          }
+        ],
+        "basis": "Local day = union 8 h full-day rate for Innova/XUV (3,407). Getting there from Leh is sold as fixed packages (listed, Innova/XUV, 2025-26). Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence. Card terms (p.23): full day = 8 h, half day = 4 h; full-day Innova/XUV 3,407 (Fortuner 4,122; Crysta/Scorpio-N 3,747; Xylo/Scorpio/Ertiga 3,237; Eeco/Van 2,935), half-day Innova/XUV 1,703; first waiting hour free then Rs 345/h; night halt Rs 385; AC on demand Rs 9/km paid to driver; extra detour up to 8 km Rs 345. Per-km tariff is not published: fares are fixed per route.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-17.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-11.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-22.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-23.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-24.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+        ],
+        "notes": "The 'From Diskit' local-fare pages (booklet pp.21-22) print a single Drop/Return pair with no vehicle label; its column position matches the Innova column of the Leh tables, which is an inference. Nubra 1-day (9,744) and 2-day (11,807) match the blogger summary table exactly. CONFLICTS (blogger pages, undated or agent-style, not union): 'Leh to Nubra 2 days Innova/XUV 18,000-20,000, Scorpio/Xylo 16,000-17,000' (Discover with Dheeraj 'cheap taxi' page, updated 3 Aug 2026) is about 1.5-1.7x the card; 'Nubra 8,000-12,000 one way, as of 2025' (Nubra guide, 22 Aug 2026) brackets the card drop (7,033-7,187). Card figures used. Public bus Leh-Diskit 200, Leh-Turtuk 316, Diskit-Turtuk 80 (Tue/Thu/Sat, 2024-25); shared jeep Leh-Diskit about 400-500 per seat from Polo Ground."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 1000,
+        "basis": "Unbundled: 3 meals x 200-400 (blogger: 'homestay meals in Nubra villages (Hunder, Turtuk, Diskit) 200-400 per meal, often included in the room rate', page updated 6 Oct 2026). Budget = 3 x ~200 = 600; standard = 3 x ~330 = 1,000. Cross-check: Nubra guide (22 Aug 2026) food per person for a 2-3 day trip 'budget 600-1,000, mid-range 1,500-2,500' (about 300-500 and 500-1,250 per day); camel ride at Hunder 300-600 not food.",
+        "sources": [
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/",
+          "https://discoverwithdheeraj.com/nubra-valley-ladakh-travel-guide/"
+        ],
+        "notes": "BUNDLED reality: most homestays include dinner + breakfast in the room price and most camps include meals, so a traveller on a bundled stay pays only lunch (~200-300) on top. No per-restaurant prices were found for Hunder/Diskit; figures come from one blogger."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "medium (mid, Nov dates, n=9) / low (budget, homestay, dorm)",
+        "taxi": "high",
+        "food": "low"
+      },
+      "unverified": [
+        "Peak-season (Jul-Aug) hotel/camp prices: Cleartrip dates are 13-14 Nov 2026 (off-season)",
+        "Homestay price per room: only one blogger range (Panamik 800-2,000) and unexplained TripClap rates ~3x higher",
+        "Per-restaurant menu prices in Hunder/Diskit; dorm prices are 2023 Wikivoyage",
+        "Vehicle class of the 'From Diskit' local-fare table"
+      ]
+    },
+    "turtuk": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3750,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        ],
+        "budget_hotel_median_inr": 1400,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/"
+        ],
+        "homestay_median_inr": 1725,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/turtuk.html",
+          "https://discoverwithdheeraj.com/good-hotels-or-accommodation-in-nubra-valley-ladakh/",
+          "https://discoverwithdheeraj.com/turtuk-detailed-travel-guide/",
+          "https://en.wikivoyage.org/wiki/Turtuk"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.booking.com/city/in/turtuk.html"
+        ],
+        "price_basis": "HOMESTAY (per double room, mostly with dinner + breakfast): median of four undated/2023-26 readings = 1,725: Booking.com 'Summer and winter homestay Turtuk Youl' from USD 17.56 for 1 night 2 adults (x96.8 = 1,700, undated); Discover with Dheeraj 'local Balti homestays 1,000-2,500 per night, meals included' (page updated 14 Sep 2026; midpoint 1,750); same blogger's Turtuk guide 'Rs 800 to Rs 1,500 per person per night including dinner and breakfast' (12 Sep 2026; x2 = 2,300 per room); Wikivoyage Turtuk 'as of 2023' 700-1,000 per person incl. dinner and breakfast (x2 = 1,700). MID: only Turtuk Holiday Camp (tents) 3,000-4,500, blogger, midpoint 3,750, n=1. BUDGET: PWD Rest House 1,000-1,800 (midpoint 1,400, book via Diskit), n=1.",
+        "notes": "Cleartrip Turtuk page (13-14 Nov 2026) lists 7 properties (Zaildar's Royal Garden Luxury Camp, Tyakshi Eco Village, The Stone Palace guest house, Sukoon Turtuk Homestay, Turtuk Ashoor Guest House, Zaildar's Royal Garden Turtuk, Tyakshi Hidden Paradise Camp) but ALL SOLD OUT with no price: Turtuk is effectively closed in Nov (blogger best time June-September). Booking.com Turtuk page: Rustic Edge Hostel from USD 12.40 for 1 night 2 adults (about 1,200 for two, unclear if dorm beds so no dorm figure); Bagdour Stay no price. Wikivoyage 2023 also notes homestays 'as low as 400 without food'. Homestay food is bundled (dinner + breakfast); camp tariffs are 'on a slightly costlier side' per the blogger and bundling not stated. Leh district homestay registry PDF (Jan 2025) is a name/contact list without tariffs."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 5466,
+        "vehicle": "SUV (Diskit-based fare; class not printed on page, column position matches Innova/XUV)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Diskit to Turtuk and back, same day (Nubra-based cab, about 95 km each way, 3-4 h)",
+            "inr": 5466,
+            "range": "drop 4,203"
+          },
+          {
+            "route": "Leh to Turtuk in 2 days (night halt at Turtuk)",
+            "inr": 14844,
+            "range": "Innova/XUV drop 11,623, return 14,844; Xylo/Scorpio/Ertiga return 14,102; Eeco/Van return 12,788"
+          },
+          {
+            "route": "Leh to Diskit + Hunder + Turtuk in 2 days (package)",
+            "inr": 15874,
+            "range": "Innova/XUV 15,874; Xylo/Scorpio/Ertiga 15,080; Eeco/Van 13,674; Crysta 17,461"
+          },
+          {
+            "route": "Add-on: Turtuk Thang zero point",
+            "inr": 770,
+            "range": "Innova/XUV 770"
+          }
+        ],
+        "basis": "Turtuk village is walkable once there; the taxi cost is getting there. Union fares, 2025-26 card. Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-12.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-17.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-23.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-18.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/turtuk-detailed-travel-guide/"
+        ],
+        "notes": "Blogger Turtuk guide (12 Sep 2026): 'private taxi for the Leh to Nubra Valley circuit including Turtuk costs around Rs 13,000 to 14,000 one way', consistent with the card's 14,844 (2 days, Innova/XUV). Public bus Leh-Turtuk about 316 (Saturdays), Diskit-Turtuk 80 (daily); Indian-visitor permit fee about 400 per person + 20/day (blogger, 2026)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 1000,
+        "basis": "No Turtuk-specific menu prices found. Used Nubra-village homestay meal range 200-400 per meal (Discover with Dheeraj food guide, updated 6 Oct 2026): budget 3 x 200, standard 3 x ~330.",
+        "sources": [
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/",
+          "https://discoverwithdheeraj.com/turtuk-detailed-travel-guide/"
+        ],
+        "notes": "BUNDLED: Turtuk homestay rates (800-1,500 per person) already include dinner and breakfast, so only lunch (~200-300) is extra there. Unbundled figures above are for a traveller paying room-only."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low",
+        "taxi": "high for Leh-based fares, medium for the Diskit-based day fare",
+        "food": "low"
+      },
+      "unverified": [
+        "Stay: single-blogger ranges and Wikivoyage 2023; Cleartrip all sold out in Nov; no dated Turtuk hotel listing priced",
+        "Dorm bed price (hostel exists, unclear if dorm)",
+        "Turtuk-specific meal prices",
+        "Vehicle class of Diskit-based fare"
+      ]
+    },
+    "khardung-la": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Leh (about 39 km south of the pass, where nearly all visitors stay) or Khardung Village / Diskit on the Nubra side",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Not applicable: a 5,359 m motorable pass. Same-day trip from Leh; Nubra-side visitors sleep at Khardung Village/Diskit/Hunder.",
+        "notes": "Evidence is absence plus what is at the top: Discover with Dheeraj pages describe only a cafeteria (Rinchen Cafeteria), a souvenir shop/museum and tea at the top, no lodging; Khardung Village (about 34 km below the top, Nubra side) has a dhaba and is a separate station on the taxi card. No OTA listing was found for the pass itself."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 4370,
+        "vehicle": "Innova/XUV (SUV class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Khardung La Top and back, same day (round trip only, no drop fare)",
+            "inr": 4370,
+            "range": "Innova/Aria/XUV 4,370; Xylo/Scorpio/Ertiga 4,151; Eeco/Van 3,735; Crysta/Scorpio-N 4,807; Fortuner 5,288"
+          },
+          {
+            "route": "Leh to South Pullu checkpoint and back",
+            "inr": 2036,
+            "range": "Innova/XUV drop 1,563, return 2,036"
+          },
+          {
+            "route": "Diskit to Khardung Top and back (Nubra-based cab, class unlabelled)",
+            "inr": 5106,
+            "range": "drop 3,928"
+          }
+        ],
+        "basis": "Row 'Khardongla Top' (Return only) on the Nubra Valley Route page of the 2025-26 union card. Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence. Card terms (p.23): full day = 8 h, half day = 4 h; full-day Innova/XUV 3,407 (Fortuner 4,122; Crysta/Scorpio-N 3,747; Xylo/Scorpio/Ertiga 3,237; Eeco/Van 2,935), half-day Innova/XUV 1,703; first waiting hour free then Rs 345/h; night halt Rs 385; AC on demand Rs 9/km paid to driver; extra detour up to 8 km Rs 345. Per-km tariff is not published: fares are fixed per route.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-11.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-23.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-24.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+        ],
+        "notes": "CONFLICT (1.55x): the blogger's own text says the 2025-26 union Khardung La return is Innova/XUV/Aria 2,816, Crysta 3,097, Scorpio/Ertiga 2,676, Sumo/Eeco/Van 2,541 ('re-checked August 2026'). The photographed card (cover reads 'Taxi Rate List for the year 2025-2026') prints Khardongla Top return 4,370 / 4,807 / 4,151 / 3,735 / 5,288 by class; I zoomed the row to confirm. The 2,541-3,097 figures are not on the card pages and may be from an older revision. Card figures used; if a Leh driver quotes 2,800 the blogger figure may be a real current direct rate. Pass closes to heavy snow roughly Oct-May, best June-September; Ladakh environment fee payable at South Pullu; foreigners need a Protected Area Permit (blogger, Aug 2026)."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No food-per-day figure for a pass: a day trip is eaten in Leh (see leh: budget 600, standard 1,000) or Nubra. Only a cafeteria and tea stall exist at the top; no prices found.",
+        "sources": [
+          "https://discoverwithdheeraj.com/khardung-la-pass-where-snow-galore-ladakh-2012/",
+          "https://discoverwithdheeraj.com/khardung-la-to-nubra-valley-ladakh-mega-meet/"
+        ],
+        "notes": "Use the nearest base (Leh) figures if the page needs a number."
+      },
+      "confidence": "high",
+      "confidence_detail": {
+        "stay": "n/a (no lodging)",
+        "taxi": "high (card) but conflicts with blogger text by 1.55x",
+        "food": "n/a"
+      },
+      "unverified": [
+        "Tea/cafeteria prices at the pass",
+        "Why the blogger text quotes 2,541-3,097 for the same route"
+      ]
+    },
+    "alchi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3589,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-alchi",
+          "https://discoverwithdheeraj.com/alchi-monastery-travel-guide-leh-ladakh/"
+        ],
+        "budget_hotel_median_inr": 1800,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://discoverwithdheeraj.com/alchi-monastery-travel-guide-leh-ladakh/"
+        ],
+        "homestay_median_inr": 1500,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://discoverwithdheeraj.com/alchi-monastery-travel-guide-leh-ladakh/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "MID: median of Cleartrip Alchi, 1 night 13-14 Nov 2026, pre-tax after coupon: Hotel Samdupling (2-star) 3,827 (list 4,300; The Legacy 3-star sold out), and the blogger's 'Alchi Resort and Zimskhang Holiday Home 2,000-4,700 per night, as of 2025, verify locally' (midpoint 3,350). n=2. BUDGET: guesthouses from the blogger's Alchi guide, labelled 'as of 2019' (STALE): Semskit 1,700, Lower Ladakh 1,900, Norbuling 2,000 (twin sharing incl. breakfast + dinner), Lotsava 1,400 (breakfast only); median 1,800. HOMESTAY: Lharjey homestay 1,500 twin incl. breakfast + dinner, 'as of 2019' (n=1).",
+        "notes": "Prices 2019 for budget/homestay are 7 years old: treat as a floor. Contemporary analog: the blogger's Lamayuru 2026 homestay range 1,200-1,800 with home-cooked meals (midpoint 1,500) matches the 1,500 Lharjey figure. Most budget stays are half-board (dinner + breakfast included). Alchi is a village: no ATM, carry cash (blogger). Leh district homestay registry (Jan 2025 PDF, no tariffs) lists registered homestays in the Sham villages."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3508,
+        "vehicle": "Innova/XUV (SUV class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Alchi and back, same day (about 66-70 km each way)",
+            "inr": 3508,
+            "range": "Innova/XUV drop 2,698, return 3,508; Xylo/Scorpio/Ertiga return 3,333; Eeco/Van return 3,021"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Likir from Leh",
+            "inr": 3915,
+            "range": "Innova/XUV 3,915 (drop 3,307)"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Likir + Basgo",
+            "inr": 4261,
+            "range": "Innova/XUV 4,261 (drop 3,612)"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Lamayuru + Likir in 1 day",
+            "inr": 7614,
+            "range": "Innova/XUV 7,614 (drop 6,676)"
+          }
+        ],
+        "basis": "Alchi is a day trip from Leh by the Sham/Srinagar highway. Union fares, 2025-26 card. Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-3.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-13.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-12.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+        ],
+        "notes": "CONFLICT (1.3-1.6x): blogger Alchi guide (updated 29 Sep 2026) says 'Leh to Alchi return Rs 4,500 to Rs 5,500, as of 2026'; the union card return is 3,508 (Innova/XUV). Card used; the blog range probably reflects agent/tourist pricing. Gozocabs lists a Tempo Traveller (12 seater) Leh-Alchi one-way at 7,616 before GST (not comparable). No direct public bus from Leh to Alchi per the blogger."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 900,
+        "basis": "No Alchi menu prices found. Used Sham-valley village ranges from the same blogger: meals at Nimmu/Likir 200-400 per person (Likir guide, 2 Sep 2026) and Lamayuru simple dishes 80-200 (Lamayuru guide, 27 Jul 2026). Budget ~3 x 170; standard 3 x 300.",
+        "sources": [
+          "https://discoverwithdheeraj.com/likir-monastery-travel-guide-leh-ladakh/",
+          "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/",
+          "https://discoverwithdheeraj.com/alchi-monastery-travel-guide-leh-ladakh/"
+        ],
+        "notes": "Mostly day-trippers eat on the road or in Leh (Alchi Kitchen restaurant in Leh costs 300-600 per person, blogger). Guesthouse/homestay rates normally include breakfast and dinner."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (2019 budget figures, n=2 mid)",
+        "taxi": "high",
+        "food": "low"
+      },
+      "unverified": [
+        "Current (2026) guesthouse and homestay tariffs in Alchi: only 2019 and an undated 2025 range found",
+        "Alchi-specific meal prices",
+        "Dorm beds"
+      ]
+    },
+    "lamayuru": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3000,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/"
+        ],
+        "budget_hotel_median_inr": 1750,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/"
+        ],
+        "homestay_median_inr": 1500,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "All from one blogger (Discover with Dheeraj Lamayuru guide, updated 27 Jul 2026, stated '2026 prices'): mid-range hotel 2,500-3,500 (midpoint 3,000, basic amenities); basic guesthouse double 1,500-2,000 without meals (midpoint 1,750); homestay 1,200-1,800 with home-cooked meals (midpoint 1,500). Each is a range, n=1.",
+        "notes": "Monastery guesthouse 800-1,200 (very basic, shared bathroom) also quoted. Wikivoyage Lamayuru has homestays 'around 500 (2018)' and Tharpaling GH 250 (2012): obsolete, not used. Cleartrip, Booking and TripClap had no usable Lamayuru listing (Cleartrip 404; TripClap shows one property, TIH Namra Hotel and Camps, Temisgam, no price). Homestay meals are bundled; guesthouse double is room-only."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 6767,
+        "vehicle": "Innova/XUV (SUV class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Lamayuru and back, same day (about 125-130 km each way)",
+            "inr": 6767,
+            "range": "Innova/XUV drop 5,233, return 6,767; Xylo/Scorpio/Ertiga return 6,428; Eeco/Van return 5,829"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Lamayuru",
+            "inr": 7208,
+            "range": "Innova/XUV 7,208 (drop 5,986)"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Lamayuru + Likir in 1 day",
+            "inr": 7614,
+            "range": "Innova/XUV 7,614"
+          },
+          {
+            "route": "Sham sightseeing: Alchi-Likir-Rezong-Lamayuru-Temisgam-Hemis Shukpachan-Rezong in 1 day",
+            "inr": 9203,
+            "range": "Innova/XUV 9,203"
+          }
+        ],
+        "basis": "Lamayuru is a long day trip on the Srinagar highway; the 'Lama-Youru' row on the Sham Route page of the 2025-26 union card. Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-4.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-13.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-12.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+        ],
+        "notes": "CONFLICT (about 1.7-2x): blogger Lamayuru guide says 'Leh to Lamayuru day trip, sedan/SUV 3,000-4,000' (undated, page updated 27 Jul 2026); the union card return is 6,767 (drop 5,233). Card used. Gozocabs Leh-Lamayuru Tempo Traveller (12 seater, ~130 km) one-way from 9,634 before GST; per-km reference 'from 26/km' (not comparable). Blogger bus Leh-Lamayuru 300-500 per person (undated)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1200,
+        "basis": "Blogger Lamayuru guide (27 Jul 2026, '2026 prices'): thukpa/noodles 100-150, momos 80-120, simple dal-rice 150-200, chai 20-30, full meal at a guesthouse 300-500 per person. Budget: breakfast ~125 + 2 x 175 = ~475; standard: 3 x ~400 guesthouse meals = 1,200.",
+        "sources": [
+          "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/"
+        ],
+        "notes": "Homestay rate (1,200-1,800) already includes home-cooked meals, so bundled travellers pay little extra. Single-source."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (single blogger ranges)",
+        "taxi": "high",
+        "food": "low"
+      },
+      "unverified": [
+        "Dated OTA listings for Lamayuru hotels (none loadable)",
+        "Second source for guesthouse/homestay tariffs and meals",
+        "Dorm beds"
+      ]
+    },
+    "likir": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1500,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://discoverwithdheeraj.com/likir-monastery-travel-guide-leh-ladakh/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Blogger Likir guide (updated 2 Sep 2026): Old Likir Traditional Farm Stay 'per night with meals Rs 1,000-2,000', undated ('as of the last time I checked'); midpoint 1,500; per person vs per room not stated. n=1.",
+        "notes": "Only one priced Likir property found; no hotel or guesthouse prices. Cleartrip/Booking/TripClap have no Likir page (404). Leh district homestay registry (Jan 2025 PDF, no tariffs) lists Likir homestays (Zing Zos Liker, Himalayan). Likir is mostly done as a Sham-valley day trip from Leh. Meals are bundled in the farm-stay rate."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2967,
+        "vehicle": "Innova/XUV (SUV class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Likir and back, same day (about 50-55 km each way)",
+            "inr": 2967,
+            "range": "Innova/XUV drop 2,283, return 2,967; Xylo/Scorpio/Ertiga return 2,818; Eeco/Van return 2,558"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Likir",
+            "inr": 3915,
+            "range": "Innova/XUV 3,915"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Likir + Basgo",
+            "inr": 4261,
+            "range": "Innova/XUV 4,261"
+          },
+          {
+            "route": "Sham sightseeing: Alchi + Lamayuru + Likir in 1 day",
+            "inr": 7614,
+            "range": "Innova/XUV 7,614"
+          }
+        ],
+        "basis": "Likir row on the Sham Route page of the 2025-26 union card. Ladakh Taxi Operator Co-operative Ltd (Leh Taxi Union) printed 'Taxi Rate List for the year 2025-2026', applicable from 1 April 2025 (booklet pp.1-23, photographed pages hosted on discoverwithdheeraj.com). Innova/Aria/XUV column. 'Drop' = one-way fare (taxi returns empty), 'Return' = same-day round trip back to Leh. Official ladakhtaxiunion.com did not resolve (DNS failure), so the photographed card is the primary evidence.",
+        "sources": [
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-4.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-13.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-12.jpg",
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+        ],
+        "notes": "Blogger Likir guide (2 Sep 2026): shared Sham Valley day trip 800-1,200 per person; private full Sham Valley circuit 3,500-5,000 total (undated), which fits the card's Alchi-Likir-Basgo 4,261 rather than the full Alchi-Lamayuru-Likir circuit (7,614). Card used. Likir has no public bus listing (blogger)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 900,
+        "basis": "Blogger Likir guide: meals at Nimmu/Likir 200-400 per person (undated, page updated 2 Sep 2026); Lamayuru simple dishes 80-200. Budget ~3 x 170; standard 3 x 300.",
+        "sources": [
+          "https://discoverwithdheeraj.com/likir-monastery-travel-guide-leh-ladakh/",
+          "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/"
+        ],
+        "notes": "Farm-stay rate includes meals; day-trip total budget for a shared taxi trip quoted by the blogger as 1,000-1,600 per person. Single-source."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (one property range)",
+        "taxi": "high",
+        "food": "low"
+      },
+      "unverified": [
+        "Any hotel or guesthouse price in Likir",
+        "Whether the farm-stay 1,000-2,000 is per person or per room",
+        "Likir-specific restaurant prices"
+      ]
+    }
+  }
+}

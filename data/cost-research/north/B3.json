@@ -1,0 +1,677 @@
+{
+  "batch": "B3",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "joshimath": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2815,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-joshimath",
+          "https://www.cleartrip.com/hotels/hotels-in-joshimath"
+        ],
+        "budget_hotel_median_inr": 1574,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-joshimath",
+          "https://www.hotelsinauli.com/gmvn-new-trh-joshimath-auli.html"
+        ],
+        "homestay_median_inr": 2998,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-joshimath",
+          "https://www.cleartrip.com/hotels/india/joshimath/budget-hotels"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip 12-13 Nov 2026, 1 room 2 guests, pre-tax discounted price. Mid = median of 12 listings tagged 3-star Hotel on the Joshimath search (1,470 / 1,610 / 1,655 / 2,564 / 2,664 / 2,732 / 2,898 / 2,933 / 3,700 / 4,082 / 4,510 / 7,245). Budget = the five cheapest sub-1,700 rooms on the same page (1,470, 1,574, 1,610, 1,655) plus GMVN Joshimath Deluxe Room 1,500 (hotelsinauli.com, undated). Homestay = Zero Degree Homestay 2,960 (Cleartrip 12-13 Nov) and Himalayan Abode Home Stay 3,036 (Cleartrip budget page, 11-12 Oct, pre-tax).",
+        "notes": "Cleartrip's Joshimath search mixes Joshimath town with Auli-road properties (names such as Satopanth The Auli Resort, Himalayan High Auli), and Hotel Bhagat (Pail Chak Bhyudar) is near Govindghat, so the mid figure is a Joshimath-Auli corridor median; I excluded the two Hotel Bhagat rows. The 'budget' tier is the cheap end of 3-star-tagged hotels, not a separate budget listing. Trip.com lists Nanda Devi Home Stay and Rudra Home Stay from about USD 12-18 (undated 'from' prices, not used). GMVN Narsingh Tourist Complex has a dormitory of about 20 beds but no per-bed price was published. Sep-Nov average for all Joshimath hotels per Tripadvisor is 5,221 (all star classes, not comparable)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Joshimath to Auli, sedan one-way (Joshimath operator estimate)",
+            "inr": 2150
+          },
+          {
+            "route": "Joshimath to Auli, sedan round trip with waiting",
+            "inr": 4000
+          },
+          {
+            "route": "Joshimath to Govindghat, sedan one-way (Gozocabs indicative)",
+            "inr": 1473
+          },
+          {
+            "route": "Badrinath to Joshimath, one-way 'from' fare (Gozocabs)",
+            "inr": 1752
+          }
+        ],
+        "basis": "No union rate list is published online; I could not find one. Evidence: Panwar Tour Travels 2026 guide: Joshimath-Auli sedan one-way 1,800-2,500 (midpoint 2,150 shown), round trip with waiting 3,500-4,500, SUV/Innova round trip 5,000-6,000. HurryUpCabs platform tariff 8 hr / 80 km: sedan 3,014 + 144 taxes, SUV 3,518 + 168, Innova 3,906 + 186 (identical on its Badrinath page, so a platform-wide tariff). Day figure 3,500 = low end of Panwar sedan round trip with waiting, consistent with HurryUp 3,014 + taxes.",
+        "sources": [
+          "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026",
+          "https://hurryupcabs.com/city/joshimath",
+          "https://www.gozocabs.com/book-taxi/auli_laga_joshimath-govind_ghat",
+          "https://www.gozocabs.com/book-taxi/badrinath-joshimath",
+          "https://www.gozocabs.com/book-taxi/joshimath-auli_laga_joshimath"
+        ],
+        "notes": "Aggregators disagree wildly: CabBazar search snippet shows Joshimath-Badrinath 451 (sedan) but Joshimath-Auli and -Govindghat 3,800, Gozocabs shows Joshimath-Auli 3,169 and Joshimath-Govindghat 1,473; CabBazar page itself returned 403 and was not fetched. Joshimath-Badrinath is about 41-46 km, so a Joshimath-Badrinath-Mana return day is roughly 90 km. Shared jeep Joshimath-Auli is 100-200 per person one way (Panwar, 2026 estimate). Auli ropeway Joshimath-Auli is about 1,000 per adult return (GMVN, Panwar) and a search summary of the official GMVN page said the ride was 'currently closed': unconfirmed, page unreachable. Gozocabs outstation round trips start at 15.5-16.75 per km with a daily minimum."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 800,
+        "basis": "Thin evidence. Auli 'D' Food Plaza (Joshimath, most-reviewed restaurant): lunch for 6 people 1,100 (about 183 pp, a July 2023 Google review), a recent brunch 400-600 pp, price range 200-800 pp (restaurant-guru). Panwar 2026 guide: food and snacks for a budget traveller 300 a day. Badrinath thali benchmark 230-350 (Tripadvisor menu) as the next town up the valley. Budget = dhaba breakfast, thali lunch and dinner (about 400); standard = cafe breakfast and sit-down lunch/dinner at 250-300 (about 800).",
+        "sources": [
+          "https://restaurant-guru.in/Auli-D-food-plaza-Joshimath",
+          "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026",
+          "https://www.tripadvisor.com/Restaurant_Review-g1091050-d27969182-Reviews-Shri_Badrinarayan_Bhojnalaya-Badrinath_Chamoli_District_Uttarakhand.html"
+        ],
+        "notes": "No Joshimath restaurant menu with prices was fetchable (Zomato timed out, Justdial 403, Tripadvisor shows only price tiers)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No taxi union / Chamoli RTO fare board found online; all taxi numbers are operator or aggregator quotes",
+        "Joshimath-only (excluding Auli road) 3-star median could not be separated: Cleartrip merges both",
+        "No Joshimath dorm bed price",
+        "No Joshimath menu prices; food is built from a handful of review mentions",
+        "Auli ropeway operating status (search summary said closed) not verified"
+      ]
+    },
+    "badrinath": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4925,
+        "mid_n": 11,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-badrinath"
+        ],
+        "budget_hotel_median_inr": 2110,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-badrinath",
+          "https://www.cleartrip.com/hotels/india/badrinath/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 400,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://yatradham.org/yatradham-destinations/uttarakhand/badrinath/gmvn.html"
+        ],
+        "price_basis": "Cleartrip 12-13 Nov 2026, 1 room 2 guests, pre-tax. Mid = median of the 11 properties tagged 3-star (1,852 / 2,369 / 2,963 / 3,275 / 3,751 / 4,925 / 5,148 / 5,976 / 6,624 / 11,197 / 12,455). Budget = SnR Grand 2-star 2,635, Hotel Sudarshan Palace 1,700 (Cleartrip budget page, 11-12 Oct, tax basis unstated), and the two cheapest 3-star rows Badri Kalash Valley 1,852 and Laxmi Divine 2,369 (median 2,110). Dorm: GMVN Yatri Niwas dormitory 'starting about 400 per person' (yatradham, undated).",
+        "notes": "Badrinath temple is expected to close around 13 Nov 2026 (Bhai Dooj, per a travel-guide snippet), so 12-13 Nov is the last days of the season and rates may not match mid-season. Other observations: discoverwithdheeraj (updated Aug 2026) says dharamshalas/basic guesthouses 500-1,500, GMVN from about 1,000-1,500, mid-range (Sarovar, Badri, Devlok) 1,500-4,000; yatradham GMVN Badrinath range: standard room 1,000-2,000, family 2,500-5,000, deluxe 3,500-6,000+, dorm 300-800 (undated); a search summary of a yatradham listing quoted Devlok semi-deluxe 4,286 and deluxe 5,524 on MAP (breakfast + dinner). Cleartrip 3-star row prices vary 7x, so the median is a rough centre. No homestays found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3014,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Badrinath to Joshimath, sedan one-way 'from' fare (Gozocabs)",
+            "inr": 1752
+          },
+          {
+            "route": "Badrinath to Mana, 3 km, 'from' fare (Gozocabs aggregator)",
+            "inr": 1533
+          },
+          {
+            "route": "Badrinath to Auli Laga Joshimath, about 54 km, 'from' fare (Gozocabs)",
+            "inr": 3398
+          }
+        ],
+        "basis": "HurryUpCabs 8 hr / 80 km sedan 3,014 + 144 taxes (platform tariff, same on its Joshimath page; SUV 3,518, Innova 3,906). Gozocabs one-way fares from the Gozocabs route pages. No Badrinath union fare board found.",
+        "sources": [
+          "https://hurryupcabs.com/cabs/badrinath",
+          "https://www.gozocabs.com/book-taxi/badrinath-joshimath",
+          "https://www.gozocabs.com/book-taxi/badrinath-mana",
+          "https://www.gozocabs.com/book-taxi/badrinath-auli_laga_joshimath"
+        ],
+        "notes": "Badrinath town and Mana (3 km) are walkable and a shared jeep covers Badrinath-Mana for about 20-30 per person (a search summary, source page not fetched); an 8-hour cab day is rarely how people see Badrinath, so treat 3,014 as an upper bound for a Joshimath-Badrinath-Mana-return day. An older Tripoto trip report paid 500 for a cab to Mana (about 2022). Gozocabs 1,533 for 3 km looks like a minimum-fare artefact."
+      },
+      "food_per_person_day": {
+        "budget_inr": 550,
+        "standard_inr": 900,
+        "basis": "Shri Badrinarayan Bhojnalaya (Tripadvisor menu, review dated Jul 2024): veg thali 230, deluxe thali 350, dal fry 280. Saket Restaurant: a Punjabi thali about 300 shared by two (Tripadvisor review). Discoverwithdheeraj (Aug 2026): dhaba/small restaurant meal 100-250. Budget = breakfast about 100 + two thalis at 230; standard = breakfast about 200 + two deluxe-thali-level meals at 350.",
+        "sources": [
+          "https://www.tripadvisor.com/Restaurant_Review-g1091050-d27969182-Reviews-Shri_Badrinarayan_Bhojnalaya-Badrinath_Chamoli_District_Uttarakhand.html",
+          "https://discoverwithdheeraj.com/badrinath-the-most-complete-guide/",
+          "https://www.tripadvisor.com/ShowUserReviews-g1091050-d7910144-r382177156-Saket_Restaurant-Badrinath_Chamoli_District_Uttarakhand.html"
+        ],
+        "notes": "All vegetarian pilgrim town; free temple khichdi prasad after darshan. Breakfast prices were not found (Saket's own menu page lists items without prices)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Taxi union fare board (Badrinath-Mana, Badrinath-Joshimath) not found",
+        "Cleartrip rates are for the last days of the 2026 season, no mid-season quote",
+        "No breakfast price found; food rests on thali prices",
+        "No homestay data"
+      ]
+    },
+    "auli": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4416,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-joshimath"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip 12-13 Nov 2026, 1 room 2 guests, pre-tax, three Auli-named properties on the Joshimath/Auli search: Himalayan High Auli 2,664, Tathastu Maitri Ski Resort 4,416 (4-star resort), Satopanth The Auli Resort 4,510. Median 4,416, n=3.",
+        "notes": "Only three Auli-proper properties had a dated price. The cheaper stays serving Auli visitors are in Joshimath (about 16 km, 30-45 min): use the Joshimath budget/mid figures. Tripadvisor average nightly rates for commonly viewed Auli hotels by season (base, ex-tax): Sep-Nov 5,608, Dec-Feb 9,572, Jun-Aug 16,726, Mar-May 18,853, and prices-from 1,160 across 182 hotels. Casa Himalaya Auli from 14,603 (Trip.com snippet). Hotelbooking.co.in (undated) shows Auli Eco Nature Resort 4,288 and Nandan Kanan Auli Resort 5,700. GMVN has Auli Ski Resort and Nanda Devi Eco Tourist Resort (room types listed, no prices)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Joshimath to Auli, sedan one-way (Joshimath operator estimate, midpoint of 1,800-2,500)",
+            "inr": 2150
+          },
+          {
+            "route": "Joshimath to Auli, sedan round trip with waiting",
+            "inr": 4000
+          },
+          {
+            "route": "Joshimath to Auli, SUV/Innova round trip with waiting (midpoint of 5,000-6,000)",
+            "inr": 5500
+          },
+          {
+            "route": "Joshimath to Auli by shared jeep, per person one way (midpoint of 100-200)",
+            "inr": 150
+          }
+        ],
+        "basis": "Panwar Tour Travels 2026 Joshimath-Auli guide (see sources); 3,500 is the low end of its sedan round trip with waiting. Cross-check: HurryUpCabs 8 hr / 80 km sedan 3,014 + 144 taxes; Gozocabs Joshimath-Auli one-way from 3,169.",
+        "sources": [
+          "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026",
+          "https://hurryupcabs.com/city/joshimath",
+          "https://www.gozocabs.com/book-taxi/joshimath-auli_laga_joshimath"
+        ],
+        "notes": "Auli is reached from Joshimath (about 16 km). Ropeway about 1,000 per adult return, 500 per child (GMVN and Panwar); chair lift inside Auli about 500 (GMVN page per search summary). A search summary of the official GMVN ropeway page said the ride was currently closed: unconfirmed because that site would not resolve."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 1000,
+        "basis": "Panwar 2026 guide: food and snacks for a budget traveller 300 a day; family lunch at Auli for 3 about 800 (about 267 pp); hot lunch for a couple at a good hotel 1,000 (500 pp). Auli 'D' Food Plaza (Joshimath) lunch for 6 at 1,100 (2023). Budget = about 400 a day on thalis and snacks; standard = cafe/hotel meals around 300-500 each.",
+        "sources": [
+          "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026",
+          "https://restaurant-guru.in/Auli-D-food-plaza-Joshimath"
+        ],
+        "notes": "Resort restaurants and Cliff Top Club type venues run 500+ per meal; no Auli menu with prices found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Auli budget hotels, homestays and dorm beds: none found with prices",
+        "No Auli menu prices",
+        "Ropeway operating status",
+        "No union fare board for Joshimath-Auli"
+      ]
+    },
+    "karnaprayag": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2582,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-karnaprayag"
+        ],
+        "budget_hotel_median_inr": 1026,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.hotelbooking.co.in/karnaprayag-india"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 12-13 Nov 2026, pre-tax, Prayag Raj Hotel 1,584 and Hotel Geeta Bhawan 3,580 (both tagged 3-star; median of two = 2,582). Budget: Tridev (Triveni) Hotel and Restaurant 1,026 on hotelbooking.co.in (undated; the page's deal links carry stale 2024 dates).",
+        "notes": "Very thin, n=1-2. Other undated asking prices from the same hotelbooking.co.in page: Hotel Mandakini 2,520, Sati Tourist Lodge 2,400 (location not confirmed as Karnaprayag town). GMVN Karnaprayag Tourist Rest House has economy/deluxe rooms and an 8-bed dorm but only decade-old 'starting 350-500' prices exist (sacredyatra, 2019), not used. Search-result snippets also showed Kanak Hotel 1,003 and CSR Palace 2,189 (undated, not used). Cleartrip lists a third property (Hotel O JK Laxmi) as sold out."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 16.75,
+        "point_to_point": [
+          {
+            "route": "Karnaprayag to Gopeshwar, one-way 'from' fare (Gozocabs aggregator)",
+            "inr": 2978
+          }
+        ],
+        "basis": "No Karnaprayag-specific rate. Uttaranchalcarrental Garhwal-region local day rate for a Swift Dzire 2,500 per day (150 km/day, 2-day minimum, undated, peak surcharge in Apr-Jul and 20 Dec-5 Jan). Gozocabs round trips from 16.75/km.",
+        "sources": [
+          "https://www.uttaranchalcarrental.net/chopta-taxi-service.asp",
+          "https://www.gozocabs.com/book-taxi/karnaprayag-chamoli_gopeshwar_uttarakhand"
+        ],
+        "notes": "Karnaprayag is a highway confluence stop, not a sightseeing base; people do not hire a cab day here. The 2,500 figure is a regional operator day rate proxy. Gozocabs 2,978 one-way for the roughly 30 km to Gopeshwar looks high (minimum-km pricing)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "No town-specific menu found. Proxy: Justdial lists budget Indian restaurants in Chamoli-district route towns (Pipalkoti, Marora) at 350 for two (about 175 per person per meal) and Green Valley Family Restaurant, Gopeshwar bus stand, at 500 for two (250 per person per meal). Budget = 3 meals at about 150 (dhaba, thali, tea); standard = 3 meals at about 250.",
+        "sources": [
+          "https://www.justdial.com/Chamoli/Inexpensive-Indian-Restaurants-Below-Rs-500-in-Karanprayag/nct-11400141",
+          "https://www.justdial.com/Chamoli/Restaurants-in-Gopeshwar/nct-10408936"
+        ],
+        "notes": "Justdial pages returned 403 to a direct fetch, so these two cost-for-two figures are from search-result snippets only. Proxy, not a menu observation."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Only two dated hotel prices; no homestay or dorm price",
+        "No Karnaprayag taxi rate card; day rate is a regional proxy",
+        "No Karnaprayag menu or cost-for-two; food is a Chamoli-district proxy"
+      ]
+    },
+    "nandaprayag": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1950,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.tripadvisor.in/Hotels-g24086967-Nandaprayag_Chamoli_District_Uttarakhand-Hotels.html",
+          "https://www.tripadvisor.in/Hotel_Review-g24086967-d24086616-Reviews-GM_guest_house-Nandaprayag_Chamoli_District_Uttarakhand.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "GM Guest House about 1,889-2,015 per night on Tripadvisor (search-result snippet, undated; midpoint 1,950), corroborated by Tripadvisor's Nandaprayag 'hotels prices from 1,934' (base rate 2 adults ex-tax, fetched page).",
+        "notes": "Tripadvisor seasonal averages for Nandaprayag: Sep-Nov 1,802-1,934, Dec-Feb 3,445. Only three hotels are listed there (Amigo's Hotel and Restaurant, GM guest house, Prakriti Hill Resort) with no per-hotel price. Cleartrip had no priced Nandaprayag listings. Sacredyatra (2019-era, undated) lists GMVN Nandaprayag TRH at 360 per person, Regal 600, Ashwamegh Lodge 650: too old to use. Search snippets from Booking.com show 'from' prices of about USD 16-25 for Hotel Shubh Yatra, Hotel Ganga Sagar and Geeta HomeStay (undated, not converted)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 16.75,
+        "point_to_point": [],
+        "basis": "No Nandaprayag-specific rate. Uttaranchalcarrental Garhwal-region local day rate for a Swift Dzire 2,500 per day (150 km/day, 2-day minimum, undated). Gozocabs Karnaprayag-Gopeshwar page quotes round trips from 16.75/km.",
+        "sources": [
+          "https://www.uttaranchalcarrental.net/chopta-taxi-service.asp",
+          "https://www.gozocabs.com/book-taxi/karnaprayag-chamoli_gopeshwar_uttarakhand"
+        ],
+        "notes": "Nandaprayag (confluence stop on the Badrinath highway) is not a place people hire a cab day for. Proxy only."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "No town-specific menu found. Proxy: Justdial lists budget Indian restaurants in Chamoli-district route towns (Pipalkoti, Marora) at 350 for two (about 175 per person per meal) and Green Valley Family Restaurant, Gopeshwar bus stand, at 500 for two (250 per person per meal). Budget = 3 meals at about 150 (dhaba, thali, tea); standard = 3 meals at about 250.",
+        "sources": [
+          "https://www.justdial.com/Chamoli/Inexpensive-Indian-Restaurants-Below-Rs-500-in-Karanprayag/nct-11400141",
+          "https://www.justdial.com/Chamoli/Restaurants-in-Gopeshwar/nct-10408936"
+        ],
+        "notes": "Justdial pages returned 403 to a direct fetch, so these two cost-for-two figures are from search-result snippets only. Proxy, not a menu observation."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated per-property hotel prices; mid-range tier not found",
+        "No homestay or dorm price",
+        "No taxi rate card",
+        "No Nandaprayag-specific food prices"
+      ]
+    },
+    "vishnuprayag": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Joshimath",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Tourmyindia: 'Vishnuprayag being a small destination have fewer accommodations' and points visitors to Joshimath. Other guides disagree (one says no stay options, one mentions a few basic hotels and dharamshalas), and no priced lodging at the confluence itself was found. Use the Joshimath stay figures.",
+        "notes": "A Trip.com page lists homestays and hotels 1.4-2.4 km from a 'Vishnuprayag' point (Nanda Devi Home Stay, Rudra Home Stay, Mount View Annexy, Panchvati Inn etc.) but these are Joshimath-area properties. no_lodging=true is a judgement from conflicting guides: it means there is no real lodging market at the confluence, not that a single dharamshala is impossible."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Joshimath to Badrinath, Vishnuprayag is a roadside stop en route, 'from' fare (Gozocabs)",
+            "inr": 1752
+          }
+        ],
+        "basis": "Vishnuprayag is a roadside confluence viewpoint on the Joshimath-Badrinath road, so the relevant cab is a Joshimath operator. Same basis as Joshimath: Panwar 2026 sedan round-trip-with-waiting low end 3,500; HurryUpCabs 8 hr / 80 km sedan 3,014 + 144.",
+        "sources": [
+          "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026",
+          "https://hurryupcabs.com/city/joshimath",
+          "https://www.gozocabs.com/book-taxi/badrinath-joshimath"
+        ],
+        "notes": "No Vishnuprayag-specific fare found. People stop here for a short visit on the Joshimath-Badrinath or Govindghat route, not a cab day."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 800,
+        "basis": "No eateries at Vishnuprayag were verified (a few tea stalls at best). Visitors eat in Joshimath: Joshimath proxies apply (Auli 'D' Food Plaza lunch for 6 at 1,100, brunch 400-600 pp; Panwar 300 a day budget food).",
+        "sources": [
+          "https://restaurant-guru.in/Auli-D-food-plaza-Joshimath",
+          "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026"
+        ],
+        "notes": "Proxy copied from Joshimath, not an observation at Vishnuprayag."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Whether any lodge or dharamshala operates at the confluence (guides conflict)",
+        "Any food or taxi price specific to Vishnuprayag"
+      ]
+    },
+    "gopeshwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 2024,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.goibibo.com/hotels/hotels-in-gopeshwar-ct/",
+          "https://in.trip.com/hotels/chamoli-gopeshwar-hotels-list-649285/"
+        ],
+        "homestay_median_inr": 1523,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://in.trip.com/hotels/chamoli-gopeshwar-hotels-list-649285/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Search-result snippets only (pages not fetched, undated): Heaven Hotel from 1,798 (Trip.com), Vasudev Lodge 2,250 + 270 taxes (Goibibo) => budget median 2,024; Shiva Homestay from 1,523 (Trip.com). Tripadvisor India's Gopeshwar page (fetched): prices from 1,644; average base rate Dec-Feb about 2,043-2,127, Sep-Nov about 2,358-2,514 (the page gives two inconsistent sets).",
+        "notes": "Cleartrip shows both Gopeshwar listings (Shiva Homestay 2-star, Vamoose The Ghughuti) sold out for 12-13 Nov, no price. Srishti Homestay snippet: 1,000 for a 2-bed room (undated). GMVN Gopeshwar Tourist Bungalow has 8 deluxe rooms and a 10-bed dorm, price not found. No dated mid-range (3-star) price found, so mid is null."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 16.75,
+        "point_to_point": [
+          {
+            "route": "Karnaprayag to Gopeshwar, one-way 'from' fare (Gozocabs)",
+            "inr": 2978
+          },
+          {
+            "route": "Gopeshwar to Tungnath, one-way 'from' fare (Gozocabs)",
+            "inr": 3179
+          }
+        ],
+        "basis": "No Gopeshwar union list found. Uttaranchalcarrental Garhwal-region local day rate, Swift Dzire 2,500 per day (150 km/day, 2-day minimum, undated); Chopta local day rate on eUttaranchal quoted 3,800 for a Dzire/Etios in a search summary (page returns 410). Gozocabs round trips from 16.75/km.",
+        "sources": [
+          "https://www.uttaranchalcarrental.net/chopta-taxi-service.asp",
+          "https://www.gozocabs.com/book-taxi/karnaprayag-chamoli_gopeshwar_uttarakhand",
+          "https://www.gozocabs.com/book-taxi/chamoli_gopeshwar-tungnath"
+        ],
+        "notes": "Gopeshwar is a district HQ and a Chopta/Tungnath gateway rather than a sightseeing destination; treat the day rate as a proxy."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "No town-specific menu found. Proxy: Justdial lists budget Indian restaurants in Chamoli-district route towns (Pipalkoti, Marora) at 350 for two (about 175 per person per meal) and Green Valley Family Restaurant, Gopeshwar bus stand, at 500 for two (250 per person per meal). Budget = 3 meals at about 150 (dhaba, thali, tea); standard = 3 meals at about 250.",
+        "sources": [
+          "https://www.justdial.com/Chamoli/Inexpensive-Indian-Restaurants-Below-Rs-500-in-Karanprayag/nct-11400141",
+          "https://www.justdial.com/Chamoli/Restaurants-in-Gopeshwar/nct-10408936"
+        ],
+        "notes": "Justdial pages returned 403 to a direct fetch, so these two cost-for-two figures are from search-result snippets only. Proxy, not a menu observation."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated mid-range or dorm price",
+        "Hotel figures are search-snippet 'from' prices, not page-verified",
+        "No Gopeshwar taxi rate card",
+        "Uttarakhand Tourism notes non-veg is not served in the town (religious association); menu prices unseen"
+      ]
+    },
+    "valley-of-flowers": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Ghangaria",
+        "mid_median_inr": 4188,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://allseasonsz.com/hotel/ghangaria-hotels-resorts.asp",
+          "https://valleyofflowersholidayinn.com/"
+        ],
+        "budget_hotel_median_inr": 1100,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://allseasonsz.com/hotel/ghangaria-hotels-resorts.asp",
+          "https://en.wikivoyage.org/wiki/Ghangaria",
+          "https://yatradham.org/yatradham-destinations/uttarakhand/ghangaria/gmvn.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 400,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://en.wikivoyage.org/wiki/Ghangaria"
+        ],
+        "price_basis": "Ghangaria (3,050 m) is where everyone sleeps; no source found lists lodging inside the Valley of Flowers park, and Hemkund Sahib is normally a 6 km day return from Ghangaria. Undated season-average nightly rates for double occupancy from allseasonsz.com (Holiday Inn 2,800 avg but 3,000 for Deluxe Double on the hotel's own site, taken from a search-result snippet; Kuber Annex 3,188; Shri Nanda Lokpal Palace 5,187; Valley of Flowers Holiday Home 6,186 => mid median of 3,000/3,188/5,187/6,186). Budget = Hotel Priya 600, GMVN Tourist Bungalow 1,100, Kuber Hotel 2,250. Dorm: GMVN Tourist Rest House dorm 400 (Wikivoyage, as of 2023).",
+        "notes": "Wide scatter and no dated live quote (Cleartrip shows Ghangaria sold out for 12-13 Nov 2026). Other observations: GMVN Ghangaria rooms 1,500-4,500 by category (yatradham, undated; starting 2,400); Wikivoyage 2023 GMVN room 1,200 and all Ghangaria stays 500-3,000; thedreamtreks 2026 guide budget guesthouse 1,000-1,800, standard hotel 2,000-4,000, premium 4,000+; valleyofflowerstrek.in rooms 3,500-6,000 and camps 6,000 AP. Swiss-tent camp 7,500 twin AP incl. meals. An older Tripadvisor review reported a GMVN dorm bed at 280. Gurdwara Govinddham Ghangaria: dorm and langar free, suggested donation 50-75 per night (Wikivoyage). Peak season (Jul-Aug bloom, Hemkund Jun-Oct) is dearer than these averages."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1473,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15.5,
+        "point_to_point": [
+          {
+            "route": "Joshimath to Govindghat (roadhead), sedan one-way, about 29 km, indicative before GST",
+            "inr": 1473
+          },
+          {
+            "route": "Joshimath to Govindghat, shared taxi per seat",
+            "inr": 100
+          },
+          {
+            "route": "Govindghat to Pulna, taxi (first 4 km of road)",
+            "inr": 50
+          },
+          {
+            "route": "Joshimath to Govindghat, Innova one-way (Gozocabs indicative)",
+            "inr": 8038
+          }
+        ],
+        "basis": "Roadhead cab, not a sightseeing day. Gozocabs Joshimath-Govindghat page (no date, indicative before GST); shared taxi and Govindghat-Pulna from Wikivoyage Ghangaria page. Outstation per km is Gozocabs reference round-trip rate 15.50/km.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/auli_laga_joshimath-govind_ghat",
+          "https://en.wikivoyage.org/wiki/Ghangaria",
+          "https://discoverwithdheeraj.com/valley-of-flowers-hemkunt-sahib/",
+          "https://www.auli-resort.com/blogs/how-to-reach-valley-of-flowers-2025/",
+          "https://www.solobackpacker.com/ghangaria-travel-guide/"
+        ],
+        "notes": "Valley of Flowers / Hemkund are reached on foot from Govindghat roadhead (about 22-29 km from Joshimath) via a 13 km trail to Ghangaria. Local sightseeing by cab does not exist here, so local_sightseeing_8h_inr is the one-way cab from Joshimath to the Govindghat roadhead (sedan, Gozocabs indicative, before GST); a shared taxi seat is about 100 (Wikivoyage). Trail costs: pony Govindghat/Pulna to Ghangaria about 1,000-1,500 (Dheeraj, Aug 2026); a 2025-season list on euttaranchal quoted 1,200 (60 kg) / 1,800 (90 kg) plus a 100 fee, route not confirmed because the page now returns 410; Ghangaria to Hemkund pony 1,500-2,000 one way (Dheeraj); Wikivoyage lists an older 500-750. Porter about 1,000 to Ghangaria (reader comment Oct 2022 on solobackpacker). Helicopter Govindghat-Ghangaria one way about 3,000-3,500 (auli-resort.com 2025) or 3,500-4,000 (Dheeraj 2026); round trip quoted at about 10,500-10,800 incl. fees (Dheeraj; solobackpacker), which does not tie to the one-way figures; official booking is IRCTC HeliYatra and one search snippet said Hemkund heli booking was temporarily on hold. Gozocabs also quotes 6,222 for an Ertiga and 8,038 for an Innova on this 29 km route, which looks like a minimum-km artefact; treat the aggregator SUV fares as not representative of what a local operator charges."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "thedreamtreks 2026 budget guide: breakfast 100-250, lunch 150-300, dinner 200-350, tea/snacks 20-100 per head. Budget = low end of the three meals (100+150+200); standard = upper-mid (250+300+350). Discoverwithdheeraj (updated Aug 2026) independently says budget 300-500 and mid-range 600-1,000 per day.",
+        "sources": [
+          "https://thedreamtreks.com/valley-of-flowers-budget-guide/",
+          "https://discoverwithdheeraj.com/valley-of-flowers-hemkunt-sahib/"
+        ],
+        "notes": "Everything is carried up by mule so prices run above the plains. Gurdwara langar at Ghangaria and Hemkund Sahib is free (Wikivoyage), which many pilgrims use. No food inside the Valley of Flowers park: carry a packed lunch from Ghangaria."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated live room quote for Ghangaria (Cleartrip sold out); stay uses undated aggregator averages and sources disagree 3x",
+        "Pony/porter tariff board for the Govindghat-Ghangaria trail not read directly (euttaranchal page returns 410)",
+        "Helicopter one-way versus round-trip fares conflict; booking status unconfirmed",
+        "No Joshimath-Govindghat union rate; Gozocabs figure is an aggregator quote",
+        "No homestay data for Ghangaria"
+      ]
+    },
+    "hemkund-sahib": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Ghangaria",
+        "mid_median_inr": 4188,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://allseasonsz.com/hotel/ghangaria-hotels-resorts.asp",
+          "https://valleyofflowersholidayinn.com/"
+        ],
+        "budget_hotel_median_inr": 1100,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://allseasonsz.com/hotel/ghangaria-hotels-resorts.asp",
+          "https://en.wikivoyage.org/wiki/Ghangaria",
+          "https://yatradham.org/yatradham-destinations/uttarakhand/ghangaria/gmvn.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 400,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://en.wikivoyage.org/wiki/Ghangaria"
+        ],
+        "price_basis": "Ghangaria (3,050 m) is where everyone sleeps; no source found lists lodging inside the Valley of Flowers park, and Hemkund Sahib is normally a 6 km day return from Ghangaria. Undated season-average nightly rates for double occupancy from allseasonsz.com (Holiday Inn 2,800 avg but 3,000 for Deluxe Double on the hotel's own site, taken from a search-result snippet; Kuber Annex 3,188; Shri Nanda Lokpal Palace 5,187; Valley of Flowers Holiday Home 6,186 => mid median of 3,000/3,188/5,187/6,186). Budget = Hotel Priya 600, GMVN Tourist Bungalow 1,100, Kuber Hotel 2,250. Dorm: GMVN Tourist Rest House dorm 400 (Wikivoyage, as of 2023).",
+        "notes": "Wide scatter and no dated live quote (Cleartrip shows Ghangaria sold out for 12-13 Nov 2026). Other observations: GMVN Ghangaria rooms 1,500-4,500 by category (yatradham, undated; starting 2,400); Wikivoyage 2023 GMVN room 1,200 and all Ghangaria stays 500-3,000; thedreamtreks 2026 guide budget guesthouse 1,000-1,800, standard hotel 2,000-4,000, premium 4,000+; valleyofflowerstrek.in rooms 3,500-6,000 and camps 6,000 AP. Swiss-tent camp 7,500 twin AP incl. meals. An older Tripadvisor review reported a GMVN dorm bed at 280. Gurdwara Govinddham Ghangaria: dorm and langar free, suggested donation 50-75 per night (Wikivoyage). Peak season (Jul-Aug bloom, Hemkund Jun-Oct) is dearer than these averages. Hemkund Sahib itself (4,633 m) is a day trip of 6 km from Ghangaria; overnight stays are at Ghangaria or the Govindghat gurdwara."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1473,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15.5,
+        "point_to_point": [
+          {
+            "route": "Joshimath to Govindghat (roadhead), sedan one-way, about 29 km, indicative before GST",
+            "inr": 1473
+          },
+          {
+            "route": "Joshimath to Govindghat, shared taxi per seat",
+            "inr": 100
+          },
+          {
+            "route": "Govindghat to Pulna, taxi (first 4 km of road)",
+            "inr": 50
+          },
+          {
+            "route": "Joshimath to Govindghat, Innova one-way (Gozocabs indicative)",
+            "inr": 8038
+          }
+        ],
+        "basis": "Roadhead cab, not a sightseeing day. Gozocabs Joshimath-Govindghat page (no date, indicative before GST); shared taxi and Govindghat-Pulna from Wikivoyage Ghangaria page. Outstation per km is Gozocabs reference round-trip rate 15.50/km.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/auli_laga_joshimath-govind_ghat",
+          "https://en.wikivoyage.org/wiki/Ghangaria",
+          "https://discoverwithdheeraj.com/valley-of-flowers-hemkunt-sahib/",
+          "https://www.auli-resort.com/blogs/how-to-reach-valley-of-flowers-2025/",
+          "https://www.solobackpacker.com/ghangaria-travel-guide/"
+        ],
+        "notes": "Valley of Flowers / Hemkund are reached on foot from Govindghat roadhead (about 22-29 km from Joshimath) via a 13 km trail to Ghangaria. Local sightseeing by cab does not exist here, so local_sightseeing_8h_inr is the one-way cab from Joshimath to the Govindghat roadhead (sedan, Gozocabs indicative, before GST); a shared taxi seat is about 100 (Wikivoyage). Trail costs: pony Govindghat/Pulna to Ghangaria about 1,000-1,500 (Dheeraj, Aug 2026); a 2025-season list on euttaranchal quoted 1,200 (60 kg) / 1,800 (90 kg) plus a 100 fee, route not confirmed because the page now returns 410; Ghangaria to Hemkund pony 1,500-2,000 one way (Dheeraj); Wikivoyage lists an older 500-750. Porter about 1,000 to Ghangaria (reader comment Oct 2022 on solobackpacker). Helicopter Govindghat-Ghangaria one way about 3,000-3,500 (auli-resort.com 2025) or 3,500-4,000 (Dheeraj 2026); round trip quoted at about 10,500-10,800 incl. fees (Dheeraj; solobackpacker), which does not tie to the one-way figures; official booking is IRCTC HeliYatra and one search snippet said Hemkund heli booking was temporarily on hold. Gozocabs also quotes 6,222 for an Ertiga and 8,038 for an Innova on this 29 km route, which looks like a minimum-km artefact; treat the aggregator SUV fares as not representative of what a local operator charges."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "thedreamtreks 2026 budget guide: breakfast 100-250, lunch 150-300, dinner 200-350, tea/snacks 20-100 per head. Budget = low end of the three meals (100+150+200); standard = upper-mid (250+300+350). Discoverwithdheeraj (updated Aug 2026) independently says budget 300-500 and mid-range 600-1,000 per day.",
+        "sources": [
+          "https://thedreamtreks.com/valley-of-flowers-budget-guide/",
+          "https://discoverwithdheeraj.com/valley-of-flowers-hemkunt-sahib/"
+        ],
+        "notes": "Everything is carried up by mule so prices run above the plains. Gurdwara langar at Ghangaria and Hemkund Sahib is free (Wikivoyage), which many pilgrims use. No food inside the Valley of Flowers park: carry a packed lunch from Ghangaria."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Ghangaria room prices are undated aggregator averages",
+        "Ghangaria-Hemkund pony fare: Dheeraj says 1,500-2,000 one way, one package operator says no pony/palki on this stretch, Wikivoyage lists an older 500-750",
+        "Helicopter fares conflict and booking was reported on hold in one snippet",
+        "Hemkund season closing date varies by year (one source: 10 Oct 2026); confirm before using"
+      ]
+    },
+    "roopkund": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Lohajung",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1200,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.euttaranchal.com/hotels/rana-tourist-lodge-lohajung.php"
+        ],
+        "homestay_median_inr": 1299,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://himalayashomestays.com/homestay/lohajung-valley-stay/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Roopkund (5,029 m) has no lodging; trekkers sleep in Lohajung (road-head, about 2,300 m) before and after, then tents/huts on the trail. Rana Tourist Lodge, Lohajung: tariff table headed 'Cost Per Person Per Night' plus GST: 2-bedded 600, 3-bedded 900, 4-bedded 1,200, 5-bedded 1,500, so a double room is 1,200 if per person (600 if per room: the page is ambiguous). Lohajung Valley Stay homestay (Bank village): from 1,299 with breakfast, lunch and dinner included (Himalayas Homestays listing, 2025 host, no dates).",
+        "notes": "Most operators bundle Lohajung lodge nights into the trek fee (18,000-19,950 + 5% GST, see taxi notes). Lohajung also has a GMVN TRH and a panchayat TRH, no tariff found. No Wan homestay prices found. Cleartrip has no Lohajung page."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "suv",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Rishikesh to Lohajung (roadhead), Tata Sumo/Bolero one-way, shared across the group (Himalaya Trekker)",
+            "inr": 7500
+          },
+          {
+            "route": "Rishikesh to Lohajung, Bolero/Ertiga one-way (same operator's exclusions list)",
+            "inr": 8000
+          },
+          {
+            "route": "Rishikesh to Lohajung, Tempo Traveller one-way, 12 seats",
+            "inr": 11000
+          }
+        ],
+        "basis": "Not a sightseeing destination: Roopkund is a multi-day trek from the Lohajung/Wan roadhead, so there is no local cab day (local_sightseeing_8h_inr is null). The cab is the roadhead transfer, as quoted by trek operator Himalaya Trekker (undated, paid directly to the driver). Trek fee for context: 18,000 + 5% GST (Himalayan Hikers, Dehradun to Dehradun) to 19,950 + 5% GST (Himalaya Trekker, Lohajung to Lohajung); rucksack offloading 3,000 for the whole trek.",
+        "sources": [
+          "https://himalayatrekker.com/tours/roopkund-trek/",
+          "https://himalayanhikers.in/roopkund-trek"
+        ],
+        "notes": "Lohajung to Wan is about a one-hour bumpy drive; no current fare found (a travelogue about a decade old mentioned 500 for 12 km: not usable). Roopkund trek reopened in 2026 after a 2018 High Court ban; operator lists autumn departures 17 and 31 Oct 2026. Independent trekkers need a permit and a registered guide, which was not checked."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No standalone food prices: operators include all meals in the trek fee and the Lohajung homestay listing includes three meals in its 1,299 rate. No Lohajung/Wan menu found.",
+        "sources": [
+          "https://himalayatrekker.com/tours/roopkund-trek/",
+          "https://himalayashomestays.com/homestay/lohajung-valley-stay/"
+        ],
+        "notes": "Left null on purpose: any number would be invented."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Lohajung-Wan local cab fare",
+        "Food prices at Lohajung/Wan",
+        "GMVN Lohajung TRH tariff",
+        "Whether Rana Tourist Lodge rates are per person or per room",
+        "Individual pony/porter rates for the Roopkund trail"
+      ]
+    }
+  }
+}

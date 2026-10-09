@@ -1,0 +1,5362 @@
+[
+ {
+  "id": "har-ki-doon",
+  "name": "Har Ki Doon",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 5200,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 3000,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 4100,
+   "after": 4100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1100,
+   "after": 1100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 40800,
+   "after": null
+  }
+ },
+ {
+  "id": "hemkund-sahib",
+  "name": "Hemkund Sahib",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 5200,
+   "after": 4700,
+   "src": "researched 10-09",
+   "url": "https://allseasonsz.com/hotel/ghangaria-hotels-resorts.asp"
+  },
+  "home": {
+   "before": 3000,
+   "after": 2650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": 600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4100,
+   "after": 4100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1100,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://thedreamtreks.com/valley-of-flowers-budget-guide/"
+  },
+  "trip": {
+   "before": 40800,
+   "after": 37700
+  }
+ },
+ {
+  "id": "kausani",
+  "name": "Kausani",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3600,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kausani"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1850,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-kausani"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 29200
+  }
+ },
+ {
+  "id": "valley-of-flowers",
+  "name": "Valley of Flowers",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4600,
+   "after": 4700,
+   "src": "researched 10-09",
+   "url": "https://allseasonsz.com/hotel/ghangaria-hotels-resorts.asp"
+  },
+  "home": {
+   "before": 2650,
+   "after": 2350,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3600,
+   "after": 3600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 950,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://thedreamtreks.com/valley-of-flowers-budget-guide/"
+  },
+  "trip": {
+   "before": 35800,
+   "after": 35700
+  }
+ },
+ {
+  "id": "auli",
+  "name": "Auli",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 4950,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-joshimath"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": 600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3500,
+   "src": "researched 10-09",
+   "url": "https://www.panwartourtravels.com/b-detail.php?seo=joshimath-to-auli-distance-travel-guide-2026"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 36050
+  }
+ },
+ {
+  "id": "guptkashi",
+  "name": "Guptkashi",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 4150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-guptkashi"
+  },
+  "home": {
+   "before": 2200,
+   "after": 2150,
+   "src": "researched 10-09",
+   "url": "https://yatradham.org/guptkashi-best-view-home-stay.html"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.namasteindiatrip.com/blog/food-options-in-and-around-kedarnath/"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 30450
+  }
+ },
+ {
+  "id": "rishikesh",
+  "name": "Rishikesh",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 3950,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2200,
+   "after": 2450,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": 400,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.swaadyatra.in/city/rishikesh"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 31050
+  }
+ },
+ {
+  "id": "landour",
+  "name": "Landour",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 3850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2400,
+   "after": 1550,
+   "src": "researched 10-09",
+   "url": "https://traveltriangle.com/blog/landour-homestays/"
+  },
+  "dorm": {
+   "before": 650,
+   "after": 600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.foodravel.com/mussoorie-cafes-guide/"
+  },
+  "trip": {
+   "before": 33000,
+   "after": 31950
+  }
+ },
+ {
+  "id": "mussoorie",
+  "name": "Mussoorie",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 4200,
+   "after": 2850,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-mussoorie"
+  },
+  "home": {
+   "before": 2400,
+   "after": 3300,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-mussoorie"
+  },
+  "dorm": {
+   "before": 750,
+   "after": 550,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Mussoorie?currency=INR"
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 2600,
+   "src": "researched 10-09",
+   "url": "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.thehosteller.com/blogs/best-cafes-and-eateries-in-mussoorie-2024/"
+  },
+  "trip": {
+   "before": 33000,
+   "after": 26150
+  }
+ },
+ {
+  "id": "badrinath",
+  "name": "Badrinath",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 5500,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-badrinath"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.tripadvisor.com/Restaurant_Review-g1091050-d27969182-Reviews-Shri_Badrinarayan_Bhojnalaya-Badrinath_Chamoli_District_Uttarakhand.html"
+  },
+  "trip": {
+   "before": 33000,
+   "after": 36900
+  }
+ },
+ {
+  "id": "chakrata",
+  "name": "Chakrata",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 2400,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-chakrata"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 2750,
+   "src": "researched 10-09",
+   "url": "https://www.tripoto.com/chakrata/trips/chakrata-uttarakhand-tiger-falls"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 25400
+  }
+ },
+ {
+  "id": "devprayag",
+  "name": "Devprayag",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3450,
+   "src": "researched 10-09",
+   "url": "http://www.chardhampackages.com/hotels-in-devprayag.html"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://clanstays.com/char-dham-yatra-food-options-2026/"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 27950
+  }
+ },
+ {
+  "id": "gangotri",
+  "name": "Gangotri",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 3850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://www.triptochardham.in/how-much-does-char-dham-yatra-cost-in-2026-real-prices"
+  },
+  "trip": {
+   "before": 33000,
+   "after": 31150
+  }
+ },
+ {
+  "id": "haridwar",
+  "name": "Haridwar",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 3100,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-haridwar"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 1750,
+   "src": "researched 10-09",
+   "url": "https://evaarabytheganges.com/how-taxi-fares-actually-work-in-haridwar-complete-fare-travel-guide/"
+  },
+  "food": {
+   "before": 800,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://tripxl.com/blog/best-food-in-haridwar-har-ki-pauri/"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 22300
+  }
+ },
+ {
+  "id": "karnaprayag",
+  "name": "Karnaprayag",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3200,
+   "after": 2950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 1850,
+   "after": 1650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2550,
+   "after": 2550,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 700,
+   "after": 700,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 25400,
+   "after": 24650
+  }
+ },
+ {
+  "id": "nandaprayag",
+  "name": "Nandaprayag",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3200,
+   "after": 2950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 1850,
+   "after": 1650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2550,
+   "after": 2550,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 700,
+   "after": 700,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 25400,
+   "after": 24650
+  }
+ },
+ {
+  "id": "roopkund",
+  "name": "Roopkund",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 5200,
+   "after": 4800,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3000,
+   "after": 2650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": 600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4100,
+   "after": 4100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1100,
+   "after": 1100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 40800,
+   "after": 39600
+  }
+ },
+ {
+  "id": "rudraprayag",
+  "name": "Rudraprayag",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 4300,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-rudraprayag"
+  },
+  "home": {
+   "before": 2200,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/rudraprayag.html"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://clanstays.com/char-dham-yatra-food-options-2026/"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 30500
+  }
+ },
+ {
+  "id": "tehri",
+  "name": "Tehri Lake",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 4900,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-new-tehri"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/tehri/new-tehri-tehri-restaurants"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 32700
+  }
+ },
+ {
+  "id": "tungnath",
+  "name": "Tungnath",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4600,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 2650,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 3600,
+   "after": 3600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 950,
+   "after": 950,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 35800,
+   "after": null
+  }
+ },
+ {
+  "id": "uttarkashi",
+  "name": "Uttarkashi",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 4950,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-uttarkashi"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1750,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/homestay/city/in/uttarkashi.html"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://clanstays.com/char-dham-yatra-food-options-2026/"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 32850
+  }
+ },
+ {
+  "id": "vishnuprayag",
+  "name": "Vishnuprayag",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3200,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 1850,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 2550,
+   "after": 2550,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 700,
+   "after": 700,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 25400,
+   "after": null
+  }
+ },
+ {
+  "id": "yamunotri",
+  "name": "Yamunotri",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 3900,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-yamunotri"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2400,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/kharsali.html"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 32100
+  }
+ },
+ {
+  "id": "dhanaulti",
+  "name": "Dhanaulti",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 2950,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-dhanaulti"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 29250
+  }
+ },
+ {
+  "id": "kanatal",
+  "name": "Kanatal",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 4400,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/india/kanatal/budget-hotels"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2800,
+   "src": "researched 10-09",
+   "url": "https://www.kayak.co.in/Kanatal-Hotels.315967.hotel.ksp"
+  },
+  "dorm": {
+   "before": 650,
+   "after": 600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 33600
+  }
+ },
+ {
+  "id": "gopeshwar",
+  "name": "Gopeshwar",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3500,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 28900
+  }
+ },
+ {
+  "id": "joshimath",
+  "name": "Joshimath",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-joshimath"
+  },
+  "home": {
+   "before": 2200,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-joshimath"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 27850
+  }
+ },
+ {
+  "id": "adi-kailash",
+  "name": "Adi Kailash",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4500,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 2600,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 750,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 950,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://mountainiax.com/adi-kailash-yatra-cost-2026-complete-breakdown/"
+  },
+  "trip": {
+   "before": 35100,
+   "after": null
+  }
+ },
+ {
+  "id": "almora",
+  "name": "Almora",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 2600,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-almora"
+  },
+  "home": {
+   "before": 2200,
+   "after": 4550,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-almora"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 580,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Almora?currency=INR"
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 26200
+  }
+ },
+ {
+  "id": "mansarovar-kailash",
+  "name": "Mount Kailash & Mansarovar",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 6800,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 4000,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 1150,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 5400,
+   "after": 5400,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1450,
+   "after": 1450,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 53600,
+   "after": null
+  }
+ },
+ {
+  "id": "ranikhet",
+  "name": "Ranikhet",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 2600,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-ranikhet"
+  },
+  "home": {
+   "before": 2200,
+   "after": 3400,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-ranikhet"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 26200
+  }
+ },
+ {
+  "id": "bhimtal",
+  "name": "Bhimtal",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 4300,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-bhimtal"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1900,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-bhimtal"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.justdial.com/Bhimtal/Restaurants/nct-10408936"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 32100
+  }
+ },
+ {
+  "id": "nainital",
+  "name": "Nainital",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 4150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-nainital"
+  },
+  "home": {
+   "before": 2200,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-nainital"
+  },
+  "dorm": {
+   "before": 650,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Nainital?currency=INR"
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 1000,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/nainital/restaurants"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 32450
+  }
+ },
+ {
+  "id": "champawat",
+  "name": "Champawat",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 2350,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-champawat"
+  },
+  "home": {
+   "before": 2200,
+   "after": 2050,
+   "src": "researched 10-09",
+   "url": "https://travelacharya.in/champawat-travel-guide/"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 25450
+  }
+ },
+ {
+  "id": "pithoragarh",
+  "name": "Pithoragarh",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3500,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/pithoragarh/restaurants"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 27700
+  }
+ },
+ {
+  "id": "binsar",
+  "name": "Binsar",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 4550,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-binsar"
+  },
+  "home": {
+   "before": 2400,
+   "after": 3400,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-binsar"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 34050
+  }
+ },
+ {
+  "id": "chaukori",
+  "name": "Chaukori",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 2750,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-chaukori"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/chaukori-a-detailed-travel-guide/"
+  },
+  "trip": {
+   "before": 33000,
+   "after": 27050
+  }
+ },
+ {
+  "id": "mukteshwar",
+  "name": "Mukteshwar",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 2200,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-mukteshwar"
+  },
+  "home": {
+   "before": 2400,
+   "after": 3150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-mukteshwar"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.saffronstays.com/location/nearby-restaurants/nearby-restaurants-Mukteshwar"
+  },
+  "trip": {
+   "before": 33000,
+   "after": 27000
+  }
+ },
+ {
+  "id": "corbett-national-park",
+  "name": "Jim Corbett National Park",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 3950,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-ramnagar"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://www.singhtour.com/page/ramnagar-local-taxi-service-cab-booking-service/"
+  },
+  "food": {
+   "before": 800,
+   "after": 1050,
+   "src": "researched 10-09",
+   "url": "https://www.justdial.com/Corbett/Restaurants-in-Ramnagar/nct-10408936"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 32250
+  }
+ },
+ {
+  "id": "lansdowne",
+  "name": "Lansdowne",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3850,
+   "src": "researched 10-09",
+   "url": "https://www.kayak.co.in/Lansdowne-Hotels.306638.hotel.ksp"
+  },
+  "home": {
+   "before": 2200,
+   "after": 3550,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-lansdowne"
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 29950
+  }
+ },
+ {
+  "id": "munsiyari",
+  "name": "Munsiyari",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-munsiyari"
+  },
+  "home": {
+   "before": 2400,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-munsiyari"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 29400
+  }
+ },
+ {
+  "id": "chopta",
+  "name": "Chopta",
+  "state": "uttarakhand",
+  "conf": "low",
+  "mid": {
+   "before": 4200,
+   "after": 5250,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2400,
+   "after": 1650,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 36150
+  }
+ },
+ {
+  "id": "kedarnath",
+  "name": "Kedarnath",
+  "state": "uttarakhand",
+  "conf": "medium",
+  "mid": {
+   "before": 5200,
+   "after": 2700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kedarnath"
+  },
+  "home": {
+   "before": 3000,
+   "after": 2650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://dreamtripguide.com/gmvn-kedarnath-booking-2026-how-to-reserve-rooms-and-dormitories-online/"
+  },
+  "taxi": {
+   "before": 4100,
+   "after": 4100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1100,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://www.namasteindiatrip.com/blog/food-options-in-and-around-kedarnath/"
+  },
+  "trip": {
+   "before": 40800,
+   "after": 30900
+  }
+ },
+ {
+  "id": "chamba",
+  "name": "Chamba",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 2100,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/searchresults.html?ss=Chamba%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR"
+  },
+  "home": {
+   "before": 2300,
+   "after": 950,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/searchresults.html?ss=Chamba%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 31600,
+   "after": 25900
+  }
+ },
+ {
+  "id": "chandratal",
+  "name": "Chandratal",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 5500,
+   "after": 5050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3200,
+   "after": 2800,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 900,
+   "after": 840,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4300,
+   "after": 4300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1150,
+   "after": 600,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/"
+  },
+  "trip": {
+   "before": 42900,
+   "after": 37150
+  }
+ },
+ {
+  "id": "dalhousie",
+  "name": "Dalhousie",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 2450,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-dalhousie"
+  },
+  "home": {
+   "before": 2300,
+   "after": 2650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-dalhousie"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Dalhousie?currency=INR"
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh"
+  },
+  "food": {
+   "before": 850,
+   "after": 850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 31600,
+   "after": 24150
+  }
+ },
+ {
+  "id": "dharamshala",
+  "name": "Dharamshala",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4000,
+   "after": 2150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-dharamshala"
+  },
+  "home": {
+   "before": 2300,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-dharamshala"
+  },
+  "dorm": {
+   "before": 700,
+   "after": 650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "http://www.mcleodganjtaxiunion.com/dharamsala-sightseeing-rates.php"
+  },
+  "food": {
+   "before": 850,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/dharamshala/mcleodganj-restaurants"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 23650
+  }
+ },
+ {
+  "id": "kasol",
+  "name": "Kasol",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4000,
+   "after": 4300,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2300,
+   "after": 1350,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 580,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/"
+  },
+  "food": {
+   "before": 850,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/how-to-plan-a-super-tight-budget-trip-to-kasol/"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 31300
+  }
+ },
+ {
+  "id": "kaza",
+  "name": "Kaza",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 5500,
+   "after": 4850,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 3200,
+   "after": 2600,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 700,
+   "after": 1080,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 4300,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/langza-komic-hikkim-local-sightseeing-kaza/"
+  },
+  "food": {
+   "before": 1150,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/"
+  },
+  "trip": {
+   "before": 42900,
+   "after": 32150
+  }
+ },
+ {
+  "id": "mcleodganj",
+  "name": "McLeod Ganj",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4400,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-dharamshala"
+  },
+  "home": {
+   "before": 2550,
+   "after": 1700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-dharamshala"
+  },
+  "dorm": {
+   "before": 750,
+   "after": 450,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Dharamshala?currency=INR"
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "http://www.mcleodganjtaxiunion.com/dharamsala-sightseeing-rates.php"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/dharamshala/mcleodganj-restaurants"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 26200
+  }
+ },
+ {
+  "id": "parvati-valley",
+  "name": "Parvati Valley",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 2250,
+   "src": "researched 10-09",
+   "url": "https://www.easemytrip.com/hotels/hotels-in-tosh/"
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/"
+  },
+  "food": {
+   "before": 900,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/tosh-trip-travel-guide-parvati-valley/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 24350
+  }
+ },
+ {
+  "id": "manimahesh-kailash",
+  "name": "Manimahesh Kailash",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4700,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 2700,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 800,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 3700,
+   "after": 3700,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 36900,
+   "after": null
+  }
+ },
+ {
+  "id": "bir-billing",
+  "name": "Bir Billing",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 2900,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-bir"
+  },
+  "home": {
+   "before": 2300,
+   "after": 1900,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-bir"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 500,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Bir?currency=INR"
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 31600,
+   "after": 28300
+  }
+ },
+ {
+  "id": "palampur",
+  "name": "Palampur",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 2250,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-palampur"
+  },
+  "home": {
+   "before": 2300,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/searchresults.html?ss=Palampur%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/palampur/restaurants"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 25150
+  }
+ },
+ {
+  "id": "kinner-kailash",
+  "name": "Kinner Kailash",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4700,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 2700,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 800,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 3700,
+   "after": 3700,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 36900,
+   "after": null
+  }
+ },
+ {
+  "id": "sarahan",
+  "name": "Sarahan",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 1700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/india/sarahan/budget-hotels"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 34400,
+   "after": 33350
+  }
+ },
+ {
+  "id": "chitkul",
+  "name": "Chitkul",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 3450,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 1550,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 600,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 4000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+  },
+  "food": {
+   "before": 900,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 31550
+  }
+ },
+ {
+  "id": "sangla",
+  "name": "Sangla Valley",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 3750,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-sangla"
+  },
+  "home": {
+   "before": 2550,
+   "after": 2000,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/sangla/hotels"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 4000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+  },
+  "food": {
+   "before": 900,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 32450
+  }
+ },
+ {
+  "id": "kalpa",
+  "name": "Kalpa",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 3950,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2000,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 760,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 31050
+  }
+ },
+ {
+  "id": "kinnaur",
+  "name": "Kinnaur",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 31350
+  }
+ },
+ {
+  "id": "nako",
+  "name": "Nako",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4400,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2750,
+   "after": 3400,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/nako.html"
+  },
+  "dorm": {
+   "before": 650,
+   "after": 600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 36400
+  }
+ },
+ {
+  "id": "shrikhand-mahadev",
+  "name": "Shrikhand Mahadev",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4900,
+   "after": 4500,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2850,
+   "after": 2500,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 850,
+   "after": 790,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3900,
+   "after": 3900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1050,
+   "after": 600,
+   "src": "researched 10-09",
+   "url": "https://www.tribuneindia.com/news/himachal/sacred-steps-fixed-rates-safety-boost-for-shrikhand-mahadev-yatra/"
+  },
+  "trip": {
+   "before": 38700,
+   "after": 33900
+  }
+ },
+ {
+  "id": "tirthan-valley",
+  "name": "Tirthan Valley",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 6100,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/tirthan-valley/hotels"
+  },
+  "home": {
+   "before": 2300,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/tirthan-valley/hotels"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 1800,
+   "src": "researched 10-09",
+   "url": "https://www.bookurtaxi.com/citywise/taxi-service-in-Tirthan-Valley"
+  },
+  "food": {
+   "before": 850,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/gushaini-the-most-complete-travel-guide/"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 31900
+  }
+ },
+ {
+  "id": "kullu",
+  "name": "Kullu",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 2850,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kullu"
+  },
+  "home": {
+   "before": 2300,
+   "after": 2000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.holidify.com/places/kullu/restaurants-places-to-eat-local-cuisine.html"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 27350
+  }
+ },
+ {
+  "id": "manali",
+  "name": "Manali",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4400,
+   "after": 1950,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2950,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 750,
+   "after": 410,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 2200,
+   "src": "researched 10-09",
+   "url": "https://www.himalayan-routes.com/manali-taxi-rate-list/"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://refuje.com/blog/kullu-manali-trip-cost-budget-2026"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 21850
+  }
+ },
+ {
+  "id": "great-himalayan-np",
+  "name": "Great Himalayan National Park",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4600,
+   "after": 6100,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/tirthan-valley/hotels"
+  },
+  "home": {
+   "before": 2650,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/tirthan-valley/hotels"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3600,
+   "after": 3600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 950,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/gushaini-the-most-complete-travel-guide/"
+  },
+  "trip": {
+   "before": 35800,
+   "after": 39100
+  }
+ },
+ {
+  "id": "keylong",
+  "name": "Keylong",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 1700,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/kyelang.html"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 31750
+  }
+ },
+ {
+  "id": "lahaul-valley",
+  "name": "Lahaul Valley",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 1700,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/kyelang.html"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 31750
+  }
+ },
+ {
+  "id": "sissu",
+  "name": "Sissu",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 5350,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-sissu"
+  },
+  "home": {
+   "before": 2550,
+   "after": 1700,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/sissu.html"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 35650
+  }
+ },
+ {
+  "id": "prashar-lake",
+  "name": "Prashar Lake",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 34400,
+   "after": 33350
+  }
+ },
+ {
+  "id": "barot-valley",
+  "name": "Barot Valley",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 3700,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2300,
+   "after": 2000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 650,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/barot-village-himachal-travel-guide/"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 29100
+  }
+ },
+ {
+  "id": "mandi",
+  "name": "Mandi",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4000,
+   "after": 2450,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-mandi"
+  },
+  "home": {
+   "before": 2300,
+   "after": 950,
+   "src": "researched 10-09",
+   "url": "https://www.kayak.co.in/Mandi-Hotels.80331.hotel.ksp"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 600,
+   "src": "researched 10-09",
+   "url": "https://traveltriangle.com/blog/restaurants-in-mandi/"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 24950
+  }
+ },
+ {
+  "id": "manikaran",
+  "name": "Manikaran",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4000,
+   "after": 2400,
+   "src": "researched 10-09",
+   "url": "https://in.trip.com/hotels/manikaran-hotels-list-74911/"
+  },
+  "home": {
+   "before": 2300,
+   "after": 2000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/"
+  },
+  "food": {
+   "before": 850,
+   "after": 550,
+   "src": "researched 10-09",
+   "url": "https://unpaqd.com/blog/manikaran-budget/"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 23600
+  }
+ },
+ {
+  "id": "kufri",
+  "name": "Kufri",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4400,
+   "after": 3700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kufri"
+  },
+  "home": {
+   "before": 2550,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/india/kufri/budget-hotels"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 1800,
+   "src": "researched 10-09",
+   "url": "https://thenewshimachal.com/2026/08/shimla-pre-paid-taxi-service-offers-fixed-fares-to-tourists-and-locals/"
+  },
+  "food": {
+   "before": 900,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.tripadvisor.com/Restaurants-g777776-c24-Kufri_Shimla_District_Himachal_Pradesh.html"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 24300
+  }
+ },
+ {
+  "id": "shimla",
+  "name": "Shimla",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4400,
+   "after": 3200,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 750,
+   "after": 500,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 1800,
+   "src": "researched 10-09",
+   "url": "https://thenewshimachal.com/2026/08/shimla-pre-paid-taxi-service-offers-fixed-fares-to-tourists-and-locals/"
+  },
+  "food": {
+   "before": 900,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.holidify.com/places/shimla/restaurants-places-to-eat-local-cuisine.html"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 22800
+  }
+ },
+ {
+  "id": "chail",
+  "name": "Chail",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 3650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-chail"
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-chail"
+  },
+  "dorm": {
+   "before": 700,
+   "after": 650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 1000,
+   "src": "researched 10-09",
+   "url": "https://www.holidify.com/places/chail/restaurants-places-to-eat-local-cuisine.html"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 32950
+  }
+ },
+ {
+  "id": "kasauli",
+  "name": "Kasauli",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4000,
+   "after": 3700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kasauli"
+  },
+  "home": {
+   "before": 2300,
+   "after": 4750,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-kasauli"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.holidify.com/pages/cafes-in-kasauli-5966.html"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 29900
+  }
+ },
+ {
+  "id": "solan",
+  "name": "Solan",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4000,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-solan"
+  },
+  "home": {
+   "before": 2300,
+   "after": 2000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.holidify.com/places/solan/restaurants-places-to-eat-local-cuisine.html"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 27500
+  }
+ },
+ {
+  "id": "jibhi",
+  "name": "Jibhi",
+  "state": "himachal-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 4000,
+   "after": 3950,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-jibhi"
+  },
+  "home": {
+   "before": 2300,
+   "after": 3450,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-jibhi"
+  },
+  "dorm": {
+   "before": 550,
+   "after": 550,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Jibhi?currency=INR"
+  },
+  "taxi": {
+   "before": 3200,
+   "after": 3200,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 850,
+   "after": 950,
+   "src": "researched 10-09",
+   "url": "https://www.jibhi.co.in/Restaurants-cafe-in-Jibhi"
+  },
+  "trip": {
+   "before": 31600,
+   "after": 32250
+  }
+ },
+ {
+  "id": "spiti-valley",
+  "name": "Spiti Valley",
+  "state": "himachal-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 5500,
+   "after": 4750,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kaza"
+  },
+  "home": {
+   "before": 3200,
+   "after": 2700,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/kaza/hotels"
+  },
+  "dorm": {
+   "before": 700,
+   "after": 650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4300,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/langza-komic-hikkim-local-sightseeing-kaza/"
+  },
+  "food": {
+   "before": 1150,
+   "after": 700,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/"
+  },
+  "trip": {
+   "before": 42900,
+   "after": 31850
+  }
+ },
+ {
+  "id": "achabal",
+  "name": "Achabal",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/kashmir-taxi-rates/"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 34400,
+   "after": 33350
+  }
+ },
+ {
+  "id": "katra",
+  "name": "Katra",
+  "state": "jammu-kashmir",
+  "conf": "medium",
+  "mid": {
+   "before": 4400,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-katra"
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 750,
+   "after": 150,
+   "src": "researched 10-09",
+   "url": "http://www.maavaishnodevi.org/blog/rented-accomodation"
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 34400,
+   "after": 28700
+  }
+ },
+ {
+  "id": "kokernag",
+  "name": "Kokernag",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4400,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3500,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/kashmir-taxi-rates/"
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 35200
+  }
+ },
+ {
+  "id": "verinag",
+  "name": "Verinag",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/kashmir-taxi-rates/"
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 34400,
+   "after": 33350
+  }
+ },
+ {
+  "id": "pahalgam",
+  "name": "Pahalgam",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 2950,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2600,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 800,
+   "after": 1170,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3800,
+   "src": "researched 10-09",
+   "url": "https://pahalgamtaxi.com/pahalgam-car-rentals.html"
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 32050
+  }
+ },
+ {
+  "id": "sinthan-top",
+  "name": "Sinthan Top",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 5200,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 3000,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 650,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 4100,
+   "after": 4100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1100,
+   "after": 1100,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 40800,
+   "after": null
+  }
+ },
+ {
+  "id": "gurez-valley",
+  "name": "Gurez Valley",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 5500,
+   "after": 5050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3200,
+   "after": 2800,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 700,
+   "after": 650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4400,
+   "after": 4400,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1150,
+   "after": 1150,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 43300,
+   "after": 41950
+  }
+ },
+ {
+  "id": "gulmarg",
+  "name": "Gulmarg",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4450,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2950,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 800,
+   "after": 740,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/srinagar-to-gulmarg-taxi-fare/"
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 31350
+  }
+ },
+ {
+  "id": "doodhpathri",
+  "name": "Doodhpathri",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4400,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 2700,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/kashmir-taxi-rates/"
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 32000
+  }
+ },
+ {
+  "id": "tosamaidan",
+  "name": "Tosamaidan",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4400,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 36400
+  }
+ },
+ {
+  "id": "yusmarg",
+  "name": "Yusmarg",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4400,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/kashmir-taxi-rates/"
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 31200
+  }
+ },
+ {
+  "id": "bhaderwah",
+  "name": "Bhaderwah",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4400,
+   "after": 4050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 2250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 510,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 3500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 34400,
+   "after": 33350
+  }
+ },
+ {
+  "id": "sonamarg",
+  "name": "Sonamarg",
+  "state": "jammu-kashmir",
+  "conf": "medium",
+  "mid": {
+   "before": 4800,
+   "after": 4150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-sonamarg"
+  },
+  "home": {
+   "before": 2800,
+   "after": 2450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 35650
+  }
+ },
+ {
+  "id": "srinagar",
+  "name": "Srinagar",
+  "state": "jammu-kashmir",
+  "conf": "medium",
+  "mid": {
+   "before": 4400,
+   "after": 3650,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2550,
+   "after": 1750,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 750,
+   "after": 990,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3500,
+   "after": 2000,
+   "src": "researched 10-09",
+   "url": "https://srinagartouristtaxi.com/kashmir-taxi-rates/"
+  },
+  "food": {
+   "before": 900,
+   "after": 750,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/srinagar/restaurants"
+  },
+  "trip": {
+   "before": 34400,
+   "after": 24950
+  }
+ },
+ {
+  "id": "kishtwar",
+  "name": "Kishtwar",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 5000,
+   "after": 4600,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2900,
+   "after": 2550,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4000,
+   "after": 4000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1050,
+   "after": 1050,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 39400,
+   "after": 38200
+  }
+ },
+ {
+  "id": "bangus-valley",
+  "name": "Bangus Valley",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 5500,
+   "after": 5050,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3200,
+   "after": 2800,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 700,
+   "after": 650,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4400,
+   "after": 4400,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1150,
+   "after": 1150,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 43300,
+   "after": 41950
+  }
+ },
+ {
+  "id": "lolab-valley",
+  "name": "Lolab Valley",
+  "state": "jammu-kashmir",
+  "conf": "low",
+  "mid": {
+   "before": 4800,
+   "after": 4400,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2800,
+   "after": 2450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 36400
+  }
+ },
+ {
+  "id": "patnitop",
+  "name": "Patnitop",
+  "state": "jammu-kashmir",
+  "conf": "medium",
+  "mid": {
+   "before": 4800,
+   "after": 4150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-patnitop"
+  },
+  "home": {
+   "before": 2800,
+   "after": 3650,
+   "src": "researched 10-09",
+   "url": "https://www.tripclap.com/places/patnitop/hotels"
+  },
+  "dorm": {
+   "before": 600,
+   "after": 560,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 35650
+  }
+ },
+ {
+  "id": "khardung-la",
+  "name": "Khardung La",
+  "state": "ladakh",
+  "conf": "high",
+  "mid": {
+   "before": 7700,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 4400,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 1300,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 5500,
+   "after": 4350,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-11.jpg"
+  },
+  "food": {
+   "before": 1600,
+   "after": 1600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 57900,
+   "after": null
+  }
+ },
+ {
+  "id": "turtuk",
+  "name": "Turtuk",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 5900,
+   "after": 5450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3400,
+   "after": 1950,
+   "src": "researched 10-09",
+   "url": "https://www.booking.com/city/in/turtuk.html"
+  },
+  "dorm": {
+   "before": 800,
+   "after": 740,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4600,
+   "after": 4600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1250,
+   "after": 1000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/"
+  },
+  "trip": {
+   "before": 46100,
+   "after": 42750
+  }
+ },
+ {
+  "id": "umlingla",
+  "name": "Umlingla",
+  "state": "ladakh",
+  "conf": "medium",
+  "mid": {
+   "before": 7700,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "home": {
+   "before": 4400,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "dorm": {
+   "before": 1000,
+   "after": null,
+   "src": "removed: no lodging",
+   "url": null
+  },
+  "taxi": {
+   "before": 6000,
+   "after": 6800,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/"
+  },
+  "food": {
+   "before": 1600,
+   "after": 1100,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/plan-trip-umling-la-pass-highest-motorable-pass/"
+  },
+  "trip": {
+   "before": 59900,
+   "after": null
+  }
+ },
+ {
+  "id": "pangong-lake",
+  "name": "Pangong Tso",
+  "state": "ladakh",
+  "conf": "medium",
+  "mid": {
+   "before": 7300,
+   "after": 6700,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 4300,
+   "after": 3250,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 950,
+   "after": 880,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 5500,
+   "after": 5500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1550,
+   "after": 1100,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/"
+  },
+  "trip": {
+   "before": 56300,
+   "after": 50900
+  }
+ },
+ {
+  "id": "hanle",
+  "name": "Hanle",
+  "state": "ladakh",
+  "conf": "medium",
+  "mid": {
+   "before": 7700,
+   "after": 4850,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 4400,
+   "after": 3350,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 1000,
+   "after": 930,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 6500,
+   "after": 6500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1600,
+   "after": 1600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 61900,
+   "after": 53350
+  }
+ },
+ {
+  "id": "tso-moriri",
+  "name": "Tso Moriri",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 7300,
+   "after": 6700,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 4300,
+   "after": 3800,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 950,
+   "after": 880,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 5500,
+   "after": 5500,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1550,
+   "after": 1100,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/"
+  },
+  "trip": {
+   "before": 56300,
+   "after": 50900
+  }
+ },
+ {
+  "id": "drass",
+  "name": "Drass",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 5900,
+   "after": 5450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3400,
+   "after": 1300,
+   "src": "researched 10-09",
+   "url": "https://www.holidify.com/places/dras/hotels-where-to-stay.html"
+  },
+  "dorm": {
+   "before": 800,
+   "after": 740,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4600,
+   "after": 4600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1250,
+   "after": 1250,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 46100,
+   "after": 44750
+  }
+ },
+ {
+  "id": "kargil",
+  "name": "Kargil",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 5900,
+   "after": 3650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-kargil"
+  },
+  "home": {
+   "before": 3400,
+   "after": 3000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 800,
+   "after": 740,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4600,
+   "after": 4600,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1250,
+   "after": 1000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/kargil-war-memorial-the-ultimate-travel-guide/"
+  },
+  "trip": {
+   "before": 46100,
+   "after": 37350
+  }
+ },
+ {
+  "id": "nubra-valley",
+  "name": "Nubra Valley",
+  "state": "ladakh",
+  "conf": "medium",
+  "mid": {
+   "before": 5900,
+   "after": 3200,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-hunder"
+  },
+  "home": {
+   "before": 3400,
+   "after": 3000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 1000,
+   "after": 450,
+   "src": "researched 10-09",
+   "url": "https://en.wikivoyage.org/wiki/Nubra_Valley"
+  },
+  "taxi": {
+   "before": 5000,
+   "after": 5000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 1250,
+   "after": 1000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/"
+  },
+  "trip": {
+   "before": 47700,
+   "after": 37600
+  }
+ },
+ {
+  "id": "alchi",
+  "name": "Alchi",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 5900,
+   "after": 5450,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3400,
+   "after": 3000,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 800,
+   "after": 740,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 4600,
+   "after": 3500,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-3.jpg"
+  },
+  "food": {
+   "before": 1250,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/likir-monastery-travel-guide-leh-ladakh/"
+  },
+  "trip": {
+   "before": 46100,
+   "after": 37550
+  }
+ },
+ {
+  "id": "lamayuru",
+  "name": "Lamayuru",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 6400,
+   "after": 5900,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3700,
+   "after": 3250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 850,
+   "after": 790,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 5000,
+   "after": 6750,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-4.jpg"
+  },
+  "food": {
+   "before": 1350,
+   "after": 1200,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/lamayuru-monastery-travel-guide-ladakh/"
+  },
+  "trip": {
+   "before": 50000,
+   "after": 54300
+  }
+ },
+ {
+  "id": "likir",
+  "name": "Likir",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 6400,
+   "after": 5900,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 3700,
+   "after": 3250,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 850,
+   "after": 790,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 5000,
+   "after": 2950,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-4.jpg"
+  },
+  "food": {
+   "before": 1350,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/likir-monastery-travel-guide-leh-ladakh/"
+  },
+  "trip": {
+   "before": 50000,
+   "after": 36700
+  }
+ },
+ {
+  "id": "leh",
+  "name": "Leh",
+  "state": "ladakh",
+  "conf": "medium",
+  "mid": {
+   "before": 6400,
+   "after": 3050,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 3700,
+   "after": 1900,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 1100,
+   "after": 550,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 5000,
+   "after": 3400,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-24.jpg"
+  },
+  "food": {
+   "before": 1350,
+   "after": 1000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/"
+  },
+  "trip": {
+   "before": 50000,
+   "after": 30750
+  }
+ },
+ {
+  "id": "zanskar",
+  "name": "Zanskar Valley",
+  "state": "ladakh",
+  "conf": "low",
+  "mid": {
+   "before": 7700,
+   "after": 7100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 4400,
+   "after": 3850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 1000,
+   "after": 930,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 6000,
+   "after": 6000,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/local-sightseeing-in-padum-zanskar-valley/"
+  },
+  "food": {
+   "before": 1600,
+   "after": 800,
+   "src": "researched 10-09",
+   "url": "https://discoverwithdheeraj.com/cost-budget-for-zanskar-valley-trip/"
+  },
+  "trip": {
+   "before": 59900,
+   "after": 51700
+  }
+ },
+ {
+  "id": "mathura",
+  "name": "Mathura",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 2650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-mathura"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1800,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-mathura"
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2300,
+   "src": "researched 10-09",
+   "url": "https://mathuracab.com/packages.html"
+  },
+  "food": {
+   "before": 750,
+   "after": 950,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/mathura"
+  },
+  "trip": {
+   "before": 28200,
+   "after": 24750
+  }
+ },
+ {
+  "id": "vrindavan",
+  "name": "Vrindavan",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 2550,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-vrindavan"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2300,
+   "src": "researched 10-09",
+   "url": "https://mathuracab.com/packages.html"
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 22850
+  }
+ },
+ {
+  "id": "fatehpur-sikri",
+  "name": "Fatehpur Sikri",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3300,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 1800,
+   "src": "researched 10-09",
+   "url": "https://www.agracabs.com"
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 23100
+  }
+ },
+ {
+  "id": "chitrakoot",
+  "name": "Chitrakoot",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 2500,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-chitrakoot"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 24900
+  }
+ },
+ {
+  "id": "lucknow",
+  "name": "Lucknow",
+  "state": "uttar-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 3600,
+   "after": 3650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-lucknow"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-lucknow"
+  },
+  "dorm": {
+   "before": 490,
+   "after": 670,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Lucknow?currency=INR"
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 1300,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/lucknow/legendary-places"
+  },
+  "trip": {
+   "before": 28200,
+   "after": 32750
+  }
+ },
+ {
+  "id": "prayagraj",
+  "name": "Prayagraj",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3450,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-prayagraj"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 900,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/allahabad"
+  },
+  "trip": {
+   "before": 28200,
+   "after": 28950
+  }
+ },
+ {
+  "id": "ayodhya",
+  "name": "Ayodhya",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 2400,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-ayodhya"
+  },
+  "home": {
+   "before": 2100,
+   "after": 2650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-ayodhya"
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 24600
+  }
+ },
+ {
+  "id": "kushinagar",
+  "name": "Kushinagar",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3300,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 27300
+  }
+ },
+ {
+  "id": "sravasti",
+  "name": "Sravasti",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3300,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 27300
+  }
+ },
+ {
+  "id": "varanasi",
+  "name": "Varanasi",
+  "state": "uttar-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 3600,
+   "after": 3600,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2100,
+   "after": 2700,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 400,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 1900,
+   "src": "researched 10-09",
+   "url": "https://www.banarastaxi.com"
+  },
+  "food": {
+   "before": 750,
+   "after": 1250,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/varanasi"
+  },
+  "trip": {
+   "before": 28200,
+   "after": 28400
+  }
+ },
+ {
+  "id": "dudhwa-national-park",
+  "name": "Dudhwa National Park",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 4000,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-palia-kalan"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 29400
+  }
+ },
+ {
+  "id": "sarnath",
+  "name": "Sarnath",
+  "state": "uttar-pradesh",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3300,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 27300
+  }
+ },
+ {
+  "id": "agra",
+  "name": "Agra",
+  "state": "uttar-pradesh",
+  "conf": "medium",
+  "mid": {
+   "before": 3600,
+   "after": 2750,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-agra"
+  },
+  "home": {
+   "before": 2100,
+   "after": 2800,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-agra"
+  },
+  "dorm": {
+   "before": 650,
+   "after": 400,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Agra?currency=INR"
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 1800,
+   "src": "researched 10-09",
+   "url": "https://www.agracabs.com"
+  },
+  "food": {
+   "before": 750,
+   "after": 1250,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/agra/6-local-favourite-places"
+  },
+  "trip": {
+   "before": 28200,
+   "after": 25450
+  }
+ },
+ {
+  "id": "damdama-sahib",
+  "name": "Takht Sri Damdama Sahib",
+  "state": "punjab",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 3500,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 28900
+  }
+ },
+ {
+  "id": "amritsar",
+  "name": "Amritsar",
+  "state": "punjab",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 2650,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "home": {
+   "before": 2200,
+   "after": 1600,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 380,
+   "src": "observed 10-08",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 1400,
+   "src": "researched 10-09",
+   "url": "https://amritsartaxi.com/amritsar-taxi-fare/"
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 19950
+  }
+ },
+ {
+  "id": "patiala",
+  "name": "Patiala",
+  "state": "punjab",
+  "conf": "medium",
+  "mid": {
+   "before": 3800,
+   "after": 2300,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-patiala"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 1350,
+   "src": "researched 10-09",
+   "url": "https://www.zomato.com/patiala/dhaba"
+  },
+  "trip": {
+   "before": 29800,
+   "after": 29700
+  }
+ },
+ {
+  "id": "anandpur-sahib",
+  "name": "Anandpur Sahib",
+  "state": "punjab",
+  "conf": "low",
+  "mid": {
+   "before": 3800,
+   "after": 2700,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-anandpur-sahib"
+  },
+  "home": {
+   "before": 2200,
+   "after": 1950,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 500,
+   "after": 470,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 3000,
+   "after": 3000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 800,
+   "after": 800,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 29800,
+   "after": 26500
+  }
+ },
+ {
+  "id": "kurukshetra",
+  "name": "Kurukshetra",
+  "state": "haryana",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 2250,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-kurukshetra"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 24150
+  }
+ },
+ {
+  "id": "morni-hills",
+  "name": "Morni Hills",
+  "state": "haryana",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3350,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/hotels-in-morni"
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 27450
+  }
+ },
+ {
+  "id": "pinjore-gardens",
+  "name": "Pinjore Gardens",
+  "state": "haryana",
+  "conf": "low",
+  "mid": {
+   "before": 3600,
+   "after": 3300,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "home": {
+   "before": 2100,
+   "after": 1850,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 490,
+   "after": 460,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "taxi": {
+   "before": 2850,
+   "after": 2850,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 750,
+   "after": 750,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 28200,
+   "after": 27300
+  }
+ },
+ {
+  "id": "delhi",
+  "name": "Delhi",
+  "state": "delhi",
+  "conf": "medium",
+  "mid": {
+   "before": 4800,
+   "after": 4650,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-new-delhi"
+  },
+  "home": {
+   "before": 2750,
+   "after": 4150,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/homestays-in-new-delhi"
+  },
+  "dorm": {
+   "before": 850,
+   "after": 1020,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/New-Delhi?currency=INR"
+  },
+  "taxi": {
+   "before": 3800,
+   "after": 3000,
+   "src": "researched 10-09",
+   "url": "https://delhitourism.gov.in/booking/car_package.html"
+  },
+  "food": {
+   "before": 1000,
+   "after": 1000,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 37600,
+   "after": 33950
+  }
+ },
+ {
+  "id": "chandigarh",
+  "name": "Chandigarh",
+  "state": "chandigarh",
+  "conf": "medium",
+  "mid": {
+   "before": 4200,
+   "after": 3200,
+   "src": "researched 10-09",
+   "url": "https://www.cleartrip.com/hotels/3-star-hotels-in-chandigarh"
+  },
+  "home": {
+   "before": 2400,
+   "after": 2100,
+   "src": "model, calibrated",
+   "url": null
+  },
+  "dorm": {
+   "before": 550,
+   "after": 610,
+   "src": "researched 10-09",
+   "url": "https://www.hostelworld.com/hostels/Chandigarh?currency=INR"
+  },
+  "taxi": {
+   "before": 3300,
+   "after": 3300,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "food": {
+   "before": 900,
+   "after": 900,
+   "src": "model (unchanged)",
+   "url": null
+  },
+  "trip": {
+   "before": 33000,
+   "after": 30000
+  }
+ }
+]

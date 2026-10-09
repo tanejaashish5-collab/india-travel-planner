@@ -1,0 +1,937 @@
+{
+  "batch": "B8",
+  "researched_on": "2026-10-09",
+  "methodology_note": "WebSearch quota was exhausted for this session, so no search-engine discovery was possible. Every figure comes from a page fetched directly (known URL patterns from the brief, site-internal search on discoverwithdheeraj.com, and links found on fetched pages). Result: taxi evidence for Spiti/Kinnaur rests mainly on ONE blogger (Discover with Dheeraj, 'as of 2025-2026', pages updated Sep-Oct 2026) plus operator pages for Lahaul. No taxi-union rate card was fetched for Kaza, Reckong Peo or Keylong; the Kaza Taxi Union Sumo fare is cited second-hand. Cleartrip stay prices are 13-14 Nov 2026, pre-tax, discounted, and only cover properties still available; Booking/TripClap/Hostelworld prices are undated 'from' prices. Gozocabs, bookurtaxi and Holidify/TripClap pages were used only where the route/place resolved correctly. Kaza, Chitkul, Kalpa: stay omitted (observed).",
+  "destinations": {
+    "spiti-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Kaza (base town; Kaza stay is also observed separately)",
+        "mid_median_inr": 4230,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kaza",
+          "https://www.cleartrip.com/hotels/homestays-in-kaza"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 2418,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.tripclap.com/places/kaza/hotels"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://discoverwithdheeraj.com/kaza-travel-guide-spiti-valley/"
+        ],
+        "price_basis": "Mid: Cleartrip Kaza, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted: Mahamaya Regency 3,516; SOL ECO Hotel 3,849; Hotel Norbu Ghephel 4,611; Yellow Hotels & Cottages 5,839 (4 priced of 15 listed; 11 sold out). Homestay: TripClap Kaza-town homestays 'onwards per night' (undated): Pelyang 2,124; Norbukhang 2,418; Namsay 3,186. Dorm: DwD says Moustache Hostel dorm 'starting around Rs 500-765' and Kaza hostels 500-900/bed (a range, no n).",
+        "notes": "Report for base town Kaza. Cleartrip's 4 available mid hotels are off-season discounted OTA prices and run higher than the DwD blogger's 'mid-range 1,500-3,000' and 'budget 600-1,000' for Kaza (updated 2 Oct 2026); both shown, they conflict ~1.5x. IMPORTANT BUNDLING: village homestays across Spiti (Langza 1,200-1,800, Komic 800-1,500, Mudh 800-1,500, Lhalung 800-1,200) are quoted PER PERSON per night INCLUDING dinner+breakfast (DwD), so a double room is roughly 2x. Kibber homestays 'from around 2,700 per night on booking platforms' vs 500-2,500 cash (DwD)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "SUV/jeep (Innova/Scorpio/Bolero class; sources do not name the vehicle)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kaza: Langza-Komic-Hikkim loop (~55 km round trip)",
+            "inr": 3000,
+            "range": "2,500-3,500 (DwD, 'as of 2026', updated 2 Oct 2026)"
+          },
+          {
+            "route": "Kaza: Key-Kibber-Gette-Tashigang loop",
+            "inr": 2750,
+            "range": "2,500-3,000; peak season 3,000-4,000 (DwD, 'as of 2025-2026')"
+          },
+          {
+            "route": "Kaza: both loops combined, full day",
+            "inr": 3250,
+            "range": "3,000-3,500 (DwD)"
+          },
+          {
+            "route": "Kaza to Pin Valley/Mudh and back, day trip",
+            "inr": 3500,
+            "range": "3,000-4,000 (DwD, page updated 12 Jun 2026)"
+          },
+          {
+            "route": "Kaza to Chandratal and back (June to early Oct only)",
+            "inr": 4000,
+            "range": "3,000-4,000 return (DwD short-trip guide, Oct 2026) vs 5,000 (DwD budget guide, Sep 2026)"
+          },
+          {
+            "route": "Shared Sumo Kaza to Manali, per seat (Kaza Taxi Union, 2026-07; roughly June to Oct)",
+            "inr": 1200,
+            "range": "about 1,200 per person"
+          },
+          {
+            "route": "Manali to Kaza, sedan one-way (~202 km, before GST)",
+            "inr": 7753,
+            "range": "Gozocabs: sedan 7,753; Ertiga 10,548; Innova 15,326. Aggregator list price, not a union card"
+          },
+          {
+            "route": "Kaza to Shimla Airport (419 km), vehicle not stated",
+            "inr": 11500,
+            "range": "single package line on bookurtaxi.com"
+          }
+        ],
+        "basis": "No taxi-union card or official tariff was fetchable. Local day figure = middle of the three Kaza local-circuit quotes (Langza loop 2,500-3,500; Key/Kibber loop 2,500-3,000; both together 3,000-3,500), all from one blogger (Discover with Dheeraj, 'as of 2025-2026', pages updated Jun-Oct 2026) who says to treat 2,500-3,000 'as the starting point for bargaining rather than a fixed rate'. Same blogger: hired Innova/Scorpio with driver for multi-day trips is 5,000-6,000 per day (older Innova/Xylo/Scorpio 5,000-5,500), plus 300-500 per night driver halt; that is a running rate for long trips, not the local-circuit price. Kaza Taxi Union Sumo fare comes via the same blogger (cited 'as of 2026-07').",
+        "sources": [
+          "https://discoverwithdheeraj.com/langza-komic-hikkim-local-sightseeing-kaza/",
+          "https://discoverwithdheeraj.com/key-kibber-gette-tashigang-local-sightseeing-in-kaza/",
+          "https://discoverwithdheeraj.com/list-of-taxi-drivers-for-spiti-valley-kinnaur-valley/",
+          "https://discoverwithdheeraj.com/pin-valley-national-park-guide-2026/",
+          "https://discoverwithdheeraj.com/chandratal-lake-common-itinerary/",
+          "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/",
+          "https://www.gozocabs.com/book-taxi/manali-kaza",
+          "https://www.bookurtaxi.com/citywise/taxi-service-in-Kaza"
+        ],
+        "notes": "Region id: figures are for the base town Kaza. Local circuits are priced per vehicle (not per km). Dhankar has no separate fare in any source; Dhankar+Pin is usually bundled with the Pin Valley day (3,000-4,000). Shared seats also exist: Kaza-Dhankar-Pin 50-70 per person, infrequent (DwD Pin Valley page); Langza page quotes shared 800-1,200 per person for the loop. The generic plains rate card on bookurtaxi (Dzire 8h/80km 1,800; Ertiga 2,600; Innova Crysta 3,000, Chandigarh-based) is NOT a Spiti rate and was not used. Gozocabs resolved several Spiti village routes to wrong places (Kaza-Kibber shown as 2,580 km), so only its Manali-Kaza page (202 km, plausible) is quoted."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 700,
+        "basis": "Budget: dhaba meal 100-200, thali 80-150, 'backpacker' food 300-400/day (DwD Spiti budget guide, Sep 2026), so about 350. Standard: Kaza restaurant meal 200-400 and cafe meal with coffee 250-400 (DwD), 'mid-range' food 500-700/day and 'comfort' 700-900/day, so about 700 for 3 sit-down meals. Kaza listings per person per meal: Park View 150, Sachin Kunga 150, Sol Cafe 100 (TripClap per-person; DwD says a meal for two at Sol is 400-600), Himalayan Cafe 300 for two, Cafe Zomsa 500 for two (Holidify). 6 places, wide spread.",
+        "sources": [
+          "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/",
+          "https://discoverwithdheeraj.com/kaza-travel-guide-spiti-valley/",
+          "https://www.holidify.com/places/kaza/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.tripclap.com/places/kaza/restaurants"
+        ],
+        "notes": "Region id: figures are for the base town Kaza. BUNDLING: village homestays (Langza, Komic, Mudh, Lhalung) normally quote PER PERSON INCLUDING dinner and breakfast: Langza 1,200-1,800, Komic 800-1,500, Mudh 800-1,500, Lhalung/Mud 800-1,200 per person per night (DwD, 2026). Unbundled homestay meal 150-250 per meal (or 'Rs 100-200 extra' in the Kaza guide). Where a traveller is on such a bundle, only lunch (100-250) is paid separately; the budget/standard figures above assume unbundled meals."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low-medium (4 dated Cleartrip prices, conflicts with blogger range)",
+        "taxi": "low (one blogger; no union card seen)",
+        "food": "medium-low"
+      },
+      "unverified": [
+        "Region id: reported for Kaza, the main base town",
+        "Taxi union fixed-fare card for Kaza local circuits (Hikkim/Komic/Langza, Key/Kibber, Dhankar/Pin): not found; only blogger quotes",
+        "Dhankar-only fare",
+        "Budget hotel tier for Kaza (no itemised list)",
+        "Dorm bed price (only a 500-765 range)"
+      ]
+    },
+    "kaza": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "SUV/jeep (Innova/Scorpio/Bolero class; sources do not name the vehicle)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kaza: Langza-Komic-Hikkim loop (~55 km round trip)",
+            "inr": 3000,
+            "range": "2,500-3,500 (DwD, 'as of 2026', updated 2 Oct 2026)"
+          },
+          {
+            "route": "Kaza: Key-Kibber-Gette-Tashigang loop",
+            "inr": 2750,
+            "range": "2,500-3,000; peak season 3,000-4,000 (DwD, 'as of 2025-2026')"
+          },
+          {
+            "route": "Kaza: both loops combined, full day",
+            "inr": 3250,
+            "range": "3,000-3,500 (DwD)"
+          },
+          {
+            "route": "Kaza to Pin Valley/Mudh and back, day trip",
+            "inr": 3500,
+            "range": "3,000-4,000 (DwD, page updated 12 Jun 2026)"
+          },
+          {
+            "route": "Kaza to Chandratal and back (June to early Oct only)",
+            "inr": 4000,
+            "range": "3,000-4,000 return (DwD short-trip guide, Oct 2026) vs 5,000 (DwD budget guide, Sep 2026)"
+          },
+          {
+            "route": "Shared Sumo Kaza to Manali, per seat (Kaza Taxi Union, 2026-07; roughly June to Oct)",
+            "inr": 1200,
+            "range": "about 1,200 per person"
+          },
+          {
+            "route": "Manali to Kaza, sedan one-way (~202 km, before GST)",
+            "inr": 7753,
+            "range": "Gozocabs: sedan 7,753; Ertiga 10,548; Innova 15,326. Aggregator list price, not a union card"
+          },
+          {
+            "route": "Kaza to Shimla Airport (419 km), vehicle not stated",
+            "inr": 11500,
+            "range": "single package line on bookurtaxi.com"
+          }
+        ],
+        "basis": "No taxi-union card or official tariff was fetchable. Local day figure = middle of the three Kaza local-circuit quotes (Langza loop 2,500-3,500; Key/Kibber loop 2,500-3,000; both together 3,000-3,500), all from one blogger (Discover with Dheeraj, 'as of 2025-2026', pages updated Jun-Oct 2026) who says to treat 2,500-3,000 'as the starting point for bargaining rather than a fixed rate'. Same blogger: hired Innova/Scorpio with driver for multi-day trips is 5,000-6,000 per day (older Innova/Xylo/Scorpio 5,000-5,500), plus 300-500 per night driver halt; that is a running rate for long trips, not the local-circuit price. Kaza Taxi Union Sumo fare comes via the same blogger (cited 'as of 2026-07').",
+        "sources": [
+          "https://discoverwithdheeraj.com/langza-komic-hikkim-local-sightseeing-kaza/",
+          "https://discoverwithdheeraj.com/key-kibber-gette-tashigang-local-sightseeing-in-kaza/",
+          "https://discoverwithdheeraj.com/list-of-taxi-drivers-for-spiti-valley-kinnaur-valley/",
+          "https://discoverwithdheeraj.com/pin-valley-national-park-guide-2026/",
+          "https://discoverwithdheeraj.com/chandratal-lake-common-itinerary/",
+          "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/",
+          "https://www.gozocabs.com/book-taxi/manali-kaza",
+          "https://www.bookurtaxi.com/citywise/taxi-service-in-Kaza"
+        ],
+        "notes": "Local circuits are priced per vehicle (not per km). Dhankar has no separate fare in any source; Dhankar+Pin is usually bundled with the Pin Valley day (3,000-4,000). Shared seats also exist: Kaza-Dhankar-Pin 50-70 per person, infrequent (DwD Pin Valley page); Langza page quotes shared 800-1,200 per person for the loop. The generic plains rate card on bookurtaxi (Dzire 8h/80km 1,800; Ertiga 2,600; Innova Crysta 3,000, Chandigarh-based) is NOT a Spiti rate and was not used. Gozocabs resolved several Spiti village routes to wrong places (Kaza-Kibber shown as 2,580 km), so only its Manali-Kaza page (202 km, plausible) is quoted."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 700,
+        "basis": "Budget: dhaba meal 100-200, thali 80-150, 'backpacker' food 300-400/day (DwD Spiti budget guide, Sep 2026), so about 350. Standard: Kaza restaurant meal 200-400 and cafe meal with coffee 250-400 (DwD), 'mid-range' food 500-700/day and 'comfort' 700-900/day, so about 700 for 3 sit-down meals. Kaza listings per person per meal: Park View 150, Sachin Kunga 150, Sol Cafe 100 (TripClap per-person; DwD says a meal for two at Sol is 400-600), Himalayan Cafe 300 for two, Cafe Zomsa 500 for two (Holidify). 6 places, wide spread.",
+        "sources": [
+          "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/",
+          "https://discoverwithdheeraj.com/kaza-travel-guide-spiti-valley/",
+          "https://www.holidify.com/places/kaza/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.tripclap.com/places/kaza/restaurants"
+        ],
+        "notes": "BUNDLING: village homestays (Langza, Komic, Mudh, Lhalung) normally quote PER PERSON INCLUDING dinner and breakfast: Langza 1,200-1,800, Komic 800-1,500, Mudh 800-1,500, Lhalung/Mud 800-1,200 per person per night (DwD, 2026). Unbundled homestay meal 150-250 per meal (or 'Rs 100-200 extra' in the Kaza guide). Where a traveller is on such a bundle, only lunch (100-250) is paid separately; the budget/standard figures above assume unbundled meals."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "omitted (observed)",
+        "taxi": "low (one blogger; no union card seen)",
+        "food": "medium-low"
+      },
+      "unverified": [
+        "Taxi union fixed-fare card (Hikkim/Komic/Langza, Key/Kibber, Dhankar/Pin) not found; blogger quotes only",
+        "Dhankar-only fare",
+        "Menu prices for individual dishes"
+      ]
+    },
+    "sangla": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3368,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-sangla"
+        ],
+        "budget_hotel_median_inr": 1770,
+        "budget_n": 6,
+        "budget_sources": [
+          "https://www.tripclap.com/places/sangla/hotels"
+        ],
+        "homestay_median_inr": 1770,
+        "homestay_n": 5,
+        "homestay_sources": [
+          "https://www.tripclap.com/places/sangla/hotels",
+          "https://www.booking.com/city/in/sangla.html"
+        ],
+        "dorm_median_inr": 659,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Sangla?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted, the 4 priced of 14 listed (Kamru Riverside Camps 2,800; Prakash Regency 2,678; Sattva Pine Resort 5,268; Apple Orchard Farm 3,936; the other 10 incl. Zostel, Batseri and homestays were sold out). Budget: TripClap 'onwards per night' (undated, likely tax-incl) for Kinner Retreat 1,770, Dormico's Mount View 1,768, Mahima 1,652, Debbhumi Regency 1,888, Kailash View 1,770, Alpine Nest 1,947. Homestay: TripClap Maa Bhagwati 1,302, El Paraiso 1,486, Paradise 1,770, Toshim 3,481, Akshit 3,540. Dorm: Hostelworld Zostel Sangla 'from' 658.90 (undated). Booking.com USD 'price from' converted at 96.8 INR/USD (rate used by earlier batches, MTFX mid-market 8 Oct 2026: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/); Booking pages show NO stay dates (undated 'from' prices).",
+        "notes": "Different dates/sources per tier. Same property can differ by 1.7x across sources (Kinnor/Kinner Retreat: TripClap 1,770 vs Booking USD 31 = 3,001), so the budget and homestay tiers are soft. Booking 'from' for homestays: Hey Baby Home Stay 17.56 USD = 1,700; Toshim 35.33 USD = 3,420 (matches TripClap 3,481). DwD blogger ranges for comparison: homestays 500-1,200 (Sangla guide), budget hotels 800-2,500, guesthouses/homestays 1,200-2,000 (7-day itinerary)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 4000,
+        "vehicle": "Innova/Scorpio-class SUV (sources say 'depending on vehicle and route')",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Sangla local taxi, per day",
+            "inr": 4000,
+            "range": "3,500-4,500 (DwD Sangla guide, updated 2 Oct 2026)"
+          },
+          {
+            "route": "Kinnaur circuit, hired with driver, per day (driver stay and food included)",
+            "inr": 4250,
+            "range": "3,500-5,000 (DwD Kinnaur guide); Innova 3,000-3,500/day on a Shimla 7-day trip (DwD itinerary); Innova/Scorpio 5,000-6,000, older 4,000-5,000 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul, shared local taxi per seat",
+            "inr": 45,
+            "range": "40-50 per seat (DwD)"
+          },
+          {
+            "route": "Karcham to Sangla, shared taxi per person",
+            "inr": 175,
+            "range": "100-250 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul (22 km), sedan one-way, before GST",
+            "inr": 3253,
+            "range": "Gozocabs sedan 3,253 (its SUV lines 7,018-7,440 are inconsistent); aggregator list price, not a union card"
+          },
+          {
+            "route": "Shimla to Kinnaur, one-way drop",
+            "inr": 10000,
+            "range": "8,000-12,000 (DwD Kinnaur guide)"
+          }
+        ],
+        "basis": "Local day figure = Sangla local-taxi quote 3,500-4,500 per day (midpoint 4,000), cross-checked against three other day-rate quotes for Kinnaur (3,000-3,500 / 3,500-5,000 / 5,000-6,000). All from one blogger (Discover with Dheeraj, pages updated Sep-Oct 2026, figures 'as of 2025-2026'). No Kinnaur taxi-union fare card (Reckong Peo, Sangla, Kalpa) was fetchable: hpkinnaur.nic.in has none.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-7-day-itinerary-shimla-to-chitkul/",
+          "https://www.gozocabs.com/book-taxi/sangla-chitkul",
+          "https://hpkinnaur.nic.in/tourism-guide/"
+        ],
+        "notes": "Peo-Kalpa, Peo-Sangla, Peo-Chitkul and Peo-Nako union point-to-point fares were not found. Gozocabs resolved Reckong Peo-Sangla and Peo-Kalpa to a wrong place ('Kon', 1,964 km), so they were discarded."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 650,
+        "basis": "Budget: dhaba thali/meal 100-150, momos 50-80 a plate, rajma-chawal 60-100 unlimited (DwD Sangla/Kinnaur pages), so breakfast ~100 + lunch ~125 + dinner ~150 + tea, about 400; DwD quotes 'budget food' as both 200-300/day and 400-600/day (two different pages). Standard: local restaurants 150-300 per meal, hotel restaurants 250-400 / 300-600 per meal (DwD), mid-budget breakdown 100-200 + 150-250 + 150-250 plus snacks 100-150, so about 650. Restaurant-level data is thin: Holidify/TripClap list only Taste of Tibet (200, but Holidify says 'for two' and TripClap says 'per person'), Sonu's Cafe and Cafe 42 (no price); Holidify says Kalpa has 'no special restaurants'.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/",
+          "https://www.holidify.com/places/sangla/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/kalpa/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Homestays in Sangla/Kalpa/Chitkul often sell dinner+breakfast as an add-on; no bundled-rate figure was published for Kinnaur (unlike Spiti). Local Himachali food only is 'under 500 per person per day' (DwD)."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low-medium (4 dated Cleartrip + undated TripClap/Booking, conflicting)",
+        "taxi": "low (one blogger)",
+        "food": "low"
+      },
+      "unverified": [
+        "Taxi union fare card for Reckong Peo/Sangla/Chitkul",
+        "Peo-Sangla / Peo-Chitkul point-to-point fares",
+        "Restaurant menu prices in Sangla"
+      ]
+    },
+    "chitkul": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 4000,
+        "vehicle": "Innova/Scorpio-class SUV (sources say 'depending on vehicle and route')",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Sangla local taxi, per day",
+            "inr": 4000,
+            "range": "3,500-4,500 (DwD Sangla guide, updated 2 Oct 2026)"
+          },
+          {
+            "route": "Kinnaur circuit, hired with driver, per day (driver stay and food included)",
+            "inr": 4250,
+            "range": "3,500-5,000 (DwD Kinnaur guide); Innova 3,000-3,500/day on a Shimla 7-day trip (DwD itinerary); Innova/Scorpio 5,000-6,000, older 4,000-5,000 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul, shared local taxi per seat",
+            "inr": 45,
+            "range": "40-50 per seat (DwD)"
+          },
+          {
+            "route": "Karcham to Sangla, shared taxi per person",
+            "inr": 175,
+            "range": "100-250 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul (22 km), sedan one-way, before GST",
+            "inr": 3253,
+            "range": "Gozocabs sedan 3,253 (its SUV lines 7,018-7,440 are inconsistent); aggregator list price, not a union card"
+          },
+          {
+            "route": "Shimla to Kinnaur, one-way drop",
+            "inr": 10000,
+            "range": "8,000-12,000 (DwD Kinnaur guide)"
+          }
+        ],
+        "basis": "Local day figure = Sangla local-taxi quote 3,500-4,500 per day (midpoint 4,000), cross-checked against three other day-rate quotes for Kinnaur (3,000-3,500 / 3,500-5,000 / 5,000-6,000). All from one blogger (Discover with Dheeraj, pages updated Sep-Oct 2026, figures 'as of 2025-2026'). No Kinnaur taxi-union fare card (Reckong Peo, Sangla, Kalpa) was fetchable: hpkinnaur.nic.in has none.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-7-day-itinerary-shimla-to-chitkul/",
+          "https://www.gozocabs.com/book-taxi/sangla-chitkul",
+          "https://hpkinnaur.nic.in/tourism-guide/"
+        ],
+        "notes": "Chitkul is usually seen as a day out from Sangla (22 km), so the Sangla local day rate applies. Peo-Kalpa, Peo-Sangla, Peo-Chitkul and Peo-Nako union point-to-point fares were not found. Gozocabs resolved Reckong Peo-Sangla and Peo-Kalpa to a wrong place ('Kon', 1,964 km), so they were discarded."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 650,
+        "basis": "Budget: dhaba thali/meal 100-150, momos 50-80 a plate, rajma-chawal 60-100 unlimited (DwD Sangla/Kinnaur pages), so breakfast ~100 + lunch ~125 + dinner ~150 + tea, about 400; DwD quotes 'budget food' as both 200-300/day and 400-600/day (two different pages). Standard: local restaurants 150-300 per meal, hotel restaurants 250-400 / 300-600 per meal (DwD), mid-budget breakdown 100-200 + 150-250 + 150-250 plus snacks 100-150, so about 650. Restaurant-level data is thin: Holidify/TripClap list only Taste of Tibet (200, but Holidify says 'for two' and TripClap says 'per person'), Sonu's Cafe and Cafe 42 (no price); Holidify says Kalpa has 'no special restaurants'.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/",
+          "https://www.holidify.com/places/sangla/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/kalpa/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Homestays in Sangla/Kalpa/Chitkul often sell dinner+breakfast as an add-on; no bundled-rate figure was published for Kinnaur (unlike Spiti). Local Himachali food only is 'under 500 per person per day' (DwD). Zostel Chitkul dorm 500-600 and private room 1,500-1,900 (DwD, stay not part of this task)."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "omitted (observed)",
+        "taxi": "low (one blogger)",
+        "food": "low"
+      },
+      "unverified": [
+        "Taxi union fare card",
+        "Chitkul restaurant/menu prices (Holidify Chitkul restaurants page 404)",
+        "Sangla-Chitkul sedan quote 3,253 is an aggregator list price"
+      ]
+    },
+    "kalpa": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 4000,
+        "vehicle": "Innova/Scorpio-class SUV (sources say 'depending on vehicle and route')",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Sangla local taxi, per day",
+            "inr": 4000,
+            "range": "3,500-4,500 (DwD Sangla guide, updated 2 Oct 2026)"
+          },
+          {
+            "route": "Kinnaur circuit, hired with driver, per day (driver stay and food included)",
+            "inr": 4250,
+            "range": "3,500-5,000 (DwD Kinnaur guide); Innova 3,000-3,500/day on a Shimla 7-day trip (DwD itinerary); Innova/Scorpio 5,000-6,000, older 4,000-5,000 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul, shared local taxi per seat",
+            "inr": 45,
+            "range": "40-50 per seat (DwD)"
+          },
+          {
+            "route": "Karcham to Sangla, shared taxi per person",
+            "inr": 175,
+            "range": "100-250 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul (22 km), sedan one-way, before GST",
+            "inr": 3253,
+            "range": "Gozocabs sedan 3,253 (its SUV lines 7,018-7,440 are inconsistent); aggregator list price, not a union card"
+          },
+          {
+            "route": "Shimla to Kinnaur, one-way drop",
+            "inr": 10000,
+            "range": "8,000-12,000 (DwD Kinnaur guide)"
+          }
+        ],
+        "basis": "Local day figure = Sangla local-taxi quote 3,500-4,500 per day (midpoint 4,000), cross-checked against three other day-rate quotes for Kinnaur (3,000-3,500 / 3,500-5,000 / 5,000-6,000). All from one blogger (Discover with Dheeraj, pages updated Sep-Oct 2026, figures 'as of 2025-2026'). No Kinnaur taxi-union fare card (Reckong Peo, Sangla, Kalpa) was fetchable: hpkinnaur.nic.in has none.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-7-day-itinerary-shimla-to-chitkul/",
+          "https://www.gozocabs.com/book-taxi/sangla-chitkul",
+          "https://hpkinnaur.nic.in/tourism-guide/"
+        ],
+        "notes": "Kalpa is 12 km from Reckong Peo; the Kinnaur day rate applies. Peo-Kalpa, Peo-Sangla, Peo-Chitkul and Peo-Nako union point-to-point fares were not found. Gozocabs resolved Reckong Peo-Sangla and Peo-Kalpa to a wrong place ('Kon', 1,964 km), so they were discarded."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 650,
+        "basis": "Budget: dhaba thali/meal 100-150, momos 50-80 a plate, rajma-chawal 60-100 unlimited (DwD Sangla/Kinnaur pages), so breakfast ~100 + lunch ~125 + dinner ~150 + tea, about 400; DwD quotes 'budget food' as both 200-300/day and 400-600/day (two different pages). Standard: local restaurants 150-300 per meal, hotel restaurants 250-400 / 300-600 per meal (DwD), mid-budget breakdown 100-200 + 150-250 + 150-250 plus snacks 100-150, so about 650. Restaurant-level data is thin: Holidify/TripClap list only Taste of Tibet (200, but Holidify says 'for two' and TripClap says 'per person'), Sonu's Cafe and Cafe 42 (no price); Holidify says Kalpa has 'no special restaurants'.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/",
+          "https://www.holidify.com/places/sangla/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/kalpa/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Homestays in Sangla/Kalpa/Chitkul often sell dinner+breakfast as an add-on; no bundled-rate figure was published for Kinnaur (unlike Spiti). Local Himachali food only is 'under 500 per person per day' (DwD)."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "omitted (observed)",
+        "taxi": "low (one blogger)",
+        "food": "low"
+      },
+      "unverified": [
+        "Taxi union fare card",
+        "Kalpa restaurant prices (Holidify: 'no special restaurants in Kalpa'; TripClap Kalpa food section empty)"
+      ]
+    },
+    "kinnaur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Reckong Peo (district HQ); Kalpa is 12 km away and has observed stay data",
+        "mid_median_inr": 2741,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kalpa"
+        ],
+        "budget_hotel_median_inr": 1362,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kalpa",
+          "https://www.booking.com/city/in/kalpa.html"
+        ],
+        "homestay_median_inr": 1274,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.tripclap.com/places/sangla/hotels",
+          "https://www.booking.com/city/in/kalpa.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "NO Reckong Peo property list was fetchable (Cleartrip Peo 404, Booking Peo page returns the national page). Figures are KALPA, the nearest town with data. Mid: Cleartrip Kalpa '3-star' 13-14 Nov 2026 pre-tax, 3 priced of 12 (Kalpa Retreat 2,741; Nirvana 1,362; Wild Green Home Stay 4,403). Budget: Hotel Nirvana 1,362 (Cleartrip, same date) and Booking USD 17.15 = 1,660 (Booking URL slug says reckong-peo but listing shows Kalpa). Homestay: TripClap Theveloxhomestay Kalpa 1,274; Booking Shudarang Inn 25.68 USD = 2,486; Bliss Home Stay 11.35 USD = 1,099. Booking.com USD 'price from' converted at 96.8 INR/USD (rate used by earlier batches, MTFX mid-market 8 Oct 2026: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/); Booking pages show NO stay dates (undated 'from' prices).",
+        "notes": "LOW CONFIDENCE and not Peo-specific. Kalpa stay is already observed in the main data set, so prefer that. DwD blogger Kinnaur ranges: budget homestay/guesthouse 500-1,200, mid hotel 1,500-3,000, HPTDC hotel 3,500-5,000, PWD rest house 500-800."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 4000,
+        "vehicle": "Innova/Scorpio-class SUV (sources say 'depending on vehicle and route')",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Sangla local taxi, per day",
+            "inr": 4000,
+            "range": "3,500-4,500 (DwD Sangla guide, updated 2 Oct 2026)"
+          },
+          {
+            "route": "Kinnaur circuit, hired with driver, per day (driver stay and food included)",
+            "inr": 4250,
+            "range": "3,500-5,000 (DwD Kinnaur guide); Innova 3,000-3,500/day on a Shimla 7-day trip (DwD itinerary); Innova/Scorpio 5,000-6,000, older 4,000-5,000 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul, shared local taxi per seat",
+            "inr": 45,
+            "range": "40-50 per seat (DwD)"
+          },
+          {
+            "route": "Karcham to Sangla, shared taxi per person",
+            "inr": 175,
+            "range": "100-250 (DwD Kinnaur cost page)"
+          },
+          {
+            "route": "Sangla to Chitkul (22 km), sedan one-way, before GST",
+            "inr": 3253,
+            "range": "Gozocabs sedan 3,253 (its SUV lines 7,018-7,440 are inconsistent); aggregator list price, not a union card"
+          },
+          {
+            "route": "Shimla to Kinnaur, one-way drop",
+            "inr": 10000,
+            "range": "8,000-12,000 (DwD Kinnaur guide)"
+          }
+        ],
+        "basis": "Local day figure = Sangla local-taxi quote 3,500-4,500 per day (midpoint 4,000), cross-checked against three other day-rate quotes for Kinnaur (3,000-3,500 / 3,500-5,000 / 5,000-6,000). All from one blogger (Discover with Dheeraj, pages updated Sep-Oct 2026, figures 'as of 2025-2026'). No Kinnaur taxi-union fare card (Reckong Peo, Sangla, Kalpa) was fetchable: hpkinnaur.nic.in has none.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-7-day-itinerary-shimla-to-chitkul/",
+          "https://www.gozocabs.com/book-taxi/sangla-chitkul",
+          "https://hpkinnaur.nic.in/tourism-guide/"
+        ],
+        "notes": "Region id: reported for the base town Reckong Peo. Peo-Kalpa, Peo-Sangla, Peo-Chitkul and Peo-Nako union point-to-point fares were not found. Gozocabs resolved Reckong Peo-Sangla and Peo-Kalpa to a wrong place ('Kon', 1,964 km), so they were discarded."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 650,
+        "basis": "Budget: dhaba thali/meal 100-150, momos 50-80 a plate, rajma-chawal 60-100 unlimited (DwD Sangla/Kinnaur pages), so breakfast ~100 + lunch ~125 + dinner ~150 + tea, about 400; DwD quotes 'budget food' as both 200-300/day and 400-600/day (two different pages). Standard: local restaurants 150-300 per meal, hotel restaurants 250-400 / 300-600 per meal (DwD), mid-budget breakdown 100-200 + 150-250 + 150-250 plus snacks 100-150, so about 650. Restaurant-level data is thin: Holidify/TripClap list only Taste of Tibet (200, but Holidify says 'for two' and TripClap says 'per person'), Sonu's Cafe and Cafe 42 (no price); Holidify says Kalpa has 'no special restaurants'.",
+        "sources": [
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/cost-budget-for-kinnaur-valley-trip/",
+          "https://discoverwithdheeraj.com/kinnaur-valley-travel-guide-kalpa-sangla-chitkul/",
+          "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/",
+          "https://www.holidify.com/places/sangla/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/kalpa/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Region id: figures apply to the Kinnaur base (Peo/Kalpa/Sangla). Homestays in Sangla/Kalpa/Chitkul often sell dinner+breakfast as an add-on; no bundled-rate figure was published for Kinnaur (unlike Spiti). Local Himachali food only is 'under 500 per person per day' (DwD)."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (no Reckong Peo list; Kalpa used as stand-in)",
+        "taxi": "low (one blogger)",
+        "food": "low"
+      },
+      "unverified": [
+        "Region id: reported for Reckong Peo",
+        "Any Reckong Peo accommodation list with prices",
+        "Kinnaur taxi union card (Peo-Kalpa, Peo-Sangla, Peo-Chitkul, Peo-Nako)"
+      ]
+    },
+    "nako": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 3030,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/nako.html",
+          "https://www.tripclap.com/places/sangla/hotels"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Homestay only, n=2: Booking Nako Heights Homestay USD 21.08 = 2,041 (undated 'from'); TripClap StayApart Norbling Homestay, Nako 4,019 (undated 'onwards'). Median of two is just their mean. Booking.com USD 'price from' converted at 96.8 INR/USD (rate used by earlier batches, MTFX mid-market 8 Oct 2026: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/); Booking pages show NO stay dates (undated 'from' prices).",
+        "notes": "Cleartrip has no Nako page (404). Booking says Nako has 8 properties but exposes 2 (second, The Mount View Retreat, has no price). Spread is 2x, so treat as an order of magnitude only. Nako homestays are typically per-person with dinner+breakfast, as in Spiti, but no Nako rate basis was seen."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Nako-specific taxi quote found anywhere. Nako is a highway halt on the Reckong Peo-Kaza road (HRTC bus Peo-Kaza 400-600 per person, DwD budget guide); people reach it on the way through, not by local sightseeing hire. Nearest comparable day rates seen: Kinnaur 3,500-4,500 (Sangla page) and Spiti local loops 2,500-3,500 (Kaza pages). Not applied to Nako.",
+        "sources": [
+          "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/",
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/",
+          "https://discoverwithdheeraj.com/langza-komic-hikkim-local-sightseeing-kaza/"
+        ],
+        "notes": "Null on purpose. Nako lake is walkable from the village; no local cab tariff published."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "REGIONAL PROXY, not Nako-specific: no Nako restaurant or menu page found. Nako sits between Kinnaur (400/650) and Spiti (350/700), so 400/700 is the high side of both. Homestays in Nako are meal-inclusive style as in Spiti.",
+        "sources": [
+          "https://discoverwithdheeraj.com/spiti-valley-budget-guide-2026/",
+          "https://discoverwithdheeraj.com/sangla-valley-detailed-travel-guide/"
+        ],
+        "notes": "Treat as low confidence; replace if a Nako menu/thali price turns up."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (n=2, 2x spread)",
+        "taxi": "none (null)",
+        "food": "low (regional proxy, labelled)"
+      },
+      "unverified": [
+        "Any Nako taxi tariff",
+        "Nako restaurant/menu prices",
+        "Hotel and budget-hotel tiers (Cleartrip Nako page 404)",
+        "Dorm"
+      ]
+    },
+    "keylong": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2335,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.booking.com/city/in/kyelang.html"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1500,
+        "homestay_n": 5,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/kyelang.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Booking.com Kyelang page, undated 'price from', 2 adults 1 night. Mid (3-star): Hotel Biker Gang Hotel & Cafe Kyelang 27.58 USD = 2,670; Kubes by the Raasta, Jispa 20.66 USD = 2,000 (Treebo Melag Jispa 168.91 USD = 16,350 excluded as an outlier). Homestays: beheney Gondla 13.95 USD = 1,350; Shiva Gondla 14.46 = 1,400; Beyond Rohtang, Tandi 15.50 = 1,500; Sunflower Homes Gondla 25.82 = 2,499; Snowflake Gondla 25.83 = 2,500. Booking.com USD 'price from' converted at 96.8 INR/USD (rate used by earlier batches, MTFX mid-market 8 Oct 2026: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/); Booking pages show NO stay dates (undated 'from' prices).",
+        "notes": "Cleartrip 'Keylong' 3-star and homestay pages (13-14 Nov 2026) show 8 Keylong properties (Tandi Sarai, Hotel Blue Pine, Via Paradise, Keylong Heights, Zomsa Culturehub...) ALL SOLD OUT with no price: Keylong lodging is largely shut or unbookable in mid-Nov. Gondla/Tandi/Jispa homestays are 5-25 km from Keylong. Same Kubes by the Raasta shows 20.66 USD on this page and 56.83 USD on Booking's Sissu page, so Booking 'from' prices swing 2-3x by date."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Manali to Keylong, sedan (trip type not labelled; ~115 km)",
+            "inr": 6499,
+            "range": "hatchback 5,999; sedan 6,499; SUV 8,499; 9-seater 9,999; 12-seater 11,999 (manaliworldtravel 2026 fare table, tolls/permits included)"
+          },
+          {
+            "route": "Manali to Keylong, sedan, off-season fare",
+            "inr": 5999,
+            "range": "Alto 5,499; sedan 5,999; Innova 7,999 (same page FAQ)"
+          },
+          {
+            "route": "Manali to Leh one-way drop via Keylong, sedan (Feb 2026)",
+            "inr": 9000,
+            "range": "2-day tour with Sarchu/Jispa halt: sedan 10,000 (himalayan-routes.com)"
+          }
+        ],
+        "basis": "No Keylong or Lahaul local-sightseeing tariff found. Only Manali-based drop/tour fares from operator sites (2026, undated). Keylong is a transit/base town; the one local-transport figure for Lahaul I saw is a combined Kinnaur+Lahaul budget table row on DwD ('private taxi 2,000-3,000 per day, comfort tier'), which the page itself says has no separate Lahaul rates, so it was not used.",
+        "sources": [
+          "https://www.manaliworldtravel.com/manali-keylong-taxi.php",
+          "https://www.himalayan-routes.com/tour/manali-to-leh-cab-services/",
+          "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/"
+        ],
+        "notes": "Null local figure on purpose; do not substitute a formula. Keylong, Jispa, Darcha and Tandi have no published union rate card that I could fetch."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "DwD Kinnaur+Lahaul budget table (Sep 2026, 'aggregator-sourced ranges'): food per day budget 400-600, mid 600-900, comfort 900-1,300. Cross-check at Batal (Lahaul side of Chandratal road): meals 150-250 per plate (DwD, Sep 2026), 3 plates about 450-750. Budget taken at the low end of 400-600, standard at about the middle of 600-900 and Batal-based 600. No Keylong or Sissu restaurant listing with prices was available: Holidify's 'Food of Keylong' and 'Food of Sissu' sections are empty.",
+        "sources": [
+          "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/",
+          "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/",
+          "https://www.holidify.com/places/keylong/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/sissu/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Thin: one blogger's aggregated ranges. Tandoor-style dhabas and tea houses on the Atal Tunnel road are the real options."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (undated Booking 'from' prices; Cleartrip all sold out)",
+        "taxi": "none for local (Manali drop fares only)",
+        "food": "low"
+      },
+      "unverified": [
+        "Keylong local taxi tariff",
+        "Dated Keylong hotel prices (all Cleartrip listings sold out for 13-14 Nov)",
+        "Budget hotel and dorm tiers",
+        "Keylong restaurant prices (Holidify section empty)"
+      ]
+    },
+    "lahaul-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2335,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.booking.com/city/in/kyelang.html"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1500,
+        "homestay_n": 5,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/kyelang.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Booking.com Kyelang page, undated 'price from', 2 adults 1 night. Mid (3-star): Hotel Biker Gang Hotel & Cafe Kyelang 27.58 USD = 2,670; Kubes by the Raasta, Jispa 20.66 USD = 2,000 (Treebo Melag Jispa 168.91 USD = 16,350 excluded as an outlier). Homestays: beheney Gondla 13.95 USD = 1,350; Shiva Gondla 14.46 = 1,400; Beyond Rohtang, Tandi 15.50 = 1,500; Sunflower Homes Gondla 25.82 = 2,499; Snowflake Gondla 25.83 = 2,500. Booking.com USD 'price from' converted at 96.8 INR/USD (rate used by earlier batches, MTFX mid-market 8 Oct 2026: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/); Booking pages show NO stay dates (undated 'from' prices).",
+        "notes": "Region id: figures are for the base town Keylong (Gondla/Tandi/Jispa homestays are the nearby bookable stock). Cleartrip 'Keylong' 3-star and homestay pages (13-14 Nov 2026) show 8 Keylong properties (Tandi Sarai, Hotel Blue Pine, Via Paradise, Keylong Heights, Zomsa Culturehub...) ALL SOLD OUT with no price: Keylong lodging is largely shut or unbookable in mid-Nov. Gondla/Tandi/Jispa homestays are 5-25 km from Keylong. Same Kubes by the Raasta shows 20.66 USD on this page and 56.83 USD on Booking's Sissu page, so Booking 'from' prices swing 2-3x by date."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Manali to Keylong, sedan (trip type not labelled; ~115 km)",
+            "inr": 6499,
+            "range": "hatchback 5,999; sedan 6,499; SUV 8,499; 9-seater 9,999; 12-seater 11,999 (manaliworldtravel 2026 fare table, tolls/permits included)"
+          },
+          {
+            "route": "Manali to Keylong, sedan, off-season fare",
+            "inr": 5999,
+            "range": "Alto 5,499; sedan 5,999; Innova 7,999 (same page FAQ)"
+          },
+          {
+            "route": "Manali to Leh one-way drop via Keylong, sedan (Feb 2026)",
+            "inr": 9000,
+            "range": "2-day tour with Sarchu/Jispa halt: sedan 10,000 (himalayan-routes.com)"
+          }
+        ],
+        "basis": "No Keylong or Lahaul local-sightseeing tariff found. Only Manali-based drop/tour fares from operator sites (2026, undated). Keylong is a transit/base town; the one local-transport figure for Lahaul I saw is a combined Kinnaur+Lahaul budget table row on DwD ('private taxi 2,000-3,000 per day, comfort tier'), which the page itself says has no separate Lahaul rates, so it was not used.",
+        "sources": [
+          "https://www.manaliworldtravel.com/manali-keylong-taxi.php",
+          "https://www.himalayan-routes.com/tour/manali-to-leh-cab-services/",
+          "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/"
+        ],
+        "notes": "Null local figure on purpose; do not substitute a formula. Keylong, Jispa, Darcha and Tandi have no published union rate card that I could fetch."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "DwD Kinnaur+Lahaul budget table (Sep 2026, 'aggregator-sourced ranges'): food per day budget 400-600, mid 600-900, comfort 900-1,300. Cross-check at Batal (Lahaul side of Chandratal road): meals 150-250 per plate (DwD, Sep 2026), 3 plates about 450-750. Budget taken at the low end of 400-600, standard at about the middle of 600-900 and Batal-based 600. No Keylong or Sissu restaurant listing with prices was available: Holidify's 'Food of Keylong' and 'Food of Sissu' sections are empty.",
+        "sources": [
+          "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/",
+          "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/",
+          "https://www.holidify.com/places/keylong/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/sissu/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Thin: one blogger's aggregated ranges. Tandoor-style dhabas and tea houses on the Atal Tunnel road are the real options."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (undated Booking 'from' prices)",
+        "taxi": "none for local (Manali drop fares only)",
+        "food": "low"
+      },
+      "unverified": [
+        "Region id: reported for the main base town Keylong",
+        "Lahaul local taxi tariff (Keylong/Jispa/Darcha/Tandi)",
+        "Budget hotel and dorm tiers",
+        "Dated hotel prices"
+      ]
+    },
+    "sissu": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4796,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-sissu"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1500,
+        "homestay_n": 5,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/sissu.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-sissu"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' Sissu page, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted: PACK Sissu 3,422; Bulevar Alpine 4,796; Bulevar Whispering Willows 5,640 (3 of 7 listed had a price; Utpala House, Bulevar Kunsil and PACK Sissu hostel were sold out). Homestay: Booking 'from' USD (undated): KC Homestay Sissu 15.50 = 1,500; Shiva Gondla 14.46 = 1,400; beheney Gondla 13.95 = 1,350; Sunflower Homes Gondla 25.82 = 2,499; Snowflake Gondla 25.83 = 2,500. Booking.com USD 'price from' converted at 96.8 INR/USD (rate used by earlier batches, MTFX mid-market 8 Oct 2026: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/); Booking pages show NO stay dates (undated 'from' prices).",
+        "notes": "Budget tier null: only Himmel Stay & Cafe (Booking USD 27.90 = 2,701, n=1) and Moustache Koksar Luxuria hostel private room 1,321 (Cleartrip 13-14 Nov, but at Khoksar ~30 km away) were seen. Dorm null: PACK Sissu hostel and Zostel Sissu exist but no bed price was shown. Gondla homestays are ~10 km from Sissu."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Manali to Sissu and back (Atal Tunnel), sedan day trip",
+            "inr": 3500,
+            "range": "2,999 (manaliworldtravel fare-2026 table) / 3,499 (himalayan-routes 'Atal Tunnel & Sissu') / 3,500 (manaliworldtravel FAQ) / 4,499 (manaliworldtravel 'union fare list 2026')"
+          },
+          {
+            "route": "Manali to Sissu, hatchback",
+            "inr": 2999,
+            "range": "2,499 (manaliworldtravel fare table) to 3,999 (its union list); Alto 2,999 (himalayan-routes)"
+          },
+          {
+            "route": "Manali to Sissu, SUV",
+            "inr": 4999,
+            "range": "3,999 (fare table) / 4,999 (himalayan-routes, Innova) / 5,999 (union list)"
+          }
+        ],
+        "basis": "Sissu has no local cab market; people see it as a Manali day trip. Figure = median of four sedan quotes (2,999 / 3,499 / 3,500 / 4,499) from two operator sites, 2026, undated. This is a Manali-to-Sissu round-trip day, not local sightseeing inside Sissu.",
+        "sources": [
+          "https://www.manaliworldtravel.com/manali-sissu-taxi.php",
+          "https://www.manaliworldtravel.com/manali-taxi-union-rate-list.php",
+          "https://www.himalayan-routes.com/manali-taxi-rate-list/"
+        ],
+        "notes": "manaliworldtravel's own FAQ contradicts its table (3,500 sedan / 4,999 SUV vs 2,999 / 3,999). Off-season FAQ: Alto 1,999, sedan 2,499, Innova 2,999. Local Sissu/Lahaul sightseeing fares are not listed anywhere I could reach."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "DwD Kinnaur+Lahaul budget table (Sep 2026, 'aggregator-sourced ranges'): food per day budget 400-600, mid 600-900, comfort 900-1,300. Cross-check at Batal (Lahaul side of Chandratal road): meals 150-250 per plate (DwD, Sep 2026), 3 plates about 450-750. Budget taken at the low end of 400-600, standard at about the middle of 600-900 and Batal-based 600. No Keylong or Sissu restaurant listing with prices was available: Holidify's 'Food of Keylong' and 'Food of Sissu' sections are empty.",
+        "sources": [
+          "https://discoverwithdheeraj.com/kinnaur-lahaul-after-monsoon-2026/",
+          "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/",
+          "https://www.holidify.com/places/keylong/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.holidify.com/places/sissu/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Thin: one blogger's aggregated ranges. Tandoor-style dhabas and tea houses on the Atal Tunnel road are the real options."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low-medium (3 dated Cleartrip + undated Booking)",
+        "taxi": "medium-low (4 quotes, 2 operators, but it is a Manali day trip)",
+        "food": "low"
+      },
+      "unverified": [
+        "Local taxi inside Sissu/Lahaul",
+        "Budget hotel and dorm bed prices",
+        "Sissu restaurant prices (Holidify 'Food of Sissu' empty)"
+      ]
+    },
+    "chandratal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Seasonal tented camps 1-5 km below the lake (mid-June to early Oct only). Year-round bases: Batal (30 km, dhaba/PWD rest house, season only), Losar, Kaza (about 4-5 h), Manali",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "seasonal_camp": {
+          "camp_per_night_range_inr": "1200-2500, usually with dinner+breakfast",
+          "camp_typical_inr": 1800,
+          "camp_unit": "per person on most pages; the Kinnaur-Spiti circuit page quotes per tent (budget 1,200-1,500, mid 1,500-2,500, comfortable 2,500-4,000); the cheapest-ways page does not say",
+          "other_lodging_inr": "Chandra Dhaba Batal bed 400-500 per person (another DwD page: 150-200); PWD Rest House Batal 500-600 with meals; Losar guesthouse 1,000-1,500 with meals; Losar homestay 500-800 with meals; Chattru tent 300-500",
+          "sources": [
+            "https://discoverwithdheeraj.com/chandratal-lake-spiti-travel-guide/",
+            "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/",
+            "https://discoverwithdheeraj.com/your-ultimate-guide-to-planning-a-short-trip-to-chandratal-lake-in-spiti-valley/",
+            "https://discoverwithdheeraj.com/chandratal-lake-common-itinerary/",
+            "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/"
+          ]
+        },
+        "price_basis": "Camp tariffs are the range stated across five DwD pages (all 'as of 2025-26', pages updated Jul-Oct 2026); 1,800 is the midpoint of the consistent 1,200-2,500 band, not a computed median of listed camps. No camp is bookable on Cleartrip/Booking (Cleartrip Chandratal 404, Booking page empty).",
+        "notes": "CLOSED-SEASON: Chandratal is open to visitors mid-June to early October only; camps shut about 10-15 Oct; fully closed late Oct/Nov to late May (DwD, Sep-Oct 2026). On 9 Oct 2026 it is the very end of the window. No lodging exists at the lake in closed season. Camps are cash only (no ATM/UPI at Chandratal or Batal). Entry fee 150 Indian / 500 foreigner."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 10000,
+        "vehicle": "sedan/small car, Manali round trip in a day (June to early Oct season)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Manali to Chandratal and back, sedan/small car, season rate",
+            "inr": 10000,
+            "range": "median of 8,000-10,000 (DwD short-trip guide, Oct 2026), 9,987 (manaliworldtravel sedan), 10,000-15,000 (DwD itinerary, small car) and 8,000-14,000 (DwD cheapest-ways, Sep 2026)"
+          },
+          {
+            "route": "Manali to Chandratal, SUV/Innova round trip",
+            "inr": 14978,
+            "range": "manaliworldtravel SUV 14,978; DwD 14,000-18,000 Innova round trip; one reader quote 23,000 for a one-way drop"
+          },
+          {
+            "route": "Kaza to Chandratal and back (via Kunzum)",
+            "inr": 4000,
+            "range": "3,000-4,000 return (DwD Oct 2026) vs 5,000 (DwD Sep 2026)"
+          },
+          {
+            "route": "Losar to Chandratal and back",
+            "inr": 2500,
+            "range": "2,000-3,000 round trip, limited taxis (DwD Sep 2026)"
+          },
+          {
+            "route": "Batal to Chandratal",
+            "inr": null,
+            "range": "no taxi price in any source; 14 km road, hitching tip 200-300"
+          }
+        ],
+        "basis": "Operator and blogger quotes for the June-early October season. Road is closed late Oct/Nov to late May, so the quote is moot in closed season (manaliworldtravel lists off-season Alto 4,999 / sedan 5,999 / Innova 7,999 for Manali-Chandratal, but the lake is inaccessible Nov-Apr per the same page).",
+        "sources": [
+          "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/",
+          "https://discoverwithdheeraj.com/your-ultimate-guide-to-planning-a-short-trip-to-chandratal-lake-in-spiti-valley/",
+          "https://discoverwithdheeraj.com/chandratal-lake-common-itinerary/",
+          "https://discoverwithdheeraj.com/chandratal-lake-spiti-travel-guide/",
+          "https://www.manaliworldtravel.com/manali-chandratal-lake-taxi.php"
+        ],
+        "notes": "CLOSED-SEASON FLAG: as of 9 Oct 2026 the access window (mid-June to early Oct) is ending; DwD says camps shut 10-15 Oct. Treat all Chandratal prices as June-Sept season prices. Manali round-trip sedan quotes range 8,000 to 15,000 depending on operator."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 600,
+        "basis": "Camps at the lake bundle dinner and breakfast in the tariff ('Rs 1,200-2,500 per person with meals'). Unbundled: Batal plates 150-250 each (DwD, Sep 2026), so 3 meals about 450-750 (standard 600). Budget from DwD short-trip table: meals for 2-3 days 600-900, about 300 a day.",
+        "sources": [
+          "https://discoverwithdheeraj.com/chandratal-lake-cheapest-ways-to-travel-there/",
+          "https://discoverwithdheeraj.com/your-ultimate-guide-to-planning-a-short-trip-to-chandratal-lake-in-spiti-valley/",
+          "https://discoverwithdheeraj.com/chandratal-lake-spiti-travel-guide/"
+        ],
+        "notes": "No ATM or UPI at Chandratal/Batal; camps are cash only. Season only (mid-June to early Oct)."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (ranges only; seasonal camps; closing)",
+        "taxi": "low-medium (5+ quotes but 2x spread by operator)",
+        "food": "low"
+      },
+      "unverified": [
+        "Batal-to-Chandratal taxi price",
+        "Individual camp tariffs (only ranges from one blogger)",
+        "Closed-season (late Oct to May) prices: nothing operates",
+        "Per-person vs per-tent basis of camp tariff is not consistent across sources"
+      ]
+    }
+  }
+}

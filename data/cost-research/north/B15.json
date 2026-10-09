@@ -1,0 +1,332 @@
+{
+  "batch": "B15",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "amritsar": {
+      "notes": "STAY OMITTED (stay_observed true). Gurdwara sarai, from SGPC 'Sarai Info' page (https://sgpc.net/sarai-info/, fetched 2026-10-09, page undated): Sri Guru Ram Das Niwas (228 rooms, 160 for pilgrims) has NO daily charge, only a Rs 100 refundable security, common bathroom. Baba Deep Singh Ji Niwas ordinary room Rs 200/day (Rs 600 refundable security). Attached-bath geyser/AC rooms Rs 300-500/day with Rs 600-1,000 refundable security (Guru Arjan Dev Niwas, Guru Hargobind Niwas, Mata Ganga Ji Niwas, New Akal Rest House at Rs 500; Mata Bhag Kaur Ji Niwas Rs 300). First-come-first-served, subject to availability; online booking via sgpcsarai.com (its notice said online booking was temporarily down for a payment-gateway problem on 2026-10-09). Sarai rooms are a pilgrim option, not a hotel substitute for planning; the paid hotel market was measured separately (stay_observed).",
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1700,
+        "vehicle": "sedan (Swift Dzire class)",
+        "outstation_per_km_inr": 14,
+        "range_inr": [
+          1400,
+          2000
+        ],
+        "point_to_point": [
+          {
+            "route": "Amritsar airport to city (Dzire/Etios, RS Holidays local tariff, undated)",
+            "inr": 700
+          },
+          {
+            "route": "Amritsar railway station transfer (Dzire/Etios, RS Holidays local tariff, undated)",
+            "inr": 300
+          },
+          {
+            "route": "Amritsar to Dharamshala/Dalhousie, sedan one-way (Amritsar Taxi, 'from', fares dated 1 Oct 2026)",
+            "inr": 3200
+          },
+          {
+            "route": "Amritsar to Chandigarh, sedan one-way",
+            "inr": 3800,
+            "range": "Amritsar Taxi 3,800 (1 Oct 2026) vs Gozo aggregator 2,614 before GST (indicative, undated)"
+          },
+          {
+            "route": "Amritsar to Delhi, sedan one-way",
+            "inr": 7500,
+            "range": "Amritsar Taxi 7,500 (1 Oct 2026) vs Gozo 5,398 before GST"
+          },
+          {
+            "route": "Amritsar (Golden Temple) to Wagah/Attari border and back with waiting for ceremony, 32 km each way",
+            "inr": null,
+            "range": "no fare published; both operators say quote on WhatsApp/request"
+          }
+        ],
+        "basis": "Two operator rate cards for an 8 hr / 80 km sedan day: Amritsar Taxi (amritsartaxi.com) Swift Dzire Rs 1,400 (Etios 1,500, Ertiga 1,600, Innova 2,000, Crysta 2,500), page says 'Fares last updated: 1 October 2026'; The RS Holidays / Amritsar Cabs (amritsarcabs.com local tariff, undated) Dzire/Etios Rs 2,000 (Innova 2,500, Crysta 3,500), GST 5% extra, parking/tolls/driver allowance extra. Central figure 1,700 = midpoint of the two direct sedan quotes; a traveller booking by WhatsApp with the newer dated card would pay ~1,400, a traveller on the other card ~2,000 (+5% GST). Gozo aggregator shows only a 4 hr/40 km sedan at Rs 1,282 before GST (no 8 hr package), consistent with a full-day sedan at or above ~2,000 through an app. Outstation 14/km is RS Holidays' Dzire/Etios round-trip rate (min 250 km billing/day, + Rs 200-300 driver allowance/day); Amritsar Taxi does not publish a per-km rate (extra km on the local slab Rs 8/km, extra hour Rs 100).",
+        "sources": [
+          "https://amritsartaxi.com/amritsar-taxi-fare/",
+          "https://amritsartaxi.com/amritsar-sightseeing-taxi/",
+          "https://amritsartaxi.com/routes/",
+          "https://www.amritsarcabs.com/local-tariff.html",
+          "https://www.amritsarcabs.com/outstation-tariff.html",
+          "https://www.gozocabs.com/car-rental/amritsar"
+        ],
+        "notes": "Sights on the Amritsar Taxi day rate: Golden Temple, Jallianwala Bagh, Partition Museum, Durgiana Temple, Gobindgarh Fort; Wagah ceremony is an add-on (leave ~2:30 pm winter / 3:30 pm summer). Morning circuit (Golden Temple, Jallianwala Bagh, Partition Museum) 'fits into four hours'. Many visitors do the old city by auto/e-rickshaw/walking; NO current auto or e-rickshaw fare card was found. Only stale reference points from Wikivoyage (https://en.wikivoyage.org/wiki/Amritsar, items dated 2014 to 2023): railway station to Golden Temple auto about Rs 20, e-rickshaw bus stand to Golden Temple Rs 10-20, airport to city by rickshaw Rs 100-200, Wagah taxi-stand quote Rs 1,600 (undated); treat as indicative only, not for pricing. Holidify says bus, auto and cycle rickshaws are available and cabs are for groups, no fares. Driver's toll/parking extra."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "Zomato 'cost for two' pages, read 2026-10-09 (cost for two / 2 = one meal per person; x3). BUDGET set (n=14: kulcha shops, dhabas): Bhai Kulwant Singh Kulchian Wale 200, The Kulcha Land 200, Sabri Bhathura 200, Monu Kulcha Hut 300, Lovely Champ 300, Amrit Dhaba 150, Joginder Dhaba 200, S.R. Kulcha Land 200, Bille Da Vaishno Dhaba 250, Pritam Dhaba 250, Lahore Dhaba 350, Kesar Da Dhaba 450, The Amritsar Haveli (Town Hall) 400, Sanjha Chulha 400; median 250 for two = 125 per meal = 375/day. STANDARD set (n=8 sit-down): Sanjha Chulha 400, Kesar Da Dhaba 450, Bade Bhai Ka Brothers Dhaba 500, Bharawan Da Dhaba 600, Subhash Juice Bar & Restaurant 600, Punjabi Dhaba 900, Brick House Kitchen (Ranjit Avenue) 1,200, Golden Gate (INA Colony) 1,500; median 600 for two = 300 per meal = 900/day. Restaurant Guru per-person bands (updated Aug-Sep 2026) put Kesar Da Dhaba, Bharawan Da Dhaba and Brothers Dhaba each at INR 200-400 per person, consistent.",
+        "sources": [
+          "https://www.zomato.com/amritsar/dhaba",
+          "https://www.zomato.com/amritsar/kesar-da-dhaba-hathi-gate",
+          "https://www.zomato.com/amritsar/bharawan-da-dhaba-town-hall",
+          "https://www.zomato.com/amritsar/bade-bhai-ka-brothers-dhaba-1-town-hall",
+          "https://www.zomato.com/amritsar/bhai-kulwant-singh-kulchian-wale-town-hall",
+          "https://www.zomato.com/amritsar/the-kulcha-land-ranjit-avenue",
+          "https://www.zomato.com/amritsar/restaurants",
+          "https://restaurant-guru.in/Kesar-Da-Dhaba-Amritsar",
+          "https://restaurant-guru.in/Bharawan-Da-Dhaba-Amritsar",
+          "https://restaurant-guru.in/Brothers-Dhaba-Amritsar"
+        ],
+        "notes": "Golden Temple langar is free (donation optional; Wikivoyage and Holidify both say so), so a zero-cost meal day is possible at the gurdwara; figures above are what PAID meals cost. Zomato cost-for-two on kulcha and dhaba pages is for a typical 1-2 dish order, so it can understate a full thali plus lassi/sweet; true budget day likely 350-500. Standard set mixes old-city sit-down dhabas with two Ranjit Avenue restaurants; hotel restaurants (Marriott/Hyatt/Sarovar 1,500-3,500 for two) and bars excluded."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "taxi": "medium (two direct operator cards, 600 apart, only one dated)",
+        "food": "medium (Zomato 2026-10-09, n=14 and n=8)"
+      },
+      "unverified": [
+        "Current auto-rickshaw and e-rickshaw fare cards for Golden Temple/Wagah (only stale Wikivoyage items)",
+        "Any fixed fare for Wagah border round trip (operators say quote on WhatsApp)",
+        "Savaari/MakeMyTrip/Cabbazar local-package rates (Savaari page would not render, MakeMyTrip timed out, CabBazar 403 skipped)",
+        "Hotel stay prices intentionally not researched (stay_observed true)"
+      ]
+    },
+    "patiala": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2038,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-patiala"
+        ],
+        "budget_hotel_median_inr": 1512,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/patiala/budget-hotels"
+        ],
+        "homestay_median_inr": 1841,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/patiala.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "MID: Cleartrip '3-star' page, 1 night 13-14 Nov 2026, 1 room 2 guests, pre-tax discounted sale price, 14 priced of 15 listed (Hotel AK Suites sold out): Godwin Hotel 665, Townhouse Patiala Railway Station 1,094, Punjabeez 1,271, KD Motel 1,442, Flyover Classic 1,540, Kings Retreat 1,656, MG 64 Prime 1,932, MG 64 2,144, Pushap Palace 2,195, Sikand Vistas 2,293, Ajuba Residency 2,691, Mohan Continental 3,149, Mohans Courtyard 3,189, Edisson 4,536; median 2,038 (range 665-4,536). BUDGET: Cleartrip budget page, check-in Sun 11 Oct to Mon 12 Oct (year not shown, presumed 2026), pre-tax: Hotel Jai Surya 999, Kings Retreat 1,512, KT Royal 1,736; median 1,512 (a fourth row, Hotel Maharaja Sangrur 800, is in Sangrur and excluded). HOMESTAY: Booking.com 'guest accommodation' SpitiDiaries Homestay, 'starting from' Rs 1,841 for 13-14 Nov 2026, 2 adults, TAX-INCLUSIVE (n=1, low).",
+        "notes": "Cleartrip's 'homestays in Patiala' page returned the same hotels (no true homestays), so homestay rests on one Booking row. Date effect is large: Hotel Jai Surya is 999 pre-tax on Cleartrip for 11 Oct but 'from' 2,037 tax-incl on Booking for 13-14 Nov, and Kings Retreat is 1,512 (11 Oct) vs 1,656 (13 Nov), so 13-14 Nov (a Fri-Sat) prices run higher than weeknights. Booking 'from' prices 13-14 Nov tax-incl: Super Townhouse Patiala Bus Terminal 1,164 (3-star), Hotel Golden Fern 2,520, Patiala Inn 2,693, Hotel Praj Paradise 1,890. Heritage/palace tier exists and was excluded from the median as a different product: Neemrana's Baradari Palace Cleartrip 8,280 (Booking from 11,210), The Lauriant Resorts Cleartrip 5,495, RAN BAAS The Palace Booking from 51,920. Cleartrip also shows Godwin Hotel does not accept unmarried couples/non-local IDs. Hostelworld has no Patiala city page (404): no dorms."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "auto/e-rickshaw/cycle-rickshaw for the old city (Holidify: 'rickshaws, both manual and autos, are the easiest modes of travel'); no cab day rate found",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Patiala to Chandigarh, 71 km, sedan one-way, Gozo before GST (indicative)",
+            "inr": 1250
+          },
+          {
+            "route": "Patiala to Ambala Sadar, 61 km, sedan one-way, Gozo before GST",
+            "inr": 1378
+          },
+          {
+            "route": "Patiala to Panchkula, 77 km, sedan one-way, Gozo before GST",
+            "inr": 1394
+          },
+          {
+            "route": "Patiala to Amritsar, 234 km, sedan one-way, Gozo before GST",
+            "inr": 3322
+          },
+          {
+            "route": "Patiala to Delhi, 262 km, sedan one-way, Gozo before GST",
+            "inr": 3448
+          },
+          {
+            "route": "Chandigarh airport or Ambala station to Patiala, taxi (Wikivoyage, undated, 'bargain hard')",
+            "inr": 900,
+            "range": "800-1,000"
+          }
+        ],
+        "basis": "No Patiala-based taxi operator rate card was found. patialataxi.com is a placeholder ('Site Unavailable at the Moment'); Gozo shows 'No indicative local package fares are currently available' for Patiala and lists only one-way sedan fares (before GST, indicative, undated). Local day rate left null rather than borrow another city's.",
+        "sources": [
+          "https://www.gozocabs.com/car-rental/patiala",
+          "https://en.wikivoyage.org/wiki/Patiala",
+          "https://www.holidify.com/places/patiala/",
+          "https://patialataxi.com/"
+        ],
+        "notes": "Regional reference only, NOT a Patiala quote: Amritsar operators price an 8 hr/80 km sedan day at Rs 1,400 (Amritsar Taxi, 1 Oct 2026) to Rs 2,000 (RS Holidays). Gozo's one-way fares work out at roughly Rs 17-20 per km on short routes (1,250/71 km). Wikivoyage's Amr Taxi line (Rs 10/hr, April 2019) is not usable."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 1350,
+        "basis": "Zomato Patiala 'cost for two' pages read 2026-10-09 (/ 2 = one meal; x3). BUDGET set (n=15, dhaba + street food): Hari Da Vaishnoo Dhaba 300, Harbans Dhaba 150, Aggarwal Vaishnu Dhaba 300, Klassic Dhaba 200, Nanaksar Vaishno Dhaba 300, Bawa Gian Da Dhaba 200, Janta Dhaba 200, Prabhu Ji Chhole Bhature 150, R.K. Samosa House 150, Mota Halwai Pehalwans 300, Cool'n Hot 250, Mr. Delicious 150, Basant Restaurant 400, Todays Generation Food 200, Toshewala 200; median 200 for two = 100 per meal = 300/day. STANDARD set (n=6 local sit-down): Kohli Dhaba 650, Jaggi's Restaurant 700, Mocha Cafe And Bar 800, Baithak 1,000, Sagar Ratna 1,100, Moti Mahal Delux Tandoori Trail 1,300; median 900 for two = 450 per meal = 1,350/day. Excluded: Neel (4,800 for two, outlier), bars and gastro-pubs (Rize, Mojave, Pirates of Grill).",
+        "sources": [
+          "https://www.zomato.com/patiala/dhaba",
+          "https://www.zomato.com/patiala/restaurants/street-food",
+          "https://www.zomato.com/patiala/casual-dining"
+        ],
+        "notes": "Standard sample is Model Town/Tripuri restaurants and skews upward; a thrifty sit-down dhaba lunch (Aggarwal Vaishnu Dhaba, 300 for two) pulls a real mixed day nearer 900-1,000. Budget figure likely understated for a full thali plus sweet; realistic 300-400. Gurdwara langar is free but not priced here. No thali menu prices found."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay_mid": "medium-high (n=14, one dated Cleartrip pull; 13-14 Nov is a Fri-Sat so weeknights may be lower)",
+        "stay_budget": "low (n=3, different date)",
+        "stay_homestay": "low (n=1)",
+        "taxi": "none for local day; one-way fares are aggregator-indicative",
+        "food": "medium"
+      },
+      "unverified": [
+        "Any local sightseeing cab day rate for Patiala (no operator card found)",
+        "Auto-rickshaw/e-rickshaw fares in Patiala",
+        "True homestay prices (Cleartrip page returned hotels; Booking gave one row)",
+        "Hostel dorm beds (none listed on Hostelworld)",
+        "Weeknight (non-weekend) hotel prices"
+      ]
+    },
+    "anandpur-sahib": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2421,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-anandpur-sahib",
+          "https://www.booking.com/city/in/anandpur-sahib.html"
+        ],
+        "budget_hotel_median_inr": 1400,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/anandpur-sahib/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "MID: Cleartrip Anandpur Sahib city page, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted price, the only 3 priced in-town hotels: Hotel White City 1,691 (listed 2,500), Hotel Virasat e Punjab 2,421 (listed 4,000), Hotel Temple View Inn 3,812 (listed 5,199); median 2,421. BUDGET: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not shown, presumed 2026), Hotel Holy City Paradise Inn (Academy Road, rated 3.5 from 11 reviews) 1,400 pre-tax + 150 taxes, n=1. Cross-check, Booking.com 13-14 Nov 2026 'price from', TAX-INCLUSIVE: Hotel Temple View Inn 4,199 (3-star, 8.4 from 130 reviews).",
+        "notes": "Very thin supply and 13-14 Nov was already sold out at Hotel Holy City Paradise Inn (two listings), Anand at the Satluj and The Regent Hotel on Cleartrip, so prices for dates near festivals or weekends will run higher; the mid median rests on n=3 and the budget on n=1. Booking also lists The Khyber Hotel (4-star, no price shown, 13-14 Nov) and properties 'near' Anandpur Sahib that are outside town: Muchaan Resort (Gochar) 2,551, Hotel Sarai Bharatgarh (Nohan) 3,023, Baantalai Resort (Changar Talai) 5,775, Sir Mam Ashram (Bhaddi) 840, all tax-incl and not counted. GURDWARA SARAI: Takht Sri Keshgarh Sahib sarai is reported by the founder's brief to offer free or donation rooms, but no tariff or listing was found: sgpc.net/sarai-info/ covers only the Sri Darbar Sahib complex in Amritsar. Hostelworld has no Anandpur Sahib page (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "auto-rickshaw (Holidify says autos are the most popular local transport and there are 'no taxis in town'); no fare found",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Anandpur Sahib to Ludhiana, ~114 km, sedan one-way, Gozo before GST (indicative)",
+            "inr": 2518
+          },
+          {
+            "route": "Anandpur Sahib to Amritsar, ~184 km as listed by Gozo, sedan one-way, before GST",
+            "inr": 3194
+          },
+          {
+            "route": "Anandpur Sahib to Delhi, ~338 km, sedan one-way, before GST",
+            "inr": 4817
+          }
+        ],
+        "basis": "No Anandpur Sahib local operator card found. Gozo: 'No indicative local package fares are currently available' and one-way sedan fares only (before GST, indicative, undated). Gozo's Shimla row for this page (123 km, 3,722) and a few other distances look inconsistent, so only the three cleanest rows are kept. Amritsar Taxi says Anandpur Sahib is not on its routes and is 'quoted on request'.",
+        "sources": [
+          "https://www.gozocabs.com/car-rental/anandpur-sahib",
+          "https://www.holidify.com/places/anandpur-sahib/",
+          "https://amritsartaxi.com/punjab-gurdwara-tour-taxi/"
+        ],
+        "notes": "Local day rate left null rather than borrow another city's. Regional reference only: Amritsar sedan day 1,400-2,000 (Amritsar Taxi 1 Oct 2026; RS Holidays undated). Distance sheet from Holidify: Chandigarh airport 89 km, Ludhiana (Sahnewal) airport 98 km."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "No Zomato page exists for Anandpur Sahib (city URL 404). Restaurant Guru per-person bands (page read 2026-10-09; bands are the site's own price categories, not menu prices): dhabas, sweet shops and fast food INR 1-200 (New Mehfil Dhaba, JOT Punjabi Dhaba, Mitran Da Dhaba, Guru Nanak Vaishnu Dhaba, Khalsa Food Corner and Punjabi Dhaba, Yadav Chole Bhatoore, Pal and Sons Sweet Shop, Krishana Fast Food and Sweets: n=8); sit-down and cafes INR 200-400 (Joban E Dawat, Happy Fish Point, Danna Panni Food Junction, Virasat-E-Khalsa Cafeteria, Roots, Anandpur Sahib Brewbakes Cafe, Ancient Pizza Cafe: n=7). Budget = 125 per meal x3 (about the middle of a 100-150 dhaba meal, matching Zomato dhaba medians of 100-125 per meal at Amritsar and Patiala, 2026-10-09); standard = 300 per meal (midpoint of the 200-400 band) x3.",
+        "sources": [
+          "https://restaurant-guru.in/Anandpur-Sahib",
+          "https://www.zomato.com/amritsar/dhaba",
+          "https://www.zomato.com/patiala/dhaba"
+        ],
+        "notes": "Langar at Takht Sri Keshgarh Sahib and other gurdwaras is free (Holidify: 'Langar meals at the Gurudwaras are free'), so a zero-cost day is possible; figures are for paid meals. Low confidence: bands, not menu prices, and Zomato figures are borrowed from two other Punjab cities."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay_mid": "low-medium (n=3 in-town, 13-14 Nov)",
+        "stay_budget": "low (n=1)",
+        "taxi": "none for local; one-way aggregator-indicative",
+        "food": "low (bands + borrowed medians)"
+      },
+      "unverified": [
+        "Auto-rickshaw/taxi local fares in Anandpur Sahib",
+        "Takht Keshgarh Sahib sarai tariff or capacity (not on sgpc.net sarai-info)",
+        "Homestay prices (none in town; nearby Sir Mam Ashram 840 at Bhaddi is not in town)",
+        "Hostel dorm beds (none)",
+        "Menu-level thali prices"
+      ]
+    },
+    "damdama-sahib": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Bathinda (Takht is 28 km SE of Bathinda per Wikipedia); Talwandi Sabo town itself has small hotels",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 2352,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.booking.com/hotel/in/paradise-inn-amp-party-hall.en-gb.html",
+          "https://www.booking.com/hotel/in/aspire-talwandi-sabo1.en-gb.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "nearest_base_mid_median_inr": 2320,
+        "nearest_base_mid_n": 13,
+        "nearest_base_mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-bathinda"
+        ],
+        "nearest_base_budget_inr": 1746,
+        "price_basis": "TALWANDI SABO (only 2 properties on Booking.com, city page read 2026-10-09): Paradise Inn Hotel & Party Hall (8.5, 2 reviews) Deluxe AC double, 2 adults, 13-14 Nov 2026, Rs 2,625 TAX-INCLUSIVE; Hotel Aspire (7.0, 1 review) Double Room, 2 adults, 13-14 Nov 2026, Rs 2,079 flexible rate (Rs 1,767 non-refundable), TAX-INCLUSIVE; median of 2,625 and 2,079 = 2,352 (n=2, a pair is not a market). Treated as budget hotels because both are small local hotels; no 3-star exists in town. NEAREST BASE Bathinda, Cleartrip 13-14 Nov 2026 pre-tax: 13 properties tagged 3-star (4-star Sepal, Comfort Inn Tulip Heights and Clarks Inn excluded): Hotel BRS Inn 1,545, Royalista 1,719, Sun Shine Apartment 2,095, Pradoe 2,136, Melody 2,195, DevAan 2,243, Hotel H 2,320, Bahia Fort 2,495, Signet Royale 3,311, Bahia Heights 3,459, Riverlands 3,663, Krishna Continental 3,840, Stella 4,499; median 2,320. Bathinda budget page (11 Oct): Hotel Bahia Fort 1,746 pre-tax, n=1.",
+        "notes": "Talwandi Sabo prices are Booking tax-inclusive while the Bathinda ones are Cleartrip pre-tax, so the two are not exactly like-for-like (tax-inclusive runs higher). Cleartrip has no Talwandi Sabo/Damdama Sahib property (404; every Bathinda-page row was in Bathinda). GURDWARA SARAI: Takht Sri Damdama Sahib is expected to offer free/donation rooms (founder brief), but no tariff, capacity or listing was found; sgpc.net/sarai-info/ covers only Sri Darbar Sahib in Amritsar. Most pilgrims base in Bathinda or stay at the gurdwara. Vaisakhi (Baisakhi, around 13 April per Wikipedia) is the town's big festival and will not be reflected in a November price."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "none found",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Talwandi Sabo to Delhi, ~310 km, sedan one-way, Gozo before GST (indicative)",
+            "inr": 4662
+          },
+          {
+            "route": "Bathinda to Chandigarh, 222 km, sedan one-way, Gozo before GST",
+            "inr": 3394
+          },
+          {
+            "route": "Bathinda to Barnala, 67 km, sedan one-way, Gozo before GST",
+            "inr": 1453
+          }
+        ],
+        "basis": "No operator rate card found for Talwandi Sabo or Bathinda. Gozo has no local packages for either and lists only one Talwandi Sabo route (Delhi). No published Bathinda-to-Talwandi Sabo (28 km) fare was found.",
+        "sources": [
+          "https://www.gozocabs.com/car-rental/talwandi-sabo",
+          "https://www.gozocabs.com/car-rental/bathinda",
+          "https://en.wikipedia.org/wiki/Takht_Sri_Damdama_Sahib"
+        ],
+        "notes": "Local day rate left null rather than borrow another city's. Regional reference only: Amritsar sedan day 1,400-2,000. Gozo's Bathinda-Barnala row works out to about Rs 22 per km on a short one-way; no Bathinda-Talwandi Sabo quote exists."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "No Zomato page for Talwandi Sabo (404). Restaurant Guru Talwandi Sabo bands (page read 2026-10-09, site's own price categories): sweet shops and dhabas INR 1-200 (Pooja Sweets, Shama Dhaba, Shahi Bakers, Snakkers), bakery/cafes INR 200-400 (Brother Bakery, Italian Master up to 400), Fat Baby 200-800, Hungry Point 400-1,000. Cross-check: Zomato Bathinda dhabas (delivery view, cost for one): Prabhu Ji Dilli Paharganj Wale 100, Heera Dhaba 150, Shri Shyam Kripa Vaishno Dhaba 150, Shree Shayam Vaishno Dhaba 150, Amrik Dhaba 150, Gopal Sweets & Bakers 200, Mani Dhaba 200; median 150 per meal. Budget = 125 per meal x3 (between Patiala/Amritsar Zomato medians of 100-125 and Bathinda 150); standard = 300 per meal x3 (midpoint of the 200-400 band).",
+        "sources": [
+          "https://restaurant-guru.in/Talwandi-Sabo",
+          "https://www.zomato.com/bathinda/dhaba"
+        ],
+        "notes": "Langar at Takht Sri Damdama Sahib is expected to be free as at all major gurdwaras (the Wikipedia page captions a 'Langar Hall' photo; no page here states meal prices or hours), so a zero-cost day is possible. Paid meals figures are low confidence: bands, not menu prices."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (n=2 local hotels on one platform, tax-inclusive; Bathinda base is n=13)",
+        "taxi": "none",
+        "food": "low"
+      },
+      "unverified": [
+        "Any taxi/auto fare locally or from Bathinda to Talwandi Sabo",
+        "Takht Sri Damdama Sahib sarai tariff or capacity",
+        "Homestay or dorm options (none found)",
+        "Menu-level food prices at Talwandi Sabo",
+        "Whether hotel prices rise sharply around Vaisakhi or Gurpurab"
+      ]
+    }
+  }
+}

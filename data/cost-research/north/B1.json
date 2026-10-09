@@ -1,0 +1,671 @@
+{
+  "batch": "B1",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "haridwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2746,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-haridwar"
+        ],
+        "budget_hotel_median_inr": 1327,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/haridwar/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Haridwar?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, check-in 12 Nov 2026 (Thu), 1 night, 2 guests, pre-tax discounted price, all 16 listed (range 1,435-7,393). Budget: Cleartrip budget page, Sun 11 Oct to Mon 12 Oct (year not printed, assumed 2026), pre-tax, first 20 of 47 listed (range 600-1,940). Different dates per tier.",
+        "notes": "Kayak India 10-11 Oct listing prices (tax-incl 'from') agree: Hotel Le Roi 2,944, Yashail 3,190, Fortune Park 5,607, many budget rooms 677-1,450 (https://www.kayak.co.in/Haridwar-Hotels.44012.hotel.ksp). Cleartrip homestay page for Haridwar returned ordinary hotels, not homestays, so no homestay median. Hostelworld shows 'No Dorms Available' for Haridwar (4 private-room listings only)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1900,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Haridwar to Rishikesh (25 km)",
+            "inr": 700,
+            "range": "500-900 sedan"
+          },
+          {
+            "route": "Haridwar to Dehradun airport Jolly Grant (~35 km)",
+            "inr": 1250,
+            "range": "1,000-1,500 sedan"
+          },
+          {
+            "route": "Haridwar to Mussoorie (~95 km)",
+            "inr": 2600,
+            "range": "2,500-2,700 sedan (Evaara); 2,800 (taxiservicemussoorie.in)"
+          }
+        ],
+        "basis": "Median of 4 sedan 8h/80km quotes: Rajputana Cabs 1,600 (page published 2026-07-02), Evaara guide 1,600-1,900 (mid 1,750, article 8 Aug 2026), CabBazar 2,014 and Bizar Expedition 3,600 (both from search-result snippets; both sites not fetchable by me). Range 1,600-3,600, so operators differ 2x. Per km 11-13 sedan (Evaara). Not a union card: Haridwar has no published union list that I found.",
+        "sources": [
+          "https://evaarabytheganges.com/how-taxi-fares-actually-work-in-haridwar-complete-fare-travel-guide/",
+          "https://rajputanacabs.in/haridwar/",
+          "https://cabbazar.com/city/haridwar",
+          "https://www.bizarexpedition.com/car-rental/haridwar-car-hire",
+          "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/"
+        ],
+        "notes": "Most visitors use autos/e-rickshaws inside town: Evaara says short hops are typically 50-150. Station to Har Ki Pauri (~4 km) sedan 150-250. Peak (Kanwar, Kumbh, Char Dham) adds 30-50% per Evaara."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 750,
+        "basis": "Budget = 3 meals at street/dhaba level: poori plate 80-100 (Mohan Ji, Tripadvisor reviews), kachori/chole bhature 50-150, unlimited thali 150 (Wanderlog review), Bengali thali 80; ~115 per meal median x3. Standard = 3 x median per-meal at sit-down places: Hoshiyarpuri 250 (TripXL avg cost) / 125 (Zomato 250 for two), Chotiwala 325 (TripXL) / 300 (Zomato 600 for two), Sindhi Dhaba 200, Mathura Wale 150 (Zomato 300 for two) -> median 250 -> 750.",
+        "sources": [
+          "https://tripxl.com/blog/best-food-in-haridwar-har-ki-pauri/",
+          "https://wanderlog.com/list/geoCategory/20633/cheap-food",
+          "https://www.tripadvisor.com/Restaurant_Review-g616028-d2660457-Reviews-or30-Mohan_Ji_Puri_Wale-Haridwar_Haridwar_District_Uttarakhand.html",
+          "https://www.zomato.com/haridwar/chotiwala-restaurant-1-har-ki-pauri",
+          "https://www.zomato.com/haridwar/mathura-wale-har-ki-pauri"
+        ],
+        "notes": "TripXL page dated 2 Jan 2025 and does not say whether 'average cost' is per person (assumed). Zomato cost-for-two figures are from search-result snippets (Zomato page timed out for me) and may be old. Haridwar is mostly pure-veg; no alcohol."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay median (no true homestay list found)",
+        "Dorm bed (Hostelworld: none available)",
+        "Union/official taxi rate card (only private operator quotes)",
+        "Current Zomato cost-for-two (page timed out; snippets only)"
+      ]
+    },
+    "rishikesh": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [
+          {
+            "route": "Haridwar to Rishikesh (25 km)",
+            "inr": 700,
+            "range": "500-900 sedan (Evaara, Aug 2026)"
+          },
+          {
+            "route": "Rishikesh to Neelkanth Mahadev round trip (32 km each way)",
+            "inr": 2200,
+            "range": "1,500-2,200 sedan, single-operator quotes (search-result snippets)"
+          }
+        ],
+        "basis": "Median of 3 sedan 8h/80km quotes: CabBazar 1,700 (search snippet), Ganpati Tours/GT Cabs 'from 2,000' (search snippet), Triveni Cabs 2,499 incl fuel/driver/AC (page last updated 14 Sep 2026, fetched; its fare-guide page says 2,000-2,500). Extra km 14, extra hour 200 (Triveni). Range 1,700-2,499.",
+        "sources": [
+          "https://www.trivenicabs.in/local-taxi/rishikesh",
+          "https://www.trivenicabs.in/taxi-fare/rishikesh",
+          "https://cabbazar.com/taxi/cab/rishikesh-local-sightseeing",
+          "https://www.taxiservicedehradun.com/rishikesh/cab-taxi-service-in-rishikesh.php",
+          "https://rishikeshtaxi.in/neelkanth-taxi-service/",
+          "https://evaarabytheganges.com/how-taxi-fares-actually-work-in-haridwar-complete-fare-travel-guide/"
+        ],
+        "notes": "Laxman/Ram Jhula area is walkable; cab drops and waits. Neelkanth + Kunjapuri + Jhulas in one day can exceed 80 km (extra km 14). Neelkanth round-trip figure is from search-result snippets of two operators and was not independently fetched."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 900,
+        "basis": "Budget: puri-sabzi 60, chole kulche 40, rajma/kadhi chawal half plate 40, masala dosa 80-150, aloo tikki chaat 30, lassi 40-80 (swaadyatra, updated 8 May 2026); ~3 x 100-120. Standard = 3 x median per-meal at cafes: Freedom Cafe 200-400, Little Buddha 200-400, Tattva 200-500, The 60s Cafe 300-600, Ganga View Cafe 200-350 (per-person ranges, mid-points 300/300/350/450/275) and Chotiwala thali 400-450 shared by two (~212 each) -> median 300 -> 900.",
+        "sources": [
+          "https://www.swaadyatra.in/city/rishikesh",
+          "https://www.tripadvisor.com/Restaurant_Review-g580106-d1201978-Reviews-Chotiwala-Rishikesh_Dehradun_District_Uttarakhand.html",
+          "https://wanderlog.com/list/geoCategory/9837/best-breakfast-and-brunch-in-rishikesh"
+        ],
+        "notes": "Pure-veg, alcohol-free town so the no-alcohol assumption holds. Cafe per-person ranges are the page's own, not cost-for-two. Sitting Elephant Cafe 500-1,000 pp excluded as outlier."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union/official taxi rate card",
+        "Dated menu photos for cafes (relied on one aggregator page dated May 2026)"
+      ]
+    },
+    "mussoorie": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2553,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-mussoorie"
+        ],
+        "budget_hotel_median_inr": 1456,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/mussoorie/budget-hotels"
+        ],
+        "homestay_median_inr": 2936,
+        "homestay_n": 7,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-mussoorie"
+        ],
+        "dorm_median_inr": 549,
+        "dorm_n": 7,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Mussoorie?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, 12-13 Nov 2026 (Thu), pre-tax discounted; 18 listed, dropped 2 hostels (Zostel, Hosteller) and 2 four-star resorts (Yog Wellness, Club Mahindra) -> 14 (range 670-7,388). Budget: Cleartrip budget page, Sun 11 Oct-Mon 12 Oct (year not printed), pre-tax, 20 listed (range 605-1,960). Homestay: Cleartrip homestay page 12-13 Nov 2026, dropped 3 luxury villas (16,600-17,988) and 5 ordinary hotels -> 7 (range 1,540-6,290); with the villas the median would be 3,629. Dorm: Hostelworld 'Dorms From' (no dates shown), 7 hostels, range 488-824.",
+        "notes": "Kayak 10-11 Oct (tax-incl 'from') corroborates: cheap hotels 1,353-2,417, Hotel Hamers International 2,420, Social Stays 2,225 (https://www.kayak.co.in/Mussoorie-Hotels.46381.hotel.ksp). Mussoorie Heights (670) sits on the 3-star page but is clearly budget; it was kept to avoid cherry-picking. November is not peak: May-June and Dec are dearer (Kayak monthly averages are dominated by luxury hotels and not usable)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2600,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [
+          {
+            "route": "Dehradun station/ISBT to Mussoorie (33-35 km)",
+            "inr": 1800,
+            "range": "1,800 (taxiservicemussoorie.in) to 2,000 (dehradunmussoorietaxi.in)"
+          },
+          {
+            "route": "Mussoorie to Dhanaulti (30 km claimed)",
+            "inr": 1800,
+            "range": "1,800 (taxiservicemussoorie.in); Maharana Cabs 2,599 for 55 km"
+          },
+          {
+            "route": "Mussoorie to Kanatal (38 km)",
+            "inr": 2200,
+            "range": "sedan, taxiservicemussoorie.in"
+          },
+          {
+            "route": "Mussoorie to Chakrata (90 km)",
+            "inr": 3200,
+            "range": "sedan, taxiservicemussoorie.in"
+          }
+        ],
+        "basis": "Median of 3 private-operator sedan full-day Mussoorie sightseeing packages (Mall Rd, Gun Hill, Company Garden, Lal Tibba, Kempty Falls): taxiservicemussoorie.in 2,600 (full day 8-10h, 'indicative from'), Maharana Cabs 2,600, Bharat Taxi 3,150 (Dzire, 8h/80km, 13-14/km). Excluded dooncabs.com 3,500 because the page's only date is a 2015 footer. Range 2,600-3,500. The union (Mussoorie Taxi Service Association, Library 0135-2630587) posts a board rate but its site had a certificate error and I did not bypass it, so the actual union rate card is unverified. Old Tripadvisor reviewer said union charged 3,000/day (approx 7 years old, search-result snippet).",
+        "sources": [
+          "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/",
+          "https://maharanacabs.in/mussoorie-sightseeing-tour-taxi/",
+          "https://www.bharattaxi.com/mussoorie",
+          "https://dooncabs.com/mussoorie/sightseeing.html",
+          "https://www.dehradunmussoorietaxi.in/taxi-charges.php",
+          "https://mussoorietaxiservice.com/"
+        ],
+        "notes": "None of these are dated on the page. Tolls, parking, entry tickets extra. Peak May-June and Dec. Mall Road/Company Garden are walkable. Day-tour combining Dhanaulti is 3,800 (taxiservicemussoorie.in) to 4,500 (dooncabs, stale)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 900,
+        "basis": "Cost-for-two for 20 Mussoorie/Landour cafes and eateries (The Hosteller blog 25 Jul 2024: 10 places 400-1,700; FoodRavel 2026 undated: 10 places, mid-points 300-800). Pooled median 600 for two = 300 per meal -> standard 3 x 300 = 900. Budget = 3 x 200 (cheapest tier: Kalsang 400 for two, Char Dukan 400-600, Cafe by the Way 400).",
+        "sources": [
+          "https://www.thehosteller.com/blogs/best-cafes-and-eateries-in-mussoorie-2024/",
+          "https://www.foodravel.com/mussoorie-cafes-guide/",
+          "https://www.zomato.com/mussoorie/cafe-ivy-landour"
+        ],
+        "notes": "The sample is cafe-heavy (tourist cafes), so true dhaba-level eating (momos, parathas, thali) will be cheaper than the 'budget' figure; I found no dated dhaba thali price for Mussoorie. Cafe Ivy is an outlier (600-1,700 for two)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union taxi rate card (site cert error, not bypassed)",
+        "Dhaba/thali prices at the cheap end",
+        "Dated fare validity for all taxi operators"
+      ]
+    },
+    "landour": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Mussoorie (Landour is a ridge neighbourhood of Mussoorie; most rooms are in guesthouses and cottages)",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1366,
+        "homestay_n": 14,
+        "homestay_sources": [
+          "https://traveltriangle.com/blog/landour-homestays/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Homestay: TravelTriangle list of 15 Landour homestays, page updated 5 Dec 2024, per-night prices as printed (taxes unstated); excluded one priced per person. Range 650-7,000. These are 2024 prices, so likely 5-15% stale.",
+        "notes": "Landour has no OTA city list I could read (Cleartrip has no Landour page). Undated or stale singles only: Hotelsmussoorie.com (copyright 2017-18) Tabor Cottage 1,800, Ivy Bank Guest House 2,500, Golden Heaven 1,600, Adventure Tour Resort 890; Kayak 10-11 Oct Rokeby Manor 24,463 (heritage luxury). No mid/budget median reported because the dated sample is too thin; use Mussoorie's figures for the town hotels."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2600,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [],
+        "basis": "Proxy only: Landour has no taxi stand or rate card of its own. The Mussoorie full-day sedan package (median of 3 operators, see mussoorie) includes Lal Tibba/Landour; Maharana Cabs and dooncabs list Lal Tibba in the full-day itinerary. Landour itself (Char Dukan, Lal Tibba, Mall to Clock Tower) is walkable and most visitors walk.",
+        "sources": [
+          "https://maharanacabs.in/mussoorie-sightseeing-tour-taxi/",
+          "https://dooncabs.com/mussoorie/sightseeing.html",
+          "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/"
+        ],
+        "notes": "A search-result summary said a taxi to Landour Clock Tower costs 500-600, but it did not name the page, so I did not use it."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": 900,
+        "basis": "Landour cafes only, cost for two: Landour Bakehouse 500-800, Cafe de Landour 500-700, Lotte's 300-500, Cafe de Tavern 500-700, Anil's Char Dukan 400-600, Chic Chocolate 500-800, Mudcup 600-800, Little Llama 400-1,000, Cafe Ivy 600-1,700 (FoodRavel and The Hosteller). Median about 600 for two = 300 per meal -> 3 x 300 = 900; budget uses the cheapest tier (~400 for two) -> 3 x 200 = 600.",
+        "sources": [
+          "https://www.foodravel.com/mussoorie-cafes-guide/",
+          "https://www.thehosteller.com/blogs/best-cafes-and-eateries-in-mussoorie-2024/"
+        ],
+        "notes": "Almost all Landour eating is cafes; there are few dhabas, so 'budget' is a Char Dukan/Lotte's-level figure."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid-range and budget hotel medians (no readable dated list for Landour)",
+        "Landour-specific taxi fare",
+        "Homestay prices are Dec 2024"
+      ]
+    },
+    "dhanaulti": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2632,
+        "mid_n": 15,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-dhanaulti"
+        ],
+        "budget_hotel_median_inr": 1456,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/dhanaulti/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, 12-13 Nov 2026 (Thu), pre-tax discounted, 15 listed (range 1,154-7,610; one Kanatal property, Aurevelle Kastura, dropped). Budget: single property Silver Dew Resorts on the Mussoorie-Chamba highway, Sun 11 Oct-Mon 12 Oct, pre-tax 1,456 (n=1 only).",
+        "notes": "Cleartrip's Dhanaulti page covers the whole Dhanaulti-Kanatal-Chamba belt (e.g. Hotel Alpine Musk is shown under Kanatal by Kayak). The lowest 5 of the 15 (LaCliff 1,154, Glamwood 1,620, Mount View 1,792, The Bliss 1,812, Rock Resort 1,882) are the realistic budget tier but are not labelled budget, so I did not split them out. Budget n=1 is not a median."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Mussoorie to Dhanaulti",
+            "inr": 1800,
+            "range": "1,200-1,600 (Trekgo, Aug 2026, 'local drop'); 1,800 (taxiservicemussoorie.in); 2,599 (Maharana Cabs, claims 55 km)"
+          },
+          {
+            "route": "Dehradun station to Dhanaulti",
+            "inr": 2500,
+            "range": "sedan 2,200-2,800 (Trekgo, Aug 2026)"
+          }
+        ],
+        "basis": "Proxy: Dhanaulti has almost no resident taxi fleet; visitors take the Mussoorie + Dhanaulti day tour. taxiservicemussoorie.in lists 'Mussoorie and Dhanaulti from 3,800' (sedan 4,500 at dooncabs.com, undated). Trekgo (23 Aug 2026) gives 3,500-4,200 per day for a multi-day Dehradun rental covering Dhanaulti, Surkanda Devi and Kanatal. Public alternative: GMOU bus Mussoorie-Dhanaulti 60-80, UTC bus Dehradun-Dhanaulti 120-150.",
+        "sources": [
+          "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/",
+          "https://trekgo.in/blog/how-to-reach-kanatal-and-dhanaulti-from-delhi-and-dehradun",
+          "https://maharanacabs.in/mussoorie-dhanaulti-taxi/",
+          "https://dooncabs.com/mussoorie/sightseeing.html"
+        ],
+        "notes": "No Dhanaulti-specific local day rate was found; the 3,800 is the cheapest observed sedan day that includes Dhanaulti and is based in Mussoorie."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": null,
+        "basis": "Budget only: Unpaqd (20 Jan 2026, Kanatal/Dhanaulti belt) says dhaba meals 100-150 and homestay home-cooked meals 150-200 extra per meal; 3 meals at about 125-175 each ~ 450. Holidify lists Glass House (Apple Orchard Resort) at INR 300 and Little Llama Cafe 100-400 but states no price basis, so no standard figure was derived.",
+        "sources": [
+          "https://unpaqd.com/blog/kanatal-budget-travel/",
+          "https://www.holidify.com/places/dhanaulti/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Restaurant Guru and Tripadvisor pages show only price symbols for Dhanaulti. Many hotels sell meal plans. Mussoorie's standard (900) is the nearest observed analogue but is not used here."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Standard food figure",
+        "Budget hotel median (n=1)",
+        "Homestay and dorm prices",
+        "Dhanaulti-based taxi rate card"
+      ]
+    },
+    "chakrata": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2160,
+        "mid_n": 11,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-chakrata",
+          "https://www.kayak.co.in/Chakrata-Hotels.113126.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1683,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-chakrata",
+          "https://www.kayak.co.in/Chakrata-Hotels.113126.hotel.ksp"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: pooled 11 properties = 6 from Cleartrip '3-star' page 12-13 Nov 2026 pre-tax (1,906 / 2,073 / 2,160 / 5,670 / 6,765 / 8,944; 9 more were sold out) + 5 from Kayak 10-11 Oct tax-incl 'from' (1,442 / 2,019 / 2,153 / 2,955 / 5,970; Kayak figures came through a search-result snippet). Budget: Hill View Retreat 1,683 and Hotel Burans 2,003 (Cleartrip 12-13 Nov, pre-tax), Vertical Valley Resort 1,442 (Kayak snippet), n=3.",
+        "notes": "Distribution is bimodal: 1,400-2,200 guesthouses/eco-lodges vs 5,700-8,900 resorts. Cleartrip Oct (Sun 11 Oct) homestay page showed only eco-lodges/camps at 4,413-4,720. Kayak snippet also lists Kanasar Home Stay from 1,250 (n=1, no homestay median). A third-party travel blog says GMVN Hanol Tourist Bungalow AC rooms from about 1,000 (official gmvnonline.com tariff page returned 403 and was not bypassed). Tripoto trip report (undated) said rooms 700-2,000."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2750,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [
+          {
+            "route": "Dehradun to Chakrata (88 km)",
+            "inr": 2999,
+            "range": "sedan one-way, Anywhere Cab, page updated 8 Sep 2026 (round trip 3,999)"
+          },
+          {
+            "route": "Mussoorie to Chakrata (90 km)",
+            "inr": 3200,
+            "range": "sedan, taxiservicemussoorie.in"
+          }
+        ],
+        "basis": "Mid-point of a Tripoto traveller report: 'taxi will cost you 2500-3000 private for nearby points like Deoban, Lakhamandal, Tiger Falls' (undated trip report). HurryUp Cabs' generic 8h/80km sedan rate card is 3,014 + tax; no Chakrata-specific union or operator card was found (uttarakhand.cab says Chakrata 'has no fixed published rate'). Low confidence.",
+        "sources": [
+          "https://www.tripoto.com/chakrata/trips/chakrata-uttarakhand-tiger-falls",
+          "https://hurryupcabs.com/city/chakrata",
+          "https://anywherecab.com/dehradun-to-chakrata-taxi-service",
+          "https://uttarakhand.cab/blog/dehradun-to-chakrata-taxi-guide",
+          "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/"
+        ],
+        "notes": "Tiger Falls is 18-20 km from the market, with a 5 km walk down; shared jeeps are cheaper but I did not find a fetched price. A search snippet quoted euttaranchal.com sedan 3,800/day for 2026 but that page now returns 410 Gone, so it is not used. Mobile network is absent at Deoban and Tiger Falls."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": 825,
+        "basis": "Single datum: Justdial lists Pahadi Rasoi (Ballupur, Chakrata) at 550 for two (search-result snippet, undated) = 275 per meal x 3 = 825. Holidify lists Pushp 500, Jeet 500, Dragon Inn 300 for Chakrata with no stated basis (Jeet and Dragon Inn addresses may be Mussoorie/Dehradun), so not used.",
+        "sources": [
+          "https://www.justdial.com/Dehradun/Restaurants-in-Chakrata/nct-10408936",
+          "https://www.holidify.com/places/chakrata/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Few restaurants exist (market momo stalls, small dhabas). No dated budget meal prices found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget food",
+        "Homestay and dorm prices",
+        "Chakrata-specific taxi card or union rate",
+        "GMVN Hanol tariff (403)",
+        "Standard food is one restaurant only"
+      ]
+    },
+    "kanatal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3913,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/india/kanatal/budget-hotels",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-dhanaulti",
+          "https://www.kayak.co.in/Kanatal-Hotels.315967.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1160,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.kayak.co.in/Kanatal-Hotels.315967.hotel.ksp"
+        ],
+        "homestay_median_inr": 2513,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.kayak.co.in/Kanatal-Hotels.315967.hotel.ksp"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: 8 properties: Cleartrip Sun 11 Oct-Mon 12 Oct pre-tax (Belleza Inn 4,635, The Hermitage 5,723, The Pahadi House 6,180, Club Mahindra Kanatal 6,725); Cleartrip 12-13 Nov pre-tax (Aurevelle Kastura 2,404, same property as 'Kastura' 2,464 in Oct, counted once); Kayak 10-11 Oct tax-incl 'from' (The Kanatal Orchids 2,127, In Apple Estate 2,417, La Riqueza 3,190). Mixed tax basis and dates. Excluded Pine Queen 13,645 and The Terraces 17,699. Budget: Kayak 10-11 Oct tax-incl 'from': Atulya Neer Hotel 967, Hotel Omkaar 1,160, Kasturi Resorts 1,257. Homestay: Morning Breeze Homestay 2,513, Kanatal Kutir 2,513 (Kayak, same basis).",
+        "notes": "Kayak's pooled median of all 23 listed Kanatal properties (every class, Sat 10 Oct, tax-incl) is 3,021, a lower sanity check on mid. Unpaqd (20 Jan 2026) says homestays/guesthouses start 800-1,500, rising to 2,500+ in April-June. Kayak says Kanatal weekend (Sunday) averages are far above weekdays. Cleartrip's Kanatal page is not clean (shows luxury under 'budget')."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Mussoorie to Kanatal (38 km)",
+            "inr": 2200,
+            "range": "sedan, taxiservicemussoorie.in"
+          },
+          {
+            "route": "Dehradun to Kanatal",
+            "inr": 3150,
+            "range": "sedan 2,800-3,500, SUV 4,000-5,000 (Trekgo, 23 Aug 2026); Unpaqd (20 Jan 2026) 2,500-3,000"
+          },
+          {
+            "route": "Rishikesh to Kanatal via Chamba",
+            "inr": 2850,
+            "range": "sedan 2,500-3,200 (Trekgo, Aug 2026)"
+          }
+        ],
+        "basis": "Weak proxy: Trekgo says a private multi-day rental from Dehradun covering Dhanaulti, Surkanda Devi and Kanatal runs 3,500-4,200 per day including driver allowance (lower bound used, vehicle class not stated). No Kanatal-based local rate card found. Cheap local option: shared jeep Kanatal-Surkanda Devi 50 per person, Chamba-Kanatal 50, Rishikesh Natraj Chowk-Chamba shared Maxx 150-180.",
+        "sources": [
+          "https://trekgo.in/blog/how-to-reach-kanatal-and-dhanaulti-from-delhi-and-dehradun",
+          "https://unpaqd.com/blog/kanatal-budget-travel/",
+          "https://taxiservicemussoorie.in/taxi-service-mussoorie-fare-packages/"
+        ],
+        "notes": "Surkanda Devi is about 8 km away, so a local day is mostly waiting time."
+      },
+      "food_per_person_day": {
+        "budget_inr": 600,
+        "standard_inr": null,
+        "basis": "Unpaqd (20 Jan 2026) budgets 600 per day for food at dhabas and homestay meals (dhaba meals 100-150, homestay meals 150-200 extra). Standard not derived: Holidify shows Kanatal Resort and Spa 800 and Camp Wildex 400 but gives no price basis; Tripadvisor shows only symbols.",
+        "sources": [
+          "https://unpaqd.com/blog/kanatal-budget-travel/",
+          "https://www.holidify.com/places/kanatal/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Holidify says there are few eateries outside hotels and guesthouses, so most people eat at their stay."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Standard food",
+        "Dorm",
+        "Kanatal-specific local day taxi rate",
+        "Mid-tier sample mixes tax bases and dates"
+      ]
+    },
+    "tehri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4387,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-new-tehri"
+        ],
+        "budget_hotel_median_inr": 1392,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-tehri"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' page, 12-13 Nov 2026 (Thu), pre-tax: Le ROI Lake View Koti 3,695, Tehri Retreat 3,734, Le ROI Floating Huts 5,039, Azalea Resort 5,297 (dropped Divine Lake Cruise 21,346, a cruise-style stay). Budget: same dates: AtulyaNeer Cottage 1,051, 7-High Rock Hotel 1,392, Atulya Neer Hotel 1,692 (5 more properties sold out).",
+        "notes": "Cleartrip Sun 11 Oct-Mon 12 Oct (Tehri Road): Sapphire Retreat 3,245, Himalayan Eco Lodges Sursingdhar 3,410. Lake-side stays are 20-65 km from New Tehri (Koti, Pajaint, Chamba). Tehri Retreat showed 4,608 on an older December capture in a search snippet."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [],
+        "basis": "No Tehri-specific rate card found. Bazar Taxi (fetched, undated) per km: CNG sedan 10.5, petrol/diesel sedan 11, CNG SUV 12, diesel Innova 17. Package slabs 4h/40km, 8h/80km etc. exist but vehicle prices are not shown. CabBazar 'from 1,500 sedan per day' (search snippet) is a platform floor, not a Tehri quote.",
+        "sources": [
+          "https://bazartaxi.com/destinations/taxi-service-in-tehri-dam",
+          "https://cabbazar.com/city/tehri"
+        ],
+        "notes": "Tehri Dam, Koti Banal and the lake zone are spread over tens of km, so per-km pricing matters more than a day slab. The Tehri page at taxiservicedehradun.com lists no fares."
+      },
+      "food_per_person_day": {
+        "budget_inr": 525,
+        "standard_inr": 750,
+        "basis": "Zomato cost-for-two for 9 New Tehri restaurants (search-result snippet): 1,000 / 250 / 500 / 550 / 350 / 450 / 400 / 500 / 550. Median 500 for two = 250 per meal -> standard 3 x 250 = 750. Budget = 3 x 175 using the cheapest three (250, 350, 400 for two -> median 350 -> 175 per meal).",
+        "sources": [
+          "https://www.zomato.com/tehri/new-tehri-tehri-restaurants",
+          "https://www.zomato.com/tehri/shubham-family-restaurant-new-tehri-tehri-"
+        ],
+        "notes": "Zomato page itself not fetched (timed out); numbers are from search snippets. Hotel Le Roi Lake View Koti buffet breakfast is 500 per person (Trip.com/other snippet) so lake-side resort eating is dearer."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local day taxi price (null)",
+        "Homestay and dorm",
+        "Zomato figures are snippet-level and undated"
+      ]
+    },
+    "lansdowne": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3417,
+        "mid_n": 22,
+        "mid_sources": [
+          "https://www.kayak.co.in/Lansdowne-Hotels.306638.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1823,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/lansdowne/budget-hotels"
+        ],
+        "homestay_median_inr": 3156,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-lansdowne"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Kayak 10-11 Oct (Sat night) tax-inclusive 'from' prices for 22 listed Lansdowne properties of all classes (range 1,353-12,542); roughly 3,050 pre-tax at 12% GST. No Cleartrip 3-star page existed for Lansdowne. Budget: Cleartrip Sun 11 Oct pre-tax: Galaxy 800, Corbett Hill Resort 1,736, Garhwali Inn 1,910, Shanti Raj Hill View 1,982 (dropped Shri Gobind Highway Motel 1,800, 10 km away). Homestay: Cleartrip 12-13 Nov pre-tax, Hill Heaven 3,210, 11 Gaon Mudhouse 3,156, 11 Gaon 1,609 (5 others sold out).",
+        "notes": "Kayak's own 'best value' list for Lansdowne shows The Hill Heaven Home Stay at 1,160 and 3-star Sunny Pines Resort 1,353, i.e. the same property is 3x cheaper on a weekday-offseason capture vs Cleartrip's Nov date, so homestay and mid are volatile. Mid is a pooled-class median, not 3-star only. A third-party page says GMVN Lansdowne TRH rooms 'from 900'; gmvnonline.com returned 403 and was not bypassed."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Lansdowne to Dehradun airport",
+            "inr": 2500,
+            "range": "Dzire; Ertiga 3,500; Innova 4,000"
+          },
+          {
+            "route": "Lansdowne to Delhi",
+            "inr": 4000,
+            "range": "Dzire; Ertiga 5,500; Innova 6,000"
+          },
+          {
+            "route": "Lansdowne to Mussoorie",
+            "inr": 3000,
+            "range": "Dzire; Ertiga 4,000; Innova 4,500"
+          }
+        ],
+        "basis": "Uttaranchal Car Rental (undated) Garhwal local per-day rate: Swift Dzire 2,500 for 150 km/day, minimum 2 days, includes fuel/driver/toll; Innova 3,500. Single operator. HurryUp's generic 8h/80km sedan card is 3,014 + tax. GT Cabs sightseeing from Rishikesh (Tip-n-Top, Bhulla Lake) 3,500 sedan (snippet, longer trip).",
+        "sources": [
+          "https://www.uttaranchalcarrental.net/lansdowne-taxi-service.asp",
+          "https://hurryupcabs.com/city/lansdowne",
+          "https://www.taxiservicedehradun.com/rishikesh/rishikesh-to-lansdowne-cabs-taxi.php"
+        ],
+        "notes": "Lansdowne's sights (Tip n Top 1.5 km from Bhulla Tal, Santoshi Mata, St Mary's) are close together; a half day usually suffices. The same page lists Haridwar to Lansdowne at 1,000, which looks like a typo and is not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No usable Lansdowne price found. Holidify/TripClap list Mithas Restaurant at 200 and Mahalaxmi Misthan Bhandar at 100-200, but Connecting Traveller puts Mithas in Kotdwar and the sweets shop is in Satpauli, so neither is Lansdowne. Restaurant Guru lists 16 Lansdowne restaurants with price symbols only.",
+        "sources": [
+          "https://www.holidify.com/places/lansdowne/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.connectingtraveller.com/place-to-visit-in/lansdowne/mithas-restaurant",
+          "https://restaurant-guru.in/Lansdowne-Uttar-Pradesh"
+        ],
+        "notes": "Leave null; do not substitute a formula number."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Both food figures",
+        "Dorm",
+        "Taxi is a single undated operator",
+        "Mid is pooled all-class, tax-incl, weekend"
+      ]
+    },
+    "corbett-national-park": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Ramnagar / Dhikuli / Garjia (no lodging inside the park; core-zone permits needed)",
+        "mid_median_inr": 3524,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-ramnagar"
+        ],
+        "budget_hotel_median_inr": 1792,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/corbett/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Ramnagar '3-star' page, 12-13 Nov 2026 (Thu), pre-tax, 16 listed, dropped 4 luxury (Rattan Elwood 24,750, Forest Roar 26,150, Cotton Tree 26,150, Earavat by Aamod 11,160) -> 12 (range 1,689-6,714). Budget: Cleartrip Sun 11 Oct-Mon 12 Oct pre-tax: Carnival 999, Motel Resort 1,568, Deer View 1,792, Safari Park 1,907, Karan's 1,922.",
+        "notes": "Timing caveat: both captures are BEFORE the core zones reopen on 15 Nov, i.e. off-season/shoulder prices. Peak season (roughly Nov-June, weekends, holidays) is higher. The homestays-in-ramnagar page returned resorts (Sterling Riverview 13,500, Club Mahindra Patkote 11,544 etc.), not homestays. Echo Home Stay 5,312 is the only homestay-labelled row seen (n=1)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [
+          {
+            "route": "Ramnagar to Marchula",
+            "inr": 2000,
+            "range": "Dzire/Etios, Corbett Online"
+          },
+          {
+            "route": "Ramnagar to Kathgodam",
+            "inr": 2500,
+            "range": "Dzire/Etios, Corbett Online"
+          },
+          {
+            "route": "Ramnagar to Nainital",
+            "inr": 3500,
+            "range": "Dzire/Etios, Corbett Online"
+          },
+          {
+            "route": "Ramnagar to Delhi",
+            "inr": 6500,
+            "range": "Dzire/Etios, Corbett Online"
+          }
+        ],
+        "basis": "Median of 3 sedan quotes: Singh Tour & Travel 1,800-2,000 for 8h/80km (page 31 May 2025), Corbett Online 'local tour/day' 3,000 (page footer 2026; includes 6-point sightseeing), Guru Kripa Taxi 3,200 per day for 125 km (undated, extra 14/km). Range 1,900-3,200; the 3,000+ quotes cover more km/fixed itineraries.",
+        "sources": [
+          "https://www.singhtour.com/page/ramnagar-local-taxi-service-cab-booking-service/",
+          "https://www.corbettonline.com/Corbett-taxi-booking-and-tariff",
+          "https://gurukripataxi.com/taxi-tempo-traveller-service-in-jim-corbett-ramnagar"
+        ],
+        "notes": "Safari is a separate cost: a private-agency article (corbettonlinebooking.com, Feb 2026) lists gypsy jeep for Indians per vehicle (up to 6) Jhirna/Dhela 6,500-7,200, Bijrani/Durgadevi 7,500-8,500, Sitabani 5,200-6,200, guide included, Dhikala not a day safari. Those are agency prices, not the Forest Department portal, so verify before publishing."
+      },
+      "food_per_person_day": {
+        "budget_inr": 675,
+        "standard_inr": 1050,
+        "basis": "Justdial cost-for-two for 7 Ramnagar eateries (search-result snippet): Kundan 400, New Shere Punjab 500, Shan A Punjab 700, Copper 700, Corbett Hill Queen 750, High Speed Life 750, The Grill Kabab Treat 750; median 700 for two = 350 per meal -> standard 3 x 350 = 1,050. Budget = 3 x 225 from the cheapest two (400, 500). Doabas Punjabi Dhaba 1,200-1,600 for two excluded as a tourist-stop outlier.",
+        "sources": [
+          "https://www.justdial.com/Corbett/Restaurants-in-Ramnagar/nct-10408936",
+          "https://www.justdial.com/Corbett/Dhaba-Restaurants-in-Ramnagar/nct-10158813"
+        ],
+        "notes": "Justdial pages were not fetched (blocked or snippet only). Most Corbett visitors eat in resort meal plans (price not in this research). Includes non-veg and veg places; no alcohol assumed."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm",
+        "Peak-season (Nov-June) hotel prices (captures are Oct/12 Nov)",
+        "Official Forest Department safari fares",
+        "Justdial cost-for-two not directly fetched"
+      ]
+    }
+  }
+}

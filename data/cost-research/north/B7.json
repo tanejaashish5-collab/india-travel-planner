@@ -1,0 +1,694 @@
+{
+ "batch": "B7",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "dharamshala": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1939,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-dharamshala",
+     "https://www.easemytrip.com/hotels/3-star-hotels-in-mcleod-ganj/"
+    ],
+    "budget_hotel_median_inr": 1792,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/dharamshala/budget-hotels"
+    ],
+    "homestay_median_inr": 2247,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/homestays-in-dharamshala"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 3-star page, stay 13-14 Nov 2026, pre-tax discounted price, lower-town localities only (Hotel Sky Pie 818, Nandini Villa/Ram Nagar 1,848, Dharamshala Paradise/Hodal 1,869, Kavin Sparrow/Mohli Lahrandi 2,009, Hotel Anandam 3,795, Chonor House 4,860). Budget: Cleartrip budget-hotels page, stay 11-12 Oct 2026 (year not printed), pre-tax, Lower Dharamshala / Chamunda Devi rows (The Kunal 1,792, The Kashmir House 1,904, Hotel Chamunda 1,792, Hotel Chand 1,333). Homestay: Cleartrip homestay page 13-14 Nov 2026 pre-tax (White Water Inn 935, Hotel Chaitanya Inn/Tota Rani 2,002, SnowBiscuit Villa/Jawahar Nagar 2,491, Ghar Bar Boutique/Mohli Lahrandi 3,330).",
+    "notes": "Lower town (Kotwali/Sudher/Ram Nagar/Mohli) is cheaper than the McLeod Ganj hill side; most tourists actually sleep in McLeod Ganj/Dharamkot, see the mcleodganj row. Cross-check: EaseMyTrip 3-star list (undated, McLeod+Dharamshala area, 24 rows, lower of two shown figures, taxes extra) has median 2,717. Cleartrip tags a few McLeod-side properties as 'Dharamshala' (e.g. Chonor House) so the n=6 set is small and the 818 and 4,860 ends are far apart. Dorm: Hostelworld beds are almost all in McLeod Ganj/Dharamkot/Bhagsu, none usable for lower town (use mcleodganj dorm figure). Budget n=4 is thin."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Dharamshala to McLeod Ganj (sedan drop)",
+      "inr": 599
+     },
+     {
+      "route": "Gaggal (Kangra) airport to Dharamshala (sedan)",
+      "inr": 1000
+     },
+     {
+      "route": "Dharamshala to Palampur (Etios/sedan drop)",
+      "inr": 1000
+     },
+     {
+      "route": "Dharamshala to Bir Billing (sedan drop)",
+      "inr": 2500
+     },
+     {
+      "route": "Dharamshala to Dalhousie (sedan drop)",
+      "inr": 3500
+     }
+    ],
+    "basis": "Median of 7 rate cards for a Dharamshala/McLeod sedan full day (80-100 km, 8-9 h): McLeod Ganj Taxi Union page 4-seater 2,500/day up to 80 km (RTA-approved, page undated, seen via search snippet); Jagnish Tours 2026-27 sedan local full day 2,500; dharamshalataxi.com (c) 2026 Etios AC 2,500 / non-AC 2,000 (100 km, 9 h); Pine Valley Holidays sedan 'McLeodganj Classics' 2,500 (undated); Maharana Cabs sedan full-day tour 2,399 (undated); dharamshalacab.com 2023-24 sedan 3,000 (80 km); HurryUp Cabs app 8h/80km sedan 3,014 pre-tax (generic rate card, identical for every city). Median 2,500. Per-km: IndiaTaxiBooking Oct 2026 sedan 13, HurryUp 12, Maharana 'starts at 11' => 12.",
+    "sources": [
+     "http://www.mcleodganjtaxiunion.com/dharamsala-sightseeing-rates.php",
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh",
+     "https://www.dharamshalataxi.com/taxi-rates",
+     "https://pinevalleyholidays.com/taxi-detail.php?taxi=dharamshala-local-sightseeing-packages",
+     "https://maharanacabs.in/dharamshala/dharamshala-mcleod-ganj-taxi/",
+     "https://www.dharamshalacab.com/taxi-rates/",
+     "https://hurryupcabs.com/cabs/dharamshala",
+     "https://www.indiataxibooking.com/dharamshala-to-dalhousie-taxi-fare-one-way-round-trip/"
+    ],
+    "notes": "Point-to-point conflicts: McLeod drop is 599 sedan / 800 Innova (Maharana, undated) but a Aug 2026 blog says Rs 300 from the Kotwali Bazaar stand (not used); Gaggal airport to Dharamshala is 600 Etios (dharamshalataxi.com 2026), 1,000 Etios (dharamshalacab 2023-24) and 1,200 sedan (Jagnish 2026-27), median 1,000; Dharamshala to Dalhousie ranges 1,984-2,282 (IndiaTaxiBooking Oct 2026, ~122 km), 3,000-3,500 (blog), 3,500 (dharamshalataxi 2026 and dharamshalacab), 4,500 (Jagnish 2026-27), median 3,500; Dharamshala to Bir 3,000 (Jagnish), 1,500-2,000 (blog Jul 2026), 2,500 (dharamshalacab airport to Bir), median 2,500. Peak season (May-Jun, Dec-Jan) may cost 15-20% more per Jagnish. 5% GST per Jagnish. The union's own 4-hour McLeod local tour is 900 and a 6-hour 4-stop tour 1,700 (undated)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 500,
+    "standard_inr": 900,
+    "basis": "Shared McLeod Ganj / Dharamshala evidence. Zomato McLeodganj list (browsed 2026-10-09, cost for two): Trek and Dine 800, German Bakery 1,000, Nick's Italian Kitchen 500, Moonlight Cafe Bakery 500, Peace Coffee 500, THYM 2,100 (excluded), lower-town Vinod Chat Bhandar 350, Himalayan Musaafir 300; median of McLeod cafes ex-THYM 500 for two = ~250 per meal. Dish prices (dharamshalaguide.com, prices current May 2026): momo plate 80-100 (Kalimpong), Tibetan mains 100-250, Common Ground breakfast 150-280 + coffee 90-140, Tibet Kitchen meal for two 500-700. Budget = hostel/dhaba breakfast ~120 + momo/thukpa lunch ~150 + Tibetan/thali dinner ~200 = ~500. Standard = cafe breakfast+coffee ~300 + lunch ~275 + dinner ~325 = ~900. Cross-check: Dharamkot guide (Sep 2026) 500-1,000 per person per day for three cafe meals.",
+    "sources": [
+     "https://www.zomato.com/dharamshala/mcleodganj-restaurants",
+     "https://dharamshalaguide.com/cafes-in-mcleodganj/",
+     "https://discoverwithdheeraj.com/dharamkot-guide-weekend-itinerary/",
+     "https://www.holidify.com/places/mcleodganj/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Lower Dharamshala town has fewer tourist cafes; no separate lower-town menu survey was possible, so the same range is used. Holidify cost-for-two figures (100-500) are dated and were not used for the number."
+   },
+   "confidence": "medium",
+   "confidence_detail": {
+    "stay": "medium (n=6/4/4, one OTA plus one cross-check)",
+    "taxi": "high (7 cards agree on 2,500)",
+    "food": "medium"
+   },
+   "unverified": [
+    "Dharamshala lower-town-only dorm price",
+    "taxi union current printed board (site undated, hptdc/official portals not reachable)",
+    "peak-season (May-Jun, Dec) room prices",
+    "lower-town-specific menu survey"
+   ]
+  },
+  "mcleodganj": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2700,
+    "mid_n": 19,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-dharamshala",
+     "https://www.booking.com/searchresults.html?ss=McLeod+Ganj%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3",
+     "https://www.easemytrip.com/hotels/3-star-hotels-in-mcleod-ganj/"
+    ],
+    "budget_hotel_median_inr": 1423,
+    "budget_n": 16,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/dharamshala/budget-hotels"
+    ],
+    "homestay_median_inr": 1496,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/homestays-in-dharamshala"
+    ],
+    "dorm_median_inr": 450,
+    "dorm_n": 25,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Dharamshala?currency=INR"
+    ],
+    "price_basis": "Mid: pooled median of 19. Cleartrip 3-star page 13-14 Nov 2026 pre-tax, McLeod Ganj-locality rows (Bob's n Barley 1,720, The Vaikunth 2,678, Alt Life Luxe 3,384, Kamal Residency 3,680; median 3,031) plus Booking.com 3-star class filter, 13-14 Nov 2026, 2 adults, listed tax-inclusive (first 15 of 23 results, 0.8-2.1 km from McLeod centre: 1,208 / 1,588 / 1,628 / 2,328 / 2,363 / 2,625 / 3,014 / 3,024 / 3,108 / 3,749 / 3,969 / 4,327 / 6,300 / 6,300 / 6,825; tax-incl median 3,024) divided by 1.12 (12% GST slab) to get pre-tax estimate 2,700. Booking-only pre-tax estimate also 2,700, Cleartrip-only 3,031. Budget: Cleartrip budget-hotels page stay 11-12 Oct 2026 (year not printed), pre-tax, McLeod Mall/Cantt/Bhagsu/Naddi/Dharamkot rows (16 hotels, 964 to 1,904). Homestay: Cleartrip homestay page 13-14 Nov 2026 pre-tax, McLeod Ganj rows (Pine wood 988, Lill Sparrow 1,480, Shiva Guest House 1,512, The Unmad 2,590). Dorm: Hostelworld 'from' price per bed, undated, 25 hostels.",
+    "notes": "Dates differ by figure: budget tier is Oct (11-12), mid/homestay are 13-14 Nov. Cross-check: EaseMyTrip 3-star list (undated, 24 rows around McLeod/Dharamshala, lower of two shown figures, taxes extra) median 2,717. Dorm list included an outlier (EDM Hostel 2,000) and a range of 168 (Sort By Stays Kareri) to 2,000; median unaffected by the outlier (450 either way). Several Booking 'class 3' rows have review scores of 5-7, i.e. basic rooms with a 3-star label. Cleartrip budget list shows no star tag; ratings 2.5-5.0."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "McLeod Ganj to Dharamshala town (sedan drop)",
+      "inr": 599
+     },
+     {
+      "route": "McLeod Ganj to Bhagsu Waterfall + Triund base (sedan, return trip)",
+      "inr": 1500
+     },
+     {
+      "route": "McLeod Ganj to Gallu / Triund start (one way, blog Sep 2026)",
+      "inr": 500
+     },
+     {
+      "route": "Gaggal (Kangra) airport to McLeod Ganj (Etios/sedan)",
+      "inr": 1000
+     },
+     {
+      "route": "Pathankot to McLeod Ganj (Etios/sedan)",
+      "inr": 2500
+     }
+    ],
+    "basis": "Same Dharamshala/McLeod taxi market as the dharamshala row: McLeod Ganj Taxi Union 4-seater 2,500/day up to 80 km (undated, seen via search snippet); Jagnish Tours 2026-27 sedan full day 2,500; dharamshalataxi.com 2026 Etios AC 2,500; Pine Valley sedan 2,500; Maharana 2,399; dharamshalacab 2023-24 3,000; HurryUp 3,014 (generic). Median 2,500. Union short tours (undated): 4-hour local 900, 6-hour with Norbulingka 1,700, 9-hour with Kangra Fort 2,800.",
+    "sources": [
+     "http://www.mcleodganjtaxiunion.com/dharamsala-sightseeing-rates.php",
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh",
+     "https://www.dharamshalataxi.com/taxi-rates",
+     "https://pinevalleyholidays.com/taxi-detail.php?taxi=dharamshala-local-sightseeing-packages",
+     "https://maharanacabs.in/dharamshala/dharamshala-mcleod-ganj-taxi/",
+     "https://www.dharamshalacab.com/taxi-rates/",
+     "https://hurryupcabs.com/cabs/dharamshala",
+     "https://discoverwithdheeraj.com/dharamkot-guide-weekend-itinerary/"
+    ],
+    "notes": "Gaggal airport to McLeod Ganj: 1,000 Etios (dharamshalataxi 2026), 1,200 (dharamshalacab 2023-24), 1,500 (Himalaya Cab 'from' / blog 1,000-1,500); median ~1,000-1,200. Pathankot to McLeod 2,500 (dharamshalataxi 2026 Etios); blog says 2,500-3,500. Triund: taxis only reach Gallu/Triund base, trek starts there. Auto McLeod to Dharamkot 100-150 (blog Sep 2026)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 500,
+    "standard_inr": 900,
+    "basis": "Zomato McLeodganj list browsed 2026-10-09 (cost for two): Trek and Dine 800, German Bakery 1,000, Nick's Italian Kitchen 500, Moonlight Cafe Bakery 500, Peace Coffee 500, THYM 2,100 (premium, excluded); median of the 5 = 500 for two = 250 per meal. Dish prices (dharamshalaguide.com updated May 2026): Kalimpong momo plate 80-100, Namgyal Cafe 80-180/item, Norling 100-220/dish, Tibet Kitchen 120-250/dish (meal for two 500-700), Common Ground breakfast 150-280, coffee 80-150, Nick's pizza 280-380. Budget day = ~120 breakfast + ~150 momo/thukpa lunch + ~200 dinner = ~500; standard = ~300 cafe breakfast and coffee + ~275 lunch + ~325 dinner = ~900.",
+    "sources": [
+     "https://www.zomato.com/dharamshala/mcleodganj-restaurants",
+     "https://dharamshalaguide.com/cafes-in-mcleodganj/",
+     "https://discoverwithdheeraj.com/dharamkot-guide-weekend-itinerary/",
+     "https://discoverwithdheeraj.com/dharamshala-mcleod-ganj-travel-guide/"
+    ],
+    "notes": "Dharamkot/Naddi cafes run higher than Mall Road/Bhagsu. Dharamkot guide (Sep 2026) says 500-1,000 per person per day for three cafe meals and meal for two 400-800; a backpacker budget blog (Jan 2026) says 600/day all-in food. Cheapest stalls (momos 30-50) look outdated and were not used."
+   },
+   "confidence": "medium",
+   "confidence_detail": {
+    "stay": "medium (two OTAs agree within 12% on n=19)",
+    "taxi": "high",
+    "food": "medium"
+   },
+   "unverified": [
+    "current union printed rate board",
+    "peak-season (Mar-Jun, Oct-Nov weekends, Dec) room prices",
+    "homestay n=4 only"
+   ]
+  },
+  "bir-billing": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2586,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-bir",
+     "https://www.cleartrip.com/hotels/hotels-in-bir"
+    ],
+    "budget_hotel_median_inr": 1476,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-bir"
+    ],
+    "homestay_median_inr": 1687,
+    "homestay_n": 15,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-bir",
+     "https://www.booking.com/searchresults.html?ss=Bir%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": 499,
+    "dorm_n": 22,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Bir?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip Bir 3-star-tagged hotels, stay 13-14 Nov 2026, pre-tax discounted price (Hotel Sagarmatha 1,274, The Bunksters Bir 2,173, Sabhyata Stays 2,371, Hotel Appas 2,800, Saanjh Cottages 3,961, Dorjee House 4,232). Budget: Cleartrip same page, 13-14 Nov 2026 pre-tax, private rooms at hostels/guest houses and a 2-star (Hosteller Bam Bir 1,031, Hosteller Bir Rooms 1,311, Forest Rest House 1,476, Social Stays 1,650, Pink Park 1,821). Homestay: pooled median of 15, Cleartrip Travelodge Homestay 1,674 (pre-tax) plus Booking.com homestay filter 13-14 Nov 2026 tax-inclusive (14 homestays within 2.8 km of Bir: 1,133 to 7,139) divided by 1.12 for GST (>1,000), pre-tax estimate. Dorm: Hostelworld 'from' bed price, undated, 22 hostels with dorms (299 to 1,440).",
+    "notes": "Homestay distribution is bimodal: simple homestays 1,000-1,700 and boutique/glamping 2,600-6,400, so the 1,687 median sits at the seam. Booking.com recommended-sort first page for Bir (hotels and hostels with quad rooms, tax-incl) shows a much higher level (median about 4,700), driven by quadruple rooms and boutique properties; not used. Cleartrip budget-hotels page for Bir resolved to Baijnath (only Shivirama 729, 11-12 Oct), not usable. Many Bir '3-star' tags are hostel brands with private rooms. Off-peak mid-Nov; the paragliding season (Oct-Nov, Mar-Jun) is peak and weekend prices will be higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "taxi (no Bir-based local sightseeing tariff found; paragliding operators include the Bir to Billing take-off transfer)",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Dharamshala to Bir Billing (sedan drop, 65 km)",
+      "inr": 2500
+     },
+     {
+      "route": "Bir Billing adventure day from Dharamshala (sedan, round trip)",
+      "inr": 5000
+     },
+     {
+      "route": "Dharamshala to Palampur (Etios drop)",
+      "inr": 1000
+     }
+    ],
+    "basis": "No Bir-based taxi union or sightseeing board found. Dharamshala to Bir quotes: Jagnish Tours 2026-27 sedan 3,000 (Innova 4,000); Dheeraj blog (updated Jul 2026) 'private taxi around 1,500-2,000' for 65 km; dharamshalacab.com 2023-24 Gaggal airport to Bir Etios 2,500 / Innova 5,000; median of 3,000, 1,750, 2,500 = 2,500. Day trip 'Bir Billing Adventure Day' sedan 5,000 / Innova 7,000 (Pine Valley, undated, from Dharamshala).",
+    "sources": [
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh",
+     "https://discoverwithdheeraj.com/bir-billing-more-than-paragliding-2/",
+     "https://www.dharamshalacab.com/taxi-rates/",
+     "https://pinevalleyholidays.com/taxi-detail.php?taxi=dharamshala-local-sightseeing-packages",
+     "https://birbillingparagliding.com/"
+    ],
+    "notes": "Proxy only if a number is required: the Dharamshala sedan full day of 2,500 (80-100 km). Not applied because it is another town's board. Paragliding tandem 3,500 for 15-20 min, 7,500 for 40-60 min, 9,500 cross-country (birbillingparagliding.com, pickup and take-off transfer included, season Sep-Jun); blog (Apr 2026) 2,500-3,500 short, 3,500-4,500 medium. Local transport per day 100-200 budget, 500-1,000 mid (blog)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 500,
+    "standard_inr": 900,
+    "basis": "Single-source estimate: Dheeraj Bir Billing guide (updated Jul 2026) gives food per day 400-600 (budget) and 800-1,200 (mid-range) and cafe meal for two 400-700 (= 200-350 per meal, 600-1,050 per day). Tibetan Colony / Chowgan cafes were not menu-surveyed; no Zomato page for Bir could be loaded. Mid-points used: budget 500, standard 900, consistent with the McLeod Ganj cafe scene.",
+    "sources": [
+     "https://discoverwithdheeraj.com/bir-billing-more-than-paragliding-2/"
+    ],
+    "notes": "Low confidence: one blog, no menu or Zomato/Swiggy rows."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "low-medium (Cleartrip n=6/5; homestay bimodal; Booking disagrees upward)",
+    "taxi": "low (no local tariff; only Dharamshala-side quotes)",
+    "food": "low (one blog)"
+   },
+   "unverified": [
+    "Bir-based local taxi or auto day rate",
+    "Bir/Chowgan cafe menu prices",
+    "Billing take-off cab fare if paragliding not booked",
+    "peak-season rates (Oct-Nov and Mar-Jun are peak flying months)"
+   ]
+  },
+  "palampur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2029,
+    "mid_n": 13,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-palampur"
+    ],
+    "budget_hotel_median_inr": 1747,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/palampur/budget-hotels"
+    ],
+    "homestay_median_inr": 3000,
+    "homestay_n": 7,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Palampur%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Palampur?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip 3-star page stay 13-14 Nov 2026, pre-tax discounted: 1,215 / 1,343 / 1,466 / 1,496 / 1,665 / 1,950 / 2,029 / 2,319 / 2,385 / 2,705 / 2,916 / 3,800 / 4,219 (13 properties; Forest Rest House Palampur 4,219 is the outlier; median without it 1,990). Budget: Cleartrip budget page stay 11-12 Oct 2026 pre-tax, Hotel Thamsar 1,747 (only property listed, n=1). Homestay: Booking.com homestay filter, 13-14 Nov 2026, tax-inclusive 945 / 1,574 / 3,149 / 3,360 / 4,082 / 6,484 / 11,800 (7 properties 0.7-5.9 km from Palampur), median 3,360 incl, divided by 1.12 = about 3,000 pre-tax estimate.",
+    "notes": "Palampur is a tea-estate belt; properties are spread across Banuri, Berachah, Kardiana, Ghuggar, Lohna. Many Cleartrip '3-star' rows at 1,200-1,700 are budget lodges, so a true budget tier is not separable from the 3-star pool (that bottom third, 1,215-1,665, is the better budget read). Homestay set is wide (945 to 11,800), boutique-heavy, low confidence. Booking 2-star filter (4 properties in Palampur, tax-incl: Hotel Ashiana 2,363, Sagar Residency 4,200, Som Kunj 5,954, Chimbalhar Heights 3,150) reads higher than Cleartrip for the same hotels (Ashiana 1,665, Sagar Residency 2,319 pre-tax). Blog (Aug 2026) ranges: budget 800-1,500, mid 1,500-3,500; HPTDC Tea Bud / Hotel T-Bud mentioned. No hostels listed on Hostelworld."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan (no Palampur-based local board found)",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Dharamshala to Palampur (Etios drop)",
+      "inr": 1000
+     },
+     {
+      "route": "Gaggal (Kangra) airport to Palampur (blog 800-1,000)",
+      "inr": 900
+     },
+     {
+      "route": "Dharamshala to Palampur tea gardens sightseeing (sedan, Jagnish 2026-27)",
+      "inr": 2500
+     },
+     {
+      "route": "Palampur + Baijnath full day from Dharamshala (sedan, Pine Valley)",
+      "inr": 4000
+     }
+    ],
+    "basis": "No Palampur taxi union or sightseeing board found. Dharamshala to Palampur drop: dharamshalataxi.com (c) 2026 Etios 1,000 / Innova 1,500; Dheeraj blog (updated Aug 2026) 800-1,200. Tea-garden day trip from Dharamshala: Jagnish Tours 2026-27 sedan 2,500 / Innova Crysta 3,500. Per-km ~12 from the Dharamshala operators.",
+    "sources": [
+     "https://www.dharamshalataxi.com/taxi-rates",
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh",
+     "https://pinevalleyholidays.com/taxi-detail.php?taxi=dharamshala-local-sightseeing-packages",
+     "https://discoverwithdheeraj.com/palampur-the-tea-capital-of-north-india/"
+    ],
+    "notes": "Proxy only if a number is required: Dharamshala sedan full day 2,500, or the Jagnish tea-garden day 2,500. Not applied as a Palampur local rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 700,
+    "basis": "Zomato Palampur restaurant list (browsed 2026-10-09, 'cost for one'): KFC 200, Artisan 200, Hotel Ashiana 200, Norwood Green 250, Indian Masala Magic 150, 99 Bites 150, Minar Bhojnalya 250, Sunny Fast Food 200, Biggi The Burger Hub 150; median 200 per meal (delivery-menu basis). Holidify (dated): Golden Dragon/The Lounge/Taj 500 for two. Blog (Aug 2026): local dhaba meal 100-200. Budget = 3 dhaba/street meals ~130 = ~400; standard = 3 sit-down meals ~230 = ~700.",
+    "sources": [
+     "https://www.zomato.com/palampur/restaurants",
+     "https://discoverwithdheeraj.com/palampur-the-tea-capital-of-north-india/",
+     "https://www.holidify.com/places/palampur/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Low confidence: Zomato figures are 'for one' on delivery listings, which can run lower than dine-in; no thali price seen."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "medium for mid (n=13), low for budget (n=1) and homestay",
+    "taxi": "low (no local tariff)",
+    "food": "low"
+   },
+   "unverified": [
+    "Palampur-based local taxi day",
+    "budget hotel tier (Cleartrip budget page lists one hotel)",
+    "homestay tier (boutique-skewed)",
+    "dine-in thali prices",
+    "dorm: none exist on Hostelworld"
+   ]
+  },
+  "dalhousie": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2178,
+    "mid_n": 16,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-dalhousie"
+    ],
+    "budget_hotel_median_inr": 1232,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/dalhousie/budget-hotels"
+    ],
+    "homestay_median_inr": 2362,
+    "homestay_n": 15,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/homestays-in-dalhousie",
+     "https://www.booking.com/searchresults.html?ss=Dalhousie%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": 650,
+    "dorm_n": 3,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Dalhousie?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip 3-star page stay 13-14 Nov 2026 pre-tax discounted, 16 properties (1,318 to 7,574; Hotel Kayanat 7,574 and The Seasons 6,270 are high outliers). Budget: Cleartrip budget page stay 11-12 Oct 2026 (year not printed) pre-tax for four rows (Bombay Palace 1,288, Shangri-La 1,176, Granite Peak 1,792, Hotel Monal 1,680) and listed price with tax not stated for two (Dalhousie Grand 893, Hotel Crags 933); median 1,232. Homestay: pooled 15 = Cleartrip homestay page 13-14 Nov 2026 pre-tax (Comfort Homestay 1,105, Fairytale Luxury Villa 2,526) plus Booking.com homestay filter 13-14 Nov 2026 tax-inclusive (13 homestays within 5.1 km of centre, 1,260 to 6,825; two more at 8 km near Khajjiar were excluded) divided by 1.12; Booking-only pre-tax estimate also 2,362. Dorm: Hostelworld 'from' bed: Birds Hostel 349, Hosteller Mall Road 650, Zostel Banikhet 659 (undated).",
+    "notes": "Dalhousie town centre is Moti Tibba/The Mall; many 3-star rows are in Banikhet, Dhupguri, Pukhri, Guthri, Kalatop. Khajjiar 3-star rows on Cleartrip for the same date: 1,316 / 1,709 / 3,007 / 3,057. Blog ranges (Aug 2026): budget 800-1,500, mid 2,000-4,000, premium 5,000-10,000; peak (May-Jun, Dec-Jan) said to run 30-50% higher."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Dalhousie to Khajjiar (sedan)",
+      "inr": 2000
+     },
+     {
+      "route": "Dalhousie to Chamba (sedan)",
+      "inr": 2000
+     },
+     {
+      "route": "Dalhousie + Khajjiar + Chamba full day (sedan)",
+      "inr": 3000
+     },
+     {
+      "route": "Pathankot to Dalhousie (sedan; Jagnish 3,500 vs blog 1,200-2,000, midpoint)",
+      "inr": 2550
+     },
+     {
+      "route": "Dharamshala to Dalhousie (sedan drop, median of 5 quotes)",
+      "inr": 3500
+     }
+    ],
+    "basis": "Single operator card for a Dalhousie-based day: Jagnish Tours 2026-27 'Dalhousie local sightseeing, full day' sedan 2,500 / Innova Crysta 3,500 (cites himalayasdigital.com and dalhousienortherncabs.com as sources; the latter's own page lists no prices). No Dalhousie taxi-union board was found online. Plausibility cross-checks: the Dharamshala sedan full day is 2,500 on 7 cards; IndiaTaxiBooking (Oct 2026) sedan per-km 13 and Dharamshala to Dalhousie (122 km) 1,984-2,282.",
+    "sources": [
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh",
+     "https://www.indiataxibooking.com/dharamshala-to-dalhousie-taxi-fare-one-way-round-trip/",
+     "https://www.dharamshalataxi.com/taxi-rates",
+     "https://www.dharamshalacab.com/taxi-rates/",
+     "https://discoverwithdheeraj.com/dalhousie-experience-the-old-world-charm/"
+    ],
+    "notes": "Dharamshala to Dalhousie quotes seen: 1,984-2,282 (IndiaTaxiBooking Oct 2026), 2,500-3,500 (blog Aug 2026), 3,500 (dharamshalataxi 2026 and dharamshalacab 2023-24 Etios), 4,500 (Jagnish 2026-27); median 3,500. Pathankot to Dalhousie 3,500 sedan (Jagnish) vs 1,200-2,000 private taxi and 300-400 per seat shared (blog); two disagreeing sources, midpoint shown. Chandigarh to Dalhousie 6,200 sedan (Jagnish). Peak season may cost 15-20% more; 5% GST (Jagnish). Tripadvisor taxi threads are 9-10 years old, not used."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 700,
+    "basis": "Blog-based: Dheeraj Dalhousie guide (updated Aug 2026, last-updated field Mar 2026) gives food per day (3 meals) budget 300-500, mid 500-800, comfort 800-1,500; midpoints used (400 and 650-700). Tripadvisor Dalhousie list (23 restaurants, Oct 2026) tags most (Kwality, Sher-e-Punjab, Lovely, Glory, Moti Mahal, Cafe Dalhousie) as the middle price band with a few cheap (Shiva Cafe) and expensive (The Bridge, The Hooch, Stella Lounge). Holidify (dated) shows Moti Mahal 200-250, Kwality 300, Cafe Dalhousie 100 (unclear units). No Zomato/Swiggy page loaded for Dalhousie.",
+    "sources": [
+     "https://discoverwithdheeraj.com/dalhousie-experience-the-old-world-charm/",
+     "https://www.tripadvisor.in/Restaurants-g503693-Dalhousie_Chamba_District_Himachal_Pradesh.html",
+     "https://www.holidify.com/places/dalhousie/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Low confidence: no menu prices or cost-for-two figures for current restaurants."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "medium (Cleartrip n=16 plus Booking homestays)",
+    "taxi": "low (one Dalhousie-specific card)",
+    "food": "low (blog ranges)"
+   },
+   "unverified": [
+    "Dalhousie taxi union board",
+    "second operator confirming the 2,500 local day",
+    "restaurant menu prices",
+    "peak-season rates"
+   ]
+  },
+  "chamba": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1875,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chamba%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR",
+     "https://www.cleartrip.com/hotels/india/chamba/budget-hotels"
+    ],
+    "budget_hotel_median_inr": 1406,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chamba%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR",
+     "https://www.cleartrip.com/hotels/india/chamba/budget-hotels"
+    ],
+    "homestay_median_inr": 870,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chamba%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Chamba town has almost no star-classified hotels (Booking 3-star filter returned one: Hotel Royal; Cleartrip's 3-star Chamba page lists Uttarakhand-side localities (Uniyal Gaon, Kanatal, Tehri Club), so it was not used). Figures are Booking.com 13-14 Nov 2026, 2 adults, tax-inclusive, properties within 2.1 km of town centre, converted to pre-tax by dividing by 1.12 where above 1,000; plus Cleartrip budget page 11-12 Oct 2026 pre-tax for HPTDC hotels. Mid (best-rated private rooms): Lemonade Inn 1,740 incl (1,554), HPTDC The Iravati Hotel 1,792 pre-tax (Cleartrip), Maharana Pratap Bhawan AC double 2,100 incl (1,875), Rafi's House with breakfast 2,625 incl (2,344), Jannat Hotel 3,150 incl (2,813). Budget: Hotel Royal budget double 1,049 incl (937), Mountain View 1,575 incl (1,406), HPTDC Hotel Champak 1,680 pre-tax (Cleartrip). Homestay: Chamba Vista Homestay 819, Dhauladhar Homestay 922 (both tax-incl, no GST under 1,000).",
+    "notes": "Small, thin market; n=2 to 5 per tier and mixed OTAs, so the tiers overlap. Rooms with 'New to Booking.com' status have no reviews. H2O House (5,669) and glamping/cabin stays 5,000-7,500 (4.7-13 km out) excluded as non-town premium. HPTDC Iravati and Champak are at Laxmi Narayan temple area. Manimahesh yatra season (Aug-Sep) passes through Chamba, so expect higher rates then (not measured)."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan (no Chamba-based local board found)",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Dalhousie to Chamba (sedan)",
+      "inr": 2000
+     },
+     {
+      "route": "Dalhousie + Khajjiar + Chamba full day (sedan)",
+      "inr": 3000
+     },
+     {
+      "route": "Dharamshala to Chamba (Etios drop)",
+      "inr": 3500
+     }
+    ],
+    "basis": "No Chamba taxi union or sightseeing board found. Jagnish Tours 2026-27 sedan: Dalhousie to Chamba 2,000 (Innova Crysta 2,800), Dalhousie + Khajjiar + Chamba full day 3,000 (4,500 Innova Crysta). dharamshalataxi.com (c) 2026 Dharamshala to Chamba Etios 3,500 / Innova 5,500; dharamshalacab.com 2023-24 4,500 / 6,500.",
+    "sources": [
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh",
+     "https://www.dharamshalataxi.com/taxi-rates",
+     "https://www.dharamshalacab.com/taxi-rates/"
+    ],
+    "notes": "Proxy only if a number is required: 2,500 (Dalhousie/Dharamshala sedan full day). Not applied. HRTC bus Chamba to Killar (Sach Pass) about 432 one way in 2026 (blog Sep 2026)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": 600,
+    "basis": "Proxy from the Chamba/Pangi blog (Dheeraj Pangi guide, updated Sep 2026): food per day Rs 300 homestay meals, Rs 500 dhabas plus homestay, Rs 700 comfort tier. Chamba town restaurant prices were not found (Tripadvisor Dalhousie list includes Chamba-bound travellers but no Chamba list loaded). Budget set slightly above the 300 homestay-meal tier, standard set between the 500 and 700 tiers.",
+    "sources": [
+     "https://discoverwithdheeraj.com/pangi-valley-complete-offbeat-travel-guide/"
+    ],
+    "notes": "Low confidence: regional proxy, not a Chamba town menu survey."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "low (n=2-5, two OTAs, tiers overlap)",
+    "taxi": "low (no local tariff)",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Chamba-based local taxi day",
+    "3-star-class hotel tier (does not exist on OTAs)",
+    "restaurant menu prices",
+    "Hostelworld/dorm (none)"
+   ]
+  },
+  "manimahesh-kailash": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Bharmour (Brahmaur), Hadsar roadhead is about 12 km further up (Wikipedia)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Manimahesh (route high point 4,115 m per Wikipedia; scope elevation 5,653 m) has no lodging: the yatra route from Hadsar has seasonal free langars and rented tents at Dhancho (Aug-Sep). Reference prices at the base, Bharmour: HPTDC Hotel Gaurikund 1,904 pre-tax (Cleartrip, stay 11-12 Oct 2026, 4.5 rating); Booking.com 13-14 Nov 2026 tax-inclusive: The tribal homestay and cafe 1,785, Hotel Nanak Bharmour Manimahesh 2,142, Prem homestay 3,308.",
+    "notes": "Source for the no-lodging claim: Wikipedia Manimahesh Lake article (Hadsar is the trailhead, 13-14 km trek; Dhancho has free kitchens and rentable tents Aug-Sep; yatra Aug-Sep around Radhashtami; route open June-Oct; lake frozen Oct-Jun). Wikivoyage Bharmour lists a PWD rest house, a lodge and the Gaurikund hotel but no rates. Chamba town is the other base; see the chamba row."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "jeep/taxi from Bharmour to Hadsar roadhead (no cab sightseeing here)",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No fare for Chamba to Bharmour or Bharmour to Hadsar found on any fetched page. Wikivoyage Bharmour says taxis run from the Bharmour Taxi Stand to Hadsar, Kugti and Gada Saru. District portal (hpchamba.nic.in, page last updated 2020) says only that fixed taxi fares apply in peak season. Jagnish Tours 2026-27 page lists no Bharmour rates.",
+    "sources": [
+     "https://en.wikivoyage.org/wiki/Bharmour",
+     "https://hpchamba.nic.in/how-to-reach-chamba/",
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh"
+    ],
+    "notes": "Helicopter fare and pony rates not found on any fetched page (state tourism pages were unreachable from here). Wikipedia: ponies are hired by some devotees (no price); tents rentable at Bharmour or Chamba and at Dhancho; langars along the route are free. Wikipedia gives Bharmour to Hadsar as 12 km. Dharamshala to Chamba sedan-class drop is 3,500 (dharamshalataxi 2026)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 500,
+    "basis": "Proxy only: Chamba/Pangi blog tiers (Dheeraj Pangi guide, Sep 2026): 300 homestay meals, 500 dhabas plus homestay. During the yatra (Aug-Sep) free community kitchens (langar) serve pilgrims along the route and at Dhancho, so food can be zero; outside the yatra, Bharmour has dhabas only. No Bharmour menu prices found.",
+    "sources": [
+     "https://discoverwithdheeraj.com/pangi-valley-complete-offbeat-travel-guide/",
+     "https://en.wikipedia.org/wiki/Manimahesh_Lake"
+    ],
+    "notes": "Low confidence proxy."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "high that no lodging exists at the lake; base prices from 2 OTAs, n=1 and n=3",
+    "taxi": "none found",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Bharmour to Hadsar and Chamba to Bharmour cab fares",
+    "helicopter fare (Bharmour or Hadsar to Gaurikund)",
+    "pony and porter rates per day",
+    "tent rental prices at Dhancho",
+    "Bharmour restaurant prices",
+    "official yatra registration costs"
+   ]
+  },
+  "sarahan": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2634,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-sarahan"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1500,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/india/sarahan/budget-hotels",
+     "https://www.booking.com/searchresults.html?ss=Sarahan%2C+Himachal+Pradesh%2C+India&checkin=2026-11-13&checkout=2026-11-14&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip stay 13-14 Nov 2026 pre-tax: Sarahan Holiday Inn 1,975 and Bushahr Heights 3,293 (the other six Sarahan listings were sold out). Homestay: Cleartrip budget page stay 11-12 Oct 2026 Vasu Mansion Home Stay 1,120 pre-tax, plus Booking.com 13-14 Nov 2026 tax-inclusive, properties within 1.1 km of Sarahan: Hare Krishna Homestay 1,134, Shonitpur Home Stay 1,680, Laxman Homestay 2,457, Harivansh Homestay 3,150, converted to pre-tax (1,134 / 1,500 / 2,194 / 2,813); median of the five = 1,500.",
+    "notes": "Very thin: only 2 priced 3-star rows. Other Sarahan pricing seen: Hotel Trehans 2,268 tax-incl (Booking, review 6.7); Vardhn Villa 3,149 incl; Sarahan Holiday Inn on Booking 5,623 incl (3.1 km out, different room/seller; Cleartrip shows 1,975 pre-tax). HPTDC Hotel Srikhand Deluxe from 3,090 and cozy deluxe up to 3,600 per night (Dheeraj Sarahan guide updated Oct 2026, 'as of 2025, verify'); Bhimakali Temple guesthouse dormitory Rs 200 per night (same guide; temple trust dorm, not a hostel, so not entered as dorm). Booking rows tagged 'Sarahan' that were 6-20 km away (Rampur, Nachar, Daran Ghati) were excluded. No budget-hotel tier could be separated."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "n/a (no Sarahan local sightseeing tariff found)",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Jeori to Sarahan (17 km, shared jeep, per seat)",
+      "inr": 55
+     }
+    ],
+    "basis": "No Sarahan or Rampur taxi board found. Kinnaur-region private cab day: Rs 3,500-4,500 per day for a Kinnaur circuit (Dheeraj Kinnaur itinerary, updated Aug 2026; Sarahan guide Oct 2026 says 3,500-4,500 as of 2025-26); 6-7 day private taxi including Sarahan 22,000-30,000. Jagnish Tours 2026-27 lists Spiti/Kinnaur Innova Crysta 5,500-6,000 per day, Scorpio/Xylo 5,000-5,500 (high-altitude loop rates, driver night halt 500-800 extra), and no Sarahan or Bharmour fare.",
+    "sources": [
+     "https://discoverwithdheeraj.com/sarahan-detailed-travel-guide/",
+     "https://discoverwithdheeraj.com/kinnaur-valley-most-common-itinerary/",
+     "https://www.jagnishtours.com/taxi-fare-in-himachal-pradesh"
+    ],
+    "notes": "Proxy if a number is required: 3,500 (low end of the Kinnaur circuit day). Not applied because it is a long-distance circuit rate, not an 8 h local sightseeing day. Bhimakali Temple entry is free. HRTC Shimla to Kinnaur buses 400-600."
+   },
+   "food_per_person_day": {
+    "budget_inr": 350,
+    "standard_inr": 600,
+    "basis": "Proxy from Kinnaur blogs: Dheeraj Kinnaur itinerary (Aug 2026) 300-600 per person per day at dhabas and small restaurants; Kinnaur-Spiti circuit table (Sep 2026) food per day budget 200-300, mid 400-600, comfortable 700-1,000; roadside dhaba rajma chawal 60-80 unlimited (2024, Sarahan guide). No Sarahan menu prices found.",
+    "sources": [
+     "https://discoverwithdheeraj.com/kinnaur-valley-most-common-itinerary/",
+     "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/",
+     "https://discoverwithdheeraj.com/sarahan-detailed-travel-guide/"
+    ],
+    "notes": "Low confidence: regional blog ranges."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "low (n=2 mid, n=5 homestay)",
+    "taxi": "none for local day",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Sarahan or Rampur local cab fare",
+    "budget hotel tier",
+    "HPTDC Srikhand current tariff",
+    "Sarahan restaurant menu prices",
+    "Shimla to Sarahan cab fare"
+   ]
+  },
+  "kinner-kailash": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Kalpa / Reckong Peo (Powari is the road junction; the yatra trailhead is reported as Tangling in the Dheeraj parikrama guide)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Kinner Kailash (Shivling ~4,800 m, peak 6,055 m per Wikipedia) is a high-altitude pilgrimage trek with no lodging; base is Kalpa / Reckong Peo. Reference prices at the base, Cleartrip stay 13-14 Nov 2026 pre-tax: Hotel Kalpa Retreat 2,741, Hotel Nirvana and Restaurant (Reckong Peo) 1,362, Wild Green Home Stay 4,403, The White Castle Hotel (2-star, Saryo) 2,634. Hostelworld (undated): Zostel Kalpa 989 and The Alpine Nest 495 dorm 'from'. The calibration sample (2026-10-08) already holds measured Kalpa figures (mid 3,529, homestay 1,787, dorm 757).",
+    "notes": "Wikipedia confirms the Shivling at 4,800 m and the peak at 6,055 m but gives no trek logistics. A July 2026 Kinnaur Kailash Parikrama guide (Dheeraj) prices a different, longer circuit: porter 1,500 per day, guide 1,500-2,500 per day (approx.), pony 1,200-2,000 per day, full package 10,000-18,000 per person, 2 acclimatisation nights at Reckong Peo/Kalpa 1,500-2,000 per person. Treat as indicative: it describes the parikrama, not necessarily the Tangling yatra."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "cab Reckong Peo/Kalpa to Powari/Tangling roadhead (no fare found)",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No Reckong Peo/Kalpa to Powari/Tangling cab fare found on any fetched page. Kinnaur circuit private cab day Rs 3,500-4,500 (Dheeraj Kinnaur itinerary, Aug 2026). The Parikrama guide (Jul 2026) shows shared road transport Reckong Peo-Thangi and Chitkul-Peo at Rs 1,500-2,500 per person for a group of 4-6 (not a Tangling fare).",
+    "sources": [
+     "https://discoverwithdheeraj.com/kinnaur-valley-most-common-itinerary/",
+     "https://discoverwithdheeraj.com/kinnaur-kailash-parikrama-trek-2026/"
+    ],
+    "notes": "Proxy if a number is required: none applied. Pony/porter: porter 1,500 per day, pony 1,200-2,000 per day (July 2026 parikrama guide, 'approx., verify locally'). No helicopter service known. Tangling-side langar/camp arrangements during the Aug yatra were not found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 550,
+    "basis": "Proxy for the Kalpa/Reckong Peo base: Dheeraj Kinnaur itinerary (Aug 2026) 300-600 per person per day at dhabas and small restaurants; Kinnaur-Spiti table (Sep 2026) budget 200-300, mid 400-600. Parikrama guide budgets food and rations at 2,500-4,000 per person for 5-6 trek days (about 500-650 per day). No Kalpa menu prices found.",
+    "sources": [
+     "https://discoverwithdheeraj.com/kinnaur-valley-most-common-itinerary/",
+     "https://discoverwithdheeraj.com/kinnaur-spiti-circuit-itinerary-2026/",
+     "https://discoverwithdheeraj.com/kinnaur-kailash-parikrama-trek-2026/"
+    ],
+    "notes": "Low confidence proxy. On the Tangling yatra route in August, community langar may cover meals; not verified."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "high that no lodging exists on the trek; base prices from Cleartrip n=4",
+    "taxi": "none found",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "cab fare Kalpa/Reckong Peo to Powari or Tangling",
+    "pony/porter rates for the Tangling yatra route specifically",
+    "campsite/langar arrangements and fees",
+    "yatra registration or permit costs",
+    "Kalpa restaurant menu prices"
+   ]
+  }
+ },
+ "method_note": "Web search quota was exhausted by the shared turn limit partway through; remaining sourcing used direct page fetches and a normal browser load of Cleartrip, Booking.com and Zomato listing pages. Booking.com prices are tax-inclusive as listed; pre-tax figures derived from them divide by 1.12 (12% GST) when above 1,000 and are marked as estimates. HPTDC and himachaltourism.gov.in were unreachable (DNS / connection refused) and not worked around."
+}

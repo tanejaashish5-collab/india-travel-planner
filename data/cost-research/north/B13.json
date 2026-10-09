@@ -1,0 +1,709 @@
+{
+  "batch": "B13",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "agra": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2439,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-agra"
+        ],
+        "budget_hotel_median_inr": 919,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/agra/budget-hotels",
+          "https://www.cleartrip.com/hotels/homestays-in-agra"
+        ],
+        "homestay_median_inr": 2519,
+        "homestay_n": 6,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-agra"
+        ],
+        "dorm_median_inr": 399,
+        "dorm_n": 17,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Agra?currency=INR"
+        ],
+        "price_basis": "mid = median of 14 properties labelled 3-star on Cleartrip, 13-14 Nov 2026 pre-tax (excludes the sponsored Hotel Crystal Inn 5,127 and all 4-5 star); range 994 to 6,076; budget = Hotel The Shanaya 607 (2-star, from the Agra budget URL, which redirects to the general city list dated 13-14 Nov), Hotel O King Palace 806 (1-star), Taj Rama Hs 1,031 and Taj Nice Point 1,516 (2-star), the last three from the homestay page, 13-14 Nov, pre-tax; homestay = Shivalayaa 1,284, Pyrenees 1,880, Taj Luxury 2,437, The Hideout 2,601, Neer Haveli 5,920, Aman 11,739 (13-14 Nov, pre-tax); two boutique outliers pull the middle up, so the plain-homestay figure is nearer 1,300-1,900; dorm = median of 17 Hostelworld 'from' prices, range 93 to 699 (the 93 and 200 look like promotional or shared-room prices)",
+        "notes": "Cleartrip has no true 'budget' list for Agra; the 1-2 star end of the market is thin on this site, so the budget figure is low confidence. Friday-Saturday in mid-November is peak Taj season, weekday prices may be lower. Agra 3-star ex-tax levels are well below the 4-star (4,995-6,108) and 5-star bands."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Agra: Taj Mahal + Agra Fort (local, sedan)",
+            "inr": 1500
+          },
+          {
+            "route": "Agra to Fatehpur Sikri and back (sedan)",
+            "inr": 1800
+          },
+          {
+            "route": "Agra: Taj + Fort + Fatehpur Sikri circuit (sedan)",
+            "inr": 2250
+          },
+          {
+            "route": "Agra to Mathura-Vrindavan same-day return (sedan)",
+            "inr": 2400
+          },
+          {
+            "route": "Agra to Delhi one-way drop (sedan), operator table",
+            "inr": 4800
+          }
+        ],
+        "basis": "Agra Cabs (agracabs.com) fixed-price table 'Local & Outstation Cab Rates in Agra', AC Dzire/Etios: Complete Agra Tour 1,800 (taken as the local day figure), Taj+Fort 1,500, Fatehpur Sikri 1,800, Taj+Fort+Fatehpur Sikri 2,250; Ertiga about 1.4x, Innova Crysta 2x those. Page is undated and its footer reads Copyright 2019, so these may be stale. Fetched 2026-10-09.",
+        "sources": [
+          "https://www.agracabs.com",
+          "https://www.gozocabs.com/car-rental/agra",
+          "https://en.wikivoyage.org/wiki/Agra"
+        ],
+        "notes": "Cross-checks: Gozo Cabs (indicative, before GST, no date) Agra to Vrindavan 70 km sedan 1,611, Agra to Tundla 28 km 843, Agra to Lucknow 337 km 3,941; those one-way fares are consistent in scale with the operator's table. CONFLICT on Agra-Delhi: operator table 4,800 for a Dzire drop vs the same page's banner 3,200 vs Gozo 2,204 sedan (220 km), a 2.2x spread; I kept 4,800 only as the operator's table value, Gozo is probably nearer 2026 reality. Wikivoyage Agra (undated): taxi day hire 'Rs 1,500 for 8 hours', e-rickshaw 150-200 per e-rickshaw (up to 4 people) for short hops, auto from Agra Cantt station to the Taj about 200 off-season. Rome2rio: Agra to Fatehpur Sikri taxi US$8-11 for 38.5 km (model estimate)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1250,
+        "basis": "Zomato restaurant pages opened 2026-10-09 (cost for two). Budget set, 6 local eateries: Aleem 200, Shankara Vegis 400, Chokho Jeeman Marwari Jain 400, Awadhi Foods 400, Joney's Place 450, Manoj Dhaba 500; median 400 for two = 200 per person per meal; plus Pushpak Misthan Bhandar (mithai/street) 100 for two = 50 each, so breakfast counted at about half a meal. Day = 2.5 x 200 = 500. Standard set, 13 casual sit-down: Bakers Canvas, Mama Chicken, D Jail House, Aahar, D'zurt, Mughchi (all 1,000), Made In Punjab 1,300, Chow's Kitchen 1,400, Starbucks 900, plus EazyDiner Berco's 800, Chopstix 600; median 1,000 for two = 500 per meal; day = 2.5 x 500 = 1,250. (At 3 full meals the figures would be 600 and 1,500.) Hotel and Taj-view fine dining (Peshawri 6,000, Taj Bano 4,000, Palm Burj 2,600) excluded.",
+        "sources": [
+          "https://www.zomato.com/agra/6-local-favourite-places",
+          "https://www.zomato.com/agra/great-cafes",
+          "https://www.zomato.com/agra/5-best-mughlai-places",
+          "https://www.eazydiner.com/agra/restaurants"
+        ],
+        "notes": "Tajganj/Taj-view rooftops charge a premium; a traveller eating away from the Taj gate pays closer to the budget-to-standard midpoint. Zomato cost for two is the owner's approximate, excluding tax."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "mid high (n=14), budget low (n=4, Cleartrip has no real Agra budget list), homestay low (n=6, wide)",
+        "taxi": "low-medium (single operator table, undated, footer 2019; no 2026 cross-check for the local day figure)",
+        "food": "medium (Zomato n=13 casual, 6 budget)"
+      },
+      "unverified": [
+        "Current-year (2026) Agra sedan 8hr/80km tariff from a dated source",
+        "Taj-zone e-rickshaw or auto day-hire rate (only undated Wikivoyage hop fares)",
+        "True budget guesthouse prices near Taj Ganj beyond Cleartrip's 4 rows",
+        "Weekday vs weekend stay price difference (only Fri-Sat Nov 13-14 seen)"
+      ]
+    },
+    "fatehpur-sikri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "agra",
+        "mid_median_inr": 2439,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-agra"
+        ],
+        "budget_hotel_median_inr": 919,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/agra/budget-hotels",
+          "https://www.cleartrip.com/hotels/homestays-in-agra"
+        ],
+        "homestay_median_inr": 2519,
+        "homestay_n": 6,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-agra"
+        ],
+        "dorm_median_inr": 399,
+        "dorm_n": 17,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Agra?currency=INR"
+        ],
+        "price_basis": "mid = median of 14 properties labelled 3-star on Cleartrip, 13-14 Nov 2026 pre-tax (excludes the sponsored Hotel Crystal Inn 5,127 and all 4-5 star); range 994 to 6,076; budget = Hotel The Shanaya 607 (2-star, from the Agra budget URL, which redirects to the general city list dated 13-14 Nov), Hotel O King Palace 806 (1-star), Taj Rama Hs 1,031 and Taj Nice Point 1,516 (2-star), the last three from the homestay page, 13-14 Nov, pre-tax; homestay = Shivalayaa 1,284, Pyrenees 1,880, Taj Luxury 2,437, The Hideout 2,601, Neer Haveli 5,920, Aman 11,739 (13-14 Nov, pre-tax); two boutique outliers pull the middle up, so the plain-homestay figure is nearer 1,300-1,900; dorm = median of 17 Hostelworld 'from' prices, range 93 to 699 (the 93 and 200 look like promotional or shared-room prices)",
+        "notes": "Day trip from Agra (about 38-40 km, Rome2rio 38.5 km); figures are the AGRA city medians above, reported because most visitors sleep in Agra. Fatehpur Sikri has only a handful of its own rooms on Cleartrip: Hotel Goverdhan (2-star) 1,288 on 13-14 Nov after an 8% coupon from 1,400 (1,344 on 11-12 Oct), and Hotel Vrindavan (3-star, Dadupura) sold out on 13-14 Nov but 949 on 11-12 Oct. Two properties is too few for a median. https://www.cleartrip.com/hotels/hotels-in-fatehpur-sikri and https://www.cleartrip.com/hotels/india/fatehpur-sikri/budget-hotels"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Agra to Fatehpur Sikri and back (sedan, ~80 km round trip)",
+            "inr": 1800
+          },
+          {
+            "route": "Agra: Taj + Fort + Fatehpur Sikri circuit (sedan)",
+            "inr": 2250
+          }
+        ],
+        "basis": "Fatehpur Sikri is done as a day trip from Agra. Agra Cabs fixed table, AC Dzire/Etios 'Visit to Fatehpur Sikri' 1,800 (Ertiga 2,500, Innova Crysta 3,500), and 'Taj Mahal, Agra Fort, Fatehpur Sikri' 2,250. Page undated, footer Copyright 2019, possibly stale.",
+        "sources": [
+          "https://www.agracabs.com",
+          "https://www.rome2rio.com/s/Agra/Fatehpur-Sikri",
+          "https://en.wikivoyage.org/wiki/Fatehpur_Sikri"
+        ],
+        "notes": "Rome2rio gives USD 8-11 only (it did not show a rupee figure), so the INR field is null rather than converting. Wikivoyage Fatehpur Sikri: ADA shuttle bus from the parking area to the monument Rs 10 per person one way (undated, not a taxi fare)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1250,
+        "basis": "PROXY: Agra figures (Zomato, above). Fatehpur Sikri is a half-day trip from Agra and Zomato has no Fatehpur Sikri page (404), so these are not Fatehpur Sikri-specific observations. Wikivoyage lists Jodha Restaurant and Sher-e-Punjab near the site without prices.",
+        "sources": [
+          "https://www.zomato.com/agra/6-local-favourite-places",
+          "https://www.zomato.com/agra/great-cafes",
+          "https://en.wikivoyage.org/wiki/Fatehpur_Sikri"
+        ],
+        "notes": "Most visitors eat in Agra before or after. A cold drink, snacks and a lunch at the cluster outside the monument is the only on-site spend."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (Agra proxy; FS has 2 own properties)",
+        "taxi": "low (single operator table, undated, footer 2019)",
+        "food": "low (Agra proxy, no FS listing)"
+      },
+      "unverified": [
+        "Fatehpur Sikri-specific hotel median (only Hotel Goverdhan and Hotel Vrindavan listed)",
+        "Fatehpur Sikri restaurant prices",
+        "Rupee value of the Rome2rio taxi estimate (shown in USD only)",
+        "2026-dated taxi tariff"
+      ]
+    },
+    "mathura": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2371,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-mathura"
+        ],
+        "budget_hotel_median_inr": 907,
+        "budget_n": 9,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/mathura/budget-hotels"
+        ],
+        "homestay_median_inr": 1628,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-mathura"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "mid: Cleartrip 3-star page, stay 13-14 Nov 2026 (Fri-Sat), 1 room 2 guests, discounted sale price before taxes; 16 properties, range 947 to 4,092; budget: Cleartrip budget page, stay 11-12 Oct 2026 (Sun-Mon), 1 room 2 guests, price before taxes where a tax line is shown (some rows do not say); 9 properties, range 500 to 1,843 (Mathura lists 9 of 9); homestay: Cleartrip homestay page, stay 13-14 Nov 2026, before taxes; only 4 had a price (Vinayak 614, Arya Sadan 642, Maharana Palace 2,613, Maharana Farm House 3,438), 11 others sold out; median sits between a cheap pair and an expensive pair, so treat as a wide band 600-3,400",
+        "notes": "No Hostelworld page exists for Mathura (404), so no dorm figure. Mid-range 3-star pool is mostly 'Brijwasi' and local hotels, not branded. The budget page is Sunday-Monday in October, the 3-star page is a Fri-Sat in November, so the 907 vs 2,371 gap is partly a date and quality-tier effect."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2300,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Mathura-Vrindavan-Gokul-Goverdhan one-day tour (sedan)",
+            "inr": 3200
+          },
+          {
+            "route": "Mathura to Vrindavan ~22 km one way (Gozo sedan, before GST)",
+            "inr": 821
+          },
+          {
+            "route": "Mathura to Agra ~57 km one way (Gozo sedan, before GST)",
+            "inr": 1423
+          },
+          {
+            "route": "Mathura to Agra pickup/drop (operator table, sedan)",
+            "inr": 2300
+          }
+        ],
+        "basis": "Mathura Cab (mathuracab.com/packages.html) one-day sightseeing: Mathura, Vrindavan, Gokul sedan 2,300 / MUV 2,700 / SUV 3,200; adding Goverdhan 3,200 sedan; plus Barsana 3,500. 5% GST extra, Rs 300 night charge after 9pm. Page footer is Copyright 2019-20, so likely stale. Cross-check: Agra Cabs 'same-day Mathura Vrindavan visit' from Agra 2,400 Dzire.",
+        "sources": [
+          "https://mathuracab.com/packages.html",
+          "https://www.agracabs.com",
+          "https://www.gozocabs.com/car-rental/mathura"
+        ],
+        "notes": "CONFLICT on Mathura-Delhi: operator table 4,200 sedan vs Gozo 2,040 (173 km), about 2x; not used. Gozo's generic local package 4 hr / 40 km sedan 1,282 (before GST, the same figure appears on the Varanasi, Lucknow, Prayagraj and Mathura pages, so treated as a template not a Mathura quote). No auto/e-rickshaw day-hire figure found; these are the normal local modes in Mathura-Vrindavan but I saw no price (Wikivoyage Vrindavan quotes cycle-rickshaw Rs 20 per person, undated)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 950,
+        "basis": "Zomato Mathura pages opened 2026-10-09 (only 9 restaurants have dining pages visible): Gola Patties and Tea Stall 200, Raman Misthan Bhandar 200, Loft Cafe 400, Rahul Bakers 450, McDonald's 500, Dosa Plaza 550, Brijwasi Centrum 1,000, The Hazelnut Factory 1,000, Heera Rooftop 1,400. Budget = median of the four cheapest local places 300 for two = 150 per person per meal, x2.5 for the day = 375. Standard = median of the sit-down restaurants Loft 400, Dosa Plaza 550, Brijwasi Centrum 1,000, Heera 1,400 = 775 for two = about 390 per meal, x2.5 = 970, rounded to 950.",
+        "sources": [
+          "https://www.zomato.com/mathura",
+          "https://www.swiggy.com/city/mathura/order-online"
+        ],
+        "notes": "Small sample (n=9) and skewed to modern cafes; temple-town bhojnalays and sweet shops are cheaper than shown but have no Zomato dining page."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium (3-star n=16, budget n=9, homestay n=4 wide)",
+        "taxi": "low (one operator table, footer 2019-20)",
+        "food": "low (n=9 Zomato, small modern-cafe skew)"
+      },
+      "unverified": [
+        "Dorm or dharamshala beds (no Hostelworld page)",
+        "Auto or e-rickshaw day-hire rate for Mathura-Vrindavan",
+        "2026-dated sightseeing taxi tariff",
+        "Thali and bhojnalay prices"
+      ]
+    },
+    "vrindavan": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2270,
+        "mid_n": 15,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-vrindavan"
+        ],
+        "budget_hotel_median_inr": 1524,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/vrindavan/budget-hotels"
+        ],
+        "homestay_median_inr": 1447,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-vrindavan"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "mid: Cleartrip 3-star page, stay 13-14 Nov 2026 (Fri-Sat), 1 room 2 guests, discounted sale price before taxes; 15 properties labelled 3-star, range 1,015 to 9,000 (Hide Away Studios 9,000 is an outlier, median is robust to it; the single 4-star Brij Eternity 7,560 excluded); budget: Cleartrip budget page, stay 11-12 Oct 2026 (Sun-Mon), 1 room 2 guests, price before taxes where a tax line is shown (some rows do not say); only 4 listed (Bankey Bihari Holiday Homes 1,120, Shri Krishna Dham 1,199, Vrinda Palace Sewa Dham 1,848, Geet Govind 1,977); homestay: Cleartrip homestay page, stay 13-14 Nov 2026, before taxes; of 17 'homestay' rows only Shri Laddu Gopal Guest House (1,447 after coupon from 3,600) had a price, 14 sold out",
+        "notes": "Vrindavan pilgrim lodging also includes ashram/dharamshala beds that Cleartrip does not list (not priced here). Budget n=4 is a thin sample (1,120 to 1,977). No Hostelworld page (404), no dorm figure."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2300,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Vrindavan-Mathura-Gokul one-day tour (sedan)",
+            "inr": 2300
+          },
+          {
+            "route": "Mathura to Vrindavan ~22 km one way (Gozo sedan, before GST)",
+            "inr": 821
+          },
+          {
+            "route": "Agra to Vrindavan ~70 km one way (Gozo sedan, before GST)",
+            "inr": 1611
+          },
+          {
+            "route": "Mathura-Vrindavan-Gokul-Goverdhan one-day tour (sedan)",
+            "inr": 3200
+          }
+        ],
+        "basis": "Mathura Cab (mathuracab.com/packages.html) one-day sightseeing: Mathura, Vrindavan, Gokul sedan 2,300 / MUV 2,700 / SUV 3,200; adding Goverdhan 3,200 sedan; plus Barsana 3,500. 5% GST extra, Rs 300 night charge after 9pm. Page footer is Copyright 2019-20, so likely stale. Cross-check: Agra Cabs 'same-day Mathura Vrindavan visit' from Agra 2,400 Dzire.",
+        "sources": [
+          "https://mathuracab.com/packages.html",
+          "https://www.agracabs.com",
+          "https://www.gozocabs.com/car-rental/mathura"
+        ],
+        "notes": "Vrindavan and Mathura (about 12-22 km apart) are covered by the same one-day sightseeing tour, so the Mathura operator figure is used for both. CONFLICT on Mathura-Delhi: operator table 4,200 sedan vs Gozo 2,040 (173 km), about 2x; not used. Gozo's generic local package 4 hr / 40 km sedan 1,282 (before GST, the same figure appears on the Varanasi, Lucknow, Prayagraj and Mathura pages, so treated as a template not a Mathura quote). No auto/e-rickshaw day-hire figure found; these are the normal local modes in Mathura-Vrindavan but I saw no price (Wikivoyage Vrindavan quotes cycle-rickshaw Rs 20 per person, undated)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 950,
+        "basis": "PROXY: Mathura figures (above). Zomato's Vrindavan page lists delivery-only outlets with no cost for two (Hira Sweets, Chatpatiizz, Shree RK Family Kitchen, Murliwala, Brijwasi, Gopal Bhog, Om Prasadam Bhojnalay, Wanted Idli), so no Vrindavan-specific price was seen. Vrindavan is about 12-22 km from Mathura and shares its market.",
+        "sources": [
+          "https://www.zomato.com/mathura",
+          "https://www.zomato.com/vrindavan"
+        ],
+        "notes": "Low confidence. Vrindavan's ashram prasad and bhojnalay thalis (donation-based or fixed) are probably cheaper than the budget figure; not verified."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium for mid (n=15), low for budget (n=4) and homestay (n=1)",
+        "taxi": "low (shared with Mathura, footer 2019-20)",
+        "food": "low (Mathura proxy, no Vrindavan dining prices seen)"
+      },
+      "unverified": [
+        "Vrindavan-specific restaurant prices",
+        "Ashram and dharamshala room or bed rates",
+        "E-rickshaw or auto day-hire",
+        "Dorm beds",
+        "More than one priced homestay"
+      ]
+    },
+    "lucknow": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3239,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-lucknow"
+        ],
+        "budget_hotel_median_inr": 1582,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/lucknow/budget-hotels"
+        ],
+        "homestay_median_inr": 1531,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-lucknow"
+        ],
+        "dorm_median_inr": 665,
+        "dorm_n": 8,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Lucknow?currency=INR"
+        ],
+        "price_basis": "mid: Cleartrip 3-star page, stay 13-14 Nov 2026 (Fri-Sat), 1 room 2 guests, discounted sale price before taxes; 12 properties labelled 3-star, range 1,382 to 5,951 (2-star D SilverLeaf and the three 4-star rows excluded); budget: Cleartrip budget page, stay 11-12 Oct 2026 (Sun-Mon), 1 room 2 guests, price before taxes where a tax line is shown (some rows do not say); 20 of the page's 33 shown, range 549 to 1,920; includes the tax-exclusive rows (+10-12% tax on the 1,380-1,920 rows); homestay: Cleartrip homestay page, stay 13-14 Nov 2026, before taxes; 3 priced (Silk Inn 1,101, SM Guest House 1,531, Hotel Amanda 2,664), 11 sold out; dorm: Hostelworld 'dorms from' (cheapest bed per hostel, no stay date shown); 8 hostels, 499 to 799",
+        "notes": "Lucknow is a large market with many business hotels, so the 3-star median (3,239) is well above the budget median (1,582). Budget page is Sun-Mon in October, 3-star page Fri-Sat in November."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Lucknow to Ayodhya ~135 km (Gozo sedan, before GST, Lucknow page; its Ayodhya page shows 2,080 for the same route)",
+            "inr": 1839
+          },
+          {
+            "route": "Lucknow to Ayodhya, Lucknow Cabs operator Dzire",
+            "inr": 3600
+          },
+          {
+            "route": "Lucknow to Prayagraj ~201 km (Gozo sedan, before GST)",
+            "inr": 2637
+          },
+          {
+            "route": "Lucknow to Varanasi ~320 km (Gozo sedan, before GST)",
+            "inr": 4379
+          },
+          {
+            "route": "Lucknow to Agra ~335 km (Gozo sedan, before GST)",
+            "inr": 3722
+          }
+        ],
+        "basis": "No published 8hr/80km Lucknow price found. Lucknowcabs.com lists a 'Local Lucknow 8Hr/80Kms' option but shows no rate; Gozo shows only 4 hr / 40 km sedan 1,282 (before GST, a template number). Per-km: Taxi in Lucknow (taxiinlucknow.com, footer 2020) Dzire 12/km; Lucknow Cabs 'popular fleets' Dzire 14/km (page also says 'from Rs 10 per km'); 13 is the middle of 12 and 14.",
+        "sources": [
+          "https://www.lucknowcabs.com",
+          "https://www.lucknowcabs.com/lucknow-to-ayodhya-taxi-service",
+          "https://www.taxiinlucknow.com",
+          "https://www.gozocabs.com/car-rental/lucknow"
+        ],
+        "notes": "CONFLICT on Lucknow-Ayodhya: Gozo 1,839-2,080 vs Lucknow Cabs 3,600 for a Dzire (Lucknow Cabs also quotes Etios 3,800, Ertiga 4,500, Innova Crysta 6,200), roughly 1.7-2x; I show Gozo's 1,839 and the operator figure separately. UP tourism (UPSTDC) runs shared weekend tours Lucknow-Ayodhya 'Ayodhya Sugam Darshan' at 2,000 per person (1,500 senior), and Lucknow-Naimisharanya 1,700 per person, which is per seat not per car. Local day hire in Lucknow is a sedan or app cab; auto/e-rickshaw day rate not found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 1300,
+        "basis": "Zomato Lucknow restaurant pages opened 2026-10-09, 38 restaurants with a cost for two. Budget set, 8 legendary kebab/biryani/local eateries: Wahid Biryani 250, Tunday Kababi (Aminabad) 300, Mubeen's 300, Tunday Kababi (Aliganj) 300, Sakhawat 400, Non Veg Point 450, Biryani Nawaabs 500, Moti Mahal 500; median 350 for two = 175 per meal; breakfast at Bajpayee Kachodi Bhandar is 100 for two (50 each), so day = 2.5 x 175 = 440, rounded to 450. Standard set, 16 casual cafes/restaurants (Owl Cafe 950, Cherry Tree 1,200, Macaron Cakery 1,100, Coffee Palette 1,100, 3 Idiots Garden Cafe 800, Roastery 950, Ice & Spice 1,000, Aryan Family's Delight 1,100, Naushijaan 800 and others); median 1,050 for two = 525 per meal; day = 2.5 x 525 = 1,312, rounded to 1,300. (At 3 full meals: 525 and 1,575.) Hotel and fine-dining outlets of 1,800 or more excluded.",
+        "sources": [
+          "https://www.zomato.com/lucknow/legendary-places",
+          "https://www.zomato.com/lucknow/kebab",
+          "https://www.zomato.com/lucknow/great-cafes",
+          "https://www.zomato.com/lucknow/hip-student-hangouts",
+          "https://www.zomato.com/lucknow/best-lunch-places-in-town"
+        ],
+        "notes": "Standard sample leans to Gomti Nagar cafes, which price above Aminabad/Chowk; a traveller who sticks to the old-city kebab belt pays near the budget figure."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "high (3-star n=12, budget n=20, dorm n=8; homestay n=3)",
+        "taxi": "low (no local 8hr/80km price found; only per-km and route fares, with a 2x operator vs Gozo conflict)",
+        "food": "high (38 Zomato restaurants)"
+      },
+      "unverified": [
+        "Lucknow local 8hr/80km sedan price",
+        "Auto or e-rickshaw day-hire",
+        "Lucknow taxi per-km rates dated 2026 (sources show 2020 and 2025 footers)"
+      ]
+    },
+    "ayodhya": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2136,
+        "mid_n": 14,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-ayodhya"
+        ],
+        "budget_hotel_median_inr": 960,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/ayodhya/budget-hotels",
+          "https://www.cleartrip.com/hotels/homestays-in-ayodhya",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-ayodhya"
+        ],
+        "homestay_median_inr": 2379,
+        "homestay_n": 12,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-ayodhya"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "mid: Cleartrip 3-star page, stay 13-14 Nov 2026 (Fri-Sat), 1 room 2 guests, discounted sale price before taxes; 14 properties labelled 3-star, range 940 to 3,540 (the one 4-star, Clubhouse by CheckIn 5,207, excluded); budget: the 'budget' URL lists a single hotel (Ramprastha Hotel 999, Sun 11 Oct to Mon 12 Oct 2026); to reach n=4 I added the lowest-priced basic lodges from the 13-14 Nov pages (Nirmala Palace 940, OYO Rakabganj 895, Mahendra Home Stay 979). This is the cheap end of the market, not a random sample, so it understates the true budget median slightly; homestay: Cleartrip homestay page, stay 13-14 Nov 2026, before taxes; 12 rows typed 'Homestay' with a price, range 664 to 4,634; Cleartrip types many hotel-style properties as homestays so this is wider than a true home-run guesthouse",
+        "notes": "Ayodhya's hotel market has expanded fast since 2024; every figure here is a Nov 2026 (Fri-Sat) or Oct 2026 (Sun-Mon) snapshot and weekends or festival days can be far higher, so treat as a mid-season weekend reading. Dorm or dharamshala beds exist but no Hostelworld page (404) was found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "e-rickshaw/auto (unpriced); sedan for outstation",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ayodhya to Lucknow ~135 km (Gozo sedan, before GST)",
+            "inr": 2080
+          },
+          {
+            "route": "Ayodhya to Varanasi ~216 km (Gozo sedan, before GST)",
+            "inr": 2818
+          },
+          {
+            "route": "Ayodhya to Prayagraj ~175 km (Gozo sedan, before GST)",
+            "inr": 3613
+          },
+          {
+            "route": "Lucknow to Ayodhya, Lucknow Cabs operator Dzire",
+            "inr": 3600
+          }
+        ],
+        "basis": "No Ayodhya local sightseeing or e-rickshaw/auto day-hire rate found. ayodhyataxi.com is a Jaipur operator, ayodhyacab.com is a parked domain, Gozo shows 'no indicative local package fares currently available' for Ayodhya. Only outstation one-way sedan fares (Gozo, indicative, before GST, undated) were found.",
+        "sources": [
+          "https://www.gozocabs.com/car-rental/ayodhya",
+          "https://www.lucknowcabs.com/lucknow-to-ayodhya-taxi-service",
+          "https://www.upstdc.co.in/TourPakages/DailyTour"
+        ],
+        "notes": "CONFLICT: Prayagraj-Ayodhya is 3,613 on Gozo (both pages) vs about 7,500-15,000 on prayagrajcab.com (range across vehicle classes), 2x or more. UPSTDC shared-seat tours (not a private cab): Prayagraj to Ayodhya Sundays 1,000 per person, Lucknow to Ayodhya weekends 2,000 per person (page undated). UPSTDC lists an 'Ayodhya Local Sight Packages' same-day tour with no price shown."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "NOT FOUND. Ayodhya is not a Zomato dining city (zomato.com/ayodhya redirects to a user profile; /faizabad, /ayodhya/restaurants return 404 or a user page) and Swiggy's Ayodhya city page 404s. Tripadvisor's Ayodhya list (30 restaurants, e.g. Tipsy Town, Masala Food Court, Shabri Ki Rasoi, Kanak Pure Veg) gives only price tiers, mostly the middle tier, no rupee figures. Wikivoyage Ayodhya has no prices.",
+        "sources": [
+          "https://www.tripadvisor.in/Restaurants-g1985445-Ayodhya_Ayodhya_District_Uttar_Pradesh.html",
+          "https://en.wikivoyage.org/wiki/Ayodhya"
+        ],
+        "notes": "Proxy only, not Ayodhya observations: neighbouring UP pilgrim markets measured the same day came out at budget 375-450 and standard 900-1,300 per person per day (Prayagraj, Mathura, Lucknow). Ayodhya is largely vegetarian (Wikivoyage notes a meat ban near Ram Mandir since Feb 2026). Do not publish a number without a local check."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium for mid (n=14, one weekend snapshot), low for budget (n=4 hand-picked cheapest) and homestay (typing is loose)",
+        "taxi": "low (no local rate at all; outstation indicative fares only)",
+        "food": "none (not on Zomato or Swiggy; Tripadvisor tiers only)"
+      },
+      "unverified": [
+        "Ayodhya restaurant or thali prices",
+        "Ayodhya local sightseeing or e-rickshaw/auto day-hire rate",
+        "Weekday and festival-season hotel price (only Fri-Sat 13-14 Nov 2026 and one Sun-Mon 11-12 Oct hotel seen)",
+        "Dharamshala and dorm beds"
+      ]
+    },
+    "prayagraj": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3098,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-prayagraj"
+        ],
+        "budget_hotel_median_inr": 1214,
+        "budget_n": 8,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/allahabad/budget-hotels"
+        ],
+        "homestay_median_inr": 1309,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-prayagraj"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "mid: Cleartrip 3-star page, stay 13-14 Nov 2026 (Fri-Sat), 1 room 2 guests, discounted sale price before taxes; 16 properties labelled 3-star, range 597 to 6,300 (some, such as Hotel Swagatam 597 and Super Collection O 1,148, are really budget OYO-type rows); budget: Cleartrip budget page, stay 11-12 Oct 2026 (Sun-Mon), 1 room 2 guests, price before taxes where a tax line is shown (some rows do not say) (URL is the old Allahabad name, the prayagraj slug returns a directory page); 8 properties, range 750 to 1,792; homestay: Cleartrip homestay page, stay 13-14 Nov 2026, before taxes; only Luxury Sangam Stays 1,309 (listed 62% off a 3,400 rate) had a price, 14 sold out",
+        "notes": "Mela-season prices were not observed; this is a mid-November Fri-Sat reading. No Hostelworld page for Prayagraj or Allahabad (404), so no dorm figure."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Prayagraj to Varanasi ~121 km (Gozo sedan, before GST)",
+            "inr": 2408
+          },
+          {
+            "route": "Prayagraj to Lucknow ~210 km (Gozo sedan, before GST)",
+            "inr": 2637
+          },
+          {
+            "route": "Prayagraj to Chitrakoot ~135 km (Gozo sedan, before GST)",
+            "inr": 2408
+          },
+          {
+            "route": "Prayagraj to Ayodhya ~168 km (Gozo sedan, before GST)",
+            "inr": 3613
+          }
+        ],
+        "basis": "Prayagraj Cab (prayagrajcab.com, footer 2025) per-km rates Swift Dzire 11, Amaze 15, Innova 15, Crysta 17; its 'Prayagraj Local Sightseeing' 1-day package (Sangam, Anand Bhavan, Khusro Bagh, All Saints Cathedral) is quoted as a RANGE of 4,000 to 8,000 across vehicle classes with no 8hr/80km price, so no single local figure is given. 11/km is the Dzire rate.",
+        "sources": [
+          "https://prayagrajcab.com/",
+          "https://www.gozocabs.com/car-rental/prayagraj",
+          "https://www.upstdc.co.in/TourPakages/DailyTour"
+        ],
+        "notes": "The operator's local package (4,000-8,000) looks high against Varanasi sedan 8hr/80km at 1,800-2,000, so it is reported only as a range, not used. CONFLICT: Prayagraj-Varanasi 2,408 (Gozo sedan) vs 3,500-12,000 (prayagrajcab, class-dependent); Prayagraj-Ayodhya 3,613 (Gozo) vs 7,500-15,000 (prayagrajcab). Gozo's Prayagraj-Lucknow 2,637 for 210 km is below its own Ayodhya-Prayagraj 3,613 for 168 km, so Gozo fares are uneven. UPSTDC shared-seat day tours from Prayagraj (per person, tempo traveller or Urbania): Ayodhya 1,000, Chitrakoot 1,000, Vindhyachal 600, Varanasi 1,200."
+      },
+      "food_per_person_day": {
+        "budget_inr": 375,
+        "standard_inr": 900,
+        "basis": "Zomato 'Allahabad' pages opened 2026-10-09 (26 restaurants, many of them pizza and fast food). Budget = Rishiraj Food Plaza 300, Chandralok Kachouri 300, Hot Pizza Ace 300, Curry Leaf 500, Shri Sainik Sweets 500; median 300 for two = 150 per person per meal; day = 2.5 x 150 = 375. Standard = Rang Mahal 1,000, Trestra (Radisson) 1,000, Curry Leaf 500, McDonald's 500: median 750 for two = 375 per meal; day = 2.5 x 375 = 940, rounded to 900. Upscale outliers excluded (WelcomCafe 3,000, Emerald 2,350).",
+        "sources": [
+          "https://www.zomato.com/allahabad",
+          "https://www.zomato.com/allahabad/civil-lines-restaurants",
+          "https://www.zomato.com/allahabad/ashok-nagar-restaurants",
+          "https://www.zomato.com/allahabad/pizza-time"
+        ],
+        "notes": "Standard is based on only 4 sit-down outlets, so low confidence. Zomato pages list the city as Allahabad."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium (3-star n=16, budget n=8; homestay n=1)",
+        "taxi": "low (operator quotes a 4,000-8,000 range, no 8hr/80km price)",
+        "food": "low (Zomato Allahabad sample skewed to pizza and fast food; standard n=4)"
+      },
+      "unverified": [
+        "Prayagraj local sedan 8hr/80km price",
+        "Boat to Sangam price",
+        "Dorm beds (no Hostelworld page)",
+        "Sit-down restaurant prices beyond four outlets",
+        "Magh Mela season prices"
+      ]
+    },
+    "varanasi": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1900,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Varanasi to Sarnath and back by auto incl ~1h wait (Wikivoyage Sarnath, updated Apr 2023)",
+            "inr": 700
+          },
+          {
+            "route": "Varanasi to Sarnath and back by taxi incl ~1h wait (Wikivoyage Sarnath, Apr 2023; 'over 1,500')",
+            "inr": 1500
+          },
+          {
+            "route": "Varanasi to Prayagraj ~123 km (Gozo sedan, before GST)",
+            "inr": 2408
+          },
+          {
+            "route": "Varanasi to Ayodhya ~216 km (Gozo sedan, before GST)",
+            "inr": 2818
+          },
+          {
+            "route": "Varanasi to Lucknow ~312 km (Gozo sedan, before GST)",
+            "inr": 4379
+          }
+        ],
+        "basis": "Two local operator rate cards for Swift Dzire 8 hr / 80 km: Banaras Taxi (banarastaxi.com, undated) 1,800 and Varanasi Cab (varanasicab.com, footer 2024) 2,000; median 1,900. Per km (Dzire, outstation): 11 and 13, median 12. Innova Crysta 2,800 / 3,200. Parking, toll, inter-state extra; driver night allowance 300.",
+        "sources": [
+          "https://www.banarastaxi.com",
+          "https://varanasicab.com/",
+          "https://www.gozocabs.com/car-rental/varanasi",
+          "https://en.wikivoyage.org/wiki/Sarnath"
+        ],
+        "notes": "The old city and ghats are not done by cab (lanes are pedestrian/cycle-rickshaw only): tourists use autos or e-rickshaws to reach the ghat area and walk or take a boat. Wikivoyage Varanasi (undated): station to ghats by auto about 100, short rides under 50, airport by taxi 750 or auto 500; boat about 50 per person per hour. No auto day-hire quote found, so the sedan figure is the primary one. Gozo's 4 hr / 40 km local sedan is 1,282 before GST (template figure)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 700,
+        "standard_inr": 1250,
+        "basis": "Zomato Varanasi pages opened 2026-10-09, 33 restaurants with a cost for two (median 1,000; 29 under 2,000). Budget = the 8 cheapest sit-down places: Baati Chokha 400, Rahil 500, Pizzeria Vaatika 500, Red Chilli 550, Flavours Cafe 550, Rasna 600, Cafe Big Chilli 600, Hide In 600; median 550 for two = 275 per meal; day = 2.5 x 275 = 690, rounded to 700. Standard = median of all 29 casual outlets 1,000 for two = 500 per meal; day = 2.5 x 500 = 1,250. (At 3 full meals: 825 and 1,500.) Fine-dining and hotel outlets at 2,000-3,000 excluded.",
+        "sources": [
+          "https://www.zomato.com/varanasi",
+          "https://www.zomato.com/varanasi/dashaswmedh-road-restaurants",
+          "https://www.zomato.com/varanasi/assi-ghat-restaurants",
+          "https://www.zomato.com/varanasi/vegetarian-restaurants",
+          "https://www.zomato.com/varanasi/great-cafes",
+          "https://www.zomato.com/varanasi/must-visit-restaurants-in-varanasi"
+        ],
+        "notes": "The budget figure is an UPPER bound for a street-food traveller: kachori-sabzi, lassi and thali-stall meals are not on Zomato dining and cost less (Wikivoyage, undated, quotes small thalis from 20 and Rs 100+ cafe thalis, too old to use). Kesariya Thaal (veg thali restaurant, Shivala) is 700 for two."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "taxi": "medium (two operator rate cards 1,800 and 2,000, close; footers 2024/undated)",
+        "food": "medium (33 Zomato restaurants; budget is an upper bound because street food is not on Zomato)"
+      },
+      "unverified": [
+        "Auto or e-rickshaw day-hire in the old city",
+        "Street food and kachori-sabzi breakfast prices from a dated source",
+        "Dated taxi rate card for 2026"
+      ]
+    },
+    "sarnath": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "varanasi",
+        "mid_median_inr": 3101,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-varanasi"
+        ],
+        "budget_hotel_median_inr": 1428,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/varanasi/budget-hotels"
+        ],
+        "homestay_median_inr": 2210,
+        "homestay_n": 12,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-varanasi"
+        ],
+        "dorm_median_inr": 500,
+        "dorm_n": 27,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Varanasi?currency=INR"
+        ],
+        "price_basis": "VARANASI city figures used as the base for Sarnath (about 10 km; most visitors stay in Varanasi and go out for 3-4 hours); mid: Cleartrip 3-star page, stay 13-14 Nov 2026 (Fri-Sat), 1 room 2 guests, discounted sale price before taxes; 16 3-star rows (4-star Castillo 8,400 and the 882 guest house excluded), range 1,943 to 6,915; budget: Cleartrip budget page, stay 11-12 Oct 2026 (Sun-Mon), 1 room 2 guests, price before taxes where a tax line is shown (some rows do not say); 20 rows, range 350 to 1,904 (ghat-area guest houses mostly 350-1,000 with a few at 1,456-1,747; city-centre and Bhelupur hotels mostly 1,500-1,900); homestay: Cleartrip homestay page, stay 13-14 Nov 2026, before taxes; 12 rows typed homestay, range 861 to 4,969; dorm: Hostelworld 'dorms from' (cheapest bed per hostel, no stay date shown); 27 hostels, range 249 to 799",
+        "notes": "Sarnath has its own small lodging (Cleartrip lists Raj Shanti Guest House Sarnath at 1,400 on 11-12 Oct; Wikivoyage's Sarnath page, updated Feb 2026, quotes Tara Temple rooms at 600 shared bath to 900-1,000 private bath, plus Golden Buddha Hotel 400-1,200 undated). Fern Residency Sarnath is the only branded property but had no price. Too few to take a median, so the Varanasi base is reported. Varanasi's own stay was measured separately by the project."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1900,
+        "vehicle": "sedan (Varanasi-based)",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Varanasi to Sarnath and back by auto incl ~1h wait (Wikivoyage Sarnath, updated Apr 2023)",
+            "inr": 700
+          },
+          {
+            "route": "Varanasi to Sarnath and back by taxi incl ~1h wait (Wikivoyage Sarnath, Apr 2023; 'over 1,500')",
+            "inr": 1500
+          },
+          {
+            "route": "Varanasi to Sarnath and back by auto, 1-2h wait (Wikivoyage Varanasi, undated)",
+            "inr": 500
+          }
+        ],
+        "basis": "Sarnath is a 3-4 hour trip from Varanasi (about 10 km), so a sedan hired for the Varanasi 8hr/80km package (Dzire 1,800 Banaras Taxi, 2,000 Varanasi Cab, median 1,900) covers it. Wikivoyage's Sarnath page (updated April 2023): auto 700 return including an hour's wait, taxi over 1,500 return; local bus 107E 25. The Varanasi page (undated) says 500 return by auto with a 1-2 hour wait. All Sarnath-only fares are 2023 or undated.",
+        "sources": [
+          "https://en.wikivoyage.org/wiki/Sarnath",
+          "https://en.wikivoyage.org/wiki/Varanasi",
+          "https://www.banarastaxi.com",
+          "https://varanasicab.com/"
+        ],
+        "notes": "Neither operator lists a Sarnath package by name. Auto is the common way to reach Sarnath, so 500-700 return is the traveller-relevant number but it is dated; treat as low confidence."
+      },
+      "food_per_person_day": {
+        "budget_inr": 700,
+        "standard_inr": 1250,
+        "basis": "PROXY: Varanasi figures (Zomato, above), since Sarnath is a 3-4 hour visit from Varanasi and has no Zomato dining listing found. One Sarnath data point: Tara Temple (Wikivoyage Sarnath page, updated Feb 2026) quotes Tibetan/Indian breakfast or dinner at 100 and lunch at 200 per person, i.e. about 400 for a day of simple temple meals.",
+        "sources": [
+          "https://www.zomato.com/varanasi",
+          "https://en.wikivoyage.org/wiki/Sarnath"
+        ],
+        "notes": "Most visitors eat in Varanasi; the Sarnath temple-guesthouse meal price suggests a genuine budget day is well below 700."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium as a Varanasi-base proxy; Sarnath's own lodging not priced",
+        "taxi": "low (Sarnath-only fares are 2023 or undated Wikivoyage)",
+        "food": "low (Varanasi proxy)"
+      },
+      "unverified": [
+        "Sarnath-specific hotel median (only Raj Shanti Guest House 1,400 and Tara Temple rooms priced)",
+        "2026 auto and taxi fare Varanasi-Sarnath",
+        "Sarnath restaurant prices"
+      ]
+    }
+  }
+}

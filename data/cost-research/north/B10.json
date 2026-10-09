@@ -1,0 +1,560 @@
+{
+  "batch": "B10",
+  "researched_on": "2026-10-09",
+  "tool_note": "WebSearch quota was exhausted (shared per-turn limit), so no searches were run. Evidence is from direct fetches of Cleartrip, EaseMyTrip, TripClap, Restaurant Guru, Gozocabs, HurryUp Cabs, JKTDC, SMVDSB, Wikipedia/Wikivoyage, Holidify. Booking.com, MakeMyTrip, Goibibo, Agoda, Zomato timed out or returned empty pages. A direct curl to Gozocabs returned 403 and was dropped; Gozocabs fares come only from pages WebFetch could load. Justdial and CabBazar were not used.",
+  "destinations": {
+    "katra": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2212,
+        "mid_n": 16,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-katra",
+          "https://www.easemytrip.com/hotels/hotels-in-katra/"
+        ],
+        "budget_hotel_median_inr": 1574,
+        "budget_n": 20,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/katra/budget-hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 150,
+        "dorm_n": 4,
+        "dorm_sources": [
+          "http://www.maavaishnodevi.org/blog/rented-accomodation"
+        ],
+        "price_basis": "Mid: Cleartrip 3-star page, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted, all 16 listed priced: Hotel Ishan 907, Maharaja Inn 1,052, Atithi Intl 1,260, Altruist 1,334, Sanjeev Palace 1,391, Katra Avenue 1,813, Atul Regency 1,825, Amreshwar 2,041, Bali Resort Ext 2,382, Tulip Tree 3,027, Mountview 3,047, Ganpati 3,240, Devi Grand 3,685, Tree of Life 4,094, Ginger 4,157, Holiday Inn 6,099 (median of 16 = 2,211.5). Budget: Cleartrip budget page, 1 night Sun 11 - Mon 12 Oct 2026, 2 adults, pre-tax (20 of 60 listed, range 841-1,891, median 1,573.5). Dorm: Shrine Board (SMVDSB) published tariff for Katra: Shakti Bhawan, Trikuta Bhawan, Ashirwad Bhawan dorm bed 150 each, Spiritual Growth Centre AC dorm bed 200 (median 150). Tariff page carries only a post date of 9 Sep 2023 and no effective date.",
+        "notes": "Katra has deep OTA inventory (60 budget hotels on Cleartrip alone). Budget and mid medians are priced on different dates (11-12 Oct vs 13-14 Nov), so do not compare them as a spread. Cross-check: EaseMyTrip Katra page (no dates entered, tax extra) 3-star-rated hotels median 2,819 (n=10: Today 1,089, Katra Grand 1,515, Anurag 1,563, goSTOPS Plus 1,757, Click Sunburry 2,677, Ginger 2,961, Amritara 3,923, Bhawani Intl 3,927, Bloom 4,348, Lords Inn 4,469), about 1.3x the Cleartrip median, no 3x conflict. 5-star/branded rows run 5,400-8,229 (Marriott 6,999, Welcomhotel 8,229). Shrine Board rooms for comparison (same SMVDSB page, no effective date): Niharika Katra double AC 2,200, four-bed AC 2,800; Spiritual Growth Centre double AC 1,900, suite 3,300. JKTDC lists Yatri Niwas Katra, Hotel City Residency (TRC) and Hotel Saraswati (TB) but publishes no tariff in its page HTML (https://www.jktdc.co.in/CityHotels.aspx?Cid=4). No true homestays surfaced: Cleartrip's 'homestays in Katra' page lists hotels only (Marriott, Holiday Inn, Lemon Tree etc.). The 11-12 Oct budget snapshot may coincide with the autumn Navratri/Dussehra period, when Katra demand is high (calendar knowledge, not confirmed from a page), so it could run above a quiet-season price; no off-season comparison was measured."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2432,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15.4,
+        "point_to_point": [
+          {
+            "route": "Jammu to Katra (46 km), sedan",
+            "inr": 1792,
+            "range": "large SUV 2,777; Ertiga-class 2,503 (Gozocabs)"
+          },
+          {
+            "route": "Katra to Jammu city (41 km), sedan",
+            "inr": 1901,
+            "range": "Katra to Jammu Tawi station 56 km sedan 1,827 (Gozocabs)"
+          },
+          {
+            "route": "Katra to Patnitop (81 km), sedan",
+            "inr": 3153,
+            "range": "Innova-class 4,488 (Gozocabs)"
+          },
+          {
+            "route": "Katra to Bhaderwah (159 km), sedan",
+            "inr": 5248,
+            "range": "Innova-class 6,809 (Gozocabs)"
+          }
+        ],
+        "basis": "Operator rate card, not a taxi-union card: HurryUp Cabs Katra page lists 8 hr / 80 km packages: hatchback 2,344, sedan 2,432, Ertiga-class SUV 2,784, Innova 2,872, Innova Crysta 3,224, per-km 15.4 (sedan) beyond 80 km, +4-5% tax. Point-to-point from Gozocabs: Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09).",
+        "sources": [
+          "https://hurryupcabs.com/city/katra",
+          "https://www.gozocabs.com/book-taxi/jammu-katra",
+          "https://www.gozocabs.com/book-taxi/katra-patnitop",
+          "https://www.gozocabs.com/book-taxi/katra-bhaderwah",
+          "https://www.gozocabs.com/car-rental/katra"
+        ],
+        "notes": "HurryUp's 8 hr / 80 km card is identical on its Katra and Patnitop pages (same fares, same per-km), so it is a chain-wide template and not a local union quote; its own 'rental table' on the Katra page shows an 8 hr row of 2,426 / 3,014 / 3,518 that does not map cleanly to vehicles, so the card values are used and 3,014 is the upper alternative for a sedan. Treat 2,432 as a floor: local unions at pilgrimage towns usually quote more. Gozocabs says 'No indicative local package fares are currently available' for Katra. Taxis are mostly used for transfers (Jammu, Patnitop, Shiv Khori); the shrine climb itself is on foot, pony, palki, battery car or helicopter, fares posted by the Shrine Board at Katra and Banganga counters (the board's palki/pony page gives no fares in text: http://www.maavaishnodevi.org/blog/palkis-ponis-pithoos)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "Restaurant Guru city listing, October 2026 (average-price bands per person per meal, bucketed 1-200 / 200-400 / 400-600). Katra top-12 sampled: 'Cheap 1-200' = Shree Ji Bhatura King, Street Kitchen, Bhawani Vaishno Bhojanalya, Pooja Vaishno Dhaba, Laajawaab Food Court, Kanaiya Ji Kulcha Wale; '200-400' = Chennai Cafe, Kens Food Planet, Manoranjan Dhaba (220-440), Lazeez, Jewel's, Madhuban, Bikanervala (200-1,000), Nathu's Sweets (200-1,200). Reviewer-reported 'price per person' on dhabas 200-400 and on Bikanervala 200-600. Budget = 3 meals at about 100 / 150 / 200; standard = 3 meals at about 300.",
+        "sources": [
+          "https://restaurant-guru.in/Katra",
+          "https://restaurant-guru.in/Manoranjan-Dhaba-Katra-4",
+          "https://restaurant-guru.in/Chennai-Cafe-Katra-Katra"
+        ],
+        "notes": "Bands are bucketed (1-200, 200-400, 400-600), so the day totals are band midpoints x 3 meals, not menu sums. No Zomato/Swiggy cost-for-two was fetchable (Zomato timed out, Justdial skipped)."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "high",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Taxi union local sightseeing rate card for Katra (only a chain-wide operator card found)",
+        "Homestay price (no homestay inventory found)",
+        "Current effective date of Shrine Board accommodation tariff (page shows only a 9 Sep 2023 post date)",
+        "Zomato/Swiggy cost-for-two",
+        "Shrine Board pony, palki and helicopter fares (not in page text)"
+      ]
+    },
+    "patnitop": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3724,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-patnitop",
+          "https://www.cleartrip.com/hotels/hotels-in-patnitop",
+          "https://www.easemytrip.com/hotels/hotels-in-doda/"
+        ],
+        "budget_hotel_median_inr": 1309,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/patnitop/budget-hotels",
+          "https://www.cleartrip.com/hotels/hotels-in-patnitop"
+        ],
+        "homestay_median_inr": 3244,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.tripclap.com/places/patnitop/hotels",
+          "https://www.easemytrip.com/hotels/hotels-in-bhaderwah/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip 3-star Patnitop, 1 night 13-14 Nov 2026, 2 guests, pre-tax discounted: RL Dreamland 828, Subash Palace 2,917, Pine Heritage 3,710, Hotel Patnitop 3,738, Vardaan 4,014, Patnitop Heights 5,002 (median 3,724). Hotel Greentop shown at 47,520 (+15,756 tax) was excluded as an obvious outlier; including it the median is 3,738. Cross-check EaseMyTrip (no dates, tax extra) 3-star Patnitop-area median 3,785 (n=9). Budget: Cleartrip budget page Sun 11 - Mon 12 Oct 2026 pre-tax: Mount Shivalik 1,100, Aroma Top 1,300, Dogra Residency 1,318, plus Hotel Jai Shree 1,458 (Cleartrip 2-star, 13-14 Nov); PY Resorts Sanasar 2,000 excluded (different place). Homestay: TripClap 'onwards per night' (undated) Homestay Neelkanth 2,122 and EaseMyTrip (undated) Kaffberry Homestays 4,365 (median of 2 = 3,244).",
+        "notes": "Homestay figure is two points from two different sites and dates; treat as indicative only. TripClap shows hotels well above Cleartrip (Vardaan 6,136 vs 4,014 on Cleartrip), so its 'onwards' prices probably reflect peak dates. Cleartrip's 2-star rows: Maharaja Resorts 3,079, Hotel Green Orchid 2,869 (not in the budget median as they price like mid hotels). JKTDC Patnitop Resort (Deluxe/Super Deluxe 1, 2 and 4 BHK huts and a Yatri Niwas dormitory) exists but JKTDC publishes no tariff in page text (https://www.jktdc.co.in/CityHotels.aspx?Cid=21), so no dorm number. Wikivoyage mentions a Govt Youth Hostel inside the Meadows with dorms but no price. Several hotels (Hotel Samson, Holiday Inn, Trinetar, Forest View) were sold out on 13-14 Nov."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2432,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 15.4,
+        "point_to_point": [
+          {
+            "route": "Patnitop to Katra, sedan",
+            "inr": 3175,
+            "range": "Gozocabs car-rental page; 81 km route page says 3,153"
+          },
+          {
+            "route": "Jammu to Patnitop (108 km), sedan",
+            "inr": 3702,
+            "range": "large SUV 5,410 (Gozocabs)"
+          },
+          {
+            "route": "Patnitop to Bhaderwah (91 km), sedan",
+            "inr": 4089,
+            "range": "Innova-class 5,334 (Gozocabs)"
+          },
+          {
+            "route": "Patnitop to Sanasar (22 km), sedan, one way",
+            "inr": 3224,
+            "range": "large SUV 4,034 (Gozocabs); looks like a minimum-fare effect on a short hill leg"
+          },
+          {
+            "route": "Patnitop to Srinagar, sedan",
+            "inr": 8211,
+            "range": "Gozocabs car-rental page"
+          }
+        ],
+        "basis": "HurryUp Cabs Patnitop page, 8 hr / 80 km: sedan 2,432, Innova 2,872, Ertiga-class 2,784, per-km 15.4. Same card as its Katra page, so it is a chain template, not a local union rate. Point-to-point: Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09).",
+        "sources": [
+          "https://hurryupcabs.com/city/patnitop",
+          "https://www.gozocabs.com/car-rental/patnitop",
+          "https://www.gozocabs.com/book-taxi/jammu-patnitop",
+          "https://www.gozocabs.com/book-taxi/patnitop-bhaderwah",
+          "https://www.gozocabs.com/book-taxi/patnitop-sanasar"
+        ],
+        "notes": "Gozocabs publishes no local package for Patnitop ('No indicative local package fares are currently available'). The 22 km Sanasar hop at 3,224 one way suggests real hill-station local runs cost more than the 2,432 template; treat 2,432 as a floor. No taxi union card found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 1000,
+        "basis": "Restaurant Guru city listing, October 2026 (average-price bands per person per meal, bucketed 1-200 / 200-400 / 400-600). Patnitop top-10 sampled: 'Cheap 1-200' = Janta Vaishno Dhaba, Punjabi Rasoi, Chai Sutta Bar, Neelkanth Vaishno Dhaba; '200-400/410' = Tasteride Food Point, Green Craft Island Airplane Restaurant (reviewers 200-600); 'Bombay Coffee House 200-800', 'Kahaani Restro & Bar 1-800', 'Banana Leaf 600-1,800' (reviewers 600-1,800). Budget = 3 dhaba meals about 100 / 150 / 200; standard = about 200 / 350 / 450 with tourist-spot pricing.",
+        "sources": [
+          "https://restaurant-guru.in/Patnitop"
+        ],
+        "notes": "Bucketed bands, not menu sums. Tourist-spot restaurants run well above the dhabas (Banana Leaf reviewers report 600-1,800 per person)."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "medium",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Taxi union local sightseeing rate card",
+        "JKTDC hut and Yatri Niwas dorm tariff (not exposed in page HTML)",
+        "Homestay price (2 undated points from different sites)",
+        "Dorm bed price"
+      ]
+    },
+    "bhaderwah": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No priced Bhaderwah-town property found on any fetchable source.",
+        "notes": "Bhaderwah has lodging (Wikivoyage: 'Several hotels and homestays are present in Bhadarwah', tents at riverside camps) but OTAs barely list it. Cleartrip 'hotels in Bhaderwah' (13-14 Nov 2026) shows only 5 properties, all SOLD OUT with no price: Apple Grove by Sama Homestays 3BHK villa, Hotel O River View Home, Hotel O POP Nafia / Misba / Zargar homestays (https://www.cleartrip.com/hotels/hotels-in-bhaderwah). EaseMyTrip 'hotels in Bhaderwah' returns Patnitop/Kud inventory 23-48 km away, plus Umaveer Homestay, Bundoda (Doda town, 23.5 km), 760 + 45 tax, undated (https://www.easemytrip.com/hotels/hotels-in-bhaderwah/). That Doda price is NOT a Bhaderwah price and is not used. Booking.com and MakeMyTrip pages did not load. Nearest well-priced base with the same road corridor is Patnitop (mid 3,724, budget 1,309; see patnitop). Restaurant Guru lists Jai View Hotel and Restaurant in Bhaderwah but with no room price."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Katra to Bhaderwah (159 km), sedan",
+            "inr": 5248,
+            "range": "Innova-class 6,809 (Gozocabs)"
+          },
+          {
+            "route": "Jammu to Bhaderwah (186 km), sedan",
+            "inr": 5221,
+            "range": "Innova-class 6,776 (Gozocabs)"
+          },
+          {
+            "route": "Patnitop to Bhaderwah (91 km), sedan",
+            "inr": 4089,
+            "range": "Innova-class 5,334 (Gozocabs)"
+          }
+        ],
+        "basis": "Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09). No local-sightseeing package or taxi-union card found for Bhaderwah; Gozocabs says no local package fares are available for it.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/katra-bhaderwah",
+          "https://www.gozocabs.com/book-taxi/jammu-bhaderwah",
+          "https://www.gozocabs.com/book-taxi/patnitop-bhaderwah",
+          "https://www.gozocabs.com/car-rental/bhaderwah"
+        ],
+        "notes": "HurryUp Cabs has no Bhaderwah page (its fallback page appears), so the 2,432 sedan 8 hr/80 km chain card from its Katra and Patnitop pages is only a floor proxy, not used as a Bhaderwah figure. Wikivoyage confirms hired taxis exist in Bhaderwah, with no fares."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "Restaurant Guru city listing, October 2026 (average-price bands per person per meal, bucketed 1-200 / 200-400 / 400-600). Bhaderwah top-10 sampled: 'Cheap 1-200' = Flavours, Cafe Latibule, Bhadarwahi Rasoi, Tapri; '200-400' = Yellow Chilly, Zaika, Parsa, The Pizza Hub (reviewers 200-600); Tandoori Bites 1-600, Grill Inn 1-1,000, Jai View Hotel 960-2,400. Budget = 3 meals about 100 / 150 / 200; standard = about 300 per meal.",
+        "sources": [
+          "https://restaurant-guru.in/Bhaderwah"
+        ],
+        "notes": "Bucketed bands, not menu sums."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Any Bhaderwah hotel, homestay or camp price (OTAs sold out or empty)",
+        "Local sightseeing taxi rate",
+        "Menu or thali prices"
+      ]
+    },
+    "kishtwar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No priced Kishtwar property found on any fetchable source.",
+        "notes": "Cleartrip hotels, 3-star and homestay pages for Kishtwar (13-14 Nov 2026) return no listings or prices (https://www.cleartrip.com/hotels/hotels-in-kishtwar, .../homestays-in-kishtwar); the 3-star slug 404s. EaseMyTrip's Kishtwar search returns Doda-area/Patnitop inventory only. Booking.com city page lists no Kishtwar hotels. Restaurant Guru shows Kishtwar has hotel-restaurants (Sen Residency, Hotel Snow Valley) but no room prices. DwD (Aug 2026) says 'basic accommodation options' in Kishtwar and Forest Rest House / Yatri Bhawan at Gulabgarh, no prices (https://discoverwithdheeraj.com/killar-to-kishtwar-the-worlds-most-dangerous-road/). OTA coverage is effectively nil, so any modelled hotel number here is unsupported by evidence."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Jammu to Kishtwar Helipad (213 km, about 5 h 50 min), sedan",
+            "inr": 5999,
+            "range": "large SUV (Innova/Carens-class) 7,882 (Gozocabs)"
+          }
+        ],
+        "basis": "Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09). No local package or union card found.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/jammu-kishtwar"
+        ],
+        "notes": "Kishtwar-Bhaderwah and Kishtwar-Sinthan Top legs did not resolve on Gozocabs (server error / wrong-place match), so no fares for them."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "Restaurant Guru city listing, October 2026 (average-price bands per person per meal, bucketed 1-200 / 200-400 / 400-600). Kishtwar top-10 sampled: 'Cheap 1-200' = Biryani Corner, Kishtwar Foodies, Banarsi Vaishno Dhaba, Puran Sweets; '200-400' = Dolphin Restaurant, Momomia Biryani Mahal, Zum Zum Sweets (200-410); Hotel Snow Valley 400-600, Funbytes 1-800 (reviewer 200-400), Sen Residency 960-2,400. Budget = about 100 / 150 / 200; standard = about 300 per meal.",
+        "sources": [
+          "https://restaurant-guru.in/Kishtwar"
+        ],
+        "notes": "Bucketed bands, not menu sums."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Any Kishtwar hotel or homestay price",
+        "Local sightseeing taxi rate and union card",
+        "Menu or thali prices"
+      ]
+    },
+    "lolab-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Kupwara town (valley entrance 9 km north of it); Handwara for Bangus side",
+        "mid_median_inr": 4117,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.easemytrip.com/hotels/hotels-in-kupwara/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Single point: EaseMyTrip, Guest House Chandigam (Chandigam-Sogam Rd, 12.8 km from Kupwara, listed 3-star) 4,117 per night (a second, unlabelled 4,678 also shown), +185 tax; page had blank dates and a search-error banner, so date and season unknown.",
+        "notes": "n=1 and undated: very low confidence; do not publish as a median. Wikipedia: 'In Lolab Valley, there are a few tourist huts and many camping sites'. Holidify: homestays available in the valley, hotels 'at least 7-10 kilometers away' (https://www.holidify.com/places/lolab-valley/). JKTDC's Lolab page lists huts but no tariff (https://www.jktdc.co.in/info.aspx?id=12). Permit: Holidify says 'Travelers may need special permits to visit certain areas in Lolab Valley' with no fee or office named; no official permit statement found. Cleartrip has no Kupwara or Lolab page (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Srinagar to Kupwara (87 km), sedan",
+            "inr": 3063,
+            "range": "large SUV 3,936 (Gozocabs); the Gozocabs 'Lolab Valley' query resolved to the same 87 km Srinagar-Kupwara route"
+          },
+          {
+            "route": "Srinagar to Handwara (72 km), sedan",
+            "inr": 3042,
+            "range": "large SUV 3,910 (Gozocabs)"
+          }
+        ],
+        "basis": "Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09). No local sightseeing package or Kupwara/Lolab union card found. Holidify advises hiring a taxi from Srinagar; Wikipedia says valley centre is about 114 km from Srinagar.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/srinagar-kupwara",
+          "https://www.gozocabs.com/book-taxi/srinagar-handwara",
+          "https://www.holidify.com/places/lolab-valley/"
+        ],
+        "notes": "No Lolab-internal fare (Kupwara to Chandigam, Kalaroos, Sogam, Nagmarg) was found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1000,
+        "basis": "Restaurant Guru city listing, October 2026 (average-price bands per person per meal, bucketed 1-200 / 200-400 / 400-600). Kupwara town (the valley's supply town) top-10 sampled: '200-400/410' = Kejooz Cafe, Akbr Foods, Hotel Grand Resort, Chunk City, JustZing; 'Cafe 200-1,000' = The Mountain View, Keef Cafe, City Park; D9 410-620; Vintage House Hotel 970-2,400; reviewers 200-600. No 1-200 dhaba in the sampled top 10, so budget is set a little above the Katra/Bhaderwah figure.",
+        "sources": [
+          "https://restaurant-guru.in/Kupwara"
+        ],
+        "notes": "These are Kupwara-town prices applied to Lolab; inside the valley there are few eateries (Holidify), so homestay meals will be the usual option. Bucketed bands, not menu sums."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Homestay and tourist-hut tariff in Lolab (JKTDC tariff not exposed)",
+        "Local taxi day rate (no operator or union card)",
+        "Whether any permit is required for Indian citizens (only a vague 'may need special permits' line)",
+        "Date and season of the single Guest House Chandigam price"
+      ]
+    },
+    "bangus-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Handwara (29 km) or Kupwara (42 km) per Wikipedia, June 2022",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No price found for any Bangus stay.",
+        "notes": "Wikipedia (tourism section, as of 2 June 2022): 'Night stay tents are also available there'; Zachaldara on the Rajwar route 'can serve the purpose of food and accommodation'; Handwara route via Mawer is complete but only small cars can reach the valley and rental vehicles are available from Handwara market (https://en.wikipedia.org/wiki/Bangus_Valley). No tent or homestay rate found. Permit: no permit statement found on any fetched page; the Wikipedia text only says the area was long restricted by the armed conflict. Treat Bangus as a day trip from Handwara or Kupwara."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Srinagar to Handwara (72 km), sedan",
+            "inr": 3042,
+            "range": "large SUV 3,910 (Gozocabs); Handwara to Bangus (29 km) not priced"
+          },
+          {
+            "route": "Srinagar to Kupwara (87 km), sedan",
+            "inr": 3063,
+            "range": "large SUV 3,936 (Gozocabs); Kupwara to Bangus (42 km) not priced"
+          }
+        ],
+        "basis": "Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09). Only the Srinagar approach legs were priced; the Handwara-Bangus leg (small cars only, per Wikipedia June 2022) has no fare on any page found.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/srinagar-handwara",
+          "https://www.gozocabs.com/book-taxi/srinagar-kupwara",
+          "https://en.wikipedia.org/wiki/Bangus_Valley"
+        ],
+        "notes": "Gozocabs' 'Bangus Valley' slug resolved to a wrong place (2,246 km), so it was discarded."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No restaurant listing or meal price for Bangus. Kupwara-town bands (200-400 per meal for casual places) are on the lolab-valley entry; the valley itself has tents and no known eateries.",
+        "sources": [
+          "https://restaurant-guru.in/Kupwara"
+        ],
+        "notes": "Left null on purpose: a Kupwara number would be a proxy, not a Bangus observation."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Tent or homestay rate",
+        "Taxi fare Handwara/Kupwara to Bangus and local day rate",
+        "Food prices inside the valley",
+        "Permit requirement for non-locals"
+      ]
+    },
+    "gurez-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No price found for any Gurez stay.",
+        "notes": "Lodging exists but is unpriced online: JKTDC lists a Dak Banglow Gurez plus Deluxe/Super Deluxe 1, 2 and 4 BHK huts and a Yatri Niwas dormitory with no tariff in the page text (https://www.jktdc.co.in/CityHotels.aspx?Cid=28, https://www.jktdc.co.in/info.aspx?id=11, booking help 0194 2502274 / info@jktdc.co.in); the JKTDC page also notes riverside campsites. Holidify calls accommodation 'Limited' and advises booking ahead (https://www.holidify.com/places/gurez-valley/). OYO shows 'no hotels' for Gurez on 9 Oct 2026; Cleartrip, Booking and Agoda have no Gurez page that loads. Season: Wikipedia says Gurez is cut off by snow for about six months a year (Razdan Pass closure). Permit: Holidify's Gurez page says 'visitors require an Inner Line Permit' for the neighbouring Tulail Valley and gives no fee or office; Gurez town itself was not covered, so the current rule for Indian citizens and foreigners is unverified."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Srinagar to Bandipora (58 km, about 1 h 37 min), sedan",
+            "inr": 1588,
+            "range": "large SUV 2,113 (Gozocabs); the 86-km Bandipora to Gurez leg is not priced"
+          }
+        ],
+        "basis": "Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09). No Srinagar-Gurez or in-valley fare found: Gozocabs' 'Gurez' slugs resolved to wrong places (859-2,521 km) and were discarded.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/srinagar-bandipora",
+          "https://www.holidify.com/places/gurez-valley/"
+        ],
+        "notes": "Holidify: private vehicles or taxis are the main transport, no fares given. Wikipedia: nearest airport Srinagar, about 150 km."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Restaurant Guru returned zero restaurants for Gurez; no menu or meal price found anywhere.",
+        "sources": [
+          "https://restaurant-guru.in/Gurez"
+        ],
+        "notes": "Left null on purpose rather than proxying from Kupwara or Srinagar."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "JKTDC hut, Dak Bungalow, dorm and camp tariff",
+        "Homestay price",
+        "Srinagar to Gurez cab fare and in-valley day rate",
+        "Meal prices",
+        "Current permit rule for Indian citizens and foreigners (Tulail Valley ILP mentioned, Gurez not)"
+      ]
+    },
+    "sinthan-top": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Kokernag (48 km) or Daksum (37 km) on the Anantnag side; Kishtwar (80 km) on the other",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Pass at 3,748 m, no lodging on the pass itself.",
+        "notes": "Wikipedia: 'The nearest hotels are located at Kokernag and Daksum'; shepherds and tourists 'may stay overnight in tents'; '80 km from Kishtwar town, 130 km south of Srinagar and 73 km from Anantnag and 48 km from Kokernag', 'Around 37 kilometers of snaky and uphill drive from Daksum' (https://en.wikipedia.org/wiki/Sinthan_Top). The same page says a hotel or hut night costs 1,500 to 3,500 rupees, undated and uncited, so it is not used as a measured price. Use the Kokernag (B9) base-town stay figures. No permit mentioned on the page."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Srinagar to Anantnag (66 km), sedan",
+            "inr": 2192,
+            "range": "large SUV 3,061 (Gozocabs); approach leg only, Anantnag/Kokernag to Sinthan Top not priced"
+          }
+        ],
+        "basis": "Gozocabs one-way indicative fare, before GST, no travel date shown (fetched 2026-10-09). No fare to Sinthan Top itself: Gozocabs 404s on it and mis-resolved Kokernag to a wrong place.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/srinagar-anantnag"
+        ],
+        "notes": "Wikipedia: Sinthan Top is a 4-5 hour drive from Srinagar. It is a pass with no town, so a sightseeing 'taxi day' is really a Kokernag/Daksum round trip over a steep road."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No eateries documented on the pass; no meal price found. Use base-town (Kokernag) food figures.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium",
+        "taxi": "low",
+        "food": "low"
+      },
+      "unverified": [
+        "Taxi fare Kokernag/Daksum/Kishtwar to Sinthan Top",
+        "Any food prices",
+        "Date and source behind Wikipedia's 1,500-3,500 hotel or hut range"
+      ]
+    }
+  }
+}

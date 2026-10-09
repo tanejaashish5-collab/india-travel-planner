@@ -1,0 +1,769 @@
+{
+  "batch": "B2",
+  "researched_on": "2026-10-09",
+  "notes": "Stay medians rounded to nearest 50. Many prices were read from search-result snippets or aggregator pages; confidence field reflects that. Most remote pilgrimage places have no online taxi-union rate list.",
+  "destinations": {
+    "uttarkashi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4400,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-uttarkashi",
+          "https://www.kayak.co.in/Uttarkashi-Hotels.61402.hotel.ksp",
+          "https://www.booking.com/city/in/uttarkashi.html"
+        ],
+        "budget_hotel_median_inr": 1300,
+        "budget_n": 10,
+        "budget_sources": [
+          "https://www.kayak.co.in/Uttarkashi-Hotels.61402.hotel.ksp",
+          "https://www.uttarkashihotels.com/gmvn-tourist-rest-house-uttarkashi.html"
+        ],
+        "homestay_median_inr": 1550,
+        "homestay_n": 7,
+        "homestay_sources": [
+          "https://www.booking.com/homestay/city/in/uttarkashi.html",
+          "https://www.booking.com/budget/city/in/uttarkashi.html",
+          "https://www.kayak.co.in/Uttarkashi-Hotels.61402.hotel.ksp"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "http://www.chardhampackages.com/gmvn-tourist-rest-house-uttarkashi.html"
+        ],
+        "price_basis": "MID: pooled 12 properties, 7 from Cleartrip 12-13 Nov 2026 pre-tax (3-star list, homestay-named rows excluded), 3 Kayak India 3-star tab (undated, tax-incl), 2 Booking.com 'price from' converted at 96.8. BUDGET: 9 Kayak India 'from' prices (fetched 9 Oct 2026, tax-incl) + GMVN Uttarkashi Economy room 1,200. HOMESTAY: Booking.com 'price from' (USD at 96.8) for 5 + Kayak India for 2. Medians rounded to nearest 50.",
+        "notes": "Mid median is pulled up by out-of-town resorts (Tunda Renge, Matli, Bhatwari: 4,700-13,350). In-town 3-star hotels sit at about 1,600-3,200 (Gomukh 1,628, Hill River View 3,168 on Cleartrip; Hotel Shivdev about 1,800 on Booking). Pooled mid range 1,160-13,350, IQR about 2,500-6,600. GMVN TRH Uttarkashi tariff (third-party listing, undated): Economy 1,200, Deluxe 1,600, Family 2,000, Super Deluxe 2,200, Dormitory 500 listed PER ROOM (bed count unknown, so no dorm figure). Cleartrip homestay list for 12-13 Nov was sold out. USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Uttarkashi to Gangotri, sedan one-way (about 100 km)",
+            "inr": 2140
+          },
+          {
+            "route": "Uttarkashi to Gangotri, sedan round trip",
+            "inr": 4250
+          },
+          {
+            "route": "Uttarkashi to Gangotri, aggregator low quote (CabBazar, looks too low)",
+            "inr": 1089
+          },
+          {
+            "route": "Dehradun to Uttarkashi, sedan one-way (about 145 km)",
+            "inr": 5400
+          }
+        ],
+        "basis": "Operator day rates 3,500-3,800 (eUttaranchal 2026 listing: Indigo 3,500, Dzire 3,800, seen in search snippet; Bizar Expedition sedan 3,800/day incl tolls/driver, fetched) and aggregator 8h/80km sedan 3,014 pre-tax (HurryUp Cabs, fetched). 3,500 = middle. No Uttarkashi taxi-union rate card found online.",
+        "sources": [
+          "https://www.bizarexpedition.com/tpp-gangotri-yamunotri-yatra-by-car",
+          "https://hurryupcabs.com/cabs/uttarkashi",
+          "https://24cabs.com/trip/uttarkashi-to-gangotri-cabs",
+          "https://cabbazar.com/taxi/cab/uttarkashi-to-gangotri",
+          "https://hurryupcabs.com/outstation/dehradun-to-uttarkashi"
+        ],
+        "notes": "Sedan per-km 11 from 24Cabs and a Dehradun operator rate card (https://www.dehraduncarrental.org/kedarnath-car-rental: 11/km, 250 km/day minimum, 250 driver allowance). Other Uttarkashi quotes vary 1,089 (CabBazar) to 2,873 (Gozocabs one-way Uttarkashi-Gangotri). Aggregator rate card (HurryUp Cabs, fetched 9 Oct 2026): 8h/80km sedan 3,014, SUV 3,518, Innova 3,906, Crysta 4,515, pre-tax, same table is shown for every city so it is a national benchmark, not a local union rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 750,
+        "basis": "Budget = breakfast 80 + thali 150 + dinner 170. Standard = 3 meals at about 250. Anchors: Clanstays Nov 2025 lists Uttarkashi average meal 200-300 and route breakfast 50-100, lunch 100-200, dinner 150-250; Tripadvisor reviewers: thali about 90 at Anushka Restaurant, dosa 110 and uttapam 100 at The Dosa Hut (undated).",
+        "sources": [
+          "https://clanstays.com/char-dham-yatra-food-options-2026/",
+          "https://wanderlog.com/list/geoCategory/559116/best-family-restaurants-in-uttarkashi-district"
+        ],
+        "notes": "No Zomato/Swiggy cost-for-two page was reachable for Uttarkashi; Tripadvisor listing has no INR prices."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Taxi union rate card for Uttarkashi",
+        "Dorm bed price (GMVN dorm listed per room only)",
+        "Place-specific restaurant menus/cost-for-two",
+        "Date of the eUttaranchal day-rate listing"
+      ]
+    },
+    "gangotri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Harsil (about 25-30 km below) and Uttarkashi (about 100 km) have more hotels; Gangotri lodges are seasonal (roughly Apr-Nov)",
+        "mid_median_inr": 3200,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-gangotri",
+          "https://yatradham.org/gmvn-gangotri-tourist-lodge.html"
+        ],
+        "budget_hotel_median_inr": 1300,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://yatradham.org/gmvn-gangotri-tourist-lodge.html",
+          "https://www.gangotrihotels.com/gmvn-tourist-rest-house-gangotri.html",
+          "https://www.travelocity.com/Gangotri-Hotels.d553248634534885763.Travel-Guide-Hotels"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 476,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://yatradham.org/gmvn-gangotri-tourist-lodge.html"
+        ],
+        "price_basis": "MID: Hotel Manisha 3,711 (Cleartrip 12-13 Nov 2026 pre-tax) and GMVN Gangotri Deluxe 2,667 (Yatradham base price, +5% tax). BUDGET: GMVN Economy 1,048, Standard 1,200 (gangotrihotels.com), Semi Deluxe 1,429, Shri Narsingh Tourist Complex about USD 25 (Travelocity, May dates) = 2,420. DORM: GMVN dormitory hall 476 per bed + 5% tax.",
+        "notes": "Very thin market: Cleartrip shows only 2 '3-star' rows (the other, Shri Narsingh, sold out). Hotel Manisha also 4,755-4,868 on Trip.com (search snippet). Gangotri has no real homestay market; no figure given. Cleartrip pricing is for 12-13 Nov, after the usual late-Oct/Nov closing, so treat as shoulder/off-season. USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3800,
+        "vehicle": "sedan (cab from Uttarkashi/Harsil to the roadhead at Gangotri; temple is a few hundred metres from the road)",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Uttarkashi to Gangotri sedan one-way",
+            "inr": 2140
+          },
+          {
+            "route": "Uttarkashi to Gangotri sedan round trip (same-day)",
+            "inr": 4250
+          },
+          {
+            "route": "Uttarkashi to Gangotri sedan, Gozocabs from",
+            "inr": 2873
+          },
+          {
+            "route": "Gangotri to Yamunotri sedan (aggregator)",
+            "inr": 3600
+          }
+        ],
+        "basis": "Bizar Expedition per-day sedan rate 3,800 (incl tolls, taxes, driver allowance), which equals a same-day Uttarkashi-Gangotri-Uttarkashi run; 24Cabs sedan round trip 4,250.",
+        "sources": [
+          "https://www.bizarexpedition.com/tpp-gangotri-yamunotri-yatra-by-car",
+          "https://24cabs.com/trip/uttarkashi-to-gangotri-cabs",
+          "https://www.gozocabs.com/book-taxi/uttarkashi-gangotri",
+          "https://cabbazar.com/taxi/cab/gangotri-to-yamunotri"
+        ],
+        "notes": "Gomukh glacier (18 km) is a foot trek with permit, no vehicle. Harsil-Gangotri about 25-30 km. No Gangotri taxi-union rate card or pony tariff found. A chardhamtour-style guide suggests budgeting 3,000-5,000 for a private car on this leg (search snippet)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 800,
+        "basis": "Budget = breakfast 100 + thali 180 + dinner thali 180. Standard = breakfast 150 + 2 meals at 250-300. Anchors: Tripadvisor reviewer at Harsil/Dharali paid 80 for Maggi and 180 for a thali (undated); Dec 2025 guide: simple thali 150-250, hill locations charge 30-50% more, breakfast 80-150.",
+        "sources": [
+          "https://www.triptochardham.in/how-much-does-char-dham-yatra-cost-in-2026-real-prices",
+          "https://www.tripadvisor.com/ShowUserReviews-g1222155-d2648928-r133075530-Gangotri_Glacier-Uttarkashi_Uttarkashi_District_Uttarakhand.html"
+        ],
+        "notes": "Derived from route-wide ranges plus one undated reviewer price. No Gangotri menu/rate board found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Gangotri taxi union rates",
+        "GMVN official tariff (third-party listings disagree: Standard 1,200 vs Economy 1,048 vs Deluxe 2,381/2,667)",
+        "Homestay prices",
+        "Gangotri menu/thali price",
+        "Pony/doli at Gangotri (none reachable by road beyond temple, not researched)"
+      ]
+    },
+    "yamunotri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Janki Chatti (roadhead, 6 km trek below the shrine), Kharsali (about 1 km away, helipad village) and Barkot (45-50 km). Prices below pool Janki Chatti, Kharsali and Barkot.",
+        "mid_median_inr": 3500,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-yamunotri",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-barkot",
+          "https://www.cleartrip.com/hotels/hotels-in-janki-chatti-yamunotri",
+          "https://www.booking.com/city/in/kharsali.html"
+        ],
+        "budget_hotel_median_inr": 1600,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-yamunotri",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-barkot",
+          "https://www.yatra.com/hotels/hotels-at-janki-chatti-in-yamunotri"
+        ],
+        "homestay_median_inr": 2150,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/kharsali.html",
+          "https://www.chardhamhotel.in/akshat-homestay-kharsali.html",
+          "https://www.goibibo.com/hotels/vaishnavi-homestay-kharsali-yamunotri-hotel-in-yamunotri-2807141288832502477/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip 12-13 Nov 2026 pre-tax, 3-star rows with prices: Janki Chatti/Yamunotri (Leafwalk 7,445; Yamunotri Cottages 4,310; AP Residency 1,601) and Barkot (Gauri Shankar 2,085; Rest and Bite 1,582; Camp Nirvana 2,634; Rigveda 8,062); plus Tirath Niwas (Booking USD 66.19 = 6,407). Budget: GMVN Janki Chatti 'from 850' (Yatra.com snippet), AP Residency 1,601, Rest and Bite 1,582. Homestay: Booking 'from' for Kharsali (USD 13.24 = 1,282), Pahadi Homestay 1,799 (Goibibo snippet), Akshat Homestay 2,500 room-only (direct), Viraaj Homestay 2,541 (Cleartrip snippet).",
+        "notes": "Small samples, mixed dates (Cleartrip Nov, Booking undated) and a seasonal market (shrine open about late Apr-early Nov); 6 of 10 Cleartrip Yamunotri rows and 8 of 12 Barkot rows were sold out for 12-13 Nov. Mid median is sensitive to the Barkot/Janki Chatti mix (Janki Chatti-only 3-star rows: 1,601-7,445). USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3800,
+        "vehicle": "sedan (cab Barkot to Janki Chatti roadhead and back; then 6 km walk or pony/palki)",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Yamunotri/Janki Chatti to Barkot (50 km) sedan, rate-card fare",
+            "inr": 4500
+          },
+          {
+            "route": "Yamunotri to Uttarkashi (126 km) sedan, rate-card fare",
+            "inr": 4000
+          },
+          {
+            "route": "Barkot to Janki Chatti shared jeep, per person (guide, unconfirmed)",
+            "inr": 150
+          },
+          {
+            "route": "Haridwar to Yamunotri, Rajputana Cabs headline",
+            "inr": 4000
+          }
+        ],
+        "basis": "Bizar Expedition sedan per-day 3,800 incl tolls and driver allowance (fetched); Dehradun operator rate card lists Yamunotri-Barkot (50 km) sedan 4,500 and applies 11/km with 250 km/day minimum. No Barkot taxi-union rate list found online.",
+        "sources": [
+          "https://www.bizarexpedition.com/tpp-gangotri-yamunotri-yatra-by-car",
+          "https://www.dehraduncarrental.org/yamunotri-taxi-service"
+        ],
+        "notes": "YAMUNOTRI ON FOOT: Janki Chatti to temple 6 km, 2-3 h up. Fixed rates at prepaid counter (https://www.sacredyatra.com/ponies-palkies-rates-for-yamunotri-dham.html, year not stated): pony one-way 1,310 till 30 June / 1,110 after; round trip 2,500 / 2,100. Kandi (adult up to 60 kg) one-way 1,260 / 1,110. Dandi (palki) up to 50 kg one-way 3,240 / 2,740, above 50 kg 4,240 / 3,440; round trip 6,000-8,000 / 5,000-6,400. Uttarakhand Tourism (Dec 2024, via chardhamtour.in): pony 1,200, palki 4,000 one-way. Some 2026 sites quote lower (pony 640, kandi 840, dandi 1,900); treat the lower set as unverified."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "Budget = breakfast 80 + thali 130 + dinner 150 + tea. Standard = 3 meals at about 230. Anchors: 2026 guide per meal 150-300 at trailside stalls and dhabas; older guide Janki Chatti thali 100-150 (about 14 months old); Kedarnath-trek proxy Maggi 60-120, tea 20-40.",
+        "sources": [
+          "https://planyourpackage.com/blogs/yamunotri-temple-2026-complete-guide/",
+          "https://www.triptochardham.in/how-much-does-char-dham-yatra-cost-in-2026-real-prices"
+        ],
+        "notes": "Derived from guide ranges seen in search snippets; no Janki Chatti menu or rate board found. Food is vegetarian only (no non-veg or alcohol at the shrine)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Barkot-Janki Chatti taxi union fare",
+        "Current pony/palki tariff (sources disagree 640-1,310 pony)",
+        "Janki Chatti dorm/GMVN tariff",
+        "Place-specific menus"
+      ]
+    },
+    "har-ki-doon": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Sankri (end of the motor road region; 11-12 km jeep to Taluka roadhead, then about 12 km trek to Har Ki Dun). At Har Ki Dun itself there is only one Forest Rest House (2 rooms) and one GMVN hut/dorm, advance booking needed; no hotels. Figures below are for SANKRI, not Har Ki Dun.",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 850,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.euttaranchal.com/hotels/gmvn-sankri-trh.php",
+          "https://www.euttaranchal.com/hotels/homestays-in-sankri-village.php"
+        ],
+        "homestay_median_inr": 1500,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.euttaranchal.com/hotels/homestays-in-sankri-village.php",
+          "https://www.homestaysofindia.com/uttarakhand-sankri-pristine-peaks-homestay/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.euttaranchal.com/hotels/gmvn-sankri-trh.php"
+        ],
+        "price_basis": "Sankri: GMVN TRH Economy 'from 500' and Benzer Stays 'starting from 1,200' (euttaranchal.com, undated); homestays: Benzer 1,200, Pristine Peaks Classic 1,500 (page about 2 years old, breakfast included), Meraki Sankri Deluxe 3,000 (euttaranchal 'starting from'; the operator quotes 3,000-3,600 on MAP incl dinner, breakfast, tea).",
+        "notes": "Har Ki Dun itself: Forest Guest House (2 rooms) + GMVN dormitory, advance booking mandatory (search snippet from trek operators; no tariff found). GMVN Sankri TRH has 5 economy rooms and a 15-bed dorm (no dorm price shown). Tripadvisor lists hotels in Sankri 'from 4,542' (search snippet, unconfirmed). Most trekkers use all-inclusive packages (e.g. 9,499-22,000 per person) that bundle stay and meals."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "jeep (hired Sankri to Taluka roadhead, 11-12 km; no cab sightseeing at Har Ki Dun)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Dehradun to Sankri private taxi (about 200 km, 8-10 h)",
+            "inr": 4250
+          },
+          {
+            "route": "Dehradun to Sankri shared taxi, per person",
+            "inr": 950
+          },
+          {
+            "route": "Sankri to Taluka hired jeep (2017 trekker report, STALE)",
+            "inr": 700
+          },
+          {
+            "route": "Sankri to Taluka shared jeep, per person (2017, STALE)",
+            "inr": 100
+          }
+        ],
+        "basis": "Himalayan Daredevils (published 12 Feb 2026): private taxi 3,500-5,000, shared 700-1,200 per person; midpoints shown. CabBazar sedan 3,100, Gozocabs from 4,657, GetMeCab from 4,143 (search snippets). Another 2026 guide quotes 6,500-9,000 private; wide spread. Taluka jeep figure is from a Dec 2017 Tripoto post only.",
+        "sources": [
+          "https://himalayandaredevils.com/blog/dehradun-to-sankri-travel-guide",
+          "https://www.cosmicscanner.com/post/har-ki-dun-trek-cost",
+          "https://www.tripoto.com/uttarakhand/trips/complete-solo-trekking-guide-to-har-ki-dun-5a40f3aecd2d5"
+        ],
+        "notes": "There is no local-sightseeing cab market; the cab is a one-time hire to Taluka (no current price found, so day rate is null). Dehradun-Sankri private quotes range 3,000 (CabBazar) to 9,000."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 700,
+        "basis": "Sankri Maggi 80-120 and tea 30-50 (cosmicscanner.com, 2026); thali assumed 150-250 from route-wide guides. Budget = Maggi/paratha breakfast 100 + dal-rice 150 + dinner 150 + tea 50. Standard = homestay-style thali meals at about 230 each. Most trekkers pay for meals inside packages or homestay MAP plans.",
+        "sources": [
+          "https://www.cosmicscanner.com/post/har-ki-dun-trek-cost",
+          "https://www.euttaranchal.com/hotels/meraki-sankri.php"
+        ],
+        "notes": "No Sankri thali price found on any page; low confidence. On the trail (Taluka, Osla, Har Ki Dun) food is homestay/hut-supplied."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Current Sankri-Taluka jeep fare",
+        "Sankri thali price",
+        "GMVN dorm per-bed price",
+        "Har Ki Dun FRH/GMVN tariff",
+        "Mid-range hotel (none exists; Tripadvisor 4,542 'from' unconfirmed)"
+      ]
+    },
+    "guptkashi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3700,
+        "mid_n": 21,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-guptkashi",
+          "https://www.cleartrip.com/hotels/homestays-in-guptkashi",
+          "https://www.kayak.co.in/Kedarnath-Hotels.70462.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1550,
+        "budget_n": 6,
+        "budget_sources": [
+          "https://www.kayak.co.in/Kedarnath-Hotels.70462.hotel.ksp",
+          "https://yatradham.org/yatradham-destinations/uttarakhand/guptkashi/gmvn.html"
+        ],
+        "homestay_median_inr": 1900,
+        "homestay_n": 6,
+        "homestay_sources": [
+          "https://yatradham.org/guptkashi-best-view-home-stay.html",
+          "https://www.homestays.co.in/guptkashi-india",
+          "https://www.makemytrip.global/hotels/p-homestays-in-guptkashi.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://yatradham.org/yatradham-destinations/uttarakhand/guptkashi/gmvn.html"
+        ],
+        "price_basis": "MID: pooled 21 rows, 15 from Cleartrip 12-13 Nov 2026 pre-tax (two Cleartrip lists: 3-star and 'homestays', which are all hotels/resorts) + 6 Kayak India 'from' prices (Oct, tax-incl). BUDGET: Kayak India hotels around Guptkashi/Sersi/Phata/Sonprayag (1,160-2,030) + GMVN Guptkashi 'starting 1,200'. HOMESTAY: Best View Home Stay 3,660 (Yatradham, no meals), plus search-snippet prices Priyanka 1,703, Kalawati Residency 2,100, Kedar Kashi Cottage 2,123, Fulari 1,200, Homestay Narayankoti 1,150 (undated).",
+        "notes": "Rows include the Tyuri/Phata/Narayankoti/Khumera belt near the helipads (10-15 km from town), not just Guptkashi town. Mid IQR about 3,000-5,400; Cleartrip alone gives 4,505 median (n=15), Kayak alone about 3,500. Cleartrip dates are the tail of the yatra season; peak May-June is higher. Homestay figures are mixed-date snippets, low confidence. Guptkashi dorm not found (GMVN Guptkashi 'starts at 560' on Yatradham may be a dorm bed but unverified). USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Guptkashi to Sonprayag (Kedarnath roadhead), union private jeep one-way",
+            "inr": 2000
+          },
+          {
+            "route": "Guptkashi to Chopta (Tungnath) union private jeep one-way",
+            "inr": 1800
+          },
+          {
+            "route": "Guptkashi to Ransi (Madhyamaheshwar) union",
+            "inr": 1650
+          },
+          {
+            "route": "Guptkashi to Sagar (Rudranath) union",
+            "inr": 2250
+          },
+          {
+            "route": "Guptkashi to Sonprayag, aggregator sedan (CabBazar)",
+            "inr": 3800
+          }
+        ],
+        "basis": "Union-style 2026 'fixed-rate' fares from a Guptkashi guide (ranges: Sonprayag 1,800-2,200, Chopta 1,600-2,000, Ransi 1,500-1,800, Sagar 2,000-2,500; midpoints shown; the guide's 72 km figure for Sonprayag looks wrong, real distance about 30 km). Day rate 3,500 = Rudraprayag/Kedarnath operator day rate (eUttaranchal 2026 snippet: Indigo 3,500, Dzire 3,800) and aggregator 8h/80km sedan 3,014. Local day typically Guptkashi-Ukhimath-Chopta.",
+        "sources": [
+          "https://mountainiax.com/guptkashi-the-hidden-spiritual-hub-of-uttarakhand/",
+          "https://cabbazar.com/taxi/cab/guptkashi-to-sonprayag",
+          "https://www.gozocabs.com/book-taxi/guptakashi-sonprayag",
+          "https://hurryupcabs.com/cabs/uttarkashi"
+        ],
+        "notes": "Gozocabs one-way Guptkashi-Sonprayag 2,598-3,092. Union board is at the bus stand (not online). Sonprayag-Gaurikund shuttle 50-100 per person shared or 300-500 private (chardhamtour.in, 2026). Shared jeeps Guptkashi-Sonprayag about 100-150 per person (older guide). Aggregator rate card (HurryUp Cabs, fetched 9 Oct 2026): 8h/80km sedan 3,014, SUV 3,518, Innova 3,906, Crysta 4,515, pre-tax, same table is shown for every city so it is a national benchmark, not a local union rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 750,
+        "basis": "Namaste India Trip (updated 2 Jun 2026): Guptkashi budget dhabas 100-200 per meal, local dhabas dal-rice-sabzi-roti 80-150, hotel buffet thalis 150-300, mid-range hotel restaurants 250-400. Budget = breakfast 80 + 2 dhaba meals at about 150. Standard = breakfast 150 + 2 hotel-restaurant meals at about 300.",
+        "sources": [
+          "https://www.namasteindiatrip.com/blog/food-options-in-and-around-kedarnath/"
+        ],
+        "notes": "Single 2026 source for Guptkashi-specific prices, cross-checked with route-wide ranges (Clanstays Nov 2025)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Official Guptkashi union rate board",
+        "Guptkashi dorm bed price",
+        "Homestay current rates (snippet-only)",
+        "Peak-season (May-June) hotel prices"
+      ]
+    },
+    "kedarnath": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Sonprayag (roadhead area), Sitapur, Guptkashi, Phata; on the trail Gaurikund, Lincholi, Bhimbali",
+        "mid_median_inr": 2400,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kedarnath",
+          "https://www.chardhamtour.in/blog/accommodation-options-in-kedarnath/"
+        ],
+        "budget_hotel_median_inr": 2000,
+        "budget_n": 6,
+        "budget_sources": [
+          "https://www.kayak.co.in/Kedarnath-Hotels.70462.hotel.ksp",
+          "https://www.chardhamtour.in/kedarnath-yatra-cost-breakdown-budget-vs-premium/"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 700,
+        "dorm_n": 4,
+        "dorm_sources": [
+          "https://dreamtripguide.com/gmvn-kedarnath-booking-2026-how-to-reserve-rooms-and-dormitories-online/",
+          "https://yatradham.org/kedarnath-temple-tent-booking.html"
+        ],
+        "price_basis": "MID: Cleartrip 12-13 Nov 2026 pre-tax rows labelled 3-star in Kedarnath/Sonprayag/Sitapur (1,508; 1,785; 1,980; 2,852; 3,796; 10,434). BUDGET: Kayak India 'from' (tax-incl, 10-11 Oct 2026) for hotels/lodges only, tents and camps excluded (1,160; 1,643; 2,030; 2,030; 2,127; 2,513). DORM (per bed): GMVN Swargarohini dorm 990, Nandi Complex dorm 750, Yatradham tent 672, Sumeru tents 400 (DreamTripGuide, published 7 May 2026, approximate).",
+        "notes": "Kedarnath proper has GMVN tents/dorms/cottages and a few basic private lodges, no true 3-star; mid rows are largely in the Sonprayag-Sitapur belt. Guide ranges for comparison: private budget hotel with bath 600-1,200, mid-range near temple 1,500-3,000, GMVN double room 500-2,000 (chardhamtour.in 2026, euttaranchal FAQ). GMVN Swargarohini 4-bed suite 6,000 per room. Kedarnath is only open about late Apr-early Nov. Kayak shows a spiky price curve (avg Monday 1,150 vs Thursday 27,464), so single-date prices are unreliable. USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan/jeep to Sonprayag roadhead (no road beyond Gaurikund; Kedarnath temple is 16-18 km on foot, pony, palki or helicopter)",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Guptkashi to Sonprayag, union private jeep one-way (range 1,800-2,200)",
+            "inr": 2000
+          },
+          {
+            "route": "Guptkashi to Sonprayag, aggregator sedan (CabBazar)",
+            "inr": 3800
+          },
+          {
+            "route": "Guptkashi to Sonprayag, Gozocabs one-way from",
+            "inr": 2598
+          },
+          {
+            "route": "Sonprayag to Gaurikund private cab (range 300-500)",
+            "inr": 400
+          },
+          {
+            "route": "Sonprayag to Gaurikund shared shuttle per person (range 50-100)",
+            "inr": 75
+          },
+          {
+            "route": "Rudraprayag/Guptkashi day cab per day (Dzire/Etios, eUttaranchal 2026)",
+            "inr": 3800
+          }
+        ],
+        "basis": "Guptkashi taxi-union style range 1,800-2,200 to Sonprayag (2026 guide, midpoint); aggregators 2,598-3,800. Shuttle fares from chardhamtour.in (2026).",
+        "sources": [
+          "https://mountainiax.com/guptkashi-the-hidden-spiritual-hub-of-uttarakhand/",
+          "https://www.chardhamtour.in/kedarnath-yatra-cost-breakdown-budget-vs-premium/",
+          "https://cabbazar.com/taxi/cab/guptkashi-to-sonprayag",
+          "https://www.gozocabs.com/book-taxi/guptakashi-sonprayag"
+        ],
+        "notes": "KEDARNATH ONWARD FARES (chardhamtour.in 2026 'official rates', Gaurikund to Kedarnath 16 km): pony one-way 3,500 fixed; palki up to 60 kg 9,200 (rising to 15,200 for 101-130 kg), same-day return from 15,200; kandi/pitthu up to 25 kg 6,000, up to 50 kg 8,000. Helicopter round trip: Sersi/Phata about 8,500-8,900, Guptkashi about 12,150-12,800, GST and fee extra (https://www.chardhamtour.in/kedarnath-yatra-cost-breakdown-budget-vs-premium/). Pony/palki are booked at government counters, not online. Uttarakhand.cab lists helicopter one-way 4,000-8,000 across Guptkashi/Phata/Sersi (https://uttarakhand.cab/sonprayag-to-gaurikund). Online per-day rates for this circuit: sedan 3,500-3,800/day."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 800,
+        "basis": "Namaste India Trip (updated 2 Jun 2026): GMVN breakfast 80 and thali 180; private dhaba thali 200-300; Maggi 80-120; ginger tea 30-40 at Kedarnath; Gaurikund aloo paratha 40-70, dal-rice 80-130. Budget = GMVN breakfast 80 + 2 GMVN thalis 180 + 2 teas 30. Standard = breakfast 150 + 2 dhaba thalis 250 + Maggi/tea 150. Chardhamtour.in 2026: tea 20-50, Maggi 80-150, thali 150-300, breakfast 80-200.",
+        "sources": [
+          "https://www.namasteindiatrip.com/blog/food-options-in-and-around-kedarnath/",
+          "https://www.chardhamtour.in/blog/food-options-kedarnath-yatra/"
+        ],
+        "notes": "Free langar (donation basis) available at Anand Bhavan and Bharat Sevashram Sangha. GMVN tent thali 180 / breakfast 80 also appears in a 2017 article, so the 2026 repeat may not have been revised. UPI unreliable above Sonprayag."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Peak-season hotel prices (Cleartrip dates are Nov)",
+        "Homestay prices (none in Kedarnath)",
+        "Union-fixed Sonprayag fare (guide's distance looks wrong)",
+        "Official GMVN tariff sheet (gmvnonline.com returned 403, not bypassed)"
+      ]
+    },
+    "tungnath": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Chopta (3.5 km below the temple; the usual base, bookable stays). At Tungnath there is only a 4-room Mandir Committee Guest House allotted on the spot, plus a few basic dharamshalas/lodges (Neelkanth, Kali Kamli Ashram) closed in winter; camping banned.",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No published tariff found. Stay prices for the Chopta base were measured separately (chopta is stay_observed).",
+        "notes": "Sources: https://www.chopta.in/tungnath-mandir-committee-guest-house ('Price on Request', 4 very basic rooms, first-come first-served, advance booking generally unavailable); https://www.euttaranchal.com/hotels/hotels-in-tungnath.php (3 properties, no tariffs, closed in winter)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "sedan (cab to Chopta roadhead; Tungnath is a 3.5 km walk up from Chopta)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Guptkashi to Chopta union private jeep one-way (range 1,600-2,000)",
+            "inr": 1800
+          },
+          {
+            "route": "Ukhimath to Chopta sedan (CabBazar, aggregator)",
+            "inr": 1200
+          },
+          {
+            "route": "Ukhimath to Chopta, Gozocabs one-way from",
+            "inr": 2593
+          },
+          {
+            "route": "Rishikesh to Chopta sedan one-way (uttarakhand.cab, updated 23 Sep 2026)",
+            "inr": 8500
+          }
+        ],
+        "basis": "Chopta-area operator day rate: Swift Dzire 2,500 per day with 150 km/day and min 2 days, incl tolls, parking and driver (uttaranchalcarrental.net); aggregator 8h/80km sedan 3,014 (HurryUp). 3,000 shown as the middle of 2,500-3,014. A one-day Chopta local trip (Tungnath base, Sari, Deoria Tal, Kanchula Korak, Ukhimath; 9am-5pm) is a standard product but the operator page shows no price.",
+        "sources": [
+          "https://www.uttaranchalcarrental.net/chopta-taxi-service.asp",
+          "https://onedaytravel.in/one-day-chopta-local-sightseeing-trip-by-cab/",
+          "https://uttarakhand.cab/blog/rishikesh-to-chopta-tungnath-trek-guide-2026",
+          "https://mountainiax.com/guptkashi-the-hidden-spiritual-hub-of-uttarakhand/"
+        ],
+        "notes": "That same rate card lists implausibly low point fares (Haridwar to Chopta 1,000), so its day rate may also be low. Pony Chopta to Tungnath: one Tripadvisor traveller paid 1,500 both ways for one person (undated, 'over a year ago'); horses run only while the temple is open (summer). One operator lists Chopta-Tungnath cab at 1,890 hatchback/sedan (search snippet, odd for 3.5 km, unverified)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "2025 guides: Maggi on the Tungnath trail 50-80, tea 30-50, dhaba meals 100-300, thali 100-250; Chopta restaurant thali about 250 (itinerary estimate). Budget = Maggi/paratha breakfast 100 + thali 150 + dinner 150. Standard = breakfast 150 + 2 restaurant thalis at about 250.",
+        "sources": [
+          "https://www.tourmyholiday.com/blog-details/chopta-tungnath-trek-2025-uttarakhand",
+          "https://plantrip.io/itinerary/803826"
+        ],
+        "notes": "Derived from tour-operator blogs and a planner itinerary; no menu board or Zomato page found. A 2026 Tungnath snow-trek guide budgets 600-900 for 3 days of dhaba meals (looks low, unverified)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Tungnath guest house/dharamshala tariff",
+        "Current pony fare",
+        "Chopta taxi-union rate list",
+        "Menu prices at Tungnath dhabas"
+      ]
+    },
+    "chopta": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Guptkashi to Chopta union private jeep one-way (range 1,600-2,000)",
+            "inr": 1800
+          },
+          {
+            "route": "Ukhimath to Chopta sedan (CabBazar)",
+            "inr": 1200
+          },
+          {
+            "route": "Chopta to Tungnath trailhead (about 3.5 km), operator quote hatch/sedan (search snippet, unverified)",
+            "inr": 1890
+          },
+          {
+            "route": "Dehradun airport to Chopta Swift Dzire (operator rate card)",
+            "inr": 2500
+          },
+          {
+            "route": "Rishikesh to Chopta sedan one-way (updated 23 Sep 2026)",
+            "inr": 8500
+          }
+        ],
+        "basis": "Operator day rate Swift Dzire 2,500/day (150 km/day, min 2 days, tolls/parking/driver incl) from uttaranchalcarrental.net; aggregator 8h/80km sedan 3,014 (HurryUp). Midpoint 3,000. Garhwal local sightseeing day rates on the same card: Ertiga 3,000, Innova 3,500, Crysta 4,000.",
+        "sources": [
+          "https://www.uttaranchalcarrental.net/chopta-taxi-service.asp",
+          "https://hurryupcabs.com/cabs/uttarkashi",
+          "https://uttarakhand.cab/blog/rishikesh-to-chopta-tungnath-trek-guide-2026",
+          "https://mountainiax.com/guptkashi-the-hidden-spiritual-hub-of-uttarakhand/"
+        ],
+        "notes": "The operator card's point fares conflict with others (Dehradun airport 2,500 vs Rishikesh 8,500 for a similar distance), treat as low end. One-day Chopta circuit: Tungnath base, Sari, Deoria Tal, Kanchula Korak, Ukhimath, 9am-5pm (onedaytravel.in, price on request)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "Same basis as tungnath: 2025 guides Maggi 50-80 on trail, tea 30-50, dhaba meal 100-300, thali 100-250, Chopta restaurant thali about 250 (itinerary estimate). Budget = 100 + 150 + 150; standard = 150 + 250 + 300.",
+        "sources": [
+          "https://www.tourmyholiday.com/blog-details/chopta-tungnath-trek-2025-uttarakhand",
+          "https://plantrip.io/itinerary/803826"
+        ],
+        "notes": "Derived; no menu board or restaurant page with INR prices found. Sari village thali was about 80 per person in a 2017 blog (stale)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Chopta taxi-union rate list",
+        "Menu prices at Chopta dhabas/restaurants"
+      ]
+    },
+    "rudraprayag": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3850,
+        "mid_n": 12,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-rudraprayag",
+          "https://www.cleartrip.com/hotels/india/rudraprayag/budget-hotels",
+          "https://www.booking.com/city/in/rudraprayag.html",
+          "https://www.kayak.com/Rudraprayag-Hotels.94743.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 2250,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.kayak.com/Rudraprayag-Hotels.94743.hotel.ksp"
+        ],
+        "homestay_median_inr": 3000,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/rudraprayag.html",
+          "https://www.kayak.com/Rudraprayag-Hotels.94743.hotel.ksp"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "MID: 12 distinct rows: Cleartrip 3-star 12-13 Nov 2026 pre-tax (Mandakini 2,691; Bhanu Palace 1,987), Cleartrip 11-12 Oct pre-tax (AR Resort 2,464; Samrat 4,130; Sachin Intl 5,200; Monal 6,903; Birdsong 6,549), Booking 'price from' USD (Trishul Inn 19.66; Sterling Kastoori 52.14; Sukoon DK 60.44), Kayak.com USD Oct 10-11 (Vedic Alaknanda 36; Sheetal Resort 37). BUDGET: Kayak.com Oct 10-11 'from' (Peepal 19, Geetanjali Palace 23, Swayambhu 23, Hotel Rrr 30 USD). HOMESTAY: Prince Homestay USD 31, Aamantran Stay 35 (Booking/Kayak), Girish Alay Homestay 19 (Kayak snippet).",
+        "notes": "Cleartrip showed 10 of 12 '3-star' rows sold out for 12-13 Nov, so prices are thin. Spread is wide (1,900-6,900). Other benchmark: hotelbooking.co.in says the biggest share (35%) of listed hotels falls in 1,000-2,000 (undated). Cleartrip homestay count too small for more. Hostels/dorms not found. USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Rudraprayag to Badrinath (about 152 km) sedan, Dehradun operator rate card",
+            "inr": 4000
+          },
+          {
+            "route": "Rudraprayag to Badrinath, Gozocabs one-way from",
+            "inr": 5866
+          },
+          {
+            "route": "Rudraprayag to Devprayag (about 67 km), CabBazar sedan (looks low)",
+            "inr": 715
+          },
+          {
+            "route": "Dehradun to Rudraprayag sedan one-way (Savaari headline)",
+            "inr": 2340
+          }
+        ],
+        "basis": "eUttaranchal 2026 listing per-day (search snippet): Indigo 3,500, Dzire/Etios 3,800, Bolero 4,000, 12-seat Traveller 8,500. Aggregator 8h/80km sedan 3,014 (HurryUp Rudraprayag page). 3,500 = lower operator rate. No Rudraprayag taxi-union rate list found online.",
+        "sources": [
+          "https://www.euttaranchal.com/tourism/rudraprayag-bus-car-taxi-hire.php",
+          "https://hurryupcabs.com/cabs/rudraprayag",
+          "https://www.dehraduncarrental.org/badrinath-taxi-service",
+          "https://cabbazar.com/taxi/cab/rudraprayag-to-badrinath",
+          "https://www.savaari.com/dehradun/dehradun-to-rudraprayag-cabs"
+        ],
+        "notes": "Rudraprayag is a highway junction (Alaknanda-Mandakini sangam); most visitors take point-to-point cabs, not a local day. CabBazar's Rudraprayag fares (e.g. Kedarnath 792) are clearly unreliable. Aggregator rate card (HurryUp Cabs, fetched 9 Oct 2026): 8h/80km sedan 3,014, SUV 3,518, Innova 3,906, Crysta 4,515, pre-tax, same table is shown for every city so it is a national benchmark, not a local union rate."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "Route-wide, no Rudraprayag menus found. Clanstays Nov 2025: breakfast 50-100, lunch 100-200, dinner 150-250. Dec 2025 guide: breakfast 80-150, simple thali 150-250, a la carte 200-400. Budget = 75 + 150 + 175. Standard = breakfast 115 + 2 meals at about 300.",
+        "sources": [
+          "https://clanstays.com/char-dham-yatra-food-options-2026/",
+          "https://www.triptochardham.in/how-much-does-char-dham-yatra-cost-in-2026-real-prices"
+        ],
+        "notes": "Restaurant-guru and Tripadvisor pages for Rudraprayag show no INR prices; Hotel Mandakini lists a veg multi-cuisine restaurant without prices."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Rudraprayag taxi union rates",
+        "Hostel/dorm price",
+        "Place-specific restaurant prices",
+        "Date of eUttaranchal day-rate listing"
+      ]
+    },
+    "devprayag": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Rishikesh (about 74-86 km) and Srinagar Garhwal (about 34 km) have far more rooms",
+        "mid_median_inr": 3100,
+        "mid_n": 6,
+        "mid_sources": [
+          "http://www.chardhampackages.com/hotels-in-devprayag.html",
+          "https://www.euttaranchal.com/hotels/motel-dev-devprayag.php",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-devprayag",
+          "https://www.booking.com/city/in/devaprayag.html"
+        ],
+        "budget_hotel_median_inr": 1250,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/devprayag/budget-hotels",
+          "http://www.chardhampackages.com/hotels-in-devprayag.html",
+          "https://www.booking.com/city/in/devaprayag.html"
+        ],
+        "homestay_median_inr": 1600,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.booking.com/city/in/devaprayag.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "MID: Ramkund Resort 3,500 per room (chardhampackages, fetched); Motel Dev double 2,500 room-only before 12% GST (euttaranchal, fetched); Hotel Chakasha Govindam 1,680 (Cleartrip 11-12 Oct pre-tax; 828 for 12-13 Nov); Booking 'price from' via search snippet: Rambhaj 31.62, Hushvan Resorts 32.70, Ganga Vista 32.71 USD. BUDGET: GMVN Devprayag TRH about 1,000 (search snippet, 'on request' on chardhampackages), Chakasha Govindam avg 1,254, Batohi hotel USD 19.63. HOMESTAY: Sangam View Homestay USD 16.77 (n=1).",
+        "notes": "Devprayag is a small sangam town; most visitors stop 1-2 hours on the Rishikesh-Badrinath road. Tiny samples, so low confidence. Local guide estimate: 800-2,000 off season, 1,500-3,500 normal, 2,000-4,500 May-June peak (search snippet). USD->INR at 96.8 (MTFX mid-market 8 Oct 2026 = 96.82: https://www.mtfxgroup.com/tools/historical-currency-exchange-rates/usd-to-inr-rate/)"
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "sedan (little local sightseeing; the sangam is a 1-2 h stop)",
+        "outstation_per_km_inr": 11,
+        "point_to_point": [
+          {
+            "route": "Rishikesh to Devprayag (about 74-86 km) sedan, Uber Intercity average",
+            "inr": 1687
+          },
+          {
+            "route": "Rishikesh to Devprayag, 24Cabs sedan one-way from",
+            "inr": 1450
+          },
+          {
+            "route": "Rishikesh to Devprayag, Ganpati Tours sedan from",
+            "inr": 2800
+          },
+          {
+            "route": "Devprayag to Rudraprayag (about 67 km) sedan, CabBazar (looks low)",
+            "inr": 715
+          }
+        ],
+        "basis": "Devbhoomi Travels per-day sedan 3,500 incl toll, state tax, driver and fuel (search snippet); aggregator 8h/80km sedan 3,014. Point fares from Uber/24Cabs/GT Cabs listings.",
+        "sources": [
+          "https://devbhoomitravles.com/rishikesh-to-devprayag-innova-crysta-cabs/",
+          "https://www.uber.com/in/en/r/intercity/rishikesh-uttarakhand-to-devprayag-uttarakhand",
+          "https://24cabs.com/trip/rishikesh-to-devprayag-cabs",
+          "https://cabbazar.com/taxi/cab/devprayag-to-rudraprayag"
+        ],
+        "notes": "Buses Rishikesh-Devprayag 150-300 per person (4-5 h). Not fetched pages: figures are from search-result snippets."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "Route-wide, no Devprayag menus found (see rudraprayag): breakfast 50-150, thali 150-250, a la carte 200-400. Budget = 75 + 150 + 175; standard = 115 + 2 meals at about 300.",
+        "sources": [
+          "https://clanstays.com/char-dham-yatra-food-options-2026/",
+          "https://www.triptochardham.in/how-much-does-char-dham-yatra-cost-in-2026-real-prices"
+        ],
+        "notes": "Clanstays does not mention Devprayag at all."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Any Devprayag-specific restaurant price",
+        "Dorm/hostel",
+        "Taxi union rates",
+        "Current GMVN Devprayag tariff"
+      ]
+    }
+  }
+}

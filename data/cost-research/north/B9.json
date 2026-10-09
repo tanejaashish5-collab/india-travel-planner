@@ -1,0 +1,627 @@
+{
+ "batch": "B9",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "srinagar": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3000,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 15.5,
+    "point_to_point": [
+     {
+      "route": "Srinagar airport / Dal Gate transfer",
+      "inr": 1200,
+      "range": "1,200 (both operators, sedan)"
+     },
+     {
+      "route": "Srinagar to Gulmarg full-day return",
+      "inr": 2750,
+      "range": "2,500 (Srinagar Tourist Taxi 2026) to 3,000 (Srinagar Taxi Service Jan 2026), sedan"
+     },
+     {
+      "route": "Srinagar to Pahalgam full-day return",
+      "inr": 3100,
+      "range": "2,700 to 3,500 sedan"
+     }
+    ],
+    "basis": "Median of 3 operator quotes for a sedan on a Srinagar local sightseeing day: Srinagar Tourist Taxi 2,000 (2026 chart), Srinagar Taxi Service 3,000 (page updated 16 Jan 2026, non-AC, AC +400), Srinagar Taxi (since 1996) Etios 3,000 per day (site (c) 2026). Innova: 3,000 / 3,500 / 3,500. Operator rates, not a union card: the Srinagar tourist taxi stand has no published list that I could fetch.",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://srinagartaxi.com/",
+     "https://www.gozocabs.com/book-taxi/srinagar-pahalgam"
+    ],
+    "notes": "Kashmir Cabs (kashmircabs.com) advertises Dzire per day INR 1,999 and Innova Crysta 3,199, but those are multi-day package rates (Srinagar Tourist Taxi and Srinagar Taxi Service also quote 1,950 / 2,600 per day only for tours of 4-5+ days). Gozo Cabs (aggregator, undated) shows Srinagar to Pahalgam sedan one-way 3,098 before GST (99 km) and Srinagar to Sonamarg 3,394 (80 km), reference 14 to 15.5 per km for round trips. Gozo's Srinagar to Gulmarg page showed 16,339 for sedan, clearly a wrong-Gulmarg routing, ignored."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 750,
+    "basis": "Zomato Srinagar listing read 9 Oct 2026: 333 restaurants with a cost for two. Overall median 500 for two (quartiles 350 to 600, range 200 to 2,800). Dhaba / Vaishno-dhaba outlets (n=13) median 350 for two = 175 per person per meal; Kashmiri-cuisine restaurants (n=47) median 500 for two = 250 per person per meal. Budget = 3 x 175 = 525; standard = 3 x 250 = 750.",
+    "sources": [
+     "https://www.zomato.com/srinagar/restaurants"
+    ],
+    "notes": "Wazwan / hotel fine-dining places (Ahdoo's 1,500, Lalit and Radisson cafes 1,000 to 2,000 for two) are above standard and excluded from the medians' intent but included in the 333. Zomato cost-for-two excludes alcohol."
+   },
+   "confidence": "medium",
+   "confidence_detail": {
+    "taxi": "medium (3 operator sites, all 2026, but not a union card and spread 2,000 to 3,000)",
+    "food": "high (333 Zomato listings, 9 Oct 2026)"
+   },
+   "unverified": [
+    "Official Srinagar Tourist Taxi Stand union rate card (not found online)",
+    "Shikara and houseboat related transport not researched"
+   ]
+  },
+  "gulmarg": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2750,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 14,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Gulmarg full-day return trip",
+      "inr": 2750,
+      "range": "2,500 (Srinagar Tourist Taxi 2026) to 3,000 (Srinagar Taxi Service Jan 2026), sedan; Innova 3,300 to 4,000"
+     },
+     {
+      "route": "Gulmarg to Srinagar one way",
+      "inr": 3000,
+      "range": "3,000 sedan (Srinagar Taxi Service, Jan 2026)"
+     },
+     {
+      "route": "Gulmarg to Pahalgam or Sonamarg",
+      "inr": 5500,
+      "range": "4,000 (Srinagar Tourist Taxi 2026) to 7,000 (Srinagar Taxi Service Jan 2026) sedan; sources differ 1.75x, midpoint shown"
+     }
+    ],
+    "basis": "Full-day Srinagar-based return trip to Gulmarg, sedan: 2,500 and 3,000 from two 2026 operator charts, midpoint 2,750. This is the Srinagar day-trip rate, not a Gulmarg-local union rate: both operators state Gulmarg local sightseeing by union taxis is NOT included.",
+    "sources": [
+     "https://srinagartouristtaxi.com/srinagar-to-gulmarg-taxi-fare/",
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://www.gozocabs.com/book-taxi/srinagar-gulmarg"
+    ],
+    "notes": "Srinagar Taxi Service page (dateModified 2026-01-16) lists NON-AC sedan fares from Dal Gate: Srinagar sightseeing 3,000, Gulmarg 3,000, Pahalgam 3,500, Sonamarg 3,500, Doodhpathri 3,000, Yousmarg 3,000, Kokarnag 4,000 (Innova 3,500/4,000/4,500/4,500/4,000/3,500/4,500); AC extra 400 sedan / 500 Innova. Srinagar Tourist Taxi 2026 chart (full-day trips, sedan/Innova): Srinagar local 2,000/3,000, Gulmarg 2,500/3,300, Yousmarg 2,500/3,300, Sonamarg 2,700/3,300, Pahalgam 2,700/3,300, Doodhpathri 2,700/3,300, Verinag 3,500/4,000, Achabal+Kokernag 3,500/4,200, Baltal 3,000/5,000. Both exclude local union taxis (Aru, Betaab, Chandanwari, Zero Point, Zojila, Gulmarg sightseeing). Gulmarg-internal union taxi / ATV fares (Khilanmarg, Alpather, Drung) were not found on any fetched page. Gondola tickets are separate."
+   },
+   "food_per_person_day": {
+    "budget_inr": 900,
+    "standard_inr": 1500,
+    "basis": "Google 'price per person' bands via Restaurant Guru (pages updated Aug 2026), midpoint per meal: Pandit Brothers Vegetarian Dhaba 200-400 (300), Gareeb Nawaz 200-400 (300) = budget 3 x 300 = 900. Gulmarg Coffee House 400-600 (500), Bakshi Restaurant 400-600 (500), Miasa Cafe reviewer band 400-600 (500), Hill Point 200-1,000 (listed, no review band) = standard median 500 x 3 = 1,500.",
+    "sources": [
+     "https://restaurant-guru.in/Gulmarg",
+     "https://restaurant-guru.in/PANDIT-BROTHERS-VEGETARIAN-DHABA-Gulmarg",
+     "https://restaurant-guru.in/Gareeb-Nawaaz-Restaurant-Gulmarg",
+     "https://restaurant-guru.in/Gulmarg-coffee-House-Gulmarg",
+     "https://restaurant-guru.in/Bakshi-Restaurant-Gulmarg",
+     "https://restaurant-guru.in/Miasa-Cafe-Gulmarg",
+     "https://restaurant-guru.in/Hillpoint-Gulmarg"
+    ],
+    "notes": "Band midpoints probably run 15 to 20 percent above the Zomato cost-for-two basis used for Srinagar; Zomato has no Gulmarg listings (page returns no results). Many Gulmarg hotels bundle MAP meals, which this does not model. Holidify lists Nedous, Alpine Lounge, Highlands Park at 500 to 600 with no basis stated."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "taxi": "low (Srinagar day-trip rate stands in for Gulmarg local; no union card)",
+    "food": "low (6 restaurants, Google bands)"
+   },
+   "unverified": [
+    "Gulmarg union taxi local rates (Tangmarg, Khilanmarg, Alpather)",
+    "Pony rates at Gulmarg (Wikivoyage Gulmarg gives none)"
+   ]
+  },
+  "pahalgam": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3800,
+    "vehicle": "sedan (Etios)",
+    "outstation_per_km_inr": 15.5,
+    "point_to_point": [
+     {
+      "route": "Aru + Betaab + Chandanwari (union points)",
+      "inr": 2600,
+      "range": "Etios 2,600, Innova 3,000 (2021 card)"
+     },
+     {
+      "route": "Betaab Valley only / Aru Valley only",
+      "inr": 1300,
+      "range": "Betaab 1,300, Aru 1,400 Etios (2021 card)"
+     },
+     {
+      "route": "Pahalgam to Srinagar drop",
+      "inr": 3500,
+      "range": "3,500 (2021 card; Srinagar Taxi Service Jan 2026 also 3,500 sedan)"
+     },
+     {
+      "route": "Srinagar to Pahalgam full-day return",
+      "inr": 3100,
+      "range": "2,700 (Srinagar Tourist Taxi 2026) to 3,500 (Srinagar Taxi Service Jan 2026) sedan; Gozo one-way 3,098 pre-GST"
+     }
+    ],
+    "basis": "Pahalgam Taxi Service rate card (pahalgamtaxi.com, shop beside the Pahalgam tourist taxi stand): 'Local sightseeing Pahalgam trip' Etios 3,800, Innova 4,200; AC extra 30 percent. The page file is last modified 9 Nov 2021, so it is a FIVE YEAR OLD card and likely understated for 2026.",
+    "sources": [
+     "https://pahalgamtaxi.com/pahalgam-car-rentals.html",
+     "https://srinagartouristtaxi.com/srinagar-to-pahalgam-taxi-fare/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://www.gozocabs.com/book-taxi/srinagar-pahalgam"
+    ],
+    "notes": "2021 card vs 2026 operator quotes agree on Pahalgam to Srinagar (3,500) but differ on Pahalgam to Gulmarg (5,900 in 2021 vs 7,000 Srinagar Taxi Service 2026 vs 4,000 Srinagar Tourist Taxi 2026). Srinagar-based operators say Aru / Betaab / Chandanwari must be done by Pahalgam UNION taxis, charged on top of the Srinagar day-trip fare; no 2026 union card was found. Pahalgam to Achabal+Kokernag+Verinag on the 2021 card: 6,300 Etios."
+   },
+   "food_per_person_day": {
+    "budget_inr": 700,
+    "standard_inr": 900,
+    "basis": "Budget-tier per-meal figures: Punjabi Rasoi north Indian thali Rs 160 (Tripadvisor review Jun 2022), Punjabi Rasoi and Dana Pani Google band 200-400 (mid 300 each), KhenChen band 1-210; median about 230, x3 = 690, rounded 700. Standard tier: Dana Pani 300 (reviewer bands 500 and 1,100), Punjabi Rasoi 300, Troutbeat cost for two 390-530 (Holidify, undated) = 230; median 300, x3 = 900.",
+    "sources": [
+     "https://restaurant-guru.in/Punjabi-Rasoi-Pahalgam-3",
+     "https://restaurant-guru.in/Dana-Pani-Pahalgam",
+     "https://restaurant-guru.in/The-KhenChen-Restaurant-Pahalgam",
+     "https://www.tripadvisor.in/Restaurant_Review-g665884-d2514184-Reviews-Punjabi_Rasoi-Pahalgam_Anantnag_District_Kashmir_Jammu_and_Kashmir.html",
+     "https://www.holidify.com/places/pahalgam/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Zomato has no Pahalgam listings (404). Restaurant Guru pages for Paradise Hotel, Taste Buds and Dana Pani-2 all show an identical 970-2,400 band that looks like a placeholder; ignored. Troutbeat reviewers on Tripadvisor call it expensive. Hotel packages often include MAP."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "taxi": "low (union card is from Nov 2021)",
+    "food": "low (4 restaurants, Google bands plus one 2022 thali price)"
+   },
+   "unverified": [
+    "Current (2026) Pahalgam union taxi card",
+    "Pony rates for Baisaran / Chandanwari (the J&K Anantnag DC Amarnath Yatra 2026 notice, dated 15 May 2026, fixes pony rates only for the Chandanwari-Sheshnag-Panjtarni pilgrim route, e.g. Chandanwari to Pissu Top 1,260, not used)"
+   ]
+  },
+  "doodhpathri": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Srinagar (Doodhpathri is about 42 to 45 km SW of Srinagar and 30 km from Budgam town per budgam.nic.in and the Draft Master Plan); most visitors do it as a day trip",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tariff found anywhere. JKTDC publishes no rates for huts on its site; its online booking widget (checked 12-13 Nov 2026) has no Doodhpathri city.",
+    "notes": "Lodging EXISTS but is government huts, not a private market. Evidence: budgam.nic.in/accommodation (page updated 4 Sep 2025): 'A number of Govt. run huts are available at Yousmarg and Doodhpathri', bookable via JKTDC, CEO Doodhpathri 01951-256294. Doodhpathri Development Authority page (budgam.nic.in/dda): a 'Budgeted Accommodation (T-20 building at Dodhpathri)' completed. Draft Master Plan Doodhpathri-2032 (Nov 2011): 3 prefab fibreglass double-bed tourist huts built in the main bowl, budget accommodation under construction. CAUTION: the jktdc.co.in/info.aspx?id=9 Doodhpathri page lists 'Deluxe 1 BHK Hut ... Yatri Niwas Dormitory', but that identical 7-item list is boilerplate repeated on every JKTDC destination page (Yusmarg, Sonamarg, Kokernag, Verinag, Achabal, Srinagar hotels), so it is not evidence of those huts by itself; the page also says there is no full-fledged market or hotel. No Doodhpathri listing on Cleartrip, Booking.com (search returns no match), MakeMyTrip, Kayak, Agoda or Holidify (Holidify has no hotels page). Private camps likely exist but none found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2850,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Doodhpathri full-day return",
+      "inr": 2850,
+      "range": "2,700 (Srinagar Tourist Taxi 2026) to 3,000 (Srinagar Taxi Service Jan 2026) sedan; Innova 3,300 to 4,000"
+     },
+     {
+      "route": "Sonamarg to Doodhpathri",
+      "inr": 4000,
+      "range": "4,000 sedan, 6,000 Innova (Srinagar Tourist Taxi page, 2025/26)"
+     }
+    ],
+    "basis": "Midpoint of two 2026 operator charts for a Srinagar-based full-day round trip, sedan. Road is poor beyond Khansahib (jktdc.co.in) and there is a per-vehicle toll/parking point where pony and ATV operators wait (doodhpathri.in, independent guide).",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://doodhpathri.in/"
+    ],
+    "notes": "Pony and ATV rates at Doodhpathri were NOT found as numbers on any fetched page. doodhpathri.in (independent guide, 2026) says pony/ATV pricing is the top complaint in 2,058 Google reviews, opening quotes are 'usually inflated', bargaining usually settles at about half the first price, and a government rate board may be posted at the parking point. Whether 600-1,500 (visitor reports) vs 300-800 (our model) is right is therefore UNVERIFIED."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 750,
+    "basis": "PROXY, not observed at Doodhpathri: there is no restaurant market there. doodhpathri.in (2026): one government-run restaurant plus a few tea / kahwa / maggi / corn stalls; JKTDC says carry your own lunch. Visitors eat at Srinagar, so Srinagar Zomato figures (333 listings, median 500 for two; dhabas 350 for two) are used.",
+    "sources": [
+     "https://www.zomato.com/srinagar/restaurants",
+     "https://doodhpathri.in/",
+     "https://www.jktdc.co.in/info.aspx?id=9"
+    ],
+    "notes": "Treat as a Srinagar-base proxy. A day trip needs lunch only; a tea-and-maggi snack at the meadow is a few hundred rupees at most (no prices found)."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "low (huts confirmed, tariff not found)",
+    "taxi": "medium-low (2 operator charts, 2026)",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "JKTDC / DDA hut tariff",
+    "Private camp or homestay prices",
+    "Pony and ATV rate board",
+    "Toll / parking fee amount"
+   ]
+  },
+  "sonamarg": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3720,
+    "mid_n": 13,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-sonamarg"
+    ],
+    "budget_hotel_median_inr": 2180,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/sonamarg/budget-hotels",
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-sonamarg",
+     "https://www.booking.com/budget/city/in/sonamarg.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/homestays-in-sonamarg"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip '3-star' page, check-in 13 Nov 2026, 1 night, 2 guests, pre-tax discounted price, 13 priced properties (1,230 to 8,910; excluding the 2 camp/Kullan-villa outliers the median is 3,717, n=11). Budget: NOT a clean set. Cleartrip's budget page (11-12 Oct 2026) is a mix of 2,100 to 14,144 (median 5,150), so it was not used; instead 6 basic properties: Hotel Barzman 1,230 (13 Nov) / 2,280 (11 Oct) avg 1,755, Hotel Glacier Heights 2,790 (13 Nov) / 2,100 (11 Oct) avg 2,445, Mount View 1,958 (13 Nov), Sonamarg Mount Resort 2,406 (13 Nov), Mitra Hostel private room 2,651 (13 Nov, Cleartrip), Pahadon Ka Ghar Booking 'price from' USD 14.22 = 1,376 at 96.8 INR/USD (no dates). Median 2,182. Mixed dates and sources.",
+    "notes": "Cleartrip's 'homestays in Sonamarg' page returned the same hotels/resorts (none labelled homestay), and Booking's homestay page was empty, so no homestay median. No Hostelworld page for Sonamarg (404); Mitra Hostel is a hostel with private-room pricing, not a dorm bed. Same-hotel gaps between dates are large (Barzman 2,280 vs 1,230) so single-date prices are noisy. All dates are shoulder / late season (Sonamarg's May-June peak is UNVERIFIED and will be higher). Govt option, JKTDC booking widget, 12-13 Nov 2026, accommodation only per room per night: Hotel Kongposh Sonamarg (AC) Deluxe Room 2,800; JKTDC Sonamarg Resort 2-bedroom cottage 4,900, 4-bedroom cottage 5,600. Booking.com 'price from' (no dates): Mitra Sonamarg USD 25.83 = 2,500; Four Points by Sheraton USD 92.99 = 9,001."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3100,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 15.5,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Sonamarg full-day return",
+      "inr": 3100,
+      "range": "2,700 (Srinagar Tourist Taxi 2026) to 3,500 (Srinagar Taxi Service Jan 2026) sedan; Gozo one-way 3,394 pre-GST (80 km)"
+     },
+     {
+      "route": "Srinagar to Baltal day trip",
+      "inr": 3500,
+      "range": "3,000 (Srinagar Tourist Taxi) to 4,000 (Srinagar Taxi Service) sedan"
+     },
+     {
+      "route": "Sonamarg to Pahalgam or Gulmarg",
+      "inr": 7000,
+      "range": "4,000 (Srinagar Tourist Taxi) vs 8,000 Pahalgam / 7,000 Gulmarg (Srinagar Taxi Service Jan 2026) sedan; median of the three 7,000. Srinagar Taxi Service treats Pahalgam-Sonamarg as a double day"
+     }
+    ],
+    "basis": "Midpoint of two 2026 operator charts for a Srinagar-based full-day sedan trip, Gozo one-way reference as a cross-check. Both operators note that Sonamarg union taxis (Zero Point, Zojila) are NOT included.",
+    "sources": [
+     "https://srinagartouristtaxi.com/srinagar-to-sonmarg-taxi/",
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://www.gozocabs.com/book-taxi/srinagar-sonamarg"
+    ],
+    "notes": "Srinagar Taxi Service page (dateModified 2026-01-16) lists NON-AC sedan fares from Dal Gate: Srinagar sightseeing 3,000, Gulmarg 3,000, Pahalgam 3,500, Sonamarg 3,500, Doodhpathri 3,000, Yousmarg 3,000, Kokarnag 4,000 (Innova 3,500/4,000/4,500/4,500/4,000/3,500/4,500); AC extra 400 sedan / 500 Innova. Srinagar Tourist Taxi 2026 chart (full-day trips, sedan/Innova): Srinagar local 2,000/3,000, Gulmarg 2,500/3,300, Yousmarg 2,500/3,300, Sonamarg 2,700/3,300, Pahalgam 2,700/3,300, Doodhpathri 2,700/3,300, Verinag 3,500/4,000, Achabal+Kokernag 3,500/4,200, Baltal 3,000/5,000. Both exclude local union taxis (Aru, Betaab, Chandanwari, Zero Point, Zojila, Gulmarg sightseeing). Pahalgam taxi card (2021) lists Pahalgam to Sonamarg drop at 6,700 Etios. Thajiwas Glacier is reached by pony or on foot (3 to 4 km from the taxi stand); pony price not found as a current figure."
+   },
+   "food_per_person_day": {
+    "budget_inr": 550,
+    "standard_inr": 900,
+    "basis": "Restaurant Guru Google 'price per person' bands: Dogra Vaishno Bhojnalaya 1-200 (reviews 1-200 twice) = 150; Paras Rasoi listed 1-800 but reviewers 200-400 and 1-200 = 225; median 188, x3 = about 550 for budget. Standard: Lolabi Kashmiri Wazwan 200-400 (300), Paras Rasoi 225, Thajwas Glacier Hotel listed 800-1,000 but a reviewer 200-400 (so 300 to 900); median 300, x3 = 900.",
+    "sources": [
+     "https://restaurant-guru.in/Sonamarg",
+     "https://restaurant-guru.in/Dogra-Vaishnov-Bhojnayala-Sonamarg",
+     "https://restaurant-guru.in/PARAS-RASOI-Sonamarg",
+     "https://restaurant-guru.in/Lolabi-Kashmiri-Wazwan-Sonamarg",
+     "https://restaurant-guru.in/Thajwass-glacier-hotel-and-restaurant-Sonamarg"
+    ],
+    "notes": "No Zomato listing for Sonamarg. Hotel Sonamarg Inn and Glacier Heights pages had no price data (hotel dining, often MAP). Band midpoints may run above a Zomato basis."
+   },
+   "confidence": "medium",
+   "confidence_detail": {
+    "stay": "medium for mid (13 Cleartrip rows, one date), low for budget (mixed set), none for homestay and dorm",
+    "taxi": "medium (2 operator charts, 2026, plus Gozo)",
+    "food": "low (4 restaurants, Google bands)"
+   },
+   "unverified": [
+    "Homestay and dorm prices",
+    "May-June peak and winter rates",
+    "Sonamarg union taxi and Thajiwas pony current rates (undated Wikivoyage Sonamarg says pony up to 1,500, about 500 off-season; not used)"
+   ]
+  },
+  "yusmarg": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Srinagar (about 47 km, roughly 2 hours each way via Charar-e-Sharif per yusmarg.in); most visitors do a day trip",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No price found. JKTDC booking widget (searched 12-13 Nov 2026 across all 17 room types and 20-21 Oct 2026 across 11) returned no Yousmarg inventory.",
+    "notes": "Government accommodation exists: jktdc.co.in/CityHotels.aspx?Cid=14 lists 'JKTDC Yusmarg Resort' and 'Hotel Kongposh' (both with restaurant), and budgam.nic.in/accommodation (updated 4 Sep 2025) says govt huts are available at Yousmarg and Doodhpathri, bookable via JKTDC. Tariffs are not published and the online widget showed nothing bookable on the two dates tried (may be seasonal closure). The 7-item hut list on JKTDC pages is boilerplate shared by all destinations. No private listing on Booking.com ('Yusmarg' search returns no match), Cleartrip (no Yusmarg city page) or MakeMyTrip."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2750,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Yousmarg full-day return",
+      "inr": 2750,
+      "range": "2,500 (Srinagar Tourist Taxi 2026) to 3,000 (Srinagar Taxi Service Jan 2026) sedan; Innova 3,300 to 3,500"
+     }
+    ],
+    "basis": "Midpoint of two 2026 operator charts, Srinagar-based full-day return, sedan.",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://yusmarg.in/"
+    ],
+    "notes": "Pony price at Yusmarg not found as a number; yusmarg.in (independent guide) only says confirm route, duration and price before starting."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 750,
+    "basis": "PROXY from Srinagar Zomato (dhaba median 350 for two, restaurants median 500 for two). yusmarg.in says only 'basic food and tourism facilities are available' and to carry water and snacks; JKTDC resort has a restaurant (no menu prices). Visitors usually eat in Srinagar.",
+    "sources": [
+     "https://www.zomato.com/srinagar/restaurants",
+     "https://yusmarg.in/",
+     "https://www.jktdc.co.in/CityHotels.aspx?Cid=14"
+    ],
+    "notes": "No restaurant price data for Yusmarg itself."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "none (existence only)",
+    "taxi": "medium-low",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "JKTDC Yusmarg hut / resort tariff",
+    "Private stays",
+    "Pony rates"
+   ]
+  },
+  "tosamaidan": {
+   "stay": {
+    "no_lodging": null,
+    "nearest_base": "Srinagar or Budgam (unverified: no source fetched gives a road distance or any lodging)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Nothing found.",
+    "notes": "Booking.com search for 'Tosamaidan' finds no destination. Holidify's Tosa Maidan page (2026) has no stay, taxi or food information. The Draft Master Plan Doodhpathri-2032 (Nov 2011) treats Tosh Maidan as part of a regional ecotourism circuit but names no accommodation there. No_lodging is left null because absence could not be proven or disproven."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Neither Srinagar Tourist Taxi nor Srinagar Taxi Service lists a Tosamaidan fare; no other source found.",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/"
+    ],
+    "notes": "Do not borrow the Doodhpathri or Yusmarg fare: Tosamaidan is a longer, rougher route."
+   },
+   "food_per_person_day": {
+    "budget_inr": 525,
+    "standard_inr": 750,
+    "basis": "PROXY only (Srinagar Zomato basis, see srinagar). No information about any eatery at Tosamaidan was found.",
+    "sources": [
+     "https://www.zomato.com/srinagar/restaurants"
+    ],
+    "notes": "Low value: probably packed food for a day trip."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "none",
+    "taxi": "none",
+    "food": "proxy only"
+   },
+   "unverified": [
+    "Any lodging at Tosamaidan (forest huts, camps)",
+    "Taxi fare",
+    "Pony rates",
+    "Permit or entry rules"
+   ]
+  },
+  "achabal": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Anantnag (district headquarters); Achabal, Kokernag and Verinag are Anantnag-district gardens, each with a JKTDC resort on site",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No price found. JKTDC booking widget (12-13 Nov 2026 all 17 room types; 20-21 Oct 2026 11 room types) returned no Achabal inventory.",
+    "notes": "JKTDC lists 'JKTDC Achabal Resort' (restaurant) at jktdc.co.in/CityHotels.aspx?Cid=5, but no tariff. No OTA pages exist for Achabal (absent from Cleartrip's city directory; Booking 'Anantnag' search shows 9 properties, most of them in the Pahalgam valley, plus two basic guesthouses at 1,339 to 1,418 on 12-13 Nov 2026 whose distance to Achabal is unknown). Treat Anantnag as the real market."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Achabal + Kokernag full-day return",
+      "inr": 3500,
+      "range": "3,500 sedan, 4,200 Innova (Srinagar Tourist Taxi 2026)"
+     },
+     {
+      "route": "Pahalgam to Achabal + Kokernag + Verinag",
+      "inr": 6300,
+      "range": "6,300 Etios, 6,700 Innova (Pahalgam Taxi Service card, Nov 2021)"
+     }
+    ],
+    "basis": "Single 2026 operator chart (Srinagar Tourist Taxi) for the Achabal + Kokernag full-day trip from Srinagar, sedan. n=1.",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://pahalgamtaxi.com/pahalgam-car-rentals.html"
+    ],
+    "notes": "The Srinagar Taxi Service chart lists only Kokarnag (4,000 sedan), not Achabal. The three gardens are usually combined in one long day."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 600,
+    "basis": "PROXY from Zomato Anantnag (9 Oct 2026, 9 outlets, cost for one 150 to 300, median 200): budget = 3 x 150 (the two cheapest outlets), standard = 3 x 200 (median). These are town fast-food and sweets outlets, not garden-side eateries.",
+    "sources": [
+     "https://www.zomato.com/anantnag/restaurants"
+    ],
+    "notes": "JKTDC resorts at all three gardens list a restaurant but no prices."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "none",
+    "taxi": "low (one operator)",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "JKTDC Achabal tariff",
+    "Private stays near Achabal",
+    "Local taxi union fares"
+   ]
+  },
+  "kokernag": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Anantnag (district HQ) or the JKTDC Kokernag Resort on site",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No price found. JKTDC booking widget (12-13 Nov 2026 all 17 room types; 20-21 Oct 2026 11 room types) returned no Kokernag inventory.",
+    "notes": "JKTDC lists 'JKTDC Kokernag Resort' (restaurant) at jktdc.co.in/CityHotels.aspx?Cid=9, no tariff published. No OTA coverage (Booking and MakeMyTrip searches for Kokernag/Kokarnag find nothing; Cleartrip has no Kokernag page; Kayak returns unrelated cities). The only official price in the three-garden group is JKTDC Verinag Resort Deluxe Room 2,000 (see verinag), which should not be assumed for Kokernag."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3750,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Kokernag full-day return",
+      "inr": 3750,
+      "range": "3,500 (Srinagar Tourist Taxi 2026, combined with Achabal) to 4,000 (Srinagar Taxi Service Jan 2026, 'Kokarnag') sedan"
+     },
+     {
+      "route": "Pahalgam to Achabal + Kokernag + Verinag",
+      "inr": 6300,
+      "range": "6,300 Etios (Pahalgam Taxi Service card, Nov 2021)"
+     }
+    ],
+    "basis": "Midpoint of two 2026 operator charts for a Srinagar-based full-day sedan trip (3,500 and 4,000).",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+     "https://pahalgamtaxi.com/pahalgam-car-rentals.html"
+    ],
+    "notes": "Innova 4,200 to 4,500."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 600,
+    "basis": "PROXY from Zomato Anantnag (9 outlets, cost for one 150 to 300, median 200): budget 3 x 150, standard 3 x 200. Not garden-side eateries.",
+    "sources": [
+     "https://www.zomato.com/anantnag/restaurants"
+    ],
+    "notes": "No Kokernag restaurant listings found on Zomato or Restaurant Guru."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "none",
+    "taxi": "medium-low (2 operator charts)",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "JKTDC Kokernag tariff",
+    "Private stays",
+    "Garden-side food prices"
+   ]
+  },
+  "verinag": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Anantnag (district HQ) or the JKTDC Verinag Resort on site",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 2000,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.jktdc.co.in/CityHotels.aspx?Cid=13",
+     "https://www.jktdc.co.in/default.aspx?m=IR&h=1&r=2 (city/date widget, results page Hotel-Search.aspx)"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "JKTDC online booking widget, 1 night, 1 room, 2 adults, 'accommodation only' (EP): JKTDC Verinag Resort Deluxe Room 2,000 per room per night on both 20-21 Oct 2026 and 12-13 Nov 2026. Official tariff, not pre/post-tax stated.",
+    "notes": "n=1, a government resort room, used as the budget_hotel proxy because it is the only priced lodging in the three-garden group. Other JKTDC room types returned nothing for Verinag. No private properties or OTA pages found (Booking 'Verinag' city page empty). JKTDC Verinag Resort has a restaurant."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 3500,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Srinagar to Verinag full-day return",
+      "inr": 3500,
+      "range": "3,500 sedan, 4,000 Innova (Srinagar Tourist Taxi 2026)"
+     },
+     {
+      "route": "Pahalgam to Achabal + Kokernag + Verinag",
+      "inr": 6300,
+      "range": "6,300 Etios (Pahalgam Taxi Service card, Nov 2021)"
+     }
+    ],
+    "basis": "Single 2026 operator chart (Srinagar Tourist Taxi), sedan, Srinagar-based full-day trip. n=1.",
+    "sources": [
+     "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+     "https://pahalgamtaxi.com/pahalgam-car-rentals.html"
+    ],
+    "notes": "Srinagar Taxi Service does not list Verinag."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 600,
+    "basis": "PROXY from Zomato Anantnag (9 outlets, cost for one 150 to 300, median 200): budget 3 x 150, standard 3 x 200.",
+    "sources": [
+     "https://www.zomato.com/anantnag/restaurants"
+    ],
+    "notes": "No Verinag eatery data found."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay": "low (one official rate)",
+    "taxi": "low (one operator)",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Private stays near Verinag",
+    "Second operator taxi fare",
+    "Garden-side food prices"
+   ]
+  }
+ }
+}

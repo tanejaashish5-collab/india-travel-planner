@@ -1,0 +1,547 @@
+{
+  "batch": "B12",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "pangong-lake": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 10470,
+        "vehicle": "SUV (Innova/Aria/XUV class, union card)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Pangong Lake (Spangmik) and back, same day (union 'return')",
+            "inr": 10470,
+            "range": "Eeco/Van 9,021; Xylo/Scorpio/Ertiga 9,946; Innova/Aria/XUV 10,470; Crysta/Scorpio-N 11,517; Fortuner 12,669"
+          },
+          {
+            "route": "Leh to Pangong Lake (Spangmik) and back in 2 days (1 night at the lake)",
+            "inr": 12464,
+            "range": "Eeco/Van 10,738; Xylo class 11,841; Innova class 12,464; Crysta 13,710; Fortuner 15,081"
+          },
+          {
+            "route": "Leh to Tangtse (enroute to Pangong), drop / return",
+            "inr": 8985,
+            "range": "Innova class drop 7,547, return 8,985"
+          }
+        ],
+        "basis": "Ladakh Taxi Operator Co-operative Ltd (Leh taxi union, www.ladakhtaxiunion.com printed on card) 'Rate List of Taxis for the Financial Year 2025-2026', applicable from 1 Apr 2025 (card p.23). I read the figures off the photographed card pages hosted on discoverwithdheeraj.com (article 'Leh Ladakh Taxi Rates', page last updated 17 Aug 2026, which says the same card is being followed for the 2026 season and that regular-taxi rates have not changed since the 2022 revision). FY2026-27 card not seen. Figures are per vehicle, SUV classes only (Ladakh union has no sedan class). Central figure = Innova/Aria/XUV class. 'local_sightseeing_8h_inr' here is the union's same-day Leh-Pangong return fare (the way people actually see Pangong), NOT an 8-hour local day; the drive is ~340 km round trip so this works out near 31/km (derived).",
+        "sources": [
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-7.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-24.jpg"
+        ],
+        "notes": "Union extras (card p.23): night halt 385/night; AC on demand 9/km paid to driver; waiting free for 1st hour then 345/hr; extra day on a hire = 3,407 full day (8 h) or 1,703 half day (Innova class; Fortuner 4,122/2,060, Crysta 3,747/1,873, Xylo/Scorpio/Ertiga 3,237/1,618, Eeco/Van 2,935/1,470); 50% advance on long routes. Taxis from outside Ladakh cannot do local sightseeing. Permit is separate (EDF about 400 + 20/day + optional 50 per person). The union prints both; DwD's rates article (upd. 17 Aug 2026) calls the same-day trip 'very hectic' and the 2-day fare adds only about 2,000 (12,464 vs 10,470)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 750,
+        "standard_inr": 1100,
+        "basis": "Unbundled, per person per day for 3 meals. DwD food guide (upd. 6 Oct 2026): at Pangong (Spangmik/Maan/Merak) and Tso Moriri 'Rs 250 to Rs 500 per meal is typical' (3 x 250 = 750 budget; 3 x ~375 = 1,100 standard). Highway dhaba/tent meal 100-200 (DwD budget guide) is the floor but remote-lake prices are higher. No menu or Zomato page exists for Spangmik.",
+        "sources": [
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/",
+          "https://discoverwithdheeraj.com/how-to-calculate-cost-or-budget-for-leh-ladakh-trip/",
+          "https://discoverwithdheeraj.com/travel-guide-for-pangong-tso-lake-in-ladakh/"
+        ],
+        "notes": "Stay figures usually BUNDLE meals: DwD Pangong guide (upd. 5 Oct 2026) says basic camps 2,500-4,000 and premium 6,000-6,500 per double tent with meals included; Spangmik homestays 500-1,500 per person with meals. So add food only if the stay figure used is room-only. Derived from one blog's per-meal range (no menus seen), so treat as an estimate."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "not researched (stay_observed)",
+        "taxi": "high (primary union card, FY2025-26)",
+        "food": "low (single blog per-meal range)"
+      },
+      "unverified": [
+        "FY2026-27 union card (this one expired 31 Mar 2026; DwD says rates unchanged for the 2026 season)",
+        "Sedan fares (the union card has no sedan class)",
+        "Menu-based restaurant prices at Spangmik"
+      ]
+    },
+    "hanle": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 18796,
+        "vehicle": "SUV (Innova/Aria/XUV class, union card)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Hanle, one-way drop (driver returns empty)",
+            "inr": 14639,
+            "range": "Eeco/Van 13,160; Xylo/Scorpio/Ertiga 13,907; Innova/Aria/XUV 14,639; Crysta 16,103; Fortuner 17,713"
+          },
+          {
+            "route": "Leh to Hanle and back (union 'return')",
+            "inr": 18796,
+            "range": "Eeco/Van 16,192; Xylo class 17,856; Innova class 18,796; Crysta 20,675; Fortuner 22,743"
+          },
+          {
+            "route": "Hanle to Umling La and back (Hanle-based day trip)",
+            "inr": 6793,
+            "range": "Eeco/Van 6,130; Xylo class 6,453; Innova class 6,793; Crysta 7,548; Fortuner 8,303"
+          },
+          {
+            "route": "Leh-Hanle-Tso Moriri-Tso Kar-Leh circuit, 3 days",
+            "inr": 25364,
+            "range": "Eeco/Van 22,891; Xylo class 24,960; Innova class 25,364; Crysta 28,183; Fortuner 31,001"
+          }
+        ],
+        "basis": "Ladakh Taxi Operator Co-operative Ltd (Leh taxi union, www.ladakhtaxiunion.com printed on card) 'Rate List of Taxis for the Financial Year 2025-2026', applicable from 1 Apr 2025 (card p.23). I read the figures off the photographed card pages hosted on discoverwithdheeraj.com (article 'Leh Ladakh Taxi Rates', page last updated 17 Aug 2026, which says the same card is being followed for the 2026 season and that regular-taxi rates have not changed since the 2022 revision). FY2026-27 card not seen. Figures are per vehicle, SUV classes only (Ladakh union has no sedan class). Central figure = Innova/Aria/XUV class. 'local_sightseeing_8h_inr' here is the union's Leh-Hanle-Leh return fare (275 km each way, 9-10 h per DwD), NOT an 8-hour local day. There is no Hanle-village local taxi card; once your Leh cab is at Hanle an extra local day costs the full-day extra of 3,407.",
+        "sources": [
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-6.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-8.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-20.jpg"
+        ],
+        "notes": "Union extras (card p.23): night halt 385/night; AC on demand 9/km paid to driver; waiting free for 1st hour then 345/hr; extra day on a hire = 3,407 full day (8 h) or 1,703 half day (Innova class; Fortuner 4,122/2,060, Crysta 3,747/1,873, Xylo/Scorpio/Ertiga 3,237/1,618, Eeco/Van 2,935/1,470); 50% advance on long routes. Taxis from outside Ladakh cannot do local sightseeing. Permit is separate (EDF about 400 + 20/day + optional 50 per person). Hanle (Hanley) row is on card p.5, 'Hanley to Umlingla' on p.7, Hanle-Tso Moriri 3-day circuit on p.7."
+      },
+      "food_per_person_day": {
+        "budget_inr": 750,
+        "standard_inr": 1100,
+        "basis": "Unbundled, 3 meals. DwD food guide (upd. 6 Oct 2026): remote Changthang meals 'Rs 250 to Rs 500 per meal typical' (3 x 250 budget; 3 x ~375 standard). Hanle has only homestay dining plus 1-2 dhabas. DwD Hanle guide (2026): when meals are bundled in the homestay, extra snacks/dhabas run only 200-300 per day; packed lunch for the Umling La day 200-300 per person (DwD Umling La page).",
+        "sources": [
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/",
+          "https://discoverwithdheeraj.com/hanle-village-hidden-gems-ladakh/",
+          "https://discoverwithdheeraj.com/plan-trip-umling-la-pass-highest-motorable-pass/"
+        ],
+        "notes": "Stay figures BUNDLE meals: DwD Hanle guide (upd. 2026) quotes 1,500-3,000 per night 'standard homestay with meals' and 2,500-4,500 for astro-stays (stay already measured separately; do not add food on top). Estimate from a single blog, no menus seen."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "not researched (stay_observed)",
+        "taxi": "high (primary union card, FY2025-26)",
+        "food": "low (single blog per-meal range)"
+      },
+      "unverified": [
+        "FY2026-27 union card",
+        "Whether Hanle village has its own local taxi rate (none found)",
+        "Menu-based restaurant prices at Hanle"
+      ]
+    },
+    "tso-moriri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Korzok village (camps and homestays sit just before/in Korzok; lakeshore camping is banned inside the wetland reserve). Leh is the main base.",
+        "mid_median_inr": 4825,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://discoverwithdheeraj.com/good-hotels-or-accommodation-options-near-tso-moriri-ladakh/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 2000,
+        "homestay_n": 0,
+        "homestay_sources": [
+          "https://discoverwithdheeraj.com/travel-guide-for-tso-moriri-lake-in-ladakh/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid = tented camps, double tent, ROOM ONLY (no meals), 2026 rates quoted by DwD (page upd. 17 Aug 2026): Nomadic Life Camp 4,400 off-peak / 5,500 peak (midpoint 4,950), Parasol Camp 4,400-5,000 (midpoint 4,700); median of the two = 4,825. Peak = Jul-Aug. Homestay = DwD Tso Moriri guide (upd. 10 Sep 2026): 'basic homestays with meals (dinner and breakfast) Rs 800-1,200 per person per night', so ~2,000 per double room INCLUDING dinner and breakfast (midpoint 1,000 x 2). The 2,000 is a range midpoint, not a median of listed properties.",
+        "notes": "STAY FIGURES: camp 4,825 excludes meals; homestay 2,000 includes dinner + breakfast. Conflicting figures on the same site: the Tso Moriri guide says 'better camps with attached bathrooms and full meals 1,500-3,000' (probably per person) and its budget table uses 400-500 per person for the cheapest bed; the 2015 listing figures (homestay 700-1,000 per double, Tsomoriri Camp & Resort 2,500-3,000) are labelled by DwD as outdated ('some more than 4-5x'). Cleartrip 'Karzok' page lists 13 properties (Tsomoriri Camp & Resort, Rupshow Residency, Golden Mark Camp, Tsomoriri Inn etc.) but every one was SOLD OUT for 13-14 Nov 2026, i.e. season closed, so no listing price was obtainable. No proper hotels; solar power only about 7 am-11 pm; no heating. No Booking/Cleartrip/Kayak price observed for any property. Season is roughly late May to late Sep; most tents pack up by late Sep/early Oct (DwD)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 14276,
+        "vehicle": "SUV (Innova/Aria/XUV class, union card)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Tso Moriri via Mahe Bridge, one-way drop",
+            "inr": 10191,
+            "range": "Eeco/Van 9,197; Xylo/Scorpio/Ertiga 9,681; Innova class 10,191; Crysta 11,211; Fortuner 12,332"
+          },
+          {
+            "route": "Leh to Tso Moriri and back via Mahe Bridge (union 'return', typically 2 days)",
+            "inr": 14276,
+            "range": "Eeco/Van 12,298; Xylo class 13,562; Innova class 14,276; Crysta 15,703; Fortuner 17,273"
+          },
+          {
+            "route": "Leh-Tso Moriri-Tso Kar-Taglang La-Leh, 2 days",
+            "inr": 17282,
+            "range": "Eeco/Van 14,888; Xylo class 16,418; Innova class 17,282; Crysta 19,010; Fortuner 20,911"
+          },
+          {
+            "route": "Leh-Hanle-Tso Moriri-Tso Kar-Leh, 3 days",
+            "inr": 25364,
+            "range": "Eeco/Van 22,891; Innova class 25,364; Fortuner 31,001"
+          }
+        ],
+        "basis": "Ladakh Taxi Operator Co-operative Ltd (Leh taxi union, www.ladakhtaxiunion.com printed on card) 'Rate List of Taxis for the Financial Year 2025-2026', applicable from 1 Apr 2025 (card p.23). I read the figures off the photographed card pages hosted on discoverwithdheeraj.com (article 'Leh Ladakh Taxi Rates', page last updated 17 Aug 2026, which says the same card is being followed for the 2026 season and that regular-taxi rates have not changed since the 2022 revision). FY2026-27 card not seen. Figures are per vehicle, SUV classes only (Ladakh union has no sedan class). Central figure = Innova/Aria/XUV class. 'local_sightseeing_8h_inr' here is the union's Leh-Tsomoriri-Leh return fare via Mahe Bridge (card p.14, 'Sight Seeing Stout Route'), NOT an 8-hour local day; the card does not label the day count, DwD's rates article files it as the 2-day trip.",
+        "sources": [
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-15.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-8.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-24.jpg"
+        ],
+        "notes": "Union extras (card p.23): night halt 385/night; AC on demand 9/km paid to driver; waiting free for 1st hour then 345/hr; extra day on a hire = 3,407 full day (8 h) or 1,703 half day (Innova class; Fortuner 4,122/2,060, Crysta 3,747/1,873, Xylo/Scorpio/Ertiga 3,237/1,618, Eeco/Van 2,935/1,470); 50% advance on long routes. Taxis from outside Ladakh cannot do local sightseeing. Permit is separate (EDF about 400 + 20/day + optional 50 per person). DwD's separate Tso Moriri guide (upd. 10 Sep 2026) rounds this to '12,000 for 1 day / 15,000-16,000 for 2 days'; those are blog approximations that disagree with the card (14,276), so the card is used. No Korzok-local taxi card found."
+      },
+      "food_per_person_day": {
+        "budget_inr": 750,
+        "standard_inr": 1100,
+        "basis": "Unbundled, 3 meals. DwD food guide (upd. 6 Oct 2026): at Tso Moriri (Korzok) and Pangong 'Rs 250 to Rs 500 per meal is typical' (3 x 250 budget, 3 x ~375 standard). Korzok has homestay dining and a few dhabas (Maggi, omelette-bread, rice-dal, thukpa). DwD Tso Moriri budget table (2026) shows only 300-400 (budget) to 500-700 (mid) for 2 days of food, which looks like extras on top of homestay-bundled meals, so it is not used as the unbundled figure.",
+        "sources": [
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/",
+          "https://discoverwithdheeraj.com/travel-guide-for-tso-moriri-lake-in-ladakh/"
+        ],
+        "notes": "Homestay figure above includes dinner + breakfast; camp figure excludes meals (add food). Estimate from one blog, no menus."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (one blog, 2 camps + a range; no OTA price)",
+        "taxi": "high (primary union card, FY2025-26)",
+        "food": "low (single blog per-meal range)"
+      },
+      "unverified": [
+        "Any OTA/operator listing price for Korzok camps or homestays (all Cleartrip properties sold out on 13 Nov; Booking returned empty)",
+        "Current (2026) homestay room-only price",
+        "FY2026-27 union card",
+        "Menu-based restaurant prices at Korzok"
+      ]
+    },
+    "umlingla": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Hanle (about 73-75 km by the Photi La route, 6 h round trip); Leh is about 350 km. No stay at the pass itself.",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "no_lodging: DwD Umling La guide (page upd. 27 Jul 2026): 'Umling La Pass is just a mountain top far away from civilization, the closest stay option or accommodation near Umling La Pass is at Hanle village'; no mobile network beyond Hanle.",
+        "notes": "Use Hanle's measured stay figures for the base. Source: https://discoverwithdheeraj.com/plan-trip-umling-la-pass-highest-motorable-pass/. Scope metadata lists elevation 5,883 m; DwD gives 19,024 ft (5,798 m) for the pass and notes the Mig La road now claims the 'highest' title, so the 5,883 figure may need checking."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 6793,
+        "vehicle": "SUV (Innova/Aria/XUV class, union card)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Hanle to Umling La and back (union 'Hanley to Umlingla')",
+            "inr": 6793,
+            "range": "Eeco/Van 6,130; Xylo/Scorpio/Ertiga 6,453; Innova class 6,793; Crysta 7,548; Fortuner 8,303"
+          },
+          {
+            "route": "Leh to Hanle and back (needed to reach the base)",
+            "inr": 18796,
+            "range": "Eeco/Van 16,192; Xylo class 17,856; Innova class 18,796; Crysta 20,675; Fortuner 22,743"
+          },
+          {
+            "route": "Derived Leh-based Umling La trip = Leh-Hanle return + Hanle-Umling La return",
+            "inr": 25589,
+            "range": "Derived sum (18,796 + 6,793, Innova class); plus 385/night halt. Not a printed card line."
+          },
+          {
+            "route": "Union multi-day package: Diskit, Hunder, Turtuk, Pangong, Hanle, Umling La, Tso Moriri via Taglang La, 6 days",
+            "inr": 54243,
+            "range": "Eeco/Van 48,955; Xylo class 51,531; Innova class 54,243; Crysta 60,271; Fortuner 66,298"
+          }
+        ],
+        "basis": "Ladakh Taxi Operator Co-operative Ltd (Leh taxi union, www.ladakhtaxiunion.com printed on card) 'Rate List of Taxis for the Financial Year 2025-2026', applicable from 1 Apr 2025 (card p.23). I read the figures off the photographed card pages hosted on discoverwithdheeraj.com (article 'Leh Ladakh Taxi Rates', page last updated 17 Aug 2026, which says the same card is being followed for the 2026 season and that regular-taxi rates have not changed since the 2022 revision). FY2026-27 card not seen. Figures are per vehicle, SUV classes only (Ladakh union has no sedan class). Central figure = Innova/Aria/XUV class. 'local_sightseeing_8h_inr' = the union's Hanle-based Umling La round trip (card p.7), a day trip of about 150 km on a high-altitude road (DwD: about 6 h round trip). DwD's own 4-day Leh-Hanle-Umling La-Tso Moriri-Leh budget for an SUV is 35,000-50,000, consistent with the card (3-day circuit 25,364 + Umling La 6,793 + night halts).",
+        "sources": [
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-8.jpg",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-20.jpg",
+          "https://discoverwithdheeraj.com/plan-trip-umling-la-pass-highest-motorable-pass/"
+        ],
+        "notes": "Union extras (card p.23): night halt 385/night; AC on demand 9/km paid to driver; waiting free for 1st hour then 345/hr; extra day on a hire = 3,407 full day (8 h) or 1,703 half day (Innova class; Fortuner 4,122/2,060, Crysta 3,747/1,873, Xylo/Scorpio/Ertiga 3,237/1,618, Eeco/Van 2,935/1,470); 50% advance on long routes. Taxis from outside Ladakh cannot do local sightseeing. Permit is separate (EDF about 400 + 20/day + optional 50 per person). Permit: Indian tourists pay only the EDF (no ILP since 2021); foreigners need a PAP via a registered Leh agent and Hanle stays at registered astro-stays."
+      },
+      "food_per_person_day": {
+        "budget_inr": 750,
+        "standard_inr": 1100,
+        "basis": "No restaurants at or near the pass; food = Hanle (see Hanle: 250-500 per meal). DwD Umling La page (upd. 27 Jul 2026): homestay will pack 'parathas, boiled eggs and some fruits for INR 200-300' for the day. Dhabas only at Koyul, Demchok, Hanle.",
+        "sources": [
+          "https://discoverwithdheeraj.com/plan-trip-umling-la-pass-highest-motorable-pass/",
+          "https://discoverwithdheeraj.com/ladakh-food-guide-leh-local-cuisine-restaurants/"
+        ],
+        "notes": "Packed lunch 200-300 is the only observed Umling La-specific food cost; the 750/1,100 day figures are the Hanle base values, bundled into homestay rates."
+      },
+      "confidence": "medium",
+      "confidence_detail": {
+        "stay": "high (no_lodging, but one blog)",
+        "taxi": "high (primary union card, FY2025-26)",
+        "food": "low"
+      },
+      "unverified": [
+        "FY2026-27 union card",
+        "Whether the Hanle-based Umling La fare is really a same-day quote (card gives no day count)",
+        "Pass elevation in scope metadata (5,883 m) vs 5,798 m in the source"
+      ]
+    },
+    "zanskar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Padum (valley HQ; essentially the only town with hotels). JKTDC alpine huts exist at Padum, Rangdum, Panikhar, Parkachik.",
+        "mid_median_inr": 2669,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-padum",
+          "https://discoverwithdheeraj.com/cost-budget-for-zanskar-valley-trip/"
+        ],
+        "budget_hotel_median_inr": 1500,
+        "budget_n": 0,
+        "budget_sources": [
+          "https://discoverwithdheeraj.com/cost-budget-for-zanskar-valley-trip/"
+        ],
+        "homestay_median_inr": 1150,
+        "homestay_n": 0,
+        "homestay_sources": [
+          "https://discoverwithdheeraj.com/cost-budget-for-zanskar-valley-trip/",
+          "https://discoverwithdheeraj.com/local-sightseeing-in-padum-zanskar-valley/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip Padum page, check-in 13 Nov 2026, The Zurfis Hotel (listed 2-star) 2,669 pre-tax discounted (+489 taxes, struck-through 3,999); the other 3 listed Padum properties (Dee Grand Marq 3-star, a second Zurfis listing, Konka Guest House) were SOLD OUT/closed. Cross-check: DwD (page upd. 23 Jul 2026) 'mid-range hotel 2,000-3,000 per room'. Budget (1,500) and homestay (1,150) are MIDPOINTS of DwD's 2026 tier ranges (budget guesthouse/hotel 1,000-2,000; homestay 800-1,500 per room), not medians of listed properties (n=0).",
+        "notes": "Meals: DwD says homestay rooms often include home-cooked meals; Hotel Omasila quoted at about 3,500 per room WITH breakfast and dinner (DwD planning page upd. 18 Aug 2026, text looks older). Government tourist bungalow about 600-700 per night (DwD, page upd. 21 Sep 2026); premium Padum hotel 4,000-6,000 (only 2-3 exist). No Booking/Kayak price obtainable (Booking returned empty, Holidify has no Padum page). Season: Pensi La open about early Jun to mid Oct."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 5750,
+        "vehicle": "SUV/Sumo-type (Zanskar Taxi Union; vehicle class not stated)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Padum full-day local sightseeing: Karsha, Stongdey, Sheela waterfall (Zanskar Taxi Union)",
+            "inr": 5750,
+            "range": "5,500-6,500 (DwD, pages upd. 21 Sep 2026 and public-transport guide 2026); 5,000-6,000 per day (DwD Zanskar planning page upd. 18 Aug 2026)"
+          },
+          {
+            "route": "Add Zongkhul monastery",
+            "inr": 4500,
+            "range": "4,000-5,000 extra (DwD 2026)"
+          },
+          {
+            "route": "Kargil to Padum, private taxi one way (~240 km)",
+            "inr": 15000,
+            "range": "14,000-16,000 (DwD upd. 18 Aug 2026)"
+          },
+          {
+            "route": "Kargil to Padum and back, private taxi, excluding sightseeing",
+            "inr": 23000,
+            "range": "20,000-26,000 (DwD upd. 23 Jul 2026, 'Kargil Taxi Union' approximate 2026)"
+          },
+          {
+            "route": "Shared Sumo seat Kargil to Padum, per person",
+            "inr": 1800,
+            "range": "1,000-2,200 across three DwD pages (2026)"
+          }
+        ],
+        "basis": "Blog-quoted Zanskar Taxi Union rate (single author, three 2026 pages), not a published rate card. No Zanskar/Kargil taxi union website or card could be fetched (kargiltaxiunion.com is a parked domain; the Leh union card has no Padum/Zanskar line).",
+        "sources": [
+          "https://discoverwithdheeraj.com/local-sightseeing-in-padum-zanskar-valley/",
+          "https://discoverwithdheeraj.com/make-budget-trip-zanskar-valley-public-transport/",
+          "https://discoverwithdheeraj.com/cost-budget-for-zanskar-valley-trip/",
+          "https://discoverwithdheeraj.com/plan-journey-zanskar-valley/"
+        ],
+        "notes": "5,750 is the overlap midpoint of 5,500-6,500 and 5,000-6,000. DwD's cost page also lists 'local sightseeing in Padum (2 days) 6,000-9,000', which is inconsistent with a 5,500-6,500 single day. Fares per vehicle. Roads close about mid-Oct to early Jun."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 800,
+        "basis": "DwD Zanskar pages (2026): dhaba meal (dal-rice-roti) 100-150; hotel or restaurant meal in Padum 250-400; cafe pizza/pasta 300-500; daily budget 300-500 (cost page, upd. 23 Jul 2026) or 400-500 (public-transport page, 2026) for budget, 600-1,000 for variety. Budget 450 = overlap midpoint; standard 800 = midpoint of 600-1,000 and consistent with 3 x 250-400 hotel meals.",
+        "sources": [
+          "https://discoverwithdheeraj.com/cost-budget-for-zanskar-valley-trip/",
+          "https://discoverwithdheeraj.com/make-budget-trip-zanskar-valley-public-transport/",
+          "https://discoverwithdheeraj.com/local-sightseeing-in-padum-zanskar-valley/"
+        ],
+        "notes": "Three pages by one author, no menus or Zomato data (Padum is not listed there). Homestay rooms may bundle meals (DwD: homestay 500-800 per person including meals)."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (one OTA price, rest blog ranges)",
+        "taxi": "low-medium (single-author blog quoting the union; no card)",
+        "food": "low (single author, ranges)"
+      },
+      "unverified": [
+        "Any published Zanskar/Kargil taxi union rate card",
+        "More than one OTA hotel price for Padum (3 of 4 Cleartrip properties sold out)",
+        "Menu prices for Padum restaurants",
+        "JKTDC/LAHDC tourist bungalow tariff at Padum (only a blog figure of 600-700)"
+      ]
+    },
+    "kargil": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3253,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-kargil",
+          "https://www.booking.com/city/in/kargil.html",
+          "https://www.holidify.com/places/kargil/hotels-where-to-stay.html"
+        ],
+        "budget_hotel_median_inr": 1406,
+        "budget_n": 6,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/hotels-in-kargil",
+          "https://www.cleartrip.com/hotels/india/kargil/budget-hotels",
+          "https://www.booking.com/city/in/kargil.html",
+          "https://www.holidify.com/places/kargil/hotels-where-to-stay.html"
+        ],
+        "homestay_median_inr": 1550,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.holidify.com/places/kargil/hotels-where-to-stay.html"
+        ],
+        "dorm_median_inr": 900,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Kargil?currency=INR"
+        ],
+        "price_basis": "Mid (n=6): Cleartrip 13 Nov 2026, pre-tax discounted: The White Castle (3-star) 2,412, Zojila Residency (listed 4-star) 2,792, The Haven (4-star, 4.9/600+) 5,779, Hotel The Kargil (4-star) 5,682; plus Booking.com city page 'price from' (no dates, USD, converted at 96.88 INR/USD, open.er-api.com 9 Oct 2026): Lal's Inn $31 = 3,003 (9.2), Black Sheep B&B $36.16 = 3,503 (9.0). Median 3,253. Budget (n=6): Cleartrip Snow Inn (2-star) 1,167 (13 Nov) and Zojila Residency on Cleartrip's budget page 1,736 (Sun 11 Oct, year not printed, assumed 2026; pre-tax); Booking Apricot Palace $15.81 = 1,532, Hotel D Latti $19.76 = 1,914; Holidify (Booking-fed, A$ 'onwards', undated, 67.38 INR/AUD) Hotel Border View A$18 = 1,213, International Residency A$19 = 1,280. Median 1,406. Homestay (n=1): Evergreen Escape A$23 = 1,550 (Holidify). Dorm (n=1): Black Sheep B&B 'from' 900 on Hostelworld (undated).",
+        "notes": "Prices are pre-tax on Cleartrip; Booking/Holidify 'from' prices tax treatment not stated. Cleartrip shows 9 of 15 mid listings SOLD OUT for 13 Nov, so it is the end of the season (low demand) and prices may sit above or below peak. Cross-checks: Holidify A$ prices convert to the same level as Booking USD (Lal's Inn A$44 = 2,965 vs $31 = 3,003; Black Sheep A$41-52 = 2,763-3,504 vs $36.16 = 3,503). DwD (2026): budget hotels from about 1,500, Zojila Residency 2,500-3,500, guest houses 800-1,200 (public-transport page), JKTDC tourist bungalow 'mid-range'. Median of the 11 Holidify hotels rated 8.5+ (A$ 'onwards', converted) is about 2,965, close to the 3,253 above. Hostelworld private rooms 'from' 600 (Border View) and 1,750 (Black Sheep). JKTDC/LAHDC Kargil bungalow tariff not found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV (Innova class) for Leh union fares; sedan for Srinagar operators",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Kargil, one-way drop (Leh union)",
+            "inr": 9969,
+            "range": "Eeco/Van 8,524; Xylo class 9,470; Innova class 9,969; Crysta 10,966; Fortuner 12,063"
+          },
+          {
+            "route": "Leh to Kargil and back (Leh union 'return')",
+            "inr": 13293,
+            "range": "Eeco/Van 11,365; Xylo class 12,628; Innova class 13,293; Crysta 14,623; Fortuner 16,085"
+          },
+          {
+            "route": "Leh to Kargil via Batalik, 2 days (drop / return)",
+            "inr": 18075,
+            "range": "Innova class drop 13,903, return 18,075 (Xylo return 17,171; Eeco 15,570)"
+          },
+          {
+            "route": "Srinagar to Kargil one way (Srinagar operators)",
+            "inr": 15000,
+            "range": "Sedan 8,000-13,000, Innova 15,000 (srinagartouristtaxi.com 2026 undated; srinagartaxiservice.com page dated 15 Jun 2024 titled 'Updated 2026'); DwD 9,000-10,000 (Kargil union, approx 2026) to 10,000-12,000 private"
+          },
+          {
+            "route": "Kargil to Padum (Zanskar), private one way",
+            "inr": 15000,
+            "range": "14,000-16,000 (DwD, upd. 18 Aug 2026)"
+          }
+        ],
+        "basis": "Leh union card FY2025-26 (see Pangong basis) for Leh-Kargil. No Kargil taxi union card or Kargil-based local sightseeing fare could be found (kargiltaxiunion.com is a parked domain), so local_sightseeing_8h_inr is null on purpose. Leh union taxis cannot do local sightseeing in the Kargil district, so the Leh 3,407 full-day rate is not a valid proxy.",
+        "sources": [
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-9.jpg",
+          "https://www.srinagartaxiservice.com/srinagar-taxi-rates/",
+          "https://srinagartouristtaxi.com/kashmir-taxi-rates/",
+          "https://discoverwithdheeraj.com/plan-journey-zanskar-valley/"
+        ],
+        "notes": "Srinagar operators disagree 1.6x on sedan Srinagar-Kargil (8,000 vs 13,000); no median taken. Gozo lists Leh to Kargil one-way for a 12-seater Tempo Traveller only (9,853 pre-GST, 217 km, https://www.gozocabs.com/car-rental/leh); no sedan/SUV line. Kargil town, War Memorial (Drass) and Mulbekh are normally done as part of the Srinagar-Leh drive rather than as local hires."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1000,
+        "basis": "DwD Kargil War Memorial guide (page upd. 20 Sep 2026), 'Meals per day' for Kargil/Drass: 400-600 budget, 800-1,200 mid-range; midpoints used. Corroborated by the DwD budget guide: dhaba meal 100-200, restaurant meal 250-500, daily 500-700 budget / 800-1,200 mid across Ladakh.",
+        "sources": [
+          "https://discoverwithdheeraj.com/kargil-war-memorial-the-ultimate-travel-guide/",
+          "https://discoverwithdheeraj.com/how-to-calculate-cost-or-budget-for-leh-ladakh-trip/"
+        ],
+        "notes": "No Kargil menu, Zomato or Tripadvisor price data obtained (Zomato timed out; Tripadvisor ID guessed wrong and returned Leh). Estimate from one author's ranges."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "medium (6 priced properties across 3 sources, mixed dates and tax bases)",
+        "taxi": "low (Leh-Kargil is union-backed; no Kargil local fare)",
+        "food": "low (single blog)"
+      },
+      "unverified": [
+        "Kargil taxi union card and Kargil-based local sightseeing fare",
+        "JKTDC/LAHDC tourist bungalow tariff",
+        "Peak-season (Jun-Sep) listing prices (Cleartrip only had 13 Nov, mostly sold out)",
+        "Menu-based food prices"
+      ]
+    },
+    "drass": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.holidify.com/places/dras/hotels-where-to-stay.html",
+          "https://www.cleartrip.com/hotels/hotels-in-dras"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1145,
+        "homestay_n": 5,
+        "homestay_sources": [
+          "https://www.holidify.com/places/dras/hotels-where-to-stay.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Homestay (n=5): Holidify Dras page (Booking-fed, A$ 'onwards' prices, undated; converted at 67.38 INR/AUD from open.er-api.com 9 Oct 2026): Taimur Home Stay A$13 = 876, K2 Homestay A$15 = 1,011, Heavenly Inn Homestay A$17 = 1,145, Paradise Homestay A$22 = 1,482, Meadows View Homestay A$22 = 1,482; median 1,145. Mid and budget left null: Cleartrip's Dras page lists only Hotel D Meadows Ladakh (4-star, 3.5/650) and Hotel Stago Ladakh (2-star), both SOLD OUT for 13 Nov 2026 with no price.",
+        "notes": "Other Drass-area hotel prices on Holidify (A$, converted): Hotel D Meadows Ladakh A$137 = 9,231 (4-star, 4.6 km from the memorial, one property so not a mid median), Hotel Snow Crust A$52 = 3,504, Small Town Hotel and Restaurant A$38 = 2,560. DwD (2026): JKTDC guest house at Drass is 'the most reliable and affordable option' (+91-1985-274014, tariff not found); Kargil/Drass hotel per night budget 1,000-1,500, mid 2,500-3,500; 'a few basic guesthouses and homestays'. Drass sits at 3,280 m; stays are mostly one-night halts on the Srinagar-Leh highway (many people overnight at Kargil, 55 km away)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV (Innova class, Leh union)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Leh to Drass War Memorial same-day (union), drop",
+            "inr": 11641,
+            "range": "Eeco/Van 9,953; Xylo class 11,059; Innova class 11,641; Crysta 12,805; Fortuner 14,086"
+          },
+          {
+            "route": "Leh to Drass War Memorial and back, same day (union 'return')",
+            "inr": 15522,
+            "range": "Eeco/Van 13,270; Xylo class 14,746; Innova class 15,522; Crysta 17,074; Fortuner 18,781"
+          },
+          {
+            "route": "Leh to Drass War Memorial and back, 2 days (union)",
+            "inr": 17904,
+            "range": "Eeco/Van 15,306; Xylo class 17,009; Innova class 17,904; Crysta 19,694; Fortuner 21,663"
+          },
+          {
+            "route": "Leh to Kargil-Drass via Batalik, 2 days (union 'return')",
+            "inr": 19315,
+            "range": "Eeco/Van 16,637; Xylo class 18,349; Innova class 19,315; Crysta 21,246; Fortuner 23,371"
+          },
+          {
+            "route": "Srinagar to Kargil one way (passes Drass); Srinagar operators",
+            "inr": 15000,
+            "range": "Sedan 8,000-13,000, Innova 15,000 (2026, see Kargil)"
+          }
+        ],
+        "basis": "Leh union card FY2025-26 (see Pangong basis): the card's 'Drass War Memorial 1 day / 2 days' rows (card p.8). No Drass- or Kargil-based local fare found, so local_sightseeing_8h_inr is null on purpose. Srinagar operators do not list Drass or Zojila (they say union taxis cover those).",
+        "sources": [
+          "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/",
+          "https://discoverwithdheeraj.com/wp-content/uploads/2022/01/Leh-Ladakh-Taxi-Rate-list-union-2025-26-9.jpg",
+          "https://www.srinagartaxiservice.com/srinagar-taxi-rates/"
+        ],
+        "notes": "Union extras (card p.23): night halt 385/night; AC on demand 9/km paid to driver; waiting free for 1st hour then 345/hr; extra day on a hire = 3,407 full day (8 h) or 1,703 half day (Innova class; Fortuner 4,122/2,060, Crysta 3,747/1,873, Xylo/Scorpio/Ertiga 3,237/1,618, Eeco/Van 2,935/1,470); 50% advance on long routes. Taxis from outside Ladakh cannot do local sightseeing. Permit is separate (EDF about 400 + 20/day + optional 50 per person). The memorial itself is on NH-1, free entry, closed Sundays, so most visitors stop on the Srinagar-Leh drive instead of hiring a separate cab."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1000,
+        "basis": "Same DwD Kargil War Memorial guide (page upd. 20 Sep 2026) combined 'Kargil/Drass' row: meals per day 400-600 budget, 800-1,200 mid-range; midpoints used. Drass has few restaurants (dhabas around the memorial and village), so Kargil (55 km) figures are the proxy.",
+        "sources": [
+          "https://discoverwithdheeraj.com/kargil-war-memorial-the-ultimate-travel-guide/"
+        ],
+        "notes": "No Drass-specific menu or Zomato page found. Estimate from one author's range."
+      },
+      "confidence": "low",
+      "confidence_detail": {
+        "stay": "low (5 undated AUD-converted homestay prices; no hotel median)",
+        "taxi": "low (Leh union fares only; no Drass-based fare)",
+        "food": "low"
+      },
+      "unverified": [
+        "Mid-range and budget hotel prices (OTA listings sold out for 13 Nov)",
+        "JKTDC Drass guest house tariff",
+        "Drass- or Kargil-based taxi fare",
+        "Menu-based food prices"
+      ]
+    }
+  }
+}

@@ -1,0 +1,761 @@
+{
+  "batch": "B6",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "manali": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 20,
+        "point_to_point": [
+          {
+            "route": "Manali to Solang Valley (day trip)",
+            "inr": 2499,
+            "range": "2,499 (himalayan-routes, refuje) to 2,699 (manaliworldtravel)"
+          },
+          {
+            "route": "Manali to Atal Tunnel + Sissu",
+            "inr": 3499,
+            "range": "3,499 (himalayan-routes, refuje) to 4,499 (manaliworldtravel Sissu)"
+          },
+          {
+            "route": "Manali to Rohtang Pass (permit 550 extra)",
+            "inr": 4999,
+            "range": "4,999 (himalayan-routes, refuje, 'official') vs 7,499 (manaliworldtravel union list); peak 6,000-8,000"
+          },
+          {
+            "route": "Manali to Kullu",
+            "inr": 2199,
+            "range": "2,199 (manaliworldtravel) to 3,000 (refuje 'official')"
+          },
+          {
+            "route": "Manali to Naggar",
+            "inr": 2499,
+            "range": "2,499 (manaliworldtravel); Naggar+Jana waterfall 3,799"
+          },
+          {
+            "route": "Manali to Kasol (drop)",
+            "inr": 3499,
+            "range": "3,499 (manaliworldtravel) to 4,000 (refuje 'official'); peak 4,500-5,000"
+          }
+        ],
+        "basis": "Sedan full-day (8h) local sightseeing = 2,200 on the Manali taxi union card as quoted by himalayan-routes.com (2026) and refuje.com (2026); manaliworldtravel.com 'union fare list 2026' says 2,199. Half-day (4h) sedan = 1,800. Per-km 18-22 sedan normal / 22-26 peak (tripgurugo.com, 14 Dec 2025). Union-card figures are quoted by operators; I did not see an official union PDF.",
+        "sources": [
+          "https://www.himalayan-routes.com/manali-taxi-rate-list/",
+          "https://www.manaliworldtravel.com/manali-taxi-union-rate-list.php",
+          "https://refuje.com/blog/kullu-manali-trip-cost-budget-2026",
+          "https://www.tripgurugo.com/manali-taxi-and-transport-cost-guide/",
+          "https://travelcoffee.in/blog/manali-taxi-fare",
+          "https://manalitaxi.in/rates/",
+          "https://www.travelhimalayas.in/transportation/taxi-rental/285-manali-local-taxi-rates-season.html"
+        ],
+        "notes": "Spread is wide on the same routes. Rohtang sedan is 4,999 on two sources and 7,499 on manaliworldtravel (travelcoffee.in, 29 Jul 2026, says listings conflict: 3,999-12,500 across operators). Local sightseeing: manalitaxi.in shows Dzire 1,200 off-season / 1,800 peak; tripgurugo gives 2,800-3,800 for an 8h sedan package. Median of the union-card quotes used (2,200). Peak (11 Apr-15 Jul, Dec-Jan) adds roughly 15-30%: refuje says full-day sedan 2,500-3,500 peak vs 1,800-2,200 off-season. Rohtang closed Tuesdays; permit 550 per vehicle is extra. Auto 150-300 for short hops, shared taxi 50-150 per seat (tripgurugo)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 900,
+        "basis": "Budget: bus-stand/Vashisht dhabas, thali 80-150, paratha 60-80, momos 60-100, chai 15-30 (refuje 2026; tripgurugo.com 21 Dec 2025); daily 350-700 in both. Standard: Old Manali cafes 250-450 per person per meal, continental 350-500, Mall Road thali 250-350 (refuje 2026), daily band 600-1,200 (refuje), mixed 800-1,500 (search summary). Picked 450 and 900 as mid-points of the budget and mid-range bands.",
+        "sources": [
+          "https://refuje.com/blog/kullu-manali-trip-cost-budget-2026",
+          "https://www.tripgurugo.com/manali-food-cost/"
+        ],
+        "notes": "Cafe bills add 5-18% GST. Tourist-priced Mall Road items run 2-3x dhaba prices (Maggi 150-300 vs 40-60). Zomato pages could not be fetched, so no per-restaurant cost-for-two; basis is blog menu quotes."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Official taxi union PDF/board not seen; all card values are quoted by operators or blogs",
+        "Zomato/Swiggy cost-for-two for Manali restaurants (not retrievable)",
+        "Rohtang sedan fare: 4,999 vs 7,499 conflict unresolved"
+      ]
+    },
+    "kullu": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2524,
+        "mid_n": 11,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kullu",
+          "https://www.kayak.co.in/Kullu-Hotels.44889.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1025,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/kullu/budget-hotels",
+          "https://www.kayak.co.in/Kullu-Hotels.44889.hotel.ksp"
+        ],
+        "homestay_median_inr": 1109,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-kullu"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Kullu?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star' page, 12-13 Nov 2026, 2 guests, pre-tax discounted price, 11 priced hotels (excluding 1 homestay and 3 sold out), range 909-5,920, listed across Dhalpur, Akhara, Bhuntar, Sarvari, Hathithan. Budget: Cleartrip budget page 11-12 Oct (year not printed): Hotel Amit 995, Hotel The Nest 999, Aroma Classic 1,456; plus Kayak Uttam Stay 1,050 (tax-incl 'from'). Homestay: single Cleartrip homestay (Mathan View, Bhuntar) 1,109 pre-tax, 12-13 Nov 2026.",
+        "notes": "Kayak (tax-incl 'from') agrees with Cleartrip on the same hotels: Hotel The Nest 1,241 vs 1,319; Malabar Bhuntar 1,718 vs 1,638. Kayak says 3-star from 764 and cheapest weekend room 1,282. Hostelworld 'Kullu' returns only Kasol-area hostels (300-650 dorm), not Kullu town, so no Kullu dorm. Mid set mixes town hotels and Bhuntar airport-belt hotels; riverside Dhalpur/Shobla Royale-type properties sit at 3,460-3,660."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 9,
+        "point_to_point": [
+          {
+            "route": "Manali to Kullu (Manali union list, sedan)",
+            "inr": 2199
+          },
+          {
+            "route": "Jari (Parvati union) to Kullu, car 4+1",
+            "inr": 1150
+          },
+          {
+            "route": "Kullu to Bijli Mahadev (sedan, CabBazar listing snippet)",
+            "inr": 2400
+          }
+        ],
+        "basis": "No Kullu taxi-union card found. Median of weak anchors: SoloCabs Kullu Dzire 'full day' 1,200 (page footer 2021), CabBazar Kullu Dzire full day 1,500 (search snippet; page returned 403 so not fetched), Vargis Khan 2025 Kullu 2,000-3,000 (mid 2,500), Manali union sedan Manali-Kullu 2,199, Triveni Cabs Kullu local package Bhuntar/Manali 2,200 (4h/40km, 12 Sep 2026) = 2,200. Per-km: 9 (SoloCabs, CabBazar), 11 (Triveni).",
+        "sources": [
+          "https://www.solocabs.com/kullu",
+          "https://www.trivenicabs.in/kullu-dussehra-2026-by-car",
+          "https://vargiskhan.com/log/taxi-rates-in-manali/",
+          "https://www.manaliworldtravel.com/manali-taxi-union-rate-list.php",
+          "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/",
+          "https://cabbazar.com/city/kullu"
+        ],
+        "notes": "LOW confidence. Aggregator 'full day' prices (1,200-1,500) look like minimum-km base fares and probably exclude the steep Bijli Mahadev road; a loaded Raghunath + Bijli Mahadev + Naggar day is plausibly 2,500-3,500 (one blog estimate, not a quote). Kullu is also the place people pass through rather than tour by cab."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 750,
+        "basis": "Cost for two per meal: Sapna Sweets 400, Chinda ka Dhaba 300, Valentino's 500, Gaur Niwas 700 (Holidify); Kullu Manali Highway Dhaba 500, Panjab Chill & Grill 200-400, Miya Ji 200-300, Sagar Ratna 200-500, Dham Restaurant 200-400, Spice House 300-500, Fork n Knife 500-1000 (Zomato/WanderOn via search summary); median about 400 for two = 200 per person per meal. Zomato veg thali 149 (Punjabi Dhaba), thali listings 100-250. Budget = dhaba breakfast 70 + thali 150 + dinner 150 + chai; standard = 200 + 250 + 300.",
+        "sources": [
+          "https://www.holidify.com/places/kullu/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.zomato.com/kullu/delivery/dish-veg-thali"
+        ],
+        "notes": "Zomato Kullu pages timed out when fetched; Zomato/WanderOn figures come from a search-result summary, Holidify figures from the fetched page."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Kullu taxi union rate card (none found; local day is an inferred median of weak anchors)",
+        "Kullu dorm beds (no hostel in town surfaced)",
+        "Kullu homestay median (n=1)",
+        "Cost-for-two per restaurant from Zomato directly (timed out)"
+      ]
+    },
+    "kasol": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "car 4+1 (union class, hatchback/sedan)",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Jari to Kasol, car 4+1 (Parvati Valley Taxi Operators Union)",
+            "inr": 400
+          },
+          {
+            "route": "Jari to Manikaran, car 4+1",
+            "inr": 500
+          },
+          {
+            "route": "Jari to Tosh, car 4+1",
+            "inr": 1400
+          },
+          {
+            "route": "Jari to Barshaini, car 4+1",
+            "inr": 1200
+          },
+          {
+            "route": "Jari to Malana (road end), car 4+1",
+            "inr": 900
+          },
+          {
+            "route": "Jari to Bhuntar, car 4+1",
+            "inr": 800
+          },
+          {
+            "route": "Kasol to Tosh private cab (aggregators)",
+            "inr": 2400,
+            "range": "2,400 (sedan) to 3,200 (SUV) per travelcoffee.in 8 Jun 2026; union Jari-Tosh is 1,400"
+          }
+        ],
+        "basis": "Parvati Valley Taxi Operators Union card (fares from Jari, the valley's taxi hub): daily hire 4+1 car = 3,000 per day, 100 km or 8h, extra 15 per km and 400 per extra hour, minimum 5 days; 8+1 Sumo 4,000. discoverwithdheeraj.com (updated 8 Aug 2026) labels the same table '2025-2026' and says a dedicated taxi for a day is about 3,000-4,000. The landofwanderlust copy is undated (image path 2020), the Dheeraj copy gives identical numbers.",
+        "sources": [
+          "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/",
+          "https://discoverwithdheeraj.com/parvati-valley-most-common-itinerary/",
+          "https://travelcoffee.in/blog/kasol-travel-guide",
+          "https://www.manaliworldtravel.com/manali-taxi-union-rate-list.php"
+        ],
+        "notes": "Union fares are priced from Jari; Kasol is a few km further up, so Kasol start points will be slightly different (no Kasol-start card found). 15 per km is the union's extra-km rate beyond 100 km/day. Union-set one-way vs aggregator conflict is 2x or more (Kasol-Tosh 2,400-3,200 on aggregators vs 1,400 Jari-Tosh on the union card). Shared taxis: Bhuntar-Kasol 100-250, Kasol/Jari-Barshaini 100-150 per seat (Dheeraj, Aug 2026). Manali union card lists Kasol round-trip sedan 4,499. Special-demand surcharge on the union card: +800 short, +1,000 medium, +1,500 long."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 800,
+        "basis": "Budget: dhaba thali 100-150, street snacks 30-50, daily 300-500 (discoverwithdheeraj.com updated 1 Aug 2026: 'standard 350-450'; shoestring 250-300). Standard: smaller cafes plus dhabas 600-800 per day (travelcoffee.in 8 Jun 2026). Cafe cost for two (travelcoffee.in 6 Jul 2026): Sunshine 500, Freedom 600, Mama 600, Moon Dance 650, Jim Morrison 800, Evergreen 850, Riverview 1,000; median 650 for two = about 325 per person per meal.",
+        "sources": [
+          "https://discoverwithdheeraj.com/how-to-plan-a-super-tight-budget-trip-to-kasol/",
+          "https://travelcoffee.in/blog/kasol-travel-guide",
+          "https://travelcoffee.in/blog/best-cafes-in-kasol"
+        ],
+        "notes": "Israeli-cafe breakfast 150-250 and pizza 200-350 are from a search summary, not a fetched menu. Moon Dance appears at both 650 and 1,350 for two in the same article (it contradicts itself)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Kasol-origin union card (only Jari-origin card found)",
+        "Menu prices for individual Kasol cafes (blogs give cost-for-two only)"
+      ]
+    },
+    "parvati-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2000,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.easemytrip.com/hotels/hotels-in-tosh/"
+        ],
+        "budget_hotel_median_inr": 1393,
+        "budget_n": 10,
+        "budget_sources": [
+          "https://www.easemytrip.com/hotels/hotels-in-tosh/"
+        ],
+        "homestay_median_inr": 1042,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.easemytrip.com/hotels/hotels-in-tosh/",
+          "https://discoverwithdheeraj.com/tosh-trip-travel-guide-parvati-valley/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Tosh?currency=INR",
+          "https://discoverwithdheeraj.com/tosh-trip-travel-guide-parvati-valley/"
+        ],
+        "price_basis": "EaseMyTrip Tosh page (covers Tosh, Kalga, Pulga, Kutla; no stay dates printed; where two prices shown I used the lower, discounted one; taxes extra ~5%). Mid = properties tagged 3-5 star, non-hostel, n=8 (Highhaus 3,786, Offbeat Pulga 2,854, Ice Blue 2,475 and 1,760, Oh Yaara Stay N Cafe 2,239, Fullmoon Cafe 1,584, Hill Top 1,300, Hidden Treasure 1,013), range 1,013-3,786. Budget = tagged 0-2 star hotels/guesthouses, n=10, range 913-4,408 (two outliers at 4,400+). Homestay = Zevibes Cafe & Homestay 1,042.",
+        "notes": "Star tags on EaseMyTrip are unreliable (a 'hotel' with 5 stars at 1,300). Cleartrip Tosh pages for 13-14 Nov 2026 showed 8 of 9 properties sold out and only Whoopers Hostel Tosh priced (2,099 for a room, 3,844 list). Tosh-guide bands (discoverwithdheeraj.com, 31 Aug 2026): homestay 400-600, hostel 400-800, mid guesthouse 800-1,500, comfortable 1,500-2,500. Cozycozy 16-18 Oct: Fullmoon 1,887, Oh Yaara 1,942-2,227, Highhaus 2,597. Dorm not extracted: Hostelworld has no Tosh hostels; Yellowjackets quotes 'dorm from 400' on its own site (not fetched). Kasol dorm already observed elsewhere (575)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "car 4+1 (union class, hatchback/sedan)",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Jari to Kasol, car 4+1 (Parvati Valley Taxi Operators Union)",
+            "inr": 400
+          },
+          {
+            "route": "Jari to Manikaran, car 4+1",
+            "inr": 500
+          },
+          {
+            "route": "Jari to Tosh, car 4+1",
+            "inr": 1400
+          },
+          {
+            "route": "Jari to Barshaini, car 4+1",
+            "inr": 1200
+          },
+          {
+            "route": "Jari to Malana (road end), car 4+1",
+            "inr": 900
+          },
+          {
+            "route": "Jari to Bhuntar, car 4+1",
+            "inr": 800
+          },
+          {
+            "route": "Barshaini to Tosh private taxi",
+            "inr": 225,
+            "range": "150-300 (Dheeraj, 31 Aug 2026); shared 50-100 per seat; the road is only ~3 km"
+          }
+        ],
+        "basis": "Parvati Valley Taxi Operators Union card (fares from Jari, the valley's taxi hub): daily hire 4+1 car = 3,000 per day, 100 km or 8h, extra 15 per km and 400 per extra hour, minimum 5 days; 8+1 Sumo 4,000. discoverwithdheeraj.com (updated 8 Aug 2026) labels the same table '2025-2026' and says a dedicated taxi for a day is about 3,000-4,000. The landofwanderlust copy is undated (image path 2020), the Dheeraj copy gives identical numbers.",
+        "sources": [
+          "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/",
+          "https://discoverwithdheeraj.com/parvati-valley-most-common-itinerary/",
+          "https://travelcoffee.in/blog/kasol-travel-guide",
+          "https://www.manaliworldtravel.com/manali-taxi-union-rate-list.php",
+          "https://discoverwithdheeraj.com/tosh-trip-travel-guide-parvati-valley/"
+        ],
+        "notes": "Cars stop at Barshaini; Tosh/Kalga/Pulga/Malana beyond are on foot or by short local hops. Union card is from Jari. Aggregators run 2x higher for Kasol-Tosh (2,400-3,200)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 700,
+        "basis": "Tosh guide (discoverwithdheeraj.com, 31 Aug 2026): cafe meal 150-400 per person, dhaba on trail 80-150 per meal. Search summary of the same family of guides: food 300-500 per day budget, 500-800 mid-range. Homemade thali in Kalga/Pulga 100-120 per meal (Dheeraj, Kasol budget guide, 1 Aug 2026).",
+        "sources": [
+          "https://discoverwithdheeraj.com/tosh-trip-travel-guide-parvati-valley/",
+          "https://discoverwithdheeraj.com/how-to-plan-a-super-tight-budget-trip-to-kasol/"
+        ],
+        "notes": "Cafe prices in Tosh/Pulga run above dhabas; no thali price for Tosh cafes was fetched."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dorm bed median for Tosh/Kalga/Pulga",
+        "Homestay median (n=1; blog band is 400-600)",
+        "Stay dates for the EaseMyTrip prices (not printed)",
+        "Whether 'parvati-valley' should be priced at Tosh/Kalga level or at Kasol level"
+      ]
+    },
+    "manikaran": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2134,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://in.trip.com/hotels/manikaran-hotels-list-74911/",
+          "https://www.easemytrip.com/hotels/hotels-in-tosh/",
+          "https://www.kayak.co.in/Manikaran-Hotels.85538.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1151,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.kayak.co.in/Manikaran-Hotels.85538.hotel.ksp",
+          "https://unpaqd.com/blog/manikaran-budget/"
+        ],
+        "homestay_median_inr": 797,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.kayak.co.in/Manikaran-Hotels.85538.hotel.ksp",
+          "https://unpaqd.com/blog/manikaran-budget/"
+        ],
+        "dorm_median_inr": 402,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://in.trip.com/hotels/manikaran-hotels-list-74911/",
+          "https://unpaqd.com/blog/manikaran-budget/"
+        ],
+        "price_basis": "No dated per-property list was available (Cleartrip Manikaran page: 'no hotels for dates', Booking/MakeMyTrip pages would not load). Figures are individual 'from' prices seen in search-result snippets and fetched Trip.com / EaseMyTrip pages, undated: Hotel Parvati Valley 2,498 (Trip.com card, 2 star), Hotel Shivalik 2,568 (Trip.com FAQ) and 2,570 (EaseMyTrip), Paradise Holiday Resort 1,770 and Manikaran View 1,151 (Kayak snippet), Jon Snow Cafe & Home stay 797 (Kayak snippet), Nomads Hostel 402 (Trip.com; per bed or room not stated).",
+        "notes": "Very thin. Mid = median of 4 non-hostel hotels. Blog bands for context (unpaqd.com, 20 Jan 2026): central homestays 500-800, guesthouses near hot springs 800-1,200, dorm/hostel beds near bus stand 300-500, peak homestays 1,200-1,500; Kayak page average 1,467 weeknight. The gurudwara sarai takes pilgrims free or on donation (travelcoffee.in, 'last reviewed June 2026'; an old Tripadvisor answer says stays limited to 3-4 days), so a no-lodging flag is wrong; Kasol (3.5-4 km) is the alternative base."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "car 4+1 (union class, hatchback/sedan)",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Jari to Manikaran, car 4+1 (union)",
+            "inr": 500
+          },
+          {
+            "route": "Kullu to Manikaran shared taxi per seat",
+            "inr": 175,
+            "range": "150-200 per seat (unpaqd.com, 20 Jan 2026)"
+          },
+          {
+            "route": "Manali to Manikaran drop, sedan (Manali union list)",
+            "inr": 3799,
+            "range": "3,799 (manaliworldtravel); 3,000 off-season to 4,000 seasonal (himalayan-routes)"
+          },
+          {
+            "route": "Manikaran to Barshaini shared cab per seat",
+            "inr": 125,
+            "range": "100-150 (Dheeraj, 8 Aug 2026)"
+          }
+        ],
+        "basis": "Parvati Valley Taxi Operators Union card (fares from Jari, the valley's taxi hub): daily hire 4+1 car = 3,000 per day, 100 km or 8h, extra 15 per km and 400 per extra hour, minimum 5 days; 8+1 Sumo 4,000. discoverwithdheeraj.com (updated 8 Aug 2026) labels the same table '2025-2026' and says a dedicated taxi for a day is about 3,000-4,000. The landofwanderlust copy is undated (image path 2020), the Dheeraj copy gives identical numbers.",
+        "sources": [
+          "https://thelandofwanderlust.com/parvati-valley-taxi-operators-union-fares-from-jari-village/",
+          "https://discoverwithdheeraj.com/parvati-valley-most-common-itinerary/",
+          "https://travelcoffee.in/blog/kasol-travel-guide",
+          "https://www.manaliworldtravel.com/manali-taxi-union-rate-list.php",
+          "https://unpaqd.com/blog/manikaran-budget/",
+          "https://www.himalayan-routes.com/manali-taxi-rate-list/"
+        ],
+        "notes": "Nobody tours Manikaran by whole-day cab; the day rate applies to a Parvati-valley circuit. Kasol-Manikaran is 3.5-4 km (shared auto or walk, travelcoffee.in 8 Jun 2026)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 550,
+        "basis": "Dhaba breakfast 50-70, lunch 70, street food under 50 per plate, tea 10; suggested budget 500/day mixing langar, street food and cafes (unpaqd.com, 20 Jan 2026). Gurudwara langar is free, 24x7 (travelcoffee.in; Tripadvisor review). Holy Palace restaurant about 250-300 for two (Holidify via search summary). Standard assumes cafe/restaurant meals of roughly 100-250 per person; no fetched menu.",
+        "sources": [
+          "https://unpaqd.com/blog/manikaran-budget/",
+          "https://travelcoffee.in/places-to-visit/manikaran-sahib"
+        ],
+        "notes": "With langar for most meals, a pilgrim's food cost can approach zero; the budget figure assumes langar for one meal and dhabas for the rest. Standard is an estimate from the dhaba price levels and the 500/day guide figure, so low confidence."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated per-property hotel prices for Manikaran (none loaded)",
+        "Budget hotel, homestay and dorm medians (n=1 each)",
+        "Standard-tier food (no fetched restaurant menu)",
+        "Manikaran-start taxi union card"
+      ]
+    },
+    "jibhi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3541,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-jibhi"
+        ],
+        "budget_hotel_median_inr": 759,
+        "budget_n": 9,
+        "budget_sources": [
+          "https://www.hostelworld.com/hostels/Jibhi?currency=INR"
+        ],
+        "homestay_median_inr": 3100,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-jibhi",
+          "https://www.cozycozy.com/en-in/jibhi-homestay",
+          "https://www.booking.com/homestay/city/in/jibhi.html"
+        ],
+        "dorm_median_inr": 553,
+        "dorm_n": 8,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Jibhi?currency=INR"
+        ],
+        "price_basis": "Mid: Cleartrip 3-star page 12-13 Nov 2026, pre-tax, only 3 priced (Jibhi Cottage guesthouse 2,125; Moustache Shoja 3,541; Himalayan Chalets 5,810), 9 more sold out. Budget: Hostelworld 'private room from' for 9 Jibhi hostels (range 625-2,799), a hostel-private-room proxy, no true budget-hotel stock found. Dorm: Hostelworld dorm-bed 'from', 8 hostels 422-750, median 553. Homestay: median of three SOURCE-level figures, not of properties: Cleartrip 1,778 (Jibhi Village By River side, 12-13 Nov, pre-tax), Cozycozy 20-property median 4,177 (search 17-24 Oct, 'from' nightly, tax basis not stated), Booking.com page average about USD 36 which I put near 3,100 at an assumed 86 INR/USD (search summary only).",
+        "notes": "Homestay sources conflict about 2.3x (1,778 vs 4,177); Cozycozy's sample is skewed by luxury listings (13,500; 10,548; 10,476). Blog bands (trekgo.in 19 Feb 2026; discoverwithdheeraj.com updated 5 Oct 2026): budget homestay 600-1,500 / 800-1,500, mid cottages 1,500-3,500 / 2,000-4,000, treehouses and boutique 3,500-7,000. Cleartrip hostel rows: Whoopers Jibhi 751, The Hosteller Jibhi 1,270 (12-13 Nov). Jibhi hostel mid-point price is cheap but hotel stock is small; 'mid' is therefore thin (n=3)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1900,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Aut to Jibhi (32 km)",
+            "inr": 1800,
+            "range": "1,400 Alto / 1,800 Brezza (PeppyNomads); 1,000-1,500 (Dheeraj, 5 Oct 2026); 2,600 sedan (CabBazar listing, snippet)"
+          },
+          {
+            "route": "Jibhi to Jalori Pass (full day, waiting)",
+            "inr": 2200,
+            "range": "1,800 Alto / 2,200 Brezza / 2,000 Ertiga / 2,500 Jimny (PeppyNomads)"
+          },
+          {
+            "route": "Jibhi to Tirthan Valley (full day)",
+            "inr": 1800,
+            "range": "1,500 Alto / 1,800 Brezza / 2,000 Ertiga (PeppyNomads)"
+          }
+        ],
+        "basis": "Jibhi operator PeppyNomads (undated page) full-day Jibhi-Jalori Pass 1,800 Alto, 2,200 Brezza, 2,000 Ertiga; BookUrTaxi Tirthan/Jibhi-region Dzire 8h/80km package 1,800, extra km 12 (page footer 2024). Median of 1,800, 1,800, 2,000, 2,200 = 1,900. No taxi-union card found for Banjar/Jibhi.",
+        "sources": [
+          "https://www.peppynomads.com/jibhitaxi",
+          "https://www.bookurtaxi.com/citywise/taxi-service-in-Tirthan-Valley",
+          "https://discoverwithdheeraj.com/jibhi-banjar-valley/",
+          "https://cabbazar.com/taxi/cab/aut-to-jibhi"
+        ],
+        "notes": "Hill roads; Jalori Pass is open about April-November (closed Jan-Mar, per a search summary). Snow-time prices vary (PeppyNomads). Aggregator Aut-Jibhi at 2,600 is 1.4-2.6x local operators and Dheeraj's 1,000-1,500."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 950,
+        "basis": "Cafe average cost per person per meal (jibhi.co.in): Blee Blue 200, Hope 300, Polka 300, Old School 400, Enjo's 400, Oldschool Jibhi 500; median 350. Cost for two (winterfelljibhi.com 20 May 2026): Forest Bean 600-900, Bleeblu 600, Tenzin 600-800; Reverberate 200-400 pp, Saaksh 400-600 pp. Homestay meals 150-300 per person if not in tariff / 200-400 extra (Dheeraj, 2026). Budget = homestay or dhaba meals about 150-200 x3; standard = cafe breakfast 250 + lunch 350 + dinner 350-400.",
+        "sources": [
+          "https://www.jibhi.co.in/Restaurants-cafe-in-Jibhi",
+          "https://winterfelljibhi.com/blog/best-cafes-in-jibhi",
+          "https://discoverwithdheeraj.com/jibhi-banjar-valley/"
+        ],
+        "notes": "Tripadvisor shows only $$-$$$ symbols for Jibhi cafes, no rupee amounts. Several cafes are seasonal (Mar-Nov)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay median is a source-level blend (Booking page not fetchable); true property median could be 1,800-4,200",
+        "Mid-tier (3-star) n=3 only",
+        "Banjar/Jibhi taxi-union board (not found)"
+      ]
+    },
+    "tirthan-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 5449,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.tripclap.com/places/tirthan-valley/hotels"
+        ],
+        "budget_hotel_median_inr": 2331,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.tripclap.com/places/tirthan-valley/hotels"
+        ],
+        "homestay_median_inr": 3000,
+        "homestay_n": 17,
+        "homestay_sources": [
+          "https://www.tripclap.com/places/tirthan-valley/hotels",
+          "https://www.thrillophilia.com/tirthan-valley-homestay"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Jibhi?currency=INR"
+        ],
+        "price_basis": "TripClap Tirthan list (2026, per-night 'onwards', dates and tax basis not stated). Mid = 8 non-homestay, non-hostel, non-camp properties: Hotel Atul Regency 2,331; Whispering Woods 4,720; Sharda Resort 4,956; Symphony Woods Resort 5,000; Tirthan Grand Riverside 5,898; Tirthan Anglers' Retreat 5,900; Mother's Riverfront 6,018; Riverwalk 7,080. Homestay = 11 homestay-tagged TripClap rows (median 2,124: Rising Moon 1,003, Heritage Valley 1,062, Sahib 1,416, Peppy Nomads 1,593, Shiva Valley 1,593, Rabbit House 2,124, Luxmi 2,596, DreamLand Jalori 5,988, Swargarohini 6,165, Ishan Log Huts 7,080, Kudrat 11,800) pooled with 6 Thrillophilia rows (Bhagwati 1,000, Usha 3,000, Raju Bharti 3,000, Devat Farm 4,400, Seraj Heights 5,640, Kudrat 7,500) = median 3,000 for n=17.",
+        "notes": "Mid and homestay conflict with blog bands: Dheeraj (Aug 2026) budget homestay 800-1,500, mid 2,000-5,000, Raju's Cottage 3,500-4,500 per couple incl. all meals; Dheeraj Gushaini guide (28 Aug 2026) budget 800-1,500, mid riverside cottages 2,000-4,000, eco-lodge 5,000-10,000. Tirthan has no real 3-star stock; 'mid' here is riverside resorts. TripClap 'onwards' prices may be tax-inclusive. Cleartrip has no Tirthan/Gushaini listing pages (404). Budget hotel n=1 only (Atul Regency 2,331, rated 6/10). Dorm: Hostelworld has no Tirthan page; Jibhi dorm median 553 (same corridor) if needed."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Aut to Gushaini (private taxi, ~1.25h)",
+            "inr": 1000,
+            "range": "800-1,200 (Dheeraj Tirthan guide, Aug 2026); CabBazar Aut-Tirthan 2,600 sedan (snippet)"
+          },
+          {
+            "route": "Bhuntar airport to Tirthan",
+            "inr": 2150,
+            "range": "1,800-2,500 (Dheeraj, Aug 2026)"
+          },
+          {
+            "route": "Jibhi to Tirthan Valley (full day)",
+            "inr": 1800,
+            "range": "1,500 Alto / 1,800 Brezza / 2,000 Ertiga (PeppyNomads)"
+          }
+        ],
+        "basis": "BookUrTaxi Tirthan Valley page: Dzire 8h/80km local package 1,800, extra km 12, extra hour 200 (page footer 2024); PeppyNomads Jibhi-Tirthan full day Alto 1,500 / Brezza 1,800 (undated). Local Gushaini-Nagini-Rolla roads are short, and many guests walk. No union card found for Banjar/Gushaini.",
+        "sources": [
+          "https://www.bookurtaxi.com/citywise/taxi-service-in-Tirthan-Valley",
+          "https://www.peppynomads.com/jibhitaxi",
+          "https://discoverwithdheeraj.com/travel-guide-delhi-to-tirthan-valley-himachal-pradesh/",
+          "https://cabbazar.com/taxi/cab/aut-to-tirthan-valley"
+        ],
+        "notes": "Public buses: Aut-Banjar 30-50, Banjar-Gushaini 20-30 (Dheeraj). Aggregator one-way (2,600) is 2-3x the local private-taxi range."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 800,
+        "basis": "Homestay meals 150-300 per person (Dheeraj Gushaini guide, 28 Aug 2026) / 200-300 per meal (search summary); trout plate 300-500; meals if not included in tariff 200-400 extra (Dheeraj Jibhi guide). Budget = 3 simple homestay or Banjar dhaba meals at 130-170; standard = 3 homestay meals at about 250-280.",
+        "sources": [
+          "https://discoverwithdheeraj.com/gushaini-the-most-complete-travel-guide/",
+          "https://discoverwithdheeraj.com/jibhi-banjar-valley/"
+        ],
+        "notes": "Valley has few cafes, so most guests eat at the homestay; no thali price and no restaurant cost-for-two found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Dated, tax-clear per-property prices (TripClap and Thrillophilia are undated 'from' prices)",
+        "3-star stock is essentially absent; mid median reflects riverside resorts",
+        "Tirthan dorm beds",
+        "Banjar/Gushaini taxi-union rate board",
+        "Restaurant menu prices"
+      ]
+    },
+    "great-himalayan-np": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Gushaini (Tirthan Valley); also Sai Ropa Forest Rest House and Sainj Valley homestays",
+        "mid_median_inr": 5449,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.tripclap.com/places/tirthan-valley/hotels"
+        ],
+        "budget_hotel_median_inr": 2331,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.tripclap.com/places/tirthan-valley/hotels"
+        ],
+        "homestay_median_inr": 3000,
+        "homestay_n": 17,
+        "homestay_sources": [
+          "https://www.tripclap.com/places/tirthan-valley/hotels",
+          "https://www.thrillophilia.com/tirthan-valley-homestay"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Jibhi?currency=INR"
+        ],
+        "price_basis": "TripClap Tirthan list (2026, per-night 'onwards', dates and tax basis not stated). Mid = 8 non-homestay, non-hostel, non-camp properties: Hotel Atul Regency 2,331; Whispering Woods 4,720; Sharda Resort 4,956; Symphony Woods Resort 5,000; Tirthan Grand Riverside 5,898; Tirthan Anglers' Retreat 5,900; Mother's Riverfront 6,018; Riverwalk 7,080. Homestay = 11 homestay-tagged TripClap rows (median 2,124: Rising Moon 1,003, Heritage Valley 1,062, Sahib 1,416, Peppy Nomads 1,593, Shiva Valley 1,593, Rabbit House 2,124, Luxmi 2,596, DreamLand Jalori 5,988, Swargarohini 6,165, Ishan Log Huts 7,080, Kudrat 11,800) pooled with 6 Thrillophilia rows (Bhagwati 1,000, Usha 3,000, Raju Bharti 3,000, Devat Farm 4,400, Seraj Heights 5,640, Kudrat 7,500) = median 3,000 for n=17.",
+        "notes": "Same stock as tirthan-valley (Gushaini is the main base). Mid and homestay conflict with blog bands: Dheeraj (Aug 2026) budget homestay 800-1,500, mid 2,000-5,000, Raju's Cottage 3,500-4,500 per couple incl. all meals; Dheeraj Gushaini guide (28 Aug 2026) budget 800-1,500, mid riverside cottages 2,000-4,000, eco-lodge 5,000-10,000. Tirthan has no real 3-star stock; 'mid' here is riverside resorts. TripClap 'onwards' prices may be tax-inclusive. Cleartrip has no Tirthan/Gushaini listing pages (404). Budget hotel n=1 only (Atul Regency 2,331, rated 6/10). Dorm: Hostelworld has no Tirthan page; Jibhi dorm median 553 (same corridor) if needed."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Aut to Gushaini (road head for the Rolla/Shairopa entries)",
+            "inr": 1000,
+            "range": "800-1,200 (Dheeraj, Aug 2026)"
+          },
+          {
+            "route": "Bhuntar airport to Tirthan/Gushaini",
+            "inr": 2150,
+            "range": "1,800-2,500 (Dheeraj, Aug 2026)"
+          },
+          {
+            "route": "Gushaini to Rolla gate",
+            "inr": null,
+            "range": "8 km on foot; no taxi fare found"
+          }
+        ],
+        "basis": "Same as tirthan-valley: BookUrTaxi Dzire 8h/80km 1,800 (2024 footer); PeppyNomads Jibhi-Tirthan full day Brezza 1,800. The park is entered on foot from Gushaini (Rolla gate 8 km, core zone 3+ hours), so a cab is only needed to reach the valley.",
+        "sources": [
+          "https://www.bookurtaxi.com/citywise/taxi-service-in-Tirthan-Valley",
+          "https://www.peppynomads.com/jibhitaxi",
+          "https://discoverwithdheeraj.com/travel-guide-delhi-to-tirthan-valley-himachal-pradesh/",
+          "https://cabbazar.com/taxi/cab/aut-to-tirthan-valley"
+        ],
+        "notes": "Permits are issued at Shairopa (Tirthan), Ropa (Sainj) or GHNP HQ Shamshi. Cab to Sai Ropa/Shamshi not priced anywhere I could fetch. PARK FEES: Park entry/guide fees (INR, Indian nationals), kept in notes as asked: core-zone entry 100 per day (discoverwithdheeraj.com Gushaini guide 28 Aug 2026 'official 2026 schedule'; trekgo.in 18 Feb 2026; refuje.com 14 Apr 2026; myholidayhappiness fee section). Conflicting older/other figures: 50 (trawell.in, myholidayhappiness header) and 200 (manalitourism.co.in, 30 Oct 2025). Students 50. Per apnayatra.com (26 Feb 2025, travel blog, unofficial): camping 200 per person per day, trekking fee 3,000 per group of up to 10, mandatory guide 1,000 per day for core-zone treks, camera 200. myholidayhappiness quotes 2,500 per head per day trekking fee with group of 6 (likely an operator price). Ecozone around Gushaini needs no permit and no guide; fishing permit 300 per day per rod, March-October (refuje.com). Sources: https://discoverwithdheeraj.com/gushaini-the-most-complete-travel-guide/, https://trekgo.in/blog/great-himalayan-national-park, https://refuje.com/blog/himachal-pradesh-permits-2026-guide, https://apnayatra.com/great-himalayan-national-park-manali-entry-fee-timings-best-time-to-visit-location/, https://manalitourism.co.in/the-great-himalayan-national-park-manali, https://www.trawell.in/himachal/kullu/great-himalayan-national-park."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 800,
+        "basis": "Homestay meals 150-300 per person (Dheeraj Gushaini guide, 28 Aug 2026) / 200-300 per meal (search summary); trout plate 300-500; meals if not included in tariff 200-400 extra (Dheeraj Jibhi guide). Budget = 3 simple homestay or Banjar dhaba meals at 130-170; standard = 3 homestay meals at about 250-280.",
+        "sources": [
+          "https://discoverwithdheeraj.com/gushaini-the-most-complete-travel-guide/",
+          "https://discoverwithdheeraj.com/jibhi-banjar-valley/"
+        ],
+        "notes": "Valley has few cafes, so most guests eat at the homestay; no thali price and no restaurant cost-for-two found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Official GHNP fee schedule (greathimalayannationalpark.com returned 429)",
+        "Guide, camping and trek fees are from a Feb 2025 blog; entry fee itself conflicts 50/100/200 across sources",
+        "Taxi to Sai Ropa / Shamshi roadheads",
+        "All of tirthan-valley's unverified items apply to stay and food"
+      ]
+    },
+    "barot-valley": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2200,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://in.trip.com/hotels/mandi-barot-valley/hotels-c649088m14715638/",
+          "https://www.kayak.co.in/Barot-Hotels.114434.hotel.ksp"
+        ],
+        "budget_hotel_median_inr": 1643,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.kayak.co.in/Barot-Hotels.114434.hotel.ksp"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [
+          "https://www.kayak.co.in/Barot-Hotels.114434.hotel.ksp"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: Kayak India Barot page, 10-11 Oct, tax-incl 'from', 5 Barot-village properties: Hiideout Cottages and Camps 1,353; Barot Palace 1,547; Dholadhar Hotel 1,643; Forest Rest House 1,837; Hotel Hidden Heaven 2,127 (median 1,643). Mid: no star-classed stock found; the two best-reviewed hotels priced 2,127 (Hidden Heaven, Kayak) and 2,209 (Barot Palace, Trip.com FAQ) -> 2,200, n=2.",
+        "notes": "Barot has no 3-star-classed hotel in any source; 'mid' is the top of the small-hotel stock. Kayak page: cheapest 3-star in region 1,669 (last 2 weeks), most expensive 5,553 (includes Joginder Nagar properties); average weeknight 2,930. October is Kayak's cheapest month (avg 1,448), November most expensive (avg 5,552), so 10-11 Oct is a low-season snapshot. Homestays: Little Heaven 1,267 and Ram Homestay 1,084 seen only in a search-result summary (no property URL), not used; Dheeraj Barot guide (8 Aug 2026): budget homestay/guest house 800-2,500, River View Homestay from 500, riverside camps/cottages 2,500-10,000. Homestays.co.in 'Barot' page mixes in Bir/Palampur/Manali listings so was not used. Forest Rest House Barot 1,536-1,850 across Kayak/Trip.com."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 14,
+        "point_to_point": [
+          {
+            "route": "Joginder Nagar to Barot one-way, Dzire (39 km)",
+            "inr": 2347,
+            "range": "Gozocabs 2,347 sedan, 2,257 Wagon R; a search snippet showed 1,778 for a Dzire"
+          },
+          {
+            "route": "Bir to Barot return, full day",
+            "inr": 2800,
+            "range": "travelbirbilling.com page dated 6 Sep 2022"
+          },
+          {
+            "route": "Ghatasni to Barot shared taxi per seat",
+            "inr": 175,
+            "range": "150-200 (Dheeraj, July 2026)"
+          }
+        ],
+        "basis": "LOW. No Barot taxi-union card or local-day rate was found. 2,500 is an estimate bracketed by two sourced anchors: Gozocabs Joginder Nagar-Barot one-way Dzire 2,347 and a Bir operator's 2022 Bir-Barot return day 2,800. Per-km 14 is Gozocabs' round-trip reference rate ('from 14/km'); BookUrTaxi advertises 9.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/joginder_nagar-barot_himachal_pradesh",
+          "https://www.travelbirbilling.com/cab-charges-bir-billing-transport-services/",
+          "https://discoverwithdheeraj.com/barot-village-himachal-travel-guide/"
+        ],
+        "notes": "Most visitors reach Barot by own car, shared cab from Ghatasni, or a one-way drop; there is no sightseeing-taxi market. RK Tour and Travels page lists no Barot fares (copyright 2021)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 650,
+        "basis": "Dheeraj Barot guide (updated 8 Aug 2026): meal at dhaba or homestay 150-300 per person, food per day for 3 meals 300-600, trout plate 400-600, River View Homestay meals 100-200 extra. Budget = lower half of the 300-600 band; standard = 3 meals at about 215.",
+        "sources": [
+          "https://discoverwithdheeraj.com/barot-village-himachal-travel-guide/"
+        ],
+        "notes": "Single-source. The same article's total daily budgets conflict (1,000-2,500 vs 1,500-3,000 including stay and travel). No thali price or restaurant cost-for-two found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Barot taxi day rate (estimate between two anchors)",
+        "Homestay and dorm medians",
+        "Any 3-star stock (none seen)",
+        "Fisheries/PWD rest house tariffs (booking contacts only)",
+        "Second source for food"
+      ]
+    },
+    "shrikhand-mahadev": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Jaon (last road village, 3 km below Singhad base camp); also Nirmand and Bagipul",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 1200,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://bookstay.in/homestay/shrikhand-homestay-jaon",
+          "https://heavenridersindia.com/a-guide-for-shrikhand-mahadev-trek-cost/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Homestay: one registered Jaon homestay listed at 1,200 for two (extra bed 480, meals extra) per the bookstay.in search-result snippet; the page itself returned 403 so I did not read it. Undated.",
+        "notes": "Trek is a 35 km pilgrimage with no real lodging above Jaon. Official fixed rates on the trail during the yatra (Tribune, 1 Jul 2025): lodging 110-320 per night depending on altitude, breakfast 75-180, meals 110-290, snacks 35-75, tea 15-45. Tents 300-600 per night (justwravel, 25 Jul 2025) or 300-700 (heavenriders). Guest houses/budget hotels in Jaon and Nirmand 800-2,000 (mohitbangari.com guide); Jaon homestays 500-1,500 (heavenriders). Singhad base camp langar is free. Yatra window is short: tentatively third week of July to first week of August, subject to official confirmation."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {
+            "route": "Shimla to Jaon one-way cab rental (Gozocabs 'from', search snippet)",
+            "inr": 4296,
+            "range": "page not fetched; 167 km, 7-8h"
+          },
+          {
+            "route": "Rampur to Jaon shared taxi per seat",
+            "inr": 750,
+            "range": "500-1,000 per person (heavenriders, undated, estimate)"
+          },
+          {
+            "route": "Shimla to Jaon and back, shared taxi or bus per person",
+            "inr": 2500,
+            "range": "2,000-3,000 (mohitbangari.com, undated estimate)"
+          }
+        ],
+        "basis": "No private-cab fare from Rampur, Nirmand or Bagipul to Jaon was published on any page I could read, and no Rampur taxi union board found. Gozocabs lists Shimla-Jaon sedan at 13 per km. Route: Rampur to Jaon about 45-50 km, last 8 km from Bagi Pul is rough (unpaved).",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/shimla-jaon",
+          "https://heavenridersindia.com/a-guide-for-shrikhand-mahadev-trek-cost/",
+          "https://mohitbangari.com/shrikhand-mahadev-kailash-a-complete-detailed-guide-2025-26/"
+        ],
+        "notes": "Local day cab is not a thing here; the cab is Shimla/Rampur to Jaon road head. Fees on the yatra in notes: registration is mandatory; official site is reported as 250 per pilgrim (search-result summary of shrikhandyatra.hp.gov.in; the site itself did not render in my fetch), justwravel.com (25 Jul 2025) says 200-300 non-refundable, refuje.com (14 Apr 2026) says online registration is free with a 50 yatra contribution at base camp. Porter 800-1,500 per day, local guide 1,500-3,000 per day (heavenriders; justwravel). Operator all-in packages 15,500-35,000 per person (search summary)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": 600,
+        "basis": "Official fixed trail rates during the yatra (Tribune, 1 Jul 2025): breakfast 75-180, meals 110 at lower altitudes to 290 near Parvati Bagh, snacks 35-75, tea 15-45. Budget = breakfast 75 + two meals at 110 + one snack 35 + tea 15 = 345. Standard = mid-band breakfast 130 + two meals at 200 + snack 55 + tea 30 = 615. Jaon dhabas 100-200 per meal (justwravel; heavenriders).",
+        "sources": [
+          "https://www.tribuneindia.com/news/himachal/sacred-steps-fixed-rates-safety-boost-for-shrikhand-mahadev-yatra/",
+          "https://heavenridersindia.com/a-guide-for-shrikhand-mahadev-trek-cost/"
+        ],
+        "notes": "Applies only in the yatra window (about mid/late July to early August); outside it there is no food service above Jaon. Langar at Singhad is free."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Private taxi fare Rampur/Nirmand/Bagipul to Jaon (none published)",
+        "Registration fee: 250 vs free+50 conflict; official site did not render",
+        "Homestay median (n=1, from a snippet)",
+        "2026/2027 yatra dates (tentative only)",
+        "Porter/guide official rate card"
+      ]
+    }
+  }
+}

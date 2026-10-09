@@ -1,0 +1,691 @@
+{
+ "batch": "B14",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "delhi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4137,
+    "mid_n": 24,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-new-delhi",
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-delhi",
+     "https://www.booking.com/threestars/city/in/new-delhi.html"
+    ],
+    "budget_hotel_median_inr": 1477,
+    "budget_n": 20,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/new-delhi/budget-hotels"
+    ],
+    "homestay_median_inr": 3688,
+    "homestay_n": 12,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/homestays-in-new-delhi",
+     "https://www.booking.com/bed-and-breakfast/city/in/new-delhi.html"
+    ],
+    "dorm_median_inr": 1020,
+    "dorm_n": 12,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/New-Delhi?currency=INR"
+    ],
+    "price_basis": "MID: pooled median of 14 Cleartrip 3-star rows (13-14 Nov 2026, pre-tax after discount; median 3,909) plus 10 Booking.com 3-star 'price from' rows (undated, 2 adults, USD converted at 96.8; median 4,350) = 4,137. BUDGET: Cleartrip budget page, 11-12 Oct 2026 (a Sunday-to-Monday night, off-season), pre-tax, n=20. HOMESTAY: 12 homestay-typed rows on Cleartrip 13-14 Nov 2026, pre-tax. DORM: Hostelworld 'Dorms from' lowest bed per hostel, no date shown. USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches)",
+    "notes": "Huge spread: Cleartrip 3-star rows run INR 496 to 18,868 (FabHotel/Grace at 496-702 are budget in all but label; Bloom Boutique CP 18,868). Dropped 4-star-labelled rows and one suspected duplicate (Bloom Karol Bagh = Bloomrooms Link Road, both 9,078 with identical taxes). Booking B&B/guest-house 'from' median is 5,250 (n=10, Paharganj guest houses 1,800-2,700, South Delhi B&Bs 6,000-11,500). Dorm range 499 (AmigosIndia) to 3,500; median is of the 12 hostels' cheapest bed, so a typical Paharganj dorm is 650-1,000. Dorm figures are undated 'from' prices."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2432,
+    "vehicle": "sedan (Dzire). Many tourists move by Metro and auto instead: Delhi Metro Tourist Card INR 100 (1 day) / 250 (3 days) + INR 50 refundable deposit; auto-rickshaw meter INR 25 first 2 km then INR 8/km on the DTTDC page (page is undated and looks old, treat as indicative); Numbeo Delhi standard taxi INR 25/km and local one-way ticket INR 45 (8 Oct 2026).",
+    "outstation_per_km_inr": 12,
+    "point_to_point": [
+     {
+      "route": "Delhi to Kurukshetra (177 km, sedan one-way before GST)",
+      "inr": 2520
+     },
+     {
+      "route": "Delhi to Chandigarh (260 km, sedan one-way before GST)",
+      "inr": 2846
+     },
+     {
+      "route": "Delhi to Jaipur (about 260 km, sedan one-way before GST)",
+      "inr": 2767
+     }
+    ],
+    "basis": "Three 8hr/80km sedan quotes conflict (1,800 bookurtaxi Dzire; 2,432 hurryupcabs vehicle card; 3,014 hurryupcabs hourly table, plus 144 taxes): median 2,432. Cross-check: DTTDC (Delhi Tourism) official Dzire 10hr/100km = INR 2,660 + 12% GST = 2,979, Innova 5,175 + GST = 5,796; extra km INR 20, extra hour INR 215; 72 hours notice; undated page. Extra-km INR 12 for sedan on bookurtaxi and hurryupcabs; Gozocabs round-trip reference from INR 10.25/km.",
+    "sources": [
+     "https://delhitourism.gov.in/booking/car_package.html",
+     "https://www.bookurtaxi.com/citywise/taxi-service-in-Delhi",
+     "https://hurryupcabs.com/city/new-delhi",
+     "https://www.gozocabs.com/book-taxi/delhi-kurukshetra",
+     "https://www.gozocabs.com/book-taxi/delhi-chandigarh",
+     "https://www.gozocabs.com/car-rental/delhi",
+     "https://delhitourism.gov.in/transport/autos.html",
+     "https://delhitourism.gov.in/transport/metro_rail.html",
+     "https://www.numbeo.com/cost-of-living/in/Delhi"
+    ],
+    "notes": "hurryupcabs and bookurtaxi rate cards are national templates (same numbers on other cities), so only DTTDC is Delhi-specific. Gozocabs point-to-point are indicative one-way fares before GST; tolls extra."
+   },
+   "food_per_person_day": {
+    "budget_inr": 650,
+    "standard_inr": 1150,
+    "basis": "Numbeo Delhi (updated 8 Oct 2026): inexpensive-restaurant meal INR 350 (range 200-800), mid-range meal for two INR 2,000. Holidify Delhi restaurant list prices (cost-for-two basis assumed, label not shown): Saravana Bhavan 500, Bikanervala Angan 500, Gali Paratha Wali 550, Al-Jawahar 600, Karim's 800, Moti Mahal Delux 900 (median 575 for two, about 290 per person per meal). BUDGET = breakfast (~120) + 2 street/dhaba/South-Indian meals of ~260 = about 650. STANDARD = cafe breakfast ~300 + 2 casual sit-down meals of ~420 = about 1,150.",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Delhi?displayCurrency=INR",
+     "https://www.holidify.com/places/delhi/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Derived from a crowd-sourced index and an unlabelled price list, not menus. Numbeo mid-range (INR 1,000 per person per meal) is far above casual sit-down and was not used for standard."
+   },
+   "confidence": "medium",
+   "confidence_detail": {
+    "stay_mid": "medium (24 rows, two sources, very wide spread)",
+    "stay_budget": "medium",
+    "stay_homestay": "low (12 listing-typed homestays, mostly apartments/serviced rooms)",
+    "stay_dorm": "medium",
+    "taxi": "medium (DTTDC official + templates)",
+    "food": "low-medium"
+   },
+   "unverified": [
+    "Delhi auto-rickshaw current govt tariff (the DTTDC page figure is undated and likely outdated)",
+    "DMRC fare slabs (fare page did not load)",
+    "Dated (Nov) Hostelworld dorm prices",
+    "Zomato / Swiggy / Tripadvisor cost-for-two (timed out)"
+   ]
+  },
+  "chandigarh": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2841,
+    "mid_n": 12,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-chandigarh"
+    ],
+    "budget_hotel_median_inr": 1504,
+    "budget_n": 20,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/chandigarh/budget-hotels"
+    ],
+    "homestay_median_inr": 1150,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/homestays-in-chandigarh"
+    ],
+    "dorm_median_inr": 614,
+    "dorm_n": 2,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Chandigarh?currency=INR"
+    ],
+    "price_basis": "MID: Cleartrip 13-14 Nov 2026, pre-tax after discount, 12 rows labelled 3-star (dropped Mercure and Lemon Tree as 4-star, DownTown unrated). BUDGET: Cleartrip budget page, 11-12 Oct 2026, pre-tax, n=20; the list is dominated by Zirakpur/Mohali-edge hotels (Treebo, FabHotel, OYO) rather than central Chandigarh. HOMESTAY: Cleartrip 13-14 Nov 2026, Staywell360 (Nayagaon) only; the other available row, a '2BHK Luxury Villa' at 2,665, is a whole apartment and was excluded; five more homestay rows were sold out. DORM: Hostelworld 'dorms from', undated: Best Interactive Homestay 498, Negi Lodge 730.",
+    "notes": "Mid rows range 1,760 to 5,425 (mean about 3,200). Central-Chandigarh 3-star rows (Hotel Parkview 1,760, Hotel Seven 2,016, Emerald 2,045) are cheaper than the 3-star median would suggest. The Fern Residency (4,800) shows no discount. Booking.com's Chandigarh 'budget' page mixed in non-budget hotels so was not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 1800,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Chandigarh to Morni (41 km, sedan one-way before GST)",
+      "inr": 1185
+     },
+     {
+      "route": "Chandigarh to Pinjore (34 km, sedan one-way before GST)",
+      "inr": 810
+     },
+     {
+      "route": "Chandigarh to Kurukshetra (92 km, sedan one-way before GST)",
+      "inr": 1861
+     },
+     {
+      "route": "Chandigarh to Shimla (114 km, sedan one-way before GST)",
+      "inr": 2147
+     }
+    ],
+    "basis": "bookurtaxi.com Chandigarh '1 day local sightseeing' package: sedan INR 1,800, Ertiga 2,900, Innova Crysta 4,499 (undated, hours/km not stated, so it is a one-day package not strictly 8hr/80km). Gozocabs Chandigarh page lists only a 4hr/40km local package: sedan INR 1,095 before GST (national template, identical on its Delhi page). Per-km: Gozocabs 'from INR 13/km' on the Chandigarh routes.",
+    "sources": [
+     "https://www.bookurtaxi.com/citywise/taxi-service-in-Chandigarh",
+     "https://www.gozocabs.com/car-rental/chandigarh",
+     "https://www.gozocabs.com/book-taxi/chandigarh-morni",
+     "https://www.gozocabs.com/book-taxi/chandigarh-pinjore",
+     "https://www.gozocabs.com/book-taxi/chandigarh-kurukshetra"
+    ],
+    "notes": "The Chandigarh Tourism site (chandigarhtourism.gov.in) refused the connection and citcochandigarh.com has no tariff page, so no CITCO taxi tariff. The 1,800 comes from a platform-wide rate card; a local union or CITCO rate was not found. Numbeo Chandigarh (2 Oct 2026): standard taxi INR 22.5/km, local one-way ticket INR 30 (autos/cycle-rickshaws are how most visitors do Sector 17/Rock Garden/Sukhna)."
+   },
+   "food_per_person_day": {
+    "budget_inr": 550,
+    "standard_inr": 1200,
+    "basis": "Numbeo Chandigarh (updated 2 Oct 2026): inexpensive-restaurant meal INR 300 (180-800), mid-range meal for two INR 1,300. Holidify Chandigarh list (cost-for-two basis assumed): Sundarams 400, Sai Sweets 250, Nik Bakers 800, Moti Mahal 900, Noodle Bar 1,000, Mehfil 1,100, Ghazal 1,200 (median 900 for two = 450 per person per meal). BUDGET = breakfast ~100 + 2 meals ~225 = about 550. STANDARD = cafe breakfast ~300 + 2 meals ~450 = about 1,200.",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Chandigarh?displayCurrency=INR",
+     "https://www.holidify.com/places/chandigarh/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Derived from a crowd-sourced index plus an unlabelled price list; no menus or Zomato cost-for-two (Zomato timed out)."
+   },
+   "confidence": "medium",
+   "confidence_detail": {
+    "stay_mid": "medium",
+    "stay_budget": "medium (list skews to Zirakpur)",
+    "stay_homestay": "low (n=1)",
+    "stay_dorm": "low (n=2, undated)",
+    "taxi": "low (single platform rate card)",
+    "food": "low-medium"
+   },
+   "unverified": [
+    "Official CITCO/Chandigarh tourism taxi tariff",
+    "Central-Chandigarh-only budget rows (Cleartrip list is Zirakpur-heavy)",
+    "Homestay beyond 1 row",
+    "Zomato / Swiggy cost-for-two"
+   ]
+  },
+  "kushinagar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4550,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-kushinagar",
+     "https://www.booking.com/city/in/kushinagar.html"
+    ],
+    "budget_hotel_median_inr": 2213,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.upstdc.co.in/hotels-in-kushinagar"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "MID: The Imperial Kushinagar, Cleartrip 13-14 Nov 2026 pre-tax after 22% discount = 5,455 (original 6,990, plus 820 tax); J P Palace, Booking.com 'price from' USD 37.66 = 3,645 (undated; USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches)). Median of the two = 4,550. BUDGET: UPSTDC Rahi Pathik Niwas page FAQ says AC rooms 'typically starting from around Rs. 1,926 to Rs. 2,500 per night' (41-42 rooms); midpoint used, it is not a live tariff and tax is not stated.",
+    "notes": "Supply is thin: Cleartrip lists only 3 hotels (2 sold out on 13 Nov: Red Sapphire, Metteyye Residency). Booking.com names a few more small places (Hotel Buddha, Hotel The Ideal, Vindhyvasini Guest House, Hotel Yash International) but shows no price. Booking.com shows The Imperial at USD 61.99 (about 6,000) vs Cleartrip 5,455 pre-tax. Gorakhpur (about 51-56 km, 1h45) has far more stock: Cleartrip 13 Nov 2026 3-star rows median 2,171 (n=13, range 776-7,179), a realistic cheaper base. Monastery/temple guesthouses on the Kushinagar main road (Thai, Chinese, Japanese, Burmese) exist per Holidify but no tariff was found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire)",
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Gorakhpur to Kushinagar (56 km, sedan one-way before GST)",
+      "inr": 1968
+     },
+     {
+      "route": "Gorakhpur to Kushinagar (56 km, Ertiga one-way before GST)",
+      "inr": 3112
+     },
+     {
+      "route": "Gorakhpur to Kushinagar (56 km, Innova one-way before GST)",
+      "inr": 4906
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). Route fare: Gozocabs Gorakhpur-Kushinagar, indicative one-way, before GST, 'from INR 13.50/km' reference.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/gorakhpur-kushinagar",
+     "https://hurryupcabs.com/city/kushinagar"
+    ],
+    "notes": "Kushinagar's monuments (Mahaparinirvana, Ramabhar stupa, Wat Thai, Japanese temple) sit within a few km on one main road; autos/e-rickshaws are likely how visitors do it but no auto rate was found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 850,
+    "basis": "No Kushinagar prices found (Restaurant Guru shows only $ symbols, Holidify page empty). Proxy: Numbeo Gorakhpur (2 Oct 2026, 16 contributors, partly estimated): inexpensive-restaurant meal INR 200 (125-400), mid-range meal for two INR 900 (450 per person). BUDGET = breakfast ~100 + 2 inexpensive meals ~175 = about 450. STANDARD = breakfast ~150 + 2 casual meals ~350 = about 850. Gorakhpur is much larger than Kushinagar so the true figure may be lower.",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Gorakhpur-India?displayCurrency=INR",
+     "https://restaurant-guru.in/Kushinagar-Uttar-Pradesh"
+    ],
+    "notes": "Regional proxy, not Kushinagar observations."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "low (n=2)",
+    "stay_budget": "low (n=1, FAQ range)",
+    "taxi_local": "low (template cards)",
+    "taxi_p2p": "medium (Gozocabs indicative)",
+    "food": "low (Gorakhpur proxy)"
+   },
+   "unverified": [
+    "Monastery/temple guesthouse tariffs",
+    "UPSTDC Rahi Pathik Niwas live tariff",
+    "Budget/guesthouse prices (Hotel Buddha, Hotel Ideal, Vindhyvasini)",
+    "Local auto/e-rickshaw day rate",
+    "Kushinagar restaurant prices"
+   ]
+  },
+  "sravasti": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4935,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-sravasti",
+     "https://www.booking.com/city/in/shravasti.html"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Hotel Shravasti Buddha Residency (Katra), Cleartrip 13-14 Nov 2026, pre-tax after 45% discount = 3,440 (original 6,199, tax 604); Tulip Inn Shravasti (Katra), Booking.com 'price from' USD 66.42 = 6,429 (undated; USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches)). Median of two = 4,935.",
+    "notes": "Only 2 priced rows. Three other Cleartrip rows (Hotel Platinum Shravasti 4.0 rating, Buddha Residency by DD, Hotel Sravasti Residency) were sold out on 13 Nov. Booking.com lists Hotel Avadh Balrampur, Metta Shaanti Hotel and Hotel Sravasti Residency with no price. UPSTDC lists Rahi Tourist Bungalow Shravasti but its page publishes no tariff. Balrampur (about 17 km, Cleartrip) showed only 2 sold-out rows. Expect the spread to be wide; the 3,440 vs 6,429 gap is 1.9x."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire)",
+    "outstation_per_km_inr": 12.75,
+    "point_to_point": [
+     {
+      "route": "Lucknow to Shravasti (174 km, sedan one-way before GST)",
+      "inr": 2928
+     },
+     {
+      "route": "Gorakhpur to Shravasti (184 km, sedan one-way before GST)",
+      "inr": 3953
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). Route fares: Gozocabs one-way indicative, before GST; references 'from INR 12/km' (Lucknow route) and 'from INR 13.50/km' (Gorakhpur route), midpoint 12.75. The two routes conflict (2,928 for 174 km vs 3,953 for 184 km).",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/lucknow-shravasti",
+     "https://www.gozocabs.com/book-taxi/gorakhpur-shravasti"
+    ],
+    "notes": "No Sravasti-specific page loaded for hurryupcabs or bookurtaxi; the 2,100 is the same two-card national midpoint used for other small towns."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 850,
+    "basis": "No Sravasti prices found (Holidify 'Food of Shravasti' empty; Restaurant Guru 404). Proxy as Kushinagar: Numbeo Gorakhpur inexpensive meal INR 200, mid-range meal for two INR 900; budget about 450, standard about 850.",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Gorakhpur-India?displayCurrency=INR"
+    ],
+    "notes": "Regional proxy, not Sravasti observations."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "low (n=2)",
+    "taxi_local": "low (template cards)",
+    "taxi_p2p": "medium",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Budget hotel / guesthouse prices",
+    "Monastery guesthouse tariffs",
+    "UPSTDC Rahi Tourist Bungalow tariff",
+    "Homestays",
+    "Sravasti restaurant prices",
+    "Local auto day rate"
+   ]
+  },
+  "chitrakoot": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2219,
+    "mid_n": 12,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-chitrakoot",
+     "https://www.booking.com/city/in/chitrakoot.html"
+    ],
+    "budget_hotel_median_inr": 1295,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/chitrakoot/budget-hotels",
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-chitrakoot",
+     "https://www.booking.com/city/in/chitrakoot.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "MID: Cleartrip 13-14 Nov 2026, pre-tax after discount, 11 priced rows labelled 3-star (median 2,212) plus Bindiram Express by ShriGo Hotels, Booking.com 'price from' USD 61.98 = 6,000 (undated; USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches)); pooled median 2,219 (n=12). BUDGET: median of 5 basic rows priced under about 1,800: Hanumat Dham Hotel 755 (Cleartrip 13 Nov), Hare Krishna USD 12.05 = 1,166 (Booking, undated), Shraddha Shivam Residency 1,295, Hotel Parth 1,554 (both Cleartrip 13 Nov), MPT Tourist Bungalow 1,781 (Cleartrip budget page, 11-12 Oct).",
+    "notes": "Most 'budget' choices carry a 3-star label on Cleartrip, so the budget row is a price-band pick, not a label pick. MP Tourism's MPT Tourist Bungalow (Kashavgarh) is 787 on 13 Nov but 1,781 on 11-12 Oct: dynamic discounts. Spread in the 3-star list is 755 to 4,503. UPSTDC's Rahi Tourist Bungalow Chitrakoot has 45 rooms but its page shows no tariff. Dharamshalas/ashrams are common but no tariff was found. Several rows (Shree Jee Bhawan, KW Residency, Rudra, Kalptaru) were sold out on 13 Nov. Arogyadham Swasthya Kutir (4,503 Cleartrip; Booking USD 56.83 = 5,501) is a wellness-style stay and pulls the upper range."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire)",
+    "outstation_per_km_inr": 12.1,
+    "point_to_point": [
+     {
+      "route": "Prayagraj to Chitrakoot (135 km, sedan one-way before GST)",
+      "inr": 2408
+     },
+     {
+      "route": "Varanasi to Chitrakoot (258 km, sedan one-way before GST)",
+      "inr": 4801
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). Route fares: Gozocabs one-way indicative, before GST; references 'from INR 12.50/km' (Prayagraj) and 'from INR 11.75/km' (Varanasi), median 12.1. UPSTDC runs a Saturday Prayagraj-to-Chitrakoot day tour at INR 1,000 per person (Urbania traveller, 7 am to 8 pm, lunch extra), indicating the shared-vehicle price.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/prayagraj-chitrakoot",
+     "https://www.gozocabs.com/book-taxi/varanasi-chitrakoot",
+     "https://www.upstdc.co.in/TourPakages/DailyTour",
+     "https://hurryupcabs.com/city/chitrakoot"
+    ],
+    "notes": "Chitrakoot sites are spread over Ramghat, Kamadgiri parikrama, Hanuman Dhara, Gupt Godavari, so a cab or auto day is normal; no local auto/union rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 400,
+    "standard_inr": 800,
+    "basis": "Holidify Chitrakoot list (INR, per-person-vs-for-two not labelled; all in Ramghat): Ashok Restaurant 200, Jaipuria Smriti Bhawan 100, Paryatak Awas Grah 100, Annapurna 400. Proxy Numbeo Gorakhpur inexpensive meal 200, mid-range meal for two 900. BUDGET = about 400 (breakfast ~80 + 2 meals ~160). STANDARD = about 800.",
+    "sources": [
+     "https://www.holidify.com/places/chitrakoot/restaurants-places-to-eat-local-cuisine.html",
+     "https://www.numbeo.com/cost-of-living/in/Gorakhpur-India?displayCurrency=INR"
+    ],
+    "notes": "4 restaurants with unlabelled prices plus a regional proxy; low confidence."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "medium-low (12 rows, wide spread)",
+    "stay_budget": "low (price-band pick)",
+    "taxi_local": "low (template cards)",
+    "taxi_p2p": "medium",
+    "food": "low"
+   },
+   "unverified": [
+    "Homestay prices",
+    "Dharamshala/ashram tariffs",
+    "UPSTDC Rahi Tourist Bungalow tariff",
+    "Local auto day rate",
+    "Hostel/dorm"
+   ]
+  },
+  "dudhwa-national-park": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Palia Kalan (hotels) and Dudhwa village (forest cottages); Lakhimpur Kheri town about 70-90 km for more stock",
+    "mid_median_inr": 3568,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-palia-kalan",
+     "https://www.upecotourism.in/DudhwaTariffAcc.aspx"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [
+     "https://www.upecotourism.in/DudhwaTariffAcc.aspx"
+    ],
+    "price_basis": "Cleartrip 'Palia Kalan' page, 13-14 Nov 2026, pre-tax after discount: Clarks Inn Dudhwa 3,530 (+215 tax), Dudhwa Nirwana Retreat (4-star) 3,605, Dudhwa TigeRhino Resort 1,573. UP Eco-tourism (UP Forest Dept) Dudhwa cottage, double occupancy INR 4,900 per night for Indian tourists, taxes extra (single 4,500; extra bed 1,500; foreigner double 14,400). Median of the four = 3,568 (3,530 if the 4-star Nirwana Retreat is dropped).",
+    "notes": "13 Nov is two days BEFORE the park opens (UP Eco-tourism: visiting window 15 Nov to 15 Jun), so Cleartrip's Nov 13 prices are shoulder-season. BLIZZ Hotels & Resorts (2-star) and DTR Jungle Hideaways were sold out. The forest dept dormitory is a 10-bed hall at INR 10,000 per night for the whole hall (about 1,000 per bed if full; not a per-bed rate, so no dorm median is given). The park website's cottage rate sits above the private resorts. No budget room found; TigeRhino at 1,573 is the cheapest listed. Booking.com has no Dudhwa page."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire); inside the park you use the forest-department safari vehicle, see notes",
+    "outstation_per_km_inr": 12.75,
+    "point_to_point": [
+     {
+      "route": "Lucknow to Dudhwa (250 km, sedan one-way before GST)",
+      "inr": 3914
+     },
+     {
+      "route": "Bareilly to Dudhwa (180 km, sedan one-way before GST)",
+      "inr": 2838
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). Route fares: Gozocabs one-way indicative, before GST; references 'from INR 12/km' (Lucknow) and 'from INR 13.50/km' (Bareilly), midpoint 12.75. UPSTDC package Lucknow-Dudhwa-Lucknow 1 night/2 days = INR 6,000 per person in an AC Innova (minimum 6 persons, tolls and parking included, one morning safari included, hotel unnamed).",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/lucknow-dudhwa",
+     "https://www.gozocabs.com/book-taxi/bareilly-dudhwa",
+     "https://www.upstdc.co.in/TourPakages/ToursDetails?PackageId=51",
+     "https://www.upecotourism.in/DudhwaTariff.aspx"
+    ],
+    "notes": "SAFARI FEES (UP Eco-tourism, 'as per government rate' on date of visit): INR 3,600 per vehicle (7 persons) from Dudhwa National Park, INR 4,500 per vehicle (7 persons) from Dudhwa Tourism Premises; guide and road fees included; forest entry fee included in the room tariff; camera fees extra, amount not given. Shifts: winter 7-10 am and 3 pm to sunset, summer 6-9 am and 4:30 pm to sunset. Park open 15 Nov to 15 Jun. Per-vehicle rate is per safari, not per day; two shifts a day means two charges."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 850,
+    "basis": "No Dudhwa prices found. Proxy: Numbeo Gorakhpur (2 Oct 2026) inexpensive meal 200, mid-range meal for two 900. Most visitors eat at their lodge or resort (not priced).",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Gorakhpur-India?displayCurrency=INR"
+    ],
+    "notes": "Regional proxy, not Dudhwa observations. Forest rest-house meals are usually arranged on booking; no menu prices found."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "low-medium (n=4, one date before season)",
+    "stay_budget": "none",
+    "safari_fee": "high (official UP Eco-tourism page)",
+    "taxi_p2p": "medium",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Tharu hut / homestay tariffs",
+    "Budget rooms",
+    "Camera fee amount",
+    "Dudhwa-area restaurant prices",
+    "Prices during the 15 Nov to 15 Jun season (only 13 Nov seen)"
+   ]
+  },
+  "kurukshetra": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2014,
+    "mid_n": 8,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/3-star-hotels-in-kurukshetra"
+    ],
+    "budget_hotel_median_inr": 1512,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/india/kurukshetra/budget-hotels"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "MID: Cleartrip 3-star page, 13-14 Nov 2026, pre-tax after discount, 8 priced rows: Divine Clarks Inn 5,281; Riyasat Resort 3,936; Hotel Laksh 2,634; Hotel Amber 2,449; Parakeet Tourist Resort Pipli 1,579; Hotel Pearl Marc 1,573; Hotel M.G Grand 1,512; Hotel Aroma 1,312. One row (Hotel Kimaya at 17,800) is a clear outlier (it is 1,792 on the 11-12 Oct budget page) and was excluded; with it the median is 2,449. BUDGET: Cleartrip budget page, 11-12 Oct 2026, pre-tax, n=5 (Mezbaan Regency 1,477, Pearl Marc 1,502, Lee Merydein 1,512, Kimaya 1,792, Grace 1,814).",
+    "notes": "Parakeet Tourist Resort, Pipli is listed at 1,579 (original 1,999, 21% off, tax 260), the identical pattern to Yadavindra Gardens, Pinjore; this looks like a common state-tourism (HTCL) rack of 1,999 but HTCL ownership was not confirmed on a fetched page. 6 rows sold out on 13 Nov (Saffron KKR, JK Residency, RK Riyasat Resort, Mannat Haveli, Townhouse Brahma Sarovar, Saffron Anandamvillas), so supply is tight in that week; Gita Mahotsav season is around end Nov / early Dec. Booking.com Kurukshetra page returned no content."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire)",
+    "outstation_per_km_inr": 11.6,
+    "point_to_point": [
+     {
+      "route": "Delhi to Kurukshetra (177 km, sedan one-way before GST)",
+      "inr": 2520
+     },
+     {
+      "route": "Chandigarh to Kurukshetra (92 km, sedan one-way before GST)",
+      "inr": 1861
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). bookurtaxi's Kurukshetra page lists Dzire 8hr/80km at 1,800 and 12hr/200km at 3,000. Route fares: Gozocabs one-way indicative, before GST, references 'from INR 10.25/km' (Delhi) and 'from INR 13/km' (Chandigarh), midpoint 11.6. hurryupcabs Kurukshetra route table shows far higher sedan fares (Chandigarh 93 km 2,520; Delhi 155 km 4,255) than Gozocabs (1,861 / 2,520), a 1.7x conflict; Gozocabs used.",
+    "sources": [
+     "https://www.bookurtaxi.com/citywise/taxi-service-in-Kurukshetra",
+     "https://hurryupcabs.com/city/kurukshetra",
+     "https://www.gozocabs.com/book-taxi/delhi-kurukshetra",
+     "https://www.gozocabs.com/book-taxi/chandigarh-kurukshetra"
+    ],
+    "notes": "Brahma Sarovar, Jyotisar, Sheikh Chilli tomb and Panorama are 3-10 km apart; autos are common, no auto rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 450,
+    "standard_inr": 850,
+    "basis": "No Kurukshetra prices found (Holidify lists one restaurant, Mirchi's, with no price; Restaurant Guru 404). Proxy: Numbeo Gorakhpur inexpensive meal 200 / mid-range for two 900 and Numbeo Chandigarh 300 / 1,300; budget about 450, standard about 850 (below Chandigarh, as a smaller town on the NH-44 dhaba belt).",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Gorakhpur-India?displayCurrency=INR",
+     "https://www.numbeo.com/cost-of-living/in/Chandigarh?displayCurrency=INR",
+     "https://www.holidify.com/places/kurukshetra/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Proxy, not Kurukshetra observations."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "medium (8 rows)",
+    "stay_budget": "medium (n=5, single date)",
+    "taxi_local": "low (template cards)",
+    "taxi_p2p": "medium",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Homestays / dharamshalas",
+    "Haryana Tourism tariff for Parakeet (HTCL sites not reachable)",
+    "Local auto day rate",
+    "Kurukshetra restaurant prices"
+   ]
+  },
+  "morni-hills": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3001,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-morni",
+     "https://www.booking.com/city/in/morni.html"
+    ],
+    "budget_hotel_median_inr": 913,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-morni"
+    ],
+    "homestay_median_inr": 1520,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.booking.com/city/in/morni.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "MID: The Morni Resort (3-star resort) 2,479, Cleartrip 13-14 Nov 2026 pre-tax after 15% discount; Lake 1 Estate USD 31 = 3,001 and Aristaa Morni Hills USD 53 = 5,130, Booking.com 'price from' undated, 2 adults (USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches)). Median 3,001. BUDGET: Morni Hills Jungle Resort 913 (Cleartrip, listed 3-star hotel, 30% off 1,299, tax 92). HOMESTAY: Mayur Home Stay, Morni Hills, Booking.com USD 15.70 = 1,520 (guest rating 9.2).",
+    "notes": "Stays exist in Morni but all small; n is 1-3 per tier. Regenta Place Panchkula Morni Hills (4-star, USD 61.99 = 6,000, guest rating 5.7) excluded as 4-star. Morni Hills Retreat & Heaven sold out on 13 Nov. Booking.com says 13 hotels in Morni. Haryana Tourism's own Morni property (Tikkar Taal complex) tariff was NOT found: haryanatourism.gov.in failed TLS verification and haryanatourism.com/accommodation had no content. Morni (41 km, about 1h20 from Chandigarh) is commonly a day trip from Chandigarh/Panchkula, so many visitors do not stay."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire); usually a Chandigarh-based day trip",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Chandigarh to Morni (41 km, sedan one-way before GST)",
+      "inr": 1185
+     },
+     {
+      "route": "Chandigarh to Morni (41 km, Ertiga one-way before GST)",
+      "inr": 1787
+     },
+     {
+      "route": "Chandigarh to Morni (41 km, Innova one-way before GST)",
+      "inr": 2389
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). Route fares: Gozocabs Chandigarh-Morni one-way indicative before GST ('from INR 13/km'). A Chandigarh day trip to Morni and back would be about 82 km, within an 8hr/80km package.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/chandigarh-morni"
+    ],
+    "notes": "No Morni local union rate found. (Gozocabs 'chandigarh-morni-hills' resolved to a wrong 2,543 km route; the 'chandigarh-morni' page was used.)"
+   },
+   "food_per_person_day": {
+    "budget_inr": 500,
+    "standard_inr": 1000,
+    "basis": "No Morni prices found. Proxy from Chandigarh: Numbeo Chandigarh (2 Oct 2026) inexpensive meal 300, mid-range for two 1,300; Holidify Chandigarh restaurants 250-1,200 for two. Set below Chandigarh's 550/1,200 because a hill day trip is typically one resort meal.",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Chandigarh?displayCurrency=INR",
+     "https://www.holidify.com/places/chandigarh/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Chandigarh proxy, not Morni observations; Holidify Morni page 404."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "low (n=3 across two sources)",
+    "stay_budget": "low (n=1)",
+    "stay_homestay": "low (n=1)",
+    "taxi_local": "low",
+    "taxi_p2p": "medium",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Haryana Tourism (HTCL) Tikkar Taal / Morni tariff",
+    "Homestays beyond 1",
+    "Morni restaurant prices",
+    "Local taxi union rate"
+   ]
+  },
+  "pinjore-gardens": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Pinjore itself has a few hotels; Panchkula/Chandigarh (34 km, about 1h) is the main base",
+    "mid_median_inr": 2840,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-pinjore",
+     "https://www.booking.com/city/in/morni.html"
+    ],
+    "budget_hotel_median_inr": 1276,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-pinjore"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "MID: Yadavindra Gardens, Pinjore (listed 3-star) 1,579, Cleartrip 13-14 Nov 2026 pre-tax after 21% off 1,999 (tax 260); Hotel Primeland Pinjore (3-star, Pinjaur) USD 42.36 = 4,100, Booking.com 'price from' undated (USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate as other batches)). BUDGET: Hotel Raunak (2-star) 1,620 and Hotel Royal Comfort Inn (2-star, rating 4.1) 932, Cleartrip 13-14 Nov 2026 pre-tax after discount.",
+    "notes": "Pinjore Gardens (the Yadavindra Mughal garden) is a day trip from Chandigarh/Panchkula (34 km); the stay that exists is hotels in Pinjore town, including the 'Yadavindra Gardens' listing (name matches the Haryana Tourism property at the garden, but ownership and tariff were NOT confirmed on a fetched page). Same 1,999 rack and 21% discount as Parakeet Pipli at Kurukshetra. Hotel Royal MJS, Yadavindra Gardens (2-star listing) and Hotel Rajhans sold out on 13 Nov. n=2 per tier, low confidence."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "sedan (Dzire); normally a Chandigarh/Panchkula-based half-day trip",
+    "outstation_per_km_inr": 13,
+    "point_to_point": [
+     {
+      "route": "Chandigarh to Pinjore (34 km, sedan one-way before GST)",
+      "inr": 810
+     },
+     {
+      "route": "Chandigarh to Pinjore (34 km, Ertiga one-way before GST)",
+      "inr": 1496
+     },
+     {
+      "route": "Chandigarh to Pinjore (34 km, Innova one-way before GST)",
+      "inr": 2175
+     }
+    ],
+    "basis": "No city-specific local rate card found. National operator rate cards list a sedan 8hr/80km at INR 1,800 (bookurtaxi.com, Dzire) and INR 2,432 (hurryupcabs.com, vehicle-card figure; its hourly table shows 3,014). Both are platform-wide templates: hurryupcabs shows identical 2,432/2,784/2,872 on its Kushinagar, Chitrakoot, Kurukshetra and New Delhi pages, bookurtaxi shows identical 1,800/2,600/3,000 on its Delhi, Kurukshetra and Panchkula pages. 2,100 is the rounded midpoint of the two cards (not a union or local rate). Route fares: Gozocabs Chandigarh-Pinjore one-way indicative before GST ('from INR 13/km').",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/chandigarh-pinjore"
+    ],
+    "notes": "Pinjore Gardens plus Morni or Kalka in one day is plausible in an 8hr/80km package; no Pinjore-specific local rate found."
+   },
+   "food_per_person_day": {
+    "budget_inr": 500,
+    "standard_inr": 1000,
+    "basis": "No Pinjore prices found beyond the Holidify Chandigarh list, which includes 'Pinjore Gardens Restaurant' with no price. Proxy from Chandigarh: Numbeo Chandigarh (2 Oct 2026) inexpensive meal 300, mid-range for two 1,300. Day-trip assumption, set below Chandigarh's 550/1,200.",
+    "sources": [
+     "https://www.numbeo.com/cost-of-living/in/Chandigarh?displayCurrency=INR",
+     "https://www.holidify.com/places/chandigarh/restaurants-places-to-eat-local-cuisine.html"
+    ],
+    "notes": "Chandigarh proxy, not Pinjore observations; Holidify Pinjore page 404."
+   },
+   "confidence": "low",
+   "confidence_detail": {
+    "stay_mid": "low (n=2, 2.6x spread)",
+    "stay_budget": "low (n=2)",
+    "taxi_local": "low",
+    "taxi_p2p": "medium",
+    "food": "low (proxy)"
+   },
+   "unverified": [
+    "Haryana Tourism tariff for the Pinjore property",
+    "Homestays",
+    "Pinjore restaurant prices",
+    "Local taxi union rate",
+    "Pinjore Gardens entry fee (not requested but not collected)"
+   ]
+  }
+ }
+}

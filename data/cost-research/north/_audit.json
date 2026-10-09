@@ -1,0 +1,400 @@
+{
+ "_doc": "Fresh-context audit verdicts (data-fabrication-auditor, Sonnet, 2026-10-09). Taxi loads ONLY with KEEP/CORRECT here. Food: audited verdicts apply; unaudited food follows food_unaudited.",
+ "food_unaudited": "load_unless_weak",
+ "taxi": {
+  "manali": {
+   "verdict": "KEEP",
+   "value": 2200,
+   "note": "Himalayan Routes 2026 'union-approved' sedan full day 8h 2,200"
+  },
+  "leh": {
+   "verdict": "KEEP",
+   "value": 3407,
+   "note": "Leh taxi union rate list FY2025-26, Innova full day 8h"
+  },
+  "delhi": {
+   "verdict": "CORRECT",
+   "value": 2979,
+   "note": "DTTDC full-day car package Dzire 10h/100km Rs 2,660 + 12% GST = 2,979"
+  },
+  "agra": {
+   "verdict": "KEEP",
+   "value": 1800,
+   "note": "agracabs.com 'Complete Agra Tour' AC Dzire/Etios; operator, no hours stated"
+  },
+  "srinagar": {
+   "verdict": "CORRECT",
+   "value": 2000,
+   "note": "srinagartouristtaxi.com Local Sightseeing sedan 2,000 (3,000 was Innova)"
+  },
+  "kaza": {
+   "verdict": "CORRECT",
+   "value": 3000,
+   "low": 2500,
+   "high": 3500,
+   "note": "blog range 2,500-3,500 for the Langza-Komic-Hikkim loop, approximate"
+  },
+  "nainital": {
+   "verdict": "DROP",
+   "note": "3,000 not on page; only 'from 2,100' mini taxi"
+  },
+  "katra": {
+   "verdict": "DROP",
+   "note": "hurryupcabs national template, identical on every city page"
+  },
+  "dharamshala": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "jagnishtours Dharamshala / McLeod Ganj local full day, Dzire (union site down)"
+  },
+  "haridwar": {
+   "verdict": "KEEP",
+   "value": 1750,
+   "note": "sedan 8h/80km Rs1,600-1,900 (evaarabytheganges), Rs1,600-2,000/day (rajputanacabs)"
+  },
+  "mussoorie": {
+   "verdict": "KEEP",
+   "value": 2600,
+   "note": "sedan full day from Rs2,600, 8-10h (two operators)"
+  },
+  "chakrata": {
+   "verdict": "KEEP",
+   "value": 2750,
+   "note": "private taxi Rs2,500-3,000 for nearby points (tripoto), class not stated; weak"
+  },
+  "corbett-national-park": {
+   "verdict": "KEEP",
+   "value": 3000,
+   "note": "Dzire Local tour/Day Rs3,000 (corbettonline); singhtour sedan 8h/80km 1,800-2,000 conflicts"
+  },
+  "kasol": {
+   "verdict": "KEEP",
+   "value": 3000,
+   "note": "Parvati union package tours Rs3,000/day 4+1 car, min 5 days"
+  },
+  "parvati-valley": {
+   "verdict": "KEEP",
+   "value": 3000,
+   "note": "Parvati union package tours Rs3,000/day 4+1 car, min 5 days"
+  },
+  "manikaran": {
+   "verdict": "KEEP",
+   "value": 3000,
+   "note": "Parvati union package tours Rs3,000/day 4+1 car, min 5 days"
+  },
+  "auli": {
+   "verdict": "CORRECT",
+   "value": 3500,
+   "note": "Joshimath-Auli sedan round trip with waiting Rs3,500-4,500 (blog, 2026 estimates)"
+  },
+  "shimla": {
+   "verdict": "CORRECT",
+   "value": 1800,
+   "note": "rajputanacabs local Shimla sightseeing 1 day, sedan Rs1,800"
+  },
+  "kufri": {
+   "verdict": "CORRECT",
+   "value": 1800,
+   "note": "rajputanacabs Kufri sightseeing day, sedan Rs1,800"
+  },
+  "tirthan-valley": {
+   "verdict": "CORRECT",
+   "value": 1800,
+   "note": "peppynomads Jibhi-Tirthan full day, Brezza Rs1,800 (no sedan listed)"
+  },
+  "rishikesh": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "lansdowne": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "uttarkashi": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "guptkashi": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "kedarnath": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "tungnath": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "chopta": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "rudraprayag": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "devprayag": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "joshimath": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "badrinath": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "valley-of-flowers": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "hemkund-sahib": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "munsiyari": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "solan": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "kullu": {
+   "verdict": "DROP",
+   "note": "audit: template, package, point-to-point or not on page"
+  },
+  "gangotri": {
+   "verdict": "DROP",
+   "note": "only Uttarkashi-Gangotri round trip Rs4,250 (an excursion, not a local day)"
+  },
+  "yamunotri": {
+   "verdict": "DROP",
+   "note": "only a Yamunotri-Barkot fare, trip type unstated"
+  },
+  "prashar-lake": {
+   "verdict": "DROP",
+   "note": "only a 2019 round-trip quote (stale)"
+  },
+  "champawat": {
+   "verdict": "UNVERIFIABLE",
+   "note": "cabbazar 403; only point-to-point"
+  },
+  "khardung-la": {
+   "verdict": "KEEP",
+   "value": 4370,
+   "note": "Leh union card FY2025-26 Khardongla Top return, Innova/XUV (article text says 2,816; card used)"
+  },
+  "alchi": {
+   "verdict": "KEEP",
+   "value": 3508,
+   "note": "Leh union card Alchi return, Innova/XUV"
+  },
+  "lamayuru": {
+   "verdict": "KEEP",
+   "value": 6767,
+   "note": "Leh union card Lama-Youru return, Innova/XUV"
+  },
+  "likir": {
+   "verdict": "KEEP",
+   "value": 2967,
+   "note": "Leh union card Likir return, Innova/XUV"
+  },
+  "umlingla": {
+   "verdict": "KEEP",
+   "value": 6793,
+   "note": "Leh union card Hanley to Umlingla return (class by column position)"
+  },
+  "zanskar": {
+   "verdict": "KEEP",
+   "value": 6000,
+   "note": "Zanskar taxi union full-day sightseeing Rs5,500-6,500 (midpoint), vehicle not stated"
+  },
+  "turtuk": {
+   "verdict": "DROP",
+   "note": "class column unlabeled on card page; cited page wrong"
+  },
+  "nubra-valley": {
+   "verdict": "DROP",
+   "note": "3,407 not on the Nubra card pages"
+  },
+  "gulmarg": {
+   "verdict": "CORRECT",
+   "value": 2500,
+   "note": "Srinagar to Gulmarg full-day trip, sedan"
+  },
+  "pahalgam": {
+   "verdict": "KEEP",
+   "value": 3800,
+   "note": "pahalgamtaxi.com local sightseeing Pahalgam, Etios"
+  },
+  "doodhpathri": {
+   "verdict": "CORRECT",
+   "value": 2700,
+   "note": "Srinagar to Doodhpathri full-day trip, sedan"
+  },
+  "yusmarg": {
+   "verdict": "CORRECT",
+   "value": 2500,
+   "note": "Srinagar to Yousmarg full-day trip, sedan"
+  },
+  "achabal": {
+   "verdict": "KEEP",
+   "value": 3500,
+   "note": "Srinagar to Achabal and Kokernag full-day trip, sedan"
+  },
+  "kokernag": {
+   "verdict": "CORRECT",
+   "value": 3500,
+   "note": "Srinagar to Achabal and Kokernag full-day trip, sedan"
+  },
+  "verinag": {
+   "verdict": "KEEP",
+   "value": 3500,
+   "note": "Srinagar to Verinag full-day trip, sedan"
+  },
+  "sonamarg": {
+   "verdict": "DROP",
+   "note": "same site shows 2,700 and 1,950 for the same trip"
+  },
+  "mcleodganj": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "jagnishtours Dharamshala / McLeod Ganj local full day, Dzire (union site down)"
+  },
+  "dalhousie": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "Dalhousie local sightseeing full day, Dzire (single source)"
+  },
+  "spiti-valley": {
+   "verdict": "KEEP",
+   "value": 3000,
+   "note": "Kaza circuits Rs2,500-3,500 (2026 blog), midpoint, vehicle not stated"
+  },
+  "sangla": {
+   "verdict": "KEEP",
+   "value": 4000,
+   "note": "Sangla Valley local taxi Rs3,500-4,500/day, midpoint, vehicle not stated"
+  },
+  "chitkul": {
+   "verdict": "KEEP",
+   "value": 4000,
+   "note": "Sangla Valley local taxi Rs3,500-4,500/day, midpoint, vehicle not stated"
+  },
+  "kalpa": {
+   "verdict": "DROP",
+   "note": "district-wide Kinnaur range incl. driver stay, not Kalpa-specific"
+  },
+  "kinnaur": {
+   "verdict": "DROP",
+   "note": "district-wide range incl. driver stay"
+  },
+  "great-himalayan-np": {
+   "verdict": "DROP",
+   "note": "bookurtaxi national template"
+  },
+  "sissu": {
+   "verdict": "DROP",
+   "note": "only Manali-Sissu transfers"
+  },
+  "fatehpur-sikri": {
+   "verdict": "KEEP",
+   "value": 1800,
+   "note": "agracabs Visit to Fatehpur Sikri, Dzire/Etios, from Agra"
+  },
+  "mathura": {
+   "verdict": "KEEP",
+   "value": 2300,
+   "note": "mathuracab one-day Mathura-Vrindavan-Gokul, sedan"
+  },
+  "vrindavan": {
+   "verdict": "KEEP",
+   "value": 2300,
+   "note": "mathuracab one-day Mathura-Vrindavan-Gokul, sedan"
+  },
+  "varanasi": {
+   "verdict": "KEEP",
+   "value": 1900,
+   "note": "banarastaxi 8h/80km Dzire 1,800, varanasicab 2,000 (mean)"
+  },
+  "sarnath": {
+   "verdict": "DROP",
+   "note": "no Sarnath day rate on cited pages"
+  },
+  "amritsar": {
+   "verdict": "CORRECT",
+   "value": 1400,
+   "note": "Amritsar operator, Swift Dzire 8h/80km Rs1,400 (updated 1 Oct 2026)"
+  }
+ },
+ "food": {
+  "landour": {
+   "verdict": "KEEP"
+  },
+  "lamayuru": {
+   "verdict": "KEEP"
+  },
+  "turtuk": {
+   "verdict": "KEEP"
+  },
+  "jibhi": {
+   "verdict": "KEEP"
+  },
+  "likir": {
+   "verdict": "KEEP"
+  },
+  "pangong-lake": {
+   "verdict": "KEEP"
+  },
+  "guptkashi": {
+   "verdict": "KEEP"
+  },
+  "kinnaur": {
+   "verdict": "KEEP"
+  },
+  "dharamshala": {
+   "verdict": "KEEP"
+  },
+  "manali": {
+   "verdict": "KEEP"
+  },
+  "zanskar": {
+   "verdict": "KEEP"
+  },
+  "lahaul-valley": {
+   "verdict": "KEEP"
+  },
+  "gangotri": {
+   "verdict": "KEEP"
+  },
+  "kedarnath": {
+   "verdict": "KEEP"
+  },
+  "tirthan-valley": {
+   "verdict": "KEEP"
+  },
+  "kishtwar": {
+   "verdict": "DROP",
+   "note": "Restaurant Guru shows only $ glyphs"
+  },
+  "bhaderwah": {
+   "verdict": "DROP",
+   "note": "Restaurant Guru shows only $ glyphs"
+  },
+  "hanle": {
+   "verdict": "DROP",
+   "note": "cited range is for Pangong/Tso Moriri, not Hanle"
+  },
+  "binsar": {
+   "verdict": "UNVERIFIABLE",
+   "note": "no price on page; borrowed source timed out"
+  },
+  "ranikhet": {
+   "verdict": "UNVERIFIABLE",
+   "note": "Justdial 403; TripAdvisor shows $$ only"
+  }
+ }
+}

@@ -1,0 +1,739 @@
+{
+  "batch": "B5",
+  "researched_on": "2026-10-09",
+  "fx_note": "USD->INR 96.8 (MTFX mid-market 8 Oct 2026), same as B2",
+  "destinations": {
+    "champawat": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2087,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-champawat",
+          "https://www.kmvn.in/booking/champawat"
+        ],
+        "budget_hotel_median_inr": 999,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/champawat/budget-hotels",
+          "https://www.trip.com/hotels/champawat-hotels-list-650184/",
+          "https://travelacharya.in/champawat-travel-guide/"
+        ],
+        "homestay_median_inr": 1845,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://travelacharya.in/champawat-travel-guide/",
+          "https://www.trip.com/hotels/champawat-hotels-list-650184/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: 4 rows = KMVN TRH Champawat DB Deluxe 2,000 (kmvn.in, 9-10 Oct 2026, GST status not stated) + the 3 priced Cleartrip '3-star' rows, 13-14 Nov 2026 pre-tax: Lohaghat Regency 1,380, MJ Hotel 2,173, Hotel Ganpati 2,315. NOTE all three Cleartrip rows are in Lohaghat (about 14 km away); Cleartrip shows no 3-star in Champawat town itself. Budget: Hotel Rajshree 999 (Cleartrip 11-12 Oct, year not printed, pre-tax), Hotel Ganpati 'from' USD 10 (Trip.com, undated, x96.8 = about 970), Hotel Shiva Residency 1,200 'starts at' (travelacharya, published 6 Mar 2025). Homestay: Korum Homestay Kuteli 700 and Brooke Cottage Homestay 1,845 (travelacharya, 6 Mar 2025 'starts at'), Shyamlatal Hilltop Homestay 'from' USD 34 (Trip.com, undated, x96.8 = 3,291). USD->INR 96.8 (MTFX mid-market 8 Oct 2026, same rate used in B2).",
+        "notes": "Real lodging market is thin: Champawat town is mostly KMVN TRH + small hotels. KMVN same-date tariffs: TRH Tanakpur DB Deluxe 1,700, TRH Lohaghat DB Deluxe 1,400 (no availability that date), Super Deluxe 3,000, Abbott Mount Gold Crest Eco Log Huts cottage 4,500 CP. Old aggregator averages (allseasonsz, undated) show 400-1,785, treated as stale and not used. Nishtha Homestay/Hotel Inrira (Lohaghat) were sold out on Cleartrip for 13-14 Nov. No hostel found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 9,
+        "point_to_point": [
+          {
+            "route": "Tanakpur to Champawat (about 73 km, sedan one-way)",
+            "inr": 2171,
+            "range": "Gozocabs 2,171 before GST; CabBazar shows 803 which looks like a minimum/starting fare"
+          },
+          {
+            "route": "Champawat to Lohaghat (14 km)",
+            "inr": null,
+            "range": "CabBazar lists about 154 (per-km arithmetic, not a real fare); no real quote found"
+          }
+        ],
+        "basis": "CabBazar Champawat page (seen only as a search-result snippet; site returns 403 to fetch): full-day taxi sedan 1,500, hatchback 1,400, SUV 2,000, outstation 9/km sedan, 12.5/km SUV. Gozocabs Tanakpur-Champawat implies about 15.5/km one-way. No taxi stand or union rate card found online for Champawat.",
+        "sources": [
+          "https://cabbazar.com/city/champawat",
+          "https://www.gozocabs.com/book-taxi/tanakpur-champawat",
+          "https://cabbazar.com/taxi/cab/tanakpur-to-champawat"
+        ],
+        "notes": "Single aggregator for the day rate, so low confidence. The CabBazar full-day figures for Champawat, Kasauli and Mandi look templated (1,400/1,500/2,000), not city-specific. Local circuit (Baleshwar, Champawat Fort, Mayawati Ashram 22 km, Abbott Mount/Lohaghat) is a day trip; ask the taxi stand for the circuit price."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 600,
+        "basis": "PROXY, no Champawat-specific price found. Pithoragarh district benchmarks (search-result snippets): Justdial basic eateries 350 for two, mid 750 for two; Zomato Pithoragarh 150-250 per person for one meal. Budget = tea/snack breakfast + 2 dhaba thali meals; standard = 3 x median 200 per person.",
+        "sources": [
+          "https://www.zomato.com/pithoragarh/restaurants",
+          "https://www.justdial.com/Pithoragarh/Restaurants/nct-10408936",
+          "https://travelsetu.com/guide/champawat-tourism/food-in-champawat"
+        ],
+        "notes": "travelsetu names local dhabas (Pahalwan Dhaba, Shree Krishna Dhaba, Mehak Restaurant Lohaghat) but prints no prices; Tripadvisor Champawat has 0-review listings only."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Champawat-town 3-star hotel prices (Cleartrip shows only Lohaghat)",
+        "Champawat taxi union or taxi stand rate card",
+        "Any Champawat/Lohaghat restaurant or thali price (food is a Pithoragarh proxy)",
+        "Hostel/dorm beds",
+        "KMVN tariff GST inclusion"
+      ]
+    },
+    "adi-kailash": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Dharchula (hotels, KMVN TRH) then Gunji (village homestays/dharamshalas); Pithoragarh for city hotels. Adi Kailash peak and Jolingkong lake itself have no lodging beyond package tented camps.",
+        "mid_median_inr": 2750,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.kmvn.in/booking/pithoragarh"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [
+          "https://mountainiax.com/adi-kailash-yatra-cost-2026-complete-breakdown/",
+          "https://yatradham.org/yatradham-destinations/uttarakhand/gunji.html"
+        ],
+        "homestay_median_inr": 2400,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://yatradham.org/gunji-near-adi-kailash-shubham-home-stay.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid = KMVN TRH Dharchula (official booking page, 9-10 Oct 2026, GST status not stated): DB Deluxe 2,500 and DB Super Deluxe 3,000, room-only (EP); median of the 2 room types of the 1 property. Tripadvisor Dharchula summary 'hotel prices from 2,417 excl. taxes' (pages inconsistent, 2,085-2,645 seasonal averages). Homestay 2,400 = Shubham Home Stay Gunji 'Rs 1,200 per person with breakfast and dinner' x 2 (search-result snippet from yatradham.org; INCLUDES 2 meals, so not comparable to room-only figures).",
+        "notes": "Other KMVN same-date tariffs on the route: TRH Pithoragarh DB Deluxe 1,500 / Super Deluxe 2,000 (EP); TRH Narayan Ashram DB Deluxe 1,406; TRH Birthi 1,800-2,000 (CP). Cleartrip 3-star Pithoragarh 13-14 Nov 2026 pre-tax: Hotel Manar 3,555, Hotel Mall Palace 2,492, Plaza Hotel 1,781 (median 2,492). Published RANGES (not property medians, so not used as figures): Dharchula private hotels 600-1,800 and Gunji private guesthouses 500-1,200 (mountainiax, 2026); Gunji non-AC room 800-1,500, AC 1,200-2,500 (yatradham.org, no date). Package yatra stays are bundled (Gunji homestay, Dharchula hotel)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "4x4 jeep (shared)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Dharchula to Gunji (shared 4x4, per person)",
+            "inr": 2500,
+            "range": "2,000-3,000 per person (namasteindiatrip, page updated 10 Jun 2026); another guide says 500-800 per person (undated)"
+          },
+          {
+            "route": "Dharchula to Gunji (private cab, whole vehicle)",
+            "inr": null,
+            "range": "CabBazar about 1,500 sedan (search snippet only); Gozocabs from 5,036; 4x4 restrictions beyond Dharchula mean aggregator sedan prices may not reflect the ground price"
+          },
+          {
+            "route": "Kathgodam to Dharchula (private taxi)",
+            "inr": 7000,
+            "range": "6,000-8,000 (kathgodamtaxiservice.com, undated); shared jeep/taxi 800-1,200 per person, bus 400-600"
+          }
+        ],
+        "basis": "No local-sightseeing taxi: people reach Adi Kailash by shared/hired 4x4 from Dharchula through Gunji/Kuti/Jolingkong, or inside an operator or KMVN package where transport is bundled. No union rate list found.",
+        "sources": [
+          "https://www.namasteindiatrip.com/blog/how-to-plan-adi-kailash-yatra/",
+          "https://kathgodamtaxiservice.com/blog/how-to-reach-dharchula-from-kathgodam/",
+          "https://www.gozocabs.com/book-taxi/dharchula-gunji",
+          "https://cabbazar.com/taxi/cab/dharchula-to-gunji"
+        ],
+        "notes": "taxi_day deliberately null: not a cab-sightseeing destination. Jeep fares conflict 4x between sources; the 2,000-3,000 per person figure is the most recent dated one."
+      },
+      "pilgrimage_package": {
+        "how_people_pay": "Package tariff. KMVN (official, kmvn.in/packages, seen 9 Oct 2026): Adi Kailash and Om Parvat, Dharchula to Dharchula 37,800; Tanakpur to Tanakpur 44,100; Delhi to Delhi 52,500 (page does not state per person vs per group, duration or group size; inclusions by icon: veg food, guide, travel; Delhi package also hotel/stay). Private operators (per person): Himalayan Dream Treks 40,000 + 5% GST for 7 days Kathgodam to Kathgodam incl. ILP, breakfast and dinner, homestay/hotel; a 2026 operator page lists 48,500 by road 8 days or 58,500 helicopter 4 days, plus taxes (namasteindiatrip, updated 10 Jun 2026); a cost-guide page quotes standard 27,000-34,000 (mountainiax, undated 2026).",
+        "inner_line_permit_inr": "reported 300-800 per person (adikailash-yatra.com, 13 Apr 2026 says 600-800 plus KMVN registration 500-1,000 and forest fee 100-200); included in packages",
+        "sources": [
+          "https://www.kmvn.in/packages",
+          "https://www.kmvn.in/package-detail-4",
+          "https://himalayandreamtreks.in/yatra/adi-kailash-om-parvat/",
+          "https://www.namasteindiatrip.com/blog/how-to-plan-adi-kailash-yatra/",
+          "https://adikailash-yatra.com/adi-kailash-permit",
+          "https://mountainiax.com/adi-kailash-yatra-cost-2026-complete-breakdown/"
+        ]
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 800,
+        "basis": "One 2026 cost guide (mountainiax): standalone trekker food 500-800 per day (breakfast 100-200, lunch 150-250, dinner 180-300, snacks 80-150). Budget = low end, standard = high end. No restaurant-level menu prices found for Dharchula/Gunji (Dharchula Justdial listings show no prices). Packages include veg food.",
+        "sources": [
+          "https://mountainiax.com/adi-kailash-yatra-cost-2026-complete-breakdown/"
+        ],
+        "notes": "Single-source range; remote-area prices are set by dhaba/homestay, not by menus online."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Per-night room rates at named Dharchula/Gunji properties (only KMVN TRH and ranges)",
+        "Dharchula to Gunji private-vehicle fare on the ground (sources conflict 4x)",
+        "Whether KMVN package prices (37,800-52,500) are per person, and trip duration",
+        "Menu-level food prices at Dharchula/Gunji",
+        "Latest ILP fee (revised by state)"
+      ]
+    },
+    "mansarovar-kailash": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Pithoragarh / Dharchula on the Indian side (Lipulekh route); Darchen on the Tibetan side. Yatra lodging (KMVN guesthouses, Tibetan guesthouses, camps) is bundled in the yatra fee, not sold per night.",
+        "mid_median_inr": 2492,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-pithoragarh"
+        ],
+        "budget_hotel_median_inr": 1453,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.kmvn.in/booking/pithoragarh"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Pithoragarh as the usual road base. Mid: Cleartrip 3-star Pithoragarh, 13-14 Nov 2026 pre-tax: Hotel Manar 3,555, Hotel Mall Palace 2,492, Plaza Hotel 1,781 (2 more sold out). Budget: KMVN TRH Pithoragarh DB Deluxe 1,500 and TRH Narayan Ashram DB Deluxe 1,406 (kmvn.in, 9-10 Oct 2026, GST status not stated).",
+        "notes": "Not a lodging destination in itself. Nepal-route operators state 'guesthouse accommodation for all 10 days' is included in the package (annapurnaencounter.com, 24 Aug 2026)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": null,
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "Not applicable: transport is bundled in the yatra (MEA/KMVN on the Lipulekh route, operator vehicles via Kerung/Lhasa).",
+        "sources": [
+          "https://www.outlooktraveller.com/News/kailash-mansarovar-yatra-2026-opens-dates-routes-costs-and-how-to-apply"
+        ],
+        "notes": "taxi_day deliberately null."
+      },
+      "pilgrimage_package": {
+        "how_people_pay": "Yatra package. Official MEA/KMVN estimate for 2026 (via Outlook Traveller, updated 2 May 2026, and Business Today, 7 May 2026): Lipulekh route (Uttarakhand) about 2.09 lakh per person for about 22 days (up from 1.74 lakh in 2025; Indian leg 65,000), Nathu La route (Sikkim) about 3.31 lakh per person for about 21 days; 20 batches of about 50; excludes medical tests and extras. Private operators via Nepal (per person, twin share): Annapurna Encounter USD 1,700 budget (breakfast only) / USD 2,000 full board, 10 days Kathmandu-Kerung-Kailash (page dated 24 Aug 2026), which is about 1.65-1.94 lakh INR at 96.8; Epic Yatra from 2.9 lakh INR all-inclusive for Indian passport holders (search-result snippet); other operators USD 2,200-4,500.",
+        "sources": [
+          "https://www.outlooktraveller.com/News/kailash-mansarovar-yatra-2026-opens-dates-routes-costs-and-how-to-apply",
+          "https://www.businesstoday.in/india/story/kailash-mansarovar-yatra-gets-costlier-by-20-heres-how-much-it-will-now-cost-you-530270-2026-05-07",
+          "https://www.annapurnaencounter.com/blog/kailash-mansarovar-yatra-cost-from-nepal-2026",
+          "https://www.epicyatra.com/mansarovar-package/"
+        ]
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Not applicable: meals are part of the yatra/package (Annapurna Encounter: budget package breakfast only, standard full board).",
+        "sources": [
+          "https://www.annapurnaencounter.com/blog/kailash-mansarovar-yatra-cost-from-nepal-2026"
+        ],
+        "notes": "Meals on the Indian road leg (Pithoragarh/Dharchula) are similar to Adi Kailash base prices, but no separate evidence was gathered."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "kmy.gov.in itself (certificate error, not bypassed): 2.09 lakh / 3.31 lakh come from two news pages quoting it",
+        "2027 yatra fee (2026 applications closed 19 May 2026)",
+        "Tibet-side lodging per night (bundled)",
+        "Any taxi, food or homestay price specific to the yatra route"
+      ]
+    },
+    "shimla": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2350,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "ISBT Tutikandi to Chharabra-Kufri (official pre-paid taxi)",
+            "inr": 1150
+          },
+          {
+            "route": "ISBT Tutikandi to Chharabra-Kufri-Fagu (official pre-paid taxi)",
+            "inr": 1450
+          },
+          {
+            "route": "ISBT Tutikandi to Naldehra (official pre-paid taxi)",
+            "inr": 1650
+          },
+          {
+            "route": "ISBT Tutikandi to Chharabra-Kufri-Chail (official pre-paid taxi)",
+            "inr": 2350
+          },
+          {
+            "route": "ISBT Tutikandi to Jakhu Temple (official pre-paid taxi)",
+            "inr": 900
+          },
+          {
+            "route": "ISBT Tutikandi to Jubbarhatti airport (official pre-paid taxi)",
+            "inr": 1500
+          }
+        ],
+        "basis": "Official police pre-paid taxi counter at ISBT Tutikandi, fares reported 16 Aug 2026 (taxi column; maxi-cab is 200 more on most routes, e.g. Chail circuit 2,550). There is no single full-day figure, so 2,350 = the longest standard day circuit (Kufri-Chail). Operators' full-day sedan for comparison: Rajputana Cabs 1,800 (page 26 Mar 2026), 2,500 (Vargis Khan/Tricon/Jagnish chart, 2024-25, reprinted), 2,600 (Himachal Taxi Dzire, undated). Outstation 12/km from the Solan-Shimla operator quotes (Reke India).",
+        "sources": [
+          "https://thenewshimachal.com/2026/08/shimla-pre-paid-taxi-service-offers-fixed-fares-to-tourists-and-locals/",
+          "https://himachalheadlines.com/news/no-more-fare-haggling-shimlas-pre-paid-taxi-service-offers-hassle-free-travel/",
+          "https://rajputanacabs.in/shimla-sightseeing-package/",
+          "https://vargiskhan.com/log/taxi-rates-in-shimla/",
+          "https://triconholidays.com/blogs/shimla-taxi-rates-complete-guide-to-taxi-fares-in-shimla/"
+        ],
+        "notes": "Notifying authority is not named in the articles ('police introduced the counter'); counter covers 26 Shimla-city destinations, only 16 fares seen. Local hops: Kamna Devi 350, Sankat Mochan 450, Summer Hill 450, Tara Devi 1,050. Old Tripadvisor thread (about 12 years old) quoted union Kufri 1,200 / Chail 1,500: stale. The visible rate board is not online; HPTDC/union board not retrievable."
+      },
+      "food_per_person_day": {
+        "budget_inr": 550,
+        "standard_inr": 750,
+        "basis": "Budget: Indian Coffee House dosa 76-80 + coffee 27 (Justdial menu 2025), Himachali Rasoi dham thali 240-300 (2026 guide), dhaba dinner ~200 -> about 550; blog budgets 500-700/day. Standard: 3 x median 250 per person per meal, from cost for two at 9 places: Cafe Sol 250-300, Wake & Bake 800, Indian Coffee House 350, Cafe Simla Times 500, Himachali Rasoi 500, EBR 500, Cafe Khoblu 700, Myngl 500, Barista 500 (Holidify/EazyDiner, undated; Ashiana/Cecil 2,200 treated as fine dining and excluded).",
+        "sources": [
+          "https://www.holidify.com/places/shimla/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.eazydiner.com/shimla/restaurants",
+          "https://www.justdial.com/Shimla/Indian-Coffee-House-The-Mall-Mall-Road/0177P177STD60105_BZDET/menu",
+          "https://www.tripadvisor.in/Restaurant_Review-g304552-d8664505-Reviews-Himachali_Rasoi-Shimla_Shimla_District_Himachal_Pradesh.html"
+        ],
+        "notes": "Zomato cost-for-two includes drinks/starters so standard may run slightly high. Holidify figures are not all labelled 'for two'."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union/HPTDC full-day sightseeing fare board (not online)",
+        "Maxi-cab and remaining 10 pre-paid counter fares",
+        "Current Zomato/Swiggy dates for the cost-for-two figures"
+      ]
+    },
+    "kufri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3290,
+        "mid_n": 7,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kufri"
+        ],
+        "budget_hotel_median_inr": 1282,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.kayak.co.in/Kufri-Hotels.306134.hotel.ksp",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kufri"
+        ],
+        "homestay_median_inr": 2973,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/india/kufri/budget-hotels",
+          "https://www.kayak.co.in/Kufri-Hotels.306134.hotel.ksp"
+        ],
+        "dorm_median_inr": 871,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://www.makemytrip.global/hotels/zostel_kufri-details-kufri.html"
+        ],
+        "price_basis": "Mid: all 7 priced Cleartrip '3-star' rows, 13-14 Nov 2026 pre-tax: 1,422 / 1,968 / 2,143 / 3,290 / 4,450 / 5,256 / 5,305 (8 more sold out). Budget: Kayak 10-11 Oct tax-inclusive 'from' Beer Castle Hotel 1,160, Suffer Heights 1,281, Valley Vista Rooms 1,282, plus The Radiance 1,422 (Cleartrip pre-tax) and Charvi Retreat 1,547 (Kayak). Homestay: North Moon Home Stay 4,206 (Cleartrip, 11-12 Oct) and Zephyr House Casa Stay 1,740 (Kayak, 10-11 Oct). Dorm: Zostel Plus Kufri 'from USD 8-10' (8-bed to 4-bed mixed dorms, MakeMyTrip.global via search snippet), USD 9 x 96.8 = 871 (USD->INR MTFX 8 Oct 2026).",
+        "notes": "Mixed dates and tax bases across tiers (Oct weekend vs mid-Nov). Kufri has few real budget hotels; Cleartrip 'budget' page listed 8 hotels at 2,789-7,079 so those were not used. Theog/Mashobra properties on Kayak's Kufri page were excluded as other towns. Kayak notes weeknights average far higher than weekends (5,305 vs 1,916) and December is the cheapest month: single-date prices swing widely."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1450,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Shimla (ISBT Tutikandi) to Chharabra-Kufri (official pre-paid taxi)",
+            "inr": 1150
+          },
+          {
+            "route": "Shimla to Chharabra-Kufri-Fagu (official pre-paid taxi)",
+            "inr": 1450
+          },
+          {
+            "route": "Shimla to Chharabra-Kufri-Chail (official pre-paid taxi)",
+            "inr": 2350
+          }
+        ],
+        "basis": "Same official pre-paid Shimla counter (16 Aug 2026): Kufri-Fagu circuit 1,450 used as the Kufri day. Operators' Kufri day sedan: Rajputana 1,800 (26 Mar 2026), 2,500 (Vargis Khan chart 2024-25).",
+        "sources": [
+          "https://thenewshimachal.com/2026/08/shimla-pre-paid-taxi-service-offers-fixed-fares-to-tourists-and-locals/",
+          "https://rajputanacabs.in/shimla-sightseeing-package/",
+          "https://vargiskhan.com/log/taxi-rates-in-shimla/"
+        ],
+        "notes": "Kufri is a 16 km half-day add-on from Shimla; no Kufri-based union exists, visitors use the Shimla counter. Horse/pony rides inside Kufri are separate and not measured here."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 750,
+        "basis": "Bawa Cafe thali 130 plus two teas (travel guide via search snippet); Justdial cost for two on the Kufri road: Dawat 500, Zevnar Shere Punjab 600, Roof Top Family Dhaba 350, Club House 350, Navrattan 1,300 -> median 500 per two = 250 per person per meal x3 = 750. Budget = about 130-175 per meal.",
+        "sources": [
+          "https://www.tripadvisor.com/Restaurants-g777776-c24-Kufri_Shimla_District_Himachal_Pradesh.html",
+          "https://www.holidify.com/places/kufri/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "Justdial pages return 403, so those cost-for-two figures are from a search-result summary. Prices at the Fun World/ski-slope entrance carts are reported as much higher."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Justdial cost-for-two figures not directly fetched (403)",
+        "Homestay median rests on 2 properties",
+        "Few hotel dates overlap, so tier medians are not strictly comparable"
+      ]
+    },
+    "chail": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3237,
+        "mid_n": 8,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-chail"
+        ],
+        "budget_hotel_median_inr": 1450,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.kayak.co.in/Chail-Hotels.59013.hotel.ksp",
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-chail",
+          "https://www.cleartrip.com/hotels/india/chail/budget-hotels"
+        ],
+        "homestay_median_inr": 2030,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-chail",
+          "https://www.kayak.co.in/Chail-Hotels.59013.hotel.ksp"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star', 13-14 Nov 2026 pre-tax: 8 rows 1,258 / 1,647 / 2,412 / 3,191 / 3,283 / 3,293 / 4,646 / 5,146. EXCLUDED Hotel Ekant 33,000 (outlier) and Nature Villa (labelled homestay). Budget: Hotel Oakwood 1,257 and Radiance 1,450 (Kayak 10-11 Oct, tax-incl 'from'), Hotel Chail Retreat 1,647 and Deventure 1,258 (Cleartrip 13-14 Nov pre-tax), Nature Treat Resort 1,643 (Kayak). Homestay: Nature Villa Resort 2,795 (Cleartrip, 3-star homestay, pre-tax), Welcome Chail Homestay 2,030 (Kayak, Kandaghat), Panorama Home Stay 'USD 13+' (KAYAK international, snippet) = about 1,258.",
+        "notes": "Cleartrip shows Deventure Hotel at 1,971 for 11-12 Oct and 1,258 for 13-14 Nov: single-date prices vary 50%. Kayak's own price guide shows Oakwood 1,257 and Radiance 1,450 as best-value 3-star. No hostel or dorm."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2350,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Shimla to Chail drop (operator sedan)",
+            "inr": 2300,
+            "range": "CabBazar 2,200; Maharana Cabs from 2,300; MakeMyTrip 1,498 + taxes"
+          },
+          {
+            "route": "Shimla to Chharabra-Kufri-Chail circuit (official pre-paid counter, 16 Aug 2026)",
+            "inr": 2350
+          },
+          {
+            "route": "Chandigarh to Chail (sedan one-way, about 106 km)",
+            "inr": 2000,
+            "range": "1,700 (Hurryupcabs) to 3,500 (Bharat Cab); CabBazar about 1,800; MMT 1,986 + taxes"
+          }
+        ],
+        "basis": "PROXY. No Chail taxi stand or union rate found. 2,350 = official Shimla pre-paid fare for the Kufri-Chail circuit. Operator local 8h/80km sedan: HurryUp Cabs lists 2,432 (summary) or 3,014 + 144 tax (rental table) for Chail, but the same numbers appear on its Mandi, Solan and Kasauli pages, so they look templated. Maharana Shimla-Chail-Shimla day: sedan 3,500; Chail + Kufri 4,500.",
+        "sources": [
+          "https://thenewshimachal.com/2026/08/shimla-pre-paid-taxi-service-offers-fixed-fares-to-tourists-and-locals/",
+          "https://maharanacabs.in/shimla-chail-taxi/",
+          "https://hurryupcabs.com/city/chail",
+          "https://cabbazar.com/taxi/cab/shimla-to-chail"
+        ],
+        "notes": "Chail sights (Palace, Sadhupul, Siddh Baba Mandir, cricket ground) sit within about 10 km, so a true local day is likely cheaper than 2,350 but no published price was found. One guide says shared cabs run from the bus stand."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1000,
+        "basis": "Holidify cost (unlabelled, probably for two): Sharma Vaishno Dhaba 400, Kanwar Bhojanalaya 500, Chail Palace Restaurant 600. Slurrp guide (updated 20 Jun 2022, stale) cost for two: Chail Palace 1,900, Mosaic 1,000, Jungle Me Mangal 1,500, Maple 2,000, Tarikha-E-Jharokha 1,500, Xanadu 1,000. Budget = dhaba meals at about 200 per person (Tripadvisor tags Sharma Vaishno and Kanwar as the budget tier). Standard = judgement call: breakfast ~200 + lunch ~300 + dinner ~500, since median cost for two across all 9 places is 1,000.",
+        "sources": [
+          "https://www.holidify.com/places/chail/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.slurrp.com/article/planning-to-visit-chail-heres-where-you-should-eat-at-this-mini-hill-station-in-himachal-1651906126547",
+          "https://www.tripadvisor.in/Restaurants-g777777-Chail_Kandaghat_Tehsil_Solan_District_Himachal_Pradesh.html"
+        ],
+        "notes": "Only about 8 restaurants exist on Tripadvisor; Chail Palace charges a 100-per-head entry fee (reviews)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Chail-specific taxi/local sightseeing fare",
+        "Current (2026) restaurant prices: Slurrp guide is from 2022, Holidify undated",
+        "Hostel/dorm beds"
+      ]
+    },
+    "kasauli": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3317,
+        "mid_n": 11,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-kasauli"
+        ],
+        "budget_hotel_median_inr": 1982,
+        "budget_n": 10,
+        "budget_sources": [
+          "https://www.kayak.co.in/Kasauli-Hotels.58081.hotel.ksp",
+          "https://www.cleartrip.com/hotels/india/kasauli/budget-hotels"
+        ],
+        "homestay_median_inr": 4219,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-kasauli"
+        ],
+        "dorm_median_inr": 670,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Kasauli?currency=INR",
+          "https://www.goibibo.com/hotels/the-hosteller-kasauli-hotel-in-kasauli-587243569224659610/"
+        ],
+        "price_basis": "Mid: Cleartrip '3-star', 12-13 Nov 2026 pre-tax, 11 properties labelled 3-star hotel/resort/guest house/villa (excludes hostel, 4/5-star rows): 2,337 to 5,740. Budget: 10 rows = Kayak 10-11 Oct tax-inclusive 'from' prices for properties labelled budget or 2-star (Hotel O Home Mystic Home 1,063, Pristine Edge 1,450, Treehouse/OYO Garkhal 1,933 x2, Mountain Shadow 2,030, Terrace Retreat 2,127, Dunn Perk 2,131, Captain Resorts 2,320, Kenwood 2,707) + Cleartrip OYO Blossom Resort 1,791 pre-tax (11-12 Oct). Mixed tax bases. Homestay: Cleartrip 12-13 Nov pre-tax: Hadley Inn 1,823, Sukhmani 4,219, Kasauli Courtyard 6,128 (7 other homestays sold out). Dorm: The Hosteller Kasauli Hostelworld 'from 720' (no dates) and Goibibo 8-bed dorm 621 + taxes (search snippet): 670.",
+        "notes": "Kayak's price pages for the same dates show 3-star-class properties 3,190-6,767, in line with Cleartrip. Cleartrip also lists a 4-star Alaya Stays Serene Woods at 2,611, so star labels are loose. Hostelworld Kasauli: only 1 dorm property (Hotel Ojas has no dorms, private from 1,100)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1999,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Manki Point round trip from Mall Road (local taxi)",
+            "inr": 500,
+            "range": "Tripadvisor reviewers, undated"
+          },
+          {
+            "route": "Chandigarh to Kasauli (sedan one-way, 57-65 km)",
+            "inr": 2300,
+            "range": "1,686 (Gozocabs), 2,160 (Guruji), 2,475 (Triveni), 3,099 (OneWay.Cab)"
+          },
+          {
+            "route": "Kalka to Kasauli (sedan, AC)",
+            "inr": 1050,
+            "range": "Vargis Khan chart, 2024-25 reprint, not current"
+          }
+        ],
+        "basis": "Maharana Cabs (says it works with local unions) full-day Kasauli sightseeing 8-10 hours: Dzire/Etios 1,999, Indica 1,899, Ertiga 2,599, Innova 3,199 (page undated; parking, tolls and entry extra). CabBazar full-day sedan 1,500 (search snippet; site returns 403). HurryUp Cabs 8h/80km sedan 2,432 (templated across cities). No official Kasauli union card found online. Per km 12 from HurryUp/CabBazar-style outstation rate cards.",
+        "sources": [
+          "https://maharanacabs.in/kasauli-sightseeing-tour-taxi",
+          "https://cabbazar.com/city/kasauli",
+          "https://hurryupcabs.com/cabs/kasauli",
+          "https://www.tripadvisor.com/Attraction_Review-g10782581-d2263108-Reviews-Manki_Point_Hanuman_Temple-Kasauli_Solan_District_Himachal_Pradesh.html"
+        ],
+        "notes": "Private vehicles are restricted inside the cantonment; the last stretch to Manki Point/Sunset Point is walked or by local taxi. Quotes range 1,500-2,432 for a sedan day (median of three = 1,999)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 750,
+        "basis": "Cost for two at 10 Kasauli places (Holidify/Tripoto, undated): Narinder Sweet House 100, NH22 Dhaba 200, Mom's Kitchen 300, Old Town Coffee 350, Taste of Tibet 400, Cafe Mitti 400, Cafe Rudra 500, Hangout 500-1,000, Cafe Mantra 800, Hotel Ross Common 800, Freq Cafe 800, Mehfil Dharampur 1,200. Standard = 3 x median 250 per person per meal (cost for two 500). Budget = bun-samosa breakfast ~50 + two dhaba/small-cafe meals at ~150-175 = about 400.",
+        "sources": [
+          "https://www.holidify.com/pages/cafes-in-kasauli-5966.html",
+          "https://www.holidify.com/places/kasauli/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.tripoto.com/himachal-pradesh/trips/from-bun-samosas-to-wood-fired-pizzas-kasauli-is-simply-a-paradise-for-foodies-5b84e00034c46"
+        ],
+        "notes": "Holidify/Tripoto/TravelTriangle figures are undated and some 3 years old, so current prices may be a little higher."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union/stand rate card for Kasauli",
+        "Dates on the restaurant cost-for-two figures",
+        "Budget tier mixes Kayak tax-inclusive and Cleartrip pre-tax prices"
+      ]
+    },
+    "solan": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2221,
+        "mid_n": 10,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-solan"
+        ],
+        "budget_hotel_median_inr": 1567,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/solan/budget-hotels"
+        ],
+        "homestay_median_inr": 1457,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/homestays-in-solan"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' Solan, 12-13 Nov 2026 pre-tax; used the 10 rows in Solan town localities (Lawi Khurd, Bajoral Khurd, Gandhi Gram, Solan): 1,350 / 1,610 / 1,665 / 1,748 / 2,219 / 2,223 / 2,793 / 2,937 / 3,382 / 3,952. Dropped 5 rows: Hotel Le Halcyon Kasauli 3,300, Parag Resort Kasauli 3,070, Heaven's Retreat Eco camp 3,952 (location unclear), Better Life Homes 9,228 (senior living), Erica Hills Resort 9,878. Median of all 15 rows = 2,937. Budget: Cleartrip budget page 11-12 Oct pre-tax: Hotel Amarjees 999 (tax unclear), HPTDC Hotel Baghal 1,567, HPTDC Apple Cart Inn 1,680. Homestay: House of Lights Solan 1,457 (Cleartrip, 2-star homestay, 12-13 Nov, pre-tax).",
+        "notes": "Solan is a transit/business town; many hotel rows are along the highway. No hostel pages found for Solan."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Solan to Shimla (about 45 km, sedan one-way)",
+            "inr": 1971,
+            "range": "1,529 (AHA) to 2,321 (Goibibo); Uber intercity about 985 not counted; CabBazar about 1,700"
+          },
+          {
+            "route": "Solan to Chandigarh (about 65-77 km, sedan one-way)",
+            "inr": 1684,
+            "range": "1,305 (MMT, 77 km incl.) to 1,948 (EaseMyTrip); CabBazar about 1,600; Gozocabs 1,768"
+          },
+          {
+            "route": "Solan to Kasauli (22-25 km)",
+            "inr": null,
+            "range": "MakeMyTrip from 1,590, Gozocabs 1,794, Uber about 613: conflicting"
+          }
+        ],
+        "basis": "Median of 3 sedan 8h/80km quotes: BookUrTaxi Swift Dzire 1,800 (extra km 12, extra hour 200; page), CabBazar full-day sedan 2,200 (search snippet), HurryUp Cabs 2,432 (generic page). No Solan taxi union rate found. Per km 12 (BookUrTaxi/HurryUp).",
+        "sources": [
+          "https://www.bookurtaxi.com/citywise/taxi-service-in-Solan",
+          "https://cabbazar.com/city/solan",
+          "https://hurryupcabs.com/city/solan",
+          "https://www.gozocabs.com/book-taxi/solan-chandigarh"
+        ],
+        "notes": "Solan is a town people pass through; most use autos and buses. Day sights: Shoolini Mata, Jatoli, Mohan Meakin, Karol Tibba. Point-to-point figures are aggregator sedan quotes from search-result summaries."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 900,
+        "basis": "Budget: Giani Da Dhaba veg thali 220, Delhi 6 Dhaba thalis 130-200 (Zomato menus), Chhawani and Ghar Ki Rasoi 150 for one, Sardar Ji Paratha 100 for one -> median ~150 per meal, paratha breakfast ~100: about 400. Standard: 3 x 300 = median cost for two 600 across Holidify (Vitto 600, Haveli 500, Himalayan Coffee House 200, Himani 600, Spicy Food Court 500) and EazyDiner (New Chanakya 800, Cafe Friday 500, Caldo's 1,000, Barista 600) -> 600 / 2.",
+        "sources": [
+          "https://www.holidify.com/places/solan/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.eazydiner.com/solan/restaurants",
+          "https://www.zomato.com/solan/giani-da-dhaba-1-solan-locality/order",
+          "https://www.zomato.com/solan/delhi-6-dhaba-solan-locality/order"
+        ],
+        "notes": "Zomato delivery menu prices can differ from dine-in; Zomato Solan page timed out on fetch so thali figures are from a search-result summary of the menu pages."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Solan taxi union card",
+        "Hotel location for 5 Cleartrip rows (dropped from mid median)",
+        "Dorm beds",
+        "Homestay median rests on 1 property"
+      ]
+    },
+    "mandi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2176,
+        "mid_n": 9,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/3-star-hotels-in-mandi"
+        ],
+        "budget_hotel_median_inr": 1249,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/india/mandi/budget-hotels",
+          "https://www.kayak.co.in/Mandi-Hotels.80331.hotel.ksp"
+        ],
+        "homestay_median_inr": 870,
+        "homestay_n": 3,
+        "homestay_sources": [
+          "https://www.kayak.co.in/Mandi-Hotels.80331.hotel.ksp",
+          "https://www.booking.com/city/in/prashar-lake.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip '3-star' Mandi, 13-14 Nov 2026 pre-tax, all 9 priced rows: 1,520 / 1,762 / 1,969 / 2,082 / 2,176 / 2,557 / 2,640 / 2,764 / 2,990 (6 more sold out). Budget: Hotel Midtown Residency 1,240 (Cleartrip, 11-12 Oct, pre-tax), Kayak 10-11 Oct tax-incl 'from': Hotel Koyal Mandi 1,160, Shree Ram Hotel 1,257, Silver Oak 1,257. Homestay: Kayak 10-11 Oct 'from': Sharma Home Stay 870; Ritu Raj Home Stay & Cafe 668 (search-result snippet); Booking.com 'KUNAL'S Himalayan Bird' homestay USD 20.66 x 96.8 = 2,000 (no dates).",
+        "notes": "Kayak's Oct dates put many hotels at 1,160-2,997; Booking.com 'from' prices (USD): Wild Yak 41.33, Da Shack 36.16, Hotel Robo Nest 32.91 agree with Cleartrip mid (about 3,200-4,000 incl. tax). Kayak monthly note: October is Mandi's dearest month (average 3,653). No hostel found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2000,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Mandi to Manali (about 110 km, sedan)",
+            "inr": 3249,
+            "range": "2,534 (MMT) to 4,275 (HippoCabs); Manali union charges 4,500 for the reverse (4+1)"
+          },
+          {
+            "route": "Mandi to Rewalsar (about 23 km, sedan)",
+            "inr": 2375,
+            "range": "Gozocabs one quote"
+          },
+          {
+            "route": "Mandi to Prashar Lake (sedan one-way)",
+            "inr": 2300,
+            "range": "CabBazar 2,300; guides 1,500-2,500"
+          }
+        ],
+        "basis": "Median of 2 non-government quotes: CabBazar Mandi full-day sedan 1,500 (search snippet) and HurryUp Cabs 8h/80km sedan 2,432 (templated). Mandi district (DC office order dated 30 Aug 2025, valid 1 Sep 2025 to 31 Aug 2028) fixed government hire rate for Swift Dzire/Etios: 4,000 per day for up to 200 km/9 hrs, extra 16 per km, 100 per hour, night halt 500, GST extra: a govt tender ceiling, not a tourist fare. No Mandi taxi union card found.",
+        "sources": [
+          "https://cabbazar.com/city/mandi",
+          "https://hurryupcabs.com/city/mandi",
+          "https://hpmandi.nic.in/document-category/hiring-of-vehicles-rates/",
+          "https://cdn.s3waas.gov.in/s308c5433a60135c32e34f46a71175850c/uploads/2025/09/17567909796998.pdf",
+          "https://www.makemytrip.com/car-rental/mandi-manali-cab-services.html"
+        ],
+        "notes": "Mandi is a transit town: most tourists go straight on to Manali/Kullu or Rewalsar. Per km 12 sits between CabBazar 9 and the govt tender 16 (the govt 4,000 for 200 km works out at 20 per km all-in)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 600,
+        "basis": "Standard: 3 x 200, from TravelTriangle (last updated 5 Oct 2026) cost for two at 15 Mandi places, median 400: Chawla's Square 300-600, Highway Treat 500, Ekant 300, Black Pepper 400, Minakshi 400, Anmol 600, Meera Mahal 300, Treat 300, Raj Mahal 400-600, AM PM 500, Sachdeva 200-300, Cafe Alimentaire 400, Cafe Treat 250, Kora 150-300, Tasty Bite 250. Budget: Zomato per person Ashoka Dhaba 150, kachori house 100, Aamchi Paratha 100; Annpurna Mandyali dham thali 150 (review) -> breakfast ~100 + two ~150 meals.",
+        "sources": [
+          "https://traveltriangle.com/blog/restaurants-in-mandi/",
+          "https://www.tripclap.com/places/mandi/restaurants",
+          "https://www.zomato.com/mandi/restaurants?cft=1&amp=1"
+        ],
+        "notes": "Zomato figures are from a search-result summary (Zomato page not fetched)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Mandi taxi union rate card",
+        "Local-sightseeing day rate beyond two aggregator quotes",
+        "Dorm beds",
+        "Homestay median rests on 3 mixed-source prices"
+      ]
+    },
+    "prashar-lake": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Mandi town (about 50 km) for hotels; Baggi village for the trailhead",
+        "mid_median_inr": 3484,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.booking.com/placestostay/city/in/prashar-lake.html",
+          "https://www.holidify.com/hotels/hotels-near-prashar-lake-8859.html"
+        ],
+        "budget_hotel_median_inr": 1000,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://discoverwithdheeraj.com/pwd-rest-house-frh-himachal-booking-process/",
+          "https://vargiskhan.com/log/plan-trip-prashar-lake/"
+        ],
+        "homestay_median_inr": 2478,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.homestays.co.in/parashar-lake-india",
+          "https://www.holidify.com/hotels/hotels-near-prashar-lake-8859.html"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget = PWD Rest House at the lake, 5 rooms, 1,000 per night for non-Himachalis (500 for Himachalis) booked on Him Atithi, tariff notification dated 4 Feb 2026 (discoverwithdheeraj.com, updated 24 Aug 2026). Forest Rest House about 1,000 plus 12% GST (Vargis Khan). Mid and homestay figures are WEAK: USD 'from' prices in search-result snippets x96.8 (MTFX 8 Oct 2026): Parashar Lake Fogg Hill Resort USD 29.54 and 34.54 (Booking pages), mid 3,101; Himalyan Wild Trails Swiss Camp USD 39.94 = 3,866; homestays: Gazing Moon USD 16.04 = 1,553, Mathan View INR 1,567 (homestays.co.in), Royal Prashar Lake Homestay USD 35 = 3,388, Parasharalya USD 37.51 = 3,631.",
+        "notes": "Several of those priced homestays are a few km from the lake (Parasharalya 4.1 km). Other private offers seen: tents 500-1,500 per person (Dheeraj, 2026), campsite about 1,000 per person incl meals (Vargis Khan, undated), Universal Adventures camping package 1,999 per person from Baggi (snippet), Fogg Hill camp from 500 per person (June 2024 comment). Temple dormitory: free with donation of 100-200 suggested (Dheeraj 2026), not a hostel. Rest house fills in May, June, Sept, Oct."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan/Bolero",
+        "outstation_per_km_inr": 9,
+        "point_to_point": [
+          {
+            "route": "Mandi to Prashar Lake (sedan, CabBazar)",
+            "inr": 2300,
+            "range": "CabBazar 2,300 sedan, 3,300 SUV; guides 1,500-2,500 one-way, 2,000-3,000 round trip; Wikivoyage 1,000-1,500"
+          },
+          {
+            "route": "Mandi to Baggi village (taxi)",
+            "inr": 1000,
+            "range": "800-1,200 (Dheeraj, Aug 2026); 600-800 (Vargis Khan, older)"
+          },
+          {
+            "route": "HRTC bus Mandi to Prashar Lake",
+            "inr": 88,
+            "range": "2024 guide; Mandi-Baggi bus 50-80 (Dheeraj 2026)"
+          }
+        ],
+        "basis": "There is no local taxi at the lake: a visit is a day trip from Mandi. 2,500 = round-trip taxi from Mandi to the lake road-end (Vargis Khan 'round trip from Mandi ISBT or Kullu 2,500', Dec 2019 reader report; consistent with CabBazar 2,300 one-way sedan and guides' 2,000-3,000 round trip). Last stretch of road is poor; locals use Boleros.",
+        "sources": [
+          "https://discoverwithdheeraj.com/prashar-lake-trek-comprehensive-guide/",
+          "https://vargiskhan.com/log/plan-trip-prashar-lake/",
+          "https://cabbazar.com/taxi/cab/mandi-to-prashar-lake",
+          "https://en.wikivoyage.org/wiki/Prashar_Lake"
+        ],
+        "notes": "Not a local-sightseeing figure. Vehicle road beyond Baggi is usable roughly April to October; winter snow can cut it."
+      },
+      "food_per_person_day": {
+        "budget_inr": 350,
+        "standard_inr": null,
+        "basis": "Meals at lake cafes 80-150, tea 30-50 (Dheeraj, updated 14 Aug 2026): 3 meals at about 115 = 350. Camps/packages include meals (campsite about 1,000 per person incl meals). No sit-down restaurants at the lake, so standard is null; Mandi town standard is about 600 per day.",
+        "sources": [
+          "https://discoverwithdheeraj.com/prashar-lake-trek-comprehensive-guide/",
+          "https://vargiskhan.com/log/plan-trip-prashar-lake/"
+        ],
+        "notes": "Shops near the temple have no listed prices anywhere. PWD rest house offers food on request (price not found)."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Private hotel/homestay prices (only USD snippets, some outside the lake area)",
+        "PWD/Forest rest-house GST and meal prices",
+        "Standard-tier restaurant food at the lake",
+        "Dorm/hostel beds",
+        "Current local taxi union fare"
+      ]
+    }
+  }
+}
