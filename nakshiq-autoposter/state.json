@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-08",
-    "PdMu0_evening": "2026-10-08",
+    "PdMu0": "2026-10-09",
+    "PdMu0_evening": "2026-10-09",
     "PdMu0_carousel": "2026-10-09"
   },
-  "last_sync": "2026-10-08T20:05:32.941225+00:00",
+  "last_sync": "2026-10-09T19:39:47.554352+00:00",
   "posted_destinations": [
     {
       "destination_id": "kiphire",
@@ -153,6 +153,22 @@
     {
       "destination_id": "hyderabad",
       "date": "2026-10-09"
+    },
+    {
+      "destination_id": "tungnath",
+      "date": "2026-10-09"
+    },
+    {
+      "destination_id": "dzukou-valley",
+      "date": "2026-10-09"
+    },
+    {
+      "destination_id": "kedarnath",
+      "date": "2026-10-09"
+    },
+    {
+      "destination_id": "sravasti",
+      "date": "2026-10-09"
     }
   ],
   "posted_formats": {
@@ -180,7 +196,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
@@ -200,7 +215,8 @@
       "weekend_escape",
       "v2_women_solo_brief_video",
       "v2_cost_vs_feeling",
-      "v2_score_card_pov"
+      "v2_score_card_pov",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -10633,6 +10649,35 @@
       "destination": "hyderabad",
       "format": "carousel.route",
       "media_id": "carousel_route_2026-10-09"
+    },
+    {
+      "timestamp": "2026-10-09T14:37:55.074812+00:00",
+      "date": "2026-10-09",
+      "platform": "instagram",
+      "post_id": "8BQRw",
+      "destination": "chandipur",
+      "format": "scenario_friends_swap",
+      "media_id": "1ZjXq"
+    },
+    {
+      "timestamp": "2026-10-09T14:38:42.874013+00:00",
+      "date": "2026-10-09",
+      "platform": "youtube",
+      "post_id": "kRcug",
+      "destination": "ahmedabad",
+      "format": "scenario_eatery",
+      "media_id": "9JWTt"
+    },
+    {
+      "timestamp": "2026-10-09T19:40:48.278160+00:00",
+      "date": "2026-10-09",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "SsDaH",
+      "destination": "tungnath",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -10996,10 +11041,20 @@
         "2026-10-06"
       ],
       "sravasti": [
-        "2026-10-07"
+        "2026-10-07",
+        "2026-10-09"
       ],
       "kolhapur": [
         "2026-10-08"
+      ],
+      "tungnath": [
+        "2026-10-09"
+      ],
+      "dzukou-valley": [
+        "2026-10-09"
+      ],
+      "kedarnath": [
+        "2026-10-09"
       ]
     },
     "morning_formats": {
@@ -11164,7 +11219,8 @@
       "data_carousel": [
         "2026-07-01",
         "2026-08-02",
-        "2026-10-01"
+        "2026-10-01",
+        "2026-10-09"
       ],
       "tourist_trap": [
         "2026-09-01"
@@ -11357,6 +11413,9 @@
       ],
       "shantiniketan": [
         "2026-10-06"
+      ],
+      "tungnath": [
+        "2026-10-09"
       ]
     },
     "audience_tags": {
@@ -11410,7 +11469,8 @@
         "2026-08-21",
         "2026-08-28",
         "2026-09-04",
-        "2026-10-02"
+        "2026-10-02",
+        "2026-10-09"
       ]
     },
     "collections": {
@@ -11623,11 +11683,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "dzukou-valley",
+    "shared_best": "kedarnath",
     "collection": "fort-trail-maharashtra"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-10-01",
+  "data_carousel_floor_last": "2026-10-09",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
