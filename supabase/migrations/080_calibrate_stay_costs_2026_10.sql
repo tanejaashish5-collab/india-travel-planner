@@ -1,5 +1,10 @@
 -- 080: calibrate destination_costs STAY rows against real listing prices (2026-10-08).
 --
+-- APPLIED 2026-10-09 through the Supabase MCP execute_sql tool (founder allowed the tool for this
+-- project). NOT recorded in supabase_migrations.schema_migrations. NOT idempotent: it scales the
+-- current shoulder value, so running it twice scales twice. Do not re-run; restore from the backup
+-- table instead if anything is wrong.
+--
 -- Why: destination_costs was a pure formula (flat base x state x altitude x season),
 -- never searched. 33 destinations were checked against Cleartrip/Kayak/Booking/Hostelworld
 -- listings (every price has a URL in data/cost-research/2026-10-08-calibration-sample.md).

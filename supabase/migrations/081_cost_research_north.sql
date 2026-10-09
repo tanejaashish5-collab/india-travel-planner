@@ -3,6 +3,10 @@
 -- Stay categories written: 128; no-lodging deletes: 10; taxi destinations: 41; food destinations: 68.
 -- Skipped (kept modelled): 180.
 -- Backup: backups.destination_costs_20261009.
+-- APPLIED 2026-10-09 after 080, via scripts/run-sql-file.mjs (Supabase Management API) as three
+-- compact CTE chunks generated from this file (711 UPDATEs parsed 711/711, 10 DELETEs), verified:
+-- 711 rows tagged observed_research_2026_10. Idempotent: safe to re-run. Not recorded in
+-- schema_migrations. Regenerating this file with build-cost-research-sql.mjs drops this note.
 BEGIN;
 
 -- B1 (B1.json)

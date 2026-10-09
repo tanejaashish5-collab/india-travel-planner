@@ -145,9 +145,10 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
               maxWidth: 720,
             }}
           >
-            Every number in the NakshIQ India Travel Cost Index is derived,
-            not guessed. Here&apos;s how the model works, where the baselines
-            come from, and what the data does and doesn&apos;t claim.
+            Every row in the NakshIQ India Travel Cost Index is either read off
+            real listing prices or modelled from them, and each row says which.
+            Here&apos;s how the model works, what has been checked so far, and
+            what the data does and doesn&apos;t claim.
           </p>
         </header>
 
@@ -156,7 +157,7 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
             <h2 style={h2Style}>What the dataset covers</h2>
             <p style={prose}>
               The Cost Index publishes representative 2026 INR price points for nine travel-spend
-              categories across all 491 NakshIQ-covered destinations. Each row is a{" "}
+              categories across all 525 NakshIQ-covered destinations. Each row is a{" "}
               <code style={codeStyle}>(destination, category, season)</code> triple with a median,
               a low-end (budget), and a high-end (splurge) figure, plus the unit{" "}
               (<code style={codeStyle}>per_night</code>,{" "}
@@ -172,16 +173,56 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
           </section>
 
           <section>
+            <h2 style={h2Style}>What is observed and what is modelled</h2>
+            <p style={prose}>
+              The first version of this index was a formula with no per-place observations. In
+              October 2026 we checked it against real listing prices in 33 destinations. The
+              shoulder-season 3★ and homestay figures ran about 10–15% high after tax, the peak
+              multiplier was slightly high, and individual places were off by as much as
+              1.5–2.5×. Hotel rows also existed for places with no lodging at all.
+            </p>
+            <p style={prose}>
+              Since then each row carries one of three tags in{" "}
+              <code style={codeStyle}>source_ref</code>:
+            </p>
+            <ul style={ulStyle}>
+              <li>
+                <code style={codeStyle}>observed_listings_2026_10</code>: the median of listed
+                prices for that place (Cleartrip, Kayak, Booking.com, Hostelworld and operator
+                sites, fetched 8 October 2026), with an estimated 12% GST added. Peak is the
+                shoulder price × 1.35, measured on the same hotels in five cities (late December
+                against late October to mid November).
+              </li>
+              <li>
+                <code style={codeStyle}>calibrated_model_2026_10</code>: modelled, with the stay
+                baselines scaled to match the observed places. Not an observation of that
+                place.
+              </li>
+              <li>
+                <code style={codeStyle}>editorial_model_2026_Q2</code>: the original formula.
+                Taxi, food, intercity, permit and activity rows are still here and have not yet
+                been checked against observed prices.
+              </li>
+            </ul>
+            <p style={prose}>
+              We are replacing modelled rows with observed ones place by place, region by region,
+              starting with North India. Low-season and May–June hill-station prices have not been
+              measured and still follow the model.
+            </p>
+          </section>
+
+          <section>
             <h2 style={h2Style}>The model</h2>
             <p style={prose}>
-              Each row is computed as{" "}
+              Each modelled row is computed as{" "}
               <code style={codeStyle}>base × state × altitude × difficulty × budget_tier × season</code>.
             </p>
 
             <h3 style={h3Style}>1. Base rates</h3>
             <p style={prose}>
-              Nine category baselines calibrated against observed 2026 market prices across a
-              generic mid-tier Indian destination in shoulder season.
+              Nine category baselines for a generic mid-tier Indian destination in shoulder
+              season, as originally set. The stay baselines have since been scaled down about 8–12%
+              against observed listings (see above); the others are unchanged and unchecked.
             </p>
             <ul style={ulStyle}>
               <li>Homestay (per night): typical ₹2,200 · budget ₹1,000 · splurge ₹4,500</li>
@@ -252,29 +293,28 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
 
           <section>
             <h2 style={h2Style}>Data provenance</h2>
-            <p style={prose}>Baselines trace to:</p>
+            <p style={prose}>Observed rows come from:</p>
             <ul style={ulStyle}>
-              <li>State-tourism-department tariff circulars (Himachal, Uttarakhand, Rajasthan, Kerala, Gujarat, and all permit-issuing states)</li>
-              <li>IHM and IATO hospitality-average benchmarks for mid-range and 3★ hotel pricing</li>
-              <li>NHAI and state-transport-authority taxi rate circulars (published fare charts)</li>
-              <li>NakshIQ editorial field surveys (2026 Q2) for homestay and hostel-dorm typical rates</li>
-              <li>Published park-entry fees from Project Tiger and state forest departments</li>
+              <li>Hotel, homestay and hostel listing pages: Cleartrip, Kayak, Booking.com, Hostelworld</li>
+              <li>Operator and state-tourism tariff pages where they exist (for example JKTDC, GMVN, HPTDC, camp and homestay operators)</li>
+              <li>Taxi-union and operator rate lists and restaurant menus, for the taxi and food rows as they are researched</li>
             </ul>
             <p style={prose}>
-              Every row in the dataset carries a <code style={codeStyle}>source_ref</code> tag.
-              The current corpus tag is <code style={codeStyle}>editorial_model_2026_Q2</code>.
-              Rows refreshed against new source data get a newer tag and are timestamped via{" "}
-              <code style={codeStyle}>reviewed_at</code>.
+              The listing sites show discounted single-night prices and mixed tax treatment, so
+              observed figures are medians of several listings, not quotes for any one property.
+              Every row carries a <code style={codeStyle}>source_ref</code> tag and a note saying
+              how it was produced, and <code style={codeStyle}>recorded_at</code> shows when it was
+              last written.
             </p>
           </section>
 
           <section>
             <h2 style={h2Style}>Update cadence</h2>
             <p style={prose}>
-              Quarterly refresh. The base rates, state multipliers, and destination overrides
-              are re-evaluated against observed market data each quarter. When a category drifts
-              by more than ±10% against the published baseline, affected rows are re-derived
-              and the <code style={codeStyle}>reviewed_at</code> stamp is updated.
+              Rows are re-checked against observed listings region by region, starting with North
+              India in October 2026. When a place is re-checked its rows are rewritten and the
+              source tag and <code style={codeStyle}>recorded_at</code> stamp change with them.
+              There is no fixed quarterly schedule yet.
             </p>
             <p style={prose}>
               Major events (annual Pushkar Mela date announcement, Rann Utsav calendar, Kerala
