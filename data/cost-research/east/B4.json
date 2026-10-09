@@ -1,0 +1,416 @@
+{
+  "batch": "B4",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "ranchi": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2821,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4291998?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-green-horizon-ranchi-298145?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/capitol-residency-378516?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/pavitram-hotel-banquet-4519504?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-the-raso-2629786?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4296486?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1292,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-churuwala-inn-4067057?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4562884?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292134?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-basera-386473?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest room per hotel: Genista Inn 3,507 (room only), Green Horizon 2,944 (room only), Capitol Residency 4,013 (room only), Pavitram 2,468 (room only), The Raso 2,697 (breakfast included in cheapest rate), Crystal Residency 2,256 (room only); median = mean of 2,697 and 2,944. Budget: Cleartrip 18-19 Nov 2026 pre-tax, room only: Churuwala Inn 1,268, EcoSuites by Stayvilla 1,277, Stay Villa Prime 1,307, Hotel Basera 1,400 (Cleartrip lists all four as 3-star but priced at budget level).",
+        "notes": "Other 3-star detail pages on 18 Nov: Treebo Winsome Resort 1,858 (breakfast included), Maple Wood 3,726 (its 13 Nov list price was 3,316, so a 12% rise by 18 Nov; the other hotels were within a rupee or so of their 13 Nov list prices). Hotel Ajanta Inn showed No rooms available. Homestay: Cleartrip's Ranchi homestay page lists only the same hotels, so no homestay figure. Dorm: Hostelworld has no Ranchi page (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Ranchi to Netarhat (about 153 km)",
+            "inr": 2882,
+            "range": "Gozo sedan one-way 2,882 before GST (indicative, varies by fetch; 2,627 seen in a search snippet); Ranchi operator ranchi-netarhat-tour-taxi.com (Sec-2 Dhurwa, Ranchi) from 3,500 sedan; carrentalranchi.com from 2,500"
+          },
+          {
+            "route": "Ranchi to Betla National Park (about 156 to 170 km)",
+            "inr": 4362,
+            "range": "Gozo sedan one-way 4,362 before GST; ranchi-netarhat-tour-taxi.com from 4,200"
+          },
+          {
+            "route": "Ranchi to Jamshedpur (135 km)",
+            "inr": 2000,
+            "range": "carrentalranchi.com route fare"
+          }
+        ],
+        "basis": "Local 8 hr / 80 km sedan (Dzire): ranchitaxicab.com fare table 1,800 (operator addresses Namkum, Chutia, Hinoo airport; page undated); carrentalranchi.com 'starting 1,800' (its FAQ shows 1,400). No union rate card found; two other operators' pages also showed 1,599 to 2,301 in search results but were not opened. Outstation per km: ranchi-netarhat-tour-taxi.com sedan 12/km (carrentalranchi.com tariff table shows 10/km). Toll and parking extra.",
+        "sources": [
+          "https://ranchitaxicab.com/fares.html",
+          "https://www.carrentalranchi.com/",
+          "https://ranchi-netarhat-tour-taxi.com/",
+          "https://www.gozocabs.com/book-taxi/ranchi-netarhat",
+          "https://www.gozocabs.com/book-taxi/ranchi-betla"
+        ],
+        "notes": "Ranchi has no published union chart; figures are operator packages. Innova 8 hr / 80 km is 3,000 (ranchitaxicab.com)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 1100,
+        "basis": "Budget = 3 meals x 150: Zomato Ranchi veg-thali delivery page shows 'for one' at 9 places: 100, 100, 150, 150, 150, 200, 200, 300, 300 (median 150). Standard = breakfast 200 (Kaveri, Vikash Bhojnalay 'for one' 150-200) + lunch 300 (The Punjabi Restaurant, Arpan Smart Dining 'for one' 300) + dinner 600 (Zomato dine-out 'for two' Olives 'N' Figs 1,000, The Ruin House 1,200, Dusk 1,500, Cream Centre 1,500, so 500-750 per person; 600 used). The meal mix is an assumption, the unit prices are as shown.",
+        "sources": [
+          "https://www.zomato.com/ranchi/delivery/dish-veg-thali",
+          "https://www.zomato.com/ranchi/dine-out"
+        ],
+        "notes": "Zomato 'for one' on the delivery page is a delivery-menu figure; dine-in can differ."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "No union or tourism-department taxi rate card for Ranchi; operator packages only",
+        "No homestay or dorm price",
+        "Zomato and MakeMyTrip individual restaurant and city pages timed out; food from Zomato list pages"
+      ]
+    },
+    "netarhat": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2917,
+        "mid_n": 2,
+        "mid_sources": [
+          "https://www.palamautigerreserve.in/stays/netarhat-new-cottage?adults=1&checkin=2026-10-09&checkout=2026-10-10&rooms=1",
+          "https://lvrnetarhat.com/"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 3098,
+        "homestay_n": 1,
+        "homestay_sources": [
+          "https://www.booking.com/searchresults.html?ss=Netarhat%2C+Jharkhand&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid (n=2, undated tariffs): Jharkhand forest-department tariff on the Palamau Tiger Reserve portal, Netarhat New Cottage Premium Room 2,500 per night (tariff card, shown for a 9-10 Oct 2026 search, flat rate, taxes may be extra); Lake View Resort own site Deluxe Room from 3,333.33 for 2 adults + 2 children, plus taxes (undated); median = mean of the two. Homestay: Booking.com 18-19 Nov 2026, Madhu Guesthouse Standard Double Room with breakfast, 3,098 TAX-INCLUSIVE (page says 'includes taxes and charges'), n=1, review score 5.7 from 3 reviews.",
+        "notes": "Cleartrip has no Netarhat page (404). Booking.com lists only 2 properties for Netarhat on 18 Nov (the other, Le Deuxieme, is 27 km out at Rs 743) and Mountail Eco Resort is not taking bookings there. Makemytrip.global shows Madhu Guesthouse near AUD 34 (about Rs 1,900 at an unstated rate, undated), well below Booking's 3,098, so treat the homestay figure as a high estimate. JTDC Hotel Prabhat Vihar tariff page (tourism.jharkhand.gov.in) could not be opened from here. Netarhat has about 18 small hotels and guest houses (toursntravelsforu.blogspot.com list) but almost none are on OTAs with prices."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {
+            "route": "Ranchi to Netarhat (about 153 km)",
+            "inr": 2882,
+            "range": "Gozo sedan one-way 2,882 before GST (indicative, varies by fetch); ranchi-netarhat-tour-taxi.com (Sec-2 Dhurwa, Ranchi) from 3,500 sedan"
+          }
+        ],
+        "basis": "No Netarhat local-sightseeing rate card found (Sunrise, Sunset/Magnolia, Ghaghri falls are 10 km apart and arranged ad hoc). Ranchi to Netarhat one-way from Gozo and a Ranchi operator. Outstation sedan 12/km from ranchi-netarhat-tour-taxi.com.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/ranchi-netarhat",
+          "https://ranchi-netarhat-tour-taxi.com/"
+        ],
+        "notes": "Local day left null rather than estimated."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu, thali price or Zomato/Swiggy cost for Netarhat found.",
+        "sources": [],
+        "notes": "Netarhat has few eateries; Prabhat Vihar restaurant menu not found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "No 3-star hotel prices for 18 Nov (no OTA coverage)",
+        "No budget hotel, dorm price",
+        "No local taxi rate",
+        "No food prices",
+        "JTDC Prabhat Vihar tariff page unreachable"
+      ]
+    },
+    "betla": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Latehar / Daltonganj (forest-department cottages and tree houses are inside Betla itself)",
+        "mid_median_inr": 2250,
+        "mid_n": 4,
+        "mid_sources": [
+          "https://www.palamautigerreserve.in/stays"
+        ],
+        "budget_hotel_median_inr": 1600,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://www.palamautigerreserve.in/stays"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Palamau Tiger Reserve official portal tariff card (undated, per room per night, 'starts from' where several room types): Mid = Betla New Tree House 2,500, New Cottage 3,000, Kechki Eco Retreat from 2,000, Mud House Oasis & Tree House 2,000; median 2,250. Budget = New Tourist Complex from 1,700 and Forest Rest House Barwadih (same North Zone) 1,500; median 1,600. Room only; meals chargeable at the in-house dining.",
+        "notes": "These are forest-department cottages, not 3-star hotels; no OTA hotels at Betla were found with dated prices. A private 'Palamu Tiger Resort' (Park Road, Betla) shows 2,500 / 3,000 / 3,500 on its own booking page but that page carries unrelated boilerplate text, so it was not used. Advance booking advised on weekends."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Ranchi to Betla National Park (about 156 to 170 km)",
+            "inr": 4362,
+            "range": "Gozo sedan one-way 4,362 before GST (indicative); ranchi-netarhat-tour-taxi.com (Sec-2 Dhurwa, Ranchi) from 4,200"
+          }
+        ],
+        "basis": "Inside Betla the park jeep with a compulsory guide is the local transport; no official safari-jeep price page could be opened (Palamau portal activities page lists 0 activities). Ranchi to Betla one-way only.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/ranchi-betla",
+          "https://ranchi-netarhat-tour-taxi.com/"
+        ],
+        "notes": "Local day left null. Search snippets quote 1,000 to 1,700 per jeep for a 1-2 hour guided safari but no official page was found."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No rupee menu or Zomato/Swiggy cost for Betla found.",
+        "sources": [],
+        "notes": "Palamau portal says meals are available at the in-house dining facility for an extra charge, price not shown."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "No local taxi or safari jeep rate from an official page",
+        "No food prices",
+        "No OTA hotel prices dated 18 Nov"
+      ]
+    },
+    "baripada": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1410,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/alexa-hotel-restaurent-5570768?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1310,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/4533274?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535376?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5061640?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-durga-2894190?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ambika-3965668?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest room. Mid (the only 3-star listed, n=1): Alexa Hotel & Restaurent 1,410 (Classic Double, room only). Budget (2-star): Vintage Plaza 1,310 (breakfast included), AVA Guest House 1,297 (room only), Hotel Sai Binayak 1,117 (non-AC, room only), Hotel Durga 1,617 (listed non-AC, room only), Hotel Ambika 1,984 (AC, breakfast included); median 1,310.",
+        "notes": "Baripada has one 3-star on Cleartrip. The Belgadia Palace (5-star heritage) and RK International, Ruchi Guest House showed sold out on 13 Nov, not priced."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13.5,
+        "point_to_point": [
+          {
+            "route": "Baripada Town to Similipal (about 61 km)",
+            "inr": 3535,
+            "range": "Gozo sedan one-way 3,535 before GST (indicative, varies by fetch)"
+          },
+          {
+            "route": "Jashipur to Baripada Town (about 96 km)",
+            "inr": 3376,
+            "range": "Gozo sedan one-way 3,376 before GST; reference rate from 13.50/km"
+          }
+        ],
+        "basis": "No Baripada local-sightseeing rate card (union or tourism department) could be opened; MakeMyTrip Baripada city page timed out. Point-to-point only, Gozo indicative fares.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/baripada_town-similipal",
+          "https://www.gozocabs.com/book-taxi/jashipur-baripada_town"
+        ],
+        "notes": "Local day left null rather than estimated."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 600,
+        "basis": "Zomato Baripada list 'for one': Pal's Spicy Kitchen 100, Garama Garam Hotel & Restaurant 100, Mio Amore (bakery) 100 -> budget 3 x 100. Standard 3 x 200: Hotel Livya 200, Tandoor Chef 200, Brewbakes 200, Hotel Mohapatra 200, Biriyani Palace 200 (Hotel Garma Garama 250, The Lotus 450). Zomato prices here are mostly delivery-oriented 'for one' figures.",
+        "sources": [
+          "https://www.zomato.com/baripada/restaurants",
+          "https://www.zomato.com/baripada/delivery/dish-lunch"
+        ],
+        "notes": ""
+      },
+      "confidence": "medium",
+      "unverified": [
+        "No local taxi rate",
+        "Only one 3-star on Cleartrip",
+        "No homestay or dorm price"
+      ]
+    },
+    "simlipal": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Baripada (61 km) or Jashipur for non-park hotels",
+        "mid_median_inr": 5000,
+        "mid_n": 5,
+        "mid_sources": [
+          "https://www.ecotourodisha.com/experiences/similipal/from-pithabata",
+          "https://www.ecotourodisha.com/stays-camps/similipal/similipal-nature-camps-barehipani"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Ecotour Odisha (Odisha government eco-tourism portal) 'Nature Camps Near By' tariff, 'From' per night, undated: Barehipani 5,500, Gurguria 5,000, Jamuani 4,800, Kumari 5,000, Talabandha 7,000; median 5,000. Barehipani rooms are labelled 'Double Bedded (Non A/C)' and 'All Inclusive'.",
+        "notes": "Camp rates are all-inclusive (the portal labels them 'All Inclusive'; the exact meal inclusions are not printed), so they are NOT comparable to a room-only 3-star rate. Entry ticket and safari are extra. Per-night availability for 18 Nov was 'unavailable' on the Barehipani page when opened. Cheaper forest rest houses (Chahala, Jenabil etc.) exist but no page printing a tariff could be opened. Baripada (61 km) is the base for hotels at 1,100-2,000."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 6825,
+        "vehicle": "safari jeep (whole vehicle, up to 12 guests)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Baripada Town to Similipal (about 61 km), sedan",
+            "inr": 3535,
+            "range": "Gozo sedan one-way 3,535 before GST (indicative)"
+          }
+        ],
+        "basis": "Ecotour Odisha full-day safari 'Pithabata Entry - Similipal Full Day Safari' (9.5 hours, entire vehicle, up to 12 guests) 6,825 for 1 Nov 2026 and 10 Oct 2026; entry ticket payable separately. Morning open-jeep safaris of 4-5 hours: Pithabata 4,961 (up to 6 guests), Jamuani 4,725, Talabandha 5,250, Gurguria 5,250, Barehipani 5,250; Khairi entry 9.5 hr 6,300. Compulsory guide and 180 mm clearance vehicles; a plain sedan is not allowed inside.",
+        "sources": [
+          "https://www.ecotourodisha.com/experiences/similipal/pithabata-entry-similipal-full-day-safari",
+          "https://www.ecotourodisha.com/experiences/similipal/from-pithabata",
+          "https://www.gozocabs.com/book-taxi/baripada_town-similipal"
+        ],
+        "notes": "The local figure is a park safari jeep (the only way to see the park), not a taxi; 6,825 is the full-day rate for the whole vehicle. Park season starts mid-October."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Nature camps are all-inclusive; no restaurant menu or Zomato cost for Simlipal itself found.",
+        "sources": [],
+        "notes": "For the gateway town see Baripada."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "No room-only price inside the park",
+        "No forest rest house tariff",
+        "No food prices",
+        "Camp availability on 18 Nov"
+      ]
+    },
+    "chandipur": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1150,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4597091?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Cleartrip hotel detail page, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount: Purbi Beach Resort (listed 3-star resort, 3.5 from 750+ ratings) Standard Double AC, garden view, room only, 1,150. n=1.",
+        "notes": "Same hotel: Queen Bed non-AC 941, Deluxe AC sea view 1,986 (all room only, 18 Nov). Cleartrip lists only 2 Chandipur properties (the other, Shree Inn Talasari, had no rooms on 18 Nov). OTDC Panthanivas Chandipur (state tourism) shows Non-AC from about 1,278 pre-tax on Goibibo but the page does not show its stay date, so it was not used; the OTDC site itself is unreachable from here."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Balasore to Chandipur (about 13 km)",
+            "inr": 2337,
+            "range": "Gozo sedan one-way 2,337 before GST; page itself notes a reference rate of 10.75/km that does not match this short-distance minimum fare"
+          }
+        ],
+        "basis": "Chandipur is a small beach village; no local taxi rate card exists online. Only a Gozo one-way sedan quote Balasore to Chandipur, which looks like a minimum fare for a 13 km hop.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/balasore-chandipur"
+        ],
+        "notes": "Local autos are the usual way around; no auto rate found."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Chandipur restaurant with a rupee figure could be opened (Tripadvisor blocked; Zomato Chandipur Dhaba page shows no price). Balasore town (16 km) Zomato 'for one' is 100-450, but that is another town.",
+        "sources": [],
+        "notes": "Seafood at beach shacks is priced by weight on the day."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Only 1 dated hotel price",
+        "No budget or homestay price",
+        "No local taxi rate",
+        "No food prices"
+      ]
+    },
+    "talasari": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No dated 18-19 Nov 2026 price found.",
+        "notes": "Talasari has very few properties. Shree Inn Talasari (3-star on Cleartrip) showed 'No rooms available' on 18 Nov. Goibibo shows Shree Inn Super Deluxe at 1,909 pre-tax but the page does not display the stay date and ignored date parameters, so it was not used. OTDC Panthasala Chandaneswar (Talasari) is listed by OTDC at about 1,300 per search results but the OTDC site is unreachable from here. Digha (West Bengal, 5 km) has many hotels; not priced here."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Talasari taxi quote found (Gozo had no Talasari route page).",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Talasari restaurant with a rupee figure found.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "No dated hotel price",
+        "No taxi rate",
+        "No food prices"
+      ]
+    }
+  }
+}
