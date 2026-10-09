@@ -176,38 +176,74 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
             <h2 style={h2Style}>What is observed and what is modelled</h2>
             <p style={prose}>
               The first version of this index was a formula with no per-place observations. In
-              October 2026 we checked it against real listing prices in 33 destinations. The
-              shoulder-season 3★ and homestay figures ran about 10–15% high after tax, the peak
-              multiplier was slightly high, and individual places were off by as much as
-              1.5–2.5×. Hotel rows also existed for places with no lodging at all.
+              October 2026 we checked it against real listing prices in 33 destinations. Compared
+              season for season, the model&apos;s 3★ and homestay figures ran about 35% high
+              where November is peak season (the plains, the coast, Goa) and about 20% high in the
+              hills. Individual places were off by as much as 1.5–2.5×. Hotel rows also existed for
+              places with no lodging at all.
             </p>
             <p style={prose}>
-              Since then each row carries one of three tags in{" "}
+              Every observed price is tied to the season of its stay date. Most listings were
+              priced for a stay in October or November, which is peak season for the plains and
+              the coast and shoulder season for most hill stations. That season gets the observed
+              price; the other two follow the model ratios (peak is shoulder × 1.35, measured on
+              the same hotels in five cities; low is shoulder × 0.65, not yet measured). Where the
+              stay date fell in a place&apos;s low season (Ladakh, Spiti, Gulmarg in November) we
+              keep the earlier figure until a summer price is measured, rather than scale a winter
+              price up by an unmeasured ratio.
+            </p>
+            <p style={prose}>
+              Many 3★ lists were priced for 12–13 November 2026, which is Diwali holiday week
+              (Lakshmi Puja falls on 8 November). We priced the same hotels on the same weekday two
+              and three weeks later in 29 towns. Cities barely moved (Mumbai, Delhi, Ahmedabad,
+              Jaipur: within 2%), while holiday towns charged far more in Diwali week (Jaisalmer
+              about 3.2×, Dwarka and Somnath about 2.3×, Mount Abu about 1.7×, Goa about 1.3×).
+              Holiday-week prices are divided by the measured premium for that town, or for its
+              state where the measured towns agree, or by the regional median otherwise. In the
+              measured towns the result is also averaged with the ordinary-night price we found
+              there, because cheaper hotels sell out first in a holiday week.
+            </p>
+            <p style={prose}>
+              A local taxi day and a day&apos;s food do not change with the season in the prices we
+              checked: taxi unions and operators publish one day rate, and menus do not move. Where
+              a place has not been researched yet, both now carry one year-round value: the old
+              formula&apos;s shoulder figure scaled to the audited prices (taxi × 0.79 in the hills
+              and × 0.64 on the plains and coast; food × 0.80 in the hills and unchanged on the
+              plains).
+            </p>
+            <p style={prose}>
+              Since then each row carries one of four tags in{" "}
               <code style={codeStyle}>source_ref</code>:
             </p>
             <ul style={ulStyle}>
               <li>
                 <code style={codeStyle}>observed_listings_2026_10</code>: the median of listed
                 prices for that place (Cleartrip, Kayak, Booking.com, Hostelworld and operator
-                sites, fetched 8 October 2026), with an estimated 12% GST added. Peak is the
-                shoulder price × 1.35, measured on the same hotels in five cities (late December
-                against late October to mid November).
+                sites, fetched 8 October 2026), with an estimated 12% GST added, anchored to the
+                season of the stay date as above.
               </li>
               <li>
-                <code style={codeStyle}>calibrated_model_2026_10</code>: modelled, with the stay
-                baselines scaled to match the observed places. Not an observation of that
-                place.
+                <code style={codeStyle}>observed_research_2026_10</code>: the same, from
+                place-by-place research (stay, local taxi day and food), every taxi and food
+                figure checked against its source page by a second reviewer before loading.
+              </li>
+              <li>
+                <code style={codeStyle}>calibrated_model_2026_10</code>: modelled, with stay,
+                taxi and food scaled to match the observed places as described above. Not an
+                observation of that place.
               </li>
               <li>
                 <code style={codeStyle}>editorial_model_2026_Q2</code>: the original formula.
-                Taxi, food, intercity, permit and activity rows are still here and have not yet
-                been checked against observed prices.
+                Intercity, permit and activity rows are still here and have not yet been checked
+                against observed prices.
               </li>
             </ul>
             <p style={prose}>
               We are replacing modelled rows with observed ones place by place, region by region,
-              starting with North India. Low-season and May–June hill-station prices have not been
-              measured and still follow the model.
+              starting with North and West India. Low-season and May–June hill-station prices have
+              not been measured and still follow the model. The season months come from each
+              place&apos;s best months to visit, so a hill station&apos;s May–June school-holiday rush
+              can sit in its shoulder or low season even though hotels charge most then.
             </p>
           </section>
 
@@ -221,8 +257,10 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
             <h3 style={h3Style}>1. Base rates</h3>
             <p style={prose}>
               Nine category baselines for a generic mid-tier Indian destination in shoulder
-              season, as originally set. The stay baselines have since been scaled down about 8–12%
-              against observed listings (see above); the others are unchanged and unchecked.
+              season, as originally set. The stay baselines have since been scaled down against
+              observed listings (see above: about 26% for 3★, 26% for homestays and 38% for dorm
+              beds where November is peak season, about 7–12% elsewhere); the others are unchanged
+              and unchecked.
             </p>
             <ul style={ulStyle}>
               <li>Homestay (per night): typical ₹2,200 · budget ₹1,000 · splurge ₹4,500</li>
