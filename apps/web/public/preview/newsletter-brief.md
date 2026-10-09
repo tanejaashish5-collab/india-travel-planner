@@ -37,8 +37,8 @@ Text very muted #6A6A65   (footer text, deep background)
 **Accent ladder (editorial signals):**
 ```
 Vermillion  #E55642   — editorial hook, month-name landmark, "why this week"
-Emerald     #34D399   — 5/5 peak score signal (= "go")
-Saffron     #C8932F   — 4/5 good-time score signal (= "works")
+Emerald     #34D399   — 10/10 peak score signal (= "go")
+Saffron     #C8932F   — 8/10 good-time score signal (= "works")
 Bone cream  #E8E2D6   — for oversized numerals / display accents
 ```
 

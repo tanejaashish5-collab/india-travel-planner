@@ -236,7 +236,7 @@ export default async function FirstTripIndiaPage({
       body: (
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
           <CinematicButton variant="primary" href={`/${locale}/explore`}>
-            Browse all 505 destinations
+            Browse all 533 destinations
           </CinematicButton>
           {FEATURES.aiPlanner ? (
             <CinematicButton variant="secondary" href={`/${locale}/plan`}>

@@ -36,7 +36,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const title = "Where to Go in India — by Month";
-  const description = "Pick a month and see India's 10/10 destinations for that window. Honest verdicts, weather windows, and skip-list flags. 460+ destinations scored.";
+  const description = "Pick a month and see India's 10/10 destinations for that window. Honest verdicts, weather windows, and skip-list flags. 533 destinations scored.";
   const canonical = `${SITE}/${locale}/where-to-go`;
   return {
     title,

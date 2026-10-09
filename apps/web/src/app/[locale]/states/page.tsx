@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return {
     title: "Browse India by State — Every Destination Scored",
-    description: "Explore India state by state. 340+ destinations across 27 states, each scored for every month. Find the best places to visit in any Indian state.",
+    description: "Explore India state by state. 533 destinations across 27 states, each scored for every month. Find the best places to visit in any Indian state.",
     ...localeAlternates(locale, "/states"),
   };
 }

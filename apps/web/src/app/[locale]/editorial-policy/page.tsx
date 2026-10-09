@@ -140,12 +140,12 @@ export default async function EditorialPolicyPage({ params }: { params: Promise<
           <section>
             <h2 style={h2Style}>How scores work.</h2>
             <p style={proseStyle}>
-              400+ destinations. Each one scored 0 to 10 for every month of the year. Scores are based on five
+              533 destinations. Each one scored 0 to 10 for every month of the year. Scores are based on five
               factors: weather conditions, road access and connectivity, crowd levels, infrastructure quality,
               and safety considerations.
             </p>
             <p style={{ ...proseStyle, marginTop: 16 }}>
-              A score of 5 means conditions are excellent across all factors for that month. A score of 1
+              A score of 10 means conditions are excellent across all factors for that month. A score of 2 or below
               means we actively recommend against visiting — dangerous roads, extreme weather, closed routes,
               or serious infrastructure gaps.
             </p>

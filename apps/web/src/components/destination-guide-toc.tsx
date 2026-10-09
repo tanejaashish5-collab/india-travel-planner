@@ -62,7 +62,7 @@ export function DestinationGuideToC({
       label: t("monthly"),
       count: t("toc.monthlyCount"),
       teaser: bestMonth
-        ? t("toc.monthlyPeak", { month: MONTH_SHORT[bestMonth.month], score: bestMonth.score })
+        ? t("toc.monthlyPeak", { month: MONTH_SHORT[bestMonth.month], score: bestMonth.score * 2 })
         : t("toc.monthlyFallback"),
       accent: "text-blue-400 border-blue-500/30 hover:bg-blue-500/10",
     },

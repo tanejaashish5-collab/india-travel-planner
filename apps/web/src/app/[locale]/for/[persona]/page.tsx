@@ -468,7 +468,7 @@ export default async function PersonaHubPage({
                   href={`/${locale}/explore`}
                   style={{ color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
                 >
-                  all 505 destinations
+                  all 533 destinations
                 </Link>
                 .
               </p>

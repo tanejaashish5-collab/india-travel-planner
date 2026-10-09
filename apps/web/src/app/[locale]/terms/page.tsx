@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Terms of Service",
     description:
-      "Terms of Service for NakshIQ, operated by Impresa de Artiste Pty Ltd. Covers editorial content, trip-planning tools, affiliate links, and user responsibilities.",
+      "Terms of Service for NakshIQ. Covers editorial content, trip-planning tools, affiliate links, and user responsibilities.",
     ...localeAlternates(locale, "/terms"),
   };
 }
@@ -108,10 +108,9 @@ export default async function TermsPage({
           <SectionLabel num="I" name="WHO WE ARE" />
           <Prose>
             <p>
-              NakshIQ is operated by Impresa de Artiste Pty Ltd, an Australian
-              company registered in the Australian Capital Territory. When we
-              say &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;NakshIQ&rdquo;
-              in these terms, we mean Impresa de Artiste Pty Ltd.
+              NakshIQ is an independent India travel publication. When we say
+              &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;NakshIQ&rdquo; in
+              these terms, we mean the NakshIQ editorial team.
             </p>
           </Prose>
         </section>
@@ -264,7 +263,7 @@ export default async function TermsPage({
           <Prose>
             <p>
               To the maximum extent permitted by Australian law, NakshIQ and
-              Impresa de Artiste Pty Ltd are not liable for any direct,
+              its editorial team are not liable for any direct,
               indirect, incidental, consequential, or special damages arising
               from your use of this website or reliance on its content. This
               includes, without limitation, damages arising from travel
@@ -338,7 +337,7 @@ export default async function TermsPage({
               margin: 0,
             }}
           >
-            — Impresa de Artiste Pty Ltd
+            — NakshIQ
           </p>
           <p
             className="nq-meta"

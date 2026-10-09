@@ -205,7 +205,7 @@ export default async function DesignPreview({
                 Body copy uses Geist Sans at 17px with 1.75 line-height, bone-dim
                 color. This sample reads naturally at the editorial register —
                 FT Weekend, not influencer-blog. Numerals inline:{" "}
-                <span className="nq-mono">505 destinations · 5,856 monthly verdicts</span>.
+                <span className="nq-mono">533 destinations · 6,396 monthly verdicts</span>.
               </p>
               <p>
                 Paragraphs space themselves at 18px via the flex gap. No need

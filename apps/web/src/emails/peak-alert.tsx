@@ -52,7 +52,7 @@ export default function PeakAlert({
 
           <Section style={card}>
             <Text style={cardLabel}>NAKSHIQ VERDICT</Text>
-            <Text style={cardVerdict}>{verdictDisplay} · {score}/5</Text>
+            <Text style={cardVerdict}>{verdictDisplay} · {score * 2}/10</Text>
             {scoreNote && <Text style={cardNote}>{scoreNote}</Text>}
           </Section>
 
