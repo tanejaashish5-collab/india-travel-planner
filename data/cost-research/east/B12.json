@@ -391,6 +391,98 @@
         "local taxi day",
         "food"
       ]
+    },
+    "lunglei": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1000,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://mizoramtourism.com/lodge-detail/69"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 200,
+        "dorm_n": 1,
+        "dorm_sources": [
+          "https://mizoramtourism.com/lodge-detail/69"
+        ],
+        "price_basis": "Mizoram Tourism (govt) Lunglei Tourist Lodge, Zotlang, tariff card, undated: Double Beded Room Rs 1,000, Semi Deluxe Rs 1,500, Dormitory Rs 200 per bed. Not a dated 18-19 Nov quote.",
+        "notes": "Cleartrip Lunglei page returned no listings; Tripadvisor 403. Private hotels (Hotel Ono, Hotel Elite, Seasons Hotel) exist but no fetchable price."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No local day or union rate found. Only template cab sites (cabbazar, gozocabs) quote Aizawl to Lunglei; not used.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Lunglei restaurant rupee figures found; Restaurant Guru shows only a price tier.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "mid-range and private hotel prices",
+        "homestay",
+        "taxi",
+        "food"
+      ]
+    },
+    "phawngpui-peak": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Sangau (Sangau Tourist Lodge and guest house, about 20 km from the park per Tripoto); Vawmbuk village is the trailhead; Lawngtlai and Saiha are the towns with private lodges",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 750,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.tripoto.com/mizoram/places-to-visit/phawngpui-national-park"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Undated blog range for Sangau Guest House, 'about Rs 500 to Rs 1000 per night' (Tripoto, no date on page); 750 is the midpoint of that single property's range. Not a dated quote.",
+        "notes": "Peak itself has a forest rest house inside the park (Tripoto: 'prior booking required', no tariff printed) and a campsite (park camping fee Rs 50 per person per night for Indians). Mizoram Tourism's Sangau Tourist Lodge page (https://mizoramtourism.com/lodge-detail/68) prints no tariff and shows no rooms available. No eateries inside the park."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sumo",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No taxi rate found. Access is by Sumo/maxi cab from Aizawl or Saiha to Sangau, then trek; no printed fare found.",
+        "sources": [],
+        "notes": ""
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No eateries inside the park (Tripoto); no rupee food prices found for Sangau or Vawmbuk.",
+        "sources": [],
+        "notes": ""
+      },
+      "confidence": "low",
+      "unverified": [
+        "dated lodging price",
+        "taxi",
+        "food",
+        "forest rest house tariff"
+      ]
     }
   }
 }
