@@ -98,3 +98,23 @@ Lessons from the North India pass (apply to every later region)
   is dropped. If a page shows a range, give the range in `basis` and the median as the figure.
 - Searches may run out mid-batch; fall back to fetching the listing URLs directly (Cleartrip, Kayak, Booking,
   Hostelworld, Savaari) rather than guessing.
+
+East and North-East pass (2026-10-09)
+- Stay date: Wed 18 Nov to Thu 19 Nov 2026, 1 room, 2 adults. It sits between Chhath Puja (13-16 Nov 2026) and Kartik
+  Purnima / Guru Nanak Jayanti / Majuli Raas (24 Nov), and before Hornbill (1-10 Dec, Kohima). Never price 7-16 Nov.
+- Cleartrip's city list pages (`/hotels/3-star-hotels-in-<city>`) are locked to 13-14 Nov and ignore date
+  parameters. Use them only to find hotels. Then open each hotel's detail page with the date in the URL, e.g.
+  `https://www.cleartrip.com/hotels/details/<slug-id>?c=18112026|19112026&r=2,0`, and record that page's pre-tax
+  price. Put "18-19 Nov 2026" in `price_basis` for every tier priced this way, tier by tier ("Mid: ... Homestay: ...").
+- If a detail page will not load a dated price, you may fall back to the list price, but write its real date
+  ("13-14 Nov 2026") in `price_basis`. The loader holds those rather than guessing a holiday premium.
+- Homestays and guesthouses in the hills and the North-East are often missing from OTAs. A state tourism
+  department or registered-homestay list with a printed tariff is a good source: say "tariff card, undated".
+  Hostelworld dorm prices are undated: say so.
+- Sikkim, Darjeeling, Kalimpong and Shillong cabs run on union or syndicate rate charts (e.g. Gangtok "3-point /
+  5-point / 7-point" sightseeing, Darjeeling "full-day sightseeing"). A day package FROM a base to a far lake or
+  pass (Gangtok to Tsomgo/Nathula, Gangtok to Lachung, Shillong to Dawki) is a `point_to_point` entry, not the
+  local day.
+- No-lodging candidates need a source: lakes and passes (Tsomgo, Gurudongmar, Zuluk has homestays), archaeological
+  sites (Dhauli, Nalanda, Pawapuri, Vaishali, Charaideo, Unakoti), sanctuaries with only a forest rest house. A
+  forest or tourism rest house that takes public bookings IS lodging: price it if a tariff is shown.

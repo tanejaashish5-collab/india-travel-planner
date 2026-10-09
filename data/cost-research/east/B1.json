@@ -1,0 +1,768 @@
+{
+  "batch": "B1",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "kolkata": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2353,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/ra-vista-4482778?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4670842?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/gram-bangla-retreat-4275300?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561434?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4273342?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5771141?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1872,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-platinum-2044980?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-venkateshwara-378858?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/flavours-inn-kolkata-2628302?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/bhammars-inn-388013?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-best-inn-744362?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1565,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/dorota-house-3975194?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/red-arrow-residency-2628306?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/oyo-home-78050-cozy-studio-collage-square-hotel-maya-international-3986365?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/manner-residency-opposite-technopolis-4682824?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 575,
+        "dorm_n": 12,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Kolkata?currency=INR"
+        ],
+        "price_basis": "Mid, Budget, Homestay: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown (taxes and fees extra). Dorm: Hostelworld 'from' dorm bed price per night, undated (page shows no stay date), median of 12 hostels.",
+        "notes": "Mid prices: Ra Vista 3,600; Kings Crown VIP Road 1,970; Gram Bangla Retreat 1,838; Casa Broadway 3,102; Brio Hotel 2,735; Hotel O Jessore Road 1,334 (the first six properties on Cleartrip's 3-star Kolkata list; the median of all 12 listed 3-stars priced for 18 Nov is also about 2,353). Budget: first five priced properties on Cleartrip's budget-hotels list: Hotel Platinum 1,052; Hotel Venkateshwara 1,632; Flavours Inn 1,872; Bhammars Inn 4,185; Hotel Best Inn 5,639 (Cleartrip's budget list mixes in some pricey hotels; median is robust). Homestay: Cleartrip homestays list, priced for 18 Nov: Dorota House 1,684; Red Arrow Residency 3,526; Hotel O Home Cozy Studio College Square 899; Manner Residency 1,446 (some are OYO Home style listings). Several budget-list pages return 404 or no rooms for 18 Nov and were skipped."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 17,
+        "point_to_point": [
+          {
+            "route": "Kolkata to Godkhali / Sundarbans (~120 km)",
+            "inr": 3412,
+            "range": "sedan one-way, GetMeCab sample fare for Sun 11 Oct, 125 km included, Rs 24/km extra; includes Rs 250 driver allowance and GST Rs 162; tolls and state tax extra"
+          },
+          {
+            "route": "Kolkata to Digha (~185 km)",
+            "inr": 4550,
+            "range": "sedan one-way, Brahmdev Cab Services chart, before GST; tolls, permits, parking extra"
+          },
+          {
+            "route": "Kolkata to Siliguri (~570 km)",
+            "inr": 12900,
+            "range": "sedan one-way, Brahmdev Cab Services chart, before GST; tolls, permits, parking extra"
+          }
+        ],
+        "basis": "Local 8 hr / 80 km sedan: Brahmdev Cab Services (98 H/3 Garden Reach Road, Watganj, Kolkata 700023) chart prints Hatchback 1,500, Sedan 1,800, SUV 2,300, Innova 2,500, Crysta 3,000; sedan outstation Rs 17/km with Rs 300 driver allowance, 250 km/day minimum, fares exclude GST. Corroborated by TaxiYatri Kolkata local rental (Swift Dzire 8 hr/80 km Rs 1,700) and 24cabservice Kolkata full day (Sedan Dzire/Etios 8 hr/80 km Rs 2,000); median of 1,700, 1,800, 2,000 = 1,800. Quickocity prints a wider 'usually Rs 2,000-3,500 for a sedan (8 hours/80 km)' and says prices may rise Oct-Mar and during Durga Puja; not used in the median.",
+        "sources": [
+          "https://www.localoutstationcabrental.co.in/tariff",
+          "https://www.taxiyatri.com/innova-on-rent-in-kolkata",
+          "https://www.24cabservice.com/kolkata-full-day-taxi-service/",
+          "https://www.getmecab.com/kolkata-to-sundarbans-cabs",
+          "https://quickocity.com/kolkata-city-tour-car-booking/"
+        ],
+        "notes": "None of the pages is dated (TaxiYatri and Brahmdev show only a 2026 copyright; Brahmdev labels its chart 'Updated pricing'). Brahmdev is the only operator with a street address; the other two are operator pages without one. No Kolkata taxi union card found: city yellow taxis run on the meter. Parking, tolls and extra hours/km are extra (extra hour 160-220 per operator pages)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 500,
+        "standard_inr": 1200,
+        "basis": "Standard: Times Foodie (updated 22 Apr 2025) 'Price for two' at six Bengali sit-down restaurants: Aamar Kolkata 500, The Bhoj Company 600, Himur Heshel 700, Kasturi 950, Bhojohori Manna 1,000, 6 Ballygunge Place 1,000; median for two 825 = 413 per meal; x3 = 1,238. Cross-check: indiaesque.com (updated 30 Aug 2026) 'casual restaurant 300-500' per meal (mid 400 x3 = 1,200). Set at 1,200. Budget: Indian Coffee House 50-100 (mid 75) for breakfast, Aminia biryani 200-350 (mid 275) for lunch, Nizam's roll 100-200 (mid 150) for dinner (all indiaesque.com 30 Aug 2026) = 500. Havemony (3 Apr 2026) prints Nizam's rolls at 60-120 and phuchka 20-40 per plate, so a leaner day is possible.",
+        "sources": [
+          "https://www.timesfoodie.com/reviews/feast-like-a-king-at-these-10-best-bengali-thali-places-in-kolkata/119209119.cms",
+          "https://indiaesque.com/kolkata/food-guide/",
+          "https://havemony.com/blogs/where-to-eat-in-kolkata/"
+        ],
+        "notes": "Zomato and Tripadvisor pages timed out or returned 403, so no Zomato 'cost for two' used. The Times Foodie figures are editorial 'price for two' lines, not menu photos. Indiaesque and Havemony quote ranges, not menus."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "No Kolkata taxi union or government rate card found; local day is from three operator pages (one with a real address)",
+        "Zomato / Tripadvisor 'cost for two' pages blocked, so food rests on editorial price lists",
+        "Operator pages for taxi carry no date",
+        "Kolkata to Sundarbans and Digha fares are single-operator quotes"
+      ]
+    },
+    "sundarbans": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 4013,
+        "mid_n": 3,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/sunderban-tiger-camp-3975357?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-sonar-bangla-sundarbans-5419936?c=18112026|19112026&r=2,0",
+          "https://wbtdcl.wbtourismgov.in/home"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages dated 18-19 Nov 2026 (pre-tax, 1 room 2 adults) for Sunderban Tiger Camp 4,013 and Hotel Sonar Bangla Sundarbans 7,133, plus West Bengal Tourism (WBTDCL) printed tariff card 'Rs. 2000.00-3200.00 per room per night' for Matla Tourism Property, Sajnekhali (undated; midpoint 2,600 used). Median of 2,600; 4,013; 7,133.",
+        "notes": "Only these three properties had a usable price. On Cleartrip the other Sundarbans-area listings (Sundarban Tulip Homestay, Tulip Homestay, Nona Mati Lodge, SDD Royal Bengal Resort, Sunderban Tiger Camp Wildlife Resort) showed 'No rooms available' for 18 Nov 2026, so no budget or homestay median. Most Sundarbans resorts sell packages (room plus meals plus boat safari); room-only prices here are not the usual product. No dorms exist."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kolkata to Godkhali (~85 km), sedan one-way",
+            "inr": 1621,
+            "range": "Sedan (Dzire or equivalent) one-way, Gozocabs, 'Rs 1,621' before GST; page says ~85 km / 3h10m and 'prices include distance, driver allowance, taxes, tolls etc.' Gozo fares are dynamic (the sister Canning-Gadkhali page prints a different level)."
+          },
+          {
+            "route": "Kolkata to Sundarbans / Godkhali (~120 km), sedan one-way",
+            "inr": 3412,
+            "range": "GetMeCab sample fare for Sun 11 Oct, 125 km included, Rs 24/km extra, driver allowance Rs 250 and GST Rs 162 inside the fare; tolls and state tax extra; page says route 120 km, about 5 h. Differs from the Gozo fare above by 2x: both are single-operator quotes."
+          },
+          {
+            "route": "Kolkata to Godkhali (~100 km), one-way private taxi",
+            "inr": 2250,
+            "range": "EaseIndiaTrip blog dated 25 Aug 2025: 'A one-way trip costs around Rs 2,000-Rs 2,500'; no vehicle class named. Figure is the midpoint."
+          },
+          {
+            "route": "Canning to Godkhali Ferry Ghat (~29 km), sedan one-way",
+            "inr": 1986,
+            "range": "Gozocabs sedan (Dzire or equivalent) one-way 'lowest fare' Rs 1,986 before GST, ~29 km / 1h07; dynamic pricing, treat as upper-end for a short hop."
+          }
+        ],
+        "basis": "Sundarbans is boat-based: once at Godkhali/Gosaba/Pakhiralay visitors move by launch or boat, and cars are not used for sightseeing, so there is no local cab day (null). Access cost is the Kolkata-Godkhali road leg (single-operator quotes disagree by about 2x: Gozocabs 1,621 for ~85 km, GetMeCab 3,412 for ~120 km, blog 2,000-2,500): Gozocabs sedan one-way 1,621 (before GST), EaseIndiaTrip blog one-way 2,000-2,500 (mid 2,250) and round trip with waiting 3,500-4,500 (mid 4,000), Gozocabs Canning-Godkhali sedan 1,986. No union rate card or local operator with a Godkhali address and a sedan tariff found. Per-km rate left null: the only per-km figures seen were generic templates across routes.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/kolkata-gadkhali",
+          "https://www.gozocabs.com/book-taxi/canning-gadkhali",
+          "https://www.easeindiatrip.com/blog/how-to-reach-sundarbans-from-kolkata/",
+          "https://www.getmecab.com/kolkata-to-sundarbans-cabs"
+        ],
+        "notes": "Boat/launch and package rates (NOT taxi, notes only): (1) West Bengal Tourism (WBTDCL) official package 'EXPERIENCE SUNDERBANS 2 Nights 3 Days' Rs 11,428.00 per head, ex-Tourism Centre Kolkata, AC bus, breakfast/lunch/snacks/tea/dinner, cruise, forest permit, guide, stay at WB Tourism property (Matla, Sajnekhali); listed departure windows include 20-22 Nov 2026: https://wbtdcl.wbtourismgov.in/package . (2) Visit Sundarbans day tour from Kolkata: Rs 16,000 total for 1-4 travellers, Rs 1,400 per extra person, A/C car transfers, forest guide, jungle and boat permit fees, breakfast, lunch, tea, non-AC open-deck boat; address 54 Ho Chi Minh Sarani, Kolkata 700008; page says 'Prices Valid Till 31st October 2026' (expires before the traveller date): https://visitsunderbans.com/day-tour-to-sundarbans-from-kolkata.html . (3) Sundarban Tour Resort (Dayapur, Gosaba 743370) private boat rental page: 'Rs.10,000 per day', 'BOAT ENTRY FEES: Rs.1,200 per day + Holiday charges', 'GUIDE CHARGES: Rs.600 per day + one-time Way Charge Rs.200', 'MAN PERMISSION: Rs.120 per day per person'; rates stated as not applicable 20 Dec to 26 Jan: https://sundarbantourresort.in/sundarban-boat-rental/ . (4) Official forest charges as printed by tourdesundarbans.com (page dated 22 May 2026): Indian tourist Rs 180/day, non-AC boat entry Rs 1,000, non-AC lounge Rs 1,500, AC launch Rs 3,000, Indian eco guide Rs 800 per group/vessel/day, Sajnekhali camp Rs 50: https://tourdesundarbans.com/how-expensive-is-a-sundarbans-trip-full-cost-breakdown/ . Same page prints a per-person Kolkata to Godkhali/Canning transfer of Rs 800-2,500 ('higher for AC car, lower for shared travel')."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 625,
+        "basis": "No restaurant menus or thali boards found for Gosaba/Godkhali/Pakhiralay: resorts and homestays serve meals inside packages and publish no extra-meal tariff. Only printed rupee figure for meals: tourdesundarbans.com cost breakdown (dated 22 May 2026) row 'Meals for 4 days | Rs 1,200 to Rs 2,500 | Bengali meals are common'. Per day = 1,200/4 = 300 (budget end) and 2,500/4 = 625 (upper end, used as standard).",
+        "sources": [
+          "https://tourdesundarbans.com/how-expensive-is-a-sundarbans-trip-full-cost-breakdown/"
+        ],
+        "notes": "Single-source, low confidence. Most visitors take a package or resort meal plan, so there is little a-la-carte eating. Packages bundle meals with other items and cannot be split (e.g. triptosundarbans.com lists 1 Day from Kolkata Rs 2,500 per person with breakfast and lunch, min 10; 1 Night 2 Days Rs 3,500 with breakfast, lunch and dinner). Page prints no per-meal price. Operator address on the cited page: 11 Chowringhee Lane, Kolkata 700016."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local cab day: none exists (boat-based); no sedan tariff found from an operator with a Godkhali or Gosaba address",
+        "Per-km outstation rate for Kolkata-Godkhali (only generic template rates seen)",
+        "Any restaurant menu, thali board or cost-for-two for Gosaba/Godkhali/Pakhiralay (Zomato/Swiggy/Justdial/magicpin returned nothing for this area)",
+        "Gozocabs fares are dynamic and the two Gozo pages are not mutually consistent; Savaari and MakeMyTrip Kolkata-Godkhali pages would not render prices",
+        "Current (Nov 2026) WBTDCL Sajnekhali lodge room-only tariff",
+        "Room prices: most Sundarbans listings on Cleartrip showed 'No rooms available' for 18 Nov 2026, so only two dated prices (Tiger Camp, Sonar Bangla) plus the WBTDCL tariff card back the mid figure",
+        "Whether the 'Meals for 4 days Rs 1,200-2,500' line on tourdesundarbans.com is per person (assumed; the table does not say)"
+      ]
+    },
+    "shantiniketan": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2553,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/ananda-resorts-4063766?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-royal-bengal-709866?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ram-shyam-village-resort-3919393?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-utsav-716137?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292123?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4273226?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1527,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-basundhara-713309?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/tulusi-inn-4063755?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sonajhuri-bagan-bari-5413904?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4535064?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5679974?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid and Budget: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown. Hotels are in Bolpur / Santiniketan (Cleartrip lists them under Bolpur).",
+        "notes": "Mid: first six properties on Cleartrip's 3-star Bolpur list: Annaratna Resorts 2,898; Hotel Royal Bengal 2,760; Ram Shyam Village Resort 2,180; Utsav Hotel 1,919; Mohor Kutir Resorts 3,492; Club Central Hotel 2,346. Budget: Cleartrip's Shantiniketan budget list had only two priced properties (Hotel Basundhara 643; Utsav 1,919, already in the mid set), so it was topped up with the cheapest priced 3-star-list properties: Hotel Basundhara 643; Tulusi Inn 1,114; Sonajhuri Bagan Bari 1,527; Rangamati Garden Resort 1,724; Marble Palace Guest House 1,944. Homestay: the Shantiniketan homestay listings (Amro Kunja, Mrigana, Hotel Nisha, Hotel Nisa, Emblic) showed 'No rooms available' for 18 Nov, so no homestay median. No Hostelworld page for Bolpur or Santiniketan (404)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 900,
+        "vehicle": "auto",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Kolkata to Bolpur/Santiniketan (~159 km)",
+            "inr": 3065,
+            "range": "Gozocabs sedan (Dzire or equivalent) one-way 'Lowest fare' Rs 3,065 before GST, ~159 km / 3h50; price includes distance, driver allowance, taxes, tolls."
+          },
+          {
+            "route": "Kolkata to Bolpur, one-way",
+            "inr": 2999,
+            "range": "Easy Go Cab (Green Field City, Behala, Kolkata 700141) AC sedan Swift Dzire/Toyota Etios one-way Rs 2,999; round trip Rs 5,399; waiting 4 hours free then Rs 150/hour; fares may be higher in Poush Mela and Basanta Utsav."
+          },
+          {
+            "route": "Kolkata to Santiniketan day tour, AC sedan/hatchback 1-4 persons",
+            "inr": 8500,
+            "range": "Take A Break Travels (54 Ho Chi Minh Sarani, Kolkata 700008): Rs 8,500 incl fuel, driver, toll, parking; excludes meals, entry fees, e-rickshaw charges; 2-day transport-only Rs 11,500. Page has no validity date."
+          }
+        ],
+        "basis": "No sedan 8h/80km LOCAL day found from a union card or an operator with a Bolpur address (Gozocabs local page: 'No indicative local package fares are currently available'; Reke India and 24CabService show only per-km starting rates and no address; CabBazar-type template pages not used). Santiniketan is toto-based locally, so per the brief the local figure is a toto (battery e-rickshaw) full-day hire, vehicle 'auto': Rs 800 (travelingcreature.com post dated 30 Jul 2025: 'a day-long ride for Rs 800', initial quote Rs 1,200) and Rs 1,000 (theholidaystory.com updated 16 Jul 2026: 'Today, the Toto cost is 1000 rupees', Day 3 itinerary); midpoint 900. Per-km 14 is not used as a rate from a priced source; Gozo shows 'From Rs 13.50/km' and an undated Kolkata operator page prints Rs 14/km.",
+        "sources": [
+          "https://travelingcreature.com/one-day-shantiniketan-tour/",
+          "https://www.theholidaystory.com/bolpur-santiniketan-tour-plan-guide-kolkata/",
+          "https://www.gozocabs.com/book-taxi/kolkata-bolpur_santiniketan",
+          "https://www.gozocabs.com/car-rental/bolpursantiniketan",
+          "https://easygocab.com/popular-routes/kolkata-to-bolpur",
+          "https://www.visitsunderbans.com/shantiniketan-bolpur-tour-plan-from-kolkata-1--2-days.html"
+        ],
+        "notes": "The 900 is a TOTO (e-rickshaw) day, not a sedan: do not display it as a cab price. Two single-traveller data points, both negotiable. Short hops: indianvagabond.com (updated 10 Nov 2022) says a fully reserved toto costs Rs 80-150 depending on time of day. No acceptable source for a local sedan day was found, so none is reported. Entry fees printed on travelingcreature: Rabindra Bhavan Rs 100, Srijani Shilpagram Rs 30, Gitanjali Rail Museum Rs 30, Surul Rajbari Rs 10."
+      },
+      "food_per_person_day": {
+        "budget_inr": 410,
+        "standard_inr": 650,
+        "basis": "Budget: Holidify Santiniketan prints 'INR 300 For Two' for SK Restaurant (Bolpur-Santiniketan Rd), Shakuntala and Rasna Hotel & Restaurant (Chandi Das Road, Bolpur) = 150 per meal, and 'INR 150-300 For Two' for Visva Bharati Cafeteria (mid 225 = ~112 per meal). Breakfast 112 (cafeteria) + lunch 150 + dinner 150 = 412, rounded 410. Cross-check: Ram Shyam veg thali Rs 130 and Katla jhol Rs 180 (moha-mushkil blog, 10 Aug 2019, old); tour operator Udichi Regency (page dated 12 Feb 2025) prints food 'Rs 500-Rs 1000 per day'. Standard: magicpin lists 'Cost for two Rs 500' for Sonajhuri Restaurant (mains Chicken With Vegetable 255, Fish In Hot Garlic Sauce 280, Tandoori Aloo 150), Club Central Flavours (Dal Makhani 200, Butter Tandoori Roti 45) and C4 Restaurant = 250 per meal; cafe-level breakfast at 150 (Rs 300 for two, Holidify level). 150 + 250 + 250 = 650.",
+        "sources": [
+          "https://www.holidify.com/places/santiniketan/restaurants-places-to-eat-local-cuisine.html",
+          "https://magicpin.in/Birbhum/Bolpur/Restaurant/Sonajhuri-Restaurant/store/85c600/menu",
+          "https://magicpin.in/Birbhum/Bolpur/Restaurant/Club-Central---Flavours-Restaurant/store/607494/menu/",
+          "https://magicpin.in/Birbhum/Bolpur/Restaurant/C4-Restaurant-Bolpur/store/902775/menu",
+          "https://udichiregency.com/shantiniketan-tour-plan/",
+          "https://moha-mushkil.com/best-food-shantiniketan/"
+        ],
+        "notes": "Thin evidence: Zomato, Swiggy, Justdial and Tripadvisor pages timed out or returned 403, so no dated menus. Magicpin shows an identical 'Rs 500 for two' on many Bolpur listings (possibly a default); only partly corroborated by the dish prices on the Sonajhuri and Club Central pages. Holidify pages are undated. Tea ~Rs 20 and Hensel Ghor veg thali ~Rs 150 appeared in search summaries but could not be opened, so not used."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Sedan local 8h/80km day (no union card or Bolpur-address operator found); toto day only",
+        "Dated Zomato/Swiggy cost-for-two for Aarhani, Hensel Ghor (Amar Kutir), Kasahara cafe, Banalakshmi (pages blocked or timed out)",
+        "Breakfast item prices (kochuri/sabzi, tea) on a dated menu",
+        "Whether Nov 2026 season or weekend demand changes toto and cab rates (Easy Go Cab says fares rise in Poush Mela and Basanta Utsav)"
+      ]
+    },
+    "siliguri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2657,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/cygnett-style-tania-s-3909970?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sinclairs-siliguri-160790?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-loft-hotel-2049722?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-autograph-inn-4279315?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4670372?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4290341?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1659,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/mount-embassy-168701?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sundaram-palace-736764?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-simla-737444?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": 575,
+        "dorm_n": 6,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Siliguri?currency=INR"
+        ],
+        "price_basis": "Mid and Budget: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown. Dorm: Hostelworld 'from' dorm bed price per night, undated, median of 6 hostels.",
+        "notes": "Mid: first six properties on Cleartrip's 3-star Siliguri list: Cygnett Style Tania's 2,613; Sinclairs Siliguri 3,331; The Loft Hotel 2,306; The Autograph Inn 2,700; Hotel Insta 18 1,987; Hotel Surya Grand 4,250. Budget: the three properties on Cleartrip's budget-hotels list that returned an 18 Nov price (Mount Embassy 1,530; Hotel Sundaram Palace 1,820; Hotel Simla 1,659); several other budget-list pages were 404 or had no rooms. Cleartrip's Siliguri 'homestays' list is ordinary hotels, so no homestay median was taken."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2500,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 17,
+        "point_to_point": [
+          {
+            "route": "Siliguri to Darjeeling",
+            "inr": 2300,
+            "range": "Swift Dzire, Car Rental Siliguri (3rd Floor, Vyom Sachitra, 3C Pranami Mandir Rd, Siliguri 734001) tariff table, Dzire column; 'All rates are approximate'. A second Siliguri operator prints sedan Rs 2,500-3,000 for Siliguri/NJP/Bagdogra to Darjeeling."
+          },
+          {
+            "route": "Siliguri to Kalimpong",
+            "inr": 2600,
+            "range": "Swift Dzire, Car Rental Siliguri tariff table. Siliguri Cab Rental prints sedan Rs 2,500-3,000."
+          },
+          {
+            "route": "Siliguri to Gangtok",
+            "inr": 3200,
+            "range": "Swift Dzire, Car Rental Siliguri tariff table. Siliguri Cab Rental prints sedan Rs 3,500-4,000."
+          },
+          {
+            "route": "Siliguri to Jaldapara (Dooars)",
+            "inr": 2800,
+            "range": "Swift Dzire, Car Rental Siliguri tariff table; Siliguri to Lataguri (Dooars) 2,300 on the same table."
+          },
+          {
+            "route": "NJP Station to Mirik",
+            "inr": 2000,
+            "range": "Siliguri Cab Rental prints sedan/hatchback Rs 1,800-2,200 from NJP and Bagdogra (midpoint 2,000); no Siliguri-Mirik row. Operator page prints no street address."
+          }
+        ],
+        "basis": "Car Rental Siliguri (address above) Swift Dzire 'City-to-Local 8 hr / 80 km: Starting from Rs 2500', extra km Rs 15/km, extra hour Rs 150/hr; outstation 'Per Km Rs 17', minimum 250 km/day; page undated (2026 copyright). Siliguri Cab Rental (siliguricabrental.com, 'Updated Rates for 2026', no street address on page, peak surcharge 20-30%) prints Hatchback/Sedan 'Siliguri Local Sightseeing (8 Hrs / 80 Km) Rs 2,200 - Rs 2,500' (SUV 3,000-3,500). Reported 2,500 = the addressed operator and the top of the other range. Not a union card: no Siliguri union rate list found. Savaari's Siliguri page would not render prices; template cab sites not used.",
+        "sources": [
+          "https://www.carrentalsiliguri.com/car-rental-tariffs",
+          "https://siliguricabrental.com/taxis-tariff.php"
+        ],
+        "notes": "Local day covers city spots (Salugara, ISKCON, Mahananda sanctuary, Coronation Bridge/Sevoke, Bengal Safari). Entry and safari fees extra. Parking and tolls at actuals. Darjeeling, Gangtok and Mirik day trips are point_to_point, not local."
+      },
+      "food_per_person_day": {
+        "budget_inr": 430,
+        "standard_inr": 640,
+        "basis": "Budget: breakfast 100 = Mughal Darbar (Hill Cart Road) Egg Roll 50 + Veg Roll 50; lunch 130 = Adi Kalpana Pice Hotel (Bidhan Market) Veg Combo (rice, dal, aloo fries, 1 sabzi, salad); dinner 200 = Adi Kalpana 'Cost for two Rs 400' / 2. 100 + 130 + 200 = 430. Cross-checks: The Original Dada Bhai Hotel 'Cost for two Rs 200' (Plain Rice Combo 109); Momo Hut 'Cost for two Rs 300' (veg steamed momo 8 pcs 70). Standard: cost for two / 2 per meal over 6 sit-down places: Madira 'INR 250-300' (mid 275), Eminent Restaurant 'INR 250-300' (mid 275), Adi Kalpana 400, Mughal Darbar 450, Bhojohori Manna 600 (Veg Thala 255; Luchi with Chicken Dak Bungalow 265), Eat & Meet Cafe 800. Sorted 275, 275, 400, 450, 600, 800: median 425 for two = 212.5 per meal x 3 = 637.5, rounded 640.",
+        "sources": [
+          "https://magicpin.in/Siliguri/Hill-Cart-Road/Restaurant/Mughal-Darbar/store/3390c6",
+          "https://magicpin.in/Siliguri/Bidhan-Market/Restaurant/Adi-Kalpana-Pice-Hotel/store/3a563b/menu/",
+          "https://magicpin.in/Siliguri/Bidhan-Market/Restaurant/The-Original-Dada-Bhai-Hotel/store/446a1c/menu/",
+          "https://magicpin.in/Siliguri/Hill-Cart-Road/Restaurant/Momo-Hut/store/3a5643/menu",
+          "https://magicpin.in/Siliguri/Hill-Cart-Road/Restaurant/Bhojohori-Manna/store/33b257/menu",
+          "https://magicpin.in/Siliguri/Hill-Cart-Road/Restaurant/Eat-and-Meet-Cafe/store/20174cc",
+          "https://www.holidify.com/places/siliguri/restaurants-places-to-eat-local-cuisine.html"
+        ],
+        "notes": "All pages undated. Holidify prints a 'For Two' label for only Madira, Manpasand ('INR 100-150 For Two') and Eminent; its other figures are unlabeled and were not used. Wanderlog reviewer quotes Siliguri Food Court veg buffet thali Rs 180 and non-veg Rs 250 (undated review, not used in arithmetic)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Union or syndicate rate card for Siliguri local sightseeing (none found)",
+        "Savaari and MakeMyTrip Siliguri local 8h/80km price (pages did not render or timed out)",
+        "Zomato, Swiggy and Justdial cost-for-two for Siliguri (blocked, timed out or JS-only)",
+        "Dated menu for a cafe breakfast; Eat & Meet Cafe page prints only cost for two"
+      ]
+    },
+    "darjeeling": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3500,
+        "vehicle": "small taxi (4 pax, hatchback/sedan class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Darjeeling to NJP/Bagdogra",
+            "inr": 3250,
+            "range": "3,000-3,500 private small taxi (darjeeling-tourism.com, fare updated March 2022); 2,500-2,800 hatchback, NJP/Bagdogra to Darjeeling via Rohini/Pankhabari (touradviser.in, 'Updated 2026'); 3,500 small 4 seater NJP/Bagdogra to Darjeeling (sikkimtravellers.com 2026). Median of the three mid-points (3,250 / 2,650 / 3,500). The same Darjeeling page quotes a Feb 2021 forum reply of 'Rs. 1860 for a small car' pre-paid from Bagdogra airport"
+          },
+          {
+            "route": "Darjeeling to Kalimpong (~2.5 h)",
+            "inr": 2800,
+            "range": "3,000 small car, 3,500 bigger car (darjeeling-tourism.com, March 2022); 2,500-2,800 hatchback, 3,200-3,500 SUV (touradviser.in 2026)"
+          },
+          {
+            "route": "Darjeeling to Gangtok (4-5 h)",
+            "inr": 3700,
+            "range": "4,000 small car (darjeeling-tourism.com, March 2022); 3,000-3,500 hatchback (touradviser.in 2026); 3,700 sedan Gangtok to Darjeeling one way (jagnishtours.com 2026-27). Median of 4,000 / 3,250 / 3,700"
+          }
+        ],
+        "basis": "Full-day 'mixed points' (3-point Tiger Hill/Ghoom/Batasia sunrise + 7-point) is the Darjeeling full local day. darjeeling-tourism.com (Fare updated March 2022): 'Mixed Point tour (7 hours): Costs Rs. 3,500 in small taxi, Rs. 4,000 in larger taxi' through the Upper Clubside Vehicle Owners' Association, 'a small office run by the Taxi Association ... fixed rates' (the page also says the association chart 'can be completely misleading'; same page: 3-point 2,000, 5-point 1,800, 7-point 4 h 2,500 small taxi). touradviser.in ('Darjeeling Local Sightseeing Fare Chart (Updated 2026)', January 2026): 'Mixed Points (Full Day)' 4:00 AM-4:00 PM hatchback 3,500-4,000 (SUV 4,500-5,000, Innova 5,500-6,500). sdtravelsgroup.com (Unit 9, 3rd Floor, Home Square, NH10, Salugara, Siliguri; post dated 20 Apr 2026): 'A full-day sightseeing ... costs around Rs 2,500-3,500'. darjeelingtaxi.com (Rockwood, Chotta Kak Jhora, Darjeeling; undated, footer 2014; says rates are fixed by Government): 3-point sunrise + mix point 9:30 am-3:00 pm 3,000 for 4 pax car. The union-linked figure (3,500) is matched by the top of the 2026 operator ranges and sits at the upper end of the older ones; kept 3,500 because mid-Nov is high season.",
+        "sources": [
+          "https://www.darjeeling-tourism.com/darj_000084.htm",
+          "https://www.darjeeling-tourism.com/darj_00008d.htm",
+          "https://www.touradviser.in/darjeeling-local-sightseeing-taxi",
+          "https://sdtravelsgroup.com/darjeeling-local-sightseeing-car-fare/",
+          "https://darjeelingtaxi.com/sightSeeing.aspx",
+          "https://www.sikkimtravellers.com/page/taxi-tariff",
+          "https://www.jagnishtours.com/taxi-fare-in-gangtok"
+        ],
+        "notes": "The union chart quoted by darjeeling-tourism.com is from March 2022 and is called 'indicative'. The GTA has a published fare chart that is 'not properly enforced' (same site). Local tours in Darjeeling may only be run by WB76 (Darjeeling-registered) taxis since 1 Apr 2018, so Sikkim cabs cannot do local sightseeing there. The mixed full-day tour starts with the 4 am Tiger Hill sunrise run. Zoo, ropeway, museum tickets extra. Peak season May-June and Oct-Dec; off-season up to 20% less (darjeelingtaxi.com)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 370,
+        "standard_inr": 750,
+        "basis": "Budget: Offbeat Peak (updated 19 May 2026) 'Aloo dum and sel roti combo ... Rs 120 for a proper Nepali breakfast plate' at Hasty Tasty, and 'Chowk Bazaar momo stalls (Rs 60-100 per plate)'. Tripopola (copyright 2026) 'Approx. for 2 people': Hasty Tasty Pure Veg 200 (= 100 per person), Biryani Baar 300 and Delicious Moments 300 (= 150 per person). Breakfast 120 + lunch 100 + dinner 150 = 370. Standard: Tripopola 'Cost Rs ... (Approx. for 2 people)' for sit-down places Keventer's 400, Kunga 250, Hotel Shangri-La 650, Hotel Lunar 600, Penang 600, Misty Mountain 400. Sorted 250 / 400 / 400 / 600 / 600 / 650, median 500 for two = 250 per person per meal x 3 = 750. Excluded Glenary's (1,000 for two, includes pub).",
+        "sources": [
+          "https://www.tripopola.com/listing/darjeeling/to_eat/",
+          "https://offbeatpeak.com/where-to-eat-in-darjeeling-a-culture-led-food-guide/",
+          "https://travelsket.com/darjeeling/darjeeling-trip-cost-for-couple/",
+          "https://www.tusktravel.com/blog/famous-restaurants-in-darjeeling/"
+        ],
+        "notes": "Tripopola listings are undated (only a 2026 footer) and the 'for 2 people' labels are approximate. Cross-checks: Travelsket (2026, undated) prints breakfast with tea Rs 80-150, lunch Rs 150-250 per person, dinner Rs 200-300 and 'daily food expenses usually stay between Rs 500 and Rs 700'; Tusk Travel (published 3 Oct 2024) prints per-person ranges Kunga 200-400, Keventer's 300-500, Glenary's 300-600, Park 300-600. Offbeat Peak's Kunga insider order is 'under Rs 500' per person. Zomato and Tripadvisor Darjeeling pages could not be fetched (timeout / 403)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Current (2025-26) Darjeeling taxi association / GTA fare chart; the only association-linked figure is dated March 2022",
+        "outstation per-km rate for Darjeeling",
+        "Zomato or Swiggy cost-for-two pages for Darjeeling (timeouts); dated menu prices for thali",
+        "MakeMyTrip / Savaari Darjeeling 8h/80km package prices (pages timed out or are JS-only)"
+      ]
+    },
+    "kalimpong": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2477,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4292011?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-yakha-retreat-spa-4281245?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/art-mile-kalimpong-4288951?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/teesta-hotels-kalimpong-5585816?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/shikher-guest-house-4287977?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/white-yak-resort-5571574?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1965,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/j-p-lodge-314195?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-mountain-view-388161?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kalash-hotel-3990354?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 2436,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/the-black-conch-homestay-4684733?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/kalash-villa-4277946?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/d-s-mayaavea-5258609?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4674775?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid, Budget and Homestay: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown. No Hostelworld page for Kalimpong (404).",
+        "notes": "Mid: the first six properties on Cleartrip's 3-star Kalimpong list that had an 18 Nov price (Golden Kuensel, Mystic Orchid, Soods Himalayan Vista and Golden Peaks showed 'No rooms available' and were skipped): Hotel Aashiyana 1,638; The Yakha Retreat 3,275; Art Mile 3,141; Teesta Hotels 2,939; Shikher Guest House 2,014; White Yak Resort 1,939. Budget: Hotel O J P Lodge 1,351; Hotel Mountain View 1,965 (both from Cleartrip's budget list) and Hotel Kalash 2,452 (from the 3-star list, not in the mid set). Homestay: The Black Conch 1,238; Kalash Villa 1,602; D's Mayaavea 3,270; Mayaavea Offbeat Homestay 5,320 (wide spread; four more homestays on the list had no rooms for 18 Nov)."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 3000,
+        "vehicle": "small reserved car (4 pax, Alto/WagonR class)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Darjeeling to Kalimpong (~2.5 h drive)",
+            "inr": 2800,
+            "range": "3,000 small car 4 pax (darjeeling-tourism.com, fare updated March 2022); 2,500-2,800 hatchback 4 pax, one-way drop incl. fuel/driver/basic toll (touradviser.in, 'Updated 2026'). Median of the two mid-points rounded to 2,800"
+          },
+          {
+            "route": "Bagdogra/NJP to Kalimpong",
+            "inr": 3350,
+            "range": "3,000 small car 4 pax, 3,500 bigger car 8 pax (darjeeling-tourism.com, March 2022); 3,700 NJP to Kalimpong, 'Small' column listed as 4 seater (sikkimtravellers.com 2026 chart, Gangtok address). Median of 3,000 and 3,700"
+          },
+          {
+            "route": "Gangtok to Kalimpong (one way)",
+            "inr": 3000,
+            "range": "3,500 small car 4 pax (darjeeling-tourism.com, March 2022); 2,500 sedan Etios/Dzire one way (jagnishtours.com 'Rate list 2026-27'). Median of the two"
+          },
+          {
+            "route": "Kalimpong to Lava, same-day full-day excursion",
+            "inr": 4500,
+            "range": "4,500 for 4 pax car, 5,000 for 8 pax Sumo, 5,500 Innova/Tavera (sikkimtaxis.com, operator named only as Sheeya Tour and Travels, no address, no date). Single undated source"
+          }
+        ],
+        "basis": "No Kalimpong union or taxi-stand rate chart was found online; darjeeling-tourism.com says the easiest way is to walk to the taxi stand on the main market area (Rishi road). Median of 5 full-day local sightseeing quotes for a small car: darjeeling-tourism.com 'Full Day Local Sightseeing: Rs. 3,500 (Small reserved car)' (Half-Day 2,500; luxury Innova/Xylo full day 4,200; 'indicative rates, fare updated March 2022'); darjeelingtaxi.com (Rockwood, Chotta Kak Jhora, Darjeeling 734101; undated, footer 2014) 'Kalimpong town sight seeing' 3,000 for 4 pax car; sikkimtaxis.com (Sheeya Tour and Travels, no address, undated) 'Kalimpong Full day sight seeing (8 Hours)' 3,800 for 4 pax car (half day 4 h 2,500); Vibrant Footsteps blog (posted 11 Apr 2020) 'full day Kalimpong sight-seeing, the cost was Rs. 2500' in a Wagon-R; tourbabari.com (15 Sep 2025) 'local cabs for sightseeing tour would cost INR 2000-3000 per day' (mid 2,500). Sorted 2,500 / 2,500 / 3,000 / 3,500 / 3,800 gives median 3,000. Range 2,500-3,800.",
+        "sources": [
+          "https://www.darjeeling-tourism.com/darj_00012d.htm",
+          "https://www.darjeeling-tourism.com/darj_000129.htm",
+          "https://darjeelingtaxi.com/sightSeeing.aspx",
+          "https://sikkimtaxis.com/taxitariff.html",
+          "https://www.vibrantfootsteps.com/kalimpong-deolo-delo-triveni-sangam-trip/",
+          "https://tourbabari.com/2025/09/15/kalimpong-travel-guide-2025/",
+          "https://www.touradviser.in/darjeeling-local-sightseeing-taxi",
+          "https://www.sikkimtravellers.com/page/taxi-tariff",
+          "https://www.jagnishtours.com/taxi-fare-in-gangtok"
+        ],
+        "notes": "Every Kalimpong quote is a private-operator or old indicative figure, not a union card. The newest dated local figure is the Sep 2025 blog range 2,000-3,000. The darjeeling-tourism.com figures are from March 2022 and may have risen. darjeelingtaxi.com states its rates are 'fixed by Government' but carries no date. The Kalimpong page on touradviser.in was not used because it showed one identical rate for five different routes. Mid-Nov is high season; darjeelingtaxi.com says off-season rates may be up to 20% lower."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "Left null on purpose: the two sources that print Kalimpong 'cost for two' disagree by 2x-5x for the same restaurants. TravelTriangle (updated 2 Jan 2025): Gompu's 200, Lee's 250, King Thai 250, Sood's Garden Retreat 400. TripFactory (undated, 2024 footer): Gompu's 700-900, King Thai 1,200-1,500, The Sood's Garden Retreat 1,500, Za Khang 800-1,000, Art Cafe 600-800. Holidify prints Cafe Refuel 100-400 and Mama-Mia 500-1,000 for two. unpaqd.com (20 Jan 2026) prints roadside stalls 'Rs 50-70/meal' and small dhabas 'Rs 60-80' against 'Rs 150 in restaurants'. tourbabari.com (15 Sep 2025) prints a local meal 'half a thousand to a thousand rupees daily per head'. No current dated menu or Zomato/Swiggy figure could be opened to settle which set is right.",
+        "sources": [
+          "https://traveltriangle.com/blog/restaurants-in-kalimpong/",
+          "https://holidays.tripfactory.com/sikkim/best-restaurants-in-kalimpong/",
+          "https://www.holidify.com/places/kalimpong/restaurants-places-to-eat-local-cuisine.html",
+          "https://unpaqd.com/blog/kalimpong-budget-travel/",
+          "https://tourbabari.com/2025/09/15/kalimpong-travel-guide-2025/"
+        ],
+        "notes": "A floor of about 280 budget / 375 standard per day follows from the lower set, and about 2x that from the higher set; neither is published here because a wrong low number would mislead travellers. Hotel dining and Bhutanese/Tibetan sit-downs are at the higher end."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Kalimpong food: sources conflict 2x-5x, left null",
+        "Kalimpong taxi union / Motor Stand / syndicate rate chart (none online)",
+        "Kalimpong to Lava and Rishyap fares from a dated source",
+        "outstation per-km rate for Kalimpong",
+        "Zomato / Swiggy cost-for-two for current Kalimpong cafes; menu prices for a momo plate or thali",
+        "MakeMyTrip / Savaari Kalimpong 8h/80km package prices (pages timed out or JS-only)"
+      ]
+    },
+    "gangtok": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 3377,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/sumi-shangrila-deorali-gangtok-3936265?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4562958?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/summit-alpine-abode-hotel-3990355?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/sinclairs-gangtok-3919341?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/ginger-gangtok-4482233?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/the-atrium-4487789?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 2420,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/udaan-woodberry-hotel-and-spa-2047736?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-yangthang-heritage-724557?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-doma-residency-311440?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/magellans-hotel-renam-387061?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/central-hill-resort-gangtok-314190?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 2442,
+        "homestay_n": 4,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/bhutia-homestay-5264939?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vamoosetrail-lingzey-5269677?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/vamoose-den-5266486?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/arcane-viewfinder-homestay-4683635?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": 689,
+        "dorm_n": 12,
+        "dorm_sources": [
+          "https://www.hostelworld.com/hostels/Gangtok?currency=INR"
+        ],
+        "price_basis": "Mid, Budget and Homestay: Cleartrip detail pages dated 18-19 Nov 2026, 1 room 2 adults, pre-tax cheapest-room price shown. Dorm: Hostelworld 'from' dorm bed price per night, undated, median of 12 hostels.",
+        "notes": "Mid: first six properties on Cleartrip's 3-star Gangtok list: Sumitel Shangrila 3,513; Voyage The Royal Retreat 3,240; Voyage Alpine Abode 2,363; Sinclairs Gangtok 4,557; Ginger Gangtok 3,932; The Atrium 3,195. Budget: priced properties on Cleartrip's budget-hotels list: Udaan Woodberry 2,420; Yangthang Heritage 5,040; Doma Residency 2,473; Hotel Renam 1,834; Central Hill Resort 1,909 (many others 404 or no rooms). Homestay: Bhutia Homestay 2,223; Vamoosetrail Lingzey 1,862; Vamoose Den 2,660; Arcane Viewfinder 7,086 (outlier; eight other homestays on the list had no rooms for 18 Nov). Dorm: 12 hostels from 349 to 1,000."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2800,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "NJP station to Gangtok",
+            "inr": 3700,
+            "range": "3,700 sedan Etios/Dzire drop (jagnishtours.com 'Rate list 2026-27'); 3,700 'Small' 4 seater, 4,300 'Normal' 8 seater, 4,700 'Luxury' 6 seater (sikkimtravellers.com 2026 chart)"
+          },
+          {
+            "route": "Bagdogra airport to Gangtok",
+            "inr": 4000,
+            "range": "4,000 sedan drop (jagnishtours.com 2026-27); 4,000 small 4 seater, 4,500 normal 8 seater, 5,000 luxury (sikkimtravellers.com 2026)"
+          },
+          {
+            "route": "Gangtok to Pelling (one way)",
+            "inr": 4000,
+            "range": "3,500 sedan one way, 5,600 round trip same day (jagnishtours.com 2026-27); 4,500 small 4 seater (sikkimtravellers.com 2026). Median of the two"
+          },
+          {
+            "route": "Gangtok to Tsomgo Lake (and Baba Mandir), full-day trip with permit",
+            "inr": 3500,
+            "range": "3,000 sedan to Tsomgo Lake (jagnishtours.com 2026-27); 3,500-4,000 small car, 4,500-5,000 SUV, 'Tsomgo Lake and Baba Mandir, Full Day (Permit)' (blog.maashreeholiday.com, 5 Apr 2025). Nathula needs a separate permit and costs more"
+          }
+        ],
+        "basis": "No Gangtok union or Sikkim Tourism rate chart could be read (the Sikkim Transport Department notification PDF refused the connection and was not retried by other means). Median of 5 full-day (8 h, 80 km, 7-10 point) local sightseeing quotes for a sedan or small car: sikkimtravellers.com (Karma building, Rongey, Gangtok 737101; '2026' chart) 'Gangtok local sightseeing' Small 4 seater 2,500, Normal 8 seater 3,000, Luxury 4,000; jagnishtours.com ('Rate list 2026-27', 'Gangtok Local Sightseeing (8hrs / 80KM)') sedan Etios/Dzire 2,500; blog.maashreeholiday.com (5 Apr 2025) 'INR 2800 for a sedan' peak season (2,200 off season; table 'Gangtok Local (Full Day) 8 Hours' small car 2,000-2,500, SUV 3,000-3,500; includes Flower Show, Handicraft Centre, Banjhakri Falls); carrentalsiliguri.com blog (Dabgram, Siliguri 734004; 5 Mar 2026) 'Sedan (Dzire/Etios type) is about INR 3,000-INR 3,800 per day' (mid 3,400); sikkim.taxi / 99Taxi (Upper Bagdogra; page titled 2021, footer 2023) 'Full-day (8 hours) - 10 points ... Rs. 3000/Sedan Car' (2,500 hatchback, 3,800 luxury SUV). Sorted 2,500 / 2,500 / 2,800 / 3,000 / 3,400 gives median 2,800. Range 2,500-3,400. Older darjeeling-tourism.com chart (Fare updated March 2022): 3-point half day small taxi 2,000 high season / 1,800 low; 7-point half day 3,000 high / 2,700 low.",
+        "sources": [
+          "https://www.sikkimtravellers.com/page/taxi-tariff",
+          "https://www.jagnishtours.com/taxi-fare-in-gangtok",
+          "https://blog.maashreeholiday.com/gangtok-sightseeing-taxi-4-hours-300-400/",
+          "https://www.carrentalsiliguri.com/blog/gangtok-local-sightseeing-taxi",
+          "https://www.sikkim.taxi/gangtok-taxi-fare",
+          "https://www.darjeeling-tourism.com/darj_000114.htm"
+        ],
+        "notes": "Operator charts, not a union card. jagnishtours.com shows no street address and several rows repeat the same figure (local sightseeing and Gangtok to Kalimpong both 2,500), so weigh it lightly; sikkimtaxi.com was not used because its page carries a webmaster note 'Update the pricing column with your exact current rates'. Peak season is Oct-Dec (Maa Shree gives 2,800 peak vs 2,200 off for a sedan), so 18 Nov sits at the higher end. Gangtok to Namchi: 3,500 sedan (jagnishtours 2026-27), 4,000 small car (sikkimtravellers 2026). Entry tickets and parking are extra."
+      },
+      "food_per_person_day": {
+        "budget_inr": 400,
+        "standard_inr": 940,
+        "basis": "Budget: discoverwithdheeraj.com (updated 2 Oct 2026) prints 'local eateries in the main market area behind MG Marg serve thalis and momos starting from Rs 100 to Rs 200 per plate' (mid 150); TravelTriangle (Updated 15 Nov 2024) prints Roll House 'Price For Two: INR 200 appx.' = 100 per person. Quick breakfast at Roll House 100 + local eatery lunch 150 + local eatery dinner 150 = 400. Standard: TravelTriangle 'Price For Two' Taste Of Tibet 500, Parivar Restaurant 600, Masala Restaurant 600, Nimtho 650, The Dragon Wok 700, Thakali 800. Sorted median = (600+650)/2 = 625 for two = 312.5 per person per meal x 3 = 937.5, rounded 940. Cross-check: discoverwithdheeraj prints 'A typical meal for two at a mid-range restaurant costs Rs 500 to Rs 800' (mid 650 = 325 per person per meal).",
+        "sources": [
+          "https://traveltriangle.com/blog/restaurants-in-gangtok/",
+          "https://discoverwithdheeraj.com/gangtok-weekend-trip-guide/"
+        ],
+        "notes": "Tripadvisor and Zomato pages could not be fetched; the same cost-for-two numbers (Taste of Tibet 500, Parivar 600, Masala 600) appeared in a Zomato Gangtok search snippet, so the TravelTriangle values look current. The standard set mixes veg thali (Parivar) and Chinese/Nepali sit-downs; TravelTriangle's Osm (800 with alcohol) and 9'Ine (600-1300) were excluded. Several Gangtok blogs quote Rs 80-150 for a momo plate (not fetched, not used)."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Gangtok taxi union / Sikkim Tourism / STDC 3-point, 5-point, 7-point rate chart (not found)",
+        "Sikkim Transport Department 'Sikkim Cab' app fares (official PDF unreachable)",
+        "outstation per-km rate (jagnishtours shows an 'Outstation per Day Minimum KM 250' row with 12 for sedan but does not label it per km, so not used)",
+        "Zomato or Swiggy cost-for-two pages (timeouts); momo plate price on a dated menu"
+      ]
+    },
+    "tsomgo-lake": {
+      "stay": {
+        "no_lodging": true,
+        "nearest_base": "Gangtok",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No lodging at the lake: two pages state it. Stay prices belong to Gangtok.",
+        "notes": "Sources: https://www.darjeeling-tourism.com/darj_000103.htm says 'However there is no lodging accommodation in this area to stay overnight.' https://travelsetu.com/guide/tsomgo-lake-changu-lake-tourism/tsomgo-lake-changu-lake-faqs says 'Staying overnight at Tsomgo Lake is not generally recommended due to the lack of accommodation facilities and the high altitude' and 'Most tourists visit the lake as a day trip from Gangtok.' Nearest base: Gangtok (about 38 km); see the gangtok stay figures."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV / maxi cab (sedan also quoted)",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {
+            "route": "Gangtok to Tsomgo Lake (Changu Lake), private sedan (~38 km each way)",
+            "inr": 3000,
+            "range": "JagNish Tours 'RATE LIST 2026-27', row 'Gangtok to Tsomgo Lake (Changu Lake)' (page does not say one-way or return; a lake day trip is normally a return): Sedan (Etios/Dzire) 3,000; Premium Sedan (Verna/City) 3,500. Page says toll & parking charges are separate; does not say whether the permit is included. No company address printed."
+          },
+          {
+            "route": "Gangtok to Tsomgo Lake (Changu Lake), private SUV (Ertiga class; Innova 5,100)",
+            "inr": 4400,
+            "range": "JagNish Tours 2026-27 same row: SUV/Ertiga 4,400; Innova (6-seater) 5,100; Crysta 6,100. Corroboration: Gangtokian.com (updated June 2026) 'Tsomgo Lake & Baba Mandir (Private Cab, Rs 4000)'; Wandering Core (16 Aug 2026) private cab '~Rs 3,000-4,000 total'; Explore Sikkim private cab 'about Rs 5000 up to Baba Mandir' (undated, (c) 2026); Govt of Sikkim Transport Dept revised chart 2021 (reproduced on lazytourer.com, article dated 15 Jul 2021) Maxi Cab / Large SUV 'Tsomgo lake, Baba mandir, kupup & back Rs. 4500/-'."
+          },
+          {
+            "route": "Gangtok to Tsomgo Lake + Baba Mandir + Nathula Pass and back, private normal vehicle",
+            "inr": 6500,
+            "range": "Sikkim govt fixed fare reported by Outlook Traveller (updated 27 May 2024): 'INR 6,500' normal vehicles / 'INR 7,000' luxury vehicles, round trip between Nathula and Gangtok, including the permit charge. JagNish 2026-27 row 'Tsomgo + Nathula + Baba Mandir': Sedan 6,000; SUV/Ertiga 8,700; Innova 10,100 (permit not stated). 2021 Transport Dept chart (lazytourer) Maxi Cab 5,500 for the same circuit (older, superseded by the 2024 order)."
+          },
+          {
+            "route": "Gangtok to Tsomgo Lake + Baba Mandir, shared taxi, per seat",
+            "inr": 1000,
+            "range": "Gangtokian.com (updated June 2026): 'Tsomgo Lake & Baba Mandir (Shared Taxi per person, Rs1000)'. Wandering Core (16 Aug 2026): shared cab '~Rs 1,000 per person' (Tsomgo + Nathula day trip). Explore Sikkim (undated): Rs 750 per head if only Changu Lake and Baba Mandir. TripXL (26 Feb 2025) says shared cabs from MG Marg 'around Rs 400 to Rs 600 per person' (older and lower). Shared vehicle = Sumo/Bolero/Maxx, 9-10 seats (northsikkimsharing.com, published 22 Jul 2025). Meals not included."
+          },
+          {
+            "route": "Gangtok to Tsomgo Lake + Baba Mandir + Nathula Pass, shared taxi, per seat",
+            "inr": 1000,
+            "range": "Explore Sikkim (undated, (c) 2026): shared vehicle to Changu Lake, Baba Mandir and Nathula 'Rs 1000 per head'. North Sikkim Sharing (published 22 Jul 2025): 'Prices start from just Rs.999/- per person', includes permit assistance, no meals. Gangtokian.com (June 2026): 'Tsomgo Lake + Baba Mandir + Nathula Pass (Shared Taxi per person, Rs1500)'. Median of 999 / 1,000 / 1,500 = 1,000."
+          }
+        ],
+        "basis": "No local taxi day exists at the lake, so local_sightseeing_8h_inr is null; the product is a Gangtok-based round trip. Private cab: JagNish Tours 2026-27 chart (sedan 3,000; SUV/Ertiga 4,400; Innova 5,100) checked against 2026 blog/operator quotes (Gangtokian 4,000; Wandering Core 3,000-4,000; Explore Sikkim ~5,000 to Baba Mandir) and the 2021 Sikkim Transport Dept Maxi Cab fare 4,500; SUV figure 4,400 sits inside that 3,000-5,000 spread. Nathula circuit: the official fixed fare (Rs 6,500 normal / Rs 7,000 luxury incl. permit, May 2024) is the anchor; operator charts run higher. Shared seat: median of the 2026 quotes (1,000). Not a union card: the current union (STNM / Gangtok taxi union) chart was not found online; the only government chart found is the 2021 one on a third-party site. Gangtok local sightseeing (8h/80km) is NOT the lake and is not used: JagNish prices it Sedan 2,500.",
+        "sources": [
+          "https://www.jagnishtours.com/taxi-fare-in-gangtok",
+          "https://www.outlooktraveller.com/News/sikkim-govt-sets-fixed-taxi-fares-between-nathula-gangtok",
+          "https://lazytourer.com/in/government-of-sikkim-gangtok-taxi-car-cab-rate-fare-chart/",
+          "https://www.gangtokian.com/gangtok-trip-cost-calculator/",
+          "https://thewanderingcore.com/plan-tsomgo-lake-and-nathula-pass-day-trip-from-gangtok/",
+          "https://exploresikkim.in/gangtok-nathula-pass-tour",
+          "https://www.northsikkimsharing.com/blog/changu-lake-baba-mandir--nathula-pass-sharing-tour",
+          "https://tripxl.com/blog/tsomgo-lake-in-march/"
+        ],
+        "notes": "Permit: Wandering Core (16 Aug 2026) says 'Budget around Rs 200 per person for the permit fee'; the Outlook Traveller fixed fare already includes the Nathula permit; JagNish does not say. JagNish: toll and parking extra. Rates are per vehicle except the two shared-seat rows. None of the quotes is labelled for mid-November, so season uplift for Wed 18 Nov 2026 is unknown."
+      },
+      "food_per_person_day": {
+        "budget_inr": 450,
+        "standard_inr": 940,
+        "basis": "Day-tripper eating in Gangtok plus lake stalls. BUDGET 450 = breakfast at a Roll House-level counter 100 (TravelTriangle 'Price For Two: INR 200 appx.' / 2) + lunch at the lake: tea 50 + plate of momo 150 = 200 (TripXL, 26 Feb 2025: 'Rs 50 for a cup of tea and Rs 150 for a plate of momo') + dinner at a Hamro Bhansar Ghar-level place 150 (Holidify: 'Cost for 2 people at this place is INR 300' / 2) = 100 + 200 + 150 = 450. Cross-check: Gangtokian.com (June 2026) 'Street/Budget (Rs400-600)' per person per day. STANDARD 940 = 3 sit-down meals at the median Gangtok 'price for two' / 2. TravelTriangle (updated 15 Nov 2024) 'Price For Two': Taste of Tibet 500, Parivar 600, Masala Restaurant 600, Nimtho 650, Dragon Wok 700, Thakali 800 (bar/alcohol listings Tangerine, Osm and the 600-1300 range 9'Ine excluded); median of the six = (600+650)/2 = 625 for two = 312.5 per meal x 3 = 937.5, rounded to 940. Cross-check: Gangtokian.com 'Mid-range (Rs1000-1500)'.",
+        "sources": [
+          "https://tripxl.com/blog/tsomgo-lake-in-march/",
+          "https://traveltriangle.com/blog/restaurants-in-gangtok/",
+          "https://www.holidify.com/places/gangtok/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.gangtokian.com/gangtok-trip-cost-calculator/"
+        ],
+        "notes": "The lake itself has only a handful of stalls (tea, momo, Maggi, thukpa); the only printed stall prices found are two figures from one blog (tea 50, momo 150), which looks like an estimate, not a menu board. No thukpa or Maggi price found. Sharing/private day tours do not include meals (northsikkimsharing.com). The Zomato pages timed out, so no Zomato 'cost for two' was used. TravelTriangle and Holidify figures are 'approx' and undated or dated Nov 2024."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Current Gangtok union (STNM / Sikkim Taxi / Gangtok taxi union) fare chart for Tsomgo, Baba Mandir, Nathula; only the 2021 Transport Dept chart (third-party copy) and the May 2024 fixed-fare news item were found",
+        "travelgangtok.com seasonal shared fares (off 1000 / mid 1100 / main 1200 / peak 1300-2000) appeared in a search snippet only; the page did not render when fetched, so not used and mid-November season band unconfirmed",
+        "Whether Nathula is open on Wed 18 Nov 2026 (search results disagree: closed Mon-Tue vs Mon-Wed); Tsomgo itself is unaffected",
+        "Menu-board prices for Maggi, thukpa and lunch at the lake stalls; Zomato / Tripadvisor 'cost for two' for Gangtok restaurants (pages blocked or timed out)",
+        "JagNish Tours prints no company address; its chart could not be cross-checked against a union card"
+      ]
+    },
+    "zuluk": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": 2200,
+        "homestay_n": 5,
+        "homestay_sources": [
+          "https://discoverzuluk.com/top-5-best-zuluk-homestay-sillk-route-2024/",
+          "https://wondervision.in/home-stay/zuluk-village-homestay/"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Homestay: printed tariff cards, undated (discoverzuluk.com page dated 24 Jun 2024; wondervision.in undated), NOT an OTA price for 18 Nov 2026. Zuluk homestays quote PER PERSON including breakfast, lunch and dinner; the figure is a double room = 2 x the median of 1,100 per person, so it INCLUDES all meals.",
+        "notes": "Per-person tariffs with all meals (lodging plus food): Dil Maya Homestay 1,000-1,500 (mid 1,250); Zuluk Village Homestay 1,500 double sharing (wondervision.in; discoverzuluk lists 1,200-1,500); View Valley Homestay from 1,000; Tibiten Villa Homestay from 1,000; Cloud Valley Homestay 1,000-1,200 (mid 1,100). Sorted per-person values 1,000; 1,000; 1,100; 1,250; 1,500, median 1,100, so 2,200 for two with meals. Room-only prices are not published; a traveller paying room-only would pay less. Cleartrip has no Zuluk listings. No hotels or hostels in Zuluk."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "SUV (Bolero / Scorpio / Ertiga class)",
+        "outstation_per_km_inr": 15,
+        "point_to_point": [
+          {
+            "route": "Gangtok to Zuluk one-way drop, SUV (Ertiga class) (~100 km)",
+            "inr": 4184,
+            "range": "Gozo Cabs Gangtok-Zuluk page: Dzire 3,675 / Ertiga 4,184 / Innova 5,688 'one way, before GST'; ~100 km, ~3h30; page says prices include driver allowance, taxes, tolls, but also tells you to check GST, tolls and parking. No date printed ((c) 2026). Operator cross-check: taxiinsikkim.com (Deorali Bazaar, Gangtok; undated) 'Price for visiting Zuluk From Gangtok': Normal vehicle Rs 3,000 off-season / Rs 3,500 season, Luxury Rs 3,500 / Rs 4,000, Small 'Not Allowed', plus permit charge (printed as 'Rs. 5,00'), Baba Mandir covered."
+          },
+          {
+            "route": "Gangtok to Zuluk drop, '1N/2D Package' (SUV/Ertiga class; sedan 7,000; Innova 11,700)",
+            "inr": 10000,
+            "range": "JagNish Tours 'RATE LIST 2026-27' row 'Gangtok to Zuluk Drop (1N/2D Package)': Sedan 7,000; Premium Sedan 8,000; SUV/Ertiga 10,000; Innova 11,700; Crysta 13,800. Page does not say what the package includes (sightseeing, Baba Mandir, Nathula all unconfirmed). Toll & parking separate. No address printed."
+          },
+          {
+            "route": "Gangtok to Zuluk to Thambi View Point and back to Gangtok, 1 day",
+            "inr": 8000,
+            "range": "Tourbix Ride blog dated 14 Oct 2025, table 'Zuluk Taxi Fare 2025 (Approx.)': Sedan 6,000 / SUV 8,000. 'All packages include ILP permit assistance and driver stay.' No address printed; phone numbers on the page disagree."
+          },
+          {
+            "route": "Gangtok to Zuluk to Kupup Lake to Nathang Valley, 2 days (Rongli-Zuluk-Lungthung-Kupup-Gangtok 2-day: SUV 12,000)",
+            "inr": 11000,
+            "range": "Tourbix Ride (14 Oct 2025, approx.): Gangtok-Zuluk-Kupup Lake-Nathang Valley 2 days Sedan 9,000 / SUV 11,000; Rongli-Zuluk-Lungthung-Kupup-Gangtok 2 days Sedan 10,000 / SUV 12,000. Permit assistance included, no exclusions listed."
+          },
+          {
+            "route": "NJP Station to Zuluk (~144 km), SUV",
+            "inr": 6500,
+            "range": "siliguricabrental.com 'Complete Taxi Tariff & Cab Fares 2026': NJP Station to Zuluk Hatchback/Sedan Rs 4,500-5,500; SUV (Innova/Xylo) Rs 6,000-7,000 (mid 6,500); Bagdogra Airport to Zuluk Rs 5,000-6,000 / Rs 6,500-7,500. Separate rows per origin, so not a one-card-fits-all page; no address printed. Cross-check: Gozo Siliguri-Zuluk (~140 km) one way before GST: Dzire 2,817 / Ertiga 4,109 / Innova 5,038."
+          }
+        ],
+        "basis": "No source prices a local Zuluk sightseeing day (Zuluk-Thambi-Nathang with a Zuluk-based Bolero), so local_sightseeing_8h_inr is null; the loop is only sold as part of Gangtok-based or Rongli-based packages (Tourbix rows above). Gangtok to Zuluk one-way: Gozo (Ertiga 4,184; sedan 3,675; Innova 5,688) is consistent with the Deorali-based taxiinsikkim 'Normal' vehicle 3,000-3,500 (+ permit), so a one-way drop of roughly 3,000-5,700 depending on vehicle. The JagNish '1N/2D package' (SUV 10,000) and Tourbix 1-day (SUV 8,000) are packages and are about double the plain drop, which is expected for a return plus driver stay. outstation_per_km_inr 15 = Gozo's 'Reference rate: From Rs15/km' printed on the Gangtok-Zuluk page (Siliguri-Zuluk page shows Rs 14.75/km); it is an aggregator 'from' rate, not a union rate. No Zuluk or Gangtok union rate card was found.",
+        "sources": [
+          "https://www.gozocabs.com/book-taxi/gangtok-zuluk",
+          "https://www.gozocabs.com/book-taxi/siliguri-zuluk",
+          "http://www.taxiinsikkim.com/east-sikkim/visit-zuluk.php",
+          "https://www.jagnishtours.com/taxi-fare-in-gangtok",
+          "https://tourbixride.com/blog/zuluk-old-silk-route-taxi-booking-2025-scenic-drives-through-east-sikkim-tourbix-ride",
+          "https://siliguricabrental.com/taxis-tariff.php",
+          "https://www.darjeeling-tourism.com/darj_000190.htm",
+          "https://discoverwithdheeraj.com/zuluk-travel-guide-offbeat-sikkim/",
+          "https://discoverzuluk.com/dil-maya-homestay-zuluk-silk-route-sikkiim/"
+        ],
+        "notes": "Permit (Inner Line / Protected Area) amounts printed: darjeeling-tourism.com (undated): 'Permit charges at Rongli for a group of 2 to 3 persons would be around Rs. 200'. Discover with Dheeraj Zuluk guide (updated 2 Oct 2026): Rs 200 per person through an agency or Rs 200-300 via the Rongli SDPO office, Rs 500-700 via a Gangtok agency as of March 2026. Discover Zuluk (comment dated 10 Jul 2024) listed 'Inner line permit Rs 800 per car'. taxiinsikkim adds a permit charge of about Rs 500 on top of the fare. Operators note small cars are 'Not Allowed' on the Zuluk road (taxiinsikkim). taxiinsikkim does not define which months are 'season', so whether 18 Nov uses its off-season (3,000 / 3,500) or season (3,500 / 4,000) column is unconfirmed."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 550,
+        "basis": "Discover with Dheeraj Zuluk guide (page 'Updated: Oct 2, 2026'), budget table row 'Meals (outside homestay)': Budget column 'Rs 200-400/day' per person (midpoint 300), Mid-Range column 'Rs 400-700/day' per person (midpoint 550). Single source; the row does not say how many meals a day it covers.",
+        "sources": [
+          "https://discoverwithdheeraj.com/zuluk-travel-guide-offbeat-sikkim/"
+        ],
+        "notes": "DO NOT ADD to the Zuluk homestay price: most Zuluk homestays are full board, so the 2,200 double-room figure (per-person tariff 1,000-1,500 with breakfast, lunch and dinner) already includes meals. These two numbers apply only when eating outside the homestay. Zuluk has no restaurants worth pricing. A second source, wecareholidays.com (undated), prints Zuluk Nature Camp meals 'Rs 200-400 per meal' and Silk Route Retreat 'Rs 250-450 per meal', i.e. much higher if every meal is bought a la carte."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Price of a local Zuluk sightseeing cab (Zuluk-Thambi-Nathang-Kupup loop) from a Zuluk-based driver; a Tripadvisor reviewer's 'Rs 1500 per car' sunrise add-on appeared in a search snippet only (page returned 403)",
+        "Any Zuluk / Rongli / East Sikkim taxi union rate card",
+        "Shared Sumo seat fares Gangtok/NJP/Siliguri/Rongli to Zuluk (Discover with Dheeraj lists 'Taxi from Gangtok (shared 4-pax) Rs 1,500-2,000' per person but does not say route or one-way vs return, so not used)",
+        "cabinsikkim.com and darjeelingsikkimtaxi.com Zuluk pages (expired / invalid certificates, not bypassed); makemytrip Zuluk city page timed out",
+        "Season status for 18 Nov 2026: the Gozo and siliguricabrental figures carry no season label",
+        "Food-only menu or meal prices at a Zuluk homestay (all pages bundle meals with the room); food rests on one blog table"
+      ]
+    }
+  }
+}

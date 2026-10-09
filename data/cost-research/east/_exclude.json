@@ -1,0 +1,6 @@
+{
+ "_doc": "East + North-East load rules. holiday: stays dated 7-16 Nov 2026 (Diwali 8 Nov, Kali Puja, Bhai Dooj, Chhath 13-16 Nov) are holiday-week prices; where no town in the state had its premium measured they are HELD, not deflated by the all-India median. stay/anchor: per-destination exclusions and forced anchors, filled after review.",
+ "holiday": { "from": 7, "to": 16, "unmeasured": "hold" },
+ "stay": {},
+ "anchor": {}
+}

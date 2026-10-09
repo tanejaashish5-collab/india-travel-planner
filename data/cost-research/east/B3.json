@@ -1,0 +1,428 @@
+{
+  "batch": "B3",
+  "researched_on": "2026-10-09",
+  "destinations": {
+    "patna": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2758,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/ginger-patna-2647508?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-mani-international-3919202?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/windsor-hotel-2361232?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-krrish-2048218?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4293513?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4589317?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1382,
+        "budget_n": 4,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-maple-inn-2047696?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-ankur-2629580?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-utsav-deluxe-5252985?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4686983?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip hotel detail pages, check-in Wed 18 Nov 2026, 1 night, 2 adults, cheapest room, pre-tax, 6 Cleartrip '3-star' Patna hotels with guest rating 3.6 or higher (Ginger 5,243; Mani International 2,659; Windsor 2,856; Krrish 2,969; Variety Inn 2,310; Mayfair 2,618). Budget: same dates, pre-tax: Maple Inn 1,276 (Room with Breakfast), Ankur 2,124, Utsav Deluxe 794 (Non-AC room), Golden Crystal 1,488. Hotel list found via https://www.cleartrip.com/hotels/3-star-hotels-in-patna and /hotels/india/patna/budget-hotels.",
+        "notes": "Hotel Vinayak International and Hotel Awaas Corporate Inn showed 'No rooms available' for 18 Nov, so they are not priced. Ginger (5,243) is the high outlier; without it the 5-hotel median is 2,659. Cleartrip's 'Homestays in Patna' page lists only hotels (no homestays), so no homestay figure. Hostelworld's Patna page returns HTTP 404; no dorm price found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2200,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {"route": "Patna to Rajgir, sedan one-way", "inr": 2349},
+          {"route": "Patna to Bodh Gaya, sedan one-way, Savaari 'starting from'", "inr": 2890},
+          {"route": "Patna to Vaishali (73 km), sedan one-way, MakeMyTrip, +Rs 148 taxes shown separately", "inr": 1059}
+        ],
+        "basis": "Patna Cabs Pvt Ltd (Danapur, Patna address printed on page): Toyota Etios/Swift Dzire 8 hrs/80 km Rs 2,200, extra km Rs 12, extra hour Rs 125; outstation sedan Rs 13/km, 200 km/day minimum; page undated. BiharTrip (Exhibition Road, Patna) lists a Dzire at Rs 1,200 for 8 hours but states no km cap and counts km from its office, so it is not like-for-like and is not used for the figure. Single like-for-like operator quote, so treat as indicative. Point-to-point: Savaari Patna city page (Patna to Rajgir sedan Rs 2,349, SUV Rs 4,109) and Savaari Patna to Bodh Gaya route page (sedan Rs 2,890), both read 9 Oct 2026; MakeMyTrip Patna to Vaishali sedan page, Rs 1,059 + Rs 148 taxes, 9 Oct 2026.",
+        "sources": [
+          "https://patnacabs.com/cab-services.php",
+          "https://www.bihartrip.com/car-booking-in-patna",
+          "https://www.savaari.com/patna/car-rental",
+          "https://www.savaari.com/patna/patna-to-bodh-gaya-cabs",
+          "https://www.makemytrip.com/car-rental/sedan-cabs-from-patna-to-vaishali.html"
+        ],
+        "notes": "Savaari and MakeMyTrip prices change by date and demand. Aggregator pages for the same 8h/80km sedan (CabBazar Rs 1,500 snippet, Zeo Taxi Rs 2,150) were not fetchable or are aggregator rates, so are not used."
+      },
+      "food_per_person_day": {
+        "budget_inr": 430,
+        "standard_inr": 975,
+        "basis": "Standard = 3 meals at Rs 325 per person, the median of the ten cheapest sit-down restaurants and cafes on Zomato's Patna dine-out page (cost for two Rs 350, 400, 500, 500, 600, 700, 800, 900, 900, 1,000; median Rs 650 for two). The page's 45 listings have a median cost for two of Rs 1,200, so the page skews to cafes and upscale places. Budget = one thali at Rs 80 (Abhiruchi Marwari Vaasa Bhojnalay, Patna, 'normal thali Rs 80, special Rs 160', Wanderlog review quote, undated) + two meals at Rs 175 per person (Angrezi Dhaba, Rs 350 for two on Zomato).",
+        "sources": [
+          "https://www.zomato.com/patna/dine-out",
+          "https://wanderlog.com/place/details/11643212"
+        ],
+        "notes": "Street food (litti chokha, kachori) was not priced: the blog prices found for it contradict each other (Rs 25-40 vs Rs 60-100 per plate), so they are not used. True budget spend may be lower than 430. Zomato's listing includes promoted places."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Homestay and dorm prices (Cleartrip homestay page has no homestays; Hostelworld Patna returns 404)",
+        "Street-food rupee prices (sources contradict each other)",
+        "Second like-for-like 8h/80km sedan quote from a Patna operator with a printed address"
+      ]
+    },
+    "vaishali": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Hajipur (Holidify lists Hajipur-area hotels at 35-40 km from Vaishali) or Patna",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "No dated price captured.",
+        "notes": "Vaishali has a few properties (private 80-room The Vaishali Residency; search summaries also mention a BSTDC youth hostel), but I could not get a pre-tax price for 18 Nov 2026. Cleartrip has no Vaishali city page (404). EaseMyTrip shows The Vaishali Residency at about Rs 5,280 per night for 22-26 Oct, described as tax-inclusive, so it cannot go in a pre-tax field. The BSTDC Vaishali hotels page failed to load (invalid TLS certificate) and I did not bypass it."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {"route": "Patna to Vaishali (73 km), sedan one-way, MakeMyTrip, +Rs 148 taxes shown separately", "inr": 1059}
+        ],
+        "basis": "MakeMyTrip Patna to Vaishali sedan page (Swift Dzire, 73 km included, Rs 20/km after), read 9 Oct 2026. Vaishali is a day trip from Patna or Hajipur; no local 8h rate found.",
+        "sources": [
+          "https://www.makemytrip.com/car-rental/sedan-cabs-from-patna-to-vaishali.html"
+        ],
+        "notes": "MakeMyTrip price moved between two reads on 9 Oct (search snippet said Rs 1,648 for 83 km; page read said Rs 1,059 for 73 km), so treat as indicative."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No restaurant listings with rupee prices found for Vaishali; Zomato has no Vaishali page with prices.",
+        "sources": [],
+        "notes": "Visitors eat in Hajipur or Patna; see patna."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Any stay price (no dated pre-tax price; BSTDC page unreachable)",
+        "Local 8h taxi rate",
+        "Food prices"
+      ]
+    },
+    "nalanda": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Rajgir; most visitors day-trip from Rajgir or Patna",
+        "mid_median_inr": 3375,
+        "mid_n": 1,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/4289397?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": null,
+        "budget_n": 0,
+        "budget_sources": [],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail page, check-in Wed 18 Nov 2026, 1 night, 2 adults, pre-tax Room Only: Seven Hills (3-star Resort, Kul Phtehpur) Rs 3,375.",
+        "notes": "Only one 3-star property on Cleartrip's Nalanda page. A second listing, '7 Hills Hotel & Resort' (Kul Phtehpur), is probably the same property and shows Rs 3,602 for the same dates (https://www.cleartrip.com/hotels/details/7-hills-hotel-resort-4483488?c=18112026|19112026&r=2,0); not counted. n=1. Cleartrip's budget page for Nalanda lists nothing."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {"route": "Bodh Gaya to Rajgir and Nalanda same-day return, sedan (Etios/Dzire)", "inr": 3500, "range": "BodhiGO full-day Rajgir and Nalanda 'starting from' 2,999"}
+        ],
+        "basis": "Star Travels Bodhgaya (Newatapur, Bodhgaya address, page footer 2024) lists a Rajgir-Nalanda same-day trip at Rs 3,500 (Etios/Dzire); BodhiGO lists Rajgir and Nalanda full-day sightseeing from Rs 2,999 (page undated, no address). No local Nalanda day rate found; Nalanda is usually combined with Rajgir.",
+        "sources": [
+          "https://bodhgayatravels.com/",
+          "https://bodhigo3.odoo.com/"
+        ],
+        "notes": "No Patna-to-Nalanda fare could be read from a fetchable page; aggregator pages for it were blocked or showed no price."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No restaurant prices found for Nalanda; Zomato has no Nalanda listings.",
+        "sources": [],
+        "notes": "Visitors eat in Rajgir; no priced Rajgir menu was found either."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Budget, homestay and dorm stays",
+        "Local day taxi rate",
+        "Food prices"
+      ]
+    },
+    "rajgir": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 1339,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-bodhi-retreat-4276315?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4563013?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5635906?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/anand-lok-vatika-3943240?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5682297?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5062282?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1250,
+        "budget_n": 1,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/hotel-anand-lok-2636492?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Mid: Cleartrip detail pages, check-in Wed 18 Nov 2026, 1 night, 2 adults, cheapest room, pre-tax: Hotel Bodhi Retreat 2,401; Buddha Imperial 1,087; 5 Hills Hotel and Restaurant 2,059; Anand Lok Vatika 974; Hotel Mehta Inn 1,248; The Nalanda Heritage 1,429 (the first six bookable '3-star' listings in Cleartrip's Rajgir list order). Budget: same dates, pre-tax: Hotel Anand Lok 1,250 (n=1). Hotel list found via https://www.cleartrip.com/hotels/3-star-hotels-in-rajgir.",
+        "notes": "Seven other Cleartrip 3-star listings (Gridhakuta International, Nalanda Regency, Aarunya, Arunya, Bodhi Retreat by Basotel, Pandu Pokhar, Shree Krishna Palace) show 'No rooms available' for 18-19 Nov. Indo Hokke Hotel is bookable at 5,997; adding it as a 7th hotel would move the median to 1,429. Most Cleartrip '3-star' labels in Rajgir are basic hotels. Cleartrip's budget page lists two hotels; Hotel Vijay's detail page returns 404. No homestay or dorm prices found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {"route": "Patna to Rajgir, sedan one-way", "inr": 2349},
+          {"route": "Gaya to Rajgir, sedan one-way, Savaari 'starting from'", "inr": 1901},
+          {"route": "Bodh Gaya to Rajgir and Nalanda same-day return, sedan (Etios/Dzire)", "inr": 3500}
+        ],
+        "basis": "Savaari Patna city page (Patna to Rajgir sedan Rs 2,349), Savaari Gaya to Rajgir route page (sedan Rs 1,901, SUV Rs 2,954), both read 9 Oct 2026; Star Travels Bodhgaya rate card (Rajgir-Nalanda same-day trip, Etios/Dzire Rs 3,500; page footer 2024). No local Rajgir day rate found: Rajgir sightseeing is mostly by tonga and auto, and I found no current rate card.",
+        "sources": [
+          "https://www.savaari.com/patna/car-rental",
+          "https://www.savaari.com/gaya/gaya-to-rajgir-cabs",
+          "https://bodhgayatravels.com/"
+        ],
+        "notes": "An Outlook Traveller guide about nine years old mentions tonga hire at Rs 200-500 for half a day; too old to use."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Zomato or Swiggy listings for Rajgir. Thali prices quoted in search summaries (Rs 110-160) could not be re-found on the pages, so they are not used.",
+        "sources": [],
+        "notes": "Justdial's Rajgir listings returned HTTP 403 and were not accessed."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Local 8h taxi rate (no rate card found)",
+        "Food prices",
+        "Homestay and dorm prices",
+        "Budget tier has n=1"
+      ]
+    },
+    "pawapuri": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Rajgir has far more hotels",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1050,
+        "budget_n": 2,
+        "budget_sources": [
+          "https://yatradham.org/pawapuri-digambar-jain-dharamshala.html",
+          "https://yatradham.org/pawapuri-hotel-seema-palace.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: YatraDham.org tariff pages, undated (no stay date; not priced for any Chhath date): Digambar Jain Dharamshala 3-bed non-AC room Rs 1,050; Hotel Seema Palace 2-bed non-AC room Rs 1,050. Tariff card, undated.",
+        "notes": "Pawapuri has only basic dharamshala-style rooms near Jal Mandir. The pages do not say whether non-Jain guests are accepted at the Digambar Jain Dharamshala. Not on Cleartrip."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [],
+        "basis": "No Pawapuri fare could be read from a fetchable page (Savaari's Patna to Pawapuri page is gone, HTTP 410).",
+        "sources": [],
+        "notes": "Pawapuri is normally done as part of a Rajgir-Nalanda day; see rajgir and nalanda."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No restaurant prices found for Pawapuri.",
+        "sources": [],
+        "notes": "Dharamshalas serve meals; no tariff found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid-range stay",
+        "Any taxi rate",
+        "Food prices",
+        "Dated stay price"
+      ]
+    },
+    "bodh-gaya": {
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 2250,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 13,
+        "point_to_point": [
+          {"route": "Gaya Airport to/from Bodh Gaya, pickup and drop, Etios/Dzire", "inr": 1000},
+          {"route": "Gaya Junction to/from Bodh Gaya, pickup and drop, Etios/Dzire", "inr": 1200},
+          {"route": "Bodh Gaya to Rajgir and Nalanda same-day return, Etios/Dzire", "inr": 3500},
+          {"route": "Patna to Bodh Gaya, sedan one-way, Savaari 'starting from'", "inr": 2890}
+        ],
+        "basis": "Star Travels Bodhgaya (Near Namo Buddha Hotel, Newatapur, Bodhgaya 824231): local city 8 hours/80 km Etios/Dzire Rs 2,250 (Innova Rs 3,000), extra km Rs 13, extra hour Rs 150; page footer says 2024, no rate date. BodhiGO (no address printed, page undated) lists the same 8 hr/80 km circuit at Rs 2,500, so 2,250 may be at the low end. Patna to Bodh Gaya from Savaari route page, read 9 Oct 2026.",
+        "sources": [
+          "https://bodhgayatravels.com/",
+          "https://bodhigo3.odoo.com/",
+          "https://www.savaari.com/patna/patna-to-bodh-gaya-cabs"
+        ],
+        "notes": "The 'Local city 8 hours/80 km' row is for Gaya and Bodh Gaya. Single operator with an address, so treat as indicative."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 450,
+        "basis": "Proxy, not Bodh Gaya menus: Zomato has no Bodh Gaya page, so the nearby city of Gaya is used. Zomato Gaya lists 21 restaurants with 'cost for one' of Rs 100 to 400; lower quartile Rs 100, median Rs 150. Budget = 3 x Rs 100; standard = 3 x Rs 150. Cross-check: Holidify shows per-person ranges for 8 Bodh Gaya places of INR 50-150 to 160-300, and TripClap shows Rs 50-100 per person.",
+        "sources": [
+          "https://www.zomato.com/gaya/restaurants?category=2&context=dineout",
+          "https://www.holidify.com/places/bodh-gaya/restaurants-places-to-eat-local-cuisine.html",
+          "https://www.tripclap.com/places/bodh-gaya/restaurants"
+        ],
+        "notes": "Zomato 'cost for one' is a delivery-style figure and includes promoted places. Tourist cafes in Bodh Gaya (for example Be Happy Cafe, listed at INR 100-300 per person by Holidify) may cost more than the Gaya median, so the standard figure may be low."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Second taxi quote from an operator with a printed address",
+        "Bodh Gaya-specific Zomato or menu prices (food is a Gaya proxy)"
+      ]
+    },
+    "deoghar": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": null,
+        "mid_median_inr": 2337,
+        "mid_n": 6,
+        "mid_sources": [
+          "https://www.cleartrip.com/hotels/details/imperial-heights-2047782?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-girija-sunrise-3947665?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-maa-laxmi-palace-4479573?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/yatrik-hotel-2859896?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4563069?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4292988?c=18112026|19112026&r=2,0"
+        ],
+        "budget_hotel_median_inr": 1605,
+        "budget_n": 5,
+        "budget_sources": [
+          "https://www.cleartrip.com/hotels/details/the-yashoda-international-deoghar-3990729?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/5421109?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/4561439?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/city-square-4286304?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/hotel-krishna-paradise-4281437?c=18112026|19112026&r=2,0"
+        ],
+        "homestay_median_inr": 1180,
+        "homestay_n": 2,
+        "homestay_sources": [
+          "https://www.cleartrip.com/hotels/details/bhakti-suite-5736941?c=18112026|19112026&r=2,0",
+          "https://www.cleartrip.com/hotels/details/s-s-mansion-5736194?c=18112026|19112026&r=2,0"
+        ],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "All tiers: Cleartrip hotel detail pages, check-in Wed 18 Nov 2026, 1 night, 2 adults, cheapest room, pre-tax. Mid (first six '3-star' listings with guest rating 4.0 or higher in list order): Imperial Heights 3,312; Girija Sunrise 1,407; Maa Laxmi Palace 2,865; Yatrik 1,449; Geetanjali International Annex 2,190; The Magnum 2,484. Budget (the five lowest-priced other 3-star listings): Yashoda International 624; Rajbari Palace 1,555; Shanti International 1,605; City Square 1,680; Krishna Paradise 1,730. Homestay (two listings on Cleartrip's Homestays in Deoghar page): Bhakti Suite 1,338; S S Mansion 1,022. Hotel list found via https://www.cleartrip.com/hotels/3-star-hotels-in-deoghar and https://www.cleartrip.com/hotels/homestays-in-deoghar.",
+        "notes": "Median of all 16 Cleartrip 3-star listings on 18 Nov is about 2,049. The budget set is the cheapest five outside the mid sample, so it leans low. Cleartrip's own budget page for Deoghar is partly stale (several detail pages return 404). Whether Bhakti Suite and S S Mansion are true homestays is not stated; Cleartrip files them under homestays. The Jharkhand Tourism site (jharkhandtourism.gov.in) did not load from here, so no tourism-department tariffs. No dorm prices found."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": 1999,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": 12,
+        "point_to_point": [
+          {"route": "Deoghar to Basukinath, sedan one-way", "inr": 2250, "range": "2,000-2,500 sedan (Bhootnath Travels)"},
+          {"route": "Deoghar to Dumka (60 km), onwards fare", "inr": 1799}
+        ],
+        "basis": "Sree Travels Deoghar page (2026): sedan 8 hrs/80 km Rs 1,999 (hatchback 1,499, SUV 2,699), 4 hrs/40 km sedan Rs 1,099; Swift Dzire Rs 12/km; operator address Dimna Road, Mango, Jamshedpur, so it is not a Deoghar-based operator and its Deoghar page shares a template with other cities. Bhootnath Travels (Near Soren Petrol Pump, Circular Road, Deoghar) gives Deoghar to Basukinath sedan Rs 2,000-2,500; it gives no local rate.",
+        "sources": [
+          "https://sreetravel.com/cab-service-deoghar",
+          "https://bhootnathtravels.com/taxi-service-in-deoghar/"
+        ],
+        "notes": "Single local-day quote. Pushpak Deoghar (a Deoghar operator named in search results) did not resolve (pushpakdeoghar.com, DNS error), so its rates are not used. Rates rise during Shravani Mela (not in Nov)."
+      },
+      "food_per_person_day": {
+        "budget_inr": 300,
+        "standard_inr": 450,
+        "basis": "Zomato Deoghar restaurant list (33 listings read, 'cost for one' Rs 100 to 400): lower quartile Rs 100, median Rs 150. Budget = 3 x Rs 100; standard = 3 x Rs 150. Examples shown: Madhuban Hotel Rs 100, Hotel Kamdhenu Rs 100, Handi Special Rs 200, The Taste Of Deoghar Rs 150, Mayur Restaurant Rs 250, Chops Cafe Restro Rs 300.",
+        "sources": [
+          "https://www.zomato.com/deoghar/restaurants?category=2&context=dineout"
+        ],
+        "notes": "Zomato 'cost for one' is delivery-style and includes promoted places and fast-food chains (Pizza Hut Rs 250, KFC Rs 100). No thali price from a menu was found. Temple-street prasadam thalis and sweets are not priced."
+      },
+      "confidence": "medium",
+      "unverified": [
+        "Taxi: only one local-day quote, from a Jamshedpur-based operator",
+        "Dorm prices",
+        "Whether the two 'homestay' listings are true homestays",
+        "Jharkhand Tourism tariffs (site unreachable)"
+      ]
+    },
+    "shikharji": {
+      "stay": {
+        "no_lodging": false,
+        "nearest_base": "Madhuban is the base at the foot of the hill; Giridih is the nearest town",
+        "mid_median_inr": null,
+        "mid_n": 0,
+        "mid_sources": [],
+        "budget_hotel_median_inr": 1000,
+        "budget_n": 3,
+        "budget_sources": [
+          "https://yatradham.org/avlani-bhavan-shikharji-madhuban.html",
+          "https://yatradham.org/shikharji-madhuban-nirmala-niwas.html",
+          "https://yatradham.org/hotel-shikharji-continental-shikharji.html"
+        ],
+        "homestay_median_inr": null,
+        "homestay_n": 0,
+        "homestay_sources": [],
+        "dorm_median_inr": null,
+        "dorm_n": 0,
+        "dorm_sources": [],
+        "price_basis": "Budget: YatraDham.org tariff pages for Madhuban, undated (no stay date; not priced for any Chhath date), 2-bed AC rooms: Avlani Bhavan Rs 700 (+ Rs 35 tax); Nirmala Niwas Rs 1,000 (+ Rs 50 tax); Hotel Shikharji Continental Rs 1,764 (tax status not stated). Tariff cards, undated.",
+        "notes": "Madhuban stays are mostly Jain bhavans and dharamshalas. Some are restricted to Jain guests (Tamilnadu Jain Bhavan is marked 'Only for Jain' and is excluded). The pages for Avlani Bhavan and Nirmala Niwas do not state a restriction. Cleartrip has no Madhuban or Shikharji hotel pages (Cleartrip's Giridih 3-star hotels are in Giridih town, not at Madhuban, so they are not used). Dormitory halls exist but the ones found are Jain-only."
+      },
+      "taxi_day": {
+        "local_sightseeing_8h_inr": null,
+        "vehicle": "sedan",
+        "outstation_per_km_inr": null,
+        "point_to_point": [
+          {"route": "Parasnath railway station to Madhuban (about 25 km), taxi", "inr": 600, "range": "500-800 auto or jeep; 150-200 per person shared"}
+        ],
+        "basis": "parasnathmadhuban.com 'How to reach Parasnath Hill' (published 31 Oct 2025): station to Madhuban by auto or jeep Rs 500-800, shared ride Rs 150-200 per person, taxi Rs 600 in its budget table, local bus Rs 50-100. The hill itself is climbed on foot, by doli or jeep; no jeep or local-day rate was found.",
+        "sources": [
+          "https://parasnathmadhuban.com/how-to-reach-parasnath-hill/"
+        ],
+        "notes": "Single source, a pilgrim-information site rather than a union card."
+      },
+      "food_per_person_day": {
+        "budget_inr": null,
+        "standard_inr": null,
+        "basis": "No Madhuban restaurant prices from a fetchable page. The only Madhuban figure found, a vegetarian thali at Jain Siddhartha Bhojanalay of about Rs 80, comes from a review about 45 months old in a search summary, so it is not used. Zomato Giridih is a different town from Madhuban.",
+        "sources": [],
+        "notes": "Many Madhuban dharamshalas run their own bhojanalay with fixed rates; none found."
+      },
+      "confidence": "low",
+      "unverified": [
+        "Mid-range stay (none found)",
+        "Dated stay prices (tariff cards are undated)",
+        "Local taxi or jeep day rate",
+        "Food prices"
+      ]
+    }
+  }
+}

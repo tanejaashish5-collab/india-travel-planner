@@ -1,0 +1,546 @@
+{
+ "batch": "B2",
+ "researched_on": "2026-10-09",
+ "destinations": {
+  "namchi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2111,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-kava-suites-3909543?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-montana-vyoo-4278608?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4562069?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1232,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-parichit-4264599?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest room per hotel. Kava Suite 1,350 (Deluxe, room only), Montana Vyoo 2,111 (cheapest Deluxe, breakfast included in all its rates), Yashshree Karbari 3,078 (Premier, room only). Budget: Cleartrip 18-19 Nov 2026, Hotel Parichit 1,232 (2-star, Standard room, room only), n=1.",
+    "notes": "Only 3 of the 9 listed 3-star hotels showed rooms for 18 Nov (Valley View, Juniper Residency, Maenamla, Munal Homestay showed 'No rooms available'; Zilla Guest House, Lasso Regency, La Casa also none). Banari Regency (listed 4-star, 4.1) was 2,353 room only on 18 Nov, consistent with the median but not counted as 3-star. Sharthi Homestay and Lodging returned a plan table where meal plans priced below room-only, so no homestay figure was taken from it. Namchi 13 Nov list prices were within Rs 1 of the 18 Nov detail prices (Kava Suite 1,350, Montana Vyoo 2,110/2,111, Yashshree 3,078, Parichit 1,233/1,232), so no visible date premium here."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Gangtok to Namchi",
+      "inr": 4000,
+      "range": "4,000 small 4-seater, 4,500 normal 8-seater, 5,000 luxury 6-seater (Sikkim Travellers 2026 chart); taxiinsikkim.com 4,000 / 5,000 / 6,000 with Rs 1,000 extra in season (Sep 10 to Nov end)"
+     },
+     {
+      "route": "Pelling to Namchi",
+      "inr": 4000,
+      "range": "4,000 small 4-seater, 4,500 normal, 5,000 luxury (Sikkim Travellers 2026 chart); taxiinsikkim.com Pelling to Namchi Chardham 2,500 / 3,200 / 3,800 plus Rs 1,000 in season"
+     },
+     {
+      "route": "Ravangla to Namchi (about 33 km)",
+      "inr": 2358,
+      "range": "Gozo sedan one-way, indicative before GST, price on the page varies by fetch"
+     }
+    ],
+    "basis": "No Namchi local-sightseeing rate card (union or tourism department) could be opened. Point-to-point only: Sikkim Travellers (Rongey, Gangtok) published 2026 tariff chart, taxiinsikkim.com (Deorali Bazaar, Gangtok, undated), Gozo indicative one-way fare.",
+    "sources": [
+     "https://www.sikkimtravellers.com/page/taxi-tariff",
+     "http://www.taxiinsikkim.com/south-sikkim/namchi-chardham.php",
+     "https://www.gozocabs.com/book-taxi/ravangla-namchi"
+    ],
+    "notes": "Namchi sights (Char Dham, Samdruptse, Rock Garden, Temi) are spread over 5-30 km, operators sell them as a day package from Gangtok, not a posted local day rate. Local day left null rather than estimated."
+   },
+   "food_per_person_day": {
+    "budget_inr": 600,
+    "standard_inr": 1125,
+    "basis": "Zomato Namchi restaurants page, cost for two: Domino's 300, The Bodhi Cafe 400, Galawati Biryani 400, Flavours 500, Bliss Makhim Residency 500, The Box 1449 1,000, Hotel Zimkhang Delights 1,000, Valhalla Rooftop 1,000, Soulmate Family Restaurant 1,000. Budget = 3 x 200, where 200 = median per person per meal of the five listings at 500 or less (median 400 for two). Standard = 3 x 375, where 375 = median per person per meal of the eight non-chain listings (median 750 for two).",
+    "sources": [
+     "https://www.zomato.com/gangtok/namchi-restaurants"
+    ],
+    "notes": "Zomato's 1,000-for-two is a round bracket figure and probably includes drinks and several dishes, so standard may run high. Hotel dining in Namchi was not used because the hotel meal-plan prices in the Cleartrip pages were inconsistent."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Namchi local-sightseeing taxi rate (no union or tourism-department card found)",
+    "Homestay price (Sharthi table unreliable, Munal Homestay no rooms)",
+    "Budget tier is one hotel only",
+    "Dorm beds (no Hostelworld page for Namchi)"
+   ]
+  },
+  "ravangla": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2475,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/buddha-retreat-2044952?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-ravongla-star-721461?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sikkim-sarovar-4139511?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1518,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4265792?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2334,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/kitsel-homestay-5771093?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4674963?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest room per property. Mid: Buddha Retreat 2,475 (Superior Deluxe, room only), Hotel Ravongla Star 2,023 (Standard Non View), Sikkim Sarovar Hotel 2,936 (Deluxe, room only; listed 2-star, guest rating 4.3, included as well-reviewed). Budget: Sakura Garden Retreat 1,518 (Standard city view, room only; listed 2-star, 4.1), n=1. Homestay: Kitsel Homestay 1,521 (1 Bedroom Deluxe, room only) and Aswin Homestay 3,146 (Double Bedroom, room only); median of two is their mean.",
+    "notes": "Most Ravangla properties showed 'No rooms available' for 18 Nov: Sikkim Sarovar Hotel And Restro, The Alpine Jungle Stay, Lingmoo Residency, Hotel O Ghakhel, Karma homestay, Sikkimese Inn, Basnet Ghar, Nirvana Homestay. The 4-star Temi Bungalow (8,810 on the 13 Nov list) was not priced for 18 Nov and is excluded. Kayak and Sikkim Tourism homestay figures were not used because they are undated."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Pelling to Ravangla",
+      "inr": 3100,
+      "range": "3,100 small 4-seater, 3,300 normal 8-seater, 3,700 luxury 6-seater (Sikkim Travellers 2026 chart); Gozo sedan 3,693 for about 55 km, indicative before GST"
+     },
+     {
+      "route": "Gangtok to Ravangla",
+      "inr": 4000,
+      "range": "4,000 small, 4,500 normal, 5,000 luxury (Sikkim Travellers 2026 chart)"
+     },
+     {
+      "route": "Ravangla to Namchi (about 33 km)",
+      "inr": 2358,
+      "range": "Gozo sedan one-way, indicative before GST"
+     }
+    ],
+    "basis": "No published Ravangla taxi-stand sightseeing card could be opened, so the local day is null. Point-to-point from the Sikkim Travellers 2026 chart (Rongey, Gangtok) and Gozo indicative fares.",
+    "sources": [
+     "https://www.sikkimtravellers.com/page/taxi-tariff",
+     "https://www.gozocabs.com/book-taxi/pelling-ravangla",
+     "https://www.gozocabs.com/book-taxi/ravangla-namchi"
+    ],
+    "notes": "Buddha Park is about 1 km from the bazaar and Temi Tea Garden is a short hop, so most visitors use short stand hops rather than a day hire. Not priced because no source gave a stand rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu, thali price or Zomato cost-for-two found for Ravangla. Cleartrip hotel pages show only breakfast supplements (Buddha Retreat room only 2,475 vs with breakfast 2,970, Sakura Garden 1,518 vs 1,833, Sikkim Sarovar 2,936 vs 3,355, i.e. about 160-250 per person for breakfast), with no lunch or dinner plans.",
+    "sources": [
+     "https://www.cleartrip.com/hotels/details/buddha-retreat-2044952?c=18112026|19112026&r=2,0"
+    ],
+    "notes": "Left null rather than copied from Namchi or Gangtok."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Food (no Ravangla rupee source)",
+    "Local sightseeing taxi rate",
+    "Budget tier is one hotel; homestay is two",
+    "Dorm beds (no Hostelworld page)"
+   ]
+  },
+  "pelling": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2469,
+    "mid_n": 14,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4271019?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/retreat-crassula-ovata-sikkim-3917006?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/magpie-pachhu-village-resort-4270944?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4533616?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/jain-group-hotel-sonamchen-2881252?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-nettle-and-fern-farmstay-4276178?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sikkim-tourist-centre-724306?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4530423?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671306?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/yangthang-dzimkha-resort-724329?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4289377?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/de-regency-720374?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4532072?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4940886?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 575,
+    "dorm_n": 2,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Pelling?currency=INR"
+    ],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest room per hotel, all 14 of the 16 listed 3-star Pelling hotels that showed rooms (Rufina Palm Bliss and Wisteria Crystal Manor had none). 13 of 14 were room-only or plan-unspecified (De Regency shows one room rate); The Nettle & Fern Farmstay offered only a breakfast-inclusive rate (4,554). Sorted: 1,080 / 1,166 / 1,526 / 2,100 / 2,100 / 2,155 / 2,429 / 2,509 / 3,135 / 3,500 / 3,623 / 4,076 / 4,224 / 4,554. Dorm: Hostelworld 'Dorms From' INR, undated: Mochilero Ostello 550 and Oak Valley Retreat 600.",
+    "notes": "18 Nov is far below the 13-14 Nov list prices for several hotels (Sumitel 3,261 -> 2,509; Divine The Celeste 3,540 -> 1,166; Rufina Greenland 2,506 -> 1,080), so the dated pages matter. Zostel Rinchenpong (714) excluded: 9 km away in Rinchenpong. Norbulingka Retreat (listed 3-star homestay, 8,861 room only on 18 Nov) is an outlier and was not used. The Cleartrip budget list could not be priced for 18 Nov (most detail pages 404 or had no rooms; Green Leaf Resort 3,078 is 3-star), so no budget or homestay median."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 4200,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Pelling to Yuksom (about 33 km)",
+      "inr": 3500,
+      "range": "3,500 small 4-seater, 3,700 normal 8-seater, 4,000 luxury 6-seater (Sikkim Travellers 2026 chart); Gozo sedan 2,722 indicative"
+     },
+     {
+      "route": "Pelling to Ravangla",
+      "inr": 3100,
+      "range": "3,100 small, 3,300 normal, 3,700 luxury (Sikkim Travellers 2026 chart)"
+     },
+     {
+      "route": "Pelling to Namchi",
+      "inr": 4000,
+      "range": "4,000 small, 4,500 normal, 5,000 luxury (Sikkim Travellers 2026 chart)"
+     },
+     {
+      "route": "Pelling to Gangtok",
+      "inr": 3700,
+      "range": "3,700 small, 3,900 normal, 4,300 luxury (Sikkim Travellers 2026 chart)"
+     }
+    ],
+    "basis": "Full-day Pelling sightseeing (8 hours) for a 4-seater car: sikkimtaxis.com 'Full Day Tour of Pelling (8 Hours)' 4,200 for a 4-pax car (4,800 for 8-pax Sumo, 5,500 for Innova; page undated). TAB Travels / Explore Sikkim page marked 'Applicable for year 2026' gives full-day Pelling sightseeing 4,000-5,000 in peak season (Oct to mid-Dec, which covers 18 Nov) and 3,500-4,500 off-season. The 4,200 car rate sits inside the peak range.",
+    "sources": [
+     "https://sikkimtaxis.com/taxitariff.html",
+     "https://exploresikkim.in/car-rental-in-pelling",
+     "https://www.sikkimtravellers.com/page/taxi-tariff"
+    ],
+    "notes": "Pelling runs on a local syndicate: non-Pelling cabs may drop at hotels but cannot do local sightseeing. The Pelling Tourism Development Association page mentions an official 2025 rate chart (gopelling.co.in/taxi-rates) but its numbers were not on the page. Sikkimtaxis.com is undated and quotes service tax, so its figure is treated as a floor, not a current union rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": 300,
+    "standard_inr": 760,
+    "basis": "Standard: hotel meal plans on Cleartrip, 18-19 Nov 2026, full board (breakfast, lunch, dinner) minus room only, divided by 2 adults: Rufina Greenland Premiere 1,080 -> 2,203 = 562; Retreat Crassula Ovata 2,429 -> 3,643 = 607; Jain Group Sonamchen 2,100 -> 3,938 = 919; Golden Sunrise & Spa 4,224 -> 6,930 = 1,353. Median 763, rounded to 760. Budget: Holidify West Sikkim restaurants page (undated) lists Pelling eateries at cost for two 100-250 (Gupta 100-150, Anjali 150-200, Taatopani 150-200, Lotus Bakery 150-200, Melting Point 200-250), i.e. 50-125 per person per meal; Unpaqd (20 Jan 2026) quotes local-eatery dinners at 100 and meals under 100. Budget = 3 x about 100.",
+    "sources": [
+     "https://www.cleartrip.com/hotels/details/4940886?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/retreat-crassula-ovata-sikkim-3917006?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/jain-group-hotel-sonamchen-2881252?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4289377?c=18112026|19112026&r=2,0",
+     "https://www.holidify.com/places/west-sikkim/restaurants-places-to-eat-local-cuisine.html",
+     "https://unpaqd.com/blog/pelling-budget-travel/"
+    ],
+    "notes": "Standard is hotel set-meal pricing, not a cafe menu survey; no Pelling restaurant published rupee menus I could open (Tripadvisor, Zomato and Justdial pages were blocked or empty). Budget leans on an undated page and a blog, so treat as low confidence."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget-hotel and homestay price for 18 Nov (Cleartrip budget and homestay pages not priceable)",
+    "Official PTDA 2025 taxi rate chart (link exists, numbers not on the page)",
+    "Restaurant menu prices (Zomato, Tripadvisor, Justdial unavailable)"
+   ]
+  },
+  "yuksom": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1926,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-red-palace-3911562?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1205,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/karthok-homestay-5736192?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount. Mid: Hotel Red Palace (3-star, 4.5) Deluxe Room 1,926, which is the cheapest rate and includes breakfast (no room-only plan shown). Homestay: Karthok Homestay (2-star homestay) Family Room 1,205, room only.",
+    "notes": "Cleartrip lists only 4 Yuksom properties; Mountain Whisper Home Stay and Yuksam Pala's Home stay had no rooms for 18 Nov. Other Yuksom lodges (Yuksom Residency, Hotel Tashigang, Yangri Gang, Demazong, Limboo Homestay) are not on Cleartrip, and the figures found for them were undated (a 2017 Outlook Traveller list, Travelguru, Kayak USD), so they were not used. n=1 per tier: treat as an anchor, not a median."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Pelling to Yuksom (about 33 km)",
+      "inr": 3500,
+      "range": "3,500 small 4-seater, 3,700 normal 8-seater, 4,000 luxury 6-seater (Sikkim Travellers 2026 chart); Gozo sedan 2,722 indicative before GST"
+     }
+    ],
+    "basis": "No Yuksom taxi-stand rate card is published online that I could open. Yuksom is a walkable village and trek base, so a local day hire is not how visitors see it. The Pelling to Yuksom fare is the access cost.",
+    "sources": [
+     "https://www.sikkimtravellers.com/page/taxi-tariff",
+     "https://www.gozocabs.com/book-taxi/pelling_city-yuksom"
+    ],
+    "notes": "Shared jeeps from Geyzing/Pelling are far cheaper but the fare was only in an old blog."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Yuksom menu, thali price or Zomato cost-for-two found. Hotel Red Palace (Cleartrip 18-19 Nov) shows meal increments for two (Super Deluxe breakfast 2,370, breakfast and dinner 2,973, breakfast lunch and dinner 3,462, i.e. dinner about 300 and lunch about 245 per person) but no room-only rate, so breakfast and a full day cannot be derived.",
+    "sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-red-palace-3911562?c=18112026|19112026&r=2,0"
+    ],
+    "notes": "Left null rather than guessed."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Food",
+    "Local taxi rate (none exists as a published card)",
+    "Anything beyond one mid hotel and one homestay",
+    "Dorm beds"
+   ]
+  },
+  "khangchendzonga-np": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Yuksom",
+    "no_lodging_sources": [
+     "https://site.outlookindia.com/traveller/ot-getaway-guides/khangchendzonga-national-park/"
+    ],
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No priced tier. Inside the park there are no hotels: Outlook Traveller's park guide (dated April 2017) lists only forest rest houses (Bakhim, booked ahead), trekkers' huts along the trails (booked through agents at Yuksom, Rs 200 per person per day in 2017), two private lodges at Tshoka (Rs 500-700 in 2017) and camping (tent pitching Rs 100 per tent per day). Those tariffs are 9 years old and were not used.",
+    "notes": "Treat the park as a trek, with nights in Yuksom before and after. Yuksom prices: see the yuksom entry."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Pelling to Yuksom (trek base for the park, about 33 km)",
+      "inr": 3500,
+      "range": "3,500 small 4-seater, 3,700 normal, 4,000 luxury (Sikkim Travellers 2026 chart)"
+     }
+    ],
+    "basis": "The park is entered on foot from Yuksom (permits and porters in Yuksom); no local sightseeing hire exists. Only the access fare is shown.",
+    "sources": [
+     "https://www.sikkimtravellers.com/page/taxi-tariff",
+     "https://site.outlookindia.com/traveller/ot-getaway-guides/khangchendzonga-national-park/"
+    ],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Not researched: meals on the Dzongri and Goecha La treks are normally part of an agent's trek package, and no rupee menu or tariff was found.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Current tariff for forest rest houses and trekkers' huts (only a 2017 figure found)",
+    "Food",
+    "Any taxi rate inside the park"
+   ]
+  },
+  "lachung": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2415,
+    "mid_n": 14,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/rufina-lachung-deezong-4008663?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/le-coxy-resort-lachung-2631824?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/magellan-s-the-golden-bridge-2881176?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/rufina-blue-pine-2625816?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-golden-tashi-gakhil-resort-3979943?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4289376?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/delight-royal-lachung-3961898?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/jain-group-lachung-eyes-3980520?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4711776?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5421178?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5220903?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4595136?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/lamtey-valley-4264144?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671307?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest room per hotel, all 14 listed 3-star Lachung hotels (price listings only from Lachung itself, not Gangtok packages). 12 of 14 had a room-only rate; Magellan's Golden Bridge (5,236, breakfast included) and Udaan Tashi Gakhil (5,390, breakfast plus lunch/dinner) offered no room-only rate. Sorted: 1,106 / 1,299 / 1,502 / 1,577 / 1,840 / 2,196 / 2,403 / 2,426 / 2,490 / 3,577 / 5,236 / 5,390 / 5,461 / 5,834; median is the mean of 2,403 and 2,426.",
+    "notes": "Wide spread: budget-style 3-star rooms at 1,100-1,800 and resort-style at 5,200-5,800. The 13 Nov list prices were higher (Rufina Royal 2,212 vs 1,106 on 18 Nov). Bon Kiputhang (listed 2-star, 8,009) excluded. No homestay or budget tier: Lachung homestays are not on Cleartrip, and the Sikkim Tourism homestay page gives undated 'around' rates that include meals."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Lachung to Yumthang Valley and Zero Point, private SUV excursion",
+      "inr": 3500,
+      "range": "3,000-4,000 (Tourbix Ride, page dated 27 Jul 2025)"
+     },
+     {
+      "route": "Lachung to Yumthang Valley one-way (about 26 km)",
+      "inr": 4163,
+      "range": "4,163 small SUV, 4,585 large SUV (Gozo, indicative before GST)"
+     }
+    ],
+    "basis": "Yumthang and Zero Point are 24-52 km from Lachung, so they are point-to-point excursions, not a local day. Tourbix Ride (operator blog, 27 Jul 2025): Lachung to Yumthang/Zero Point private SUV Rs 3,000-4,000; peak season April-June and October-December. Gozo one-way Lachung to Yumthang Valley small SUV 4,163 (26 km). No Lachung taxi union card could be opened.",
+    "sources": [
+     "https://tourbixride.com/blog/north-sikkim-taxi-fare-2025-verified-rates-trusted-drivers-travel-tips",
+     "https://www.gozocabs.com/book-taxi/lachung-yumthang"
+    ],
+    "notes": "North Sikkim vehicles must be 4WD SUVs (Bolero, Scorpio, Innova); sedans are not allowed. Mid-point 3,500 used for the excursion; the Gozo one-way figure is higher because it prices a one-way trip."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": 625,
+    "basis": "Hotel meal plans on Cleartrip, 18-19 Nov 2026, full board (breakfast, lunch, dinner) minus room only, divided by 2 adults: Rufina Lachung Deezong Super Deluxe 1,502 -> 2,753 = 626; Rufina Blue Pine Super Deluxe 2,426 -> 3,660 = 617; Magellan's Grandala Premium View 3,577 -> 5,503 = 963. Median 626, shown as 625. Lachung has few standalone restaurants, so most visitors eat the hotel set meals.",
+    "sources": [
+     "https://www.cleartrip.com/hotels/details/rufina-lachung-deezong-4008663?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/rufina-blue-pine-2625816?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5220903?c=18112026|19112026&r=2,0"
+    ],
+    "notes": "Hotel set meals are a standard-tier price; no dhaba or momo-stall rupee source found for Lachung, so budget is null."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget hotel and homestay prices",
+    "Lachung taxi union rate card",
+    "Budget food",
+    "Dorm beds"
+   ]
+  },
+  "lachen": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2363,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/magellan-s-the-grand-lachen-2048800?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4595135?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-royal-avalanche-retreat-lachen-by-baizus-5417604?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-lamtey-valley-lachen-by-baizus-5278156?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip hotel detail pages, 18-19 Nov 2026 (Wed-Thu), 1 room 2 adults, pre-tax after discount, cheapest rate per hotel, the 4 of 8 listed Lachen hotels that showed rooms: Hotel Royal Avalanche Retreat by Baizus 1,315 (room only), Hotel Lamtey Valley Lachen by Baizus 1,733 (breakfast included), Hotel Khangzik 2,993 (breakfast included), Magellan's The Grand Lachen 3,148 (breakfast plus lunch/dinner, no cheaper plan shown). Median is the mean of 1,733 and 2,993.",
+    "notes": "Meal inclusion differs by hotel: Lachen rooms are often sold half-board, so the median mixes a room-only, two breakfast-inclusive and one half-board price. The other four (Summit Panghen Metok 4-star, Baizus Royal Avalanche, Hotel Golden Kang, Royal Avalanche Retreat 2-star) showed no rooms on 18 Nov. Priced only from Lachen listings, not Gangtok packages. No homestay or budget tier found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Lachen to Gurudongmar Lake and back (about 65 km each way, day trip)",
+      "inr": 4000,
+      "range": "3,000-4,500: taxiinsikkim.com Normal vehicle 3,500 off-season / 4,000 season, Luxury 4,000 / 4,500; Tourbix Ride 3,000-4,000 (Jul 2025); Discover with Dheeraj (updated 9 Oct 2026) private 2,500-3,000, unclear whether per vehicle"
+     }
+    ],
+    "basis": "Lachen to Gurudongmar is a long excursion, not a local day. taxiinsikkim.com (Deorali Bazaar, Gangtok, undated) 'Price of Taxi for Gurudongmar Lake': Normal vehicle 3,500 per day off-season, 4,000 in season; Luxury 4,000 / 4,500; small cars not allowed. The same operator defines season as Sep 10 to Nov end on its other pages, which covers 18 Nov, so 4,000 is used. Tourbix Ride 3,000-4,000 agrees at the top of its range.",
+    "sources": [
+     "http://www.taxiinsikkim.com/north-sikkim/gurudongmar-lake.php",
+     "https://tourbixride.com/blog/north-sikkim-taxi-fare-2025-verified-rates-trusted-drivers-travel-tips",
+     "https://discoverwithdheeraj.com/gurudongmar-lake-chopta-valley/"
+    ],
+    "notes": "No Lachen taxi union card could be opened. Permit extra about Rs 500 on taxiinsikkim.com. Zero Point and Chopta are extra on most operator lists."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": 720,
+    "basis": "Hotel meal-plan increments on Cleartrip, 18-19 Nov 2026, for two adults, converted to per person: Hotel Khangzik breakfast 2,993 -> breakfast plus lunch/dinner 3,591 -> full board 4,190, i.e. each main meal about 299 per person; Magellan's Grand Lachen 3,148 -> 3,672, third meal 262 per person; Baizus Royal Avalanche room only 1,315 -> with breakfast 1,640, breakfast about 163 per person. Day = about 160 + 2 x 262-300 = 684-760; 720 used.",
+    "sources": [
+     "https://www.cleartrip.com/hotels/details/4595135?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/magellan-s-the-grand-lachen-2048800?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-royal-avalanche-retreat-lachen-by-baizus-5417604?c=18112026|19112026&r=2,0"
+    ],
+    "notes": "Assembled from three hotels because none shows a clean room-only to full-board pair. Lachen has very few eateries; no dhaba or momo-stall rupee source found, so budget is null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget hotel and homestay prices",
+    "Lachen taxi union card",
+    "Clean food basis (derived from three hotels)",
+    "Budget food"
+   ]
+  },
+  "gurudongmar-lake": {
+   "stay": {
+    "no_lodging": true,
+    "nearest_base": "Lachen",
+    "no_lodging_sources": [
+     "https://www.northeast-india.in/travel-guide/sikkim/gurudongmar-lake/",
+     "https://guidetour.in/gurudongmar-lake-travel-guide/"
+    ],
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No priced tier. northeast-india.in (copyright 2026): 'The nearest accommodation available is in Lachen' and 'You need to stay at Lachen for 1 nt'. guidetour.in (updated 21 Oct 2025): 'The nearest accommodations are available in Lachen', about 68 km from the lake, with homestays and basic hotels.",
+    "notes": "Lake is at about 5,425 m; visitors sleep in Lachen (see the lachen entry) and leave around 4:30 am."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Lachen to Gurudongmar Lake and back (about 65 km each way, day trip)",
+      "inr": 4000,
+      "range": "3,000-4,500: taxiinsikkim.com Normal 3,500 off-season / 4,000 season, Luxury 4,000 / 4,500; Tourbix Ride 3,000-4,000 (Jul 2025)"
+     }
+    ],
+    "basis": "taxiinsikkim.com (Deorali Bazaar, Gangtok, undated) 'Price of Taxi for Gurudongmar Lake': Normal vehicle 4,000 per day in season (Sep 10 to Nov end per the operator's other pages), 3,500 off-season; Luxury 4,000 / 4,500; small cars not allowed. Tourbix Ride (27 Jul 2025) quotes 3,000-4,000.",
+    "sources": [
+     "http://www.taxiinsikkim.com/north-sikkim/gurudongmar-lake.php",
+     "https://tourbixride.com/blog/north-sikkim-taxi-fare-2025-verified-rates-trusted-drivers-travel-tips"
+    ],
+    "notes": "No local day exists: the lake is a one-direction excursion from Lachen. Same figure as the Lachen entry by design."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Not applicable: no settlement at the lake; meals are eaten in Lachen (see the lachen entry).",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "Lachen taxi union card (price is from operators)",
+    "Food (none at the lake)"
+   ]
+  }
+ }
+}

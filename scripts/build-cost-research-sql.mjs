@@ -144,9 +144,13 @@ for (const f of files) {
           const od = obsDate(basis, cat) ?? { mon: 10, day: null, undated: true };
           const mon = od?.mon ?? null;
           const anchor = mon ? seasonOf(id, cat, mon) : null;
-          const inDiwali = od?.mon === 11 && od.day != null && od.day >= 7 && od.day <= 15;
+          // Region _exclude.json may widen the window (East: Chhath runs to 16 Nov) and hold, rather than deflate by the
+          // all-India median, a holiday-week price where no town in the state was measured.
+          const hw = exclude.holiday ?? { from: 7, to: 15 };
+          const inDiwali = od?.mon === 11 && od.day != null && od.day >= hw.from && od.day <= hw.to;
           if (inDiwali && !diwali) { stats.skipped.push(`${id} ${cat} (Diwali-week stay date; premium not measured yet)`); continue; }
           const dInfo = inDiwali ? diwaliRatio(id) : null; const dRatio = dInfo?.ratio ?? 1;
+          if (inDiwali && hw.unmeasured === "hold" && /^overall/.test(dInfo.basis)) { stats.skipped.push(`${id} ${cat} (held: holiday-week stay date, no measured premium in this state)`); stats.held.push(`${id}/${cat}`); continue; }
           if (anchor === "low") { stats.skipped.push(`${id} ${cat} (held: ${MONTH_NAMES[mon]} is low season here; peak unmeasured)`); stats.held.push(`${id}/${cat}`); continue; }
           const forced = exclude.anchor?.[id]?.[cat];
           const A = forced ?? anchor ?? "shoulder";
