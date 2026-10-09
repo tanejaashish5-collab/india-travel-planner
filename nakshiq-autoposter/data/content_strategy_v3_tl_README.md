@@ -44,7 +44,7 @@ This is a **separate** CSV from v2, not appended, so attribution stays clean and
 
 ### 3. `v3_tl_first_person_essay` (moment)
 **Kept**: 5-slide essay arc (arrival → mid → mid → mid → byline), human byline at end, long-form text-led.
-**Changed**: Byline is `@{writer_handle} · NakshIQ desk` (named writer, never anonymous editorial we-voice). Verdict line carries score `{score}/5` + worth-it one-liner. Comment-CTA is `Drop your answer in the comments — would you go after reading this?` instead of `Click the link in our bio`.
+**Changed**: Byline is `@{writer_handle} · NakshIQ desk` (named writer, never anonymous editorial we-voice). Verdict line carries score `{score}/10` + worth-it one-liner. Comment-CTA is `Drop your answer in the comments — would you go after reading this?` instead of `Click the link in our bio`.
 **Differentiates from v2**: `v2_pov_slow_morning` is a <60s sensory reel. This is text-led 5-slide carousel essay — fully different surface.
 
 ### 4. `v3_tl_city_neighborhood` (discovery)

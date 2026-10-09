@@ -2,7 +2,7 @@
 
 **Status:** Locked v1  
 **Date:** April 2026  
-**Owner:** Ashish Taneja / Impresa de Artiste Pty Ltd
+**Owner:** Ashish Taneja
 
 ---
 

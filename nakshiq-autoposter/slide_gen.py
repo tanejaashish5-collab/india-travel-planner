@@ -16,6 +16,8 @@ Each slide function returns a PIL.Image; build_carousel_slides writes JPGs.
 """
 from __future__ import annotations
 
+from score_fmt import score10
+
 from datetime import datetime
 from io import BytesIO
 from pathlib import Path
@@ -279,7 +281,7 @@ def render_destination_slide(dest: dict, index: int, total: int,
     state      = (dest.get("state") or "").upper()
 
     score_font  = _jetbrains(64)
-    score_text  = f"{score}/5"
+    score_text  = score10(score)
     score_w     = _text_width(score_text, score_font)
     score_y     = name_y + name_font.size + 28
     draw.text((60, score_y), score_text, font=score_font, fill=BONE)
@@ -386,7 +388,7 @@ def build_carousel_slides(fmt: str, content: dict, destinations: list,
     month_now = datetime.now().strftime("%B").upper()
 
     if fmt == "data_carousel":
-        title    = f"{month_now}'S 5/5"
+        title    = f"{month_now}'S 10/10"
         subtitle = "DESTINATIONS"
         cta_head = f"FULL {month_now} SCORES"
         cta_url  = "nakshiq.com/en/explore"
@@ -912,7 +914,7 @@ def render_listicle_slide(state_name: str, items: list[dict],
             score_val = int(round(float(d.get("score") or 0)))
         except Exception:
             score_val = 0
-        score_text = f"{score_val}/5"
+        score_text = score10(score_val)
         sw = _text_width(score_text, score_font)
         draw.text((w - 60 - sw, ry + 12),
                   score_text, font=score_font, fill=BONE_DIM)
@@ -1073,9 +1075,9 @@ def _fallback_body_segments(dest: dict) -> list[str]:
     if why and why != tagline:
         segs.append(_truncate(why, 90))
     if score not in (None, "") and state:
-        segs.append(f"NakshIQ verified: {score}/5 · {state}")
+        segs.append(f"NakshIQ verified: {score10(score)} · {state}")
     elif score not in (None, ""):
-        segs.append(f"NakshIQ verified: {score}/5")
+        segs.append(f"NakshIQ verified: {score10(score)}")
     return segs[:3]
 
 

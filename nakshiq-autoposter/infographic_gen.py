@@ -32,6 +32,8 @@ Usage:
 """
 from __future__ import annotations
 
+from score_fmt import score10
+
 import argparse
 import hashlib
 import json
@@ -810,7 +812,7 @@ def generate_caption(topic: str, destinations: list[dict], month: int) -> str:
 
     for i, d in enumerate(top3):
         score = d.get("score", 0)
-        lines.append(f"{i+1}. {d['name']} — {d.get('state', '')} ({score}/5)")
+        lines.append(f"{i+1}. {d['name']} — {d.get('state', '')} ({score10(score)})")
 
     lines += [
         "",

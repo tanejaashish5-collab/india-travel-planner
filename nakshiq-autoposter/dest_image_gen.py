@@ -29,6 +29,8 @@ Usage:
 """
 from __future__ import annotations
 
+from score_fmt import score10
+
 import argparse
 import hashlib
 import json
@@ -464,7 +466,7 @@ def _style_info_card(img: Image.Image, dest: dict, size: tuple) -> Image.Image:
 
     if score:
         score_font = _jetbrains(42)
-        score_text = f"{score}/5"
+        score_text = score10(score)
         draw.text((60, meta_y), score_text, font=score_font, fill=BONE)
         sw = _text_w(score_text, score_font)
         _draw_dot(draw, 60 + sw + 16, meta_y + 22, 7, VERMILLION_BRIGHT)

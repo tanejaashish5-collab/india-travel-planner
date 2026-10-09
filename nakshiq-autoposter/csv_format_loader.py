@@ -27,6 +27,8 @@ Schema (15 cols, mirrored across content_strategy.csv, _v3_tl.csv, _v4_dw.csv):
 """
 from __future__ import annotations
 
+from score_fmt import score10
+
 import csv
 import logging
 import re
@@ -1027,6 +1029,11 @@ def render_caption(spec: FormatSpec,
         )
         return ""
 
+    # Destination scores are stored 0-5 and shown 0-10 (solo/kids stay /5).
+    ctx = _DefaultDict(ctx)
+    for _k in ("score", "dest_a_score", "dest_b_score"):
+        if ctx.get(_k) not in (None, ""):
+            ctx[_k] = score10(ctx[_k]).split("/")[0]
     try:
         hook = spec.hook_template.format_map(ctx)
         body = spec.caption_template.format_map(ctx)
@@ -1118,7 +1125,7 @@ def _fallback_image_caption(spec: FormatSpec, dest: dict,
     if why and why != tagline:
         body_lines.append(why)
     if score not in (None, ""):
-        body_lines.append(f"NakshIQ score: {score}/5"
+        body_lines.append(f"NakshIQ score: {score10(score)}"
                           + (f" · {month}" if month else ""))
 
     cta = "Full intel at nakshiq.com"

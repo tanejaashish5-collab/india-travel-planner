@@ -3,7 +3,7 @@
 **One document. Every decision. Every action.**
 
 Version 1.0 · April 10, 2026
-Prepared for Ashish Taneja · Impresa de Artiste Pty Ltd
+Prepared for Ashish Taneja
 
 ---
 

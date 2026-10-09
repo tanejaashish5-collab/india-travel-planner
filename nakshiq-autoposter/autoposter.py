@@ -528,7 +528,7 @@ FESTIVAL_PLANNING_CUTOFF_DAY = 14
 # sync_all_content, autoposter.py:845-848).  Fallback only matters when the
 # stats call fails; bumping to current catalog size (2026-05-10) so a sync
 # failure doesn't stamp every caption with a stale number.
-TOTAL_DESTINATIONS = 505
+TOTAL_DESTINATIONS = 533
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -3078,7 +3078,7 @@ def copy_score_card(dest: dict, platform: str) -> str:
                        content=build_utm_content(dest.get("id"), "score_card"))
         body = [hook] if hook else []
         body.append(f"{name}, {state} — the honest read for {mon}.")
-        body.append(f"We don't do sponsored hype. That {score}/5 is what's left after we check weather, roads, crowds, hospitals and signal.")
+        body.append(f"We don't do sponsored hype. That {format_score(score)} is what's left after we check weather, roads, crowds, hospitals and signal.")
         body.append(cta)
         body.append(f"Full {name} guide → {url}")
         body.append(tags)
@@ -3086,7 +3086,7 @@ def copy_score_card(dest: dict, platform: str) -> str:
 
     # IG — no URL (stripped from captions). Link-in-bio model + comment-CTA.
     body = [hook] if hook else []
-    body.append(f"{mon} · {name}, {state}. Our honest read: {score}/5 — earned on weather, roads, crowds, hospitals and signal, not vibes.")
+    body.append(f"{mon} · {name}, {state}. Our honest read: {format_score(score)} — earned on weather, roads, crowds, hospitals and signal, not vibes.")
     body.append(cta)
     body.append("🔗 link in bio for the full guide.")
     body.append(tags)
@@ -4385,7 +4385,7 @@ def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict
                            content=build_utm_content(item_id, f"collection_series_{coll_id}"))
             body = [hook, f"📍 {item_name}, {item_state} · {clean_coll}"]
             if item_score:
-                body.append(f"NakshIQ score this month: {item_score}/5")
+                body.append(f"NakshIQ score this month: {format_score(item_score)}")
             body.append(cta)
             body.append(f"Full series → https://nakshiq.com/en/collections/{coll_id}")
             body.append(f"This destination → {url}")
@@ -4395,7 +4395,7 @@ def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict
         # IG
         body = [hook, f"📍 {item_name} · {position}"]
         if item_score:
-            body.append(f"⭐ {item_score}/5 this {month_name()}")
+            body.append(f"⭐ {format_score(item_score)} this {month_name()}")
         body.append(cta)
         body.append("🔗 link in bio for the full series.")
         body.append(tags)
@@ -4643,7 +4643,7 @@ def copy_women_solo_brief(dest: dict, platform: str) -> str:
 
         score_line_parts = []
         if score:
-            score_line_parts.append(f"NakshIQ {score}/5 this {month_name()}")
+            score_line_parts.append(f"NakshIQ {format_score(score)} this {month_name()}")
         if solo_score:
             score_line_parts.append(f"Solo-female safety: {solo_score}/5")
         if difficulty:
@@ -5817,7 +5817,7 @@ def generate_post(fmt: str, content: dict, platform: str,
                 if len(in_state) < 5:
                     continue  # too thin for a listicle; try next cand
                 extras["listicle_body"] = "\n".join(
-                    f"{i}. {d.get('name','')} · {d.get('score','?')}/5"
+                    f"{i}. {d.get('name','')} · {format_score(d.get('score'))}"
                     for i, d in enumerate(in_state, 1)
                 )
                 extras["listicle_count"] = len(in_state)

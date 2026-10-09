@@ -18,6 +18,8 @@ Uses ffmpeg for all video processing (available on GitHub Actions ubuntu).
 
 from __future__ import annotations
 
+from score_fmt import score10
+
 import json
 import random
 import shutil
@@ -219,7 +221,7 @@ def _build_score_reveal_filters(dest_name: str, month: str, score: int,
 
     # Score reveal BIG (appear at 4s)
     lines.append(_build_drawtext(
-        f"{score}/5", FONT_JETBRAINS, 180,
+        score10(score), FONT_JETBRAINS, 180,
         VERMILLION_BRIGHT if score <= 2 else SAFFRON if score == 3 else "#4CAF50",
         "(w-text_w)/2", "h*0.30",
         enable="gte(t,4)", border_w=5
@@ -318,7 +320,7 @@ def _build_contrarian_filters(famous: str, hidden: str,
         enable="between(t,0.3,5)"
     ))
     lines.append(_build_drawtext(
-        f"Score: {famous_score}/5", FONT_JETBRAINS, 56,
+        "Score: " + score10(famous_score), FONT_JETBRAINS, 56,
         SAFFRON, "(w-text_w)/2", "h*0.47",
         enable="between(t,1.5,5)", border_w=4
     ))
@@ -335,7 +337,7 @@ def _build_contrarian_filters(famous: str, hidden: str,
         enable="gte(t,5.3)"
     ))
     lines.append(_build_drawtext(
-        f"Score: {hidden_score}/5", FONT_JETBRAINS, 64,
+        "Score: " + score10(hidden_score), FONT_JETBRAINS, 64,
         "#4CAF50", "(w-text_w)/2", "h*0.47",
         enable="gte(t,6.5)", border_w=4
     ))
@@ -384,7 +386,7 @@ def _build_seasonal_shift_filters(dest_name: str, now_month: str,
         enable="between(t,0,5)"
     ))
     lines.append(_build_drawtext(
-        f"is a {now_score}/5", FONT_JETBRAINS, 80,
+        "is a " + score10(now_score), FONT_JETBRAINS, 80,
         "#4CAF50", "(w-text_w)/2", "h*0.37",
         enable="between(t,0.5,5)", border_w=4
     ))
@@ -401,7 +403,7 @@ def _build_seasonal_shift_filters(dest_name: str, now_month: str,
         enable="gte(t,5)"
     ))
     lines.append(_build_drawtext(
-        f"{future_score}/5", FONT_JETBRAINS, 180,
+        score10(future_score), FONT_JETBRAINS, 180,
         VERMILLION_BRIGHT, "(w-text_w)/2", "h*0.35",
         enable="gte(t,6)", border_w=5
     ))
@@ -535,7 +537,7 @@ def _build_destination_reveal_filters(dest_name: str, state_name: str,
     # Phase 3: Score reveal (5–7s)
     score_color = VERMILLION_BRIGHT if score <= 2 else SAFFRON if score == 3 else "#4CAF50"
     lines.append(_build_drawtext(
-        f"{score}/5", FONT_JETBRAINS, 120,
+        score10(score), FONT_JETBRAINS, 120,
         score_color, "(w-text_w)/2", "h*0.55",
         enable="gte(t,5)", border_w=5
     ))

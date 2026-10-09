@@ -60,17 +60,17 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v2_hindi_score_card": {
         "hook": "{name_hi}, {month_hindi} में — जाएं या रुकें?",
-        "caption": "हर कोई तस्वीरें दिखाता है। असली सवाल कोई नहीं पूछता — इस महीने जाना सही है?\n\nहमने परखा:\nस्कोर: {score}/5\nठहरने का खर्च: ₹{price_range_inr}/रात\nक्यों जाएं: {why_special_hi}\n\n{tagline}\n\nहर महीने दोबारा जाँचते हैं — कोई स्पॉन्सर नहीं, बस सच।",
+        "caption": "हर कोई तस्वीरें दिखाता है। असली सवाल कोई नहीं पूछता — इस महीने जाना सही है?\n\nहमने परखा:\nस्कोर: {score}/10\nठहरने का खर्च: ₹{price_range_inr}/रात\nक्यों जाएं: {why_special_hi}\n\n{tagline}\n\nहर महीने दोबारा जाँचते हैं — कोई स्पॉन्सर नहीं, बस सच।",
         "cta": "{name_hi} गए हो? कमेंट में बताओ — कब और कैसा लगा।",
     },
     "v2_ugc_spotlight": {
         "hook": "Something in {dest_name}, {state} stopped us this {month_name}.",
-        "caption": "Most feeds scroll right past places like this. We flagged it.\n\nWhat caught our eye: {tagline}\n\nWhy it's on the radar: {why_special}\n\nHonest score this {month_name}: {score}/5.",
+        "caption": "Most feeds scroll right past places like this. We flagged it.\n\nWhat caught our eye: {tagline}\n\nWhy it's on the radar: {why_special}\n\nHonest score this {month_name}: {score}/10.",
         "cta": "Comment 📍 if you'd add this to your week.",
     },
     "v2_wildlife_moment": {
         "hook": "{dest_name} — where the wild is still at the edge of the trail.",
-        "caption": "You don't always get the sighting. But when {dest_name} delivers, it stays with you.\n\n{tagline}\n\nWhat to expect this {month_name}: {note}\n\nWhy it's worth the patience: {why_special}\n\nHonest score: {score}/5.",
+        "caption": "You don't always get the sighting. But when {dest_name} delivers, it stays with you.\n\n{tagline}\n\nWhat to expect this {month_name}: {note}\n\nWhy it's worth the patience: {why_special}\n\nHonest score: {score}/10.",
         "cta": "Comment your last sighting in {state}.",
     },
     "v2_texture_macro": {
@@ -85,17 +85,17 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v2_cost_vs_feeling": {
         "hook": "₹{cost_inr} doesn't sound like much — until you see what it bought in {dest_name}.",
-        "caption": "Slide 1: the receipt. Slide 2: the moment it paid for.\n\n₹{cost_inr} = {feeling_phrase}.\n{experience_summary}.\n\n{dest_name}, {state}. Verified {verification_date}. Score this month: {score}/5.\n\nNot every rupee travels this far. This one did.",
+        "caption": "Slide 1: the receipt. Slide 2: the moment it paid for.\n\n₹{cost_inr} = {feeling_phrase}.\n{experience_summary}.\n\n{dest_name}, {state}. Verified {verification_date}. Score this month: {score}/10.\n\nNot every rupee travels this far. This one did.",
         "cta": "Comment ₹ and we'll show the next 3 places where this still works.",
     },
     "v2_myth_bust_oneline": {
         "hook": "Most reels about {dest_name} sell you the postcard. Here's the rest.",
-        "caption": "What you've been told: {tagline}\n\nWhat we actually verified for {month_name}: {note}\n\nSame place, honest score: {score}/5.\n\nThe pretty version isn't wrong. It's just not the whole story.",
+        "caption": "What you've been told: {tagline}\n\nWhat we actually verified for {month_name}: {note}\n\nSame place, honest score: {score}/10.\n\nThe pretty version isn't wrong. It's just not the whole story.",
         "cta": "Comment the place whose hype didn't match what you saw.",
     },
     "v2_series_episode": {
         "hook": "{state} this {month_name}, one honest pick a day. Today: {dest_name}.",
-        "caption": "No sponsored lists, no copy-paste itineraries — just the place we'd actually send you this week.\n\n{tagline}\n\nWhy go: {why_special}\nEat: {hero_dish} at {eatery_name}\nStay: from ₹{price_range_inr}/night\n\nHonest score: {score}/5.",
+        "caption": "No sponsored lists, no copy-paste itineraries — just the place we'd actually send you this week.\n\n{tagline}\n\nWhy go: {why_special}\nEat: {hero_dish} at {eatery_name}\nStay: from ₹{price_range_inr}/night\n\nHonest score: {score}/10.",
         "cta": "Comment {state} for tomorrow's pick.",
     },
     "v2_local_knows": {
@@ -104,9 +104,9 @@ SPINE: dict[str, dict[str, str]] = {
         "cta": "Comment your destination — we'll give you the unfiltered read.",
     },
     "v2_score_card_pov": {
-        "hook": "{dest_name} in {month_name}: {score}/5. Before you book, here's why.",
-        "caption": "Same destination everyone's posting — our honest read.\n\nWhat's actually true this month: {note}\n\nVerdict: {score}/5. Stays from ₹{price_range_inr}/night.\n\nWe score every place monthly on weather, roads, crowds, hospitals and signal — not vibes, not sponsored lists.",
-        "cta": "Comment YES if {score}/5 feels right. NO if you'd score it differently.",
+        "hook": "{dest_name} in {month_name}: {score}/10. Before you book, here's why.",
+        "caption": "Same destination everyone's posting — our honest read.\n\nWhat's actually true this month: {note}\n\nVerdict: {score}/10. Stays from ₹{price_range_inr}/night.\n\nWe score every place monthly on weather, roads, crowds, hospitals and signal — not vibes, not sponsored lists.",
+        "cta": "Comment YES if {score}/10 feels right. NO if you'd score it differently.",
     },
     "v2_arrival_intel_video": {
         "hook": "Your first 4 hours at {iata} decide your whole trip to {city}.",
@@ -120,12 +120,12 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v2_cost_index_handwritten": {
         "hook": "{dest_name}, {month_name} — hand-checked, line by line.",
-        "caption": "Not scraped, not guessed. What we actually found on the ground:\n\n{dest_name}, {state}.\nStays: ₹{price_range_inr} (verified across real hotels + guesthouses).\nEat: {hero_dish} at {eatery_name}.\nGround truth: {note}\n\nHonest score: {score}/5. Re-checked monthly, never sponsored.",
+        "caption": "Not scraped, not guessed. What we actually found on the ground:\n\n{dest_name}, {state}.\nStays: ₹{price_range_inr} (verified across real hotels + guesthouses).\nEat: {hero_dish} at {eatery_name}.\nGround truth: {note}\n\nHonest score: {score}/10. Re-checked monthly, never sponsored.",
         "cta": "Comment your dest — we'll pull its real numbers next.",
     },
     "v2_weekend_escape_map": {
         "hook": "{drive_hours}h from {anchor_city}, and a completely different weekend: {dest_name}.",
-        "caption": "Same Friday everyone's stuck in traffic — here's where we'd point the car instead.\n\n{dest_name}. {drive_hours} hours from {anchor_city}.\n\nBest Fri→Sun window: {best_window}\nThe drive: {drive_route_note}\nStay: {stay_pick_name}\nDo: {weekend_itinerary}\n\nHonest score: {score}/5. Crowd: {crowd_level}.",
+        "caption": "Same Friday everyone's stuck in traffic — here's where we'd point the car instead.\n\n{dest_name}. {drive_hours} hours from {anchor_city}.\n\nBest Fri→Sun window: {best_window}\nThe drive: {drive_route_note}\nStay: {stay_pick_name}\nDo: {weekend_itinerary}\n\nHonest score: {score}/10. Crowd: {crowd_level}.",
         "cta": "Comment {anchor_city} for the next 3 weekend picks within {drive_hours}h.",
     },
     "v2_festival_alert_sensory": {
@@ -135,7 +135,7 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v2_tourist_trap_split": {
         "hook": "Two versions of {dest_name}. Only one survives a visit.",
-        "caption": "The brochure sells you one thing. The ground tells you another.\n\nBrochure: {tagline}\n\nVerified this {month_name}: {note}\n\nHonest score: {score}/5. Checked {verification_date}.\n\nWe'd rather you arrive ready than disappointed.",
+        "caption": "The brochure sells you one thing. The ground tells you another.\n\nBrochure: {tagline}\n\nVerified this {month_name}: {note}\n\nHonest score: {score}/10. Checked {verification_date}.\n\nWe'd rather you arrive ready than disappointed.",
         "cta": "Comment a place whose hype didn't match the visit.",
     },
     "v2_women_solo_brief_video": {
@@ -157,7 +157,7 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v3_tl_first_person_essay": {
         "hook": "I went to {dest_name} expecting one thing. I left with another.",
-        "caption": "Slide 1: where it began. Slides 2–4: what changed. Slide 5: what I'd tell you.\n\n{dest_name}, {state}. {duration_days} days, {duration_year} {duration_season}.\n\nWhat I expected: {expectation}\nWhat I got: {reality}\n\nVerdict: {score}/5. Worth it: {worth_it_short}.\n\n— {writer_handle}, NakshIQ desk",
+        "caption": "Slide 1: where it began. Slides 2–4: what changed. Slide 5: what I'd tell you.\n\n{dest_name}, {state}. {duration_days} days, {duration_year} {duration_season}.\n\nWhat I expected: {expectation}\nWhat I got: {reality}\n\nVerdict: {score}/10. Worth it: {worth_it_short}.\n\n— {writer_handle}, NakshIQ desk",
         "cta": "Drop your answer in the comments — would you go after reading this?",
     },
     "v3_tl_city_neighborhood": {
@@ -167,12 +167,12 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v3_tl_world_best_india": {
         "hook": "NakshIQ India {category_label} of the Year, {year} — and it's not who you'd guess.",
-        "caption": "We field-audited {pool_size} {category_plural} this year. One stood above the rest.\n\n{winner_name}, {state}. Score: {score}/5. Verified visits: {audit_count}.\n\nWhy this one: {citation_text}\n\nRunner-up: {runner_up_name}, {runner_up_state}.\nBronze: {bronze_name}, {bronze_state}.\n\nThe full 10 reveal over the next 10 days. Same time, same place.",
+        "caption": "We field-audited {pool_size} {category_plural} this year. One stood above the rest.\n\n{winner_name}, {state}. Score: {score}/10. Verified visits: {audit_count}.\n\nWhy this one: {citation_text}\n\nRunner-up: {runner_up_name}, {runner_up_state}.\nBronze: {bronze_name}, {bronze_state}.\n\nThe full 10 reveal over the next 10 days. Same time, same place.",
         "cta": "Comment {category_singular_lowercase} for the methodology DM.",
     },
     "v3_tl_poll_reel": {
         "hook": "{dest_a_name} or {dest_b_name} this {month_name}? Your gut says one. The data says another.",
-        "caption": "Two destinations, one month, an honest call.\n\n{dest_a_name}: {dest_a_score}/5\n{dest_b_name}: {dest_b_score}/5\n\nOur numbers lean {data_winner_name} this month — scored on weather, roads, crowds, hospitals and signal.\n\nNo sponsors. Just the numbers.",
+        "caption": "Two destinations, one month, an honest call.\n\n{dest_a_name}: {dest_a_score}/10\n{dest_b_name}: {dest_b_score}/10\n\nOur numbers lean {data_winner_name} this month — scored on weather, roads, crowds, hospitals and signal.\n\nNo sponsors. Just the numbers.",
         "cta": "Drop A or B in the comments — we'll publish your verdict next week.",
     },
     "v3_tl_news_announcement": {
@@ -184,12 +184,12 @@ SPINE: dict[str, dict[str, str]] = {
     # ── content_strategy_v4_dw.csv (v4) ──────────────────────────────────────
     "v4_dw_archival_modern_carousel": {
         "hook": "{dest_name}, {state}: the brochure, and then the truth.",
-        "caption": "Two pictures of the same place. One sells. One holds up.\n\nBrochure pitch: {tagline}\n\nWhat we verified on the ground: {why_special}\n\nThis {month_name}: {note}\n\nHonest score: {score}/5. Re-verified {verification_date}.",
+        "caption": "Two pictures of the same place. One sells. One holds up.\n\nBrochure pitch: {tagline}\n\nWhat we verified on the ground: {why_special}\n\nThis {month_name}: {note}\n\nHonest score: {score}/10. Re-verified {verification_date}.",
         "cta": "Comment THEN if you've been — we're collecting before/after notes.",
     },
     "v4_dw_local_historian_spotlight": {
         "hook": "{dest_name}, {state} — most reels stop at the view. The story's underneath.",
-        "caption": "Anyone can shoot the postcard. Here's the substance most miss.\n\nThe pitch: {tagline}\n\nWhat actually makes it work: {why_special}\n\nThis {month_name}: {note}\n\nHonest score: {score}/5.",
+        "caption": "Anyone can shoot the postcard. Here's the substance most miss.\n\nThe pitch: {tagline}\n\nWhat actually makes it work: {why_special}\n\nThis {month_name}: {note}\n\nHonest score: {score}/10.",
         "cta": "Comment a place you want us to decode next.",
     },
     "v4_dw_counter_narrative_myth_bust": {
@@ -204,12 +204,12 @@ SPINE: dict[str, dict[str, str]] = {
     },
     "v4_dw_walk_itinerary_day_by_day": {
         "hook": "{dest_name}, {state} — one day, hour-checked so you don't waste it.",
-        "caption": "Most one-day plans are guesses. We actually walked this one.\n\nWhy go: {why_special}\nEat: {hero_dish} at {eatery_name} · ₹{price_range_inr}\nHeads-up for {month_name}: {note}\n\nHonest score: {score}/5.",
+        "caption": "Most one-day plans are guesses. We actually walked this one.\n\nWhy go: {why_special}\nEat: {hero_dish} at {eatery_name} · ₹{price_range_inr}\nHeads-up for {month_name}: {note}\n\nHonest score: {score}/10.",
         "cta": "Comment DAY — we'll send the printable plan in DM.",
     },
     "v4_dw_architecture_detail_deep_dive": {
         "hook": "{dest_name}, {state} — decoded, not just photographed.",
-        "caption": "The picture pulls you in. The detail is why it lasts.\n\nThe picture: {tagline}\n\nWhat makes it work: {why_special}\n\nThis {month_name}: {note}\n\nHonest score: {score}/5. Re-verified {verification_date}.",
+        "caption": "The picture pulls you in. The detail is why it lasts.\n\nThe picture: {tagline}\n\nWhat makes it work: {why_special}\n\nThis {month_name}: {note}\n\nHonest score: {score}/10. Re-verified {verification_date}.",
         "cta": "Comment the next dest you want decoded.",
     },
 }
