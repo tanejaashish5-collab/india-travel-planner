@@ -1,0 +1,127 @@
+{
+ "_doc": "Fresh-context audit verdicts (data-fabrication-auditor, Sonnet, 2026-10-10) for Central India and the Islands. Taxi loads ONLY with KEEP/CORRECT. Food: every food figure with a tier was audited, so unaudited food is skipped. A CORRECT food verdict with standard null is budget-only, and the loader skips it.",
+ "food_unaudited": "skip",
+ "taxi": {
+  "bhopal": {
+   "verdict": "KEEP",
+   "value": 1525,
+   "note": "taxibhopal.com Dzire 8h/80km 1,650; bhopaltaxiservices.in sedan 1,400; median 1,525."
+  },
+  "gwalior": {
+   "verdict": "KEEP",
+   "value": 2400,
+   "note": "radhetaxiservices.com Rs 2300 for 8 Hrs 80 KM; tripcar.in 2,500; Gwalior-only card."
+  },
+  "havelock-island": {
+   "verdict": "DROP",
+   "note": "Indicative price band only; no operator full-day rate."
+  },
+  "pachmarhi": {
+   "verdict": "KEEP",
+   "value": 5750,
+   "note": "planextrip.com gypsy combo of all 3 routes Rs 5,500-6,000 for up to 6 people; a gypsy, single source."
+  },
+  "port-blair": {
+   "verdict": "KEEP",
+   "value": 3200,
+   "note": "andamanemeraldtravels.com Full Day Local Sightseeing (8 hours) sedan Rs 3,200, approximate 2025 rates."
+  },
+  "ujjain": {
+   "verdict": "KEEP",
+   "value": 2500,
+   "note": "ujjainride.in package starts at 2500; ujjaintravelassistant 2000-3000."
+  }
+ },
+ "food": {
+  "bhopal": {
+   "verdict": "KEEP",
+   "budget": 490,
+   "standard": 1050,
+   "note": "Zomato snippets 200-1,000 for two; weak evidence."
+  },
+  "gwalior": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 750,
+   "note": "Zomato snippets 300-700 for two; weak evidence."
+  },
+  "havelock-island": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 1950,
+   "note": "go2andaman.com (Mar 2026) cost for two 200-2000; budget tier rests on two places."
+  },
+  "jabalpur": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 750,
+   "note": "Zomato snippets 300-700 for two; weak evidence."
+  },
+  "jagdalpur": {
+   "verdict": "KEEP",
+   "budget": 300,
+   "standard": 750,
+   "note": "magicpin 200-800 for two; budget is a single restaurant."
+  },
+  "kavaratti": {
+   "verdict": "KEEP",
+   "budget": 1050,
+   "standard": 1500,
+   "note": "curlytales.com 700-1000 for two on Kavaratti; one undated listicle."
+  },
+  "khajuraho": {
+   "verdict": "UNVERIFIABLE",
+   "budget": null,
+   "standard": null,
+   "note": "Zomato timed out; single delivery-only restaurant."
+  },
+  "mandu": {
+   "verdict": "KEEP",
+   "budget": 263,
+   "standard": 375,
+   "note": "holidify four venues 150-250 for two; probably low."
+  },
+  "neil-island": {
+   "verdict": "CORRECT",
+   "budget": 375,
+   "standard": null,
+   "note": "Budget 100-150 per meal; standard unsourced. Budget-only, so the loader skips it."
+  },
+  "omkareshwar": {
+   "verdict": "KEEP",
+   "budget": 280,
+   "standard": 400,
+   "note": "tripmall.in (Aug 2025) thalis 100-180; single blog."
+  },
+  "orchha": {
+   "verdict": "KEEP",
+   "budget": 290,
+   "standard": 655,
+   "note": "Zomato snippets from two delivery menus; weak evidence."
+  },
+  "pachmarhi": {
+   "verdict": "KEEP",
+   "budget": 450,
+   "standard": 900,
+   "note": "Zomato snippets 300-850 for two; standard leans high."
+  },
+  "port-blair": {
+   "verdict": "KEEP",
+   "budget": 525,
+   "standard": 1275,
+   "note": "go2andaman.com (Mar 2026) cost for two 250-1200."
+  },
+  "rangat": {
+   "verdict": "DROP",
+   "budget": null,
+   "standard": null,
+   "note": "Tour-package site's generic estimate band."
+  },
+  "ujjain": {
+   "verdict": "KEEP",
+   "budget": 375,
+   "standard": 600,
+   "note": "Zomato snippets 200-450 for two; weak evidence."
+  }
+ }
+}
