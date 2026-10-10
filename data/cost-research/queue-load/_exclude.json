@@ -15,17 +15,17 @@
    "homestay": "festival week",
    "hostel-dorm": "festival week"
   },
-  "kasol": {
-   "hotel-mid": "CONFLICT: C5 Booking median 2,309 (tax-incl) vs earlier measured Cleartrip ~3,800 pre-tax (1.85x); earlier kept until a third source settles it"
-  },
-  "vagamon": {
-   "hotel-mid": "CONFLICT: C6 Booking 5,316 vs earlier measured 2,800 (1.9x); earlier kept"
-  },
+  "kasol": {},
+  "vagamon": {},
   "hanle": {
    "homestay": "C6 n=2, likely meal-inclusive homestays"
   },
-  "ooty": {
-   "homestay": "CONFLICT: C6 vs earlier measured 4,250 (1.7x); earlier kept"
+  "ooty": {},
+  "courtallam": {
+   "homestay": "M1 median of two clusters (~2,000 and ~4,500): not one market"
+  },
+  "kukke-subramanya": {
+   "homestay": "M1 n=3 spread 1,050-5,775 (low confidence)"
   }
  },
  "holiday": {

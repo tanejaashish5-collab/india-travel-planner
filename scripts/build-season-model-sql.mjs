@@ -37,12 +37,20 @@ const ALL = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const rest = (...used) => ALL.filter((m) => !used.flat().includes(m));
 const NORTH = new Set(["himachal-pradesh", "uttarakhand", "jammu-kashmir"]);
 const SOUTH = new Set(["tamil-nadu", "karnataka", "andhra-pradesh", "telangana", "puducherry"]);
+// T4 (2026-10-10) found no dated season/off-season pairs for the North-East, Odisha, Maharashtra or Karnataka,
+// and one stale card for Gujarat (Sasan Gir), so those keep their months.
 // Places whose demand is not the hill-town summer: ski resorts and the Char Dham / Hemkund (open May-Nov by temple calendar).
 const KEEP_MONTHS = new Set(["gulmarg", "auli", "kedarnath", "badrinath", "gangotri", "yamunotri", "hemkund-sahib", "varkala"]);
 
+// Garhwal Char Dham route towns (T4, 2026-10-10): every dated card peaks May-Jun and is cheapest Jul-Aug
+// (Blackberry Auli, Hotel Saidham; Saidham off/peak 0.65). GMVN's own tariff site blocks automated access.
+const GARHWAL_YATRA = new Set(["uttarkashi", "guptkashi", "rudraprayag", "joshimath", "devprayag", "karnaprayag", "gopeshwar"]);
 function model(d) {
   const st = d.state_id, el = d.elevation_m ?? 0;
   const keep = KEEP_MONTHS.has(d.id);
+  if (GARHWAL_YATRA.has(d.id))
+    return { type: "garhwal yatra town", r: 0.65, why: "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65",
+      months: { peak: [5, 6], shoulder: [4, 10, 12], low: rest([5, 6], [4, 10, 12]) } };
   if (st === "ladakh" || (NORTH.has(st) && el >= 2600))
     return { type: "high-altitude", r: 0.62, months: null, why: "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)" };
   if (NORTH.has(st) && el >= 1000)
@@ -72,6 +80,10 @@ const MON = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, se
 // shoulder row regardless of month (the West pass 082 and undated listings, before season anchoring existed).
 function anchorOf(note) {
   const n = note ?? "";
+  // A row this script already re-anchored says where the measured value now sits: use the LAST such note,
+  // so re-running the model is idempotent (the value is no longer in the shoulder row it was loaded into).
+  const done = [...n.matchAll(/Season model \d+ \([^)]*\): anchored on the measured (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) price, a (peak|shoulder|low) month/g)].pop();
+  if (done) return { m: MON[done[1].toLowerCase()], baseSeason: done[2] };
   let m = n.match(/stay (?:\d{1,2} )?(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/) || n.match(/viewed (Oct|Nov|Sep) 2026/)
     || n.match(/\d{1,2}-\d{1,2} (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) 20\d\d stay/);
   if (m) return { m: MON[m[1].toLowerCase()], fromShoulder: false };
@@ -108,7 +120,7 @@ for (const d of dests) {
     const obs = Object.values(seas).some((r) => /^observed/.test(r.src));
     const an = obs ? anchorOf(seas.peak.notes ?? seas.shoulder.notes) : null;
     const am = an?.m ?? null;
-    const oldS = an ? (an.fromShoulder ? "shoulder" : Object.entries(seas).find(([, r]) => (r.months ?? []).includes(am))?.[0]) : null;
+    const oldS = an ? (an.baseSeason ?? (an.fromShoulder ? "shoulder" : Object.entries(seas).find(([, r]) => (r.months ?? []).includes(am))?.[0])) : null;
     let A, V, base;
     if (am && oldS) { A = seasonIn(newMonths, am) ?? "shoulder"; base = seas[oldS]; V = base.t; stats.anchored.observed++; }
     else { A = "shoulder"; base = seas.shoulder; V = base.t; stats.anchored.model++; }

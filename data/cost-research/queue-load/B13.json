@@ -49,7 +49,7 @@
    "stay": {
     "no_lodging": false,
     "nearest_base": null,
-    "mid_median_inr": 2309,
+    "mid_median_inr": null,
     "mid_n": 4,
     "mid_sources": [
      "https://www.booking.com/searchresults.html?ss=Kasol&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3%3Bht_id%3D204",
@@ -69,7 +69,7 @@
     "dorm_n": 0,
     "dorm_sources": [],
     "price_basis": "All three tiers from Booking.com dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property, members-only prices excluded, only properties within 2.5 km of Kasol downtown (Booking also returns Jari, Manikaran, Manali, Kullu: discarded). Mid: Booking 3-star hotels (class=3, type hotel), score>=7.5 and >=10 reviews, n=4: Lee Garden Himalayan Wooden Cottage 1,870; Sony Place Villa and Resort 2,099; The Royal Pinewood 2,519; The Hillside 4,590; median 2,309. Budget: Booking guest-house filter, private-bath double rooms, >=10 reviews, n=8: Parbati Headquarters 450; Clovees by Mountain Bliss 851; House of Brahma 944; Ronak Hilltop Homestay (Budget Double) 1,050; Destination of Choj 1,396; Majestic Mountain Bhaiji 1,570; Chojh Inn 1,605; Breathe Inn 1,890; median 1,223. Homestay: Booking homestay filter, >=5 reviews, private bath, n=6: Maya Homestay & Cafe 630; Little Hamlet Choj 1,166; Shanti Cafe Signature Stays 1,197; Moksha Cottages 1,260; Kasolview Homestay 1,574; Dhi Ananta Homestay 2,310; median 1,229.",
-    "notes": "Booking lists only 1 class<=2 hotel in Kasol (Hotel Parwati Nest 1,890), so the budget tier uses Booking's guest-house category instead; Booking's guest-house and homestay categories overlap in practice (Ronak Hilltop is both), which is why budget (1,223) and homestay (1,229) are near-identical. Cleartrip cross-check for the same night, PRE-TAX discounted price, 3-star-tagged hotels rated >=4.0 with >=25 reviews, n=5: Hotel Kasol Inn 1,898; Hotel Mid Orchard 1,966; Dream Valley 2,800; The Royal Orchard 3,737; Hotel Purnima 9,630 (outlier); median 2,800. Cleartrip has almost no basic hotels in Kasol (The Forest View homestay 2-star 1,140; The Rainbow Inn unreviewed 1,680); its 3-star list is mostly hostels (dorm beds 991-1,580 per bed, not used). Several guest houses are 1.2-2.4 km out toward Chalal/Choj. Kasol is an off-peak November weekday here; no festival found on the night.",
+    "notes": "Booking lists only 1 class<=2 hotel in Kasol (Hotel Parwati Nest 1,890), so the budget tier uses Booking's guest-house category instead; Booking's guest-house and homestay categories overlap in practice (Ronak Hilltop is both), which is why budget (1,223) and homestay (1,229) are near-identical. Cleartrip cross-check for the same night, PRE-TAX discounted price, 3-star-tagged hotels rated >=4.0 with >=25 reviews, n=5: Hotel Kasol Inn 1,898; Hotel Mid Orchard 1,966; Dream Valley 2,800; The Royal Orchard 3,737; Hotel Purnima 9,630 (outlier); median 2,800. Cleartrip has almost no basic hotels in Kasol (The Forest View homestay 2-star 1,140; The Rainbow Inn unreviewed 1,680); its 3-star list is mostly hostels (dorm beds 991-1,580 per bed, not used). Several guest houses are 1.2-2.4 km out toward Chalal/Choj. Kasol is an off-peak November weekday here; no festival found on the night. | mid figure set aside 2026-10-10: a third source (M3, EaseMyTrip) disagreed with it.",
     "cleartrip_mid_cross_check": {
      "median_pretax_inr": 2800,
      "n": 5,

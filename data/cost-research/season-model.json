@@ -3248,29 +3248,29 @@
   "why": "all-India tariff median (117 cards); no regional card with both rates"
  },
  "devprayag": {
-  "type": "other (kept months)",
-  "r": 0.75,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
-    10,
-    11,
-    3,
-    4
+    5,
+    6
    ],
    "shoulder": [
-    2,
-    5,
-    9,
+    4,
+    10,
     12
    ],
    "low": [
     1,
-    6,
+    2,
+    3,
     7,
-    8
+    8,
+    9,
+    11
    ]
   },
-  "why": "all-India tariff median (117 cards); no regional card with both rates"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "dhanaulti": {
   "type": "north hills",
@@ -4098,8 +4098,8 @@
   "why": "all-India tariff median (117 cards); no regional card with both rates"
  },
  "gopeshwar": {
-  "type": "north hills",
-  "r": 0.62,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
     5,
@@ -4107,7 +4107,6 @@
    ],
    "shoulder": [
     4,
-    7,
     10,
     12
    ],
@@ -4115,12 +4114,13 @@
     1,
     2,
     3,
+    7,
     8,
     9,
     11
    ]
   },
-  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "great-himalayan-np": {
   "type": "north hills",
@@ -4198,8 +4198,8 @@
   "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
  },
  "guptkashi": {
-  "type": "north hills",
-  "r": 0.62,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
     5,
@@ -4207,7 +4207,6 @@
    ],
    "shoulder": [
     4,
-    7,
     10,
     12
    ],
@@ -4215,12 +4214,13 @@
     1,
     2,
     3,
+    7,
     8,
     9,
     11
    ]
   },
-  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "gurez-valley": {
   "type": "north hills",
@@ -4948,8 +4948,8 @@
   "why": "all-India tariff median (117 cards); no regional card with both rates"
  },
  "joshimath": {
-  "type": "north hills",
-  "r": 0.62,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
     5,
@@ -4957,7 +4957,6 @@
    ],
    "shoulder": [
     4,
-    7,
     10,
     12
    ],
@@ -4965,12 +4964,13 @@
     1,
     2,
     3,
+    7,
     8,
     9,
     11
    ]
   },
-  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "junagadh": {
   "type": "other (kept months)",
@@ -5323,8 +5323,8 @@
   "why": "all-India tariff median (117 cards); no regional card with both rates"
  },
  "karnaprayag": {
-  "type": "north hills",
-  "r": 0.62,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
     5,
@@ -5332,7 +5332,6 @@
    ],
    "shoulder": [
     4,
-    7,
     10,
     12
    ],
@@ -5340,12 +5339,13 @@
     1,
     2,
     3,
+    7,
     8,
     9,
     11
    ]
   },
-  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "karwar": {
   "type": "south (kept months)",
@@ -10463,29 +10463,29 @@
   "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
  },
  "rudraprayag": {
-  "type": "other (kept months)",
-  "r": 0.75,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
     5,
-    6,
-    9,
-    10
+    6
    ],
    "shoulder": [
     4,
-    7,
-    8,
-    11
+    10,
+    12
    ],
    "low": [
     1,
     2,
     3,
-    12
+    7,
+    8,
+    9,
+    11
    ]
   },
-  "why": "all-India tariff median (117 cards); no regional card with both rates"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "sabarimala": {
   "type": "kerala",
@@ -12488,8 +12488,8 @@
   "why": "South tariff median 0.85; no card dates for this kind of place"
  },
  "uttarkashi": {
-  "type": "north hills",
-  "r": 0.62,
+  "type": "garhwal yatra town",
+  "r": 0.65,
   "months": {
    "peak": [
     5,
@@ -12497,7 +12497,6 @@
    ],
    "shoulder": [
     4,
-    7,
     10,
     12
    ],
@@ -12505,12 +12504,13 @@
     1,
     2,
     3,
+    7,
     8,
     9,
     11
    ]
   },
-  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+  "why": "T4 Garhwal cards: peak May-Jun, cheapest Jul-Aug; off/peak 0.65"
  },
  "vadodara": {
   "type": "other (kept months)",

@@ -1,0 +1,369 @@
+{
+ "batch": "M1",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "chakrata": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2625,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chakrata%2C%20Uttarakhand&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay-type filter, dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property.",
+    "notes": "n=5 Booking homestays whose listed locality is Chakrata (4-11 km from the town centre): Anand Homestay Chakrata 714 (8 reviews), Shrishti Homestay 2,079 (19), Ganga Valley Homestay 2,646 (4), Sawra Homestay 2,835 (15), Mero Gaon Homestay 2,625 (14); median 2,625. Excluded: Kabila King Resort (resort), Raj Homestay 3,675 (1 review, score 1.0), Kanasar Home Stay 1,575 (2 reviews, 10 km), and the Kailana/Miani/Kandi properties (other localities, 6-25 km away). Wide spread (714 to 2,835); without the 10.7 km Mero Gaon the median of the other four is 2,363. Cleartrip's two Chakrata homestays (Nehra Home Stay, Aastha Home Stay) had no rooms for 18-19 Nov.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Prices are Booking's cheapest listed room per property, room type not always shown; the 714 listing is an outlier at the low end."
+   ]
+  },
+  "ahobilam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1777,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Ahobilam%2C%20Andhra%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), all 3 properties Booking lists for the place (all guest houses; no homestay-type listing exists there).",
+    "notes": "n=3 home-run guest houses, all listed under Pedda Ahobilam (4.6-5.2 km from the Booking centre point): Ahobilam bujji guest house 1,785 (1 review), Lakshmi Divya Guest house 1,777 (2 reviews, shown at a discount from 1,974), Pavana Guest House 1,096 (12 reviews); median 1,777. Booking's homestay filter returns 0 for Ahobilam; the guest-house filter returns the bujji guest house only. Thin review counts.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only 3 guest houses exist on Booking, 15 reviews in total; no APTDC/temple tariff checked."
+   ]
+  },
+  "kashid": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2455,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kashid%2C%20Maharashtra&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Kashid%2C%20Maharashtra&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay and guest-house type filters, dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property.",
+    "notes": "n=4 properties with locality Kashid and >=5 reviews: Royal Villa Kashid (homestay filter) 3,024 (29 reviews), Sanjeevani homestay 2,678 (6), Shreyas Guest house - Tatkare Villa (guest house filter) 2,231 (17), Suvarna Holiday Home (guest house filter) 1,871 (5, 6.4 km from centre); median 2,455 (mean of 2,231 and 2,678). Excluded: Samudra Courtyard 3,674 (1 review); properties in Murud, Nandgaon, Alibag and other localities. Cleartrip cross-check: Aashray Guestroom 1,485 pre-tax (+132 tax) for the same night, consistent with the low end.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Guest-house vs homestay boundary is Booking's own classification."
+   ]
+  },
+  "kukke-subramanya": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2730,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kukke%20Subramanya%2C%20Karnataka&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay filter, dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property.",
+    "notes": "n=3 homestay-type properties located in Subrahmanya within 2.1 km of the temple: Aadi Homestay Kukke 5,775 (3 reviews), Kukke Homestay 1,050 (2 reviews, score 3.0), GAHANASHREE Cottages 2,730 (36 reviews); median 2,730. Spread is very wide (1,050 to 5,775) and two of three have 2-3 reviews. Other Subrahmanya lodgings that Booking classes as hotels (Shesha Kuteera 2,100, RNS ONE 2,520, Bhramari Nest 2,703, Comfort Inn 3,150) were not counted as homestays; Gokula Homestay 6,363 (42 reviews) is not in Booking's homestay filter so was left out. Coorg homestays (12-30 km away) excluded. Food-per-day was not measured (not requested in this task).",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "food_per_person_day not measured in this run."
+   ]
+  },
+  "courtallam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 4200,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Courtallam%2C%20Tamil%20Nadu&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Courtallam%2C%20Tamil%20Nadu&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay and guest-house type filters, dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property; only properties whose locality is Kuttalam (Booking's name for Courtallam).",
+    "notes": "n=5 in Kuttalam: LE Falls 1,888 (35 reviews, guest house), le falls 2 2,097 (27, guest house), Sara home stay 4,200 (no reviews), Ayan Cottage 4,725 (no reviews), Nirmala's Farmhouse 4,778 (2 reviews; its second listing 'Red room' is the same price and counted once); median 4,200. BIMODAL: the two reviewed guest houses are ~1,900-2,100, the three homestay-filter listings ~4,200-4,800. Kuttalam hotels (Saraa Grand 2,231, Royal Peters Holiday Homes 1,994, Mount Zion 3,150) are not homestays and were not counted. Homestays listed under Kallar, Shencottah, Tenkasi, Puliyara etc. excluded as other localities.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay tier is bimodal and thin; treat 4,200 as upper-mid, a typical guest-house room is nearer 2,000."
+   ]
+  },
+  "chitradurga": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2929,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2928,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chitradurga%2C%20Karnataka&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3",
+     "https://www.cleartrip.com/hotels/details/4705053?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com 3-star filter, dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property. Cross-check: Cleartrip detail page 18-19 Nov 2026 pre-tax.",
+    "notes": "n=4 Booking 3-star hotels in Chitradurga: Myspace Chindanur Comforts 3,687 (159 reviews, 8.4), KSTDC Mayura Durg 3,119 (186, 7.9), Myspace Hotel JMR 2,738 (88, 8.7), Hotel Srirangasthalam 2,625 (3 reviews, 9.0); median 2,929. With only the three hotels with 50+ reviews the median is 3,119. Excluded: Hotel Ravi Mayur International 998 (score 4.8), and Aarunya Homestay 2,363 (a homestay). Cleartrip cross-check: Myspace Hotel JMR 2,459 pre-tax + 252 tax = 2,711 vs Booking 2,738; Cleartrip shows 'No rooms' for Chindanur Comforts and KSTDC Mayura Durg on that night.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "medium",
+   "unverified": []
+  },
+  "araku-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com dated search 18-19 Nov 2026 (homestay and guest-house filters) and Cleartrip homestay list.",
+    "notes": "No measurable homestay set. Booking's homestay filter for Araku returns only Vistara Resort and Homestay (Sunkarimetta, 11 km from Araku, a resort, 4,088 tax-incl) and the guest-house filter only Winter Valley Grand Araku (3,150, a hotel). Everything else listed is resorts/villas (Homeyhuts villas 9,387-32,182). Cleartrip has no homestay list for Araku Valley (hotels only). n<2, so no median is reported.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No homestay prices found for Araku Valley on 18-19 Nov 2026."
+   ]
+  },
+  "aihole": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com dated search 18-19 Nov 2026 (homestay and guest-house filters).",
+    "notes": "Booking's homestay filter for Aihole returns 0 properties in Aihole; the only Aihole-located property is Wada1 (11,470, a heritage stay, not a homestay). The homestays it shows (Serene Homestay 3,880, Krishna Villa 4,410, SMS Home stay 1,759) are all in Badami, 22-24 km away, so they were not borrowed.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No homestay listed in Aihole on Booking; nearest base for lodging is Badami."
+   ]
+  },
+  "gandikota": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Jammalamadugu (16-17 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com and Cleartrip searched; neither lists Gandikota.",
+    "notes": "Booking resolves 'Gandikota' to Gandakowtal with 0 properties; Cleartrip has no Gandikota city page. The only lodging found by web search is the APTDC Haritha hotel/tents and camping operators (package prices, not room rates). Search snippets show Haritha AC rooms at about 1,500-1,680 but that is a hotel, one property, and from undated snippets, so nothing is reported as a homestay median.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No dated homestay prices found."
+   ]
+  },
+  "harihareshwar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com dated search 18-19 Nov 2026 (homestay and guest-house filters) and Cleartrip hotels list.",
+    "notes": "No homestay or guest house is located in Harihareshwar on Booking: the homestay filter lists only Shrivardhan (5-7 km), Kelshi, Dapoli and other towns; the only Harihareshwar-located properties are resorts (Tranquil Beach Resort 6,111, Royale Greens 4,554 pre-tax on Cleartrip, Harihareshwar Beach Resort sold out). Shrivardhan homestays (Aagman Homestay 1,680, Prakritee Home Stay 3,098) were not borrowed.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No in-town homestay found; Shrivardhan is the nearest homestay cluster."
+   ]
+  },
+  "horsley-hills": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com dated search 18-19 Nov 2026 (homestay and guest-house filters); Cleartrip hotels list.",
+    "notes": "Only one homestay-type property exists on Booking for Horsley Hills: Nirvana Nest AT Horsley Hills (guest house, Kurabalakota, 3,675 tax-incl, 5 reviews). Rosepine Resorts (Ghattu, 2,100) is a resort. Cleartrip has VSR Wind Wave (1,994 pre-tax, a hotel) and Horsley Hills holiday homes (no rooms 18-19 Nov). n=1, so no median is reported.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "n=1 homestay; no median."
+   ]
+  },
+  "konaseema": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com dated search 18-19 Nov 2026 for Konaseema, Amalapuram, Antarvedi, Ambajipeta, Mummidivaram; Cleartrip city pages.",
+    "notes": "Booking does not resolve 'Konaseema' (and returns nothing for Ambajipeta); Amalapuram has 0 homestays in the filter and Antarvedi none. Only one homestay-type listing near the region: Satya Farm House, Amalapuram 2,625 (17 reviews, a farm house, tax-incl). Other Amalapuram listings are hotels or Vididhi 'BHK' whole-flat units (not rooms). Cleartrip has no Konaseema/Amalapuram pages. n=1, so no median is reported.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No homestay set for Konaseema on 18-19 Nov 2026."
+   ]
+  },
+  "doodhpathri": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Budgam / Khag",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com and Cleartrip searched; no 3-star hotels exist.",
+    "notes": "Booking returns no property in Doodhpathri except 'VELORA-DOODHPATHRi' (1 review, no price for the night); the rest are Gulmarg/Tangmarg stays, not borrowed. Cleartrip has no Doodhpathri page. The JKTDC hut/cottage complex is the main lodging; the JKTDC Doodhpathri page lists hut types without prices, and web snippets giving Rs 2,000-2,500 are undated and from third parties, so they were not used.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No 3-star hotels and no priced JKTDC tariff found."
+   ]
+  },
+  "gurez-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Bandipora",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Booking.com and Cleartrip searched for 18-19 Nov 2026.",
+    "notes": "Nothing bookable found for 18-19 Nov 2026. Booking returns only 'Gurez valley camping site' (2,625 tax-incl, a camp) and Srinagar hotels; Cleartrip has no Gurez page. Web sources say the Razdan Pass road typically closes from November to December and most guesthouses shut for winter (guides dated 2024-2026, not official), so November availability is doubtful. No 3-star hotels exist in Gurez; no median reported.",
+    "researched_note": "M1 pass 2026-10-10"
+   },
+   "confidence": "low",
+   "unverified": [
+    "Closed/no 3-star hotels; no figure."
+   ]
+  }
+ }
+}

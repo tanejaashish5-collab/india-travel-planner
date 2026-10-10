@@ -1,0 +1,178 @@
+{
+ "batch": "M3",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "haflong": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union card, state tariff, or local operator with a stated address and rupee fare found for Haflong. Only blog 'estimates' (Rs 2,000-4,000/day, TripClap), per-km aggregator pages (Rinocab, MakeMyTrip 50 km rentals) and a Heygoldie multi-city listing; none is a local day rate, so all were dropped.",
+    "sources": [],
+    "notes": "Taxi/sumo stands near Haflong market and the station set fares by vehicle but do not publish them online."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Haflong local 8h taxi rate: no usable source"
+   ]
+  },
+  "hanle": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "budget_hotel_median_inr": null,
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [
+     "https://www.agoda.com/en-in/search?city=739404&checkIn=2026-11-18&checkOut=2026-11-19&los=1&rooms=1&adults=2&children=0&locale=en-in&currency=INR&currencyCode=INR&priceCur=INR",
+     "https://www.agoda.com/en-in/lhakpa-home-stay/hotel/all/hanle-in.html?checkIn=2026-11-18&los=1&adults=2&rooms=1&children=0&currencyCode=INR",
+     "https://www.agoda.com/en-in/norbu-linga/hotel/all/hanle-in.html?checkIn=2026-11-18&los=1&adults=2&rooms=1&children=0&currencyCode=INR",
+     "https://www.agoda.com/en-in/new-milky-way-homestay/hotel/all/hanle-in.html?checkIn=2026-11-18&los=1&adults=2&rooms=1&children=0&currencyCode=INR",
+     "https://www.agoda.com/en-in/phayoul-homestay/hotel/all/hanle-in.html?checkIn=2026-11-18&los=1&adults=2&rooms=1&children=0&currencyCode=INR",
+     "https://www.agoda.com/en-in/padma-house/hotel/all/hanle-in.html?checkIn=2026-11-18&los=1&adults=2&rooms=1&children=0&currencyCode=INR"
+    ],
+    "price_basis": "Third site = Agoda (not Cleartrip/Booking), 18-19 Nov 2026, 2 adults 1 room, INR, shown 'per night with taxes'. EVERY bookable offer on every Hanle property is labelled 'Breakfast Included' (Agoda room-grid), so no room-only price exists; homestay_median_inr left null on purpose.",
+    "notes": "Meal-inclusive reference only (NOT room-only, tax-inclusive, cheapest 2-adult offer): Norbu Linga 2,047; Lhakpa home stay 2,625; Phayoul Homestay 3,307; New Milky Way Homestay 5,460; Padma House sold out for the night. n=4, median 2,966. Hanle homestays sell bed plus meals, so this does not settle the earlier room-only disagreement; do not load it as a room price."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Leh-Pangong-Hanle-Leh, 3 days, top class column (Crysta/Scorpio N/XUV700)",
+      "inr": 27710
+     },
+     {
+      "route": "Leh-Hanle-Tso Moriri-Tso Kar-Leh, 3 days, top class column (Crysta/Scorpio N/XUV700)",
+      "inr": 28183
+     }
+    ],
+    "basis": "Ladakh Taxi Union 2025-26 rate card as republished by travelhimalayas.in (page last updated 28 Sep 2026); the union card prices per route, there is no published Hanle local-sightseeing day rate. Only Leh-registered cabs may do local sightseeing.",
+    "sources": [
+     "https://www.travelhimalayas.in/transportation/taxi-rental/316-leh-local-taxi-rates-2015.html"
+    ],
+    "notes": "Other classes on the same rows: Toyota Innova 24,939 / 25,364; Xylo-Ertiga 23,554 / 24,960. Local figure left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Hanle room-only homestay price: all Agoda offers include breakfast",
+    "Hanle local taxi day rate: not on the union card"
+   ]
+  },
+  "nainital": {
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2100,
+    "vehicle": "mini taxi (hatchback; sedan/SUV rate not listed on this page)",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Nainital lake tour (Bhimtal, Naukuchiatal, Sattal etc.), Alto/Santro/Indica, season rate (Rs 1,800 off season)",
+      "inr": 2500
+     },
+     {
+      "route": "Kathgodam station to Nainital, Alto/Santro",
+      "inr": 1200
+     },
+     {
+      "route": "Nainital day tour to Mukteshwar, Alto/Santro",
+      "inr": 2800
+     }
+    ],
+    "basis": "Taxi Nainital (Vaibhav Laxmi Tourism, local operator 'since 2003', phone +91 94583 55660) lists 'Nainital Sightseeing / Nainital Darshan, one day tour: Mini Taxi or Similar Rs 2100' (page undated; site metadata 2023). Cross-check, undated rate list on nainitaltourism.com (landline 05942-237476): local sightseeing Rs 1,500 season / 1,100 off season, lake tour Rs 2,500 season / 1,800 off season (Alto/Santro/Indica). An operator blog (uttarakhand.cab, Apr 2026) says Nainital Taxi Union boards at Tallital/Mallital fix local fares and estimates Rs 1,500-2,000 local, Rs 2,000-2,500 lake tour for a hatchback.",
+    "sources": [
+     "https://www.taxinainital.com/nainital-sightseeing-taxi-charges",
+     "https://www.nainitaltourism.com/Taxi-For-Hire-Services/Taxi-Hire-Services-Alto-Bus-Innova-Indica-Tempo-Traveller.html",
+     "https://uttarakhand.cab/blog/nainital-local-sightseeing-taxi-guide"
+    ],
+    "notes": "Figure is a hatchback; an Ertiga is Rs 2,899 on taxinainital.com/nainital-taxi-package (page metadata 2023). Mall Road entry fee is paid by the operator once. Local day covers town viewpoints (3-4 h), not the 8 h lake loop; the lake loop is the 2,500 season rate above."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Union rate board itself not seen; rates are operator-listed and undated",
+    "No sedan/SUV local-day rate found"
+   ]
+  },
+  "karnaprayag": {
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu, thali board or cost-for-two for 4-6 Karnaprayag places could be fetched. Zomato has no Karnaprayag page (404), Justdial blocked the request, Tripadvisor returned 403, Tripadvisor listings only show price bands, which the brief excludes. Nearby-town thali ranges in blogs were not used (not Karnaprayag).",
+    "sources": [],
+    "notes": "Hotel Holidays Home (Badrinath Rd) is known for a Pahadi Thali, no rupee price found."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Karnaprayag food: no usable rupee source"
+   ]
+  },
+  "kukke-subramanya": {
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only one rupee cost-for-two figure found (Neo Mysore Cafe, Rs 350 for two per a Justdial search snippet; the page itself was blocked, so it could not be verified) plus reviewer-entered ranges on Restaurant Guru and a Holidify/TripClap 'Avg Rs 500 per person' for one place. That is 1 place, not 4-6, so no figure is given.",
+    "sources": [],
+    "notes": "The temple serves free annadanam lunch 12:00-14:30 and dinner 20:00-21:30; Subramanya restaurants are vegetarian only."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Kukke Subramanya food: fewer than 4 places with rupee prices"
+   ]
+  },
+  "kasol": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3601,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.easemytrip.com/hotel-new/search?city=Kasol,%20Kullu,%20Himachal%20Pradesh,%20India&cin=18%2F11%2F2026&cOut=19%2F11%2F2026&Hotel=NA&Rooms=1&pax=2"
+    ],
+    "price_basis": "Third site = EaseMyTrip (not Cleartrip/Booking), listing for 18-19 Nov 2026, 2 adults 1 room, read 10 Oct 2026. Mid (18-19 Nov 2026): EaseMyTrip star=3, property type Hotels/Resorts (hostels, guest houses, villas excluded), Kasol / Sosan / Manikaran Road, no 'Free Breakfast' tag, n=5. Figure is the displayed sale price PRE-TAX (list price less EaseMyTrip's ~12% discount); taxes are extra at about 5% of list.",
+    "notes": "Per property (list, sale, tax): Hotel Purnima Kasol 5,400 / 4,752 / 270; Hotel Pinewood Inn 3,000 / 2,610 / 150; The Hillside 4,092 / 3,601 / 205; The Royal Orchard Kasol 3,468 / 3,052 / 185; Aman Place by Hotel Malabar Kasol 4,499 / 3,959 / 225. Medians: list 4,092 pre-tax; sale 3,601 pre-tax; sale plus tax 3,806. Compare Booking C5 2,309 tax-incl (n=4) and earlier Cleartrip ~3,800 pre-tax: EaseMyTrip agrees with Cleartrip (3,601 vs ~3,800 pre-tax, 3,806 tax-incl), Booking's set was cheaper cottages (Lee Garden 1,870, Sony Place 2,099). Hotel Devlok International (2,888 list) excluded because its location field only says 'Kullu'; EaseMyTrip star ratings are its own (it also stars Boom Shankar by Oyo 3). Cheapest-plan room-only status is not shown on the listing, 'Free Breakfast' tag absent for all five."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Room-only plan not confirmed on a detail page; only the absence of the Free Breakfast tag"
+   ]
+  },
+  "vagamon": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3798,
+    "mid_n": 9,
+    "mid_sources": [
+     "https://www.easemytrip.com/hotel-new/search?city=Vagamon,%20Kerala,%20India&cin=18%2F11%2F2026&cOut=19%2F11%2F2026&Hotel=NA&Rooms=1&pax=2"
+    ],
+    "price_basis": "Third site = EaseMyTrip (not Cleartrip/Booking), listing for 18-19 Nov 2026, 2 adults 1 room, read 10 Oct 2026. Mid (18-19 Nov 2026): EaseMyTrip star=3, property type Hotels/Resorts (villas, homestays, hostels excluded), Vagamon / Kolahalamedu / Elappara, no 'Free Breakfast' tag, n=9 (all of the area). Figure is the displayed sale price PRE-TAX (list less EaseMyTrip discount of 0-35%); taxes extra at about 5% of list (about 18% on rooms over Rs 7,500).",
+    "notes": "Per property (list, sale, tax): Falcon Crest 4,388 / 3,861 / 240; Vaga Nakshatra Suites 5,300 / 3,458 / 199; Velora Resort 6,900 / 6,072 / 345; Beyond Pines 6,264 / 5,512 / 321; Vagamon Hill Chimes 1,679 / 1,478 / 85; Saj Vagamon Hideout 13,218 / 11,632 / 2,441; Pine Clough Holidays 3,868 / 3,404 / 196; Adrak Summer Sand Hill 4,316 / 3,798 / 220; Belle Bonami 3,673 / 3,232 / 215. Medians: list 4,388 pre-tax; sale 3,798 pre-tax; sale plus tax 4,018. Restricting to the 6 labelled 'Vagamon' only: sale 4,687 pre-tax (n=6, one 11,632 outlier). Result sits between Booking C6 5,316 tax-incl and the earlier 2,800: about 4,000 tax-incl, so the earlier 2,800 looks low for 3-star and Booking's 5,316 high. Spread within the town is wide (1,478 to 11,632), so confidence is medium-low."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Room-only plan not confirmed on a detail page",
+    "EaseMyTrip star ratings are its own, not an official classification"
+   ]
+  },
+  "ooty": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "homestay_median_inr": 2329,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.easemytrip.com/hotel-new/search?city=Ooty,%20Tamil%20Nadu,%20India&cin=18%2F11%2F2026&cOut=19%2F11%2F2026&Hotel=NA&Rooms=1&pax=2"
+    ],
+    "price_basis": "Third site = EaseMyTrip (not Cleartrip/Booking), Ooty listing for 18-19 Nov 2026, 2 adults 1 room, read 10 Oct 2026, 'Homestays' property-type filter on the first ~100 popularity-ranked results. Homestay (18-19 Nov 2026): rooms with no breakfast/meal flag, n=5. Figure is the displayed sale price PRE-TAX; taxes extra at about 5% of list.",
+    "notes": "Per property (list, sale, tax): Sivarajaa Residency 1,899 / 1,652 / 95; Pine Forest View Ooty 2,589 / 2,304 / 129; Arulmozhi Dream 2,329 / 2,329 / 144; Central Homestay Ooty 3,950 / 3,950 / 205; Tiger Hill Homestay 5,671 / 4,991 / 288. Medians: list 2,589; sale 2,329 pre-tax; sale plus tax 2,473. Without Arulmozhi Dream (location only 'Vijaynagar Farms', card lists breakfast and lunch among amenities) median is 3,127 pre-tax (n=4). Breakfast-included homestays (643 Holiday Homes 2,957, Meraki Maison 4,177, Le Karaj Meadows 4,785) excluded as not room-only. Compare Booking C6 2,310 tax-incl floor sample (cheapest reviewed rooms) and earlier 4,250: EaseMyTrip's whole range runs 1,652 to 4,991, so the two earlier figures are a floor sample and a broader median, not a contradiction; about 2,500 to 3,100 is the middle."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only the first ~100 popularity-ranked Ooty results were loadable; 63 homestays are listed overall",
+    "Room-only plan not confirmed on a detail page"
+   ]
+  }
+ }
+}

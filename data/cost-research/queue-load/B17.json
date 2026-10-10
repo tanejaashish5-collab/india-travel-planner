@@ -1,0 +1,375 @@
+{
+ "batch": "M2",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "kumbakonam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2835,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kumbakonam&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/hotel/in/river-side-home-stay-kumbakonam.html",
+     "https://www.booking.com/hotel/in/thirumalai-homestay.html",
+     "https://www.booking.com/hotel/in/temple-tales-homestay.html",
+     "https://www.booking.com/hotel/in/kuteeram.html",
+     "https://www.booking.com/hotel/in/viruksham-homestay-kumbakonam.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay filter (ht_id=222), 18-19 Nov 2026, 2 adults 1 room, cheapest private double room per property, TAX-INCLUSIVE ('Includes taxes and fees'), room only (no breakfast plan). Properties: River Side Home Stay 1,339; Thirumalai Home Stay (Budget Double) 1,476; Temple Tales Homestay (Deluxe Queen) 2,835; Maha Periyava Kuteeram (Double) 3,024; Viruksham Homestay 3,150. All list Kumbakonam as the location, 0.25-6.6 km from downtown.",
+    "notes": "Left out: entire-house listings (Kumbha Nivas 1BHK/2BHK, Sri Home etc.), breakfast-plan rooms (Nadhima Villas, shivam resorts), Sai Ayush Homestay (11.7 km out), and Thanjavur/Nannilam results. Cross-check, Cleartrip detail pages 18-19 Nov 2026, PRE-tax (not mixed into the median): Riverside Homestay 1,140 (+120 tax) https://www.cleartrip.com/hotels/details/5681913?c=18112026|19112026&r=2,0 ; Kumbha Nivas Homestay 2,459 (+223) https://www.cleartrip.com/hotels/details/kumbha-nivas-homestay-5267038?c=18112026|19112026&r=2,0 ; Ponni Homestay 4,319 (+540) https://www.cleartrip.com/hotels/details/ponni-homestay-kumbakonam-4485611?c=18112026|19112026&r=2,0 ; 2 other Cleartrip homestays sold out. Booking 'Late Escape Deal' discounts are included in some listed prices."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Booking prices are tax-inclusive, Cleartrip pre-tax; only Booking used for the median",
+    "Some Booking prices carry a Late Escape Deal discount"
+   ]
+  },
+  "lambasingi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No homestay priced. Booking.com 18-19 Nov 2026 (https://www.booking.com/searchresults.html?ss=Lambasingi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR) lists 2 properties in Lammasingi, both resorts/tents (Haneeshya Resort tents 3,150; Hamsa Hill Resort 3,791 with breakfast), no homestay. The homestay filter returns 0.",
+    "notes": "Cleartrip has no Lambasingi page (hotels-in- and homestays-in- both 404). Web results show only resorts/cottages/camps. Nothing measured; left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay_median_inr: no homestay found on Booking or Cleartrip for 18-19 Nov 2026"
+   ]
+  },
+  "lepakshi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No homestay priced. Booking.com 18-19 Nov 2026 (https://www.booking.com/searchresults.html?ss=Lepakshi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR) lists only 2 properties in Lepakshi: VGR Tourist Lodge 1,365 and Srivari Residency 1,418 (both tax-incl, lodges/hotels, not homestays). Homestay filter returns 0.",
+    "notes": "Cleartrip has no Lepakshi page. The two lodges are not homestays so they are not used for homestay_median_inr. Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay_median_inr: no homestay found for 18-19 Nov 2026"
+   ]
+  },
+  "machilipatnam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No mid-range hotel priced. Booking.com 18-19 Nov 2026 class=3 (https://www.booking.com/searchresults.html?ss=Machilipatnam&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3) shows only OYO-type budget properties: Super OYO Hotel O Machilipatnam 1,682 (score 6.5), Collection O Koneru Centre 1,311 (score 3.0), plus The Serene Home 2,552 unrated (unfiltered search). Cleartrip 3-star list has 2 hotels, both 'No rooms available' for 18-19 Nov (https://www.cleartrip.com/hotels/details/5066870?c=18112026|19112026&r=2,0 , https://www.cleartrip.com/hotels/details/5066872?c=18112026|19112026&r=2,0).",
+    "notes": "Not 3-star / well-reviewed, fewer than 3 usable, so mid left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid_median_inr: fewer than 3 well-reviewed mid hotels bookable for 18-19 Nov 2026"
+   ]
+  },
+  "maredumilli": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No homestay priced. Booking.com does not resolve Maredumilli (searches return 'Find your next stay', 0 properties). Cleartrip hotels-in-maredumilli lists 1 hotel, Srivanam Resorts, 'No rooms available' 18-19 Nov (https://www.cleartrip.com/hotels/details/4671476?c=18112026|19112026&r=2,0).",
+    "notes": "Web search snippets (Thrillophilia, tour sites) quote undated resort/cottage prices, some meal-inclusive; not used. No official APFDC rate card found. Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay_median_inr: no dated homestay price found"
+   ]
+  },
+  "murud-janjira": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3150,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Murud%2C%20Maharashtra%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3",
+     "https://www.booking.com/searchresults.html?ss=Murud%20Janjira%20Fort&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3",
+     "https://www.booking.com/searchresults.html?ss=Murud%2C%20Maharashtra%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=",
+     "https://www.booking.com/hotel/in/murud-marin.html",
+     "https://www.booking.com/hotel/in/riverside-farm.html",
+     "https://www.booking.com/hotel/in/beach-heaven-villa-nandgaon.html"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com 18-19 Nov 2026, 2 adults 1 room, cheapest listed room per property, TAX-INCLUSIVE, room only. Hotel Murud Marina 2,993 (3-star class, score 8.4, 0.2 km from downtown); Riverside Farm (Double Room) 3,150 (3-star class, 8.5, 4.9 km); Beach Heaven Villa Nandgaon (Double Room with Balcony) 3,360 (9.3, 7.3 km, Booking location 'Murud'). Cleartrip has no listings for Murud.",
+    "notes": "n=3 only. Left out: Suvarna Holiday Home (Kashid, 10 km), Diveagar properties (12+ km), entire villas, 'Hotel Grand Murud Janjira' (score 4.8, breakfast plan), 'holiday homes' 2,625 (unit type unclear). Prices include Booking deal discounts where shown."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only 3 well-reviewed mid properties; no Cleartrip price",
+    "Tax-inclusive Booking basis"
+   ]
+  },
+  "nelliyampathy": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Neither tier priced. Booking.com 18-19 Nov 2026 (https://www.booking.com/searchresults.html?ss=Nelliampathy&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR) lists exactly 1 property in Nelliyampathy: VANYA by Citrine 6,825 tax-incl with breakfast plan, score 5.6 (not room only, not well-reviewed). All other results are in Kollengode, Palakkad, Nemmara (6-15 km away), which are other towns. Homestay filter: 0 properties in Nelliyampathy. Cleartrip has no Nelliyampathy page (404 for all slugs tried).",
+    "notes": "Nothing in the place that qualifies; left null rather than borrow Kollengode/Palakkad."
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid_median_inr: 1 breakfast-plan resort only",
+    "homestay_median_inr: no homestay listed in Nelliyampathy"
+   ]
+  },
+  "pulicat-lake": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No homestay priced. Booking.com 18-19 Nov 2026: 'Pulicat' resolves only to Pulicat Lake View Resort APTDC 4,253 (tax-incl, breakfast plan, a resort not a homestay) (https://www.booking.com/searchresults.html?ss=Pulicat%20Lake&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR). Homestay filter returns 0. Other results are Tada / Sullurpeta / Gummidipoondi hotels (other towns). Cleartrip: no Pulicat page.",
+    "notes": "Aggregator snippets quoting Rs 400-2,000 are undated; not used. Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay_median_inr: no homestay found for 18-19 Nov 2026"
+   ]
+  },
+  "raigad-fort": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Pachad / Mahad",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No homestay priced. Booking.com 18-19 Nov 2026 (https://www.booking.com/searchresults.html?ss=Raigad%20Fort&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR) returns no property at the fort or in Pachad; nearest results are 15.8 km (Cozzet Mahad, breakfast plan 3,885) and 20+ km away (Welhe, Lavasa, Bhor, Kolad). Pachad does not resolve on Booking. Cleartrip hotels-in-mahad lists Mahad hotels only; no homestays.",
+    "notes": "A TripAdvisor review mentions small homestays below the fort that are not on booking sites; no tariff found. Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay_median_inr: no listed homestay at Raigad Fort / Pachad"
+   ]
+  },
+  "rameswaram": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2095,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Rameswaram&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/hotel/in/rch-home-stay.html",
+     "https://www.booking.com/hotel/in/mayura-homestay-rameswaram.html",
+     "https://www.booking.com/hotel/in/pnk-home.html",
+     "https://www.booking.com/hotel/in/happy-home-stay-rameswaram.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay filter (ht_id=222), 18-19 Nov 2026, 2 adults 1 room, cheapest private double room per property, TAX-INCLUSIVE, room only. RCH Home Stay (Deluxe Double) 1,890; Mayura Inn - A Homestay (Double) 2,090; PNK Home stay (Double) 2,100; Happy Homestay (Standard Double) 2,624. All in Rameswaram, 1.3-2.4 km from downtown.",
+    "notes": "Left out: Seyon homestay 3,360 and Ramachandra homestay 4,200 (room type not shown), SMK homestay and nkm cottage (family rooms), Grand Villa Homestay (9.1 km), SREE Kumaran (breakfast plan), and the inn/hotel-named listings. Cleartrip homestay page lists only 1 property (Yatra's Homestay), not priced."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Tax-inclusive Booking basis; no Cleartrip cross-check"
+   ]
+  },
+  "sabarimala": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Pathanamthitta",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid not priced. Booking.com does not resolve Sabarimala or Pamba (searches return unrelated results). Cleartrip hotels-in-sabarimala has 0 listings; hotels-in-pamba and hotels-in-erumely 404. The nearest bookable hotels are in Pathanamthitta town (https://www.booking.com/searchresults.html?ss=Pathanamthitta&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR), a different town, not used.",
+    "notes": "Pilgrim season: the Mandala-Makaravilakku season opens 16 Nov 2026 at 5 PM (https://thesouthfirst.com/kerala/sabarimala-temple-opens-for-mandala-makaravilakku-pilgrimage-season/ and https://www.sreeayyappatemple.com/sabarimala/calendar/ for the 2026-27 calendar), so 18-19 Nov falls on day 3-4 of the season and Pathanamthitta/Erumely demand will be high. I did not see a private 3-star in Sabarimala or Pamba; any lodging on the hill is Devaswom/pilgrim accommodation, no tariff found. Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid_median_inr: no mid-range hotel listed in Sabarimala/Pamba"
+   ]
+  },
+  "srikalahasti": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1144,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Srikalahasti&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/hotel/in/vishnu-homestay-srikalahasti.html",
+     "https://www.booking.com/hotel/in/msn-homestay.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay filter (ht_id=222), 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, room only. Vishnu homestay (Double Room with Private Bathroom) 1,134, 1.1 km from downtown; MSN Homestay (Double Room) 1,154, 0.9 km, score 6.7. These are the only 2 homestays listing Srikalahasti; the other 'homestay' results are Tirupati, 20-34 km away.",
+    "notes": "n=2 only, median is the mean of two. Cleartrip 'homestays-in-srikalahasti' lists ordinary hotels, not homestays, so not used."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only 2 homestays; tax-inclusive Booking basis"
+   ]
+  },
+  "trichy": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 2417,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tiruchirappalli&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/hotel/in/skr-homestay-trichy.html",
+     "https://www.booking.com/hotel/in/thaayar-homestay-by-highpoint.html",
+     "https://www.booking.com/hotel/in/jupiter-home-stay.html",
+     "https://www.booking.com/hotel/in/kanmani-elite-a-perfect-home.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com homestay filter (ht_id=222), 18-19 Nov 2026, 2 adults 1 room, cheapest private double room per property, TAX-INCLUSIVE, room only. SKR Homestay Trichy (Deluxe Double) 1,680, 1.5 km; Thaayar Homestay by Highpoint (Double, private bath) 1,943, 4 km; Jupiter Home stay (Double) 2,891, 5.6 km; Kanmani Elite (Deluxe Double or Twin) 3,863, 3.3 km. All list Tiruchirappalli.",
+    "notes": "Left out: Hexahub 2,599 and Uthamar Illam 1,435 (7 km out), Srirangam listings, Thiruveesar / Indian Residency (unit type not shown), Ramz Stay (breakfast plan). Cleartrip cross-check, PRE-tax, 18-19 Nov 2026 (not in median): Minas Manor 2,949 (+300) https://www.cleartrip.com/hotels/details/minas-manor-3989889?c=18112026|19112026&r=2,0 ; Indian Residency 3,453 (+353) https://www.cleartrip.com/hotels/details/indian-residency-4480516?c=18112026|19112026&r=2,0 ; The Kaya Homestay Srirangam 958 (+106) https://www.cleartrip.com/hotels/details/the-kaya-homestay-srirangam-4484134?c=18112026|19112026&r=2,0 ; Kothai Home Stay Srirangam 4,886 (+444) https://www.cleartrip.com/hotels/details/kothai-home-stay-srirangam-5732360?c=18112026|19112026&r=2,0 (Cleartrip lists these as Trichy, room type not checked)."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Booking tax-inclusive, Cleartrip pre-tax; only Booking used for the median"
+   ]
+  },
+  "tso-moriri": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Korzok",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No homestay priced. Booking.com 18-19 Nov 2026 (https://www.booking.com/searchresults.html?ss=Karzok&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR) shows 1 property at Karzok: Chupgo homestay 2,730 tax-incl, but with breakfast plan and a SHARED bathroom (score 5.0), so not a room-only private double. n=1. Cleartrip has no Korzok / Tso Moriri page.",
+    "notes": "Little or nothing is open at Tso Moriri in late November (winter, sub-zero); no source found showing homestays taking bookings for 18-19 Nov. Left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay_median_inr: nothing bookable and qualifying for 18-19 Nov 2026"
+   ]
+  }
+ }
+}
