@@ -38,10 +38,10 @@ export function NewsletterSignup({
 } = {}) {
   // Read per render, not at module load: a warm server process can outlive a month.
   const SHORTLIST = shortlistSummaryNow();
-  const DEFAULT_HEADLINE = `The ${SHORTLIST.monthLong} shortlist`;
+  const DEFAULT_HEADLINE = `The ${SHORTLIST.monthLong} top 10`;
   const DEFAULT_SUBHEAD =
     `${SHORTLIST.totals.listed} of ${SHORTLIST.totals.destinations} places in India are in their best month right now — and ` +
-    `${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`;
+    `${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send you the 10 best.`;
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -123,9 +123,9 @@ export function NewsletterSignup({
           <div className="text-3xl mb-3">{"✉️"}</div>
           <p className="text-lg font-bold text-emerald-400">Sent — it&apos;s in your inbox.</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            The {SHORTLIST.monthLong} shortlist is on its way to {email}. There&apos;s
-            also a confirmation link in there — tap it and we&apos;ll send next
-            month&apos;s when the list changes.
+            The {SHORTLIST.monthLong} top 10 is on its way to {email}. There&apos;s
+            also a confirmation link in there — tap it to get The Window, our
+            Sunday email.
           </p>
         </div>
       </FadeIn>

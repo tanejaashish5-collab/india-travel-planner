@@ -218,26 +218,24 @@ async function sendMonthShortlist(
   to: string,
 ) {
   try {
-    const { monthLong, totals, states } = shortlistNow();
-    const html = await render(MonthShortlist({ monthLong, totals, states }));
+    const { monthLong, monthSlug, totals, top } = shortlistNow();
+    const html = await render(MonthShortlist({ monthLong, monthSlug, totals, top }));
     const plain = [
-      `The ${monthLong} shortlist — ${totals.listed} places in India at their best right now.`,
+      `The ${monthLong} top ${top.length}: the best places in India this month.`,
       `We check ${totals.destinations} destinations against the month you'd actually travel.`,
-      `In ${monthLong}, ${totals.listed} are in their best window and ${totals.inAMonthToAvoid} are in a month we'd tell you to skip.`,
+      `In ${monthLong}, ${totals.listed} are in their best window and ${totals.inAMonthToAvoid} are in a month we'd tell you to skip. These are the ${top.length} we rate highest.`,
       "",
-      ...states.flatMap((s) => [
-        `${s.state.toUpperCase()} (${s.destinations.length})`,
-        ...s.destinations.map((d) => `  • ${d.name} — https://www.nakshiq.com/en/destination/${d.id}`),
-        "",
-      ]),
-      "Next month the list changes — most of these close and others open.",
+      ...top.map((d, i) => `${String(i + 1).padStart(2, "0")}. ${d.name}, ${d.state}: https://www.nakshiq.com/en/destination/${d.id}/${monthSlug}`),
+      "",
+      `Every place that's good in ${monthLong}: https://www.nakshiq.com/en/where-to-go/${monthSlug}`,
+      "Next month the list changes. The Window, our Sunday email, keeps you up to date.",
     ].join("\n");
 
     await resend.emails.send({
       from: FROM_ADDRESS,
       to,
       replyTo: REPLY_TO,
-      subject: `The ${monthLong} shortlist — ${totals.listed} places at their best`,
+      subject: `The ${monthLong} top ${top.length}: the best places in India this month`,
       html,
       text: plain,
     });

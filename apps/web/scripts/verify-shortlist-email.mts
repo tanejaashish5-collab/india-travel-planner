@@ -53,26 +53,24 @@ type State = { state: string; destinations: Dest[] };
 
 // The data file carries all 12 months (2026-10-10); MONTH=1..12 picks one, default = current IST month.
 const raw = shortlist as unknown as {
-  destinations: Record<string, { name: string; tagline: string | null }>;
+  destinations: Record<string, { name: string; tagline: string | null; state: string }>;
   months: Record<string, {
     monthLong: string;
+    monthSlug: string;
     totals: { destinations: number; atTheirBest: number; inAMonthToAvoid: number; listed: number };
-    states: { state: string; ids: string[] }[];
+    top: { id: string; score: number }[];
   }>;
 };
 const monthNum = Number(process.env.MONTH) ||
   Number(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }));
 const picked = raw.months[String(monthNum)];
-const { monthLong, totals } = picked;
-const states: State[] = picked.states.map((s) => ({
-  state: s.state,
-  destinations: s.ids.map((id) => ({ id, name: raw.destinations[id].name, tagline: raw.destinations[id].tagline })),
-}));
+const { monthLong, monthSlug, totals } = picked;
+const top = picked.top.map(({ id }) => ({ id, ...raw.destinations[id] }));
 
-const html = await render(MonthShortlist({ monthLong, totals, states }));
+const html = await render(MonthShortlist({ monthLong, monthSlug, totals, top }));
 writeFileSync(OUT, html);
 
-const names = states.flatMap((s) => s.destinations.map((d) => d.name));
+const names = top.map((d) => d.name);
 const linkCount = (html.match(/https:\/\/www\.nakshiq\.com\/en\/destination\//g) ?? []).length;
 
 /**
@@ -88,7 +86,7 @@ const escapeHtml = (s: string) =>
 const rendered = (s: string) => html.includes(s) || html.includes(escapeHtml(s));
 
 const missingNames = names.filter((n) => !rendered(n));
-const missingStates = states.map((s) => s.state).filter((s) => !rendered(s));
+const missingStates = top.map((d) => d.state).filter((s) => !rendered(s));
 
 const checks: [string, boolean][] = [
   ["renders non-trivial HTML", html.length > 2000],
@@ -97,11 +95,16 @@ const checks: [string, boolean][] = [
   [`avoid count ${totals.inAMonthToAvoid} present`, html.includes(String(totals.inAMonthToAvoid))],
   [`total ${totals.destinations} present`, html.includes(String(totals.destinations))],
   [`all ${names.length} destination names rendered`, missingNames.length === 0],
-  [`all ${states.length} state headings rendered`, missingStates.length === 0],
+  [`all ${top.length} state labels rendered`, missingStates.length === 0],
+  [`exactly 10 picks`, top.length === 10],
+  [`no state more than twice`, Object.values(top.reduce((a: Record<string, number>, d) => ({ ...a, [d.state]: (a[d.state] ?? 0) + 1 }), {})).every((n) => n <= 2)],
+  [`links go to the ${monthSlug} pages`, (html.match(new RegExp(`/en/destination/[a-z0-9-]+/${monthSlug}"`, "g")) ?? []).length === top.length],
+  [`full-month link present`, html.includes(`/en/where-to-go/${monthSlug}`)],
+  [`under Gmail's ~102 KB clip`, html.length < 100_000],
   [`one link per destination (${linkCount}/${names.length})`, linkCount === names.length],
   ["no undefined/null leaked into the body", !/>\s*(undefined|null)\s*</.test(html)],
   ["no [object Object]", !html.includes("[object Object]")],
-  ["shortlist is not empty", names.length > 0],
+  ["top list is not empty", names.length > 0],
 ];
 
 let failed = 0;
@@ -113,7 +116,7 @@ if (missingNames.length) console.error("  missing destinations:", missingNames);
 if (missingStates.length) console.error("  missing states:", missingStates);
 
 console.log(
-  `\n${html.length} bytes · ${names.length} destinations · ${states.length} states` +
+  `\n${html.length} bytes · ${names.length} destinations` +
     `\npreview → ${OUT}`,
 );
 

@@ -35,6 +35,10 @@
  * USAGE
  *   node --env-file=apps/web/.env.local scripts/build-month-shortlist.mjs
  *
+ * TOP 10 (founder 2026-10-10): the signup email sends the month's ten best,
+ * not the whole in-season list (449 places in October = a 247 KB email that
+ * Gmail clips). Ranked like The Window's picks; see MONTH_SQL.
+ *
  * Writes apps/web/src/data/month-shortlist.json (server-side: email) and
  * apps/web/src/data/month-shortlist-summary.json (client-safe: counts only).
  */
@@ -57,7 +61,7 @@ const MONTH_LONG = [
 ];
 
 // One row per destination with its month arrays; grouping happens here.
-const SQL = `
+const DEST_SQL = `
   SELECT d.id, d.name, d.tagline, s.name AS state_name,
          COALESCE(d.best_months, '{}') AS best_months,
          COALESCE(d.avoid_months, '{}') AS avoid_months
@@ -65,13 +69,40 @@ const SQL = `
     LEFT JOIN states s ON s.id = d.state_id
    ORDER BY s.name NULLS LAST, d.name`;
 
-async function fetchRows() {
+// Per destination-month: score plus the SAME data-completeness weight The
+// Window's weekly picks use to break ties (apps/web/src/lib/weekly-picks/
+// weight.ts editorialWeight — keep the two in step; who_should_go/avoid are
+// text[] here, counted when non-empty). 219 places scored 5/5
+// in October 2026, so score alone cannot pick ten.
+const MONTH_SQL = `
+  SELECT dm.destination_id AS id, dm.month, dm.score,
+         length(trim(coalesce(dm.note, ''))) AS note_len,
+         (CASE WHEN length(trim(coalesce(dm.note, ''))) >= 40 THEN 3 ELSE 0 END
+        + CASE WHEN length(trim(coalesce(dm.note, ''))) >= 80 THEN 2 ELSE 0 END
+        + CASE WHEN length(trim(coalesce(dm.note, ''))) >= 120 THEN 1 ELSE 0 END
+        + CASE WHEN trim(coalesce(dm.prose_lead, '')) <> '' THEN 2 ELSE 0 END
+        + CASE WHEN coalesce(cardinality(dm.who_should_go), 0) > 0 THEN 1 ELSE 0 END
+        + CASE WHEN coalesce(cardinality(dm.who_should_avoid), 0) > 0 THEN 1 ELSE 0 END
+        + CASE WHEN length(trim(coalesce(d.tagline, ''))) >= 30 THEN 1 ELSE 0 END
+        + CASE WHEN coalesce(cardinality(d.tags), 0) >= 3 THEN 1 ELSE 0 END
+        + CASE WHEN coalesce(cardinality(d.tags), 0) >= 5 THEN 1 ELSE 0 END
+        + CASE WHEN d.elevation_m IS NOT NULL THEN 1 ELSE 0 END
+        + CASE WHEN trim(coalesce(d.budget_tier, '')) <> '' THEN 1 ELSE 0 END
+        + CASE WHEN EXISTS (SELECT 1 FROM kids_friendly k WHERE k.destination_id = d.id) THEN 1 ELSE 0 END
+         )::int AS weight
+    FROM destination_months dm
+    JOIN destinations d ON d.id = dm.destination_id`;
+
+const TOP_N = 10;
+const MAX_PER_STATE = 2; // The Window's strict diversity rule
+
+async function query(sql) {
   const dbUrl = process.env.SUPABASE_DB_URL || process.env.DATABASE_URL;
   if (dbUrl) {
     const client = new pg.Client({ connectionString: dbUrl, ssl: { rejectUnauthorized: false } });
     await client.connect();
     try {
-      return (await client.query(SQL)).rows;
+      return (await client.query(sql)).rows;
     } finally {
       await client.end();
     }
@@ -84,12 +115,11 @@ async function fetchRows() {
       "Run with: node --env-file=apps/web/.env.local scripts/build-month-shortlist.mjs",
     );
   }
-  console.log("• SUPABASE_DB_URL unset — using the Management API SQL endpoint");
   const ref = new URL(url).hostname.split(".")[0];
   const res = await fetch(`https://api.supabase.com/v1/projects/${ref}/database/query`, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ query: SQL }),
+    body: JSON.stringify({ query: sql }),
   });
   const text = await res.text();
   if (!res.ok) throw new Error(`Management API query failed: ${res.status} ${text.slice(0, 300)}`);
@@ -97,7 +127,10 @@ async function fetchRows() {
 }
 
 async function main() {
-  const rows = await fetchRows();
+  if (!process.env.SUPABASE_DB_URL && !process.env.DATABASE_URL) console.log("• SUPABASE_DB_URL unset — using the Management API SQL endpoint");
+  const rows = await query(DEST_SQL);
+  const monthRows = await query(MONTH_SQL);
+  const monthInfo = new Map(monthRows.map((r) => [`${r.id}:${r.month}`, r]));
   if (rows.length < 100) throw new Error(`Only ${rows.length} destinations returned — refusing to write`);
 
   const destinations = {};
@@ -118,6 +151,24 @@ async function main() {
       if (!byState.has(key)) byState.set(key, []);
       byState.get(key).push(r.id);
     }
+    // Top 10: rank the listed places by this month's score, then the editorial
+    // weight, then note length, then name; at most MAX_PER_STATE per state.
+    const ranked = listed
+      .map((r) => ({ r, info: monthInfo.get(`${r.id}:${m}`) ?? { score: 0, weight: 0, note_len: 0 } }))
+      .sort((a, b) =>
+        b.info.score - a.info.score ||
+        b.info.weight - a.info.weight ||
+        b.info.note_len - a.info.note_len ||
+        a.r.name.localeCompare(b.r.name));
+    const perState = {};
+    const top = [];
+    for (const { r, info } of ranked) {
+      const st = r.state_name ?? "Elsewhere";
+      if ((perState[st] ?? 0) >= MAX_PER_STATE) continue;
+      perState[st] = (perState[st] ?? 0) + 1;
+      top.push({ id: r.id, score: info.score });
+      if (top.length === TOP_N) break;
+    }
     months[m] = {
       month: m,
       monthSlug: MONTH_SLUGS[m - 1],
@@ -128,6 +179,7 @@ async function main() {
         inAMonthToAvoid: avoid.length,
         listed: listed.length,
       },
+      top,
       states: [...byState.entries()]
         .map(([state, ids]) => ({ state, ids }))
         .sort((a, b) => b.ids.length - a.ids.length),
@@ -150,6 +202,7 @@ async function main() {
     const t = v.totals;
     const conflict = t.atTheirBest !== t.listed ? ` (${t.atTheirBest - t.listed} flagged best AND avoid, excluded)` : "";
     console.log(`✓ ${v.monthLong.padEnd(9)} listed ${String(t.listed).padStart(3)} · avoid ${String(t.inAMonthToAvoid).padStart(3)} of ${t.destinations}${conflict}`);
+    console.log(`  top ${v.top.length}: ${v.top.map((x) => `${destinations[x.id].name} (${x.score * 2}/10)`).join(", ")}`);
   }
   console.log(`  → ${OUT}\n  → ${SUMMARY_OUT}`);
 }

@@ -1023,8 +1023,8 @@ export function DestinationMonth({
         }
         subhead={
           locale === "hi"
-            ? `भारत की ${shortlist.destinations} जगहों में से ${shortlist.listed} इस समय अपने सही महीने में हैं — और ${shortlist.inAMonthToAvoid} ऐसे महीने में हैं जिनसे हम बचने को कहेंगे। पूरी सूची भेज देते हैं।`
-            : `${shortlist.listed} of ${shortlist.destinations} places in India are in their best month right now — and ${shortlist.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`
+            ? `भारत की ${shortlist.destinations} जगहों में से ${shortlist.listed} इस समय अपने सही महीने में हैं — और ${shortlist.inAMonthToAvoid} ऐसे महीने में हैं जिनसे हम बचने को कहेंगे। सबसे अच्छी 10 जगहें भेज देते हैं।`
+            : `${shortlist.listed} of ${shortlist.destinations} places in India are in their best month right now — and ${shortlist.inAMonthToAvoid} are in one we'd tell you to skip. We'll send you the 10 best.`
         }
         buttonLabel={locale === "hi" ? "सूची भेजें" : "Send it"}
       />

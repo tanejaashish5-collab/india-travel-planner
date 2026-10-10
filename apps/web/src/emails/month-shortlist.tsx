@@ -20,23 +20,31 @@ import {
 // cannot assemble themselves without opening 533 pages.
 //
 // Data comes from apps/web/src/data/month-shortlist.json (all 12 months, built
-// by scripts/build-month-shortlist.mjs; the route picks the current IST month). Nothing here is written by a model and
+// by scripts/build-month-shortlist.mjs; the route picks the current IST month).
+//
+// TOP 10 since 2026-10-10 (founder). It used to list every in-season place:
+// 62 in August but 449 in October, a 247 KB email that Gmail clips at ~102 KB.
+// Now the ten best, ranked like The Window's weekly picks, plus a link to the
+// full month on the site. Nothing here is written by a model and
 // nothing is estimated — it is our own verified best_months / avoid_months.
 
-export interface MonthShortlistState {
+export interface MonthShortlistPick {
+  id: string;
+  name: string;
   state: string;
-  destinations: { id: string; name: string; tagline: string | null }[];
+  tagline: string | null;
 }
 
 interface Props {
   monthLong: string;
+  monthSlug: string;
   totals: {
     destinations: number;
     atTheirBest: number;
     inAMonthToAvoid: number;
     listed: number;
   };
-  states: MonthShortlistState[];
+  top: MonthShortlistPick[];
   unsubscribeUrl?: string;
 }
 
@@ -44,53 +52,54 @@ const SITE = "https://www.nakshiq.com";
 
 export default function MonthShortlist({
   monthLong,
+  monthSlug,
   totals,
-  states,
+  top,
   unsubscribeUrl,
 }: Props) {
   return (
     <Html>
       <Head />
-      <Preview>{`${monthLong}: ${totals.listed} places in India are at their best right now`}</Preview>
+      <Preview>{`The ${monthLong} top ${top.length}: the best places in India this month`}</Preview>
       <Body style={body}>
         <Container style={container}>
-          <Text style={kicker}>THE {monthLong.toUpperCase()} SHORTLIST</Text>
+          <Text style={kicker}>THE {monthLong.toUpperCase()} TOP {top.length}</Text>
           <Heading style={h1}>
-            {totals.listed} places are at their best this month.
+            The {top.length} best places in India for {monthLong}.
           </Heading>
 
           <Text style={lede}>
             We check {totals.destinations} destinations against the month
             you&apos;d actually travel. In {monthLong}, {totals.listed} of them
-            are in their best window — and {totals.inAMonthToAvoid} are in a
-            month we&apos;d tell you to skip. Here are the ones worth your time.
+            are in their best window and {totals.inAMonthToAvoid} are in a
+            month we&apos;d tell you to skip. These are the {top.length} we
+            rate highest, no more than two from any one state.
           </Text>
 
           <Hr style={rule} />
 
-          {states.map((s) => (
-            <Section key={s.state} style={stateSection}>
-              <Text style={stateName}>
-                {s.state}
-                <span style={stateCount}>
-                  {" · "}
-                  {s.destinations.length}
-                </span>
-              </Text>
-              {s.destinations.map((d) => (
-                <Link key={d.id} href={`${SITE}/en/destination/${d.id}`} style={item}>
-                  <strong style={itemName}>{d.name}</strong>
-                  {d.tagline ? <span style={itemTagline}>{d.tagline}</span> : null}
-                </Link>
-              ))}
-            </Section>
+          {top.map((d, i) => (
+            <Link key={d.id} href={`${SITE}/en/destination/${d.id}/${monthSlug}`} style={item}>
+              <span style={rank}>{String(i + 1).padStart(2, "0")}</span>
+              <strong style={itemName}>{d.name}</strong>
+              <span style={itemState}>{d.state}</span>
+              {d.tagline ? <span style={itemTagline}>{d.tagline}</span> : null}
+            </Link>
           ))}
 
           <Hr style={rule} />
 
           <Text style={text}>
-            Next month the list changes — most of these close and others open.
-            We&apos;ll send the new one when it does.
+            Want the other {Math.max(totals.listed - top.length, 0)}?{" "}
+            <Link href={`${SITE}/en/where-to-go/${monthSlug}`} style={inlineLink}>
+              See every place that&apos;s good in {monthLong}
+            </Link>
+            .
+          </Text>
+
+          <Text style={text}>
+            Next month the list changes: most of these close and others open.
+            The Window, our Sunday email, keeps you up to date.
           </Text>
 
           <Text style={footer}>
@@ -164,23 +173,30 @@ const rule: React.CSSProperties = {
   margin: "28px 0",
 };
 
-const stateSection: React.CSSProperties = { margin: "0 0 26px" };
-
-const stateName: React.CSSProperties = {
-  color: "#1c1917",
-  fontSize: 12,
+const rank: React.CSSProperties = {
+  color: "#9a3412",
+  display: "block",
+  fontSize: 11,
   fontWeight: 600,
   letterSpacing: "0.08em",
-  margin: "0 0 10px",
+  marginBottom: 2,
+};
+
+const itemState: React.CSSProperties = {
+  color: "#a8a29e",
+  display: "block",
+  fontSize: 12,
+  letterSpacing: "0.04em",
+  marginTop: 1,
   textTransform: "uppercase",
 };
 
-const stateCount: React.CSSProperties = { color: "#a8a29e", fontWeight: 400 };
+const inlineLink: React.CSSProperties = { color: "#9a3412" };
 
 const item: React.CSSProperties = {
   borderLeft: "2px solid #e7e5e4",
   display: "block",
-  margin: "0 0 12px",
+  margin: "0 0 18px",
   paddingLeft: 12,
   textDecoration: "none",
 };
