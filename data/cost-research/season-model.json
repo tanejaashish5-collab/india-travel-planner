@@ -1,0 +1,13115 @@
+{
+ "aalo": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "achabal": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "adi-kailash": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    4,
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    3,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "adilabad": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    6
+   ],
+   "low": [
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "agartala": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "agatti": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "agonda": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "agra": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ahmedabad": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ahobilam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "aihole": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "aizawl": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ajanta-caves": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ajmer": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "alampur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "alchi": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    9,
+    8
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "alibaug": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "alleppey": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "almora": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "alwar": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "amaravati": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "ambaji": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    8
+   ],
+   "low": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "amboli": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    5
+   ],
+   "low": [
+    2,
+    3,
+    4
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "amritsar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "anamalai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    1,
+    6
+   ],
+   "low": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "anandpur-sahib": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    3,
+    4
+   ],
+   "shoulder": [
+    2,
+    5,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ananthagiri-hills": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "anini": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "anjuna": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "araku-valley": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "arambol": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "assagao": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "astavinayak-circuit": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "athirapally": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "auli": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    1,
+    2,
+    10,
+    9
+   ],
+   "shoulder": [
+    3,
+    8,
+    11,
+    12
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "aurangabad": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "auroville": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "ayodhya": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "badami": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "badrinath": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "bandhavgarh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "shoulder": [
+    7,
+    9
+   ],
+   "low": [
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bandipur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bangaram": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bangus-valley": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    9,
+    7,
+    8
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "baratang-island": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "baripada": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "barmer": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "barnawapara": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "barot-valley": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "barren-island": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "basara": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bekal": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "belum-caves": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [],
+   "low": []
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "belur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bengaluru": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "betla": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "beypore": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "bhaderwah": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "bhadrachalam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bhalukpong": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhandardara": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bharatpur": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "bhavnagar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhimashankar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    6
+   ],
+   "low": [
+    4,
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhimbetka": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhimtal": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "bhitarkanika": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhongir": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bhopal": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhoramdeo": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bhubaneswar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bidar": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bijapur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bikaner": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "binsar": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "bir-billing": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "bodh-gaya": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "bomdila": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "borra-caves": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "bundi": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "calangute-baga": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "candolim": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "chail": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "chakrata": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "chamba": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    7,
+    12
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "champaner-pavagadh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "champawat": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "champhai": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chandigarh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    1,
+    5,
+    9,
+    12
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chandipur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chandratal": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    6,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "charaideo": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chaukori": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "chennai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "cherai": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "cherrapunji": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chettinad": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "chidambaram": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "chidiya-tapu": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "chikmagalur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "chilika-lake": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chinnar": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "chitkul": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    6,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "chitradurga": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "chitrakoot": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chitrakote-falls": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "shoulder": [
+    5,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    12
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "chittorgarh": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "chopta": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    10,
+    4,
+    9
+   ],
+   "shoulder": [
+    3,
+    6,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    7,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "chorao-divar": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "coimbatore": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "colva-benaulim": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "coonoor": {
+  "type": "tamil nadu hills",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "why": "Kodaikanal cards 0.60-0.92; season 10 Apr-15 Jun + 20 Dec-15 Jan"
+ },
+ "coorg": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "corbett-national-park": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "courtallam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    5
+   ],
+   "low": [
+    3,
+    4
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "cuttack": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dakor": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    9
+   ],
+   "low": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dalhousie": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "daman": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dambuk": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "damdama-sahib": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dandeli": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "daringbadi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "darjeeling": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "daulatabad": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dawki": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "deeg": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "delhi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "deoghar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "deomali": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "devprayag": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    3,
+    4
+   ],
+   "shoulder": [
+    2,
+    5,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dhanaulti": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "dhanushkodi": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "dharamshala": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "dharmasthala": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "dhauli": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dholavira": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "diamond-triangle": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "diglipur": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "dirang": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "diu": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "doodhpathri": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    4,
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    3,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "drass": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "dudhsagar-falls": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    9
+   ],
+   "low": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "dudhwa-national-park": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dungarpur": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "dwarka": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "dzukou-valley": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    3,
+    4,
+    5,
+    6
+   ],
+   "shoulder": [
+    2,
+    7,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "elephanta-caves": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ellora-caves": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "eravikulam": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "fatehpur-sikri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "fort-aguada": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "gagron-fort": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "gahirmatha": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    11,
+    12
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "gandhinagar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "gandikota": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "gangotri": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "gangtok": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ganpatipule": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "gir-national-park": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    11
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "girnar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "gokarna": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "gopalpur-on-sea": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "gopeshwar": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "great-himalayan-np": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "gulbarga": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "gulmarg": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    6,
+    9
+   ],
+   "shoulder": [
+    4,
+    5,
+    7,
+    8,
+    10,
+    12
+   ],
+   "low": [
+    11
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "guptkashi": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "gurez-valley": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "gurudongmar-lake": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    4,
+    5,
+    6,
+    10
+   ],
+   "shoulder": [
+    3,
+    7,
+    9,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    8,
+    12
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "guruvayur": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "guwahati": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "gwalior": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "haflong": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "halebidu": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "hampi": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "hanle": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "har-ki-doon": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "haridwar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    1,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "harihareshwar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "havelock-island": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "hemkund-sahib": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "hogenakkal": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "horsley-hills": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "hyderabad": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "idukki": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "igatpuri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    6
+   ],
+   "low": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "imphal": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "jabalpur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "jagdalpur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "jaipur": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "jaisalmer": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "jampui-hills": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "jibhi": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "jodhpur": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "jog-falls": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "jorhat": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "joshimath": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "junagadh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kabini": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    6,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    2,
+    7,
+    9
+   ],
+   "low": [
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kadmat": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kalimpong": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kalpa": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "kanatal": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kanchipuram": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kanha": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "shoulder": [
+    7,
+    9
+   ],
+   "low": [
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kanheri-caves": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kannur": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "kanyakumari": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "karaikal": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kargil": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "karla-bhaja-caves": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "karnaprayag": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "karwar": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kasauli": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kashid": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kasol": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "katra": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    7,
+    8,
+    12
+   ],
+   "low": [
+    1
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kausani": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kavaratti": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kaza": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    9
+   ],
+   "shoulder": [
+    5,
+    8,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "kaziranga": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kedarnath": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    10,
+    5,
+    9
+   ],
+   "shoulder": [
+    4,
+    6,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "keylong": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "khajuraho": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "khandala": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    6
+   ],
+   "low": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "khangchendzonga-np": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "khardung-la": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "khonoma": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kinnaur": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kinner-kailash": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "kiphire": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kishtwar": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kochi": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "kodaikanal": {
+  "type": "tamil nadu hills",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "why": "Kodaikanal cards 0.60-0.92; season 10 Apr-15 Jun + 20 Dec-15 Jan"
+ },
+ "kohima": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kokernag": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kolad": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    6
+   ],
+   "low": [
+    4,
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kolanupaka": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [],
+   "low": []
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kolhapur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8
+   ],
+   "shoulder": [
+    4,
+    6,
+    9
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kolkata": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kollam": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "konark": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "konaseema": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "koraput": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kotagiri": {
+  "type": "tamil nadu hills",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "why": "Kodaikanal cards 0.60-0.92; season 10 Apr-15 Jun + 20 Dec-15 Jan"
+ },
+ "kovalam": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "kozhikode": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "kufri": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    11
+   ],
+   "low": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "kukke-subramanya": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kullu": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "kumarakom": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "kumbakonam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "kumbalangi": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "kumbhalgarh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kurukshetra": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kushinagar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kutch": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "kuttanad": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "lachen": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lachung": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lahaul-valley": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    9,
+    5,
+    7,
+    10
+   ],
+   "shoulder": [
+    4,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "laknavaram": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "lamayuru": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    9,
+    8
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "lambasingi": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "landour": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "lansdowne": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "leh": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "lenyadri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lepakshi": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "likir": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    9,
+    8
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "little-andaman": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "loktak-lake": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lolab-valley": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "lonar-crater": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lonavala": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    6
+   ],
+   "low": [
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "long-island-andaman": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "lothal": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lucknow": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "lunglei": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "machilipatnam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "madurai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "mahabaleshwar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mahabalipuram": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "mahad-raigad": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "majuli": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "malvan": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "manali": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "manas-national-park": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mandi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mandrem": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "mandu": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mandvi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mangalore": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "manikaran": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "manimahesh-kailash": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    8,
+    9
+   ],
+   "shoulder": [
+    7,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "mansarovar-kailash": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    7,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "marari": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "maredumilli": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "margao": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "marine-national-park": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "matheran": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mathura": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9,
+    12
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mawlynnong": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mawphlang": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mawsynram": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mcleodganj": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "mechuka": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "medak": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "meghamalai": {
+  "type": "tamil nadu hills",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "why": "Kodaikanal cards 0.60-0.92; season 10 Apr-15 Jun + 20 Dec-15 Jan"
+ },
+ "minicoy": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "modhera": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    9,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    2,
+    4,
+    8,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mokokchung": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mollem": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "mon": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "moreh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "morgaon": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "morjim": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "morni-hills": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mount-abu": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "mudumalai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "shoulder": [
+    1,
+    7
+   ],
+   "low": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "mukteshwar": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "mumbai": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "munnar": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "munsiyari": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "murud-janjira": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "murudeshwar": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "mussoorie": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "mysore": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "nagarhole": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "nagarjuna-konda": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "nagarjuna-sagar": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "nagpur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "nainital": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "nako": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "nalanda": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "nalsarovar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "namchi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "namdapha": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "nandaprayag": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "nandi-hills": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "nashik": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8
+   ],
+   "shoulder": [
+    4,
+    6,
+    9
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "neemrana": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "neermahal": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "neil-island": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "nelliyampathy": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "netarhat": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "nongriat": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "north-bay-island": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "nrusinghanath-harishankar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "nubra-valley": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "old-goa": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "omkareshwar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ooty": {
+  "type": "tamil nadu hills",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "why": "Kodaikanal cards 0.60-0.92; season 10 Apr-15 Jun + 20 Dec-15 Jan"
+ },
+ "orchha": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "osian": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "ozar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pachmarhi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pahalgam": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "palampur": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "palani": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "pali-raigad": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "palitana": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "palolem": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "panaji": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "panchgani": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pangong-lake": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "parvati-valley": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "pasighat": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "patiala": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "patna": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "patnitop": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "pattadakal": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "pawapuri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pazhamudircholai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "pelling": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pench-maharashtra": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pfutsero": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "phawngpui-peak": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pillalamarri": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [],
+   "low": []
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "pinjore-gardens": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pithoragarh": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "pochampally": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [],
+   "low": []
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "point-calimere": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    10
+   ],
+   "low": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "ponda-spice": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "pondicherry": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "ponmudi": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "poovar": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "porbandar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "port-blair": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "prashar-lake": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    6,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    7,
+    8,
+    12
+   ],
+   "low": [
+    1
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "prayagraj": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "puducherry": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "pulicat-lake": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "pune": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "puri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "pushkar": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "raghurajpur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [],
+   "low": []
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "raigad-fort": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "rajahmundry": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "rajgir": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "rajkot": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ramappa-temple": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [],
+   "low": []
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "rameswaram": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "ranakpur": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "ranchi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "rangat": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "rani-ki-vav": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ranikhet": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "ranjangaon": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "rann-of-kutch": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ranthambore": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "ratnagiri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ravangla": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "reis-magos": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "rishikesh": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    3,
+    4
+   ],
+   "shoulder": [
+    2,
+    5,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "roopkund": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "ross-island": {
+  "type": "andaman",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3,
+    4
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "ANIIDCO card: season Oct-Apr, off May-Sep"
+ },
+ "rudraprayag": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sabarimala": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "sakleshpur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "sambalpur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sanchi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sangla": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "saputara": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    6,
+    10,
+    11
+   ],
+   "low": [
+    3,
+    4,
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sarahan": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "sariska": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "sarnath": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sasangir": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    11
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "satara": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    8
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "satkosia": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "shantiniketan": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "shekhawati": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "shikharji": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "shillong": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "shimla": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "shirdi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "shnongpdeng": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "shravanabelagola": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "shrikhand-mahadev": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    7,
+    8
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    10,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "siddhatek": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "silent-valley": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "siliguri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "silvassa": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    9
+   ],
+   "low": [
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "simlipal": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    10
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sinthan-top": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "siolim": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "sirpur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sissu": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "sivasagar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "solan": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "somnath": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sonamarg": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "spiti-valley": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    5,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "sravasti": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "srikalahasti": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "srinagar": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "srirangam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "srirangapatna": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "srisailam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "statue-of-unity": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "sundarbans": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "surat": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "swamimalai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tadoba": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "talasari": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "tamenglong": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "taptapani": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "tarkarli": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "tawang": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "tehri": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    7
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "thanjavur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tharangambadi": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "thekkady": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "theur": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "thrissur": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "tirthan-valley": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "tiruchendur": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tirumala": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tiruparankundram": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tirupati": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tiruttani": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tiruvannamalai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "tosamaidan": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "trichy": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "trimbakeshwar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8
+   ],
+   "shoulder": [
+    4,
+    6,
+    9
+   ],
+   "low": [
+    5
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "trivandrum": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "tso-moriri": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "tsomgo-lake": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "tungnath": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    4,
+    5,
+    9,
+    10
+   ],
+   "shoulder": [
+    3,
+    6,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    7,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "tura": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "turtuk": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "udaipur": {
+  "type": "rajasthan",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "RTDC + Rajasthan private cards 0.64-0.80; higher rate Oct-Mar"
+ },
+ "udupi": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "ujjain": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "ukhrul": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "umlingla": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    6,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "unakoti": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "undavalli-caves": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "uttarkashi": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "vadodara": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "vagamon": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "vagator": {
+  "type": "goa",
+  "r": 0.95,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "GTDC: no off-season discount, peak +4-8%"
+ },
+ "vaishali": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "valley-of-flowers": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    8,
+    7
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    10,
+    11,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "valparai": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    8
+   ],
+   "low": [
+    7
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "varanasi": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "varkala": {
+  "type": "kerala (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "Varkala's card prints a Jan-Apr season"
+ },
+ "vedanthangal": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "velavadar": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "verinag": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "vijayawada": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "visakhapatnam": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "vishnuprayag": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "vrindavan": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    10,
+    11,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9,
+    12
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "warangal": {
+  "type": "south (kept months)",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "why": "South tariff median 0.85; no card dates for this kind of place"
+ },
+ "wayanad": {
+  "type": "kerala",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    10,
+    3
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "why": "KTDC + Munnar/Kumarakom/Poovar cards 0.67-0.93; season Oct-Mar, off Apr-Sep"
+ },
+ "yamunotri": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "yercaud": {
+  "type": "tamil nadu hills",
+  "r": 0.85,
+  "months": {
+   "peak": [
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "why": "Kodaikanal cards 0.60-0.92; season 10 Apr-15 Jun + 20 Dec-15 Jan"
+ },
+ "yuksom": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "yusmarg": {
+  "type": "north hills",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    5,
+    6
+   ],
+   "shoulder": [
+    4,
+    7,
+    10,
+    12
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    8,
+    9,
+    11
+   ]
+  },
+  "why": "15 private hill-town cards (Manali, Shimla, Mussoorie, Nainital) 0.61, KMVN/HPTDC 0.72; season mid-Apr to Jun/mid-Jul + 20 Dec-5 Jan"
+ },
+ "zanskar": {
+  "type": "high-altitude",
+  "r": 0.62,
+  "months": {
+   "peak": [
+    7,
+    8,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    4,
+    5,
+    10,
+    11
+   ]
+  },
+  "why": "northern private hill tariffs 0.61; months kept (Jun-Sep peak already)"
+ },
+ "ziro-valley": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ },
+ "zuluk": {
+  "type": "other (kept months)",
+  "r": 0.75,
+  "months": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11,
+    12
+   ],
+   "shoulder": [
+    1,
+    2,
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "why": "all-India tariff median (117 cards); no regional card with both rates"
+ }
+}
