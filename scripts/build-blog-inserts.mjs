@@ -65,6 +65,11 @@ console.log("");
 for (const file of files) {
   const md = readFileSync(file, "utf-8");
   const { fm, body } = parseFrontmatter(md);
+  // A writing brief from generate-blog-draft.mjs is instructions, not an article.
+  if (fm.review_status === "needs_writing" || file.endsWith(".brief.md")) {
+    console.error(`Refusing ${file}: it is a writing brief (review_status: needs_writing), not a finished draft.`);
+    process.exit(1);
+  }
 
   const id = fm.id;
   const slug = fm.slug;
