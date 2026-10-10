@@ -5,7 +5,7 @@ import { difficultyExplainer } from "@/lib/difficulty-copy";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { PeakAlertHook } from "./peak-alert-hook";
-import SHORTLIST from "@/data/month-shortlist-summary.json";
+import { shortlistSummaryNow } from "@/lib/month-shortlist-summary";
 import { HeroMedia } from "./hero-media";
 import { DestinationSectionNav } from "./destination-section-nav";
 import { SectionLabel } from "./ui/section-label";
@@ -77,6 +77,7 @@ export function DestinationMonth({
   locale,
   peakMonth,
 }: DestinationMonthProps) {
+  const shortlist = shortlistSummaryNow().totals; // current IST month
   const score = currentMonth?.score ?? 0;
   const scoreInfo = SCORE_LABELS[score] ?? SCORE_LABELS[0];
   const stateData = destination.state as any;
@@ -1017,13 +1018,13 @@ export function DestinationMonth({
         source={`dest-month-${destination.id}-${monthSlug}`}
         headline={
           locale === "hi"
-            ? `${SHORTLIST.totals.listed} जगहें अभी अपने सबसे अच्छे महीने में हैं`
-            : `${SHORTLIST.totals.listed} places are at their best right now`
+            ? `${shortlist.listed} जगहें अभी अपने सबसे अच्छे महीने में हैं`
+            : `${shortlist.listed} places are at their best right now`
         }
         subhead={
           locale === "hi"
-            ? `भारत की ${SHORTLIST.totals.destinations} जगहों में से ${SHORTLIST.totals.listed} इस समय अपने सही महीने में हैं — और ${SHORTLIST.totals.inAMonthToAvoid} ऐसे महीने में हैं जिनसे हम बचने को कहेंगे। पूरी सूची भेज देते हैं।`
-            : `${SHORTLIST.totals.listed} of ${SHORTLIST.totals.destinations} places in India are in their best month right now — and ${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`
+            ? `भारत की ${shortlist.destinations} जगहों में से ${shortlist.listed} इस समय अपने सही महीने में हैं — और ${shortlist.inAMonthToAvoid} ऐसे महीने में हैं जिनसे हम बचने को कहेंगे। पूरी सूची भेज देते हैं।`
+            : `${shortlist.listed} of ${shortlist.destinations} places in India are in their best month right now — and ${shortlist.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`
         }
         buttonLabel={locale === "hi" ? "सूची भेजें" : "Send it"}
       />

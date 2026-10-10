@@ -51,11 +51,23 @@ const OUT = "/tmp/nakshiq-shortlist-email.html";
 type Dest = { id: string; name: string; tagline: string | null };
 type State = { state: string; destinations: Dest[] };
 
-const { monthLong, totals, states } = shortlist as unknown as {
-  monthLong: string;
-  totals: { destinations: number; atTheirBest: number; inAMonthToAvoid: number; listed: number };
-  states: State[];
+// The data file carries all 12 months (2026-10-10); MONTH=1..12 picks one, default = current IST month.
+const raw = shortlist as unknown as {
+  destinations: Record<string, { name: string; tagline: string | null }>;
+  months: Record<string, {
+    monthLong: string;
+    totals: { destinations: number; atTheirBest: number; inAMonthToAvoid: number; listed: number };
+    states: { state: string; ids: string[] }[];
+  }>;
 };
+const monthNum = Number(process.env.MONTH) ||
+  Number(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }));
+const picked = raw.months[String(monthNum)];
+const { monthLong, totals } = picked;
+const states: State[] = picked.states.map((s) => ({
+  state: s.state,
+  destinations: s.ids.map((id) => ({ id, name: raw.destinations[id].name, tagline: raw.destinations[id].tagline })),
+}));
 
 const html = await render(MonthShortlist({ monthLong, totals, states }));
 writeFileSync(OUT, html);

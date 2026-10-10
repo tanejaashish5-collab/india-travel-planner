@@ -7,7 +7,8 @@ import { destinationImage } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
 import { getIssueNumber } from "./helpers";
 import { NewsletterSignup } from "../newsletter-signup";
-import { currentMonthLongIST } from "@itp/shared";
+import { currentMonthLongIST, currentMonthLocalisedIST } from "@itp/shared";
+import { shortlistSummaryNow } from "@/lib/month-shortlist-summary";
 import { FEATURES } from "@/lib/features";
 
 /* ============================================================
@@ -35,6 +36,7 @@ export function Act9Coda({
   const t = useTranslations("cinema");
   const locale = useLocale();
   const monthLong = currentMonthLongIST();
+  const shortlist = shortlistSummaryNow().totals;
   const [ref, seen] = useInView<HTMLDivElement>({ threshold: 0.25 });
   const [typed, setTyped] = useState(false);
   const [imgIdx, setImgIdx] = useState(0);
@@ -174,8 +176,12 @@ export function Act9Coda({
           <div className={`nq-fadeup ${seen ? "in" : ""}`} style={{ transitionDelay: "1.4s" }}>
             <NewsletterSignup
               source="cinema-coda"
-              headline={t("windowHeadline")}
-              subhead={t("windowSubhead")}
+              headline={t("windowHeadline", { month: locale === "hi" ? currentMonthLocalisedIST("hi-IN") : monthLong })}
+              subhead={t("windowSubhead", {
+                listed: shortlist.listed,
+                total: shortlist.destinations,
+                avoid: shortlist.inAMonthToAvoid,
+              })}
               buttonLabel={t("windowSubscribe")}
               footnote={t("windowFootnote")}
             />

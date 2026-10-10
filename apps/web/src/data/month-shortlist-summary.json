@@ -1,10 +1,113 @@
 {
-  "month": 8,
-  "monthLong": "August",
-  "totals": {
-    "destinations": 533,
-    "atTheirBest": 63,
-    "inAMonthToAvoid": 324,
-    "listed": 63
+  "generatedAt": "2026-10-10T06:38:36.195Z",
+  "months": {
+    "1": {
+      "monthLong": "January",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 347,
+        "inAMonthToAvoid": 71,
+        "listed": 347
+      }
+    },
+    "2": {
+      "monthLong": "February",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 375,
+        "inAMonthToAvoid": 68,
+        "listed": 374
+      }
+    },
+    "3": {
+      "monthLong": "March",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 392,
+        "inAMonthToAvoid": 50,
+        "listed": 391
+      }
+    },
+    "4": {
+      "monthLong": "April",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 159,
+        "inAMonthToAvoid": 79,
+        "listed": 159
+      }
+    },
+    "5": {
+      "monthLong": "May",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 146,
+        "inAMonthToAvoid": 195,
+        "listed": 146
+      }
+    },
+    "6": {
+      "monthLong": "June",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 72,
+        "inAMonthToAvoid": 351,
+        "listed": 72
+      }
+    },
+    "7": {
+      "monthLong": "July",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 62,
+        "inAMonthToAvoid": 351,
+        "listed": 62
+      }
+    },
+    "8": {
+      "monthLong": "August",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 62,
+        "inAMonthToAvoid": 324,
+        "listed": 62
+      }
+    },
+    "9": {
+      "monthLong": "September",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 149,
+        "inAMonthToAvoid": 71,
+        "listed": 149
+      }
+    },
+    "10": {
+      "monthLong": "October",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 449,
+        "inAMonthToAvoid": 9,
+        "listed": 449
+      }
+    },
+    "11": {
+      "monthLong": "November",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 445,
+        "inAMonthToAvoid": 33,
+        "listed": 445
+      }
+    },
+    "12": {
+      "monthLong": "December",
+      "totals": {
+        "destinations": 533,
+        "atTheirBest": 383,
+        "inAMonthToAvoid": 66,
+        "listed": 383
+      }
+    }
   }
 }

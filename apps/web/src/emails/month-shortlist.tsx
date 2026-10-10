@@ -19,8 +19,8 @@ import {
 // This is the replacement: one concrete thing, delivered now, that a reader
 // cannot assemble themselves without opening 533 pages.
 //
-// Data comes from apps/web/src/data/month-shortlist.json, regenerated monthly
-// by scripts/build-month-shortlist.mjs. Nothing here is written by a model and
+// Data comes from apps/web/src/data/month-shortlist.json (all 12 months, built
+// by scripts/build-month-shortlist.mjs; the route picks the current IST month). Nothing here is written by a model and
 // nothing is estimated — it is our own verified best_months / avoid_months.
 
 export interface MonthShortlistState {

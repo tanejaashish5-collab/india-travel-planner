@@ -5,7 +5,7 @@ import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 import ConfirmSubscription from "@/emails/confirm-subscription";
 import SavedListWelcome from "@/emails/saved-list-welcome";
 import MonthShortlist from "@/emails/month-shortlist";
-import shortlist from "@/data/month-shortlist.json";
+import { shortlistNow } from "@/lib/month-shortlist";
 import { syncSavedDestinationAlerts } from "@/lib/newsletter/sync-saved-alerts";
 
 export const runtime = "nodejs";
@@ -218,7 +218,7 @@ async function sendMonthShortlist(
   to: string,
 ) {
   try {
-    const { monthLong, totals, states } = shortlist;
+    const { monthLong, totals, states } = shortlistNow();
     const html = await render(MonthShortlist({ monthLong, totals, states }));
     const plain = [
       `The ${monthLong} shortlist — ${totals.listed} places in India at their best right now.`,

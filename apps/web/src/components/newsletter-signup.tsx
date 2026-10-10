@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "./animated-hero";
 import { KEY_EVENTS, track } from "@/lib/analytics";
-import SHORTLIST from "@/data/month-shortlist-summary.json";
+import { shortlistSummaryNow } from "@/lib/month-shortlist-summary";
 
 // One offer, one voice.
 //
@@ -16,13 +16,10 @@ import SHORTLIST from "@/data/month-shortlist-summary.json";
 // was. This asks for an email in exchange for one concrete thing, delivered
 // now, that a reader cannot assemble without opening 533 pages.
 //
-// Counts come from month-shortlist-summary.json (regenerated monthly by
-// scripts/build-month-shortlist.mjs) — the tiny client-safe companion to the
-// full shortlist, which stays server-side.
-const DEFAULT_HEADLINE = `The ${SHORTLIST.monthLong} shortlist`;
-const DEFAULT_SUBHEAD =
-  `${SHORTLIST.totals.listed} of ${SHORTLIST.totals.destinations} places in India are in their best month right now — and ` +
-  `${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`;
+// Counts come from month-shortlist-summary.json (all 12 months, built by
+// scripts/build-month-shortlist.mjs), picked for the current IST month at
+// render — the tiny client-safe companion to the full shortlist, which stays
+// server-side.
 const DEFAULT_BUTTON = "Send it";
 const DEFAULT_FOOTNOTE = "Free, arrives straight away. Nothing sponsored. Unsubscribe in one click.";
 
@@ -39,6 +36,12 @@ export function NewsletterSignup({
   buttonLabel?: string;
   footnote?: string;
 } = {}) {
+  // Read per render, not at module load: a warm server process can outlive a month.
+  const SHORTLIST = shortlistSummaryNow();
+  const DEFAULT_HEADLINE = `The ${SHORTLIST.monthLong} shortlist`;
+  const DEFAULT_SUBHEAD =
+    `${SHORTLIST.totals.listed} of ${SHORTLIST.totals.destinations} places in India are in their best month right now — and ` +
+    `${SHORTLIST.totals.inAMonthToAvoid} are in one we'd tell you to skip. We'll send the list.`;
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");

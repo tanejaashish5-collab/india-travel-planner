@@ -1,467 +1,7487 @@
 {
-  "month": 8,
-  "monthSlug": "august",
-  "monthLong": "August",
-  "generatedAt": "2026-08-06T12:09:42.441Z",
-  "totals": {
-    "destinations": 533,
-    "atTheirBest": 63,
-    "inAMonthToAvoid": 324,
-    "listed": 63
+ "generatedAt": "2026-10-10T06:38:36.195Z",
+ "destinations": {
+  "baratang-island": {
+   "name": "Baratang Island",
+   "tagline": "Limestone caves, mud volcanoes, and mangrove creek boat rides through Jarawa territory",
+   "state": "Andaman & Nicobar Islands"
   },
-  "states": [
+  "barren-island": {
+   "name": "Barren Island",
+   "tagline": "India's only active volcano — view from boat only, no landing allowed",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "chidiya-tapu": {
+   "name": "Chidiya Tapu",
+   "tagline": "Bird Island — Andaman's best sunset point with mangrove walks, forest treks, and 50+ bird species",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "diglipur": {
+   "name": "Diglipur",
+   "tagline": "Saddle Peak (highest point in Andaman), turtle nesting beaches, and the stunning Ross & Smith twin islands",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "havelock-island": {
+   "name": "Havelock Island (Swaraj Dweep)",
+   "tagline": "Asia's best beach, world-class diving, and the island every Andaman trip revolves around",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "little-andaman": {
+   "name": "Little Andaman",
+   "tagline": "Only surfing destination in Andaman — Butler Bay waves, White Surf Waterfall, and total isolation",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "long-island-andaman": {
+   "name": "Long Island",
+   "tagline": "Robinson Crusoe vibes — pristine Lalaji Bay beach with barely 50 tourists a month",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "neil-island": {
+   "name": "Neil Island (Shaheed Dweep)",
+   "tagline": "Havelock's quieter cousin — coral, cycling, and the Natural Bridge rock arch that ends up in every Andaman photo.",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "north-bay-island": {
+   "name": "North Bay Island",
+   "tagline": "Snorkeling and diving hub with glass-bottom boat rides over vibrant coral reefs",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "port-blair": {
+   "name": "Port Blair (Sri Vijaya Puram)",
+   "tagline": "Gateway to the Andaman archipelago — history, seafood, and island hopping start here",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "rangat": {
+   "name": "Rangat",
+   "tagline": "India's longest mangrove boardwalk, turtle nesting at Cuthbert Bay, and zero tourist crowds",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "ross-island": {
+   "name": "Ross Island (Netaji Subhas Chandra Bose Dweep)",
+   "tagline": "Hauntingly beautiful British-era ruins where deer roam freely among crumbling colonial buildings",
+   "state": "Andaman & Nicobar Islands"
+  },
+  "ahobilam": {
+   "name": "Ahobilam",
+   "tagline": "Nine Narasimha temples hidden in one forest gorge — globally unique",
+   "state": "Andhra Pradesh"
+  },
+  "amaravati": {
+   "name": "Amaravati",
+   "tagline": "Cradle of Mahayana Buddhism — where the Great Stupa stood 2,200 years ago",
+   "state": "Andhra Pradesh"
+  },
+  "araku-valley": {
+   "name": "Araku Valley",
+   "tagline": "Coffee country in the Eastern Ghats — Borra Caves, tribal culture, and a toy train",
+   "state": "Andhra Pradesh"
+  },
+  "belum-caves": {
+   "name": "Belum Caves",
+   "tagline": "India's 2nd longest cave system — 3.2km of stalactites deep underground",
+   "state": "Andhra Pradesh"
+  },
+  "borra-caves": {
+   "name": "Borra Caves",
+   "tagline": "150m-deep limestone karst caves on the Vizag-Araku railway",
+   "state": "Andhra Pradesh"
+  },
+  "gandikota": {
+   "name": "Gandikota",
+   "tagline": "India's Grand Canyon — Pennar River gorge with a medieval fort on top",
+   "state": "Andhra Pradesh"
+  },
+  "horsley-hills": {
+   "name": "Horsley Hills",
+   "tagline": "British-era hill station at 1,265m — AP's quiet answer to Ooty",
+   "state": "Andhra Pradesh"
+  },
+  "konaseema": {
+   "name": "Konaseema",
+   "tagline": "India's unknown backwaters — Godavari delta with 13 islands, zero tourists",
+   "state": "Andhra Pradesh"
+  },
+  "lambasingi": {
+   "name": "Lambasingi",
+   "tagline": "Only sub-zero place in South India — the Kashmir nobody knows about",
+   "state": "Andhra Pradesh"
+  },
+  "lepakshi": {
+   "name": "Lepakshi",
+   "tagline": "The hanging pillar that defies gravity — Vijayanagara's greatest artistic mystery",
+   "state": "Andhra Pradesh"
+  },
+  "machilipatnam": {
+   "name": "Machilipatnam",
+   "tagline": "India's Kalamkari capital — hand-painted textiles since the 1600s",
+   "state": "Andhra Pradesh"
+  },
+  "maredumilli": {
+   "name": "Maredumilli",
+   "tagline": "Tribal eco-tourism hub — community-owned forests, bamboo chicken, and waterfalls",
+   "state": "Andhra Pradesh"
+  },
+  "nagarjuna-sagar": {
+   "name": "Nagarjuna Sagar",
+   "tagline": "World's tallest masonry dam — Buddhist island museum, Ethipothala Falls, tiger reserve",
+   "state": "Andhra Pradesh"
+  },
+  "pulicat-lake": {
+   "name": "Pulicat Lake",
+   "tagline": "India's 2nd largest brackish lagoon — thousands of flamingos paint it pink each winter",
+   "state": "Andhra Pradesh"
+  },
+  "rajahmundry": {
+   "name": "Rajahmundry",
+   "tagline": "Oldest city in AP — Godavari pushkaralu origin and gateway to Papikondalu gorge",
+   "state": "Andhra Pradesh"
+  },
+  "srikalahasti": {
+   "name": "Srikalahasti",
+   "tagline": "Vayu linga of the Pancha Bhuta temples — where Kalamkari art was born",
+   "state": "Andhra Pradesh"
+  },
+  "srisailam": {
+   "name": "Srisailam",
+   "tagline": "Only place in India with both Jyotirlinga and Shakti Peetha — deep in tiger country",
+   "state": "Andhra Pradesh"
+  },
+  "tirumala": {
+   "name": "Tirumala",
+   "tagline": "The world's most visited temple atop Seshachalam Hills",
+   "state": "Andhra Pradesh"
+  },
+  "tirupati": {
+   "name": "Tirupati",
+   "tagline": "World's richest temple — 75,000 pilgrims daily climb the seven hills",
+   "state": "Andhra Pradesh"
+  },
+  "undavalli-caves": {
+   "name": "Undavalli Caves",
+   "tagline": "4th-century rock-cut marvel — where Jain, Buddhist, and Hindu faiths converge",
+   "state": "Andhra Pradesh"
+  },
+  "vijayawada": {
+   "name": "Vijayawada",
+   "tagline": "AP's commercial heart — Kanaka Durga Temple on a hilltop overlooking the Krishna",
+   "state": "Andhra Pradesh"
+  },
+  "visakhapatnam": {
+   "name": "Visakhapatnam",
+   "tagline": "Where the Eastern Ghats meet the Bay of Bengal — AP's jewel city",
+   "state": "Andhra Pradesh"
+  },
+  "aalo": {
+   "name": "Aalo",
+   "tagline": "Siang valley base town — the gateway to Mechuka and the only reliable logistical stop in West Siang.",
+   "state": "Arunachal Pradesh"
+  },
+  "anini": {
+   "name": "Anini",
+   "tagline": "Most remote district HQ in India — Dibang Valley with red pandas and Mehao Wildlife Sanctuary",
+   "state": "Arunachal Pradesh"
+  },
+  "bhalukpong": {
+   "name": "Bhalukpong",
+   "tagline": "Pakhui Tiger Reserve gateway on the Kameng River — first stop in Arunachal from Assam",
+   "state": "Arunachal Pradesh"
+  },
+  "bomdila": {
+   "name": "Bomdila",
+   "tagline": "Gateway to Tawang with Tibetan monasteries, apple orchards, and Sela Pass views",
+   "state": "Arunachal Pradesh"
+  },
+  "dambuk": {
+   "name": "Dambuk",
+   "tagline": "Orange-growing Dibang valley village that hosts India's most remote music festival each December.",
+   "state": "Arunachal Pradesh"
+  },
+  "dirang": {
+   "name": "Dirang",
+   "tagline": "Hot springs village with kiwi orchards, Sangti Valley cranes, and a 500-year-old dzong",
+   "state": "Arunachal Pradesh"
+  },
+  "mechuka": {
+   "name": "Mechuka",
+   "tagline": "Last airstrip before the China border with Siang River valley and tribal Memba culture",
+   "state": "Arunachal Pradesh"
+  },
+  "namdapha": {
+   "name": "Namdapha",
+   "tagline": "India's only park with four big cat species — 1,985 sq km of pristine rainforest",
+   "state": "Arunachal Pradesh"
+  },
+  "pasighat": {
+   "name": "Pasighat",
+   "tagline": "Oldest town in Arunachal Pradesh — adventure sports gateway on the mighty Siang River",
+   "state": "Arunachal Pradesh"
+  },
+  "tawang": {
+   "name": "Tawang",
+   "tagline": "India's largest Buddhist monastery at 3,048m — the birthplace of the 6th Dalai Lama, reached via Sela Pass at 4,170m through some of the most dramatic roads on Earth.",
+   "state": "Arunachal Pradesh"
+  },
+  "ziro-valley": {
+   "name": "Ziro Valley",
+   "tagline": "Apatani tribal homeland with UNESCO-nominated rice paddies and the iconic Ziro Music Festival",
+   "state": "Arunachal Pradesh"
+  },
+  "charaideo": {
+   "name": "Charaideo Moidams",
+   "tagline": "India's 43rd UNESCO World Heritage Site — the Pyramids of Assam, royal burial mounds of 600 years of Ahom Dynasty rule.",
+   "state": "Assam"
+  },
+  "guwahati": {
+   "name": "Guwahati",
+   "tagline": "Gateway to the Northeast — ancient Kamakhya Temple, Brahmaputra river cruises, and the crossroads of seven sisters.",
+   "state": "Assam"
+  },
+  "haflong": {
+   "name": "Haflong",
+   "tagline": "Only hill station in Assam — Jatinga, the village where birds mysteriously crash-land at night during monsoon",
+   "state": "Assam"
+  },
+  "jorhat": {
+   "name": "Jorhat",
+   "tagline": "Tea capital of the world — Gibbon Wildlife Sanctuary (India's only hoolock gibbon habitat), gateway to Majuli island",
+   "state": "Assam"
+  },
+  "kaziranga": {
+   "name": "Kaziranga",
+   "tagline": "One-horned rhino capital of the world — UNESCO site with the highest density of tigers in India.",
+   "state": "Assam"
+  },
+  "majuli": {
+   "name": "Majuli",
+   "tagline": "World's largest inhabited river island — Vaishnavite monasteries, mask-making, and a culture fighting the Brahmaputra.",
+   "state": "Assam"
+  },
+  "manas-national-park": {
+   "name": "Manas National Park",
+   "tagline": "UNESCO World Heritage Project Tiger reserve — one-horned rhino, pygmy hog (world's smallest wild pig), golden langur",
+   "state": "Assam"
+  },
+  "sivasagar": {
+   "name": "Sivasagar",
+   "tagline": "600-year Ahom dynasty capital — Rang Ghar (Asia's oldest amphitheatre), Talatal Ghar (underground palace with escape tunnels), Sivadol (tallest Shiva temple in India)",
+   "state": "Assam"
+  },
+  "bodh-gaya": {
+   "name": "Bodh Gaya",
+   "tagline": "Where Siddhartha became Buddha",
+   "state": "Bihar"
+  },
+  "nalanda": {
+   "name": "Nalanda",
+   "tagline": "Ruins of the world's first residential university",
+   "state": "Bihar"
+  },
+  "patna": {
+   "name": "Patna",
+   "tagline": "Bihar's ancient capital on the Ganges",
+   "state": "Bihar"
+  },
+  "pawapuri": {
+   "name": "Pawapuri",
+   "tagline": "Where Lord Mahavira attained Nirvana",
+   "state": "Bihar"
+  },
+  "rajgir": {
+   "name": "Rajgir",
+   "tagline": "Hot springs, Vulture Peak, and a hilltop Stupa",
+   "state": "Bihar"
+  },
+  "vaishali": {
+   "name": "Vaishali",
+   "tagline": "Where Buddha preached his last sermon",
+   "state": "Bihar"
+  },
+  "chandigarh": {
+   "name": "Chandigarh",
+   "tagline": "India best-planned city — Le Corbusier dream that actually works, with a rock garden built from literal garbage.",
+   "state": "Chandigarh"
+  },
+  "barnawapara": {
+   "name": "Barnawapara",
+   "tagline": "Zero-crowd central Indian wildlife sanctuary",
+   "state": "Chhattisgarh"
+  },
+  "bhoramdeo": {
+   "name": "Bhoramdeo",
+   "tagline": "Khajuraho of Chhattisgarh, 11th-century temple in Maikal forests",
+   "state": "Chhattisgarh"
+  },
+  "chitrakote-falls": {
+   "name": "Chitrakote Falls",
+   "tagline": "India's Niagara, widest waterfall, Bastar tribal region",
+   "state": "Chhattisgarh"
+  },
+  "jagdalpur": {
+   "name": "Jagdalpur",
+   "tagline": "Chitrakote Falls and the Bastar tribal heartland",
+   "state": "Chhattisgarh"
+  },
+  "sirpur": {
+   "name": "Sirpur",
+   "tagline": "5th-8th century Buddhist-Hindu-Jain ruins",
+   "state": "Chhattisgarh"
+  },
+  "daman": {
+   "name": "Daman",
+   "tagline": "Portuguese forts, serene beaches, and Goan-flavored heritage on Gujarat's coast",
+   "state": "Daman & Diu"
+  },
+  "diu": {
+   "name": "Diu",
+   "tagline": "Portuguese colonial island — beaches, forts, and churches in one of India's hidden coastal gems",
+   "state": "Daman & Diu"
+  },
+  "silvassa": {
+   "name": "Silvassa",
+   "tagline": "Tribal heritage meets forest trails — the green, quiet interior of Dadra & Nagar Haveli",
+   "state": "Daman & Diu"
+  },
+  "delhi": {
+   "name": "Delhi",
+   "tagline": "Not a destination — a gateway. But if you give it 2 days, it'll surprise you with Mughal tombs, street food, and a chaos that becomes addictive.",
+   "state": "Delhi"
+  },
+  "agonda": {
+   "name": "Agonda",
+   "tagline": "Goa's quietest beach — turtle nesting site, yoga retreats, and nothing else (that's the point)",
+   "state": "Goa"
+  },
+  "anjuna": {
+   "name": "Anjuna",
+   "tagline": "Where the hippie trail ends — flea markets, trance parties, and Chapora Fort sunsets",
+   "state": "Goa"
+  },
+  "arambol": {
+   "name": "Arambol",
+   "tagline": "Goa's last hippie beach — drum circles, sweet lake, paragliding, and zero pretension",
+   "state": "Goa"
+  },
+  "assagao": {
+   "name": "Assagao",
+   "tagline": "Goa's inland villa + cafe belt — restored Portuguese bungalows, cult restaurants, no beach",
+   "state": "Goa"
+  },
+  "calangute-baga": {
+   "name": "Calangute-Baga",
+   "tagline": "Goa's busiest beach strip — water sports by day, clubs by night, shacks 24/7",
+   "state": "Goa"
+  },
+  "candolim": {
+   "name": "Candolim",
+   "tagline": "North Goa's resort beach — calm sea, Fort Aguada at the south end, the food strip everyone Googles",
+   "state": "Goa"
+  },
+  "chorao-divar": {
+   "name": "Chorao & Divar Islands",
+   "tagline": "Goa's forgotten islands — bird sanctuary, Portuguese mansions, and zero tourists",
+   "state": "Goa"
+  },
+  "colva-benaulim": {
+   "name": "Colva & Benaulim",
+   "tagline": "Where Goans actually go to the beach — long quiet sand, local fish restaurants, zero hype",
+   "state": "Goa"
+  },
+  "dudhsagar-falls": {
+   "name": "Dudhsagar Falls",
+   "tagline": "India's 5th tallest waterfall — 310 metres of white fury straddling the Goa-Karnataka border",
+   "state": "Goa"
+  },
+  "fort-aguada": {
+   "name": "Fort Aguada & Candolim",
+   "tagline": "Portuguese stronghold turned luxury landmark — Goa's best-preserved fort meets premium beach",
+   "state": "Goa"
+  },
+  "mandrem": {
+   "name": "Mandrem",
+   "tagline": "Goa's wellness beach — yoga retreats, kitesurfing, and the quietest sand in North Goa",
+   "state": "Goa"
+  },
+  "margao": {
+   "name": "Margao",
+   "tagline": "South Goa's real capital — Konkani markets, Portuguese mansions, and the food Goans actually eat",
+   "state": "Goa"
+  },
+  "mollem": {
+   "name": "Mollem (Bhagwan Mahavir Sanctuary)",
+   "tagline": "Goa's largest wildlife sanctuary — Tambdi Surla temple, Dudhsagar gateway, and 240 sq km of Western Ghats",
+   "state": "Goa"
+  },
+  "morjim": {
+   "name": "Morjim",
+   "tagline": "Goa's turtle beach — olive ridley nesting site, Russian expat community, and quiet luxury",
+   "state": "Goa"
+  },
+  "old-goa": {
+   "name": "Old Goa",
+   "tagline": "UNESCO Portuguese churches — Basilica of Bom Jesus, Se Cathedral, and the Rome of the East",
+   "state": "Goa"
+  },
+  "palolem": {
+   "name": "Palolem",
+   "tagline": "The perfect crescent — silent discos, kayak to Butterfly Beach, dolphins at sunrise",
+   "state": "Goa"
+  },
+  "panaji": {
+   "name": "Panaji",
+   "tagline": "India's most charming state capital — Portuguese houses, Mandovi sunsets, and casino boats",
+   "state": "Goa"
+  },
+  "reis-magos": {
+   "name": "Reis Magos Fort",
+   "tagline": "Beautifully restored Portuguese fort — Goa's best heritage restoration, across the Mandovi from Panaji",
+   "state": "Goa"
+  },
+  "siolim": {
+   "name": "Siolim",
+   "tagline": "Riverside Bardez village — heritage churches, the São João boat festival, and the bridge to Pernem",
+   "state": "Goa"
+  },
+  "ponda-spice": {
+   "name": "Spice Plantations (Ponda)",
+   "tagline": "Walk through nutmeg, pepper, and vanilla — Goa's spice plantations are edible education",
+   "state": "Goa"
+  },
+  "vagator": {
+   "name": "Vagator",
+   "tagline": "Red cliff beaches, Chapora Fort sunsets, and Goa's cooler nightlife scene",
+   "state": "Goa"
+  },
+  "ahmedabad": {
+   "name": "Ahmedabad",
+   "tagline": "India's first UNESCO Heritage City — Sabarmati Ashram, stepwells, and vibrant old city pols",
+   "state": "Gujarat"
+  },
+  "ambaji": {
+   "name": "Ambaji",
+   "tagline": "One of the 51 Shakti Peethas — sacred hilltop temple near the Rajasthan border",
+   "state": "Gujarat"
+  },
+  "bhavnagar": {
+   "name": "Bhavnagar",
+   "tagline": "Gateway to Palitana — royal city with Takhteshwar Temple overlooking the Gulf of Cambay",
+   "state": "Gujarat"
+  },
+  "champaner-pavagadh": {
+   "name": "Champaner-Pavagadh",
+   "tagline": "UNESCO archaeological park — mosques, temples, and fortifications in pristine condition",
+   "state": "Gujarat"
+  },
+  "dakor": {
+   "name": "Dakor",
+   "tagline": "Ranchhodrai Temple — \"Dwarka of the East\" for millions of Krishna devotees",
+   "state": "Gujarat"
+  },
+  "dholavira": {
+   "name": "Dholavira",
+   "tagline": "UNESCO Harappan city — one of the 5 largest Indus Valley settlements",
+   "state": "Gujarat"
+  },
+  "dwarka": {
+   "name": "Dwarka",
+   "tagline": "Krishna's legendary kingdom — Char Dham and one of the 7 sacred cities of Hinduism",
+   "state": "Gujarat"
+  },
+  "gandhinagar": {
+   "name": "Gandhinagar",
+   "tagline": "India's greenest capital — Akshardham, Adalaj Stepwell, wide boulevards lined with trees",
+   "state": "Gujarat"
+  },
+  "gir-national-park": {
+   "name": "Gir National Park",
+   "tagline": "Last refuge of the Asiatic lion — the only place on Earth to see them in the wild",
+   "state": "Gujarat"
+  },
+  "junagadh": {
+   "name": "Junagadh",
+   "tagline": "Ancient fortress city — Buddhist caves, Ashokan edicts, and Nawabi heritage at Girnar's foot",
+   "state": "Gujarat"
+  },
+  "kutch": {
+   "name": "Kutch (Bhuj)",
+   "tagline": "Gateway to the Rann — handicraft villages, Aina Mahal mirrors, and living tribal traditions",
+   "state": "Gujarat"
+  },
+  "lothal": {
+   "name": "Lothal",
+   "tagline": "World's oldest known dock — 4,500-year-old Indus Valley port city",
+   "state": "Gujarat"
+  },
+  "mandvi": {
+   "name": "Mandvi",
+   "tagline": "Beach town with 400-year-old palace — where dhows are still hand-built on the shore",
+   "state": "Gujarat"
+  },
+  "marine-national-park": {
+   "name": "Marine National Park",
+   "tagline": "India's first marine park — walk on coral reefs at low tide and see octopus, pufferfish",
+   "state": "Gujarat"
+  },
+  "modhera": {
+   "name": "Modhera Sun Temple",
+   "tagline": "Exquisitely carved 11th-century Sun Temple — sun illuminates the inner sanctum at equinox",
+   "state": "Gujarat"
+  },
+  "girnar": {
+   "name": "Mount Girnar",
+   "tagline": "Sacred 10,000-step climb to 5 peaks — Jain and Hindu temples at 3,666 ft",
+   "state": "Gujarat"
+  },
+  "nalsarovar": {
+   "name": "Nalsarovar Bird Sanctuary",
+   "tagline": "250+ bird species at Gujarat's largest wetland — flamingos, pelicans, cranes in a photographer's paradise",
+   "state": "Gujarat"
+  },
+  "palitana": {
+   "name": "Palitana",
+   "tagline": "863 Jain temples on a single hill — the most sacred Jain pilgrimage on Earth",
+   "state": "Gujarat"
+  },
+  "porbandar": {
+   "name": "Porbandar",
+   "tagline": "Birthplace of Mahatma Gandhi — coastal town where the Father of the Nation was born",
+   "state": "Gujarat"
+  },
+  "rajkot": {
+   "name": "Rajkot",
+   "tagline": "Mahatma Gandhi's childhood city — Kathiawadi cuisine capital and Saurashtra's cultural heart",
+   "state": "Gujarat"
+  },
+  "rani-ki-vav": {
+   "name": "Rani ki Vav (Patan)",
+   "tagline": "UNESCO inverted temple stepwell — 7 stories deep with 500+ sculptures",
+   "state": "Gujarat"
+  },
+  "rann-of-kutch": {
+   "name": "Rann of Kutch",
+   "tagline": "World's largest salt desert — infinite white horizon under full moon during Rann Utsav",
+   "state": "Gujarat"
+  },
+  "saputara": {
+   "name": "Saputara",
+   "tagline": "Gujarat's only hill station in the Western Ghats — tribal culture meets misty forests",
+   "state": "Gujarat"
+  },
+  "sasangir": {
+   "name": "Sasan Gir",
+   "tagline": "Safari base for Gir — eco-resorts and Maldhari tribal life in lion country",
+   "state": "Gujarat"
+  },
+  "somnath": {
+   "name": "Somnath",
+   "tagline": "First of the 12 Jyotirlingas — rebuilt 17 times, standing eternal on the Arabian Sea coast",
+   "state": "Gujarat"
+  },
+  "statue-of-unity": {
+   "name": "Statue of Unity",
+   "tagline": "World's tallest statue at 182 meters — Sardar Patel tribute overlooking the Narmada Valley",
+   "state": "Gujarat"
+  },
+  "surat": {
+   "name": "Surat",
+   "tagline": "Diamond capital of the world — 90% of global diamonds cut here, plus legendary street food",
+   "state": "Gujarat"
+  },
+  "vadodara": {
+   "name": "Vadodara",
+   "tagline": "City of gardens and palaces — Laxmi Vilas Palace is 4x the size of Buckingham Palace",
+   "state": "Gujarat"
+  },
+  "velavadar": {
+   "name": "Velavadar",
+   "tagline": "Blackbuck National Park — India's largest blackbuck population in open grassland",
+   "state": "Gujarat"
+  },
+  "kurukshetra": {
+   "name": "Kurukshetra",
+   "tagline": "Where the Mahabharata war happened — or didn not — but the Brahma Sarovar and Krishna Museum make the mythology tangible.",
+   "state": "Haryana"
+  },
+  "morni-hills": {
+   "name": "Morni Hills",
+   "tagline": "Haryana only hill station — modest but accessible, and Tikkar Taal is surprisingly pretty for something this close to Chandigarh.",
+   "state": "Haryana"
+  },
+  "pinjore-gardens": {
+   "name": "Pinjore Gardens",
+   "tagline": "Mughal gardens at the foot of the Shivaliks — and the most underrated heritage garden within 2 hours of Delhi.",
+   "state": "Haryana"
+  },
+  "barot-valley": {
+   "name": "Barot Valley",
+   "tagline": "The valley that Google Maps forgot — no ATM, no hospital, no Mall Road, just the Uhl river and you.",
+   "state": "Himachal Pradesh"
+  },
+  "bir-billing": {
+   "name": "Bir Billing",
+   "tagline": "India paragliding capital — Tibetan colony and cafe scene mean you stay even if wind does not cooperate.",
+   "state": "Himachal Pradesh"
+  },
+  "chail": {
+   "name": "Chail",
+   "tagline": "World highest cricket ground, a palace hotel, and the hill station Shimla locals escape TO.",
+   "state": "Himachal Pradesh"
+  },
+  "chamba": {
+   "name": "Chamba",
+   "tagline": "1000-year-old Lakshmi Narayan temples, the Chaugan meadow, and Himachali culture untouched by tourism.",
+   "state": "Himachal Pradesh"
+  },
+  "chandratal": {
+   "name": "Chandratal",
+   "tagline": "Crescent-shaped lake at 4,300m — reachable only in summer, camped beside on borrowed time.",
+   "state": "Himachal Pradesh"
+  },
+  "chitkul": {
+   "name": "Chitkul",
+   "tagline": "The last inhabited village before the Tibet border — where India ends and the mountains begin.",
+   "state": "Himachal Pradesh"
+  },
+  "dalhousie": {
+   "name": "Dalhousie",
+   "tagline": "Colonial hill station with Scottish churches, Khajjiar meadow (Mini Switzerland), and cedar-lined walks.",
+   "state": "Himachal Pradesh"
+  },
+  "dharamshala": {
+   "name": "Dharamshala",
+   "tagline": "Cricket stadium with the best view in world sport, Tibetan government-in-exile, and gateway to the Dhauladhar range.",
+   "state": "Himachal Pradesh"
+  },
+  "great-himalayan-np": {
+   "name": "Great Himalayan National Park",
+   "tagline": "UNESCO World Heritage 2014 — 1,171 sq km of virgin Himalayan forest with snow leopard, brown bear, and 209 bird species.",
+   "state": "Himachal Pradesh"
+  },
+  "jibhi": {
+   "name": "Jibhi",
+   "tagline": "The village that Instagram discovered — waterfalls, river, cafes, and the next Kasol but without the drugs.",
+   "state": "Himachal Pradesh"
+  },
+  "kalpa": {
+   "name": "Kalpa",
+   "tagline": "Wake up to the Kinner Kailash massif from your guesthouse balcony — that view is the entire point.",
+   "state": "Himachal Pradesh"
+  },
+  "kasauli": {
+   "name": "Kasauli",
+   "tagline": "The closest proper hill station to Delhi/Chandigarh — and the army keeps it from turning into another Shimla.",
+   "state": "Himachal Pradesh"
+  },
+  "kasol": {
+   "name": "Kasol",
+   "tagline": "India's backpacker capital in the Parvati Valley — Israeli cafes, riverside camping, and mountain vibes.",
+   "state": "Himachal Pradesh"
+  },
+  "kaza": {
+   "name": "Kaza",
+   "tagline": "The Spiti headquarters — every route in the valley runs through here.",
+   "state": "Himachal Pradesh"
+  },
+  "keylong": {
+   "name": "Keylong",
+   "tagline": "Lahaul district HQ — the most important town nobody stops in, gateway to Leh from HP side.",
+   "state": "Himachal Pradesh"
+  },
+  "kinnaur": {
+   "name": "Kinnaur",
+   "tagline": "The drive through Kinnaur is the destination — suicide roads, apple villages, and temples carved into cliffs.",
+   "state": "Himachal Pradesh"
+  },
+  "kinner-kailash": {
+   "name": "Kinner Kailash",
+   "tagline": "A natural Shivalingam rock on a 6,055m peak with a challenging 5-day parikrama.",
+   "state": "Himachal Pradesh"
+  },
+  "kufri": {
+   "name": "Kufri",
+   "tagline": "Shimla snow playground — the reason half of North India drives to HP in winter.",
+   "state": "Himachal Pradesh"
+  },
+  "kullu": {
+   "name": "Kullu",
+   "tagline": "The Valley of Gods — famous for Dussehra when 300+ village deities gather, plus rafting on the Beas and gateway to Manali.",
+   "state": "Himachal Pradesh"
+  },
+  "lahaul-valley": {
+   "name": "Lahaul Valley",
+   "tagline": "The valley beyond the Atal Tunnel — Keylong, Jispa, Darcha — where Himachal ends and Ladakh begins.",
+   "state": "Himachal Pradesh"
+  },
+  "manali": {
+   "name": "Manali",
+   "tagline": "The Goa of the mountains — overrun, overbuilt, and still useful as a launchpad for everything north of it.",
+   "state": "Himachal Pradesh"
+  },
+  "mandi": {
+   "name": "Mandi",
+   "tagline": "The gateway to Kullu Valley and beyond — 81 temples in one town and nobody stops to see them.",
+   "state": "Himachal Pradesh"
+  },
+  "manikaran": {
+   "name": "Manikaran",
+   "tagline": "Natural hot springs where you can boil rice in the ground — plus a massive Sikh gurudwara and Shiva temple side by side.",
+   "state": "Himachal Pradesh"
+  },
+  "manimahesh-kailash": {
+   "name": "Manimahesh Kailash",
+   "tagline": "An unclimbed sacred peak above Manimahesh Lake, honored by the annual Janmashtami-to-Radha Ashtami yatra.",
+   "state": "Himachal Pradesh"
+  },
+  "mcleodganj": {
+   "name": "McLeod Ganj",
+   "tagline": "Home of the Dalai Lama — Tibetan cafes, meditation retreats, and the Triund trek start point at 2082m.",
+   "state": "Himachal Pradesh"
+  },
+  "nako": {
+   "name": "Nako",
+   "tagline": "A turquoise lake, an apple village, and ancient Buddhist murals — where Kinnaur meets Spiti.",
+   "state": "Himachal Pradesh"
+  },
+  "palampur": {
+   "name": "Palampur",
+   "tagline": "India's tea capital that nobody talks about — Kangra tea gardens with Dhauladhar snow peaks behind them, minus the Darjeeling crowds.",
+   "state": "Himachal Pradesh"
+  },
+  "parvati-valley": {
+   "name": "Parvati Valley",
+   "tagline": "The valley beyond Kasol — Tosh, Malana, Kheerganga hot springs, and some of India's finest treks.",
+   "state": "Himachal Pradesh"
+  },
+  "prashar-lake": {
+   "name": "Prashar Lake",
+   "tagline": "A floating island in a high-altitude lake with a pagoda temple — the trek most Himachal regulars haven't done yet.",
+   "state": "Himachal Pradesh"
+  },
+  "sangla": {
+   "name": "Sangla Valley",
+   "tagline": "Apple orchards and Kinnauri wooden temples in a valley that Himachal locals keep to themselves.",
+   "state": "Himachal Pradesh"
+  },
+  "sarahan": {
+   "name": "Sarahan",
+   "tagline": "Bhimakali temple is one of Himachal finest — and the village is a perfect acclimatization stop before Kinnaur.",
+   "state": "Himachal Pradesh"
+  },
+  "shimla": {
+   "name": "Shimla",
+   "tagline": "The toy train is magical, the Mall Road is chaos, and Kufri in snow is worth every minute of the traffic jam getting there.",
+   "state": "Himachal Pradesh"
+  },
+  "shrikhand-mahadev": {
+   "name": "Shrikhand Mahadev",
+   "tagline": "One of India's toughest pilgrim treks: a 5-day ordeal with vertical snow pitches and a 75-foot Shivalingam.",
+   "state": "Himachal Pradesh"
+  },
+  "sissu": {
+   "name": "Sissu",
+   "tagline": "The first village after the Atal Tunnel — a waterfall crashes next to the highway and the air changes completely.",
+   "state": "Himachal Pradesh"
+  },
+  "solan": {
+   "name": "Solan",
+   "tagline": "Mushroom capital of India and the gateway to everywhere in HP — nobody stays but everyone passes through.",
+   "state": "Himachal Pradesh"
+  },
+  "spiti-valley": {
+   "name": "Spiti Valley",
+   "tagline": "India's piece of Tibet — cold desert villages, 1000-year-old monasteries, zero phone signal, all soul.",
+   "state": "Himachal Pradesh"
+  },
+  "tirthan-valley": {
+   "name": "Tirthan Valley",
+   "tagline": "What Manali was 30 years ago — trout streams, no mall road, gateway to Great Himalayan National Park.",
+   "state": "Himachal Pradesh"
+  },
+  "achabal": {
+   "name": "Achabal",
+   "tagline": "Queen of Kashmir's springs — Mughal terraced garden with natural cascading water channels and chinar shade.",
+   "state": "Jammu & Kashmir"
+  },
+  "bangus-valley": {
+   "name": "Bangus Valley",
+   "tagline": "A permit-required frontier valley near the LoC that rewards the bureaucratic effort with meadows nobody else is standing in.",
+   "state": "Jammu & Kashmir"
+  },
+  "bhaderwah": {
+   "name": "Bhaderwah",
+   "tagline": "The Mini Kashmir that nobody from outside J&K has heard of — meadows, deodar forests, and zero tourists.",
+   "state": "Jammu & Kashmir"
+  },
+  "doodhpathri": {
+   "name": "Doodhpathri",
+   "tagline": "The Meadow of Milk — flat enough for a toddler to run on, stunning enough to make an adult cry.",
+   "state": "Jammu & Kashmir"
+  },
+  "gulmarg": {
+   "name": "Gulmarg",
+   "tagline": "Asia's highest cable car, India's best skiing, and a meadow so green in summer that it hurts your eyes.",
+   "state": "Jammu & Kashmir"
+  },
+  "gurez-valley": {
+   "name": "Gurez Valley",
+   "tagline": "The most beautiful valley you've never heard of — because it's on the LoC and was closed to civilians until 2007.",
+   "state": "Jammu & Kashmir"
+  },
+  "katra": {
+   "name": "Katra",
+   "tagline": "Base town for the 13km trek to Vaishno Devi Shakti Peetha",
+   "state": "Jammu & Kashmir"
+  },
+  "kishtwar": {
+   "name": "Kishtwar",
+   "tagline": "Where the Himalaya gets wild — Kishtwar is the adventure frontier that even Ladakh seekers skip.",
+   "state": "Jammu & Kashmir"
+  },
+  "kokernag": {
+   "name": "Kokernag",
+   "tagline": "Kashmir's largest freshwater spring — trout hatchery, botanical garden, and water pure enough to drink from source.",
+   "state": "Jammu & Kashmir"
+  },
+  "lolab-valley": {
+   "name": "Lolab Valley",
+   "tagline": "Kashmir hidden meadow valley — walnut trees, no tourists, and the silence that Gulmarg lost to gondola crowds.",
+   "state": "Jammu & Kashmir"
+  },
+  "pahalgam": {
+   "name": "Pahalgam",
+   "tagline": "The Lidder Valley does what Manali promises but fails to deliver — actual river beauty without the Mall Road chaos.",
+   "state": "Jammu & Kashmir"
+  },
+  "patnitop": {
+   "name": "Patnitop",
+   "tagline": "The most accessible snow destination in J&K — 2 hours from Jammu, no permits, no drama, just pine forests and winter snow.",
+   "state": "Jammu & Kashmir"
+  },
+  "sinthan-top": {
+   "name": "Sinthan Top",
+   "tagline": "A high pass between Kashmir and Kishtwar where the meadow at the top makes you forget you're on a road.",
+   "state": "Jammu & Kashmir"
+  },
+  "sonamarg": {
+   "name": "Sonamarg",
+   "tagline": "The golden meadow that guards the gate to Ladakh — Thajiwas Glacier is a 3km walk from a flower-covered meadow.",
+   "state": "Jammu & Kashmir"
+  },
+  "srinagar": {
+   "name": "Srinagar",
+   "tagline": "The Venice of the East is a cliche that undersells it — Dal Lake at dawn, with the Zabarwan mountains behind, is one of the most beautiful sights in Asia.",
+   "state": "Jammu & Kashmir"
+  },
+  "tosamaidan": {
+   "name": "Tosamaidan",
+   "tagline": "Asia's largest meadow was an army artillery range until 2014. The mines are gone. The beauty was always there.",
+   "state": "Jammu & Kashmir"
+  },
+  "verinag": {
+   "name": "Verinag",
+   "tagline": "Source spring of the Jhelum — an octagonal Mughal pool so blue it looks photoshopped, virtually no tourists.",
+   "state": "Jammu & Kashmir"
+  },
+  "yusmarg": {
+   "name": "Yusmarg",
+   "tagline": "Kashmir's quietest meadow — 47km from Srinagar but light-years from the tourist circuit.",
+   "state": "Jammu & Kashmir"
+  },
+  "betla": {
+   "name": "Betla",
+   "tagline": "Palamau Tiger Reserve, forest trails through sal and bamboo",
+   "state": "Jharkhand"
+  },
+  "deoghar": {
+   "name": "Deoghar",
+   "tagline": "Baidyanath Jyotirlinga — one of 12 sacred Shiva temples",
+   "state": "Jharkhand"
+  },
+  "netarhat": {
+   "name": "Netarhat",
+   "tagline": "Queen of Chotanagpur — most dramatic sunrise in eastern India",
+   "state": "Jharkhand"
+  },
+  "ranchi": {
+   "name": "Ranchi",
+   "tagline": "The waterfall circuit of eastern India",
+   "state": "Jharkhand"
+  },
+  "shikharji": {
+   "name": "Shikharji",
+   "tagline": "The holiest Jain site where 20 Tirthankaras attained moksha",
+   "state": "Jharkhand"
+  },
+  "aihole": {
+   "name": "Aihole",
+   "tagline": "Cradle of Indian rock architecture — 120+ temples where Chalukya architects experimented",
+   "state": "Karnataka"
+  },
+  "badami": {
+   "name": "Badami",
+   "tagline": "Chalukya cave temples carved from red sandstone cliffs — India's earliest Hindu rock architecture",
+   "state": "Karnataka"
+  },
+  "bandipur": {
+   "name": "Bandipur National Park",
+   "tagline": "Nilgiri Biosphere tiger reserve — elephants, leopards, and India's most scenic safari road",
+   "state": "Karnataka"
+  },
+  "belur": {
+   "name": "Belur",
+   "tagline": "UNESCO Hoysala temple — Chennakesava's soapstone carvings are the most intricate in India",
+   "state": "Karnataka"
+  },
+  "bengaluru": {
+   "name": "Bengaluru",
+   "tagline": "India's Silicon Valley — craft beer capital, garden city, and the startup engine of a billion people",
+   "state": "Karnataka"
+  },
+  "bidar": {
+   "name": "Bidar",
+   "tagline": "Bahmani dynasty capital — massive fort, Bidriware metalcraft, and Guru Nanak's sacred spring",
+   "state": "Karnataka"
+  },
+  "bijapur": {
+   "name": "Bijapur (Vijayapura)",
+   "tagline": "Gol Gumbaz — the world's second-largest unsupported dome, and the Adil Shahi dynasty's glory",
+   "state": "Karnataka"
+  },
+  "chikmagalur": {
+   "name": "Chikmagalur",
+   "tagline": "Where Indian coffee was born — Mullayanagiri peak, Baba Budangiri, and the best plantation stays",
+   "state": "Karnataka"
+  },
+  "chitradurga": {
+   "name": "Chitradurga",
+   "tagline": "Seven concentric walls, 1,500 acres — the fort that withstood every invader until Hyder Ali",
+   "state": "Karnataka"
+  },
+  "coorg": {
+   "name": "Coorg (Kodagu)",
+   "tagline": "India's coffee capital — misty plantations, Abbey Falls, and the warrior culture of Kodagu",
+   "state": "Karnataka"
+  },
+  "dandeli": {
+   "name": "Dandeli",
+   "tagline": "White water rafting, crocodiles, and 834 sq km of Sahyadri wilderness",
+   "state": "Karnataka"
+  },
+  "dharmasthala": {
+   "name": "Dharmasthala",
+   "tagline": "The temple that feeds 30,000 people free every day — Dharmasthala's annadana tradition",
+   "state": "Karnataka"
+  },
+  "gokarna": {
+   "name": "Gokarna",
+   "tagline": "What Goa was 30 years ago — Om Beach, temple town, and five beaches connected by cliff trails",
+   "state": "Karnataka"
+  },
+  "gulbarga": {
+   "name": "Gulbarga (Kalaburagi)",
+   "tagline": "Bahmani dynasty's first capital — India's only fully-roofed mosque and emerging Buddhist sites",
+   "state": "Karnataka"
+  },
+  "halebidu": {
+   "name": "Halebidu",
+   "tagline": "UNESCO Hoysala masterpiece — Hoysaleshwara Temple with 240 wall panels of mythological scenes",
+   "state": "Karnataka"
+  },
+  "hampi": {
+   "name": "Hampi",
+   "tagline": "UNESCO ruins of a forgotten empire — boulders, temples, and the ghost of Vijayanagara",
+   "state": "Karnataka"
+  },
+  "jog-falls": {
+   "name": "Jog Falls",
+   "tagline": "India's second-highest plunge waterfall — 253 metres of monsoon fury in four cascades",
+   "state": "Karnataka"
+  },
+  "kabini": {
+   "name": "Kabini",
+   "tagline": "India's most luxurious wildlife experience — Kabini backwaters, black panthers, and elephant herds",
+   "state": "Karnataka"
+  },
+  "karwar": {
+   "name": "Karwar",
+   "tagline": "Tagore's favourite beach, India's naval base, and the gateway to Devbagh Island",
+   "state": "Karnataka"
+  },
+  "kukke-subramanya": {
+   "name": "Kukke Subramanya",
+   "tagline": "Sarpa Dosha rituals in the Western Ghats — Subrahmanya temple and the Kumara Parvatha trailhead",
+   "state": "Karnataka"
+  },
+  "mangalore": {
+   "name": "Mangalore",
+   "tagline": "Coastal Karnataka's capital — Mangalorean cuisine, Kudla culture, and gateway to the Western Ghats",
+   "state": "Karnataka"
+  },
+  "murudeshwar": {
+   "name": "Murudeshwar",
+   "tagline": "World's second-tallest Shiva statue rising from an Arabian Sea headland",
+   "state": "Karnataka"
+  },
+  "mysore": {
+   "name": "Mysore",
+   "tagline": "The city of palaces — Chamundi Hills, silk saris, sandalwood, and India's grandest Dasara festival",
+   "state": "Karnataka"
+  },
+  "nagarhole": {
+   "name": "Nagarhole National Park",
+   "tagline": "Rajiv Gandhi National Park — where Nilgiri teak meets tigers, elephants, and wild dogs",
+   "state": "Karnataka"
+  },
+  "nandi-hills": {
+   "name": "Nandi Hills",
+   "tagline": "Bangalore's sunrise escape — 1,478m fortress hilltop where Tipu Sultan retreated",
+   "state": "Karnataka"
+  },
+  "pattadakal": {
+   "name": "Pattadakal",
+   "tagline": "UNESCO temple complex — where Chalukya architects experimented before building their capitals",
+   "state": "Karnataka"
+  },
+  "sakleshpur": {
+   "name": "Sakleshpur",
+   "tagline": "Coffee plantations, abandoned railway treks, and the most underrated hill station in Karnataka",
+   "state": "Karnataka"
+  },
+  "shravanabelagola": {
+   "name": "Shravanabelagola",
+   "tagline": "The 57-foot Bahubali monolith — world's largest free-standing statue, 1,000 years old",
+   "state": "Karnataka"
+  },
+  "srirangapatna": {
+   "name": "Srirangapatna",
+   "tagline": "Tipu Sultan's island fortress on the Kaveri — where the Tiger of Mysore made his last stand",
+   "state": "Karnataka"
+  },
+  "udupi": {
+   "name": "Udupi",
+   "tagline": "Where South Indian cuisine was born — Krishna Temple, masala dosa origin, and Malpe Beach",
+   "state": "Karnataka"
+  },
+  "alleppey": {
+   "name": "Alleppey (Alappuzha)",
+   "tagline": "Venice of the East — 900km of canals, houseboats, and the Nehru Trophy Boat Race",
+   "state": "Kerala"
+  },
+  "athirapally": {
+   "name": "Athirapally Falls",
+   "tagline": "Niagara of India — India's largest waterfall by volume flow",
+   "state": "Kerala"
+  },
+  "bekal": {
+   "name": "Bekal",
+   "tagline": "Kerala's largest fort overlooking the Arabian Sea",
+   "state": "Kerala"
+  },
+  "beypore": {
+   "name": "Beypore",
+   "tagline": "1,000-year-old hand-built wooden ships — the last Uru shipyard on Earth",
+   "state": "Kerala"
+  },
+  "cherai": {
+   "name": "Cherai Beach",
+   "tagline": "Dolphins, Chinese fishing nets, and the estuary where Periyar meets the sea",
+   "state": "Kerala"
+  },
+  "chinnar": {
+   "name": "Chinnar Wildlife Sanctuary",
+   "tagline": "Kerala's driest sanctuary — Grizzled Giant Squirrel and Thoovanam Falls",
+   "state": "Kerala"
+  },
+  "eravikulam": {
+   "name": "Eravikulam National Park",
+   "tagline": "Tame Nilgiri Tahrs, South India's highest peak, and the 12-year flower bloom",
+   "state": "Kerala"
+  },
+  "guruvayur": {
+   "name": "Guruvayur",
+   "tagline": "Most sacred Krishna temple in Kerala — 60+ temple elephants",
+   "state": "Kerala"
+  },
+  "idukki": {
+   "name": "Idukki",
+   "tagline": "Asia's highest arch dam, cardamom hills, and Kerala's wildlife hub",
+   "state": "Kerala"
+  },
+  "kannur": {
+   "name": "Kannur",
+   "tagline": "Theyyam ritual art, India's only drive-in beach, and Portuguese forts",
+   "state": "Kerala"
+  },
+  "kochi": {
+   "name": "Kochi (Fort Kochi)",
+   "tagline": "Chinese Fishing Nets, oldest church in India, and Asia's largest art biennale",
+   "state": "Kerala"
+  },
+  "kollam": {
+   "name": "Kollam",
+   "tagline": "Ashtamudi Lake, Munroe Island, and the 8-hour cruise to Alleppey",
+   "state": "Kerala"
+  },
+  "kovalam": {
+   "name": "Kovalam",
+   "tagline": "Kerala's most famous beach — lighthouse, Ayurveda, and the Arabian Sea",
+   "state": "Kerala"
+  },
+  "kozhikode": {
+   "name": "Kozhikode (Calicut)",
+   "tagline": "Where Vasco da Gama landed — and Malabar biryani was perfected",
+   "state": "Kerala"
+  },
+  "kumarakom": {
+   "name": "Kumarakom",
+   "tagline": "Vembanad Lake — where Siberian birds winter and backwaters meet premium stays",
+   "state": "Kerala"
+  },
+  "kumbalangi": {
+   "name": "Kumbalangi",
+   "tagline": "India's first model ecotourism village — crab farming and Chinese fishing nets",
+   "state": "Kerala"
+  },
+  "kuttanad": {
+   "name": "Kuttanad",
+   "tagline": "Below sea level farming — the only place in Asia where crops grow under water",
+   "state": "Kerala"
+  },
+  "marari": {
+   "name": "Marari Beach",
+   "tagline": "Kerala's most pristine beach — fishing village life with no jet skis",
+   "state": "Kerala"
+  },
+  "munnar": {
+   "name": "Munnar",
+   "tagline": "Tea estates as far as the eye can see — South India's highest peak",
+   "state": "Kerala"
+  },
+  "nelliyampathy": {
+   "name": "Nelliyampathy",
+   "tagline": "Palakkad's Munnar — pristine plantations with zero tourist infrastructure",
+   "state": "Kerala"
+  },
+  "ponmudi": {
+   "name": "Ponmudi",
+   "tagline": "Gold Peak — 365+ butterfly species and 22 hairpin bends from Trivandrum",
+   "state": "Kerala"
+  },
+  "poovar": {
+   "name": "Poovar",
+   "tagline": "River-sea-beach trifecta — an island resort accessible only by boat",
+   "state": "Kerala"
+  },
+  "sabarimala": {
+   "name": "Sabarimala",
+   "tagline": "Lord Ayyappa's sacred shrine on a misty peak",
+   "state": "Kerala"
+  },
+  "silent-valley": {
+   "name": "Silent Valley National Park",
+   "tagline": "India's last untouched tropical rainforest — saved by the nation",
+   "state": "Kerala"
+  },
+  "thekkady": {
+   "name": "Thekkady (Periyar)",
+   "tagline": "Periyar Lake — where elephants come to drink and spice plantations perfume the air",
+   "state": "Kerala"
+  },
+  "trivandrum": {
+   "name": "Thiruvananthapuram (Trivandrum)",
+   "tagline": "Kerala's capital — the world's richest temple and India's cleanest city",
+   "state": "Kerala"
+  },
+  "thrissur": {
+   "name": "Thrissur",
+   "tagline": "Kerala's Cultural Capital — Thrissur Pooram, 100 elephants, and all-night fireworks",
+   "state": "Kerala"
+  },
+  "vagamon": {
+   "name": "Vagamon",
+   "tagline": "Pine forests, rolling meadows, and paragliding — Kerala's most underrated hill station",
+   "state": "Kerala"
+  },
+  "varkala": {
+   "name": "Varkala",
+   "tagline": "Kerala's only cliff beach — where the sacred meets the scenic",
+   "state": "Kerala"
+  },
+  "wayanad": {
+   "name": "Wayanad",
+   "tagline": "Prehistoric caves, heart-shaped lake, and the Western Ghats at their wildest",
+   "state": "Kerala"
+  },
+  "alchi": {
+   "name": "Alchi",
+   "tagline": "A 1000-year-old Buddhist art gallery hidden in a tiny village — the oldest surviving murals in Ladakh, painted when the Chola dynasty ruled South India.",
+   "state": "Ladakh"
+  },
+  "drass": {
+   "name": "Drass",
+   "tagline": "The second coldest inhabited place on Earth, a war memorial that will make you cry, and -45°C winters.",
+   "state": "Ladakh"
+  },
+  "hanle": {
+   "name": "Hanle",
+   "tagline": "Darkest skies in India — a remote observatory village at 4500m where the Milky Way is visible to the naked eye.",
+   "state": "Ladakh"
+  },
+  "kargil": {
+   "name": "Kargil",
+   "tagline": "The gateway between Kashmir and Ladakh, a war-scarred town finding peace — and the start of the Zanskar road.",
+   "state": "Ladakh"
+  },
+  "khardung-la": {
+   "name": "Khardung La",
+   "tagline": "5,359m pass north of Leh — the gateway to Nubra Valley and a rite of passage for motorcyclists.",
+   "state": "Ladakh"
+  },
+  "lamayuru": {
+   "name": "Lamayuru",
+   "tagline": "The moon landscape monastery — Ladakh at its most alien, with a 1000-year-old gompa perched above a crater of eroded clay.",
+   "state": "Ladakh"
+  },
+  "leh": {
+   "name": "Leh",
+   "tagline": "The town where every road trip to Ladakh begins with 2 mandatory days of doing nothing — and somehow those 2 days become the highlight.",
+   "state": "Ladakh"
+  },
+  "likir": {
+   "name": "Likir",
+   "tagline": "A living monastery where monks still debate, pray, and tend gardens — plus a giant golden Maitreya Buddha visible for miles.",
+   "state": "Ladakh"
+  },
+  "nubra-valley": {
+   "name": "Nubra Valley",
+   "tagline": "Sand dunes at 3000m with double-hump camels, a monastery watching over the valley, and the last Indian village before Pakistan.",
+   "state": "Ladakh"
+  },
+  "pangong-lake": {
+   "name": "Pangong Tso",
+   "tagline": "The most Instagrammed lake in India and the most dangerous for unprepared tourists — 4350m of beauty that punishes anyone who skips acclimatization.",
+   "state": "Ladakh"
+  },
+  "tso-moriri": {
+   "name": "Tso Moriri",
+   "tagline": "Pangong's quieter, wilder twin — where Changpa nomads graze pashmina goats and the lake reflects a sky nobody else is looking at.",
+   "state": "Ladakh"
+  },
+  "turtuk": {
+   "name": "Turtuk",
+   "tagline": "India's last Balti village on the Shyok — opened to visitors in 2010, still feels half-secret.",
+   "state": "Ladakh"
+  },
+  "umlingla": {
+   "name": "Umlingla",
+   "tagline": "World's highest motorable road at 5883m — the ultimate test of altitude, endurance, and vehicle reliability.",
+   "state": "Ladakh"
+  },
+  "zanskar": {
+   "name": "Zanskar Valley",
+   "tagline": "India's most inaccessible inhabited valley — where the river freezes into a walkable sheet and monks live in monasteries hanging from cliffs.",
+   "state": "Ladakh"
+  },
+  "agatti": {
+   "name": "Agatti Island",
+   "tagline": "Gateway to Lakshadweep — the only island with an airport and a stunning coral reef runway approach",
+   "state": "Lakshadweep"
+  },
+  "bangaram": {
+   "name": "Bangaram Island",
+   "tagline": "India's Maldives — an uninhabited resort island with the clearest water in the subcontinent",
+   "state": "Lakshadweep"
+  },
+  "kadmat": {
+   "name": "Kadmat Island",
+   "tagline": "Water sports capital of Lakshadweep — best diving, kayaking, and the longest sandbank",
+   "state": "Lakshadweep"
+  },
+  "kavaratti": {
+   "name": "Kavaratti",
+   "tagline": "Capital island of Lakshadweep — aquarium, mosques, and the calmest lagoon in India",
+   "state": "Lakshadweep"
+  },
+  "minicoy": {
+   "name": "Minicoy Island",
+   "tagline": "Southernmost island with a 300-year-old lighthouse, Maldivian culture, and tuna fishing heritage",
+   "state": "Lakshadweep"
+  },
+  "bandhavgarh": {
+   "name": "Bandhavgarh National Park",
+   "tagline": "India's highest tiger density — your best odds of spotting a tiger",
+   "state": "Madhya Pradesh"
+  },
+  "bhimbetka": {
+   "name": "Bhimbetka Rock Shelters",
+   "tagline": "UNESCO World Heritage 2003 — 30,000-year-old rock paintings, the oldest evidence of human life on the Indian subcontinent.",
+   "state": "Madhya Pradesh"
+  },
+  "bhopal": {
+   "name": "Bhopal",
+   "tagline": "Six lakes, the Bhojpur shivling, and Bhimbetka rock shelters — Madhya Pradesh's lake capital.",
+   "state": "Madhya Pradesh"
+  },
+  "gwalior": {
+   "name": "Gwalior",
+   "tagline": "The pearl amongst fortresses",
+   "state": "Madhya Pradesh"
+  },
+  "jabalpur": {
+   "name": "Jabalpur",
+   "tagline": "Marble Rocks of Bhedaghat — 100-foot marble cliffs on the Narmada, Dhuandhar Falls, and gateway to Kanha and Bandhavgarh.",
+   "state": "Madhya Pradesh"
+  },
+  "kanha": {
+   "name": "Kanha National Park",
+   "tagline": "Where Mowgli roamed — India's most famous tiger reserve",
+   "state": "Madhya Pradesh"
+  },
+  "khajuraho": {
+   "name": "Khajuraho",
+   "tagline": "Erotic temple sculptures from 1,000 years ago that make you wonder what happened to India between then and now — UNESCO masterpieces in a sleepy village.",
+   "state": "Madhya Pradesh"
+  },
+  "mandu": {
+   "name": "Mandu",
+   "tagline": "Romantic medieval citadel at 634m — Jahaz Mahal, Rani Roopmati's love story, and 45 sq km of Afghan-Mughal ruins that most of India has forgotten.",
+   "state": "Madhya Pradesh"
+  },
+  "omkareshwar": {
+   "name": "Omkareshwar",
+   "tagline": "Sacred Jyotirlinga on an Om-shaped island in the Narmada",
+   "state": "Madhya Pradesh"
+  },
+  "orchha": {
+   "name": "Orchha",
+   "tagline": "A forgotten Bundela kingdom on the Betwa river — grand cenotaphs and palaces with zero crowds and sunset views that rival any fort in India.",
+   "state": "Madhya Pradesh"
+  },
+  "pachmarhi": {
+   "name": "Pachmarhi",
+   "tagline": "MP's only hill station — Satpura Queen",
+   "state": "Madhya Pradesh"
+  },
+  "sanchi": {
+   "name": "Sanchi",
+   "tagline": "Ashoka built it in the 3rd century BCE and it's still standing — the oldest stone Buddhist architecture in India.",
+   "state": "Madhya Pradesh"
+  },
+  "ujjain": {
+   "name": "Ujjain",
+   "tagline": "One of only 4 Kumbh Mela sites",
+   "state": "Madhya Pradesh"
+  },
+  "ajanta-caves": {
+   "name": "Ajanta Caves",
+   "tagline": "UNESCO masterpiece — 2,000-year-old Buddhist paintings that survived in horseshoe rock",
+   "state": "Maharashtra"
+  },
+  "alibaug": {
+   "name": "Alibaug",
+   "tagline": "Mumbai's beach backyard — forts, ferries, and the Konkan coast at your doorstep",
+   "state": "Maharashtra"
+  },
+  "amboli": {
+   "name": "Amboli",
+   "tagline": "Maharashtra's southernmost hill station — Sahyadri waterfalls, king cobras, and monsoon magic",
+   "state": "Maharashtra"
+  },
+  "astavinayak-circuit": {
+   "name": "Astavinayak Circuit",
+   "tagline": "The 8 swayambhu Ganesha temples in a 600km Maharashtra loop from Pune",
+   "state": "Maharashtra"
+  },
+  "aurangabad": {
+   "name": "Aurangabad",
+   "tagline": "Gateway to UNESCO caves — Bibi Ka Maqbara, Paithan silks, and Mughlai-Deccani food",
+   "state": "Maharashtra"
+  },
+  "bhandardara": {
+   "name": "Bhandardara",
+   "tagline": "Arthur Lake, fireflies in May, and Kalsubai — Maharashtra's rooftop",
+   "state": "Maharashtra"
+  },
+  "bhimashankar": {
+   "name": "Bhimashankar",
+   "tagline": "One of 12 Jyotirlingas — Sahyadri temple, giant Indian squirrel sanctuary, and monsoon treks",
+   "state": "Maharashtra"
+  },
+  "daulatabad": {
+   "name": "Daulatabad Fort",
+   "tagline": "The impregnable hilltop fortress — moats, dark tunnels, and a 200m vertical climb",
+   "state": "Maharashtra"
+  },
+  "elephanta-caves": {
+   "name": "Elephanta Caves",
+   "tagline": "UNESCO rock-cut caves on an island — a 6th-century Shiva masterpiece an hour from Mumbai",
+   "state": "Maharashtra"
+  },
+  "ellora-caves": {
+   "name": "Ellora Caves",
+   "tagline": "UNESCO site with the monolithic Kailasa temple — carved top-down from a single basalt cliff",
+   "state": "Maharashtra"
+  },
+  "ganpatipule": {
+   "name": "Ganpatipule",
+   "tagline": "Where the Ganesh temple meets pristine Konkan sand — pilgrimage and beach in one",
+   "state": "Maharashtra"
+  },
+  "harihareshwar": {
+   "name": "Harihareshwar",
+   "tagline": "Deva che Ghar — where Shiva meets the sea, flanked by four protective hills",
+   "state": "Maharashtra"
+  },
+  "igatpuri": {
+   "name": "Igatpuri",
+   "tagline": "Vipassana meditation headquarters, monsoon waterfalls, and Sahyadri treks",
+   "state": "Maharashtra"
+  },
+  "kanheri-caves": {
+   "name": "Kanheri Caves",
+   "tagline": "109 Buddhist rock-cut caves inside Mumbai's Sanjay Gandhi National Park",
+   "state": "Maharashtra"
+  },
+  "karla-bhaja-caves": {
+   "name": "Karla & Bhaja Caves",
+   "tagline": "1st-century BCE Buddhist chaitya halls in the Sahyadri",
+   "state": "Maharashtra"
+  },
+  "kashid": {
+   "name": "Kashid",
+   "tagline": "Maharashtra's best white sand beach — clean, calm, and just close enough for a Mumbai weekend",
+   "state": "Maharashtra"
+  },
+  "khandala": {
+   "name": "Khandala",
+   "tagline": "The twin of Lonavala — Bollywood's favourite ghats, Duke's Nose, and the misty Western Ghats",
+   "state": "Maharashtra"
+  },
+  "kolad": {
+   "name": "Kolad",
+   "tagline": "Maharashtra's Rishikesh — white water rafting on the Kundalika River, 2 hours from Mumbai",
+   "state": "Maharashtra"
+  },
+  "kolhapur": {
+   "name": "Kolhapur",
+   "tagline": "Mahalaxmi Temple, kushti wrestling, and the spiciest misal pav you'll ever eat",
+   "state": "Maharashtra"
+  },
+  "lenyadri": {
+   "name": "Lenyadri",
+   "tagline": "Girijatmaj — the only Astavinayak inside Buddhist rock-cut caves",
+   "state": "Maharashtra"
+  },
+  "lonar-crater": {
+   "name": "Lonar Crater",
+   "tagline": "The world's only meteoric crater in basaltic rock — 50,000 years old, saline and alkaline",
+   "state": "Maharashtra"
+  },
+  "lonavala": {
+   "name": "Lonavala",
+   "tagline": "Mumbai-Pune's favourite monsoon escape — fudge, fog, and fort trails",
+   "state": "Maharashtra"
+  },
+  "mahabaleshwar": {
+   "name": "Mahabaleshwar",
+   "tagline": "Strawberry capital of India — colonial viewpoints over the Krishna Valley",
+   "state": "Maharashtra"
+  },
+  "mahad-raigad": {
+   "name": "Mahad (Raigad — Ashtavinayak)",
+   "tagline": "Varadvinayak — the lit-since-1892 oil lamp at the fourth Astavinayak",
+   "state": "Maharashtra"
+  },
+  "malvan": {
+   "name": "Malvan",
+   "tagline": "Scuba diving capital of the Konkan — Sindhudurg Fort, Malvani cuisine, and India's west coast reef",
+   "state": "Maharashtra"
+  },
+  "matheran": {
+   "name": "Matheran",
+   "tagline": "Asia's only automobile-free hill station — no engines, just birdsong and horse hooves",
+   "state": "Maharashtra"
+  },
+  "morgaon": {
+   "name": "Morgaon",
+   "tagline": "Mayureshwar — the first stop of the Astavinayak Yatra",
+   "state": "Maharashtra"
+  },
+  "mumbai": {
+   "name": "Mumbai",
+   "tagline": "The city that never sleeps — where dreams collide with the Arabian Sea",
+   "state": "Maharashtra"
+  },
+  "murud-janjira": {
+   "name": "Murud-Janjira",
+   "tagline": "The unconquered island fortress — 500 years, never breached, standing in the Arabian Sea",
+   "state": "Maharashtra"
+  },
+  "nagpur": {
+   "name": "Nagpur",
+   "tagline": "Orange city, zero mile — geographic heart of India and gateway to tiger country",
+   "state": "Maharashtra"
+  },
+  "nashik": {
+   "name": "Nashik",
+   "tagline": "Wine capital of India — Trimbakeshwar Jyotirlinga, Godavari ghats, and Sula vineyards",
+   "state": "Maharashtra"
+  },
+  "ozar": {
+   "name": "Ozar",
+   "tagline": "Vighnahar — the gold-plated dome on the Kukadi River",
+   "state": "Maharashtra"
+  },
+  "pali-raigad": {
+   "name": "Pali (Raigad)",
+   "tagline": "Ballaleshwar — the only Astavinayak named after a devotee",
+   "state": "Maharashtra"
+  },
+  "panchgani": {
+   "name": "Panchgani",
+   "tagline": "Table Land, paragliding, and the five hills that guard the Krishna Valley",
+   "state": "Maharashtra"
+  },
+  "pench-maharashtra": {
+   "name": "Pench National Park",
+   "tagline": "Mowgli's jungle — where Kipling's Jungle Book comes alive with tigers and leopards",
+   "state": "Maharashtra"
+  },
+  "pune": {
+   "name": "Pune",
+   "tagline": "Oxford of the East — Maratha history, misal pav capital, and India's craft beer hub",
+   "state": "Maharashtra"
+  },
+  "raigad-fort": {
+   "name": "Raigad Fort",
+   "tagline": "Shivaji's capital — the coronation site of the Maratha Empire, now UNESCO World Heritage",
+   "state": "Maharashtra"
+  },
+  "ranjangaon": {
+   "name": "Ranjangaon",
+   "tagline": "Mahaganapati — the sun-aligned Astavinayak",
+   "state": "Maharashtra"
+  },
+  "ratnagiri": {
+   "name": "Ratnagiri",
+   "tagline": "Alphonso mango country — where the king of fruits meets Konkan history",
+   "state": "Maharashtra"
+  },
+  "satara": {
+   "name": "Satara",
+   "tagline": "Kaas Plateau — Maharashtra's Valley of Flowers, a UNESCO World Natural Heritage Site",
+   "state": "Maharashtra"
+  },
+  "shirdi": {
+   "name": "Shirdi",
+   "tagline": "Sai Baba's holy town — one of India's top 5 pilgrimage destinations, 40,000 visitors daily",
+   "state": "Maharashtra"
+  },
+  "siddhatek": {
+   "name": "Siddhatek",
+   "tagline": "Siddhivinayak — the only east-facing Astavinayak temple",
+   "state": "Maharashtra"
+  },
+  "tadoba": {
+   "name": "Tadoba-Andhari Tiger Reserve",
+   "tagline": "India's highest tiger sighting probability — open grasslands, wild dogs, and genuine wilderness",
+   "state": "Maharashtra"
+  },
+  "tarkarli": {
+   "name": "Tarkarli",
+   "tagline": "India's clearest coastal waters — scuba diving, Sindhudurg Fort, and Konkan at its purest",
+   "state": "Maharashtra"
+  },
+  "theur": {
+   "name": "Theur",
+   "tagline": "Chintamani — where Krishna recovered the Syamantaka jewel",
+   "state": "Maharashtra"
+  },
+  "trimbakeshwar": {
+   "name": "Trimbakeshwar",
+   "tagline": "Jyotirlinga and Godavari source — where India's second-longest river begins its 1,465km journey",
+   "state": "Maharashtra"
+  },
+  "imphal": {
+   "name": "Imphal",
+   "tagline": "World's largest all-women market, ancient Kangla Fort, and the birthplace of polo.",
+   "state": "Manipur"
+  },
+  "loktak-lake": {
+   "name": "Loktak Lake",
+   "tagline": "Floating islands on a lake — phumdis, the last dancing deer, and a landscape found nowhere else on Earth.",
+   "state": "Manipur"
+  },
+  "moreh": {
+   "name": "Moreh",
+   "tagline": "India-Myanmar border town — cross-border trade market, gateway to Southeast Asia overland, Tamu (Myanmar) just across",
+   "state": "Manipur"
+  },
+  "tamenglong": {
+   "name": "Tamenglong",
+   "tagline": "Barak waterfall (largest in Manipur), Zeilad Lake, Zeliangrong tribe, and the Manipur-Nagaland highland wilderness",
+   "state": "Manipur"
+  },
+  "ukhrul": {
+   "name": "Ukhrul",
+   "tagline": "Home of the Shirui Lily (Lilium mackliniae) — found nowhere else on Earth, blooms May-June on Shirui Peak. Tangkhul Naga tribal culture",
+   "state": "Manipur"
+  },
+  "cherrapunji": {
+   "name": "Cherrapunji (Sohra)",
+   "tagline": "Where clouds live — living root bridges, Nohkalikai Falls, and one of the wettest places on Earth.",
+   "state": "Meghalaya"
+  },
+  "dawki": {
+   "name": "Dawki",
+   "tagline": "Crystal-clear Umngot River — where boats appear to float on glass at the India-Bangladesh border.",
+   "state": "Meghalaya"
+  },
+  "mawlynnong": {
+   "name": "Mawlynnong",
+   "tagline": "Asia's cleanest village — bamboo dustbins, living root bridges, and a community that shames cities.",
+   "state": "Meghalaya"
+  },
+  "mawphlang": {
+   "name": "Mawphlang",
+   "tagline": "Sacred Forest of the Khasi tribe — 1,000-year-old untouched grove where nothing can be removed, not even a leaf.",
+   "state": "Meghalaya"
+  },
+  "mawsynram": {
+   "name": "Mawsynram",
+   "tagline": "The actual wettest place on Earth — where umbrellas are a way of life and every surface drips green.",
+   "state": "Meghalaya"
+  },
+  "nongriat": {
+   "name": "Nongriat",
+   "tagline": "Double Decker Living Root Bridge — only accessible by 3,500-step trek down into the valley. World-famous natural wonder grown by Khasi tribe over centuries.",
+   "state": "Meghalaya"
+  },
+  "shillong": {
+   "name": "Shillong",
+   "tagline": "The Scotland of the East — live music, pine forests, waterfalls, and the best cafe culture in Northeast India.",
+   "state": "Meghalaya"
+  },
+  "shnongpdeng": {
+   "name": "Shnongpdeng",
+   "tagline": "Crystal-clear Umngot River camping village — cliff jumping, kayaking, snorkeling in glass-clear water. The adventure version of Dawki.",
+   "state": "Meghalaya"
+  },
+  "tura": {
+   "name": "Tura",
+   "tagline": "Gateway to Garo Hills — Nokrek Biosphere Reserve (red pandas, citrus gene bank), Siju Cave (bats + limestone), and Wangala harvest festival.",
+   "state": "Meghalaya"
+  },
+  "aizawl": {
+   "name": "Aizawl",
+   "tagline": "A city built on ridges — churches on every hill, the cleanest state, and zero begging.",
+   "state": "Mizoram"
+  },
+  "champhai": {
+   "name": "Champhai",
+   "tagline": "Rice bowl of Mizoram — Indo-Myanmar border panorama, Rih Dil lake (believed to be gateway to the afterworld in Mizo mythology), Murlen National Park",
+   "state": "Mizoram"
+  },
+  "lunglei": {
+   "name": "Lunglei",
+   "tagline": "Second-largest town in Mizoram — colonial-era Lunglei Fort, Saikuti Hall, blue mountain views, gateway to Saiha and Phawngpui",
+   "state": "Mizoram"
+  },
+  "phawngpui-peak": {
+   "name": "Phawngpui Peak",
+   "tagline": "Blue Mountain — highest point in Mizoram at 2,157m, rhododendron forests, orchids, and panoramic views of Myanmar hills",
+   "state": "Mizoram"
+  },
+  "dzukou-valley": {
+   "name": "Dzukou Valley",
+   "tagline": "Valley of Flowers of the Northeast — rolling green meadows, rare Dzukou Lily, and soul-stirring silence.",
+   "state": "Nagaland"
+  },
+  "khonoma": {
+   "name": "Khonoma",
+   "tagline": "India's first self-declared green village — Angami Naga warriors who banned hunting and built a global conservation model.",
+   "state": "Nagaland"
+  },
+  "kiphire": {
+   "name": "Kiphire",
+   "tagline": "Gateway to Saramati Peak, India-Myanmar border trek",
+   "state": "Nagaland"
+  },
+  "kohima": {
+   "name": "Kohima",
+   "tagline": "Naga warrior heritage, WWII cemetery, and the legendary Hornbill Festival — where 16 tribes celebrate as one.",
+   "state": "Nagaland"
+  },
+  "mokokchung": {
+   "name": "Mokokchung",
+   "tagline": "Heartland of the Ao Naga tribe — Longkhum village viewpoint, Ungma (oldest Ao village), Moatsu festival in May",
+   "state": "Nagaland"
+  },
+  "mon": {
+   "name": "Mon",
+   "tagline": "Land of the Konyak Nagas — last headhunting tribe with tattooed faces, skull trophies in morungs, and the cross-border Longwa village split between India and Myanmar",
+   "state": "Nagaland"
+  },
+  "pfutsero": {
+   "name": "Pfutsero",
+   "tagline": "Highest town in Nagaland at 2,133m — Glory Peak, Chakhesang tribe, terraced fields, foggy pine ridges that feel like Scotland",
+   "state": "Nagaland"
+  },
+  "baripada": {
+   "name": "Baripada",
+   "tagline": "Chhau dance birthplace — UNESCO Intangible Heritage, Simlipal gateway, tribal Mayurbhanj",
+   "state": "Odisha"
+  },
+  "bhitarkanika": {
+   "name": "Bhitarkanika",
+   "tagline": "India's 2nd largest mangrove — 1,826 saltwater crocs, 18 albino, king cobras",
+   "state": "Odisha"
+  },
+  "bhubaneswar": {
+   "name": "Bhubaneswar",
+   "tagline": "Temple City — 700+ temples spanning 2,000 years of continuous worship",
+   "state": "Odisha"
+  },
+  "diamond-triangle": {
+   "name": "Buddhist Diamond Triangle",
+   "tagline": "Lalitgiri + Ratnagiri + Udayagiri — Buddhist ruins rivaling Ajanta, UNESCO tentative",
+   "state": "Odisha"
+  },
+  "chandipur": {
+   "name": "Chandipur",
+   "tagline": "The disappearing sea — water recedes 5km every day, exposing the ocean floor",
+   "state": "Odisha"
+  },
+  "chilika-lake": {
+   "name": "Chilika Lake",
+   "tagline": "Asia's largest brackish lagoon — Irrawaddy dolphins, million migratory birds, Nalabana Island",
+   "state": "Odisha"
+  },
+  "cuttack": {
+   "name": "Cuttack",
+   "tagline": "Silver City — 1,000-year-old filigree craft capital and Odisha's cultural heart",
+   "state": "Odisha"
+  },
+  "daringbadi": {
+   "name": "Daringbadi",
+   "tagline": "\"Kashmir of Odisha\" — pine forests, coffee gardens, and Kutia Kondh tribal life",
+   "state": "Odisha"
+  },
+  "deomali": {
+   "name": "Deomali",
+   "tagline": "Odisha's highest peak at 1,672m — gateway to Dongria Kondh tribal country",
+   "state": "Odisha"
+  },
+  "dhauli": {
+   "name": "Dhauli",
+   "tagline": "Where Ashoka's conscience awoke — Kalinga War site, rock edicts, peace pagoda",
+   "state": "Odisha"
+  },
+  "gahirmatha": {
+   "name": "Gahirmatha",
+   "tagline": "World's largest Olive Ridley turtle rookery — 600,000 turtles nest in one season",
+   "state": "Odisha"
+  },
+  "gopalpur-on-sea": {
+   "name": "Gopalpur-on-Sea",
+   "tagline": "Colonial-era seaside charm — lighthouse, quiet waves, and old-world peace",
+   "state": "Odisha"
+  },
+  "konark": {
+   "name": "Konark",
+   "tagline": "Sun Temple UNESCO — 24 stone wheels, 7 horses, and the birth of Odissi dance",
+   "state": "Odisha"
+  },
+  "koraput": {
+   "name": "Koraput",
+   "tagline": "Dongria Kondh heartland — GI-tagged tribal textiles, Niyamgiri Hills, responsible tourism",
+   "state": "Odisha"
+  },
+  "nrusinghanath-harishankar": {
+   "name": "Nrusinghanath & Harishankar",
+   "tagline": "Twin temples in Gandhamardan Hills — Ramayana's Sanjeevani mountain with Buddhist ruins",
+   "state": "Odisha"
+  },
+  "puri": {
+   "name": "Puri",
+   "tagline": "Jagannath's abode — world's largest chariot festival and a Char Dham pilgrimage",
+   "state": "Odisha"
+  },
+  "raghurajpur": {
+   "name": "Raghurajpur",
+   "tagline": "India's first Heritage Craft Village — every home is a 1,500-year-old art gallery",
+   "state": "Odisha"
+  },
+  "sambalpur": {
+   "name": "Sambalpur",
+   "tagline": "Sambalpuri Ikat textiles + world's longest earthen dam — craft meets engineering",
+   "state": "Odisha"
+  },
+  "satkosia": {
+   "name": "Satkosia",
+   "tagline": "Mahanadi gorge sanctuary — gharial breeding ground, 22km of dramatic cliffs",
+   "state": "Odisha"
+  },
+  "simlipal": {
+   "name": "Simlipal",
+   "tagline": "UNESCO Biosphere — tiger reserve, 217m waterfall, 96 orchid species, melanistic tigers",
+   "state": "Odisha"
+  },
+  "talasari": {
+   "name": "Talasari",
+   "tagline": "Hidden virgin beach at Odisha's border — where the river meets the sea",
+   "state": "Odisha"
+  },
+  "taptapani": {
+   "name": "Taptapani",
+   "tagline": "Sulfur hot springs in tribal country — where Saora healers meet ancient wellness",
+   "state": "Odisha"
+  },
+  "auroville": {
+   "name": "Auroville",
+   "tagline": "50-year intentional community — Matrimandir, organic farms, and 3,300 residents from 60 nations",
+   "state": "Puducherry"
+  },
+  "karaikal": {
+   "name": "Karaikal",
+   "tagline": "Quiet Puducherry enclave on the Cauvery delta — ancient temples, French fort ruins, and pristine beach",
+   "state": "Puducherry"
+  },
+  "pondicherry": {
+   "name": "Pondicherry (Puducherry)",
+   "tagline": "French Quarter, Auroville, and the only place in India where crepes meet dosas",
+   "state": "Puducherry"
+  },
+  "puducherry": {
+   "name": "Puducherry (Pondicherry)",
+   "tagline": "French Quarter charm meets Tamil temple culture — yellow colonial streets, seafront promenade, and Sri Aurobindo Ashram",
+   "state": "Puducherry"
+  },
+  "amritsar": {
+   "name": "Amritsar",
+   "tagline": "The Golden Temple doesn't just feed your soul — it literally feeds 100,000 people a day, for free, regardless of who you are.",
+   "state": "Punjab"
+  },
+  "anandpur-sahib": {
+   "name": "Anandpur Sahib",
+   "tagline": "Virasat-e-Khalsa museum alone is worth the trip — architecture that rivals the Guggenheim, telling the story of Sikh heritage.",
+   "state": "Punjab"
+  },
+  "patiala": {
+   "name": "Patiala",
+   "tagline": "The Patiala peg, the Patiala salwar, and a palace with 15 dining halls — Punjab royalty that most tourists skip.",
+   "state": "Punjab"
+  },
+  "damdama-sahib": {
+   "name": "Takht Sri Damdama Sahib",
+   "tagline": "One of only 5 Sikh Takhts — where Guru Gobind Singh compiled the final Guru Granth Sahib in 1706.",
+   "state": "Punjab"
+  },
+  "ajmer": {
+   "name": "Ajmer",
+   "tagline": "One of India most important Sufi shrines — and the gateway everyone rushes through to reach Pushkar.",
+   "state": "Rajasthan"
+  },
+  "alwar": {
+   "name": "Alwar",
+   "tagline": "Bhangarh ghost fort, Sariska tiger reserve, and a city palace that rivals Jaipur — all in India most ignored Rajasthan district.",
+   "state": "Rajasthan"
+  },
+  "barmer": {
+   "name": "Barmer",
+   "tagline": "The Rajasthan even Rajasthanis skip — hand-block printing villages, desert sand dunes without the Jaisalmer tourist machinery.",
+   "state": "Rajasthan"
+  },
+  "bharatpur": {
+   "name": "Bharatpur",
+   "tagline": "Keoladeo Ghana UNESCO bird sanctuary — 350+ species including Siberian cranes, 55km from the Taj.",
+   "state": "Rajasthan"
+  },
+  "bikaner": {
+   "name": "Bikaner",
+   "tagline": "Junagarh Fort that was never conquered, a temple full of rats, and a government camel research farm — Bikaner does not do normal.",
+   "state": "Rajasthan"
+  },
+  "bundi": {
+   "name": "Bundi",
+   "tagline": "The Rajasthan that tourism forgot — 50 stepwells, a crumbling fort, painted havelis, and zero selfie sticks.",
+   "state": "Rajasthan"
+  },
+  "chittorgarh": {
+   "name": "Chittorgarh",
+   "tagline": "India's largest fort — 700 acres of Rajput defiance, Padmini's palace, and the Tower of Victory.",
+   "state": "Rajasthan"
+  },
+  "deeg": {
+   "name": "Deeg",
+   "tagline": "A water palace where 900 fountains once fired simultaneously — Rajasthan's most underrated monsoon palace.",
+   "state": "Rajasthan"
+  },
+  "dungarpur": {
+   "name": "Dungarpur",
+   "tagline": "The palace town south of Udaipur that even palace enthusiasts don't know about.",
+   "state": "Rajasthan"
+  },
+  "gagron-fort": {
+   "name": "Gagron Fort",
+   "tagline": "India's only hill-and-water fort — UNESCO World Heritage",
+   "state": "Rajasthan"
+  },
+  "jaipur": {
+   "name": "Jaipur",
+   "tagline": "Every fort in Jaipur makes you feel like a Maharaja, and the city dresses in pink to make sure you notice.",
+   "state": "Rajasthan"
+  },
+  "jaisalmer": {
+   "name": "Jaisalmer",
+   "tagline": "The only fort in India where 3000 people still LIVE — shops, temples, hotels, inside a 12th-century citadel.",
+   "state": "Rajasthan"
+  },
+  "jodhpur": {
+   "name": "Jodhpur",
+   "tagline": "Mehrangarh is the fort that makes every other fort in Rajasthan feel like a rehearsal.",
+   "state": "Rajasthan"
+  },
+  "kumbhalgarh": {
+   "name": "Kumbhalgarh",
+   "tagline": "The second longest wall in the world after China — hilltop fort with 360-degree Aravalli views.",
+   "state": "Rajasthan"
+  },
+  "mount-abu": {
+   "name": "Mount Abu",
+   "tagline": "Rajasthan only hill station — and Dilwara Jain temples are the most intricate marble carvings in India.",
+   "state": "Rajasthan"
+  },
+  "neemrana": {
+   "name": "Neemrana",
+   "tagline": "A 15th century fort turned into India most famous heritage hotel — and the zip-line across its ramparts.",
+   "state": "Rajasthan"
+  },
+  "osian": {
+   "name": "Osian",
+   "tagline": "The Khajuraho of Rajasthan — 8th century temples in the Thar Desert that nobody visits.",
+   "state": "Rajasthan"
+  },
+  "pushkar": {
+   "name": "Pushkar",
+   "tagline": "The only Brahma temple in India, a holy lake older than recorded history, and a camel fair that defies description.",
+   "state": "Rajasthan"
+  },
+  "ranakpur": {
+   "name": "Ranakpur Jain Temple",
+   "tagline": "1,444 marble pillars — no two alike",
+   "state": "Rajasthan"
+  },
+  "ranthambore": {
+   "name": "Ranthambore",
+   "tagline": "THE tiger park. If you see one, you will talk about it for years. If you do not, the fort and the jungle are still worth it.",
+   "state": "Rajasthan"
+  },
+  "sariska": {
+   "name": "Sariska Tiger Reserve",
+   "tagline": "The most accessible tiger reserve from Delhi and Jaipur",
+   "state": "Rajasthan"
+  },
+  "shekhawati": {
+   "name": "Shekhawati",
+   "tagline": "The open-air art gallery of Rajasthan — 400-year-old painted havelis in towns nobody visits.",
+   "state": "Rajasthan"
+  },
+  "udaipur": {
+   "name": "Udaipur",
+   "tagline": "The most romantic city in India, and it knows it — every rooftop restaurant has a view of the lake and every sunset feels staged.",
+   "state": "Rajasthan"
+  },
+  "aritar": {
+   "name": "Aritar",
+   "tagline": "Old Silk-Route village around Lampokhari lake and paragliding hills",
+   "state": "Sikkim"
+  },
+  "dzongu": {
+   "name": "Dzongu",
+   "tagline": "The Lepcha tribal reserve of North Sikkim — homestays, hot springs, waterfalls",
+   "state": "Sikkim"
+  },
+  "gangtok": {
+   "name": "Gangtok",
+   "tagline": "India's cleanest hill town — monasteries, momos, and jaw-dropping Kanchenjunga views from a state where plastic bags have been illegal since 1998.",
+   "state": "Sikkim"
+  },
+  "gurudongmar-lake": {
+   "name": "Gurudongmar Lake",
+   "tagline": "Sacred lake at 17,800 ft — one of highest lakes in the world, frozen Nov-May, stunning turquoise in summer.",
+   "state": "Sikkim"
+  },
+  "khangchendzonga-np": {
+   "name": "Khangchendzonga National Park",
+   "tagline": "India's ONLY mixed UNESCO World Heritage Site — home to the world's third-highest peak at 8,586m. Sacred to the Lepcha people.",
+   "state": "Sikkim"
+  },
+  "lachen": {
+   "name": "Lachen",
+   "tagline": "North Sikkim base for Gurudongmar and Chopta Valley, Lachungpa tribal village.",
+   "state": "Sikkim"
+  },
+  "lachung": {
+   "name": "Lachung",
+   "tagline": "Gateway to Yumthang Valley and Zero Point — rhododendron paradise in North Sikkim.",
+   "state": "Sikkim"
+  },
+  "mangan": {
+   "name": "Mangan",
+   "tagline": "The gateway town to North Sikkim — Lachen, Lachung and Gurudongmar start here",
+   "state": "Sikkim"
+  },
+  "namchi": {
+   "name": "Namchi",
+   "tagline": "Giant Guru Padmasambhava statue, Char Dham replica, and South Sikkim's laid-back capital.",
+   "state": "Sikkim"
+  },
+  "nathu-la": {
+   "name": "Nathu La",
+   "tagline": "A 4,310 m India–China border pass on the old Silk Route",
+   "state": "Sikkim"
+  },
+  "pelling": {
+   "name": "Pelling",
+   "tagline": "Front-row seats to Kanchenjunga — a tiny ridge town with the 17th-century Pemayangtse monastery and the new Chenrezig statue that dwarfs everything.",
+   "state": "Sikkim"
+  },
+  "phodong": {
+   "name": "Phodong",
+   "tagline": "An 18th-century Nyingma monastery on the road north to Mangan",
+   "state": "Sikkim"
+  },
+  "ravangla": {
+   "name": "Ravangla",
+   "tagline": "Buddha Park with 130-foot statue, Temi Tea Garden, and the best Kanchenjunga panorama in South Sikkim.",
+   "state": "Sikkim"
+  },
+  "rinchenpong": {
+   "name": "Rinchenpong",
+   "tagline": "A quiet West-Sikkim ridge with full Kanchenjunga views and old monasteries",
+   "state": "Sikkim"
+  },
+  "tashiding": {
+   "name": "Tashiding",
+   "tagline": "Sikkim's holiest Nyingma monastery and the Bhumchu sacred-water festival",
+   "state": "Sikkim"
+  },
+  "tsomgo-lake": {
+   "name": "Tsomgo Lake",
+   "tagline": "Sacred glacial lake at 12,313 ft, 40 km from Gangtok, gateway to Nathula Pass (India-China border).",
+   "state": "Sikkim"
+  },
+  "yuksom": {
+   "name": "Yuksom",
+   "tagline": "First capital of Sikkim and base camp for Goechala trek to Kanchenjunga. Coronation throne of first Chogyal.",
+   "state": "Sikkim"
+  },
+  "yumthang-valley": {
+   "name": "Yumthang Valley",
+   "tagline": "Sikkim's Valley of Flowers — rhododendrons carpet the meadow, Feb–June",
+   "state": "Sikkim"
+  },
+  "zuluk": {
+   "name": "Zuluk",
+   "tagline": "The Silk Route's 32 hairpin bends — where the road itself is the destination and Kanchenjunga fills the horizon.",
+   "state": "Sikkim"
+  },
+  "anamalai": {
+   "name": "Anamalai Tiger Reserve (Topslip)",
+   "tagline": "Topslip — lion-tailed macaques, bamboo rafting, and the Anamalai Hills",
+   "state": "Tamil Nadu"
+  },
+  "chennai": {
+   "name": "Chennai",
+   "tagline": "Marina Beach, Fort St. George, Carnatic music — South India's cultural capital",
+   "state": "Tamil Nadu"
+  },
+  "chettinad": {
+   "name": "Chettinad",
+   "tagline": "India's spiciest cuisine and 10,000 palatial mansions with Burma teak and Italian marble",
+   "state": "Tamil Nadu"
+  },
+  "chidambaram": {
+   "name": "Chidambaram",
+   "tagline": "Nataraja Temple — Shiva as Cosmic Dancer, the Pancha Bhuta Stala of Space",
+   "state": "Tamil Nadu"
+  },
+  "coimbatore": {
+   "name": "Coimbatore",
+   "tagline": "Adiyogi statue (112ft Guinness record) and the gateway to the Nilgiris",
+   "state": "Tamil Nadu"
+  },
+  "coonoor": {
+   "name": "Coonoor",
+   "tagline": "Nilgiri tea capital — quieter than Ooty, on the UNESCO toy train route",
+   "state": "Tamil Nadu"
+  },
+  "courtallam": {
+   "name": "Courtallam (Kutralam)",
+   "tagline": "Spa of South India — 9 herb-infused waterfalls with natural healing properties",
+   "state": "Tamil Nadu"
+  },
+  "dhanushkodi": {
+   "name": "Dhanushkodi",
+   "tagline": "India's only ghost town — 1964 cyclone ruins at the absolute tip of India",
+   "state": "Tamil Nadu"
+  },
+  "hogenakkal": {
+   "name": "Hogenakkal Falls",
+   "tagline": "India's Niagara — coracle rides through waterfalls and a 2,000-year-old oil massage tradition",
+   "state": "Tamil Nadu"
+  },
+  "kanchipuram": {
+   "name": "Kanchipuram",
+   "tagline": "City of 1,000 Temples — sacred for both Shaivites and Vaishnavites, and home to India's finest silk",
+   "state": "Tamil Nadu"
+  },
+  "kanyakumari": {
+   "name": "Kanyakumari",
+   "tagline": "India's southernmost tip — the only place where you watch sunrise AND sunset over the sea",
+   "state": "Tamil Nadu"
+  },
+  "kodaikanal": {
+   "name": "Kodaikanal",
+   "tagline": "Princess of Hill Stations — star-shaped lake, Coaker's Walk cliff promenade, and the 12-year Kurinji bloom",
+   "state": "Tamil Nadu"
+  },
+  "kotagiri": {
+   "name": "Kotagiri",
+   "tagline": "The OLDEST Nilgiri hill station — Ooty without the crowds",
+   "state": "Tamil Nadu"
+  },
+  "kumbakonam": {
+   "name": "Kumbakonam",
+   "tagline": "Temple City — 188 temples, Airavatesvara (UNESCO), and the Mahamaham tank",
+   "state": "Tamil Nadu"
+  },
+  "madurai": {
+   "name": "Madurai",
+   "tagline": "The Lotus City — Meenakshi Temple with 33,000 sculptures and a midnight closing ritual",
+   "state": "Tamil Nadu"
+  },
+  "mahabalipuram": {
+   "name": "Mahabalipuram (Mamallapuram)",
+   "tagline": "UNESCO Pallava rock-cut temples on the Coromandel Coast — beach + heritage in one",
+   "state": "Tamil Nadu"
+  },
+  "meghamalai": {
+   "name": "Meghamalai (High Wavy Mountains)",
+   "tagline": "Cloud forest with zero tourism — advance estate booking required",
+   "state": "Tamil Nadu"
+  },
+  "mudumalai": {
+   "name": "Mudumalai National Park",
+   "tagline": "Nilgiri Biosphere — elephant safaris where Karnataka, Kerala, and Tamil Nadu meet",
+   "state": "Tamil Nadu"
+  },
+  "ooty": {
+   "name": "Ooty (Udagamandalam)",
+   "tagline": "Queen of the Nilgiris — tea estates, toy train (UNESCO), and Doddabetta Peak",
+   "state": "Tamil Nadu"
+  },
+  "palani": {
+   "name": "Palani",
+   "tagline": "Sacred hilltop where Murugan meditated as an ascetic",
+   "state": "Tamil Nadu"
+  },
+  "pazhamudircholai": {
+   "name": "Pazhamudircholai",
+   "tagline": "Murugan's shrine with both consorts Deivanai and Valli",
+   "state": "Tamil Nadu"
+  },
+  "point-calimere": {
+   "name": "Point Calimere Wildlife Sanctuary",
+   "tagline": "30,000 flamingos, blackbuck antelope, and Ramsar Wetland where the coast turns",
+   "state": "Tamil Nadu"
+  },
+  "rameswaram": {
+   "name": "Rameswaram",
+   "tagline": "India's Varanasi of the South — Char Dham, longest temple corridor, and Pamban Bridge",
+   "state": "Tamil Nadu"
+  },
+  "srirangam": {
+   "name": "Srirangam",
+   "tagline": "The LARGEST functioning Hindu temple in the world — 156 acres, 7 walls, 21 gopurams",
+   "state": "Tamil Nadu"
+  },
+  "swamimalai": {
+   "name": "Swamimalai",
+   "tagline": "Where Murugan taught the Om mantra to his father Shiva",
+   "state": "Tamil Nadu"
+  },
+  "thanjavur": {
+   "name": "Thanjavur (Tanjore)",
+   "tagline": "Brihadeeswara Temple — the UNESCO Chola masterpiece whose vimana casts no shadow at noon",
+   "state": "Tamil Nadu"
+  },
+  "tharangambadi": {
+   "name": "Tharangambadi (Tranquebar)",
+   "tagline": "India's only Danish colonial town — Fort Dansborg (1620) and India's oldest Protestant church",
+   "state": "Tamil Nadu"
+  },
+  "tiruchendur": {
+   "name": "Tiruchendur",
+   "tagline": "Murugan's coastal shrine where he vanquished the demon Surapadman",
+   "state": "Tamil Nadu"
+  },
+  "tiruparankundram": {
+   "name": "Tiruparankundram",
+   "tagline": "Murugan's hilltop temple where he married Deivanai",
+   "state": "Tamil Nadu"
+  },
+  "tiruttani": {
+   "name": "Tiruttani",
+   "tagline": "Hilltop temple where Murugan regained inner peace",
+   "state": "Tamil Nadu"
+  },
+  "tiruvannamalai": {
+   "name": "Tiruvannamalai",
+   "tagline": "Arunachala — the fire-element Pancha Bhoota Stalam",
+   "state": "Tamil Nadu"
+  },
+  "trichy": {
+   "name": "Trichy (Tiruchirappalli)",
+   "tagline": "Rock Fort Temple on an 83m rock — one of India's most dramatic urban temple settings",
+   "state": "Tamil Nadu"
+  },
+  "valparai": {
+   "name": "Valparai",
+   "tagline": "40 hairpin bends to an untouched hill station — lion-tailed macaques and cloud forests",
+   "state": "Tamil Nadu"
+  },
+  "vedanthangal": {
+   "name": "Vedanthangal Bird Sanctuary",
+   "tagline": "India's oldest bird sanctuary (1798) — 40,000 nesting waterbirds, 75km from Chennai",
+   "state": "Tamil Nadu"
+  },
+  "yercaud": {
+   "name": "Yercaud",
+   "tagline": "Poor Man's Ooty — Eastern Ghats hill station with coffee, oranges, and zero pretension",
+   "state": "Tamil Nadu"
+  },
+  "adilabad": {
+   "name": "Adilabad",
+   "tagline": "Kuntala Falls, tiger reserve, and Gond tribal culture — Telangana's wild north",
+   "state": "Telangana"
+  },
+  "alampur": {
+   "name": "Alampur",
+   "tagline": "Navabrahma — nine 7th-century Shiva temples where two rivers meet",
+   "state": "Telangana"
+  },
+  "ananthagiri-hills": {
+   "name": "Ananthagiri Hills",
+   "tagline": "Hyderabad's nearest hill escape — 79km to misty forests and ancient temples",
+   "state": "Telangana"
+  },
+  "basara": {
+   "name": "Basara",
+   "tagline": "One of only two Saraswathi temples in India — where children begin their education",
+   "state": "Telangana"
+  },
+  "bhadrachalam": {
+   "name": "Bhadrachalam",
+   "tagline": "Rama Temple on the Godavari — 100,000 pilgrims flood in on Vaikuntha Ekadasi",
+   "state": "Telangana"
+  },
+  "bhongir": {
+   "name": "Bhongir",
+   "tagline": "Egg-shaped monolithic fort — a 10th-century geological freak you can climb",
+   "state": "Telangana"
+  },
+  "hyderabad": {
+   "name": "Hyderabad",
+   "tagline": "Biryani capital of India — Charminar, Golconda, and 400 years of Nizam grandeur",
+   "state": "Telangana"
+  },
+  "kolanupaka": {
+   "name": "Kolanupaka",
+   "tagline": "2,000-year-old jade Mahaveer statue — Telangana's hidden Jain treasure",
+   "state": "Telangana"
+  },
+  "laknavaram": {
+   "name": "Laknavaram",
+   "tagline": "13 forested islands connected by a 160m suspension bridge — Kakatiya-era engineering",
+   "state": "Telangana"
+  },
+  "medak": {
+   "name": "Medak",
+   "tagline": "One of Asia's largest churches + a 12th-century fort — Deccan's hidden heritage",
+   "state": "Telangana"
+  },
+  "nagarjuna-konda": {
+   "name": "Nagarjuna Konda",
+   "tagline": "Buddhist island museum — 30 monasteries submerged, treasures preserved on a hilltop",
+   "state": "Telangana"
+  },
+  "pillalamarri": {
+   "name": "Pillalamarri",
+   "tagline": "800-year-old banyan tree — India's 2nd largest, with Sufi tombs underneath",
+   "state": "Telangana"
+  },
+  "pochampally": {
+   "name": "Pochampally",
+   "tagline": "UNESCO-recognized ikat weaving village — India's first GI-tagged handloom",
+   "state": "Telangana"
+  },
+  "ramappa-temple": {
+   "name": "Ramappa Temple",
+   "tagline": "UNESCO World Heritage (2021) — the only temple in India named after its sculptor",
+   "state": "Telangana"
+  },
+  "warangal": {
+   "name": "Warangal",
+   "tagline": "Kakatiya capital — the gateway that became Telangana's state emblem",
+   "state": "Telangana"
+  },
+  "agartala": {
+   "name": "Agartala",
+   "tagline": "Ujjayanta Palace, Neermahal water palace, and India's most underrated state capital on the Bangladesh border.",
+   "state": "Tripura"
+  },
+  "jampui-hills": {
+   "name": "Jampui Hills",
+   "tagline": "Eternal Hills of Spring, Betlingchhip peak at 3,080 ft, year-round trekking",
+   "state": "Tripura"
+  },
+  "neermahal": {
+   "name": "Neermahal",
+   "tagline": "India's largest water palace — built in 1930 in the middle of Rudrasagar Lake, Mughal-Hindu hybrid architecture, boat access only",
+   "state": "Tripura"
+  },
+  "unakoti": {
+   "name": "Unakoti",
+   "tagline": "7th-8th century rock carvings in a forested hillside — giant Shiva heads (30 ft), Ganga in stone, 10 million figures of legend. India's most underrated archaeological site",
+   "state": "Tripura"
+  },
+  "agra": {
+   "name": "Agra",
+   "tagline": "The Taj Mahal is worth every cliche ever written about it — and Mehtab Bagh at sunset, when the crowds thin, is when it stops being a monument and starts being magic.",
+   "state": "Uttar Pradesh"
+  },
+  "ayodhya": {
+   "name": "Ayodhya",
+   "tagline": "The newly built Ram Mandir has turned a 500-year-old dispute into India biggest pilgrimage boom.",
+   "state": "Uttar Pradesh"
+  },
+  "chitrakoot": {
+   "name": "Chitrakoot",
+   "tagline": "Where Ram spent 11 of his 14 years of exile — the most important Ramayana site outside Ayodhya.",
+   "state": "Uttar Pradesh"
+  },
+  "dudhwa-national-park": {
+   "name": "Dudhwa National Park",
+   "tagline": "UP only national park — tigers, rhinos, and swamp deer in a terai wilderness that nobody from outside UP visits.",
+   "state": "Uttar Pradesh"
+  },
+  "fatehpur-sikri": {
+   "name": "Fatehpur Sikri",
+   "tagline": "Akbar built an entire capital city in 1571, used it for 14 years, then abandoned it forever — the red sandstone ghost city still stands untouched.",
+   "state": "Uttar Pradesh"
+  },
+  "kushinagar": {
+   "name": "Kushinagar",
+   "tagline": "Where the Buddha died — one of the four holiest Buddhist sites on Earth and India most undervisited pilgrimage.",
+   "state": "Uttar Pradesh"
+  },
+  "lucknow": {
+   "name": "Lucknow",
+   "tagline": "The city where food is religion, manners are art, and the Bara Imambara is the most underrated monument in India.",
+   "state": "Uttar Pradesh"
+  },
+  "mathura": {
+   "name": "Mathura",
+   "tagline": "Krishna's birthplace — the jail cell temple, Vishram Ghat on the Yamuna, and India's most colorful Holi.",
+   "state": "Uttar Pradesh"
+  },
+  "prayagraj": {
+   "name": "Prayagraj",
+   "tagline": "Where three rivers meet and 100 million people gather every 12 years — the Triveni Sangam defies every concept of scale.",
+   "state": "Uttar Pradesh"
+  },
+  "sarnath": {
+   "name": "Sarnath",
+   "tagline": "Where Buddha gave his first sermon — the Dhamek Stupa has stood here for 2,500 years, and this quiet park is the antidote to Varanasi's chaos.",
+   "state": "Uttar Pradesh"
+  },
+  "sravasti": {
+   "name": "Sravasti",
+   "tagline": "Where Buddha spent 24 rainy seasons — the place he lived longest, and most Buddhists skip it for Bodh Gaya.",
+   "state": "Uttar Pradesh"
+  },
+  "varanasi": {
+   "name": "Varanasi",
+   "tagline": "The oldest continuously inhabited city in the world, where life and death happen simultaneously on the same riverbank and neither apologizes for the other.",
+   "state": "Uttar Pradesh"
+  },
+  "vrindavan": {
+   "name": "Vrindavan",
+   "tagline": "City of 5000 temples — where Krishna grew up, Holi is a war, and spiritual energy is tangible.",
+   "state": "Uttar Pradesh"
+  },
+  "adi-kailash": {
+   "name": "Adi Kailash",
+   "tagline": "India's answer to Mount Kailash, accessible via a 6-day trek.",
+   "state": "Uttarakhand"
+  },
+  "almora": {
+   "name": "Almora",
+   "tagline": "The Kumaoni heritage town where Kasar Devi cosmic energy attracted Swami Vivekananda, D.H. Lawrence, and Timothy Leary before Instagram discovered it.",
+   "state": "Uttarakhand"
+  },
+  "auli": {
+   "name": "Auli",
+   "tagline": "India's best (and basically only real) ski slope, with a front-row view of Nanda Devi.",
+   "state": "Uttarakhand"
+  },
+  "badrinath": {
+   "name": "Badrinath",
+   "tagline": "One of the four Char Dham — a 1,200-year-old Vishnu temple at 3,133m that closes for six months because even the gods leave for winter.",
+   "state": "Uttarakhand"
+  },
+  "bhimtal": {
+   "name": "Bhimtal",
+   "tagline": "The quiet cousin who got the better genes — Bhimtal lake without the Nainital crowds, an island in the middle, and actual birdsong.",
+   "state": "Uttarakhand"
+  },
+  "binsar": {
+   "name": "Binsar",
+   "tagline": "300km Himalayan panorama from inside an oak forest sanctuary — and nobody around.",
+   "state": "Uttarakhand"
+  },
+  "chakrata": {
+   "name": "Chakrata",
+   "tagline": "A cantonment town the army forgot to tell tourists about — Tiger Falls, Deoban's ancient forests, and zero commercial tourism.",
+   "state": "Uttarakhand"
+  },
+  "champawat": {
+   "name": "Champawat",
+   "tagline": "Where the Chand dynasty ruled Kumaon for 800 years — temples, fort ruins, and zero tourists.",
+   "state": "Uttarakhand"
+  },
+  "chaukori": {
+   "name": "Chaukori",
+   "tagline": "Tea gardens at 2010m with Panchachuli peaks as backdrop — the view Kausani gets credit for, but Chaukori does better.",
+   "state": "Uttarakhand"
+  },
+  "chopta": {
+   "name": "Chopta",
+   "tagline": "Mini Switzerland of Uttarakhand — rhododendron meadows, Himalayan views, and the easiest gateway to a 4000m summit.",
+   "state": "Uttarakhand"
+  },
+  "devprayag": {
+   "name": "Devprayag",
+   "tagline": "The Alaknanda and Bhagirathi become the Ganges here—the holiest of the five confluences.",
+   "state": "Uttarakhand"
+  },
+  "dhanaulti": {
+   "name": "Dhanaulti",
+   "tagline": "The quiet alternative to Mussoorie — 24km further, 90% fewer tourists.",
+   "state": "Uttarakhand"
+  },
+  "gangotri": {
+   "name": "Gangotri",
+   "tagline": "The origin of the Ganges — a temple at 3,100m where Goddess Ganga descended to Earth, surrounded by deodar forests and Himalayan peaks.",
+   "state": "Uttarakhand"
+  },
+  "gopeshwar": {
+   "name": "Gopeshwar",
+   "tagline": "Ancient Shiva temple + gateway to Chopta-Tungnath + the town where the Chipko movement began.",
+   "state": "Uttarakhand"
+  },
+  "guptkashi": {
+   "name": "Guptkashi",
+   "tagline": "The last comfortable town before Kedarnath — where smart pilgrims base themselves instead of suffering at 3583m.",
+   "state": "Uttarakhand"
+  },
+  "har-ki-doon": {
+   "name": "Har Ki Doon",
+   "tagline": "Cradle-shaped valley trek in the Govind sanctuary — the classic Garhwal walk.",
+   "state": "Uttarakhand"
+  },
+  "haridwar": {
+   "name": "Haridwar",
+   "tagline": "Where the Ganges leaves the mountains and enters the plains — evening Ganga Aarti at Har Ki Pauri is India's most electric spiritual spectacle.",
+   "state": "Uttarakhand"
+  },
+  "hemkund-sahib": {
+   "name": "Hemkund Sahib",
+   "tagline": "Sikh pilgrimage shrine at 4,633m — a 6km walk up from Ghangaria, beside a glacial lake.",
+   "state": "Uttarakhand"
+  },
+  "corbett-national-park": {
+   "name": "Jim Corbett National Park",
+   "tagline": "India oldest national park and the best place to see a wild tiger without Rajasthan crowds.",
+   "state": "Uttarakhand"
+  },
+  "joshimath": {
+   "name": "Joshimath",
+   "tagline": "One of Shankaracharya four mathas — and the town that is literally sinking since 2023.",
+   "state": "Uttarakhand"
+  },
+  "kanatal": {
+   "name": "Kanatal",
+   "tagline": "North India glamping capital — apple orchards, stargazing, zero cell signal.",
+   "state": "Uttarakhand"
+  },
+  "karnaprayag": {
+   "name": "Karnaprayag",
+   "tagline": "The Alaknanda and Pindar rivers converge at this third prayag, honoring the Mahabharata hero Karna.",
+   "state": "Uttarakhand"
+  },
+  "kausani": {
+   "name": "Kausani",
+   "tagline": "300km of Himalayan panorama from your hotel balcony — if the clouds cooperate.",
+   "state": "Uttarakhand"
+  },
+  "kedarnath": {
+   "name": "Kedarnath",
+   "tagline": "One of the 12 Jyotirlingas, sitting at 3583m beneath a glacier — open only 6 months a year.",
+   "state": "Uttarakhand"
+  },
+  "landour": {
+   "name": "Landour",
+   "tagline": "The secret garden above Mussoorie that Ruskin Bond will never leave — Char Dukan, Lal Tibba, and walks with no one on them.",
+   "state": "Uttarakhand"
+  },
+  "lansdowne": {
+   "name": "Lansdowne",
+   "tagline": "Army cantonment frozen in time — silent oak forests, no commercial circus.",
+   "state": "Uttarakhand"
+  },
+  "mansarovar-kailash": {
+   "name": "Mount Kailash & Mansarovar",
+   "tagline": "The real Mount Kailash (6,638m) and sacred Lake Mansarovar, a 24-day yatra via the Lipulekh Pass.",
+   "state": "Uttarakhand"
+  },
+  "mukteshwar": {
+   "name": "Mukteshwar",
+   "tagline": "Kumaon ridge village with 180-degree Himalayan views and silence that makes you question city life.",
+   "state": "Uttarakhand"
+  },
+  "munsiyari": {
+   "name": "Munsiyari",
+   "tagline": "Direct front-row seat to the Panchachuli range — Kumaon's most spectacular viewpoint that almost nobody goes to.",
+   "state": "Uttarakhand"
+  },
+  "mussoorie": {
+   "name": "Mussoorie",
+   "tagline": "The Queen of Hills — Mall Road, Kempty Falls, cloud walks, and the gateway hill station that every Indian family visits first.",
+   "state": "Uttarakhand"
+  },
+  "nainital": {
+   "name": "Nainital",
+   "tagline": "The lake town that India grew up with — boating, cable cars, Mall Road, and the Naini Devi temple that gives it its name.",
+   "state": "Uttarakhand"
+  },
+  "nandaprayag": {
+   "name": "Nandaprayag",
+   "tagline": "The Alaknanda meets the Nandakini at this second sacred confluence, set in Chamoli district.",
+   "state": "Uttarakhand"
+  },
+  "pithoragarh": {
+   "name": "Pithoragarh",
+   "tagline": "Gateway to Panchachuli peaks and Nepal border — where Kumaon gets real.",
+   "state": "Uttarakhand"
+  },
+  "ranikhet": {
+   "name": "Ranikhet",
+   "tagline": "An army cantonment town where the British came to escape the heat — pine forests, golf course at 1,800m, and Himalayan views without a single tout.",
+   "state": "Uttarakhand"
+  },
+  "rishikesh": {
+   "name": "Rishikesh",
+   "tagline": "Where yoga ashrams meet white-water rapids and the Beatles met their guru.",
+   "state": "Uttarakhand"
+  },
+  "roopkund": {
+   "name": "Roopkund",
+   "tagline": "The Skeleton Lake — a glacial lake at 5,029m where hundreds of ancient human skeletons surface every summer. India's most haunting trek.",
+   "state": "Uttarakhand"
+  },
+  "rudraprayag": {
+   "name": "Rudraprayag",
+   "tagline": "Where the Alaknanda and Mandakini unite at this fourth prayag, known as Shiva's meeting place.",
+   "state": "Uttarakhand"
+  },
+  "tehri": {
+   "name": "Tehri Lake",
+   "tagline": "Asia largest dam created India largest man-made lake — and now it is becoming a water sports hub.",
+   "state": "Uttarakhand"
+  },
+  "tungnath": {
+   "name": "Tungnath",
+   "tagline": "The highest Shiva temple in the world at 3,680m — a 3.5km trek through rhododendron forests with Chandrashila peak summit as the reward.",
+   "state": "Uttarakhand"
+  },
+  "uttarkashi": {
+   "name": "Uttarkashi",
+   "tagline": "The Kashi of the North — a riverside temple town that doubles as basecamp for serious Himalayan mountaineering and the Char Dham circuit.",
+   "state": "Uttarakhand"
+  },
+  "valley-of-flowers": {
+   "name": "Valley of Flowers",
+   "tagline": "A UNESCO valley that blooms with 500+ wildflower species for exactly 8 weeks a year. Miss the window, miss the point.",
+   "state": "Uttarakhand"
+  },
+  "vishnuprayag": {
+   "name": "Vishnuprayag",
+   "tagline": "Where the Alaknanda and Dhauliganga meet: the first of five sacred confluences.",
+   "state": "Uttarakhand"
+  },
+  "yamunotri": {
+   "name": "Yamunotri",
+   "tagline": "The least visited Char Dham — a 6km trek to the source of the Yamuna with hot springs where pilgrims cook rice in muslin cloth.",
+   "state": "Uttarakhand"
+  },
+  "darjeeling": {
+   "name": "Darjeeling",
+   "tagline": "The Queen of Hills — toy train, tea gardens, and Kanchenjunga sunrise. Colonial-era charm meets Tibetan-Nepali street culture.",
+   "state": "West Bengal"
+  },
+  "kalimpong": {
+   "name": "Kalimpong",
+   "tagline": "Nursery capital of India",
+   "state": "West Bengal"
+  },
+  "kolkata": {
+   "name": "Kolkata",
+   "tagline": "India's cultural capital — where the trams still run, the Puja pandals rewrite themselves every October, and College Street's coffee-house conversations haven't ended since 1940.",
+   "state": "West Bengal"
+  },
+  "shantiniketan": {
+   "name": "Shantiniketan",
+   "tagline": "Rabindranath Tagore's university town",
+   "state": "West Bengal"
+  },
+  "siliguri": {
+   "name": "Siliguri",
+   "tagline": "Chicken Neck gateway to the Northeast",
+   "state": "West Bengal"
+  },
+  "sundarbans": {
+   "name": "Sundarbans",
+   "tagline": "Largest mangrove forest on Earth",
+   "state": "West Bengal"
+  }
+ },
+ "months": {
+  "1": {
+   "month": 1,
+   "monthSlug": "january",
+   "monthLong": "January",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 347,
+    "inAMonthToAvoid": 71,
+    "listed": 347
+   },
+   "states": [
     {
-      "state": "Ladakh",
-      "destinations": [
-        {
-          "id": "alchi",
-          "name": "Alchi",
-          "tagline": "A 1000-year-old Buddhist art gallery hidden in a tiny village — the oldest surviving murals in Ladakh, painted when the Chola dynasty ruled South India.",
-          "type": []
-        },
-        {
-          "id": "drass",
-          "name": "Drass",
-          "tagline": "The second coldest inhabited place on Earth, a war memorial that will make you cry, and -45°C winters.",
-          "type": []
-        },
-        {
-          "id": "hanle",
-          "name": "Hanle",
-          "tagline": "Darkest skies in India — a remote observatory village at 4500m where the Milky Way is visible to the naked eye.",
-          "type": []
-        },
-        {
-          "id": "kargil",
-          "name": "Kargil",
-          "tagline": "The gateway between Kashmir and Ladakh, a war-scarred town finding peace — and the start of the Zanskar road.",
-          "type": []
-        },
-        {
-          "id": "khardung-la",
-          "name": "Khardung La",
-          "tagline": "5,359m pass north of Leh — the gateway to Nubra Valley and a rite of passage for motorcyclists.",
-          "type": []
-        },
-        {
-          "id": "lamayuru",
-          "name": "Lamayuru",
-          "tagline": "The moon landscape monastery — Ladakh at its most alien, with a 1000-year-old gompa perched above a crater of eroded clay.",
-          "type": []
-        },
-        {
-          "id": "leh",
-          "name": "Leh",
-          "tagline": "The town where every road trip to Ladakh begins with 2 mandatory days of doing nothing — and somehow those 2 days become the highlight.",
-          "type": []
-        },
-        {
-          "id": "likir",
-          "name": "Likir",
-          "tagline": "A living monastery where monks still debate, pray, and tend gardens — plus a giant golden Maitreya Buddha visible for miles.",
-          "type": []
-        },
-        {
-          "id": "nubra-valley",
-          "name": "Nubra Valley",
-          "tagline": "Sand dunes at 3000m with double-hump camels, a monastery watching over the valley, and the last Indian village before Pakistan.",
-          "type": []
-        },
-        {
-          "id": "pangong-lake",
-          "name": "Pangong Tso",
-          "tagline": "The most Instagrammed lake in India and the most dangerous for unprepared tourists — 4350m of beauty that punishes anyone who skips acclimatization.",
-          "type": []
-        },
-        {
-          "id": "tso-moriri",
-          "name": "Tso Moriri",
-          "tagline": "Pangong's quieter, wilder twin — where Changpa nomads graze pashmina goats and the lake reflects a sky nobody else is looking at.",
-          "type": []
-        },
-        {
-          "id": "turtuk",
-          "name": "Turtuk",
-          "tagline": "India's last Balti village on the Shyok — opened to visitors in 2010, still feels half-secret.",
-          "type": []
-        },
-        {
-          "id": "umlingla",
-          "name": "Umlingla",
-          "tagline": "World's highest motorable road at 5883m — the ultimate test of altitude, endurance, and vehicle reliability.",
-          "type": []
-        },
-        {
-          "id": "zanskar",
-          "name": "Zanskar Valley",
-          "tagline": "India's most inaccessible inhabited valley — where the river freezes into a walkable sheet and monks live in monasteries hanging from cliffs.",
-          "type": []
-        }
-      ]
+     "state": "Maharashtra",
+     "ids": [
+      "ajanta-caves",
+      "alibaug",
+      "astavinayak-circuit",
+      "aurangabad",
+      "bhimashankar",
+      "daulatabad",
+      "elephanta-caves",
+      "ellora-caves",
+      "ganpatipule",
+      "harihareshwar",
+      "kanheri-caves",
+      "karla-bhaja-caves",
+      "kashid",
+      "kolad",
+      "kolhapur",
+      "lenyadri",
+      "lonar-crater",
+      "mahabaleshwar",
+      "mahad-raigad",
+      "malvan",
+      "matheran",
+      "morgaon",
+      "mumbai",
+      "murud-janjira",
+      "nagpur",
+      "nashik",
+      "ozar",
+      "pali-raigad",
+      "panchgani",
+      "pench-maharashtra",
+      "pune",
+      "raigad-fort",
+      "ranjangaon",
+      "ratnagiri",
+      "satara",
+      "shirdi",
+      "siddhatek",
+      "tarkarli",
+      "theur",
+      "trimbakeshwar"
+     ]
     },
     {
-      "state": "Maharashtra",
-      "destinations": [
-        {
-          "id": "amboli",
-          "name": "Amboli",
-          "tagline": "Maharashtra's southernmost hill station — Sahyadri waterfalls, king cobras, and monsoon magic",
-          "type": []
-        },
-        {
-          "id": "bhandardara",
-          "name": "Bhandardara",
-          "tagline": "Arthur Lake, fireflies in May, and Kalsubai — Maharashtra's rooftop",
-          "type": []
-        },
-        {
-          "id": "bhimashankar",
-          "name": "Bhimashankar",
-          "tagline": "One of 12 Jyotirlingas — Sahyadri temple, giant Indian squirrel sanctuary, and monsoon treks",
-          "type": []
-        },
-        {
-          "id": "igatpuri",
-          "name": "Igatpuri",
-          "tagline": "Vipassana meditation headquarters, monsoon waterfalls, and Sahyadri treks",
-          "type": []
-        },
-        {
-          "id": "khandala",
-          "name": "Khandala",
-          "tagline": "The twin of Lonavala — Bollywood's favourite ghats, Duke's Nose, and the misty Western Ghats",
-          "type": []
-        },
-        {
-          "id": "kolad",
-          "name": "Kolad",
-          "tagline": "Maharashtra's Rishikesh — white water rafting on the Kundalika River, 2 hours from Mumbai",
-          "type": []
-        },
-        {
-          "id": "kolhapur",
-          "name": "Kolhapur",
-          "tagline": "Mahalaxmi Temple, kushti wrestling, and the spiciest misal pav you'll ever eat",
-          "type": []
-        },
-        {
-          "id": "lonavala",
-          "name": "Lonavala",
-          "tagline": "Mumbai-Pune's favourite monsoon escape — fudge, fog, and fort trails",
-          "type": []
-        },
-        {
-          "id": "nashik",
-          "name": "Nashik",
-          "tagline": "Wine capital of India — Trimbakeshwar Jyotirlinga, Godavari ghats, and Sula vineyards",
-          "type": []
-        },
-        {
-          "id": "pune",
-          "name": "Pune",
-          "tagline": "Oxford of the East — Maratha history, misal pav capital, and India's craft beer hub",
-          "type": []
-        },
-        {
-          "id": "raigad-fort",
-          "name": "Raigad Fort",
-          "tagline": "Shivaji's capital — the coronation site of the Maratha Empire, now UNESCO World Heritage",
-          "type": []
-        },
-        {
-          "id": "shirdi",
-          "name": "Shirdi",
-          "tagline": "Sai Baba's holy town — one of India's top 5 pilgrimage destinations, 40,000 visitors daily",
-          "type": []
-        },
-        {
-          "id": "trimbakeshwar",
-          "name": "Trimbakeshwar",
-          "tagline": "Jyotirlinga and Godavari source — where India's second-longest river begins its 1,465km journey",
-          "type": []
-        }
-      ]
+     "state": "Tamil Nadu",
+     "ids": [
+      "chennai",
+      "chettinad",
+      "chidambaram",
+      "coimbatore",
+      "coonoor",
+      "courtallam",
+      "dhanushkodi",
+      "kanchipuram",
+      "kanyakumari",
+      "kotagiri",
+      "kumbakonam",
+      "madurai",
+      "mahabalipuram",
+      "meghamalai",
+      "palani",
+      "pazhamudircholai",
+      "point-calimere",
+      "rameswaram",
+      "srirangam",
+      "swamimalai",
+      "thanjavur",
+      "tharangambadi",
+      "tiruchendur",
+      "tiruparankundram",
+      "tiruttani",
+      "tiruvannamalai",
+      "trichy",
+      "valparai",
+      "vedanthangal",
+      "yercaud"
+     ]
     },
     {
-      "state": "Karnataka",
-      "destinations": [
-        {
-          "id": "belur",
-          "name": "Belur",
-          "tagline": "UNESCO Hoysala temple — Chennakesava's soapstone carvings are the most intricate in India",
-          "type": []
-        },
-        {
-          "id": "dharmasthala",
-          "name": "Dharmasthala",
-          "tagline": "The temple that feeds 30,000 people free every day — Dharmasthala's annadana tradition",
-          "type": []
-        },
-        {
-          "id": "halebidu",
-          "name": "Halebidu",
-          "tagline": "UNESCO Hoysala masterpiece — Hoysaleshwara Temple with 240 wall panels of mythological scenes",
-          "type": []
-        },
-        {
-          "id": "jog-falls",
-          "name": "Jog Falls",
-          "tagline": "India's second-highest plunge waterfall — 253 metres of monsoon fury in four cascades",
-          "type": []
-        },
-        {
-          "id": "mysore",
-          "name": "Mysore",
-          "tagline": "The city of palaces — Chamundi Hills, silk saris, sandalwood, and India's grandest Dasara festival",
-          "type": []
-        },
-        {
-          "id": "shravanabelagola",
-          "name": "Shravanabelagola",
-          "tagline": "The 57-foot Bahubali monolith — world's largest free-standing statue, 1,000 years old",
-          "type": []
-        },
-        {
-          "id": "srirangapatna",
-          "name": "Srirangapatna",
-          "tagline": "Tipu Sultan's island fortress on the Kaveri — where the Tiger of Mysore made his last stand",
-          "type": []
-        }
-      ]
+     "state": "Kerala",
+     "ids": [
+      "alleppey",
+      "bekal",
+      "beypore",
+      "cherai",
+      "chinnar",
+      "eravikulam",
+      "guruvayur",
+      "idukki",
+      "kannur",
+      "kochi",
+      "kollam",
+      "kovalam",
+      "kozhikode",
+      "kumarakom",
+      "kumbalangi",
+      "kuttanad",
+      "marari",
+      "munnar",
+      "nelliyampathy",
+      "ponmudi",
+      "poovar",
+      "sabarimala",
+      "silent-valley",
+      "thekkady",
+      "trivandrum",
+      "thrissur",
+      "vagamon",
+      "varkala",
+      "wayanad"
+     ]
     },
     {
-      "state": "Telangana",
-      "destinations": [
-        {
-          "id": "adilabad",
-          "name": "Adilabad",
-          "tagline": "Kuntala Falls, tiger reserve, and Gond tribal culture — Telangana's wild north",
-          "type": []
-        },
-        {
-          "id": "ananthagiri-hills",
-          "name": "Ananthagiri Hills",
-          "tagline": "Hyderabad's nearest hill escape — 79km to misty forests and ancient temples",
-          "type": []
-        },
-        {
-          "id": "kolanupaka",
-          "name": "Kolanupaka",
-          "tagline": "2,000-year-old jade Mahaveer statue — Telangana's hidden Jain treasure",
-          "type": []
-        },
-        {
-          "id": "pillalamarri",
-          "name": "Pillalamarri",
-          "tagline": "800-year-old banyan tree — India's 2nd largest, with Sufi tombs underneath",
-          "type": []
-        },
-        {
-          "id": "pochampally",
-          "name": "Pochampally",
-          "tagline": "UNESCO-recognized ikat weaving village — India's first GI-tagged handloom",
-          "type": []
-        },
-        {
-          "id": "ramappa-temple",
-          "name": "Ramappa Temple",
-          "tagline": "UNESCO World Heritage (2021) — the only temple in India named after its sculptor",
-          "type": []
-        }
-      ]
+     "state": "Karnataka",
+     "ids": [
+      "aihole",
+      "badami",
+      "bandipur",
+      "belur",
+      "bengaluru",
+      "bidar",
+      "bijapur",
+      "chikmagalur",
+      "chitradurga",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "gokarna",
+      "gulbarga",
+      "halebidu",
+      "hampi",
+      "karwar",
+      "kukke-subramanya",
+      "mangalore",
+      "murudeshwar",
+      "mysore",
+      "nagarhole",
+      "nandi-hills",
+      "pattadakal",
+      "sakleshpur",
+      "shravanabelagola",
+      "srirangapatna",
+      "udupi"
+     ]
     },
     {
-      "state": "Himachal Pradesh",
-      "destinations": [
-        {
-          "id": "chandratal",
-          "name": "Chandratal",
-          "tagline": "Crescent-shaped lake at 4,300m — reachable only in summer, camped beside on borrowed time.",
-          "type": []
-        },
-        {
-          "id": "keylong",
-          "name": "Keylong",
-          "tagline": "Lahaul district HQ — the most important town nobody stops in, gateway to Leh from HP side.",
-          "type": []
-        },
-        {
-          "id": "kinner-kailash",
-          "name": "Kinner Kailash",
-          "tagline": "A natural Shivalingam rock on a 6,055m peak with a challenging 5-day parikrama.",
-          "type": []
-        },
-        {
-          "id": "manimahesh-kailash",
-          "name": "Manimahesh Kailash",
-          "tagline": "An unclimbed sacred peak above Manimahesh Lake, honored by the annual Janmashtami-to-Radha Ashtami yatra.",
-          "type": []
-        },
-        {
-          "id": "shrikhand-mahadev",
-          "name": "Shrikhand Mahadev",
-          "tagline": "One of India's toughest pilgrim treks: a 5-day ordeal with vertical snow pitches and a 75-foot Shivalingam.",
-          "type": []
-        }
-      ]
+     "state": "Gujarat",
+     "ids": [
+      "ahmedabad",
+      "bhavnagar",
+      "champaner-pavagadh",
+      "dakor",
+      "dholavira",
+      "dwarka",
+      "gandhinagar",
+      "gir-national-park",
+      "junagadh",
+      "kutch",
+      "lothal",
+      "mandvi",
+      "marine-national-park",
+      "girnar",
+      "nalsarovar",
+      "palitana",
+      "porbandar",
+      "rajkot",
+      "rani-ki-vav",
+      "rann-of-kutch",
+      "saputara",
+      "sasangir",
+      "somnath",
+      "statue-of-unity",
+      "surat",
+      "vadodara",
+      "velavadar"
+     ]
     },
     {
-      "state": "Jammu & Kashmir",
-      "destinations": [
-        {
-          "id": "bangus-valley",
-          "name": "Bangus Valley",
-          "tagline": "A permit-required frontier valley near the LoC that rewards the bureaucratic effort with meadows nobody else is standing in.",
-          "type": []
-        },
-        {
-          "id": "gurez-valley",
-          "name": "Gurez Valley",
-          "tagline": "The most beautiful valley you've never heard of — because it's on the LoC and was closed to civilians until 2007.",
-          "type": []
-        },
-        {
-          "id": "kishtwar",
-          "name": "Kishtwar",
-          "tagline": "Where the Himalaya gets wild — Kishtwar is the adventure frontier that even Ladakh seekers skip.",
-          "type": []
-        },
-        {
-          "id": "sinthan-top",
-          "name": "Sinthan Top",
-          "tagline": "A high pass between Kashmir and Kishtwar where the meadow at the top makes you forget you're on a road.",
-          "type": []
-        },
-        {
-          "id": "tosamaidan",
-          "name": "Tosamaidan",
-          "tagline": "Asia's largest meadow was an army artillery range until 2014. The mines are gone. The beauty was always there.",
-          "type": []
-        }
-      ]
+     "state": "Andhra Pradesh",
+     "ids": [
+      "ahobilam",
+      "amaravati",
+      "araku-valley",
+      "belum-caves",
+      "borra-caves",
+      "gandikota",
+      "horsley-hills",
+      "konaseema",
+      "lambasingi",
+      "lepakshi",
+      "machilipatnam",
+      "maredumilli",
+      "nagarjuna-sagar",
+      "pulicat-lake",
+      "rajahmundry",
+      "srikalahasti",
+      "srisailam",
+      "tirumala",
+      "tirupati",
+      "undavalli-caves",
+      "vijayawada",
+      "visakhapatnam"
+     ]
     },
     {
-      "state": "Uttarakhand",
-      "destinations": [
-        {
-          "id": "hemkund-sahib",
-          "name": "Hemkund Sahib",
-          "tagline": "Sikh pilgrimage shrine at 4,633m — a 6km walk up from Ghangaria, beside a glacial lake.",
-          "type": []
-        },
-        {
-          "id": "mansarovar-kailash",
-          "name": "Mount Kailash & Mansarovar",
-          "tagline": "The real Mount Kailash (6,638m) and sacred Lake Mansarovar, a 24-day yatra via the Lipulekh Pass.",
-          "type": []
-        },
-        {
-          "id": "valley-of-flowers",
-          "name": "Valley of Flowers",
-          "tagline": "A UNESCO valley that blooms with 500+ wildflower species for exactly 8 weeks a year. Miss the window, miss the point.",
-          "type": []
-        }
-      ]
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "bhitarkanika",
+      "bhubaneswar",
+      "diamond-triangle",
+      "chandipur",
+      "chilika-lake",
+      "cuttack",
+      "daringbadi",
+      "deomali",
+      "dhauli",
+      "gahirmatha",
+      "gopalpur-on-sea",
+      "konark",
+      "koraput",
+      "nrusinghanath-harishankar",
+      "puri",
+      "raghurajpur",
+      "sambalpur",
+      "satkosia",
+      "simlipal",
+      "talasari",
+      "taptapani"
+     ]
     },
     {
-      "state": "Madhya Pradesh",
-      "destinations": [
-        {
-          "id": "mandu",
-          "name": "Mandu",
-          "tagline": "Romantic medieval citadel at 634m — Jahaz Mahal, Rani Roopmati's love story, and 45 sq km of Afghan-Mughal ruins that most of India has forgotten.",
-          "type": []
-        },
-        {
-          "id": "orchha",
-          "name": "Orchha",
-          "tagline": "A forgotten Bundela kingdom on the Betwa river — grand cenotaphs and palaces with zero crowds and sunset views that rival any fort in India.",
-          "type": []
-        }
-      ]
+     "state": "Goa",
+     "ids": [
+      "agonda",
+      "anjuna",
+      "arambol",
+      "assagao",
+      "calangute-baga",
+      "candolim",
+      "chorao-divar",
+      "colva-benaulim",
+      "dudhsagar-falls",
+      "fort-aguada",
+      "mandrem",
+      "margao",
+      "mollem",
+      "morjim",
+      "old-goa",
+      "palolem",
+      "panaji",
+      "reis-magos",
+      "siolim",
+      "ponda-spice",
+      "vagator"
+     ]
     },
     {
-      "state": "Tamil Nadu",
-      "destinations": [
-        {
-          "id": "courtallam",
-          "name": "Courtallam (Kutralam)",
-          "tagline": "Spa of South India — 9 herb-infused waterfalls with natural healing properties",
-          "type": []
-        },
-        {
-          "id": "hogenakkal",
-          "name": "Hogenakkal Falls",
-          "tagline": "India's Niagara — coracle rides through waterfalls and a 2,000-year-old oil massage tradition",
-          "type": []
-        }
-      ]
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "alampur",
+      "ananthagiri-hills",
+      "basara",
+      "bhadrachalam",
+      "bhongir",
+      "hyderabad",
+      "kolanupaka",
+      "laknavaram",
+      "medak",
+      "nagarjuna-konda",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple",
+      "warangal"
+     ]
     },
     {
-      "state": "Andhra Pradesh",
-      "destinations": [
-        {
-          "id": "belum-caves",
-          "name": "Belum Caves",
-          "tagline": "India's 2nd longest cave system — 3.2km of stalactites deep underground",
-          "type": []
-        }
-      ]
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "bhimbetka",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "kanha",
+      "khajuraho",
+      "mandu",
+      "omkareshwar",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+     ]
     },
     {
-      "state": "Chhattisgarh",
-      "destinations": [
-        {
-          "id": "chitrakote-falls",
-          "name": "Chitrakote Falls",
-          "tagline": "India's Niagara, widest waterfall, Bastar tribal region",
-          "type": []
-        }
-      ]
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "baratang-island",
+      "barren-island",
+      "chidiya-tapu",
+      "diglipur",
+      "havelock-island",
+      "little-andaman",
+      "long-island-andaman",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "rangat",
+      "ross-island"
+     ]
     },
     {
-      "state": "Goa",
-      "destinations": [
-        {
-          "id": "ponda-spice",
-          "name": "Spice Plantations (Ponda)",
-          "tagline": "Walk through nutmeg, pepper, and vanilla — Goa's spice plantations are edible education",
-          "type": []
-        }
-      ]
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "dawki",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "nongriat",
+      "shillong",
+      "shnongpdeng",
+      "tura"
+     ]
     },
     {
-      "state": "Gujarat",
-      "destinations": [
-        {
-          "id": "saputara",
-          "name": "Saputara",
-          "tagline": "Gujarat's only hill station in the Western Ghats — tribal culture meets misty forests",
-          "type": []
-        }
-      ]
+     "state": "Assam",
+     "ids": [
+      "charaideo",
+      "guwahati",
+      "haflong",
+      "jorhat",
+      "kaziranga",
+      "majuli",
+      "manas-national-park",
+      "sivasagar"
+     ]
     },
     {
-      "state": "Kerala",
-      "destinations": [
-        {
-          "id": "athirapally",
-          "name": "Athirapally Falls",
-          "tagline": "Niagara of India — India's largest waterfall by volume flow",
-          "type": []
-        }
-      ]
+     "state": "Rajasthan",
+     "ids": [
+      "gagron-fort",
+      "jaipur",
+      "jaisalmer",
+      "jodhpur",
+      "ranakpur",
+      "sariska",
+      "udaipur"
+     ]
     },
     {
-      "state": "Odisha",
-      "destinations": [
-        {
-          "id": "raghurajpur",
-          "name": "Raghurajpur",
-          "tagline": "India's first Heritage Craft Village — every home is a 1,500-year-old art gallery",
-          "type": []
-        }
-      ]
+     "state": "Bihar",
+     "ids": [
+      "bodh-gaya",
+      "nalanda",
+      "patna",
+      "pawapuri",
+      "rajgir",
+      "vaishali"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla",
+      "deoghar",
+      "netarhat",
+      "ranchi",
+      "shikharji"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "khonoma",
+      "kiphire",
+      "kohima",
+      "mokokchung",
+      "mon"
+     ]
+    },
+    {
+     "state": "Uttar Pradesh",
+     "ids": [
+      "dudhwa-national-park",
+      "fatehpur-sikri",
+      "prayagraj",
+      "sarnath",
+      "varanasi"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "aalo",
+      "bhalukpong",
+      "dambuk",
+      "pasighat"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "barnawapara",
+      "bhoramdeo",
+      "jagdalpur",
+      "sirpur"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "moreh",
+      "tamenglong"
+     ]
+    },
+    {
+     "state": "Puducherry",
+     "ids": [
+      "auroville",
+      "karaikal",
+      "pondicherry",
+      "puducherry"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills",
+      "neermahal",
+      "unakoti"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "kolkata",
+      "shantiniketan",
+      "siliguri",
+      "sundarbans"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "daman",
+      "diu",
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "champhai",
+      "lunglei"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "gulmarg",
+      "patnitop"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "auli",
+      "corbett-national-park"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "kufri"
+     ]
+    },
+    {
+     "state": "Ladakh",
+     "ids": [
+      "zanskar"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "damdama-sahib"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "rinchenpong"
+     ]
     }
-  ]
+   ]
+  },
+  "2": {
+   "month": 2,
+   "monthSlug": "february",
+   "monthLong": "February",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 375,
+    "inAMonthToAvoid": 68,
+    "listed": 374
+   },
+   "states": [
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "ajanta-caves",
+      "alibaug",
+      "astavinayak-circuit",
+      "aurangabad",
+      "bhimashankar",
+      "daulatabad",
+      "elephanta-caves",
+      "ellora-caves",
+      "ganpatipule",
+      "harihareshwar",
+      "kanheri-caves",
+      "karla-bhaja-caves",
+      "kashid",
+      "kolad",
+      "kolhapur",
+      "lenyadri",
+      "lonar-crater",
+      "mahabaleshwar",
+      "mahad-raigad",
+      "malvan",
+      "matheran",
+      "morgaon",
+      "mumbai",
+      "murud-janjira",
+      "nagpur",
+      "nashik",
+      "ozar",
+      "pali-raigad",
+      "panchgani",
+      "pench-maharashtra",
+      "pune",
+      "raigad-fort",
+      "ranjangaon",
+      "ratnagiri",
+      "satara",
+      "shirdi",
+      "siddhatek",
+      "tarkarli",
+      "theur",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "anamalai",
+      "chennai",
+      "chettinad",
+      "chidambaram",
+      "coimbatore",
+      "coonoor",
+      "dhanushkodi",
+      "kanchipuram",
+      "kanyakumari",
+      "kotagiri",
+      "kumbakonam",
+      "madurai",
+      "mahabalipuram",
+      "meghamalai",
+      "mudumalai",
+      "palani",
+      "pazhamudircholai",
+      "rameswaram",
+      "srirangam",
+      "swamimalai",
+      "thanjavur",
+      "tharangambadi",
+      "tiruchendur",
+      "tiruparankundram",
+      "tiruttani",
+      "tiruvannamalai",
+      "trichy",
+      "valparai",
+      "vedanthangal",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "aihole",
+      "badami",
+      "bandipur",
+      "belur",
+      "bengaluru",
+      "bidar",
+      "bijapur",
+      "chikmagalur",
+      "chitradurga",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "gokarna",
+      "gulbarga",
+      "halebidu",
+      "hampi",
+      "karwar",
+      "kukke-subramanya",
+      "mangalore",
+      "murudeshwar",
+      "mysore",
+      "nagarhole",
+      "nandi-hills",
+      "pattadakal",
+      "sakleshpur",
+      "shravanabelagola",
+      "srirangapatna",
+      "udupi"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "alleppey",
+      "bekal",
+      "beypore",
+      "cherai",
+      "chinnar",
+      "guruvayur",
+      "idukki",
+      "kannur",
+      "kochi",
+      "kollam",
+      "kovalam",
+      "kozhikode",
+      "kumarakom",
+      "kumbalangi",
+      "kuttanad",
+      "marari",
+      "munnar",
+      "nelliyampathy",
+      "ponmudi",
+      "poovar",
+      "sabarimala",
+      "silent-valley",
+      "thekkady",
+      "trivandrum",
+      "thrissur",
+      "vagamon",
+      "varkala",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "ahmedabad",
+      "bhavnagar",
+      "champaner-pavagadh",
+      "dholavira",
+      "dwarka",
+      "gandhinagar",
+      "gir-national-park",
+      "junagadh",
+      "kutch",
+      "lothal",
+      "mandvi",
+      "marine-national-park",
+      "girnar",
+      "nalsarovar",
+      "palitana",
+      "porbandar",
+      "rajkot",
+      "rani-ki-vav",
+      "rann-of-kutch",
+      "sasangir",
+      "somnath",
+      "statue-of-unity",
+      "surat",
+      "vadodara",
+      "velavadar"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "ahobilam",
+      "amaravati",
+      "araku-valley",
+      "belum-caves",
+      "borra-caves",
+      "gandikota",
+      "horsley-hills",
+      "konaseema",
+      "lambasingi",
+      "lepakshi",
+      "machilipatnam",
+      "maredumilli",
+      "nagarjuna-sagar",
+      "pulicat-lake",
+      "rajahmundry",
+      "srikalahasti",
+      "srisailam",
+      "tirumala",
+      "tirupati",
+      "undavalli-caves",
+      "vijayawada",
+      "visakhapatnam"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "bhitarkanika",
+      "bhubaneswar",
+      "diamond-triangle",
+      "chandipur",
+      "chilika-lake",
+      "cuttack",
+      "daringbadi",
+      "deomali",
+      "dhauli",
+      "gahirmatha",
+      "gopalpur-on-sea",
+      "konark",
+      "koraput",
+      "nrusinghanath-harishankar",
+      "puri",
+      "raghurajpur",
+      "sambalpur",
+      "satkosia",
+      "simlipal",
+      "talasari",
+      "taptapani"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ajmer",
+      "alwar",
+      "barmer",
+      "bharatpur",
+      "bikaner",
+      "bundi",
+      "chittorgarh",
+      "deeg",
+      "dungarpur",
+      "gagron-fort",
+      "jaipur",
+      "jaisalmer",
+      "jodhpur",
+      "kumbhalgarh",
+      "mount-abu",
+      "neemrana",
+      "osian",
+      "pushkar",
+      "ranakpur",
+      "sariska",
+      "shekhawati",
+      "udaipur"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "agonda",
+      "anjuna",
+      "arambol",
+      "assagao",
+      "calangute-baga",
+      "candolim",
+      "chorao-divar",
+      "colva-benaulim",
+      "fort-aguada",
+      "mandrem",
+      "margao",
+      "mollem",
+      "morjim",
+      "old-goa",
+      "palolem",
+      "panaji",
+      "reis-magos",
+      "siolim",
+      "ponda-spice",
+      "vagator"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "alampur",
+      "ananthagiri-hills",
+      "basara",
+      "bhadrachalam",
+      "bhongir",
+      "hyderabad",
+      "kolanupaka",
+      "laknavaram",
+      "medak",
+      "nagarjuna-konda",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple",
+      "warangal"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "bhimbetka",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "kanha",
+      "khajuraho",
+      "mandu",
+      "omkareshwar",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+     ]
+    },
+    {
+     "state": "Uttar Pradesh",
+     "ids": [
+      "agra",
+      "ayodhya",
+      "chitrakoot",
+      "dudhwa-national-park",
+      "fatehpur-sikri",
+      "kushinagar",
+      "lucknow",
+      "mathura",
+      "prayagraj",
+      "sarnath",
+      "sravasti",
+      "varanasi",
+      "vrindavan"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "baratang-island",
+      "barren-island",
+      "chidiya-tapu",
+      "diglipur",
+      "havelock-island",
+      "little-andaman",
+      "long-island-andaman",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "rangat",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "dawki",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "nongriat",
+      "shillong",
+      "shnongpdeng",
+      "tura"
+     ]
+    },
+    {
+     "state": "Assam",
+     "ids": [
+      "charaideo",
+      "guwahati",
+      "haflong",
+      "jorhat",
+      "kaziranga",
+      "majuli",
+      "manas-national-park",
+      "sivasagar"
+     ]
+    },
+    {
+     "state": "Bihar",
+     "ids": [
+      "bodh-gaya",
+      "nalanda",
+      "patna",
+      "pawapuri",
+      "rajgir",
+      "vaishali"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla",
+      "deoghar",
+      "netarhat",
+      "ranchi",
+      "shikharji"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "khonoma",
+      "kiphire",
+      "kohima",
+      "mokokchung",
+      "mon"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "aalo",
+      "bhalukpong",
+      "dambuk",
+      "pasighat"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "barnawapara",
+      "bhoramdeo",
+      "jagdalpur",
+      "sirpur"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "moreh",
+      "tamenglong"
+     ]
+    },
+    {
+     "state": "Puducherry",
+     "ids": [
+      "auroville",
+      "karaikal",
+      "pondicherry",
+      "puducherry"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills",
+      "neermahal",
+      "unakoti"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "kolkata",
+      "shantiniketan",
+      "siliguri",
+      "sundarbans"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "daman",
+      "diu",
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "champhai",
+      "lunglei"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "amritsar",
+      "patiala",
+      "damdama-sahib"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "auli",
+      "haridwar",
+      "corbett-national-park"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "kurukshetra",
+      "pinjore-gardens"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "kufri",
+      "manali"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "gulmarg",
+      "patnitop"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "dzongu",
+      "tashiding"
+     ]
+    },
+    {
+     "state": "Chandigarh",
+     "ids": [
+      "chandigarh"
+     ]
+    },
+    {
+     "state": "Delhi",
+     "ids": [
+      "delhi"
+     ]
+    },
+    {
+     "state": "Ladakh",
+     "ids": [
+      "zanskar"
+     ]
+    }
+   ]
+  },
+  "3": {
+   "month": 3,
+   "monthSlug": "march",
+   "monthLong": "March",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 392,
+    "inAMonthToAvoid": 50,
+    "listed": 391
+   },
+   "states": [
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "ajanta-caves",
+      "alibaug",
+      "astavinayak-circuit",
+      "aurangabad",
+      "daulatabad",
+      "elephanta-caves",
+      "ellora-caves",
+      "ganpatipule",
+      "harihareshwar",
+      "kanheri-caves",
+      "karla-bhaja-caves",
+      "kashid",
+      "kolhapur",
+      "lenyadri",
+      "lonar-crater",
+      "mahabaleshwar",
+      "mahad-raigad",
+      "malvan",
+      "matheran",
+      "morgaon",
+      "murud-janjira",
+      "nagpur",
+      "nashik",
+      "ozar",
+      "pali-raigad",
+      "panchgani",
+      "pench-maharashtra",
+      "pune",
+      "raigad-fort",
+      "ranjangaon",
+      "ratnagiri",
+      "shirdi",
+      "siddhatek",
+      "tadoba",
+      "tarkarli",
+      "theur",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "aihole",
+      "badami",
+      "bandipur",
+      "belur",
+      "bengaluru",
+      "bidar",
+      "bijapur",
+      "chikmagalur",
+      "chitradurga",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "gokarna",
+      "gulbarga",
+      "halebidu",
+      "hampi",
+      "kabini",
+      "karwar",
+      "kukke-subramanya",
+      "mangalore",
+      "murudeshwar",
+      "mysore",
+      "nagarhole",
+      "nandi-hills",
+      "pattadakal",
+      "sakleshpur",
+      "shravanabelagola",
+      "srirangapatna",
+      "udupi"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "anamalai",
+      "chettinad",
+      "coimbatore",
+      "coonoor",
+      "dhanushkodi",
+      "kanchipuram",
+      "kotagiri",
+      "mahabalipuram",
+      "meghamalai",
+      "mudumalai",
+      "ooty",
+      "palani",
+      "pazhamudircholai",
+      "rameswaram",
+      "swamimalai",
+      "tharangambadi",
+      "tiruchendur",
+      "tiruparankundram",
+      "tiruttani",
+      "tiruvannamalai",
+      "valparai",
+      "vedanthangal",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "bhitarkanika",
+      "bhubaneswar",
+      "diamond-triangle",
+      "chandipur",
+      "chilika-lake",
+      "cuttack",
+      "daringbadi",
+      "deomali",
+      "dhauli",
+      "gahirmatha",
+      "gopalpur-on-sea",
+      "konark",
+      "koraput",
+      "nrusinghanath-harishankar",
+      "puri",
+      "raghurajpur",
+      "sambalpur",
+      "satkosia",
+      "simlipal",
+      "talasari",
+      "taptapani"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "alleppey",
+      "bekal",
+      "beypore",
+      "cherai",
+      "guruvayur",
+      "idukki",
+      "kannur",
+      "kochi",
+      "kozhikode",
+      "kumarakom",
+      "kumbalangi",
+      "marari",
+      "munnar",
+      "nelliyampathy",
+      "ponmudi",
+      "poovar",
+      "trivandrum",
+      "thrissur",
+      "vagamon",
+      "varkala",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "almora",
+      "bhimtal",
+      "binsar",
+      "chakrata",
+      "champawat",
+      "chaukori",
+      "dhanaulti",
+      "haridwar",
+      "corbett-national-park",
+      "kanatal",
+      "kausani",
+      "landour",
+      "lansdowne",
+      "mukteshwar",
+      "mussoorie",
+      "nainital",
+      "pithoragarh",
+      "ranikhet",
+      "rishikesh",
+      "tehri",
+      "uttarkashi"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "agonda",
+      "anjuna",
+      "arambol",
+      "assagao",
+      "calangute-baga",
+      "candolim",
+      "chorao-divar",
+      "colva-benaulim",
+      "fort-aguada",
+      "mandrem",
+      "margao",
+      "mollem",
+      "morjim",
+      "old-goa",
+      "palolem",
+      "panaji",
+      "reis-magos",
+      "siolim",
+      "ponda-spice",
+      "vagator"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "ahobilam",
+      "amaravati",
+      "araku-valley",
+      "belum-caves",
+      "gandikota",
+      "horsley-hills",
+      "konaseema",
+      "lepakshi",
+      "machilipatnam",
+      "maredumilli",
+      "nagarjuna-sagar",
+      "rajahmundry",
+      "srikalahasti",
+      "srisailam",
+      "tirumala",
+      "tirupati",
+      "undavalli-caves",
+      "vijayawada",
+      "visakhapatnam"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "barot-valley",
+      "bir-billing",
+      "chail",
+      "chamba",
+      "dalhousie",
+      "dharamshala",
+      "jibhi",
+      "kasauli",
+      "kasol",
+      "kufri",
+      "kullu",
+      "mandi",
+      "manikaran",
+      "mcleodganj",
+      "palampur",
+      "parvati-valley",
+      "prashar-lake",
+      "shimla",
+      "solan"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ajmer",
+      "alwar",
+      "barmer",
+      "bharatpur",
+      "bikaner",
+      "bundi",
+      "chittorgarh",
+      "deeg",
+      "dungarpur",
+      "gagron-fort",
+      "kumbhalgarh",
+      "mount-abu",
+      "neemrana",
+      "osian",
+      "pushkar",
+      "ranakpur",
+      "ranthambore",
+      "sariska",
+      "shekhawati"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "aritar",
+      "dzongu",
+      "gangtok",
+      "khangchendzonga-np",
+      "lachen",
+      "lachung",
+      "mangan",
+      "namchi",
+      "pelling",
+      "phodong",
+      "ravangla",
+      "rinchenpong",
+      "tashiding",
+      "tsomgo-lake",
+      "yuksom",
+      "zuluk"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "alampur",
+      "ananthagiri-hills",
+      "basara",
+      "bhadrachalam",
+      "bhongir",
+      "hyderabad",
+      "kolanupaka",
+      "laknavaram",
+      "medak",
+      "nagarjuna-konda",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple",
+      "warangal"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "bhimbetka",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "kanha",
+      "khajuraho",
+      "mandu",
+      "omkareshwar",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "baratang-island",
+      "barren-island",
+      "chidiya-tapu",
+      "diglipur",
+      "havelock-island",
+      "little-andaman",
+      "long-island-andaman",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "rangat",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Uttar Pradesh",
+     "ids": [
+      "agra",
+      "ayodhya",
+      "chitrakoot",
+      "dudhwa-national-park",
+      "fatehpur-sikri",
+      "kushinagar",
+      "lucknow",
+      "mathura",
+      "sarnath",
+      "sravasti",
+      "varanasi",
+      "vrindavan"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "anini",
+      "bhalukpong",
+      "bomdila",
+      "dirang",
+      "mechuka",
+      "namdapha",
+      "pasighat",
+      "tawang",
+      "ziro-valley"
+     ]
+    },
+    {
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "dawki",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "nongriat",
+      "shillong",
+      "shnongpdeng",
+      "tura"
+     ]
+    },
+    {
+     "state": "Assam",
+     "ids": [
+      "charaideo",
+      "guwahati",
+      "haflong",
+      "jorhat",
+      "kaziranga",
+      "majuli",
+      "manas-national-park",
+      "sivasagar"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "dzukou-valley",
+      "khonoma",
+      "kiphire",
+      "kohima",
+      "mokokchung",
+      "mon",
+      "pfutsero"
+     ]
+    },
+    {
+     "state": "Bihar",
+     "ids": [
+      "bodh-gaya",
+      "nalanda",
+      "patna",
+      "pawapuri",
+      "rajgir",
+      "vaishali"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "darjeeling",
+      "kalimpong",
+      "kolkata",
+      "shantiniketan",
+      "siliguri",
+      "sundarbans"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "achabal",
+      "gulmarg",
+      "katra",
+      "kokernag",
+      "verinag"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla",
+      "deoghar",
+      "netarhat",
+      "ranchi",
+      "shikharji"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "moreh",
+      "tamenglong",
+      "ukhrul"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "barnawapara",
+      "bhoramdeo",
+      "jagdalpur",
+      "sirpur"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "champhai",
+      "lunglei",
+      "phawngpui-peak"
+     ]
+    },
+    {
+     "state": "Puducherry",
+     "ids": [
+      "auroville",
+      "karaikal",
+      "pondicherry",
+      "puducherry"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "amritsar",
+      "anandpur-sahib",
+      "patiala",
+      "damdama-sahib"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills",
+      "neermahal",
+      "unakoti"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "gir-national-park",
+      "modhera",
+      "sasangir"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "kurukshetra",
+      "morni-hills",
+      "pinjore-gardens"
+     ]
+    },
+    {
+     "state": "Chandigarh",
+     "ids": [
+      "chandigarh"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Delhi",
+     "ids": [
+      "delhi"
+     ]
+    }
+   ]
+  },
+  "4": {
+   "month": 4,
+   "monthSlug": "april",
+   "monthLong": "April",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 159,
+    "inAMonthToAvoid": 79,
+    "listed": 159
+   },
+   "states": [
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "adi-kailash",
+      "almora",
+      "bhimtal",
+      "binsar",
+      "chakrata",
+      "champawat",
+      "chaukori",
+      "chopta",
+      "devprayag",
+      "dhanaulti",
+      "gopeshwar",
+      "haridwar",
+      "corbett-national-park",
+      "kanatal",
+      "karnaprayag",
+      "kausani",
+      "landour",
+      "lansdowne",
+      "mukteshwar",
+      "munsiyari",
+      "mussoorie",
+      "nainital",
+      "nandaprayag",
+      "pithoragarh",
+      "ranikhet",
+      "rishikesh",
+      "rudraprayag",
+      "tehri",
+      "tungnath",
+      "uttarkashi",
+      "vishnuprayag"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "barot-valley",
+      "bir-billing",
+      "chail",
+      "chamba",
+      "dalhousie",
+      "dharamshala",
+      "great-himalayan-np",
+      "jibhi",
+      "kasauli",
+      "kasol",
+      "kufri",
+      "kullu",
+      "mandi",
+      "manikaran",
+      "mcleodganj",
+      "palampur",
+      "parvati-valley",
+      "prashar-lake",
+      "sarahan",
+      "shimla",
+      "solan"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "aritar",
+      "dzongu",
+      "gangtok",
+      "gurudongmar-lake",
+      "khangchendzonga-np",
+      "lachen",
+      "lachung",
+      "mangan",
+      "namchi",
+      "pelling",
+      "phodong",
+      "ravangla",
+      "rinchenpong",
+      "tashiding",
+      "tsomgo-lake",
+      "yuksom",
+      "yumthang-valley",
+      "zuluk"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "achabal",
+      "doodhpathri",
+      "katra",
+      "kokernag",
+      "lolab-valley",
+      "pahalgam",
+      "srinagar",
+      "verinag",
+      "yusmarg"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "anamalai",
+      "coonoor",
+      "kodaikanal",
+      "kotagiri",
+      "mudumalai",
+      "ooty",
+      "valparai",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "baratang-island",
+      "chidiya-tapu",
+      "havelock-island",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "anini",
+      "bomdila",
+      "dirang",
+      "mechuka",
+      "namdapha",
+      "tawang",
+      "ziro-valley"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "eravikulam",
+      "kannur",
+      "kumbalangi",
+      "ponmudi",
+      "thrissur",
+      "vagamon",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "shillong"
+     ]
+    },
+    {
+     "state": "Assam",
+     "ids": [
+      "guwahati",
+      "kaziranga",
+      "majuli",
+      "manas-national-park"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "kolanupaka",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "bandipur",
+      "kabini",
+      "nagarhole"
+     ]
+    },
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "pench-maharashtra",
+      "ratnagiri",
+      "tadoba"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "ukhrul"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "darjeeling",
+      "kalimpong",
+      "siliguri"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "old-goa",
+      "reis-magos"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "kanha"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "phawngpui-peak"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "dzukou-valley",
+      "pfutsero"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "raghurajpur"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ranthambore",
+      "sariska"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "belum-caves"
+     ]
+    },
+    {
+     "state": "Chandigarh",
+     "ids": [
+      "chandigarh"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "bhoramdeo"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "morni-hills"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "anandpur-sahib"
+     ]
+    }
+   ]
+  },
+  "5": {
+   "month": 5,
+   "monthSlug": "may",
+   "monthLong": "May",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 146,
+    "inAMonthToAvoid": 195,
+    "listed": 146
+   },
+   "states": [
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "adi-kailash",
+      "almora",
+      "badrinath",
+      "chakrata",
+      "champawat",
+      "chaukori",
+      "chopta",
+      "devprayag",
+      "dhanaulti",
+      "gangotri",
+      "gopeshwar",
+      "guptkashi",
+      "har-ki-doon",
+      "haridwar",
+      "joshimath",
+      "kanatal",
+      "karnaprayag",
+      "kedarnath",
+      "landour",
+      "lansdowne",
+      "mansarovar-kailash",
+      "munsiyari",
+      "nandaprayag",
+      "pithoragarh",
+      "ranikhet",
+      "roopkund",
+      "rudraprayag",
+      "tehri",
+      "tungnath",
+      "uttarkashi",
+      "vishnuprayag",
+      "yamunotri"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "barot-valley",
+      "bir-billing",
+      "chail",
+      "chamba",
+      "chitkul",
+      "dalhousie",
+      "great-himalayan-np",
+      "jibhi",
+      "kalpa",
+      "kasauli",
+      "kasol",
+      "kinnaur",
+      "kullu",
+      "lahaul-valley",
+      "mandi",
+      "manikaran",
+      "nako",
+      "palampur",
+      "parvati-valley",
+      "prashar-lake",
+      "sangla",
+      "sarahan",
+      "sissu",
+      "solan",
+      "tirthan-valley"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "aritar",
+      "dzongu",
+      "gangtok",
+      "gurudongmar-lake",
+      "khangchendzonga-np",
+      "lachen",
+      "lachung",
+      "mangan",
+      "namchi",
+      "nathu-la",
+      "pelling",
+      "phodong",
+      "ravangla",
+      "tsomgo-lake",
+      "yuksom",
+      "yumthang-valley",
+      "zuluk"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "achabal",
+      "bhaderwah",
+      "doodhpathri",
+      "katra",
+      "kokernag",
+      "lolab-valley",
+      "pahalgam",
+      "patnitop",
+      "sonamarg",
+      "srinagar",
+      "tosamaidan",
+      "verinag",
+      "yusmarg"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "anamalai",
+      "coonoor",
+      "kodaikanal",
+      "kotagiri",
+      "mudumalai",
+      "ooty",
+      "valparai",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "anini",
+      "bomdila",
+      "dirang",
+      "mechuka",
+      "namdapha",
+      "tawang",
+      "ziro-valley"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "chidiya-tapu",
+      "havelock-island",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "kannur",
+      "kumbalangi",
+      "ponmudi",
+      "thrissur",
+      "vagamon",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "bhandardara",
+      "pench-maharashtra",
+      "ratnagiri",
+      "tadoba"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "kolanupaka",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "bandipur",
+      "kabini",
+      "nagarhole"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "darjeeling",
+      "kalimpong",
+      "siliguri"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "old-goa",
+      "reis-magos"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "kanha"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "dzukou-valley",
+      "pfutsero"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "belum-caves"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "morni-hills"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "ukhrul"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "phawngpui-peak"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "raghurajpur"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ranthambore"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "jampui-hills"
+     ]
+    }
+   ]
+  },
+  "6": {
+   "month": 6,
+   "monthSlug": "june",
+   "monthLong": "June",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 72,
+    "inAMonthToAvoid": 351,
+    "listed": 72
+   },
+   "states": [
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "adi-kailash",
+      "badrinath",
+      "devprayag",
+      "gangotri",
+      "guptkashi",
+      "har-ki-doon",
+      "hemkund-sahib",
+      "joshimath",
+      "karnaprayag",
+      "mansarovar-kailash",
+      "nandaprayag",
+      "roopkund",
+      "rudraprayag",
+      "uttarkashi",
+      "vishnuprayag",
+      "yamunotri"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "great-himalayan-np",
+      "kalpa",
+      "kaza",
+      "keylong",
+      "kinnaur",
+      "kinner-kailash",
+      "kullu",
+      "lahaul-valley",
+      "nako",
+      "prashar-lake",
+      "sangla",
+      "sissu",
+      "spiti-valley"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "bangus-valley",
+      "bhaderwah",
+      "doodhpathri",
+      "gulmarg",
+      "gurez-valley",
+      "katra",
+      "kishtwar",
+      "lolab-valley",
+      "patnitop",
+      "sinthan-top",
+      "sonamarg",
+      "tosamaidan",
+      "yusmarg"
+     ]
+    },
+    {
+     "state": "Ladakh",
+     "ids": [
+      "alchi",
+      "drass",
+      "hanle",
+      "kargil",
+      "khardung-la",
+      "lamayuru",
+      "leh",
+      "likir",
+      "nubra-valley",
+      "pangong-lake",
+      "tso-moriri",
+      "turtuk"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "kolanupaka",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "kanha"
+     ]
+    },
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "amboli",
+      "bhandardara"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "gurudongmar-lake",
+      "nathu-la"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "courtallam",
+      "mudumalai"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "belum-caves"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "chitrakote-falls"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "kabini"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "athirapally"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "dzukou-valley"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "raghurajpur"
+     ]
+    }
+   ]
+  },
+  "7": {
+   "month": 7,
+   "monthSlug": "july",
+   "monthLong": "July",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 62,
+    "inAMonthToAvoid": 351,
+    "listed": 62
+   },
+   "states": [
+    {
+     "state": "Ladakh",
+     "ids": [
+      "alchi",
+      "drass",
+      "hanle",
+      "kargil",
+      "khardung-la",
+      "lamayuru",
+      "leh",
+      "likir",
+      "nubra-valley",
+      "pangong-lake",
+      "tso-moriri",
+      "turtuk",
+      "umlingla",
+      "zanskar"
+     ]
+    },
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "amboli",
+      "bhandardara",
+      "bhimashankar",
+      "igatpuri",
+      "khandala",
+      "kolad",
+      "kolhapur",
+      "lonavala",
+      "nashik",
+      "pune",
+      "raigad-fort",
+      "shirdi",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "chandratal",
+      "kaza",
+      "keylong",
+      "kinner-kailash",
+      "lahaul-valley",
+      "shrikhand-mahadev"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "belur",
+      "dharmasthala",
+      "halebidu",
+      "jog-falls",
+      "mysore",
+      "shravanabelagola"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "ananthagiri-hills",
+      "kolanupaka",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "bangus-valley",
+      "gurez-valley",
+      "kishtwar",
+      "sinthan-top",
+      "tosamaidan"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "mandu",
+      "orchha"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "courtallam",
+      "hogenakkal"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "hemkund-sahib",
+      "valley-of-flowers"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "belum-caves"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "chitrakote-falls"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "ponda-spice"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "saputara"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "athirapally"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "raghurajpur"
+     ]
+    }
+   ]
+  },
+  "8": {
+   "month": 8,
+   "monthSlug": "august",
+   "monthLong": "August",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 62,
+    "inAMonthToAvoid": 324,
+    "listed": 62
+   },
+   "states": [
+    {
+     "state": "Ladakh",
+     "ids": [
+      "alchi",
+      "drass",
+      "hanle",
+      "kargil",
+      "khardung-la",
+      "lamayuru",
+      "leh",
+      "likir",
+      "nubra-valley",
+      "pangong-lake",
+      "tso-moriri",
+      "turtuk",
+      "umlingla",
+      "zanskar"
+     ]
+    },
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "amboli",
+      "bhandardara",
+      "bhimashankar",
+      "igatpuri",
+      "khandala",
+      "kolad",
+      "kolhapur",
+      "lonavala",
+      "nashik",
+      "pune",
+      "raigad-fort",
+      "shirdi",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "belur",
+      "dharmasthala",
+      "halebidu",
+      "jog-falls",
+      "mysore",
+      "shravanabelagola"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "ananthagiri-hills",
+      "kolanupaka",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "chandratal",
+      "keylong",
+      "kinner-kailash",
+      "manimahesh-kailash",
+      "shrikhand-mahadev"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "bangus-valley",
+      "gurez-valley",
+      "kishtwar",
+      "sinthan-top",
+      "tosamaidan"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "hemkund-sahib",
+      "mansarovar-kailash",
+      "valley-of-flowers"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "mandu",
+      "orchha"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "courtallam",
+      "hogenakkal"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "belum-caves"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "chitrakote-falls"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "ponda-spice"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "saputara"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "athirapally"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "raghurajpur"
+     ]
+    }
+   ]
+  },
+  "9": {
+   "month": 9,
+   "monthSlug": "september",
+   "monthLong": "September",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 149,
+    "inAMonthToAvoid": 71,
+    "listed": 149
+   },
+   "states": [
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "barot-valley",
+      "chail",
+      "chamba",
+      "chandratal",
+      "chitkul",
+      "dalhousie",
+      "great-himalayan-np",
+      "jibhi",
+      "kalpa",
+      "kasauli",
+      "kasol",
+      "kaza",
+      "keylong",
+      "kinnaur",
+      "kinner-kailash",
+      "kullu",
+      "lahaul-valley",
+      "manali",
+      "mandi",
+      "manikaran",
+      "manimahesh-kailash",
+      "nako",
+      "palampur",
+      "parvati-valley",
+      "prashar-lake",
+      "sangla",
+      "sarahan",
+      "sissu",
+      "solan",
+      "spiti-valley",
+      "tirthan-valley"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "adi-kailash",
+      "almora",
+      "auli",
+      "badrinath",
+      "bhimtal",
+      "chakrata",
+      "chopta",
+      "gangotri",
+      "gopeshwar",
+      "guptkashi",
+      "har-ki-doon",
+      "hemkund-sahib",
+      "joshimath",
+      "kedarnath",
+      "landour",
+      "mansarovar-kailash",
+      "munsiyari",
+      "mussoorie",
+      "nainital",
+      "ranikhet",
+      "rishikesh",
+      "roopkund",
+      "tehri",
+      "tungnath",
+      "uttarkashi",
+      "yamunotri"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "achabal",
+      "bangus-valley",
+      "bhaderwah",
+      "doodhpathri",
+      "gulmarg",
+      "gurez-valley",
+      "katra",
+      "kishtwar",
+      "kokernag",
+      "lolab-valley",
+      "pahalgam",
+      "sinthan-top",
+      "sonamarg",
+      "srinagar",
+      "tosamaidan",
+      "verinag",
+      "yusmarg"
+     ]
+    },
+    {
+     "state": "Ladakh",
+     "ids": [
+      "alchi",
+      "drass",
+      "hanle",
+      "kargil",
+      "khardung-la",
+      "lamayuru",
+      "leh",
+      "likir",
+      "nubra-valley",
+      "pangong-lake",
+      "tso-moriri",
+      "turtuk",
+      "umlingla"
+     ]
+    },
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "amboli",
+      "bhandardara",
+      "bhimashankar",
+      "igatpuri",
+      "khandala",
+      "kolad",
+      "lonavala",
+      "mahabaleshwar",
+      "panchgani",
+      "pune",
+      "raigad-fort",
+      "satara",
+      "shirdi"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "belur",
+      "bengaluru",
+      "chikmagalur",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "halebidu",
+      "jog-falls",
+      "mysore",
+      "nandi-hills",
+      "sakleshpur",
+      "shravanabelagola"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "ananthagiri-hills",
+      "bhongir",
+      "kolanupaka",
+      "laknavaram",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "coonoor",
+      "courtallam",
+      "hogenakkal",
+      "kodaikanal",
+      "ooty",
+      "valparai"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "belum-caves",
+      "gandikota",
+      "konaseema",
+      "nagarjuna-sagar",
+      "srisailam"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "athirapally",
+      "eravikulam",
+      "munnar",
+      "vagamon"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "ambaji",
+      "modhera",
+      "saputara"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "mandu",
+      "orchha"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "bhitarkanika",
+      "raghurajpur"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "aritar",
+      "nathu-la"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "chitrakote-falls"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "ponda-spice"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "morni-hills"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "kiphire"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "udaipur"
+     ]
+    }
+   ]
+  },
+  "10": {
+   "month": 10,
+   "monthSlug": "october",
+   "monthLong": "October",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 449,
+    "inAMonthToAvoid": 9,
+    "listed": 449
+   },
+   "states": [
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "ajanta-caves",
+      "alibaug",
+      "amboli",
+      "astavinayak-circuit",
+      "aurangabad",
+      "bhandardara",
+      "bhimashankar",
+      "daulatabad",
+      "elephanta-caves",
+      "ellora-caves",
+      "ganpatipule",
+      "harihareshwar",
+      "igatpuri",
+      "kanheri-caves",
+      "karla-bhaja-caves",
+      "kashid",
+      "khandala",
+      "kolad",
+      "kolhapur",
+      "lenyadri",
+      "lonar-crater",
+      "lonavala",
+      "mahabaleshwar",
+      "mahad-raigad",
+      "malvan",
+      "matheran",
+      "morgaon",
+      "mumbai",
+      "murud-janjira",
+      "nagpur",
+      "nashik",
+      "ozar",
+      "pali-raigad",
+      "panchgani",
+      "pench-maharashtra",
+      "pune",
+      "raigad-fort",
+      "ranjangaon",
+      "ratnagiri",
+      "satara",
+      "shirdi",
+      "siddhatek",
+      "tadoba",
+      "tarkarli",
+      "theur",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "adi-kailash",
+      "almora",
+      "auli",
+      "badrinath",
+      "bhimtal",
+      "binsar",
+      "chakrata",
+      "champawat",
+      "chaukori",
+      "chopta",
+      "devprayag",
+      "dhanaulti",
+      "gangotri",
+      "gopeshwar",
+      "guptkashi",
+      "har-ki-doon",
+      "haridwar",
+      "joshimath",
+      "kanatal",
+      "karnaprayag",
+      "kausani",
+      "kedarnath",
+      "landour",
+      "lansdowne",
+      "mukteshwar",
+      "munsiyari",
+      "mussoorie",
+      "nainital",
+      "nandaprayag",
+      "pithoragarh",
+      "ranikhet",
+      "rishikesh",
+      "roopkund",
+      "rudraprayag",
+      "tehri",
+      "tungnath",
+      "uttarkashi",
+      "vishnuprayag",
+      "yamunotri"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "barot-valley",
+      "bir-billing",
+      "chail",
+      "chamba",
+      "chitkul",
+      "dalhousie",
+      "dharamshala",
+      "great-himalayan-np",
+      "jibhi",
+      "kalpa",
+      "kasauli",
+      "kasol",
+      "kinnaur",
+      "kullu",
+      "lahaul-valley",
+      "manali",
+      "mandi",
+      "manikaran",
+      "mcleodganj",
+      "nako",
+      "palampur",
+      "parvati-valley",
+      "prashar-lake",
+      "sangla",
+      "sarahan",
+      "shimla",
+      "sissu",
+      "solan",
+      "spiti-valley",
+      "tirthan-valley"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "aihole",
+      "badami",
+      "bandipur",
+      "belur",
+      "bengaluru",
+      "bidar",
+      "bijapur",
+      "chikmagalur",
+      "chitradurga",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "gokarna",
+      "gulbarga",
+      "halebidu",
+      "hampi",
+      "jog-falls",
+      "kabini",
+      "karwar",
+      "kukke-subramanya",
+      "mangalore",
+      "murudeshwar",
+      "mysore",
+      "nagarhole",
+      "nandi-hills",
+      "pattadakal",
+      "sakleshpur",
+      "shravanabelagola",
+      "srirangapatna",
+      "udupi"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "chettinad",
+      "coimbatore",
+      "coonoor",
+      "courtallam",
+      "dhanushkodi",
+      "hogenakkal",
+      "kanchipuram",
+      "kanyakumari",
+      "kodaikanal",
+      "kotagiri",
+      "madurai",
+      "mahabalipuram",
+      "meghamalai",
+      "ooty",
+      "palani",
+      "pazhamudircholai",
+      "rameswaram",
+      "swamimalai",
+      "tharangambadi",
+      "tiruchendur",
+      "tiruparankundram",
+      "tiruttani",
+      "valparai",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ajmer",
+      "alwar",
+      "barmer",
+      "bharatpur",
+      "bikaner",
+      "bundi",
+      "chittorgarh",
+      "deeg",
+      "dungarpur",
+      "gagron-fort",
+      "jaipur",
+      "jaisalmer",
+      "jodhpur",
+      "kumbhalgarh",
+      "mount-abu",
+      "neemrana",
+      "osian",
+      "pushkar",
+      "ranakpur",
+      "ranthambore",
+      "sariska",
+      "shekhawati",
+      "udaipur"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "agonda",
+      "anjuna",
+      "arambol",
+      "assagao",
+      "calangute-baga",
+      "candolim",
+      "chorao-divar",
+      "colva-benaulim",
+      "dudhsagar-falls",
+      "fort-aguada",
+      "mandrem",
+      "margao",
+      "mollem",
+      "morjim",
+      "old-goa",
+      "palolem",
+      "panaji",
+      "reis-magos",
+      "siolim",
+      "ponda-spice",
+      "vagator"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "bhitarkanika",
+      "bhubaneswar",
+      "diamond-triangle",
+      "chandipur",
+      "chilika-lake",
+      "cuttack",
+      "daringbadi",
+      "deomali",
+      "dhauli",
+      "gopalpur-on-sea",
+      "konark",
+      "koraput",
+      "nrusinghanath-harishankar",
+      "puri",
+      "raghurajpur",
+      "sambalpur",
+      "satkosia",
+      "simlipal",
+      "talasari",
+      "taptapani"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "ahobilam",
+      "amaravati",
+      "araku-valley",
+      "belum-caves",
+      "borra-caves",
+      "gandikota",
+      "horsley-hills",
+      "konaseema",
+      "lepakshi",
+      "machilipatnam",
+      "maredumilli",
+      "nagarjuna-sagar",
+      "rajahmundry",
+      "srikalahasti",
+      "srisailam",
+      "tirumala",
+      "tirupati",
+      "undavalli-caves",
+      "vijayawada",
+      "visakhapatnam"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "alleppey",
+      "athirapally",
+      "bekal",
+      "beypore",
+      "eravikulam",
+      "idukki",
+      "kollam",
+      "kozhikode",
+      "kumbalangi",
+      "kuttanad",
+      "munnar",
+      "nelliyampathy",
+      "ponmudi",
+      "poovar",
+      "silent-valley",
+      "thekkady",
+      "trivandrum",
+      "vagamon",
+      "varkala",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "aritar",
+      "dzongu",
+      "gangtok",
+      "gurudongmar-lake",
+      "khangchendzonga-np",
+      "lachen",
+      "lachung",
+      "mangan",
+      "namchi",
+      "nathu-la",
+      "pelling",
+      "phodong",
+      "ravangla",
+      "rinchenpong",
+      "tashiding",
+      "tsomgo-lake",
+      "yuksom",
+      "yumthang-valley",
+      "zuluk"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "alampur",
+      "ananthagiri-hills",
+      "basara",
+      "bhadrachalam",
+      "bhongir",
+      "hyderabad",
+      "kolanupaka",
+      "laknavaram",
+      "medak",
+      "nagarjuna-konda",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple",
+      "warangal"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "ambaji",
+      "bhavnagar",
+      "champaner-pavagadh",
+      "dakor",
+      "gandhinagar",
+      "junagadh",
+      "lothal",
+      "porbandar",
+      "rajkot",
+      "rani-ki-vav",
+      "statue-of-unity",
+      "surat",
+      "vadodara"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "bhimbetka",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "kanha",
+      "khajuraho",
+      "mandu",
+      "omkareshwar",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "achabal",
+      "bhaderwah",
+      "doodhpathri",
+      "katra",
+      "kokernag",
+      "lolab-valley",
+      "pahalgam",
+      "patnitop",
+      "sonamarg",
+      "srinagar",
+      "verinag",
+      "yusmarg"
+     ]
+    },
+    {
+     "state": "Uttar Pradesh",
+     "ids": [
+      "agra",
+      "ayodhya",
+      "chitrakoot",
+      "fatehpur-sikri",
+      "kushinagar",
+      "lucknow",
+      "mathura",
+      "prayagraj",
+      "sarnath",
+      "sravasti",
+      "varanasi",
+      "vrindavan"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "aalo",
+      "anini",
+      "bhalukpong",
+      "bomdila",
+      "dirang",
+      "mechuka",
+      "namdapha",
+      "pasighat",
+      "tawang",
+      "ziro-valley"
+     ]
+    },
+    {
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "dawki",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "nongriat",
+      "shillong",
+      "shnongpdeng",
+      "tura"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "dzukou-valley",
+      "khonoma",
+      "kiphire",
+      "kohima",
+      "mokokchung",
+      "mon",
+      "pfutsero"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "chidiya-tapu",
+      "havelock-island",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Assam",
+     "ids": [
+      "charaideo",
+      "guwahati",
+      "haflong",
+      "jorhat",
+      "majuli",
+      "sivasagar"
+     ]
+    },
+    {
+     "state": "Bihar",
+     "ids": [
+      "bodh-gaya",
+      "nalanda",
+      "patna",
+      "pawapuri",
+      "rajgir",
+      "vaishali"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "darjeeling",
+      "kalimpong",
+      "kolkata",
+      "shantiniketan",
+      "siliguri",
+      "sundarbans"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla",
+      "deoghar",
+      "netarhat",
+      "ranchi",
+      "shikharji"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "moreh",
+      "tamenglong",
+      "ukhrul"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "bhoramdeo",
+      "chitrakote-falls",
+      "jagdalpur",
+      "sirpur"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "champhai",
+      "lunglei",
+      "phawngpui-peak"
+     ]
+    },
+    {
+     "state": "Puducherry",
+     "ids": [
+      "auroville",
+      "karaikal",
+      "pondicherry",
+      "puducherry"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "amritsar",
+      "anandpur-sahib",
+      "patiala",
+      "damdama-sahib"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills",
+      "neermahal",
+      "unakoti"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "kurukshetra",
+      "morni-hills",
+      "pinjore-gardens"
+     ]
+    },
+    {
+     "state": "Chandigarh",
+     "ids": [
+      "chandigarh"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Delhi",
+     "ids": [
+      "delhi"
+     ]
+    }
+   ]
+  },
+  "11": {
+   "month": 11,
+   "monthSlug": "november",
+   "monthLong": "November",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 445,
+    "inAMonthToAvoid": 33,
+    "listed": 445
+   },
+   "states": [
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "ajanta-caves",
+      "alibaug",
+      "amboli",
+      "astavinayak-circuit",
+      "aurangabad",
+      "bhimashankar",
+      "daulatabad",
+      "elephanta-caves",
+      "ellora-caves",
+      "ganpatipule",
+      "harihareshwar",
+      "igatpuri",
+      "kanheri-caves",
+      "karla-bhaja-caves",
+      "kashid",
+      "khandala",
+      "kolad",
+      "kolhapur",
+      "lenyadri",
+      "lonar-crater",
+      "lonavala",
+      "mahabaleshwar",
+      "mahad-raigad",
+      "malvan",
+      "matheran",
+      "morgaon",
+      "mumbai",
+      "murud-janjira",
+      "nagpur",
+      "nashik",
+      "ozar",
+      "pali-raigad",
+      "panchgani",
+      "pench-maharashtra",
+      "pune",
+      "raigad-fort",
+      "ranjangaon",
+      "ratnagiri",
+      "satara",
+      "shirdi",
+      "siddhatek",
+      "tadoba",
+      "tarkarli",
+      "theur",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "chennai",
+      "chettinad",
+      "chidambaram",
+      "coimbatore",
+      "coonoor",
+      "courtallam",
+      "dhanushkodi",
+      "hogenakkal",
+      "kanchipuram",
+      "kanyakumari",
+      "kodaikanal",
+      "kotagiri",
+      "kumbakonam",
+      "madurai",
+      "mahabalipuram",
+      "meghamalai",
+      "ooty",
+      "palani",
+      "pazhamudircholai",
+      "point-calimere",
+      "rameswaram",
+      "srirangam",
+      "swamimalai",
+      "thanjavur",
+      "tharangambadi",
+      "tiruchendur",
+      "tiruparankundram",
+      "tiruttani",
+      "tiruvannamalai",
+      "trichy",
+      "valparai",
+      "vedanthangal",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "aihole",
+      "badami",
+      "bandipur",
+      "belur",
+      "bengaluru",
+      "bidar",
+      "bijapur",
+      "chikmagalur",
+      "chitradurga",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "gokarna",
+      "gulbarga",
+      "halebidu",
+      "hampi",
+      "jog-falls",
+      "kabini",
+      "karwar",
+      "kukke-subramanya",
+      "mangalore",
+      "murudeshwar",
+      "mysore",
+      "nagarhole",
+      "nandi-hills",
+      "pattadakal",
+      "sakleshpur",
+      "shravanabelagola",
+      "srirangapatna",
+      "udupi"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "alleppey",
+      "athirapally",
+      "bekal",
+      "beypore",
+      "cherai",
+      "chinnar",
+      "eravikulam",
+      "guruvayur",
+      "idukki",
+      "kannur",
+      "kochi",
+      "kollam",
+      "kovalam",
+      "kozhikode",
+      "kumarakom",
+      "kumbalangi",
+      "kuttanad",
+      "marari",
+      "munnar",
+      "nelliyampathy",
+      "ponmudi",
+      "poovar",
+      "sabarimala",
+      "silent-valley",
+      "thekkady",
+      "trivandrum",
+      "thrissur",
+      "vagamon",
+      "varkala",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "ahmedabad",
+      "ambaji",
+      "bhavnagar",
+      "champaner-pavagadh",
+      "dakor",
+      "dholavira",
+      "dwarka",
+      "gandhinagar",
+      "junagadh",
+      "kutch",
+      "lothal",
+      "mandvi",
+      "marine-national-park",
+      "modhera",
+      "girnar",
+      "nalsarovar",
+      "palitana",
+      "porbandar",
+      "rajkot",
+      "rani-ki-vav",
+      "rann-of-kutch",
+      "somnath",
+      "statue-of-unity",
+      "surat",
+      "vadodara",
+      "velavadar"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ajmer",
+      "alwar",
+      "barmer",
+      "bharatpur",
+      "bikaner",
+      "bundi",
+      "chittorgarh",
+      "deeg",
+      "dungarpur",
+      "gagron-fort",
+      "jaipur",
+      "jaisalmer",
+      "jodhpur",
+      "kumbhalgarh",
+      "mount-abu",
+      "neemrana",
+      "osian",
+      "pushkar",
+      "ranakpur",
+      "ranthambore",
+      "sariska",
+      "shekhawati",
+      "udaipur"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "ahobilam",
+      "amaravati",
+      "araku-valley",
+      "belum-caves",
+      "borra-caves",
+      "gandikota",
+      "horsley-hills",
+      "konaseema",
+      "lambasingi",
+      "lepakshi",
+      "machilipatnam",
+      "maredumilli",
+      "nagarjuna-sagar",
+      "pulicat-lake",
+      "rajahmundry",
+      "srikalahasti",
+      "srisailam",
+      "tirumala",
+      "tirupati",
+      "undavalli-caves",
+      "vijayawada",
+      "visakhapatnam"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "bhitarkanika",
+      "bhubaneswar",
+      "diamond-triangle",
+      "chandipur",
+      "chilika-lake",
+      "cuttack",
+      "daringbadi",
+      "deomali",
+      "dhauli",
+      "gahirmatha",
+      "gopalpur-on-sea",
+      "konark",
+      "koraput",
+      "nrusinghanath-harishankar",
+      "puri",
+      "raghurajpur",
+      "sambalpur",
+      "satkosia",
+      "simlipal",
+      "talasari",
+      "taptapani"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "agonda",
+      "anjuna",
+      "arambol",
+      "assagao",
+      "calangute-baga",
+      "candolim",
+      "chorao-divar",
+      "colva-benaulim",
+      "dudhsagar-falls",
+      "fort-aguada",
+      "mandrem",
+      "margao",
+      "mollem",
+      "morjim",
+      "old-goa",
+      "palolem",
+      "panaji",
+      "reis-magos",
+      "siolim",
+      "ponda-spice",
+      "vagator"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "almora",
+      "bhimtal",
+      "binsar",
+      "chakrata",
+      "champawat",
+      "chaukori",
+      "dhanaulti",
+      "haridwar",
+      "corbett-national-park",
+      "kanatal",
+      "kausani",
+      "landour",
+      "lansdowne",
+      "mukteshwar",
+      "mussoorie",
+      "nainital",
+      "pithoragarh",
+      "ranikhet",
+      "rishikesh",
+      "tehri",
+      "uttarkashi"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "aritar",
+      "dzongu",
+      "gangtok",
+      "khangchendzonga-np",
+      "lachen",
+      "lachung",
+      "mangan",
+      "namchi",
+      "pelling",
+      "phodong",
+      "ravangla",
+      "rinchenpong",
+      "tashiding",
+      "tsomgo-lake",
+      "yuksom",
+      "zuluk"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "alampur",
+      "ananthagiri-hills",
+      "basara",
+      "bhadrachalam",
+      "bhongir",
+      "hyderabad",
+      "kolanupaka",
+      "laknavaram",
+      "medak",
+      "nagarjuna-konda",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple",
+      "warangal"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "bhimbetka",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "kanha",
+      "khajuraho",
+      "mandu",
+      "omkareshwar",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+     ]
+    },
+    {
+     "state": "Uttar Pradesh",
+     "ids": [
+      "agra",
+      "ayodhya",
+      "chitrakoot",
+      "dudhwa-national-park",
+      "fatehpur-sikri",
+      "kushinagar",
+      "lucknow",
+      "mathura",
+      "prayagraj",
+      "sarnath",
+      "sravasti",
+      "varanasi",
+      "vrindavan"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "baratang-island",
+      "chidiya-tapu",
+      "diglipur",
+      "havelock-island",
+      "little-andaman",
+      "long-island-andaman",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "rangat",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "aalo",
+      "anini",
+      "bhalukpong",
+      "bomdila",
+      "dambuk",
+      "dirang",
+      "mechuka",
+      "namdapha",
+      "pasighat",
+      "tawang",
+      "ziro-valley"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "bir-billing",
+      "chail",
+      "kasauli",
+      "kullu",
+      "mandi",
+      "manikaran",
+      "palampur",
+      "prashar-lake",
+      "shimla",
+      "solan"
+     ]
+    },
+    {
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "dawki",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "nongriat",
+      "shillong",
+      "shnongpdeng",
+      "tura"
+     ]
+    },
+    {
+     "state": "Assam",
+     "ids": [
+      "charaideo",
+      "guwahati",
+      "haflong",
+      "jorhat",
+      "kaziranga",
+      "majuli",
+      "manas-national-park",
+      "sivasagar"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "dzukou-valley",
+      "khonoma",
+      "kiphire",
+      "kohima",
+      "mokokchung",
+      "mon",
+      "pfutsero"
+     ]
+    },
+    {
+     "state": "Bihar",
+     "ids": [
+      "bodh-gaya",
+      "nalanda",
+      "patna",
+      "pawapuri",
+      "rajgir",
+      "vaishali"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "darjeeling",
+      "kalimpong",
+      "kolkata",
+      "shantiniketan",
+      "siliguri",
+      "sundarbans"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla",
+      "deoghar",
+      "netarhat",
+      "ranchi",
+      "shikharji"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "moreh",
+      "tamenglong",
+      "ukhrul"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "barnawapara",
+      "bhoramdeo",
+      "jagdalpur",
+      "sirpur"
+     ]
+    },
+    {
+     "state": "Jammu & Kashmir",
+     "ids": [
+      "achabal",
+      "katra",
+      "kokernag",
+      "verinag"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "champhai",
+      "lunglei",
+      "phawngpui-peak"
+     ]
+    },
+    {
+     "state": "Puducherry",
+     "ids": [
+      "auroville",
+      "karaikal",
+      "pondicherry",
+      "puducherry"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "amritsar",
+      "anandpur-sahib",
+      "patiala",
+      "damdama-sahib"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills",
+      "neermahal",
+      "unakoti"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "daman",
+      "diu",
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "kurukshetra",
+      "morni-hills",
+      "pinjore-gardens"
+     ]
+    },
+    {
+     "state": "Chandigarh",
+     "ids": [
+      "chandigarh"
+     ]
+    },
+    {
+     "state": "Delhi",
+     "ids": [
+      "delhi"
+     ]
+    }
+   ]
+  },
+  "12": {
+   "month": 12,
+   "monthSlug": "december",
+   "monthLong": "December",
+   "totals": {
+    "destinations": 533,
+    "atTheirBest": 383,
+    "inAMonthToAvoid": 66,
+    "listed": 383
+   },
+   "states": [
+    {
+     "state": "Maharashtra",
+     "ids": [
+      "ajanta-caves",
+      "alibaug",
+      "amboli",
+      "astavinayak-circuit",
+      "aurangabad",
+      "bhimashankar",
+      "daulatabad",
+      "elephanta-caves",
+      "ellora-caves",
+      "ganpatipule",
+      "harihareshwar",
+      "igatpuri",
+      "kanheri-caves",
+      "karla-bhaja-caves",
+      "kashid",
+      "khandala",
+      "kolad",
+      "kolhapur",
+      "lenyadri",
+      "lonar-crater",
+      "lonavala",
+      "mahabaleshwar",
+      "mahad-raigad",
+      "malvan",
+      "matheran",
+      "morgaon",
+      "mumbai",
+      "murud-janjira",
+      "nagpur",
+      "nashik",
+      "ozar",
+      "pali-raigad",
+      "panchgani",
+      "pench-maharashtra",
+      "pune",
+      "raigad-fort",
+      "ranjangaon",
+      "ratnagiri",
+      "satara",
+      "shirdi",
+      "siddhatek",
+      "tadoba",
+      "tarkarli",
+      "theur",
+      "trimbakeshwar"
+     ]
+    },
+    {
+     "state": "Tamil Nadu",
+     "ids": [
+      "chennai",
+      "chettinad",
+      "chidambaram",
+      "coimbatore",
+      "coonoor",
+      "courtallam",
+      "dhanushkodi",
+      "kanchipuram",
+      "kanyakumari",
+      "kotagiri",
+      "kumbakonam",
+      "madurai",
+      "mahabalipuram",
+      "meghamalai",
+      "palani",
+      "pazhamudircholai",
+      "point-calimere",
+      "rameswaram",
+      "srirangam",
+      "swamimalai",
+      "thanjavur",
+      "tharangambadi",
+      "tiruchendur",
+      "tiruparankundram",
+      "tiruttani",
+      "tiruvannamalai",
+      "trichy",
+      "valparai",
+      "vedanthangal",
+      "yercaud"
+     ]
+    },
+    {
+     "state": "Gujarat",
+     "ids": [
+      "ahmedabad",
+      "ambaji",
+      "bhavnagar",
+      "champaner-pavagadh",
+      "dakor",
+      "dholavira",
+      "dwarka",
+      "gandhinagar",
+      "gir-national-park",
+      "junagadh",
+      "kutch",
+      "lothal",
+      "mandvi",
+      "marine-national-park",
+      "modhera",
+      "girnar",
+      "nalsarovar",
+      "palitana",
+      "porbandar",
+      "rajkot",
+      "rani-ki-vav",
+      "rann-of-kutch",
+      "saputara",
+      "sasangir",
+      "somnath",
+      "statue-of-unity",
+      "surat",
+      "vadodara",
+      "velavadar"
+     ]
+    },
+    {
+     "state": "Karnataka",
+     "ids": [
+      "aihole",
+      "badami",
+      "bandipur",
+      "belur",
+      "bengaluru",
+      "bidar",
+      "bijapur",
+      "chikmagalur",
+      "chitradurga",
+      "coorg",
+      "dandeli",
+      "dharmasthala",
+      "gokarna",
+      "gulbarga",
+      "halebidu",
+      "hampi",
+      "kabini",
+      "karwar",
+      "kukke-subramanya",
+      "mangalore",
+      "murudeshwar",
+      "mysore",
+      "nagarhole",
+      "nandi-hills",
+      "pattadakal",
+      "sakleshpur",
+      "shravanabelagola",
+      "srirangapatna",
+      "udupi"
+     ]
+    },
+    {
+     "state": "Kerala",
+     "ids": [
+      "alleppey",
+      "bekal",
+      "beypore",
+      "cherai",
+      "chinnar",
+      "eravikulam",
+      "guruvayur",
+      "idukki",
+      "kannur",
+      "kochi",
+      "kollam",
+      "kovalam",
+      "kozhikode",
+      "kumarakom",
+      "kumbalangi",
+      "kuttanad",
+      "marari",
+      "munnar",
+      "nelliyampathy",
+      "ponmudi",
+      "poovar",
+      "sabarimala",
+      "silent-valley",
+      "thekkady",
+      "trivandrum",
+      "thrissur",
+      "vagamon",
+      "varkala",
+      "wayanad"
+     ]
+    },
+    {
+     "state": "Andhra Pradesh",
+     "ids": [
+      "ahobilam",
+      "amaravati",
+      "araku-valley",
+      "belum-caves",
+      "borra-caves",
+      "gandikota",
+      "horsley-hills",
+      "konaseema",
+      "lambasingi",
+      "lepakshi",
+      "machilipatnam",
+      "maredumilli",
+      "nagarjuna-sagar",
+      "pulicat-lake",
+      "rajahmundry",
+      "srikalahasti",
+      "srisailam",
+      "tirumala",
+      "tirupati",
+      "undavalli-caves",
+      "vijayawada",
+      "visakhapatnam"
+     ]
+    },
+    {
+     "state": "Odisha",
+     "ids": [
+      "baripada",
+      "bhitarkanika",
+      "bhubaneswar",
+      "diamond-triangle",
+      "chandipur",
+      "chilika-lake",
+      "cuttack",
+      "daringbadi",
+      "deomali",
+      "dhauli",
+      "gahirmatha",
+      "gopalpur-on-sea",
+      "konark",
+      "koraput",
+      "nrusinghanath-harishankar",
+      "puri",
+      "raghurajpur",
+      "sambalpur",
+      "satkosia",
+      "simlipal",
+      "talasari",
+      "taptapani"
+     ]
+    },
+    {
+     "state": "Rajasthan",
+     "ids": [
+      "ajmer",
+      "alwar",
+      "barmer",
+      "bharatpur",
+      "bikaner",
+      "bundi",
+      "chittorgarh",
+      "deeg",
+      "dungarpur",
+      "gagron-fort",
+      "jaipur",
+      "jaisalmer",
+      "jodhpur",
+      "kumbhalgarh",
+      "mount-abu",
+      "neemrana",
+      "osian",
+      "pushkar",
+      "ranakpur",
+      "sariska",
+      "shekhawati",
+      "udaipur"
+     ]
+    },
+    {
+     "state": "Goa",
+     "ids": [
+      "agonda",
+      "anjuna",
+      "arambol",
+      "assagao",
+      "calangute-baga",
+      "candolim",
+      "chorao-divar",
+      "colva-benaulim",
+      "dudhsagar-falls",
+      "fort-aguada",
+      "mandrem",
+      "margao",
+      "mollem",
+      "morjim",
+      "old-goa",
+      "palolem",
+      "panaji",
+      "reis-magos",
+      "siolim",
+      "ponda-spice",
+      "vagator"
+     ]
+    },
+    {
+     "state": "Telangana",
+     "ids": [
+      "adilabad",
+      "alampur",
+      "ananthagiri-hills",
+      "basara",
+      "bhadrachalam",
+      "bhongir",
+      "hyderabad",
+      "kolanupaka",
+      "laknavaram",
+      "medak",
+      "nagarjuna-konda",
+      "pillalamarri",
+      "pochampally",
+      "ramappa-temple",
+      "warangal"
+     ]
+    },
+    {
+     "state": "Madhya Pradesh",
+     "ids": [
+      "bandhavgarh",
+      "bhimbetka",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "kanha",
+      "khajuraho",
+      "mandu",
+      "omkareshwar",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+     ]
+    },
+    {
+     "state": "Andaman & Nicobar Islands",
+     "ids": [
+      "baratang-island",
+      "barren-island",
+      "chidiya-tapu",
+      "diglipur",
+      "havelock-island",
+      "little-andaman",
+      "long-island-andaman",
+      "neil-island",
+      "north-bay-island",
+      "port-blair",
+      "rangat",
+      "ross-island"
+     ]
+    },
+    {
+     "state": "Uttar Pradesh",
+     "ids": [
+      "agra",
+      "ayodhya",
+      "chitrakoot",
+      "dudhwa-national-park",
+      "fatehpur-sikri",
+      "kushinagar",
+      "lucknow",
+      "prayagraj",
+      "sarnath",
+      "sravasti",
+      "varanasi"
+     ]
+    },
+    {
+     "state": "Meghalaya",
+     "ids": [
+      "cherrapunji",
+      "dawki",
+      "mawlynnong",
+      "mawphlang",
+      "mawsynram",
+      "nongriat",
+      "shillong",
+      "shnongpdeng",
+      "tura"
+     ]
+    },
+    {
+     "state": "Assam",
+     "ids": [
+      "charaideo",
+      "guwahati",
+      "haflong",
+      "jorhat",
+      "kaziranga",
+      "majuli",
+      "manas-national-park",
+      "sivasagar"
+     ]
+    },
+    {
+     "state": "Bihar",
+     "ids": [
+      "bodh-gaya",
+      "nalanda",
+      "patna",
+      "pawapuri",
+      "rajgir",
+      "vaishali"
+     ]
+    },
+    {
+     "state": "Nagaland",
+     "ids": [
+      "khonoma",
+      "kiphire",
+      "kohima",
+      "mokokchung",
+      "mon",
+      "pfutsero"
+     ]
+    },
+    {
+     "state": "Jharkhand",
+     "ids": [
+      "betla",
+      "deoghar",
+      "netarhat",
+      "ranchi",
+      "shikharji"
+     ]
+    },
+    {
+     "state": "Lakshadweep",
+     "ids": [
+      "agatti",
+      "bangaram",
+      "kadmat",
+      "kavaratti",
+      "minicoy"
+     ]
+    },
+    {
+     "state": "Manipur",
+     "ids": [
+      "imphal",
+      "loktak-lake",
+      "moreh",
+      "tamenglong",
+      "ukhrul"
+     ]
+    },
+    {
+     "state": "Arunachal Pradesh",
+     "ids": [
+      "aalo",
+      "bhalukpong",
+      "dambuk",
+      "pasighat"
+     ]
+    },
+    {
+     "state": "Chhattisgarh",
+     "ids": [
+      "barnawapara",
+      "bhoramdeo",
+      "jagdalpur",
+      "sirpur"
+     ]
+    },
+    {
+     "state": "Mizoram",
+     "ids": [
+      "aizawl",
+      "champhai",
+      "lunglei",
+      "phawngpui-peak"
+     ]
+    },
+    {
+     "state": "Puducherry",
+     "ids": [
+      "auroville",
+      "karaikal",
+      "pondicherry",
+      "puducherry"
+     ]
+    },
+    {
+     "state": "Sikkim",
+     "ids": [
+      "lachung",
+      "rinchenpong",
+      "tsomgo-lake",
+      "zuluk"
+     ]
+    },
+    {
+     "state": "Tripura",
+     "ids": [
+      "agartala",
+      "jampui-hills",
+      "neermahal",
+      "unakoti"
+     ]
+    },
+    {
+     "state": "West Bengal",
+     "ids": [
+      "kolkata",
+      "shantiniketan",
+      "siliguri",
+      "sundarbans"
+     ]
+    },
+    {
+     "state": "Daman & Diu",
+     "ids": [
+      "daman",
+      "diu",
+      "silvassa"
+     ]
+    },
+    {
+     "state": "Punjab",
+     "ids": [
+      "amritsar",
+      "patiala",
+      "damdama-sahib"
+     ]
+    },
+    {
+     "state": "Haryana",
+     "ids": [
+      "kurukshetra",
+      "pinjore-gardens"
+     ]
+    },
+    {
+     "state": "Delhi",
+     "ids": [
+      "delhi"
+     ]
+    },
+    {
+     "state": "Himachal Pradesh",
+     "ids": [
+      "kufri"
+     ]
+    },
+    {
+     "state": "Uttarakhand",
+     "ids": [
+      "corbett-national-park"
+     ]
+    }
+   ]
+  }
+ }
 }
