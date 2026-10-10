@@ -725,3 +725,15 @@ const colophonLink: React.CSSProperties = {
   color: "#9A9A95",
   textDecoration: "none",
 };
+
+// Shared with the signup email (month-shortlist.tsx) so both look like The
+// Window (founder 2026-10-10: "make sure it matches the window template").
+// Change a style here and both emails follow.
+export const windowStyles = {
+  body, container, innerTable, ghostLink, mastheadWordmark, mastheadMeta, hairline, dashedRule,
+  heroBlockLink, heroImage, heroScrim, heroKicker, heroName, heroHook, heroPillWrap, heroPill, pillDot,
+  photoCredit, dateline, ledeText, sectionLabel, cardNumeral, cardKickerTag, cardScoreTag, cardImage,
+  cardName, cardMeta, cardHook, cardCta, notebookHeading, notebookLabel, notebookTitle, notebookBody,
+  primaryButton, colophon, colophonLink,
+};
+export const WINDOW_IMAGE_BASE = IMAGE_BASE;

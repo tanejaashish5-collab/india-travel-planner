@@ -218,8 +218,8 @@ async function sendMonthShortlist(
   to: string,
 ) {
   try {
-    const { monthLong, monthSlug, totals, top } = shortlistNow();
-    const html = await render(MonthShortlist({ monthLong, monthSlug, totals, top }));
+    const { monthLong, monthSlug, year, totals, top } = shortlistNow();
+    const html = await render(MonthShortlist({ monthLong, monthSlug, year, totals, top }));
     const plain = [
       `The ${monthLong} top ${top.length}: the best places in India this month.`,
       `We check ${totals.destinations} destinations against the month you'd actually travel.`,

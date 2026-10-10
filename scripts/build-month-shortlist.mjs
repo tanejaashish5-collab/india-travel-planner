@@ -62,7 +62,7 @@ const MONTH_LONG = [
 
 // One row per destination with its month arrays; grouping happens here.
 const DEST_SQL = `
-  SELECT d.id, d.name, d.tagline, s.name AS state_name,
+  SELECT d.id, d.name, d.tagline, d.elevation_m, d.difficulty, s.name AS state_name,
          COALESCE(d.best_months, '{}') AS best_months,
          COALESCE(d.avoid_months, '{}') AS avoid_months
     FROM destinations d
@@ -135,7 +135,13 @@ async function main() {
 
   const destinations = {};
   for (const r of rows) {
-    destinations[r.id] = { name: r.name, tagline: r.tagline ?? null, state: r.state_name ?? "Elsewhere" };
+    destinations[r.id] = {
+      name: r.name,
+      tagline: r.tagline ?? null,
+      state: r.state_name ?? "Elsewhere",
+      elevation_m: r.elevation_m ?? null,
+      difficulty: r.difficulty ?? null,
+    };
   }
 
   const months = {};

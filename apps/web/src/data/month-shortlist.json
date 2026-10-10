@@ -1,2670 +1,3736 @@
 {
- "generatedAt": "2026-10-10T07:10:05.958Z",
+ "generatedAt": "2026-10-10T07:12:33.404Z",
  "destinations": {
   "baratang-island": {
    "name": "Baratang Island",
    "tagline": "Limestone caves, mud volcanoes, and mangrove creek boat rides through Jarawa territory",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 10,
+   "difficulty": "moderate"
   },
   "barren-island": {
    "name": "Barren Island",
    "tagline": "India's only active volcano — view from boat only, no landing allowed",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 354,
+   "difficulty": "extreme"
   },
   "chidiya-tapu": {
    "name": "Chidiya Tapu",
    "tagline": "Bird Island — Andaman's best sunset point with mangrove walks, forest treks, and 50+ bird species",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "diglipur": {
    "name": "Diglipur",
    "tagline": "Saddle Peak (highest point in Andaman), turtle nesting beaches, and the stunning Ross & Smith twin islands",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 30,
+   "difficulty": "moderate"
   },
   "havelock-island": {
    "name": "Havelock Island (Swaraj Dweep)",
    "tagline": "Asia's best beach, world-class diving, and the island every Andaman trip revolves around",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "little-andaman": {
    "name": "Little Andaman",
    "tagline": "Only surfing destination in Andaman — Butler Bay waves, White Surf Waterfall, and total isolation",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 15,
+   "difficulty": "hard"
   },
   "long-island-andaman": {
    "name": "Long Island",
    "tagline": "Robinson Crusoe vibes — pristine Lalaji Bay beach with barely 50 tourists a month",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 10,
+   "difficulty": "moderate"
   },
   "neil-island": {
    "name": "Neil Island (Shaheed Dweep)",
    "tagline": "Havelock's quieter cousin — coral, cycling, and the Natural Bridge rock arch that ends up in every Andaman photo.",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "north-bay-island": {
    "name": "North Bay Island",
    "tagline": "Snorkeling and diving hub with glass-bottom boat rides over vibrant coral reefs",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "port-blair": {
    "name": "Port Blair (Sri Vijaya Puram)",
    "tagline": "Gateway to the Andaman archipelago — history, seafood, and island hopping start here",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 16,
+   "difficulty": "easy"
   },
   "rangat": {
    "name": "Rangat",
    "tagline": "India's longest mangrove boardwalk, turtle nesting at Cuthbert Bay, and zero tourist crowds",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 20,
+   "difficulty": "moderate"
   },
   "ross-island": {
    "name": "Ross Island (Netaji Subhas Chandra Bose Dweep)",
    "tagline": "Hauntingly beautiful British-era ruins where deer roam freely among crumbling colonial buildings",
-   "state": "Andaman & Nicobar Islands"
+   "state": "Andaman & Nicobar Islands",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "ahobilam": {
    "name": "Ahobilam",
    "tagline": "Nine Narasimha temples hidden in one forest gorge — globally unique",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 327,
+   "difficulty": "hard"
   },
   "amaravati": {
    "name": "Amaravati",
    "tagline": "Cradle of Mahayana Buddhism — where the Great Stupa stood 2,200 years ago",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 28,
+   "difficulty": "easy"
   },
   "araku-valley": {
    "name": "Araku Valley",
    "tagline": "Coffee country in the Eastern Ghats — Borra Caves, tribal culture, and a toy train",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 911,
+   "difficulty": "easy"
   },
   "belum-caves": {
    "name": "Belum Caves",
    "tagline": "India's 2nd longest cave system — 3.2km of stalactites deep underground",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 300,
+   "difficulty": "easy"
   },
   "borra-caves": {
    "name": "Borra Caves",
    "tagline": "150m-deep limestone karst caves on the Vizag-Araku railway",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 705,
+   "difficulty": "easy"
   },
   "gandikota": {
    "name": "Gandikota",
    "tagline": "India's Grand Canyon — Pennar River gorge with a medieval fort on top",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 300,
+   "difficulty": "moderate"
   },
   "horsley-hills": {
    "name": "Horsley Hills",
    "tagline": "British-era hill station at 1,265m — AP's quiet answer to Ooty",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 1265,
+   "difficulty": "easy"
   },
   "konaseema": {
    "name": "Konaseema",
    "tagline": "India's unknown backwaters — Godavari delta with 13 islands, zero tourists",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "lambasingi": {
    "name": "Lambasingi",
    "tagline": "Only sub-zero place in South India — the Kashmir nobody knows about",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 1000,
+   "difficulty": "moderate"
   },
   "lepakshi": {
    "name": "Lepakshi",
    "tagline": "The hanging pillar that defies gravity — Vijayanagara's greatest artistic mystery",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 490,
+   "difficulty": "easy"
   },
   "machilipatnam": {
    "name": "Machilipatnam",
    "tagline": "India's Kalamkari capital — hand-painted textiles since the 1600s",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "maredumilli": {
    "name": "Maredumilli",
    "tagline": "Tribal eco-tourism hub — community-owned forests, bamboo chicken, and waterfalls",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 400,
+   "difficulty": "moderate"
   },
   "nagarjuna-sagar": {
    "name": "Nagarjuna Sagar",
    "tagline": "World's tallest masonry dam — Buddhist island museum, Ethipothala Falls, tiger reserve",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 200,
+   "difficulty": "easy"
   },
   "pulicat-lake": {
    "name": "Pulicat Lake",
    "tagline": "India's 2nd largest brackish lagoon — thousands of flamingos paint it pink each winter",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 1,
+   "difficulty": "easy"
   },
   "rajahmundry": {
    "name": "Rajahmundry",
    "tagline": "Oldest city in AP — Godavari pushkaralu origin and gateway to Papikondalu gorge",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 14,
+   "difficulty": "easy"
   },
   "srikalahasti": {
    "name": "Srikalahasti",
    "tagline": "Vayu linga of the Pancha Bhuta temples — where Kalamkari art was born",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 122,
+   "difficulty": "easy"
   },
   "srisailam": {
    "name": "Srisailam",
    "tagline": "Only place in India with both Jyotirlinga and Shakti Peetha — deep in tiger country",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 476,
+   "difficulty": "moderate"
   },
   "tirumala": {
    "name": "Tirumala",
    "tagline": "The world's most visited temple atop Seshachalam Hills",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 976,
+   "difficulty": "easy"
   },
   "tirupati": {
    "name": "Tirupati",
    "tagline": "World's richest temple — 75,000 pilgrims daily climb the seven hills",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 160,
+   "difficulty": "easy"
   },
   "undavalli-caves": {
    "name": "Undavalli Caves",
    "tagline": "4th-century rock-cut marvel — where Jain, Buddhist, and Hindu faiths converge",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 30,
+   "difficulty": "easy"
   },
   "vijayawada": {
    "name": "Vijayawada",
    "tagline": "AP's commercial heart — Kanaka Durga Temple on a hilltop overlooking the Krishna",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 14,
+   "difficulty": "easy"
   },
   "visakhapatnam": {
    "name": "Visakhapatnam",
    "tagline": "Where the Eastern Ghats meet the Bay of Bengal — AP's jewel city",
-   "state": "Andhra Pradesh"
+   "state": "Andhra Pradesh",
+   "elevation_m": 14,
+   "difficulty": "easy"
   },
   "aalo": {
    "name": "Aalo",
    "tagline": "Siang valley base town — the gateway to Mechuka and the only reliable logistical stop in West Siang.",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 300,
+   "difficulty": "moderate"
   },
   "anini": {
    "name": "Anini",
    "tagline": "Most remote district HQ in India — Dibang Valley with red pandas and Mehao Wildlife Sanctuary",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 1968,
+   "difficulty": "extreme"
   },
   "bhalukpong": {
    "name": "Bhalukpong",
    "tagline": "Pakhui Tiger Reserve gateway on the Kameng River — first stop in Arunachal from Assam",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 213,
+   "difficulty": "easy"
   },
   "bomdila": {
    "name": "Bomdila",
    "tagline": "Gateway to Tawang with Tibetan monasteries, apple orchards, and Sela Pass views",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 2415,
+   "difficulty": "moderate"
   },
   "dambuk": {
    "name": "Dambuk",
    "tagline": "Orange-growing Dibang valley village that hosts India's most remote music festival each December.",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 500,
+   "difficulty": "moderate"
   },
   "dirang": {
    "name": "Dirang",
    "tagline": "Hot springs village with kiwi orchards, Sangti Valley cranes, and a 500-year-old dzong",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 1620,
+   "difficulty": "moderate"
   },
   "mechuka": {
    "name": "Mechuka",
    "tagline": "Last airstrip before the China border with Siang River valley and tribal Memba culture",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 1829,
+   "difficulty": "hard"
   },
   "namdapha": {
    "name": "Namdapha",
    "tagline": "India's only park with four big cat species — 1,985 sq km of pristine rainforest",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 200,
+   "difficulty": "hard"
   },
   "pasighat": {
    "name": "Pasighat",
    "tagline": "Oldest town in Arunachal Pradesh — adventure sports gateway on the mighty Siang River",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 153,
+   "difficulty": "easy"
   },
   "tawang": {
    "name": "Tawang",
    "tagline": "India's largest Buddhist monastery at 3,048m — the birthplace of the 6th Dalai Lama, reached via Sela Pass at 4,170m through some of the most dramatic roads on Earth.",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 3048,
+   "difficulty": "hard"
   },
   "ziro-valley": {
    "name": "Ziro Valley",
    "tagline": "Apatani tribal homeland with UNESCO-nominated rice paddies and the iconic Ziro Music Festival",
-   "state": "Arunachal Pradesh"
+   "state": "Arunachal Pradesh",
+   "elevation_m": 1780,
+   "difficulty": "moderate"
   },
   "charaideo": {
    "name": "Charaideo Moidams",
    "tagline": "India's 43rd UNESCO World Heritage Site — the Pyramids of Assam, royal burial mounds of 600 years of Ahom Dynasty rule.",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 120,
+   "difficulty": "easy"
   },
   "guwahati": {
    "name": "Guwahati",
    "tagline": "Gateway to the Northeast — ancient Kamakhya Temple, Brahmaputra river cruises, and the crossroads of seven sisters.",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 55,
+   "difficulty": "easy"
   },
   "haflong": {
    "name": "Haflong",
    "tagline": "Only hill station in Assam — Jatinga, the village where birds mysteriously crash-land at night during monsoon",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 680,
+   "difficulty": "easy"
   },
   "jorhat": {
    "name": "Jorhat",
    "tagline": "Tea capital of the world — Gibbon Wildlife Sanctuary (India's only hoolock gibbon habitat), gateway to Majuli island",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 116,
+   "difficulty": "easy"
   },
   "kaziranga": {
    "name": "Kaziranga",
    "tagline": "One-horned rhino capital of the world — UNESCO site with the highest density of tigers in India.",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 80,
+   "difficulty": "easy"
   },
   "majuli": {
    "name": "Majuli",
    "tagline": "World's largest inhabited river island — Vaishnavite monasteries, mask-making, and a culture fighting the Brahmaputra.",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 85,
+   "difficulty": "easy"
   },
   "manas-national-park": {
    "name": "Manas National Park",
    "tagline": "UNESCO World Heritage Project Tiger reserve — one-horned rhino, pygmy hog (world's smallest wild pig), golden langur",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 70,
+   "difficulty": "easy"
   },
   "sivasagar": {
    "name": "Sivasagar",
    "tagline": "600-year Ahom dynasty capital — Rang Ghar (Asia's oldest amphitheatre), Talatal Ghar (underground palace with escape tunnels), Sivadol (tallest Shiva temple in India)",
-   "state": "Assam"
+   "state": "Assam",
+   "elevation_m": 95,
+   "difficulty": "easy"
   },
   "bodh-gaya": {
    "name": "Bodh Gaya",
    "tagline": "Where Siddhartha became Buddha",
-   "state": "Bihar"
+   "state": "Bihar",
+   "elevation_m": 115,
+   "difficulty": "easy"
   },
   "nalanda": {
    "name": "Nalanda",
    "tagline": "Ruins of the world's first residential university",
-   "state": "Bihar"
+   "state": "Bihar",
+   "elevation_m": 72,
+   "difficulty": "easy"
   },
   "patna": {
    "name": "Patna",
    "tagline": "Bihar's ancient capital on the Ganges",
-   "state": "Bihar"
+   "state": "Bihar",
+   "elevation_m": 53,
+   "difficulty": "easy"
   },
   "pawapuri": {
    "name": "Pawapuri",
    "tagline": "Where Lord Mahavira attained Nirvana",
-   "state": "Bihar"
+   "state": "Bihar",
+   "elevation_m": 55,
+   "difficulty": "easy"
   },
   "rajgir": {
    "name": "Rajgir",
    "tagline": "Hot springs, Vulture Peak, and a hilltop Stupa",
-   "state": "Bihar"
+   "state": "Bihar",
+   "elevation_m": 73,
+   "difficulty": "easy"
   },
   "vaishali": {
    "name": "Vaishali",
    "tagline": "Where Buddha preached his last sermon",
-   "state": "Bihar"
+   "state": "Bihar",
+   "elevation_m": 59,
+   "difficulty": "easy"
   },
   "chandigarh": {
    "name": "Chandigarh",
    "tagline": "India best-planned city — Le Corbusier dream that actually works, with a rock garden built from literal garbage.",
-   "state": "Chandigarh"
+   "state": "Chandigarh",
+   "elevation_m": 321,
+   "difficulty": "easy"
   },
   "barnawapara": {
    "name": "Barnawapara",
    "tagline": "Zero-crowd central Indian wildlife sanctuary",
-   "state": "Chhattisgarh"
+   "state": "Chhattisgarh",
+   "elevation_m": 400,
+   "difficulty": "easy"
   },
   "bhoramdeo": {
    "name": "Bhoramdeo",
    "tagline": "Khajuraho of Chhattisgarh, 11th-century temple in Maikal forests",
-   "state": "Chhattisgarh"
+   "state": "Chhattisgarh",
+   "elevation_m": 400,
+   "difficulty": "easy"
   },
   "chitrakote-falls": {
    "name": "Chitrakote Falls",
    "tagline": "India's Niagara, widest waterfall, Bastar tribal region",
-   "state": "Chhattisgarh"
+   "state": "Chhattisgarh",
+   "elevation_m": 150,
+   "difficulty": "easy"
   },
   "jagdalpur": {
    "name": "Jagdalpur",
    "tagline": "Chitrakote Falls and the Bastar tribal heartland",
-   "state": "Chhattisgarh"
+   "state": "Chhattisgarh",
+   "elevation_m": 552,
+   "difficulty": "moderate"
   },
   "sirpur": {
    "name": "Sirpur",
    "tagline": "5th-8th century Buddhist-Hindu-Jain ruins",
-   "state": "Chhattisgarh"
+   "state": "Chhattisgarh",
+   "elevation_m": 260,
+   "difficulty": "easy"
   },
   "daman": {
    "name": "Daman",
    "tagline": "Portuguese forts, serene beaches, and Goan-flavored heritage on Gujarat's coast",
-   "state": "Daman & Diu"
+   "state": "Daman & Diu",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "diu": {
    "name": "Diu",
    "tagline": "Portuguese colonial island — beaches, forts, and churches in one of India's hidden coastal gems",
-   "state": "Daman & Diu"
+   "state": "Daman & Diu",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "silvassa": {
    "name": "Silvassa",
    "tagline": "Tribal heritage meets forest trails — the green, quiet interior of Dadra & Nagar Haveli",
-   "state": "Daman & Diu"
+   "state": "Daman & Diu",
+   "elevation_m": 50,
+   "difficulty": "easy"
   },
   "delhi": {
    "name": "Delhi",
    "tagline": "Not a destination — a gateway. But if you give it 2 days, it'll surprise you with Mughal tombs, street food, and a chaos that becomes addictive.",
-   "state": "Delhi"
+   "state": "Delhi",
+   "elevation_m": 216,
+   "difficulty": "easy"
   },
   "agonda": {
    "name": "Agonda",
    "tagline": "Goa's quietest beach — turtle nesting site, yoga retreats, and nothing else (that's the point)",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "anjuna": {
    "name": "Anjuna",
    "tagline": "Where the hippie trail ends — flea markets, trance parties, and Chapora Fort sunsets",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "arambol": {
    "name": "Arambol",
    "tagline": "Goa's last hippie beach — drum circles, sweet lake, paragliding, and zero pretension",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "assagao": {
    "name": "Assagao",
    "tagline": "Goa's inland villa + cafe belt — restored Portuguese bungalows, cult restaurants, no beach",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 8,
+   "difficulty": "easy"
   },
   "calangute-baga": {
    "name": "Calangute-Baga",
    "tagline": "Goa's busiest beach strip — water sports by day, clubs by night, shacks 24/7",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "candolim": {
    "name": "Candolim",
    "tagline": "North Goa's resort beach — calm sea, Fort Aguada at the south end, the food strip everyone Googles",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "chorao-divar": {
    "name": "Chorao & Divar Islands",
    "tagline": "Goa's forgotten islands — bird sanctuary, Portuguese mansions, and zero tourists",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "colva-benaulim": {
    "name": "Colva & Benaulim",
    "tagline": "Where Goans actually go to the beach — long quiet sand, local fish restaurants, zero hype",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "dudhsagar-falls": {
    "name": "Dudhsagar Falls",
    "tagline": "India's 5th tallest waterfall — 310 metres of white fury straddling the Goa-Karnataka border",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 310,
+   "difficulty": "moderate"
   },
   "fort-aguada": {
    "name": "Fort Aguada & Candolim",
    "tagline": "Portuguese stronghold turned luxury landmark — Goa's best-preserved fort meets premium beach",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 40,
+   "difficulty": "easy"
   },
   "mandrem": {
    "name": "Mandrem",
    "tagline": "Goa's wellness beach — yoga retreats, kitesurfing, and the quietest sand in North Goa",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "margao": {
    "name": "Margao",
    "tagline": "South Goa's real capital — Konkani markets, Portuguese mansions, and the food Goans actually eat",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "mollem": {
    "name": "Mollem (Bhagwan Mahavir Sanctuary)",
    "tagline": "Goa's largest wildlife sanctuary — Tambdi Surla temple, Dudhsagar gateway, and 240 sq km of Western Ghats",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 80,
+   "difficulty": "easy"
   },
   "morjim": {
    "name": "Morjim",
    "tagline": "Goa's turtle beach — olive ridley nesting site, Russian expat community, and quiet luxury",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "old-goa": {
    "name": "Old Goa",
    "tagline": "UNESCO Portuguese churches — Basilica of Bom Jesus, Se Cathedral, and the Rome of the East",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "palolem": {
    "name": "Palolem",
    "tagline": "The perfect crescent — silent discos, kayak to Butterfly Beach, dolphins at sunrise",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "panaji": {
    "name": "Panaji",
    "tagline": "India's most charming state capital — Portuguese houses, Mandovi sunsets, and casino boats",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 7,
+   "difficulty": "easy"
   },
   "reis-magos": {
    "name": "Reis Magos Fort",
    "tagline": "Beautifully restored Portuguese fort — Goa's best heritage restoration, across the Mandovi from Panaji",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 25,
+   "difficulty": "easy"
   },
   "siolim": {
    "name": "Siolim",
    "tagline": "Riverside Bardez village — heritage churches, the São João boat festival, and the bridge to Pernem",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 8,
+   "difficulty": "easy"
   },
   "ponda-spice": {
    "name": "Spice Plantations (Ponda)",
    "tagline": "Walk through nutmeg, pepper, and vanilla — Goa's spice plantations are edible education",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 60,
+   "difficulty": "easy"
   },
   "vagator": {
    "name": "Vagator",
    "tagline": "Red cliff beaches, Chapora Fort sunsets, and Goa's cooler nightlife scene",
-   "state": "Goa"
+   "state": "Goa",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "ahmedabad": {
    "name": "Ahmedabad",
    "tagline": "India's first UNESCO Heritage City — Sabarmati Ashram, stepwells, and vibrant old city pols",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 53,
+   "difficulty": "easy"
   },
   "ambaji": {
    "name": "Ambaji",
    "tagline": "One of the 51 Shakti Peethas — sacred hilltop temple near the Rajasthan border",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 480,
+   "difficulty": "easy"
   },
   "bhavnagar": {
    "name": "Bhavnagar",
    "tagline": "Gateway to Palitana — royal city with Takhteshwar Temple overlooking the Gulf of Cambay",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 8,
+   "difficulty": "easy"
   },
   "champaner-pavagadh": {
    "name": "Champaner-Pavagadh",
    "tagline": "UNESCO archaeological park — mosques, temples, and fortifications in pristine condition",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 822,
+   "difficulty": "moderate"
   },
   "dakor": {
    "name": "Dakor",
    "tagline": "Ranchhodrai Temple — \"Dwarka of the East\" for millions of Krishna devotees",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 55,
+   "difficulty": "easy"
   },
   "dholavira": {
    "name": "Dholavira",
    "tagline": "UNESCO Harappan city — one of the 5 largest Indus Valley settlements",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 30,
+   "difficulty": "easy"
   },
   "dwarka": {
    "name": "Dwarka",
    "tagline": "Krishna's legendary kingdom — Char Dham and one of the 7 sacred cities of Hinduism",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "gandhinagar": {
    "name": "Gandhinagar",
    "tagline": "India's greenest capital — Akshardham, Adalaj Stepwell, wide boulevards lined with trees",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 81,
+   "difficulty": "easy"
   },
   "gir-national-park": {
    "name": "Gir National Park",
    "tagline": "Last refuge of the Asiatic lion — the only place on Earth to see them in the wild",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 160,
+   "difficulty": "easy"
   },
   "junagadh": {
    "name": "Junagadh",
    "tagline": "Ancient fortress city — Buddhist caves, Ashokan edicts, and Nawabi heritage at Girnar's foot",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 120,
+   "difficulty": "easy"
   },
   "kutch": {
    "name": "Kutch (Bhuj)",
    "tagline": "Gateway to the Rann — handicraft villages, Aina Mahal mirrors, and living tribal traditions",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 80,
+   "difficulty": "easy"
   },
   "lothal": {
    "name": "Lothal",
    "tagline": "World's oldest known dock — 4,500-year-old Indus Valley port city",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "mandvi": {
    "name": "Mandvi",
    "tagline": "Beach town with 400-year-old palace — where dhows are still hand-built on the shore",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "marine-national-park": {
    "name": "Marine National Park",
    "tagline": "India's first marine park — walk on coral reefs at low tide and see octopus, pufferfish",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "modhera": {
    "name": "Modhera Sun Temple",
    "tagline": "Exquisitely carved 11th-century Sun Temple — sun illuminates the inner sanctum at equinox",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 90,
+   "difficulty": "easy"
   },
   "girnar": {
    "name": "Mount Girnar",
    "tagline": "Sacred 10,000-step climb to 5 peaks — Jain and Hindu temples at 3,666 ft",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 1117,
+   "difficulty": "hard"
   },
   "nalsarovar": {
    "name": "Nalsarovar Bird Sanctuary",
    "tagline": "250+ bird species at Gujarat's largest wetland — flamingos, pelicans, cranes in a photographer's paradise",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "palitana": {
    "name": "Palitana",
    "tagline": "863 Jain temples on a single hill — the most sacred Jain pilgrimage on Earth",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 469,
+   "difficulty": "moderate"
   },
   "porbandar": {
    "name": "Porbandar",
    "tagline": "Birthplace of Mahatma Gandhi — coastal town where the Father of the Nation was born",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "rajkot": {
    "name": "Rajkot",
    "tagline": "Mahatma Gandhi's childhood city — Kathiawadi cuisine capital and Saurashtra's cultural heart",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 134,
+   "difficulty": "easy"
   },
   "rani-ki-vav": {
    "name": "Rani ki Vav (Patan)",
    "tagline": "UNESCO inverted temple stepwell — 7 stories deep with 500+ sculptures",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 120,
+   "difficulty": "easy"
   },
   "rann-of-kutch": {
    "name": "Rann of Kutch",
    "tagline": "World's largest salt desert — infinite white horizon under full moon during Rann Utsav",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "saputara": {
    "name": "Saputara",
    "tagline": "Gujarat's only hill station in the Western Ghats — tribal culture meets misty forests",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 1000,
+   "difficulty": "easy"
   },
   "sasangir": {
    "name": "Sasan Gir",
    "tagline": "Safari base for Gir — eco-resorts and Maldhari tribal life in lion country",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 160,
+   "difficulty": "easy"
   },
   "somnath": {
    "name": "Somnath",
    "tagline": "First of the 12 Jyotirlingas — rebuilt 17 times, standing eternal on the Arabian Sea coast",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "statue-of-unity": {
    "name": "Statue of Unity",
    "tagline": "World's tallest statue at 182 meters — Sardar Patel tribute overlooking the Narmada Valley",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 55,
+   "difficulty": "easy"
   },
   "surat": {
    "name": "Surat",
    "tagline": "Diamond capital of the world — 90% of global diamonds cut here, plus legendary street food",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 13,
+   "difficulty": "easy"
   },
   "vadodara": {
    "name": "Vadodara",
    "tagline": "City of gardens and palaces — Laxmi Vilas Palace is 4x the size of Buckingham Palace",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 39,
+   "difficulty": "easy"
   },
   "velavadar": {
    "name": "Velavadar",
    "tagline": "Blackbuck National Park — India's largest blackbuck population in open grassland",
-   "state": "Gujarat"
+   "state": "Gujarat",
+   "elevation_m": 8,
+   "difficulty": "easy"
   },
   "kurukshetra": {
    "name": "Kurukshetra",
    "tagline": "Where the Mahabharata war happened — or didn not — but the Brahma Sarovar and Krishna Museum make the mythology tangible.",
-   "state": "Haryana"
+   "state": "Haryana",
+   "elevation_m": 274,
+   "difficulty": "easy"
   },
   "morni-hills": {
    "name": "Morni Hills",
    "tagline": "Haryana only hill station — modest but accessible, and Tikkar Taal is surprisingly pretty for something this close to Chandigarh.",
-   "state": "Haryana"
+   "state": "Haryana",
+   "elevation_m": 1220,
+   "difficulty": "easy"
   },
   "pinjore-gardens": {
    "name": "Pinjore Gardens",
    "tagline": "Mughal gardens at the foot of the Shivaliks — and the most underrated heritage garden within 2 hours of Delhi.",
-   "state": "Haryana"
+   "state": "Haryana",
+   "elevation_m": 450,
+   "difficulty": "easy"
   },
   "barot-valley": {
    "name": "Barot Valley",
    "tagline": "The valley that Google Maps forgot — no ATM, no hospital, no Mall Road, just the Uhl river and you.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1820,
+   "difficulty": "easy"
   },
   "bir-billing": {
    "name": "Bir Billing",
    "tagline": "India paragliding capital — Tibetan colony and cafe scene mean you stay even if wind does not cooperate.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1525,
+   "difficulty": "easy"
   },
   "chail": {
    "name": "Chail",
    "tagline": "World highest cricket ground, a palace hotel, and the hill station Shimla locals escape TO.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2250,
+   "difficulty": "easy"
   },
   "chamba": {
    "name": "Chamba",
    "tagline": "1000-year-old Lakshmi Narayan temples, the Chaugan meadow, and Himachali culture untouched by tourism.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 996,
+   "difficulty": "easy"
   },
   "chandratal": {
    "name": "Chandratal",
    "tagline": "Crescent-shaped lake at 4,300m — reachable only in summer, camped beside on borrowed time.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 4300,
+   "difficulty": "hard"
   },
   "chitkul": {
    "name": "Chitkul",
    "tagline": "The last inhabited village before the Tibet border — where India ends and the mountains begin.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3450,
+   "difficulty": "moderate"
   },
   "dalhousie": {
    "name": "Dalhousie",
    "tagline": "Colonial hill station with Scottish churches, Khajjiar meadow (Mini Switzerland), and cedar-lined walks.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1970,
+   "difficulty": "easy"
   },
   "dharamshala": {
    "name": "Dharamshala",
    "tagline": "Cricket stadium with the best view in world sport, Tibetan government-in-exile, and gateway to the Dhauladhar range.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1457,
+   "difficulty": "easy"
   },
   "great-himalayan-np": {
    "name": "Great Himalayan National Park",
    "tagline": "UNESCO World Heritage 2014 — 1,171 sq km of virgin Himalayan forest with snow leopard, brown bear, and 209 bird species.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1500,
+   "difficulty": "hard"
   },
   "jibhi": {
    "name": "Jibhi",
    "tagline": "The village that Instagram discovered — waterfalls, river, cafes, and the next Kasol but without the drugs.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1560,
+   "difficulty": "easy"
   },
   "kalpa": {
    "name": "Kalpa",
    "tagline": "Wake up to the Kinner Kailash massif from your guesthouse balcony — that view is the entire point.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2960,
+   "difficulty": "moderate"
   },
   "kasauli": {
    "name": "Kasauli",
    "tagline": "The closest proper hill station to Delhi/Chandigarh — and the army keeps it from turning into another Shimla.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1927,
+   "difficulty": "easy"
   },
   "kasol": {
    "name": "Kasol",
    "tagline": "India's backpacker capital in the Parvati Valley — Israeli cafes, riverside camping, and mountain vibes.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1640,
+   "difficulty": "easy"
   },
   "kaza": {
    "name": "Kaza",
    "tagline": "The Spiti headquarters — every route in the valley runs through here.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3650,
+   "difficulty": "hard"
   },
   "keylong": {
    "name": "Keylong",
    "tagline": "Lahaul district HQ — the most important town nobody stops in, gateway to Leh from HP side.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3080,
+   "difficulty": "moderate"
   },
   "kinnaur": {
    "name": "Kinnaur",
    "tagline": "The drive through Kinnaur is the destination — suicide roads, apple villages, and temples carved into cliffs.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2500,
+   "difficulty": "moderate"
   },
   "kinner-kailash": {
    "name": "Kinner Kailash",
    "tagline": "A natural Shivalingam rock on a 6,055m peak with a challenging 5-day parikrama.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 6055,
+   "difficulty": "hard"
   },
   "kufri": {
    "name": "Kufri",
    "tagline": "Shimla snow playground — the reason half of North India drives to HP in winter.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2622,
+   "difficulty": "easy"
   },
   "kullu": {
    "name": "Kullu",
    "tagline": "The Valley of Gods — famous for Dussehra when 300+ village deities gather, plus rafting on the Beas and gateway to Manali.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1220,
+   "difficulty": "easy"
   },
   "lahaul-valley": {
    "name": "Lahaul Valley",
    "tagline": "The valley beyond the Atal Tunnel — Keylong, Jispa, Darcha — where Himachal ends and Ladakh begins.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3200,
+   "difficulty": "moderate"
   },
   "manali": {
    "name": "Manali",
    "tagline": "The Goa of the mountains — overrun, overbuilt, and still useful as a launchpad for everything north of it.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2050,
+   "difficulty": "easy"
   },
   "mandi": {
    "name": "Mandi",
    "tagline": "The gateway to Kullu Valley and beyond — 81 temples in one town and nobody stops to see them.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 850,
+   "difficulty": "easy"
   },
   "manikaran": {
    "name": "Manikaran",
    "tagline": "Natural hot springs where you can boil rice in the ground — plus a massive Sikh gurudwara and Shiva temple side by side.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1760,
+   "difficulty": "easy"
   },
   "manimahesh-kailash": {
    "name": "Manimahesh Kailash",
    "tagline": "An unclimbed sacred peak above Manimahesh Lake, honored by the annual Janmashtami-to-Radha Ashtami yatra.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 5653,
+   "difficulty": "hard"
   },
   "mcleodganj": {
    "name": "McLeod Ganj",
    "tagline": "Home of the Dalai Lama — Tibetan cafes, meditation retreats, and the Triund trek start point at 2082m.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2082,
+   "difficulty": "easy"
   },
   "nako": {
    "name": "Nako",
    "tagline": "A turquoise lake, an apple village, and ancient Buddhist murals — where Kinnaur meets Spiti.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3662,
+   "difficulty": "moderate"
   },
   "palampur": {
    "name": "Palampur",
    "tagline": "India's tea capital that nobody talks about — Kangra tea gardens with Dhauladhar snow peaks behind them, minus the Darjeeling crowds.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1472,
+   "difficulty": "easy"
   },
   "parvati-valley": {
    "name": "Parvati Valley",
    "tagline": "The valley beyond Kasol — Tosh, Malana, Kheerganga hot springs, and some of India's finest treks.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2400,
+   "difficulty": "moderate"
   },
   "prashar-lake": {
    "name": "Prashar Lake",
    "tagline": "A floating island in a high-altitude lake with a pagoda temple — the trek most Himachal regulars haven't done yet.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2730,
+   "difficulty": "moderate"
   },
   "sangla": {
    "name": "Sangla Valley",
    "tagline": "Apple orchards and Kinnauri wooden temples in a valley that Himachal locals keep to themselves.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2680,
+   "difficulty": "moderate"
   },
   "sarahan": {
    "name": "Sarahan",
    "tagline": "Bhimakali temple is one of Himachal finest — and the village is a perfect acclimatization stop before Kinnaur.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2165,
+   "difficulty": "moderate"
   },
   "shimla": {
    "name": "Shimla",
    "tagline": "The toy train is magical, the Mall Road is chaos, and Kufri in snow is worth every minute of the traffic jam getting there.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 2205,
+   "difficulty": "easy"
   },
   "shrikhand-mahadev": {
    "name": "Shrikhand Mahadev",
    "tagline": "One of India's toughest pilgrim treks: a 5-day ordeal with vertical snow pitches and a 75-foot Shivalingam.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 5227,
+   "difficulty": "extreme"
   },
   "sissu": {
    "name": "Sissu",
    "tagline": "The first village after the Atal Tunnel — a waterfall crashes next to the highway and the air changes completely.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3100,
+   "difficulty": "moderate"
   },
   "solan": {
    "name": "Solan",
    "tagline": "Mushroom capital of India and the gateway to everywhere in HP — nobody stays but everyone passes through.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1502,
+   "difficulty": "easy"
   },
   "spiti-valley": {
    "name": "Spiti Valley",
    "tagline": "India's piece of Tibet — cold desert villages, 1000-year-old monasteries, zero phone signal, all soul.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 3800,
+   "difficulty": "hard"
   },
   "tirthan-valley": {
    "name": "Tirthan Valley",
    "tagline": "What Manali was 30 years ago — trout streams, no mall road, gateway to Great Himalayan National Park.",
-   "state": "Himachal Pradesh"
+   "state": "Himachal Pradesh",
+   "elevation_m": 1600,
+   "difficulty": "moderate"
   },
   "achabal": {
    "name": "Achabal",
    "tagline": "Queen of Kashmir's springs — Mughal terraced garden with natural cascading water channels and chinar shade.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 1680,
+   "difficulty": "easy"
   },
   "bangus-valley": {
    "name": "Bangus Valley",
    "tagline": "A permit-required frontier valley near the LoC that rewards the bureaucratic effort with meadows nobody else is standing in.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 3000,
+   "difficulty": "hard"
   },
   "bhaderwah": {
    "name": "Bhaderwah",
    "tagline": "The Mini Kashmir that nobody from outside J&K has heard of — meadows, deodar forests, and zero tourists.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 1613,
+   "difficulty": "moderate"
   },
   "doodhpathri": {
    "name": "Doodhpathri",
    "tagline": "The Meadow of Milk — flat enough for a toddler to run on, stunning enough to make an adult cry.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2730,
+   "difficulty": "easy"
   },
   "gulmarg": {
    "name": "Gulmarg",
    "tagline": "Asia's highest cable car, India's best skiing, and a meadow so green in summer that it hurts your eyes.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2650,
+   "difficulty": "easy"
   },
   "gurez-valley": {
    "name": "Gurez Valley",
    "tagline": "The most beautiful valley you've never heard of — because it's on the LoC and was closed to civilians until 2007.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2400,
+   "difficulty": "hard"
   },
   "katra": {
    "name": "Katra",
    "tagline": "Base town for the 13km trek to Vaishno Devi Shakti Peetha",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 875,
+   "difficulty": "moderate"
   },
   "kishtwar": {
    "name": "Kishtwar",
    "tagline": "Where the Himalaya gets wild — Kishtwar is the adventure frontier that even Ladakh seekers skip.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 1638,
+   "difficulty": "hard"
   },
   "kokernag": {
    "name": "Kokernag",
    "tagline": "Kashmir's largest freshwater spring — trout hatchery, botanical garden, and water pure enough to drink from source.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2000,
+   "difficulty": "easy"
   },
   "lolab-valley": {
    "name": "Lolab Valley",
    "tagline": "Kashmir hidden meadow valley — walnut trees, no tourists, and the silence that Gulmarg lost to gondola crowds.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2400,
+   "difficulty": "moderate"
   },
   "pahalgam": {
    "name": "Pahalgam",
    "tagline": "The Lidder Valley does what Manali promises but fails to deliver — actual river beauty without the Mall Road chaos.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2130,
+   "difficulty": "easy"
   },
   "patnitop": {
    "name": "Patnitop",
    "tagline": "The most accessible snow destination in J&K — 2 hours from Jammu, no permits, no drama, just pine forests and winter snow.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2024,
+   "difficulty": "easy"
   },
   "sinthan-top": {
    "name": "Sinthan Top",
    "tagline": "A high pass between Kashmir and Kishtwar where the meadow at the top makes you forget you're on a road.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 3748,
+   "difficulty": "moderate"
   },
   "sonamarg": {
    "name": "Sonamarg",
    "tagline": "The golden meadow that guards the gate to Ladakh — Thajiwas Glacier is a 3km walk from a flower-covered meadow.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2800,
+   "difficulty": "moderate"
   },
   "srinagar": {
    "name": "Srinagar",
    "tagline": "The Venice of the East is a cliche that undersells it — Dal Lake at dawn, with the Zabarwan mountains behind, is one of the most beautiful sights in Asia.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 1585,
+   "difficulty": "easy"
   },
   "tosamaidan": {
    "name": "Tosamaidan",
    "tagline": "Asia's largest meadow was an army artillery range until 2014. The mines are gone. The beauty was always there.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 3000,
+   "difficulty": "moderate"
   },
   "verinag": {
    "name": "Verinag",
    "tagline": "Source spring of the Jhelum — an octagonal Mughal pool so blue it looks photoshopped, virtually no tourists.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 1876,
+   "difficulty": "easy"
   },
   "yusmarg": {
    "name": "Yusmarg",
    "tagline": "Kashmir's quietest meadow — 47km from Srinagar but light-years from the tourist circuit.",
-   "state": "Jammu & Kashmir"
+   "state": "Jammu & Kashmir",
+   "elevation_m": 2396,
+   "difficulty": "easy"
   },
   "betla": {
    "name": "Betla",
    "tagline": "Palamau Tiger Reserve, forest trails through sal and bamboo",
-   "state": "Jharkhand"
+   "state": "Jharkhand",
+   "elevation_m": 700,
+   "difficulty": "moderate"
   },
   "deoghar": {
    "name": "Deoghar",
    "tagline": "Baidyanath Jyotirlinga — one of 12 sacred Shiva temples",
-   "state": "Jharkhand"
+   "state": "Jharkhand",
+   "elevation_m": 247,
+   "difficulty": "easy"
   },
   "netarhat": {
    "name": "Netarhat",
    "tagline": "Queen of Chotanagpur — most dramatic sunrise in eastern India",
-   "state": "Jharkhand"
+   "state": "Jharkhand",
+   "elevation_m": 1128,
+   "difficulty": "easy"
   },
   "ranchi": {
    "name": "Ranchi",
    "tagline": "The waterfall circuit of eastern India",
-   "state": "Jharkhand"
+   "state": "Jharkhand",
+   "elevation_m": 651,
+   "difficulty": "easy"
   },
   "shikharji": {
    "name": "Shikharji",
    "tagline": "The holiest Jain site where 20 Tirthankaras attained moksha",
-   "state": "Jharkhand"
+   "state": "Jharkhand",
+   "elevation_m": 1365,
+   "difficulty": "moderate"
   },
   "aihole": {
    "name": "Aihole",
    "tagline": "Cradle of Indian rock architecture — 120+ temples where Chalukya architects experimented",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 530,
+   "difficulty": "easy"
   },
   "badami": {
    "name": "Badami",
    "tagline": "Chalukya cave temples carved from red sandstone cliffs — India's earliest Hindu rock architecture",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 580,
+   "difficulty": "easy"
   },
   "bandipur": {
    "name": "Bandipur National Park",
    "tagline": "Nilgiri Biosphere tiger reserve — elephants, leopards, and India's most scenic safari road",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 780,
+   "difficulty": "easy"
   },
   "belur": {
    "name": "Belur",
    "tagline": "UNESCO Hoysala temple — Chennakesava's soapstone carvings are the most intricate in India",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 933,
+   "difficulty": "easy"
   },
   "bengaluru": {
    "name": "Bengaluru",
    "tagline": "India's Silicon Valley — craft beer capital, garden city, and the startup engine of a billion people",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 920,
+   "difficulty": "easy"
   },
   "bidar": {
    "name": "Bidar",
    "tagline": "Bahmani dynasty capital — massive fort, Bidriware metalcraft, and Guru Nanak's sacred spring",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 700,
+   "difficulty": "easy"
   },
   "bijapur": {
    "name": "Bijapur (Vijayapura)",
    "tagline": "Gol Gumbaz — the world's second-largest unsupported dome, and the Adil Shahi dynasty's glory",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 594,
+   "difficulty": "easy"
   },
   "chikmagalur": {
    "name": "Chikmagalur",
    "tagline": "Where Indian coffee was born — Mullayanagiri peak, Baba Budangiri, and the best plantation stays",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 1090,
+   "difficulty": "moderate"
   },
   "chitradurga": {
    "name": "Chitradurga",
    "tagline": "Seven concentric walls, 1,500 acres — the fort that withstood every invader until Hyder Ali",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 732,
+   "difficulty": "moderate"
   },
   "coorg": {
    "name": "Coorg (Kodagu)",
    "tagline": "India's coffee capital — misty plantations, Abbey Falls, and the warrior culture of Kodagu",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 1100,
+   "difficulty": "easy"
   },
   "dandeli": {
    "name": "Dandeli",
    "tagline": "White water rafting, crocodiles, and 834 sq km of Sahyadri wilderness",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 470,
+   "difficulty": "moderate"
   },
   "dharmasthala": {
    "name": "Dharmasthala",
    "tagline": "The temple that feeds 30,000 people free every day — Dharmasthala's annadana tradition",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 89,
+   "difficulty": "easy"
   },
   "gokarna": {
    "name": "Gokarna",
    "tagline": "What Goa was 30 years ago — Om Beach, temple town, and five beaches connected by cliff trails",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "gulbarga": {
    "name": "Gulbarga (Kalaburagi)",
    "tagline": "Bahmani dynasty's first capital — India's only fully-roofed mosque and emerging Buddhist sites",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 454,
+   "difficulty": "easy"
   },
   "halebidu": {
    "name": "Halebidu",
    "tagline": "UNESCO Hoysala masterpiece — Hoysaleshwara Temple with 240 wall panels of mythological scenes",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 917,
+   "difficulty": "easy"
   },
   "hampi": {
    "name": "Hampi",
    "tagline": "UNESCO ruins of a forgotten empire — boulders, temples, and the ghost of Vijayanagara",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 467,
+   "difficulty": "easy"
   },
   "jog-falls": {
    "name": "Jog Falls",
    "tagline": "India's second-highest plunge waterfall — 253 metres of monsoon fury in four cascades",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 488,
+   "difficulty": "easy"
   },
   "kabini": {
    "name": "Kabini",
    "tagline": "India's most luxurious wildlife experience — Kabini backwaters, black panthers, and elephant herds",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 700,
+   "difficulty": "easy"
   },
   "karwar": {
    "name": "Karwar",
    "tagline": "Tagore's favourite beach, India's naval base, and the gateway to Devbagh Island",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "kukke-subramanya": {
    "name": "Kukke Subramanya",
    "tagline": "Sarpa Dosha rituals in the Western Ghats — Subrahmanya temple and the Kumara Parvatha trailhead",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 120,
+   "difficulty": "moderate"
   },
   "mangalore": {
    "name": "Mangalore",
    "tagline": "Coastal Karnataka's capital — Mangalorean cuisine, Kudla culture, and gateway to the Western Ghats",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "murudeshwar": {
    "name": "Murudeshwar",
    "tagline": "World's second-tallest Shiva statue rising from an Arabian Sea headland",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "mysore": {
    "name": "Mysore",
    "tagline": "The city of palaces — Chamundi Hills, silk saris, sandalwood, and India's grandest Dasara festival",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 770,
+   "difficulty": "easy"
   },
   "nagarhole": {
    "name": "Nagarhole National Park",
    "tagline": "Rajiv Gandhi National Park — where Nilgiri teak meets tigers, elephants, and wild dogs",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 700,
+   "difficulty": "easy"
   },
   "nandi-hills": {
    "name": "Nandi Hills",
    "tagline": "Bangalore's sunrise escape — 1,478m fortress hilltop where Tipu Sultan retreated",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 1478,
+   "difficulty": "easy"
   },
   "pattadakal": {
    "name": "Pattadakal",
    "tagline": "UNESCO temple complex — where Chalukya architects experimented before building their capitals",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 530,
+   "difficulty": "easy"
   },
   "sakleshpur": {
    "name": "Sakleshpur",
    "tagline": "Coffee plantations, abandoned railway treks, and the most underrated hill station in Karnataka",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 940,
+   "difficulty": "moderate"
   },
   "shravanabelagola": {
    "name": "Shravanabelagola",
    "tagline": "The 57-foot Bahubali monolith — world's largest free-standing statue, 1,000 years old",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 805,
+   "difficulty": "moderate"
   },
   "srirangapatna": {
    "name": "Srirangapatna",
    "tagline": "Tipu Sultan's island fortress on the Kaveri — where the Tiger of Mysore made his last stand",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 680,
+   "difficulty": "easy"
   },
   "udupi": {
    "name": "Udupi",
    "tagline": "Where South Indian cuisine was born — Krishna Temple, masala dosa origin, and Malpe Beach",
-   "state": "Karnataka"
+   "state": "Karnataka",
+   "elevation_m": 4,
+   "difficulty": "easy"
   },
   "alleppey": {
    "name": "Alleppey (Alappuzha)",
    "tagline": "Venice of the East — 900km of canals, houseboats, and the Nehru Trophy Boat Race",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "athirapally": {
    "name": "Athirapally Falls",
    "tagline": "Niagara of India — India's largest waterfall by volume flow",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 100,
+   "difficulty": "easy"
   },
   "bekal": {
    "name": "Bekal",
    "tagline": "Kerala's largest fort overlooking the Arabian Sea",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "beypore": {
    "name": "Beypore",
    "tagline": "1,000-year-old hand-built wooden ships — the last Uru shipyard on Earth",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "cherai": {
    "name": "Cherai Beach",
    "tagline": "Dolphins, Chinese fishing nets, and the estuary where Periyar meets the sea",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "chinnar": {
    "name": "Chinnar Wildlife Sanctuary",
    "tagline": "Kerala's driest sanctuary — Grizzled Giant Squirrel and Thoovanam Falls",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 600,
+   "difficulty": "moderate"
   },
   "eravikulam": {
    "name": "Eravikulam National Park",
    "tagline": "Tame Nilgiri Tahrs, South India's highest peak, and the 12-year flower bloom",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 2000,
+   "difficulty": "moderate"
   },
   "guruvayur": {
    "name": "Guruvayur",
    "tagline": "Most sacred Krishna temple in Kerala — 60+ temple elephants",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 20,
+   "difficulty": "easy"
   },
   "idukki": {
    "name": "Idukki",
    "tagline": "Asia's highest arch dam, cardamom hills, and Kerala's wildlife hub",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 1000,
+   "difficulty": "moderate"
   },
   "kannur": {
    "name": "Kannur",
    "tagline": "Theyyam ritual art, India's only drive-in beach, and Portuguese forts",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kochi": {
    "name": "Kochi (Fort Kochi)",
    "tagline": "Chinese Fishing Nets, oldest church in India, and Asia's largest art biennale",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kollam": {
    "name": "Kollam",
    "tagline": "Ashtamudi Lake, Munroe Island, and the 8-hour cruise to Alleppey",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kovalam": {
    "name": "Kovalam",
    "tagline": "Kerala's most famous beach — lighthouse, Ayurveda, and the Arabian Sea",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kozhikode": {
    "name": "Kozhikode (Calicut)",
    "tagline": "Where Vasco da Gama landed — and Malabar biryani was perfected",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kumarakom": {
    "name": "Kumarakom",
    "tagline": "Vembanad Lake — where Siberian birds winter and backwaters meet premium stays",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kumbalangi": {
    "name": "Kumbalangi",
    "tagline": "India's first model ecotourism village — crab farming and Chinese fishing nets",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kuttanad": {
    "name": "Kuttanad",
    "tagline": "Below sea level farming — the only place in Asia where crops grow under water",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": -2,
+   "difficulty": "easy"
   },
   "marari": {
    "name": "Marari Beach",
    "tagline": "Kerala's most pristine beach — fishing village life with no jet skis",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "munnar": {
    "name": "Munnar",
    "tagline": "Tea estates as far as the eye can see — South India's highest peak",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 1600,
+   "difficulty": "easy"
   },
   "nelliyampathy": {
    "name": "Nelliyampathy",
    "tagline": "Palakkad's Munnar — pristine plantations with zero tourist infrastructure",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 900,
+   "difficulty": "moderate"
   },
   "ponmudi": {
    "name": "Ponmudi",
    "tagline": "Gold Peak — 365+ butterfly species and 22 hairpin bends from Trivandrum",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 1100,
+   "difficulty": "easy"
   },
   "poovar": {
    "name": "Poovar",
    "tagline": "River-sea-beach trifecta — an island resort accessible only by boat",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "sabarimala": {
    "name": "Sabarimala",
    "tagline": "Lord Ayyappa's sacred shrine on a misty peak",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 914,
+   "difficulty": "moderate"
   },
   "silent-valley": {
    "name": "Silent Valley National Park",
    "tagline": "India's last untouched tropical rainforest — saved by the nation",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 900,
+   "difficulty": "moderate"
   },
   "thekkady": {
    "name": "Thekkady (Periyar)",
    "tagline": "Periyar Lake — where elephants come to drink and spice plantations perfume the air",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 900,
+   "difficulty": "easy"
   },
   "trivandrum": {
    "name": "Thiruvananthapuram (Trivandrum)",
    "tagline": "Kerala's capital — the world's richest temple and India's cleanest city",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "thrissur": {
    "name": "Thrissur",
    "tagline": "Kerala's Cultural Capital — Thrissur Pooram, 100 elephants, and all-night fireworks",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 20,
+   "difficulty": "easy"
   },
   "vagamon": {
    "name": "Vagamon",
    "tagline": "Pine forests, rolling meadows, and paragliding — Kerala's most underrated hill station",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 1100,
+   "difficulty": "easy"
   },
   "varkala": {
    "name": "Varkala",
    "tagline": "Kerala's only cliff beach — where the sacred meets the scenic",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 15,
+   "difficulty": "easy"
   },
   "wayanad": {
    "name": "Wayanad",
    "tagline": "Prehistoric caves, heart-shaped lake, and the Western Ghats at their wildest",
-   "state": "Kerala"
+   "state": "Kerala",
+   "elevation_m": 780,
+   "difficulty": "moderate"
   },
   "alchi": {
    "name": "Alchi",
    "tagline": "A 1000-year-old Buddhist art gallery hidden in a tiny village — the oldest surviving murals in Ladakh, painted when the Chola dynasty ruled South India.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3100,
+   "difficulty": "easy"
   },
   "drass": {
    "name": "Drass",
    "tagline": "The second coldest inhabited place on Earth, a war memorial that will make you cry, and -45°C winters.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3280,
+   "difficulty": "moderate"
   },
   "hanle": {
    "name": "Hanle",
    "tagline": "Darkest skies in India — a remote observatory village at 4500m where the Milky Way is visible to the naked eye.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 4500,
+   "difficulty": "extreme"
   },
   "kargil": {
    "name": "Kargil",
    "tagline": "The gateway between Kashmir and Ladakh, a war-scarred town finding peace — and the start of the Zanskar road.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 2676,
+   "difficulty": "moderate"
   },
   "khardung-la": {
    "name": "Khardung La",
    "tagline": "5,359m pass north of Leh — the gateway to Nubra Valley and a rite of passage for motorcyclists.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 5359,
+   "difficulty": "extreme"
   },
   "lamayuru": {
    "name": "Lamayuru",
    "tagline": "The moon landscape monastery — Ladakh at its most alien, with a 1000-year-old gompa perched above a crater of eroded clay.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3510,
+   "difficulty": "moderate"
   },
   "leh": {
    "name": "Leh",
    "tagline": "The town where every road trip to Ladakh begins with 2 mandatory days of doing nothing — and somehow those 2 days become the highlight.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3524,
+   "difficulty": "moderate"
   },
   "likir": {
    "name": "Likir",
    "tagline": "A living monastery where monks still debate, pray, and tend gardens — plus a giant golden Maitreya Buddha visible for miles.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3700,
+   "difficulty": "easy"
   },
   "nubra-valley": {
    "name": "Nubra Valley",
    "tagline": "Sand dunes at 3000m with double-hump camels, a monastery watching over the valley, and the last Indian village before Pakistan.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3048,
+   "difficulty": "moderate"
   },
   "pangong-lake": {
    "name": "Pangong Tso",
    "tagline": "The most Instagrammed lake in India and the most dangerous for unprepared tourists — 4350m of beauty that punishes anyone who skips acclimatization.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 4350,
+   "difficulty": "hard"
   },
   "tso-moriri": {
    "name": "Tso Moriri",
    "tagline": "Pangong's quieter, wilder twin — where Changpa nomads graze pashmina goats and the lake reflects a sky nobody else is looking at.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 4522,
+   "difficulty": "hard"
   },
   "turtuk": {
    "name": "Turtuk",
    "tagline": "India's last Balti village on the Shyok — opened to visitors in 2010, still feels half-secret.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 2900,
+   "difficulty": "moderate"
   },
   "umlingla": {
    "name": "Umlingla",
    "tagline": "World's highest motorable road at 5883m — the ultimate test of altitude, endurance, and vehicle reliability.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 5883,
+   "difficulty": "extreme"
   },
   "zanskar": {
    "name": "Zanskar Valley",
    "tagline": "India's most inaccessible inhabited valley — where the river freezes into a walkable sheet and monks live in monasteries hanging from cliffs.",
-   "state": "Ladakh"
+   "state": "Ladakh",
+   "elevation_m": 3660,
+   "difficulty": "extreme"
   },
   "agatti": {
    "name": "Agatti Island",
    "tagline": "Gateway to Lakshadweep — the only island with an airport and a stunning coral reef runway approach",
-   "state": "Lakshadweep"
+   "state": "Lakshadweep",
+   "elevation_m": 2,
+   "difficulty": "easy"
   },
   "bangaram": {
    "name": "Bangaram Island",
    "tagline": "India's Maldives — an uninhabited resort island with the clearest water in the subcontinent",
-   "state": "Lakshadweep"
+   "state": "Lakshadweep",
+   "elevation_m": 2,
+   "difficulty": "easy"
   },
   "kadmat": {
    "name": "Kadmat Island",
    "tagline": "Water sports capital of Lakshadweep — best diving, kayaking, and the longest sandbank",
-   "state": "Lakshadweep"
+   "state": "Lakshadweep",
+   "elevation_m": 2,
+   "difficulty": "easy"
   },
   "kavaratti": {
    "name": "Kavaratti",
    "tagline": "Capital island of Lakshadweep — aquarium, mosques, and the calmest lagoon in India",
-   "state": "Lakshadweep"
+   "state": "Lakshadweep",
+   "elevation_m": 2,
+   "difficulty": "easy"
   },
   "minicoy": {
    "name": "Minicoy Island",
    "tagline": "Southernmost island with a 300-year-old lighthouse, Maldivian culture, and tuna fishing heritage",
-   "state": "Lakshadweep"
+   "state": "Lakshadweep",
+   "elevation_m": 2,
+   "difficulty": "moderate"
   },
   "bandhavgarh": {
    "name": "Bandhavgarh National Park",
    "tagline": "India's highest tiger density — your best odds of spotting a tiger",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 480,
+   "difficulty": "moderate"
   },
   "bhimbetka": {
    "name": "Bhimbetka Rock Shelters",
    "tagline": "UNESCO World Heritage 2003 — 30,000-year-old rock paintings, the oldest evidence of human life on the Indian subcontinent.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 600,
+   "difficulty": "easy"
   },
   "bhopal": {
    "name": "Bhopal",
    "tagline": "Six lakes, the Bhojpur shivling, and Bhimbetka rock shelters — Madhya Pradesh's lake capital.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 527,
+   "difficulty": "easy"
   },
   "gwalior": {
    "name": "Gwalior",
    "tagline": "The pearl amongst fortresses",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 214,
+   "difficulty": "easy"
   },
   "jabalpur": {
    "name": "Jabalpur",
    "tagline": "Marble Rocks of Bhedaghat — 100-foot marble cliffs on the Narmada, Dhuandhar Falls, and gateway to Kanha and Bandhavgarh.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 412,
+   "difficulty": "easy"
   },
   "kanha": {
    "name": "Kanha National Park",
    "tagline": "Where Mowgli roamed — India's most famous tiger reserve",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 600,
+   "difficulty": "moderate"
   },
   "khajuraho": {
    "name": "Khajuraho",
    "tagline": "Erotic temple sculptures from 1,000 years ago that make you wonder what happened to India between then and now — UNESCO masterpieces in a sleepy village.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 283,
+   "difficulty": "easy"
   },
   "mandu": {
    "name": "Mandu",
    "tagline": "Romantic medieval citadel at 634m — Jahaz Mahal, Rani Roopmati's love story, and 45 sq km of Afghan-Mughal ruins that most of India has forgotten.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 634,
+   "difficulty": "easy"
   },
   "omkareshwar": {
    "name": "Omkareshwar",
    "tagline": "Sacred Jyotirlinga on an Om-shaped island in the Narmada",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 200,
+   "difficulty": "easy"
   },
   "orchha": {
    "name": "Orchha",
    "tagline": "A forgotten Bundela kingdom on the Betwa river — grand cenotaphs and palaces with zero crowds and sunset views that rival any fort in India.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 253,
+   "difficulty": "easy"
   },
   "pachmarhi": {
    "name": "Pachmarhi",
    "tagline": "MP's only hill station — Satpura Queen",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 1067,
+   "difficulty": "easy"
   },
   "sanchi": {
    "name": "Sanchi",
    "tagline": "Ashoka built it in the 3rd century BCE and it's still standing — the oldest stone Buddhist architecture in India.",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 434,
+   "difficulty": "easy"
   },
   "ujjain": {
    "name": "Ujjain",
    "tagline": "One of only 4 Kumbh Mela sites",
-   "state": "Madhya Pradesh"
+   "state": "Madhya Pradesh",
+   "elevation_m": 494,
+   "difficulty": "easy"
   },
   "ajanta-caves": {
    "name": "Ajanta Caves",
    "tagline": "UNESCO masterpiece — 2,000-year-old Buddhist paintings that survived in horseshoe rock",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 450,
+   "difficulty": "easy"
   },
   "alibaug": {
    "name": "Alibaug",
    "tagline": "Mumbai's beach backyard — forts, ferries, and the Konkan coast at your doorstep",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 6,
+   "difficulty": "easy"
   },
   "amboli": {
    "name": "Amboli",
    "tagline": "Maharashtra's southernmost hill station — Sahyadri waterfalls, king cobras, and monsoon magic",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 690,
+   "difficulty": "easy"
   },
   "astavinayak-circuit": {
    "name": "Astavinayak Circuit",
    "tagline": "The 8 swayambhu Ganesha temples in a 600km Maharashtra loop from Pune",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 600,
+   "difficulty": "easy"
   },
   "aurangabad": {
    "name": "Aurangabad",
    "tagline": "Gateway to UNESCO caves — Bibi Ka Maqbara, Paithan silks, and Mughlai-Deccani food",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 513,
+   "difficulty": "easy"
   },
   "bhandardara": {
    "name": "Bhandardara",
    "tagline": "Arthur Lake, fireflies in May, and Kalsubai — Maharashtra's rooftop",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 750,
+   "difficulty": "moderate"
   },
   "bhimashankar": {
    "name": "Bhimashankar",
    "tagline": "One of 12 Jyotirlingas — Sahyadri temple, giant Indian squirrel sanctuary, and monsoon treks",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 940,
+   "difficulty": "moderate"
   },
   "daulatabad": {
    "name": "Daulatabad Fort",
    "tagline": "The impregnable hilltop fortress — moats, dark tunnels, and a 200m vertical climb",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 630,
+   "difficulty": "moderate"
   },
   "elephanta-caves": {
    "name": "Elephanta Caves",
    "tagline": "UNESCO rock-cut caves on an island — a 6th-century Shiva masterpiece an hour from Mumbai",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 60,
+   "difficulty": "easy"
   },
   "ellora-caves": {
    "name": "Ellora Caves",
    "tagline": "UNESCO site with the monolithic Kailasa temple — carved top-down from a single basalt cliff",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 560,
+   "difficulty": "easy"
   },
   "ganpatipule": {
    "name": "Ganpatipule",
    "tagline": "Where the Ganesh temple meets pristine Konkan sand — pilgrimage and beach in one",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "harihareshwar": {
    "name": "Harihareshwar",
    "tagline": "Deva che Ghar — where Shiva meets the sea, flanked by four protective hills",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "igatpuri": {
    "name": "Igatpuri",
    "tagline": "Vipassana meditation headquarters, monsoon waterfalls, and Sahyadri treks",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 600,
+   "difficulty": "moderate"
   },
   "kanheri-caves": {
    "name": "Kanheri Caves",
    "tagline": "109 Buddhist rock-cut caves inside Mumbai's Sanjay Gandhi National Park",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 100,
+   "difficulty": "easy"
   },
   "karla-bhaja-caves": {
    "name": "Karla & Bhaja Caves",
    "tagline": "1st-century BCE Buddhist chaitya halls in the Sahyadri",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 600,
+   "difficulty": "easy"
   },
   "kashid": {
    "name": "Kashid",
    "tagline": "Maharashtra's best white sand beach — clean, calm, and just close enough for a Mumbai weekend",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "khandala": {
    "name": "Khandala",
    "tagline": "The twin of Lonavala — Bollywood's favourite ghats, Duke's Nose, and the misty Western Ghats",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 625,
+   "difficulty": "easy"
   },
   "kolad": {
    "name": "Kolad",
    "tagline": "Maharashtra's Rishikesh — white water rafting on the Kundalika River, 2 hours from Mumbai",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 40,
+   "difficulty": "moderate"
   },
   "kolhapur": {
    "name": "Kolhapur",
    "tagline": "Mahalaxmi Temple, kushti wrestling, and the spiciest misal pav you'll ever eat",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 569,
+   "difficulty": "easy"
   },
   "lenyadri": {
    "name": "Lenyadri",
    "tagline": "Girijatmaj — the only Astavinayak inside Buddhist rock-cut caves",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 670,
+   "difficulty": "moderate"
   },
   "lonar-crater": {
    "name": "Lonar Crater",
    "tagline": "The world's only meteoric crater in basaltic rock — 50,000 years old, saline and alkaline",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 475,
+   "difficulty": "easy"
   },
   "lonavala": {
    "name": "Lonavala",
    "tagline": "Mumbai-Pune's favourite monsoon escape — fudge, fog, and fort trails",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 625,
+   "difficulty": "easy"
   },
   "mahabaleshwar": {
    "name": "Mahabaleshwar",
    "tagline": "Strawberry capital of India — colonial viewpoints over the Krishna Valley",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 1353,
+   "difficulty": "easy"
   },
   "mahad-raigad": {
    "name": "Mahad (Raigad — Ashtavinayak)",
    "tagline": "Varadvinayak — the lit-since-1892 oil lamp at the fourth Astavinayak",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 100,
+   "difficulty": "easy"
   },
   "malvan": {
    "name": "Malvan",
    "tagline": "Scuba diving capital of the Konkan — Sindhudurg Fort, Malvani cuisine, and India's west coast reef",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "matheran": {
    "name": "Matheran",
    "tagline": "Asia's only automobile-free hill station — no engines, just birdsong and horse hooves",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 803,
+   "difficulty": "easy"
   },
   "morgaon": {
    "name": "Morgaon",
    "tagline": "Mayureshwar — the first stop of the Astavinayak Yatra",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 570,
+   "difficulty": "easy"
   },
   "mumbai": {
    "name": "Mumbai",
    "tagline": "The city that never sleeps — where dreams collide with the Arabian Sea",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 14,
+   "difficulty": "easy"
   },
   "murud-janjira": {
    "name": "Murud-Janjira",
    "tagline": "The unconquered island fortress — 500 years, never breached, standing in the Arabian Sea",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "nagpur": {
    "name": "Nagpur",
    "tagline": "Orange city, zero mile — geographic heart of India and gateway to tiger country",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 310,
+   "difficulty": "easy"
   },
   "nashik": {
    "name": "Nashik",
    "tagline": "Wine capital of India — Trimbakeshwar Jyotirlinga, Godavari ghats, and Sula vineyards",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 565,
+   "difficulty": "easy"
   },
   "ozar": {
    "name": "Ozar",
    "tagline": "Vighnahar — the gold-plated dome on the Kukadi River",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 670,
+   "difficulty": "easy"
   },
   "pali-raigad": {
    "name": "Pali (Raigad)",
    "tagline": "Ballaleshwar — the only Astavinayak named after a devotee",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 100,
+   "difficulty": "easy"
   },
   "panchgani": {
    "name": "Panchgani",
    "tagline": "Table Land, paragliding, and the five hills that guard the Krishna Valley",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 1334,
+   "difficulty": "easy"
   },
   "pench-maharashtra": {
    "name": "Pench National Park",
    "tagline": "Mowgli's jungle — where Kipling's Jungle Book comes alive with tigers and leopards",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 300,
+   "difficulty": "easy"
   },
   "pune": {
    "name": "Pune",
    "tagline": "Oxford of the East — Maratha history, misal pav capital, and India's craft beer hub",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 560,
+   "difficulty": "easy"
   },
   "raigad-fort": {
    "name": "Raigad Fort",
    "tagline": "Shivaji's capital — the coronation site of the Maratha Empire, now UNESCO World Heritage",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 820,
+   "difficulty": "moderate"
   },
   "ranjangaon": {
    "name": "Ranjangaon",
    "tagline": "Mahaganapati — the sun-aligned Astavinayak",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 580,
+   "difficulty": "easy"
   },
   "ratnagiri": {
    "name": "Ratnagiri",
    "tagline": "Alphonso mango country — where the king of fruits meets Konkan history",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "satara": {
    "name": "Satara",
    "tagline": "Kaas Plateau — Maharashtra's Valley of Flowers, a UNESCO World Natural Heritage Site",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 750,
+   "difficulty": "easy"
   },
   "shirdi": {
    "name": "Shirdi",
    "tagline": "Sai Baba's holy town — one of India's top 5 pilgrimage destinations, 40,000 visitors daily",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 584,
+   "difficulty": "easy"
   },
   "siddhatek": {
    "name": "Siddhatek",
    "tagline": "Siddhivinayak — the only east-facing Astavinayak temple",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 500,
+   "difficulty": "easy"
   },
   "tadoba": {
    "name": "Tadoba-Andhari Tiger Reserve",
    "tagline": "India's highest tiger sighting probability — open grasslands, wild dogs, and genuine wilderness",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 200,
+   "difficulty": "easy"
   },
   "tarkarli": {
    "name": "Tarkarli",
    "tagline": "India's clearest coastal waters — scuba diving, Sindhudurg Fort, and Konkan at its purest",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "theur": {
    "name": "Theur",
    "tagline": "Chintamani — where Krishna recovered the Syamantaka jewel",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 570,
+   "difficulty": "easy"
   },
   "trimbakeshwar": {
    "name": "Trimbakeshwar",
    "tagline": "Jyotirlinga and Godavari source — where India's second-longest river begins its 1,465km journey",
-   "state": "Maharashtra"
+   "state": "Maharashtra",
+   "elevation_m": 750,
+   "difficulty": "easy"
   },
   "imphal": {
    "name": "Imphal",
    "tagline": "World's largest all-women market, ancient Kangla Fort, and the birthplace of polo.",
-   "state": "Manipur"
+   "state": "Manipur",
+   "elevation_m": 786,
+   "difficulty": "easy"
   },
   "loktak-lake": {
    "name": "Loktak Lake",
    "tagline": "Floating islands on a lake — phumdis, the last dancing deer, and a landscape found nowhere else on Earth.",
-   "state": "Manipur"
+   "state": "Manipur",
+   "elevation_m": 768,
+   "difficulty": "easy"
   },
   "moreh": {
    "name": "Moreh",
    "tagline": "India-Myanmar border town — cross-border trade market, gateway to Southeast Asia overland, Tamu (Myanmar) just across",
-   "state": "Manipur"
+   "state": "Manipur",
+   "elevation_m": 269,
+   "difficulty": "easy"
   },
   "tamenglong": {
    "name": "Tamenglong",
    "tagline": "Barak waterfall (largest in Manipur), Zeilad Lake, Zeliangrong tribe, and the Manipur-Nagaland highland wilderness",
-   "state": "Manipur"
+   "state": "Manipur",
+   "elevation_m": 1260,
+   "difficulty": "hard"
   },
   "ukhrul": {
    "name": "Ukhrul",
    "tagline": "Home of the Shirui Lily (Lilium mackliniae) — found nowhere else on Earth, blooms May-June on Shirui Peak. Tangkhul Naga tribal culture",
-   "state": "Manipur"
+   "state": "Manipur",
+   "elevation_m": 1662,
+   "difficulty": "moderate"
   },
   "cherrapunji": {
    "name": "Cherrapunji (Sohra)",
    "tagline": "Where clouds live — living root bridges, Nohkalikai Falls, and one of the wettest places on Earth.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 1484,
+   "difficulty": "easy"
   },
   "dawki": {
    "name": "Dawki",
    "tagline": "Crystal-clear Umngot River — where boats appear to float on glass at the India-Bangladesh border.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 400,
+   "difficulty": "easy"
   },
   "mawlynnong": {
    "name": "Mawlynnong",
    "tagline": "Asia's cleanest village — bamboo dustbins, living root bridges, and a community that shames cities.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 1200,
+   "difficulty": "easy"
   },
   "mawphlang": {
    "name": "Mawphlang",
    "tagline": "Sacred Forest of the Khasi tribe — 1,000-year-old untouched grove where nothing can be removed, not even a leaf.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 1723,
+   "difficulty": "easy"
   },
   "mawsynram": {
    "name": "Mawsynram",
    "tagline": "The actual wettest place on Earth — where umbrellas are a way of life and every surface drips green.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 1400,
+   "difficulty": "easy"
   },
   "nongriat": {
    "name": "Nongriat",
    "tagline": "Double Decker Living Root Bridge — only accessible by 3,500-step trek down into the valley. World-famous natural wonder grown by Khasi tribe over centuries.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 800,
+   "difficulty": "moderate"
   },
   "shillong": {
    "name": "Shillong",
    "tagline": "The Scotland of the East — live music, pine forests, waterfalls, and the best cafe culture in Northeast India.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 1496,
+   "difficulty": "easy"
   },
   "shnongpdeng": {
    "name": "Shnongpdeng",
    "tagline": "Crystal-clear Umngot River camping village — cliff jumping, kayaking, snorkeling in glass-clear water. The adventure version of Dawki.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 285,
+   "difficulty": "easy"
   },
   "tura": {
    "name": "Tura",
    "tagline": "Gateway to Garo Hills — Nokrek Biosphere Reserve (red pandas, citrus gene bank), Siju Cave (bats + limestone), and Wangala harvest festival.",
-   "state": "Meghalaya"
+   "state": "Meghalaya",
+   "elevation_m": 349,
+   "difficulty": "easy"
   },
   "aizawl": {
    "name": "Aizawl",
    "tagline": "A city built on ridges — churches on every hill, the cleanest state, and zero begging.",
-   "state": "Mizoram"
+   "state": "Mizoram",
+   "elevation_m": 1132,
+   "difficulty": "moderate"
   },
   "champhai": {
    "name": "Champhai",
    "tagline": "Rice bowl of Mizoram — Indo-Myanmar border panorama, Rih Dil lake (believed to be gateway to the afterworld in Mizo mythology), Murlen National Park",
-   "state": "Mizoram"
+   "state": "Mizoram",
+   "elevation_m": 1678,
+   "difficulty": "moderate"
   },
   "lunglei": {
    "name": "Lunglei",
    "tagline": "Second-largest town in Mizoram — colonial-era Lunglei Fort, Saikuti Hall, blue mountain views, gateway to Saiha and Phawngpui",
-   "state": "Mizoram"
+   "state": "Mizoram",
+   "elevation_m": 1355,
+   "difficulty": "moderate"
   },
   "phawngpui-peak": {
    "name": "Phawngpui Peak",
    "tagline": "Blue Mountain — highest point in Mizoram at 2,157m, rhododendron forests, orchids, and panoramic views of Myanmar hills",
-   "state": "Mizoram"
+   "state": "Mizoram",
+   "elevation_m": 2157,
+   "difficulty": "moderate"
   },
   "dzukou-valley": {
    "name": "Dzukou Valley",
    "tagline": "Valley of Flowers of the Northeast — rolling green meadows, rare Dzukou Lily, and soul-stirring silence.",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 2452,
+   "difficulty": "moderate"
   },
   "khonoma": {
    "name": "Khonoma",
    "tagline": "India's first self-declared green village — Angami Naga warriors who banned hunting and built a global conservation model.",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 1372,
+   "difficulty": "easy"
   },
   "kiphire": {
    "name": "Kiphire",
    "tagline": "Gateway to Saramati Peak, India-Myanmar border trek",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 800,
+   "difficulty": "hard"
   },
   "kohima": {
    "name": "Kohima",
    "tagline": "Naga warrior heritage, WWII cemetery, and the legendary Hornbill Festival — where 16 tribes celebrate as one.",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 1444,
+   "difficulty": "moderate"
   },
   "mokokchung": {
    "name": "Mokokchung",
    "tagline": "Heartland of the Ao Naga tribe — Longkhum village viewpoint, Ungma (oldest Ao village), Moatsu festival in May",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 1325,
+   "difficulty": "moderate"
   },
   "mon": {
    "name": "Mon",
    "tagline": "Land of the Konyak Nagas — last headhunting tribe with tattooed faces, skull trophies in morungs, and the cross-border Longwa village split between India and Myanmar",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 1219,
+   "difficulty": "hard"
   },
   "pfutsero": {
    "name": "Pfutsero",
    "tagline": "Highest town in Nagaland at 2,133m — Glory Peak, Chakhesang tribe, terraced fields, foggy pine ridges that feel like Scotland",
-   "state": "Nagaland"
+   "state": "Nagaland",
+   "elevation_m": 2133,
+   "difficulty": "moderate"
   },
   "baripada": {
    "name": "Baripada",
    "tagline": "Chhau dance birthplace — UNESCO Intangible Heritage, Simlipal gateway, tribal Mayurbhanj",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 62,
+   "difficulty": "easy"
   },
   "bhitarkanika": {
    "name": "Bhitarkanika",
    "tagline": "India's 2nd largest mangrove — 1,826 saltwater crocs, 18 albino, king cobras",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 2,
+   "difficulty": "moderate"
   },
   "bhubaneswar": {
    "name": "Bhubaneswar",
    "tagline": "Temple City — 700+ temples spanning 2,000 years of continuous worship",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 45,
+   "difficulty": "easy"
   },
   "diamond-triangle": {
    "name": "Buddhist Diamond Triangle",
    "tagline": "Lalitgiri + Ratnagiri + Udayagiri — Buddhist ruins rivaling Ajanta, UNESCO tentative",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 50,
+   "difficulty": "easy"
   },
   "chandipur": {
    "name": "Chandipur",
    "tagline": "The disappearing sea — water recedes 5km every day, exposing the ocean floor",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "chilika-lake": {
    "name": "Chilika Lake",
    "tagline": "Asia's largest brackish lagoon — Irrawaddy dolphins, million migratory birds, Nalabana Island",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 1,
+   "difficulty": "easy"
   },
   "cuttack": {
    "name": "Cuttack",
    "tagline": "Silver City — 1,000-year-old filigree craft capital and Odisha's cultural heart",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 36,
+   "difficulty": "easy"
   },
   "daringbadi": {
    "name": "Daringbadi",
    "tagline": "\"Kashmir of Odisha\" — pine forests, coffee gardens, and Kutia Kondh tribal life",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 915,
+   "difficulty": "moderate"
   },
   "deomali": {
    "name": "Deomali",
    "tagline": "Odisha's highest peak at 1,672m — gateway to Dongria Kondh tribal country",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 1672,
+   "difficulty": "hard"
   },
   "dhauli": {
    "name": "Dhauli",
    "tagline": "Where Ashoka's conscience awoke — Kalinga War site, rock edicts, peace pagoda",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 30,
+   "difficulty": "easy"
   },
   "gahirmatha": {
    "name": "Gahirmatha",
    "tagline": "World's largest Olive Ridley turtle rookery — 600,000 turtles nest in one season",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 1,
+   "difficulty": "moderate"
   },
   "gopalpur-on-sea": {
    "name": "Gopalpur-on-Sea",
    "tagline": "Colonial-era seaside charm — lighthouse, quiet waves, and old-world peace",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "konark": {
    "name": "Konark",
    "tagline": "Sun Temple UNESCO — 24 stone wheels, 7 horses, and the birth of Odissi dance",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "koraput": {
    "name": "Koraput",
    "tagline": "Dongria Kondh heartland — GI-tagged tribal textiles, Niyamgiri Hills, responsible tourism",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 870,
+   "difficulty": "moderate"
   },
   "nrusinghanath-harishankar": {
    "name": "Nrusinghanath & Harishankar",
    "tagline": "Twin temples in Gandhamardan Hills — Ramayana's Sanjeevani mountain with Buddhist ruins",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 600,
+   "difficulty": "moderate"
   },
   "puri": {
    "name": "Puri",
    "tagline": "Jagannath's abode — world's largest chariot festival and a Char Dham pilgrimage",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 6,
+   "difficulty": "easy"
   },
   "raghurajpur": {
    "name": "Raghurajpur",
    "tagline": "India's first Heritage Craft Village — every home is a 1,500-year-old art gallery",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 10,
+   "difficulty": "easy"
   },
   "sambalpur": {
    "name": "Sambalpur",
    "tagline": "Sambalpuri Ikat textiles + world's longest earthen dam — craft meets engineering",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 152,
+   "difficulty": "easy"
   },
   "satkosia": {
    "name": "Satkosia",
    "tagline": "Mahanadi gorge sanctuary — gharial breeding ground, 22km of dramatic cliffs",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 200,
+   "difficulty": "moderate"
   },
   "simlipal": {
    "name": "Simlipal",
    "tagline": "UNESCO Biosphere — tiger reserve, 217m waterfall, 96 orchid species, melanistic tigers",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 900,
+   "difficulty": "moderate"
   },
   "talasari": {
    "name": "Talasari",
    "tagline": "Hidden virgin beach at Odisha's border — where the river meets the sea",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 2,
+   "difficulty": "easy"
   },
   "taptapani": {
    "name": "Taptapani",
    "tagline": "Sulfur hot springs in tribal country — where Saora healers meet ancient wellness",
-   "state": "Odisha"
+   "state": "Odisha",
+   "elevation_m": 500,
+   "difficulty": "easy"
   },
   "auroville": {
    "name": "Auroville",
    "tagline": "50-year intentional community — Matrimandir, organic farms, and 3,300 residents from 60 nations",
-   "state": "Puducherry"
+   "state": "Puducherry",
+   "elevation_m": 30,
+   "difficulty": "easy"
   },
   "karaikal": {
    "name": "Karaikal",
    "tagline": "Quiet Puducherry enclave on the Cauvery delta — ancient temples, French fort ruins, and pristine beach",
-   "state": "Puducherry"
+   "state": "Puducherry",
+   "elevation_m": 3,
+   "difficulty": "easy"
   },
   "pondicherry": {
    "name": "Pondicherry (Puducherry)",
    "tagline": "French Quarter, Auroville, and the only place in India where crepes meet dosas",
-   "state": "Puducherry"
+   "state": "Puducherry",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "puducherry": {
    "name": "Puducherry (Pondicherry)",
    "tagline": "French Quarter charm meets Tamil temple culture — yellow colonial streets, seafront promenade, and Sri Aurobindo Ashram",
-   "state": "Puducherry"
+   "state": "Puducherry",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "amritsar": {
    "name": "Amritsar",
    "tagline": "The Golden Temple doesn't just feed your soul — it literally feeds 100,000 people a day, for free, regardless of who you are.",
-   "state": "Punjab"
+   "state": "Punjab",
+   "elevation_m": 234,
+   "difficulty": "easy"
   },
   "anandpur-sahib": {
    "name": "Anandpur Sahib",
    "tagline": "Virasat-e-Khalsa museum alone is worth the trip — architecture that rivals the Guggenheim, telling the story of Sikh heritage.",
-   "state": "Punjab"
+   "state": "Punjab",
+   "elevation_m": 350,
+   "difficulty": "easy"
   },
   "patiala": {
    "name": "Patiala",
    "tagline": "The Patiala peg, the Patiala salwar, and a palace with 15 dining halls — Punjab royalty that most tourists skip.",
-   "state": "Punjab"
+   "state": "Punjab",
+   "elevation_m": 250,
+   "difficulty": "easy"
   },
   "damdama-sahib": {
    "name": "Takht Sri Damdama Sahib",
    "tagline": "One of only 5 Sikh Takhts — where Guru Gobind Singh compiled the final Guru Granth Sahib in 1706.",
-   "state": "Punjab"
+   "state": "Punjab",
+   "elevation_m": 210,
+   "difficulty": "easy"
   },
   "ajmer": {
    "name": "Ajmer",
    "tagline": "One of India most important Sufi shrines — and the gateway everyone rushes through to reach Pushkar.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 486,
+   "difficulty": "easy"
   },
   "alwar": {
    "name": "Alwar",
    "tagline": "Bhangarh ghost fort, Sariska tiger reserve, and a city palace that rivals Jaipur — all in India most ignored Rajasthan district.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 316,
+   "difficulty": "easy"
   },
   "barmer": {
    "name": "Barmer",
    "tagline": "The Rajasthan even Rajasthanis skip — hand-block printing villages, desert sand dunes without the Jaisalmer tourist machinery.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 227,
+   "difficulty": "easy"
   },
   "bharatpur": {
    "name": "Bharatpur",
    "tagline": "Keoladeo Ghana UNESCO bird sanctuary — 350+ species including Siberian cranes, 55km from the Taj.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 178,
+   "difficulty": "easy"
   },
   "bikaner": {
    "name": "Bikaner",
    "tagline": "Junagarh Fort that was never conquered, a temple full of rats, and a government camel research farm — Bikaner does not do normal.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 242,
+   "difficulty": "easy"
   },
   "bundi": {
    "name": "Bundi",
    "tagline": "The Rajasthan that tourism forgot — 50 stepwells, a crumbling fort, painted havelis, and zero selfie sticks.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 268,
+   "difficulty": "easy"
   },
   "chittorgarh": {
    "name": "Chittorgarh",
    "tagline": "India's largest fort — 700 acres of Rajput defiance, Padmini's palace, and the Tower of Victory.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 350,
+   "difficulty": "easy"
   },
   "deeg": {
    "name": "Deeg",
    "tagline": "A water palace where 900 fountains once fired simultaneously — Rajasthan's most underrated monsoon palace.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 180,
+   "difficulty": "easy"
   },
   "dungarpur": {
    "name": "Dungarpur",
    "tagline": "The palace town south of Udaipur that even palace enthusiasts don't know about.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 223,
+   "difficulty": "easy"
   },
   "gagron-fort": {
    "name": "Gagron Fort",
    "tagline": "India's only hill-and-water fort — UNESCO World Heritage",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 280,
+   "difficulty": "easy"
   },
   "jaipur": {
    "name": "Jaipur",
    "tagline": "Every fort in Jaipur makes you feel like a Maharaja, and the city dresses in pink to make sure you notice.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 431,
+   "difficulty": "easy"
   },
   "jaisalmer": {
    "name": "Jaisalmer",
    "tagline": "The only fort in India where 3000 people still LIVE — shops, temples, hotels, inside a 12th-century citadel.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 225,
+   "difficulty": "easy"
   },
   "jodhpur": {
    "name": "Jodhpur",
    "tagline": "Mehrangarh is the fort that makes every other fort in Rajasthan feel like a rehearsal.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 231,
+   "difficulty": "easy"
   },
   "kumbhalgarh": {
    "name": "Kumbhalgarh",
    "tagline": "The second longest wall in the world after China — hilltop fort with 360-degree Aravalli views.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 1100,
+   "difficulty": "easy"
   },
   "mount-abu": {
    "name": "Mount Abu",
    "tagline": "Rajasthan only hill station — and Dilwara Jain temples are the most intricate marble carvings in India.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 1220,
+   "difficulty": "easy"
   },
   "neemrana": {
    "name": "Neemrana",
    "tagline": "A 15th century fort turned into India most famous heritage hotel — and the zip-line across its ramparts.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 305,
+   "difficulty": "easy"
   },
   "osian": {
    "name": "Osian",
    "tagline": "The Khajuraho of Rajasthan — 8th century temples in the Thar Desert that nobody visits.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 232,
+   "difficulty": "easy"
   },
   "pushkar": {
    "name": "Pushkar",
    "tagline": "The only Brahma temple in India, a holy lake older than recorded history, and a camel fair that defies description.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 510,
+   "difficulty": "easy"
   },
   "ranakpur": {
    "name": "Ranakpur Jain Temple",
    "tagline": "1,444 marble pillars — no two alike",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 510,
+   "difficulty": "easy"
   },
   "ranthambore": {
    "name": "Ranthambore",
    "tagline": "THE tiger park. If you see one, you will talk about it for years. If you do not, the fort and the jungle are still worth it.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 215,
+   "difficulty": "easy"
   },
   "sariska": {
    "name": "Sariska Tiger Reserve",
    "tagline": "The most accessible tiger reserve from Delhi and Jaipur",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 350,
+   "difficulty": "easy"
   },
   "shekhawati": {
    "name": "Shekhawati",
    "tagline": "The open-air art gallery of Rajasthan — 400-year-old painted havelis in towns nobody visits.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 330,
+   "difficulty": "easy"
   },
   "udaipur": {
    "name": "Udaipur",
    "tagline": "The most romantic city in India, and it knows it — every rooftop restaurant has a view of the lake and every sunset feels staged.",
-   "state": "Rajasthan"
+   "state": "Rajasthan",
+   "elevation_m": 598,
+   "difficulty": "easy"
   },
   "aritar": {
    "name": "Aritar",
    "tagline": "Old Silk-Route village around Lampokhari lake and paragliding hills",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1500,
+   "difficulty": "easy"
   },
   "dzongu": {
    "name": "Dzongu",
    "tagline": "The Lepcha tribal reserve of North Sikkim — homestays, hot springs, waterfalls",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": null,
+   "difficulty": "moderate"
   },
   "gangtok": {
    "name": "Gangtok",
    "tagline": "India's cleanest hill town — monasteries, momos, and jaw-dropping Kanchenjunga views from a state where plastic bags have been illegal since 1998.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1650,
+   "difficulty": "easy"
   },
   "gurudongmar-lake": {
    "name": "Gurudongmar Lake",
    "tagline": "Sacred lake at 17,800 ft — one of highest lakes in the world, frozen Nov-May, stunning turquoise in summer.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 5425,
+   "difficulty": "extreme"
   },
   "khangchendzonga-np": {
    "name": "Khangchendzonga National Park",
    "tagline": "India's ONLY mixed UNESCO World Heritage Site — home to the world's third-highest peak at 8,586m. Sacred to the Lepcha people.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1220,
+   "difficulty": "extreme"
   },
   "lachen": {
    "name": "Lachen",
    "tagline": "North Sikkim base for Gurudongmar and Chopta Valley, Lachungpa tribal village.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 2750,
+   "difficulty": "hard"
   },
   "lachung": {
    "name": "Lachung",
    "tagline": "Gateway to Yumthang Valley and Zero Point — rhododendron paradise in North Sikkim.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 2600,
+   "difficulty": "moderate"
   },
   "mangan": {
    "name": "Mangan",
    "tagline": "The gateway town to North Sikkim — Lachen, Lachung and Gurudongmar start here",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 955,
+   "difficulty": "easy"
   },
   "namchi": {
    "name": "Namchi",
    "tagline": "Giant Guru Padmasambhava statue, Char Dham replica, and South Sikkim's laid-back capital.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1675,
+   "difficulty": "easy"
   },
   "nathu-la": {
    "name": "Nathu La",
    "tagline": "A 4,310 m India–China border pass on the old Silk Route",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 4310,
+   "difficulty": "moderate"
   },
   "pelling": {
    "name": "Pelling",
    "tagline": "Front-row seats to Kanchenjunga — a tiny ridge town with the 17th-century Pemayangtse monastery and the new Chenrezig statue that dwarfs everything.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 2150,
+   "difficulty": "easy"
   },
   "phodong": {
    "name": "Phodong",
    "tagline": "An 18th-century Nyingma monastery on the road north to Mangan",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": null,
+   "difficulty": "easy"
   },
   "ravangla": {
    "name": "Ravangla",
    "tagline": "Buddha Park with 130-foot statue, Temi Tea Garden, and the best Kanchenjunga panorama in South Sikkim.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 2155,
+   "difficulty": "easy"
   },
   "rinchenpong": {
    "name": "Rinchenpong",
    "tagline": "A quiet West-Sikkim ridge with full Kanchenjunga views and old monasteries",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1700,
+   "difficulty": "easy"
   },
   "tashiding": {
    "name": "Tashiding",
    "tagline": "Sikkim's holiest Nyingma monastery and the Bhumchu sacred-water festival",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1465,
+   "difficulty": "easy"
   },
   "tsomgo-lake": {
    "name": "Tsomgo Lake",
    "tagline": "Sacred glacial lake at 12,313 ft, 40 km from Gangtok, gateway to Nathula Pass (India-China border).",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 3753,
+   "difficulty": "moderate"
   },
   "yuksom": {
    "name": "Yuksom",
    "tagline": "First capital of Sikkim and base camp for Goechala trek to Kanchenjunga. Coronation throne of first Chogyal.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 1780,
+   "difficulty": "moderate"
   },
   "yumthang-valley": {
    "name": "Yumthang Valley",
    "tagline": "Sikkim's Valley of Flowers — rhododendrons carpet the meadow, Feb–June",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 3564,
+   "difficulty": "moderate"
   },
   "zuluk": {
    "name": "Zuluk",
    "tagline": "The Silk Route's 32 hairpin bends — where the road itself is the destination and Kanchenjunga fills the horizon.",
-   "state": "Sikkim"
+   "state": "Sikkim",
+   "elevation_m": 2800,
+   "difficulty": "hard"
   },
   "anamalai": {
    "name": "Anamalai Tiger Reserve (Topslip)",
    "tagline": "Topslip — lion-tailed macaques, bamboo rafting, and the Anamalai Hills",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1000,
+   "difficulty": "moderate"
   },
   "chennai": {
    "name": "Chennai",
    "tagline": "Marina Beach, Fort St. George, Carnatic music — South India's cultural capital",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 7,
+   "difficulty": "easy"
   },
   "chettinad": {
    "name": "Chettinad",
    "tagline": "India's spiciest cuisine and 10,000 palatial mansions with Burma teak and Italian marble",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 80,
+   "difficulty": "easy"
   },
   "chidambaram": {
    "name": "Chidambaram",
    "tagline": "Nataraja Temple — Shiva as Cosmic Dancer, the Pancha Bhuta Stala of Space",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "coimbatore": {
    "name": "Coimbatore",
    "tagline": "Adiyogi statue (112ft Guinness record) and the gateway to the Nilgiris",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 411,
+   "difficulty": "easy"
   },
   "coonoor": {
    "name": "Coonoor",
    "tagline": "Nilgiri tea capital — quieter than Ooty, on the UNESCO toy train route",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1850,
+   "difficulty": "easy"
   },
   "courtallam": {
    "name": "Courtallam (Kutralam)",
    "tagline": "Spa of South India — 9 herb-infused waterfalls with natural healing properties",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 160,
+   "difficulty": "easy"
   },
   "dhanushkodi": {
    "name": "Dhanushkodi",
    "tagline": "India's only ghost town — 1964 cyclone ruins at the absolute tip of India",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 0,
+   "difficulty": "moderate"
   },
   "hogenakkal": {
    "name": "Hogenakkal Falls",
    "tagline": "India's Niagara — coracle rides through waterfalls and a 2,000-year-old oil massage tradition",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 300,
+   "difficulty": "easy"
   },
   "kanchipuram": {
    "name": "Kanchipuram",
    "tagline": "City of 1,000 Temples — sacred for both Shaivites and Vaishnavites, and home to India's finest silk",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 83,
+   "difficulty": "easy"
   },
   "kanyakumari": {
    "name": "Kanyakumari",
    "tagline": "India's southernmost tip — the only place where you watch sunrise AND sunset over the sea",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "kodaikanal": {
    "name": "Kodaikanal",
    "tagline": "Princess of Hill Stations — star-shaped lake, Coaker's Walk cliff promenade, and the 12-year Kurinji bloom",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 2133,
+   "difficulty": "easy"
   },
   "kotagiri": {
    "name": "Kotagiri",
    "tagline": "The OLDEST Nilgiri hill station — Ooty without the crowds",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1793,
+   "difficulty": "easy"
   },
   "kumbakonam": {
    "name": "Kumbakonam",
    "tagline": "Temple City — 188 temples, Airavatesvara (UNESCO), and the Mahamaham tank",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 20,
+   "difficulty": "easy"
   },
   "madurai": {
    "name": "Madurai",
    "tagline": "The Lotus City — Meenakshi Temple with 33,000 sculptures and a midnight closing ritual",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 140,
+   "difficulty": "easy"
   },
   "mahabalipuram": {
    "name": "Mahabalipuram (Mamallapuram)",
    "tagline": "UNESCO Pallava rock-cut temples on the Coromandel Coast — beach + heritage in one",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 12,
+   "difficulty": "easy"
   },
   "meghamalai": {
    "name": "Meghamalai (High Wavy Mountains)",
    "tagline": "Cloud forest with zero tourism — advance estate booking required",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1500,
+   "difficulty": "moderate"
   },
   "mudumalai": {
    "name": "Mudumalai National Park",
    "tagline": "Nilgiri Biosphere — elephant safaris where Karnataka, Kerala, and Tamil Nadu meet",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1000,
+   "difficulty": "easy"
   },
   "ooty": {
    "name": "Ooty (Udagamandalam)",
    "tagline": "Queen of the Nilgiris — tea estates, toy train (UNESCO), and Doddabetta Peak",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 2240,
+   "difficulty": "easy"
   },
   "palani": {
    "name": "Palani",
    "tagline": "Sacred hilltop where Murugan meditated as an ascetic",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 450,
+   "difficulty": "easy"
   },
   "pazhamudircholai": {
    "name": "Pazhamudircholai",
    "tagline": "Murugan's shrine with both consorts Deivanai and Valli",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": null,
+   "difficulty": "easy"
   },
   "point-calimere": {
    "name": "Point Calimere Wildlife Sanctuary",
    "tagline": "30,000 flamingos, blackbuck antelope, and Ramsar Wetland where the coast turns",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "rameswaram": {
    "name": "Rameswaram",
    "tagline": "India's Varanasi of the South — Char Dham, longest temple corridor, and Pamban Bridge",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 5,
+   "difficulty": "easy"
   },
   "srirangam": {
    "name": "Srirangam",
    "tagline": "The LARGEST functioning Hindu temple in the world — 156 acres, 7 walls, 21 gopurams",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 60,
+   "difficulty": "easy"
   },
   "swamimalai": {
    "name": "Swamimalai",
    "tagline": "Where Murugan taught the Om mantra to his father Shiva",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": null,
+   "difficulty": "easy"
   },
   "thanjavur": {
    "name": "Thanjavur (Tanjore)",
    "tagline": "Brihadeeswara Temple — the UNESCO Chola masterpiece whose vimana casts no shadow at noon",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 57,
+   "difficulty": "easy"
   },
   "tharangambadi": {
    "name": "Tharangambadi (Tranquebar)",
    "tagline": "India's only Danish colonial town — Fort Dansborg (1620) and India's oldest Protestant church",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 0,
+   "difficulty": "easy"
   },
   "tiruchendur": {
    "name": "Tiruchendur",
    "tagline": "Murugan's coastal shrine where he vanquished the demon Surapadman",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": null,
+   "difficulty": "easy"
   },
   "tiruparankundram": {
    "name": "Tiruparankundram",
    "tagline": "Murugan's hilltop temple where he married Deivanai",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": null,
+   "difficulty": "easy"
   },
   "tiruttani": {
    "name": "Tiruttani",
    "tagline": "Hilltop temple where Murugan regained inner peace",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": null,
+   "difficulty": "easy"
   },
   "tiruvannamalai": {
    "name": "Tiruvannamalai",
    "tagline": "Arunachala — the fire-element Pancha Bhoota Stalam",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 230,
+   "difficulty": "easy"
   },
   "trichy": {
    "name": "Trichy (Tiruchirappalli)",
    "tagline": "Rock Fort Temple on an 83m rock — one of India's most dramatic urban temple settings",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 88,
+   "difficulty": "easy"
   },
   "valparai": {
    "name": "Valparai",
    "tagline": "40 hairpin bends to an untouched hill station — lion-tailed macaques and cloud forests",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1100,
+   "difficulty": "moderate"
   },
   "vedanthangal": {
    "name": "Vedanthangal Bird Sanctuary",
    "tagline": "India's oldest bird sanctuary (1798) — 40,000 nesting waterbirds, 75km from Chennai",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 40,
+   "difficulty": "easy"
   },
   "yercaud": {
    "name": "Yercaud",
    "tagline": "Poor Man's Ooty — Eastern Ghats hill station with coffee, oranges, and zero pretension",
-   "state": "Tamil Nadu"
+   "state": "Tamil Nadu",
+   "elevation_m": 1515,
+   "difficulty": "easy"
   },
   "adilabad": {
    "name": "Adilabad",
    "tagline": "Kuntala Falls, tiger reserve, and Gond tribal culture — Telangana's wild north",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 264,
+   "difficulty": "moderate"
   },
   "alampur": {
    "name": "Alampur",
    "tagline": "Navabrahma — nine 7th-century Shiva temples where two rivers meet",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 250,
+   "difficulty": "easy"
   },
   "ananthagiri-hills": {
    "name": "Ananthagiri Hills",
    "tagline": "Hyderabad's nearest hill escape — 79km to misty forests and ancient temples",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 700,
+   "difficulty": "easy"
   },
   "basara": {
    "name": "Basara",
    "tagline": "One of only two Saraswathi temples in India — where children begin their education",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 380,
+   "difficulty": "easy"
   },
   "bhadrachalam": {
    "name": "Bhadrachalam",
    "tagline": "Rama Temple on the Godavari — 100,000 pilgrims flood in on Vaikuntha Ekadasi",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 100,
+   "difficulty": "easy"
   },
   "bhongir": {
    "name": "Bhongir",
    "tagline": "Egg-shaped monolithic fort — a 10th-century geological freak you can climb",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 500,
+   "difficulty": "moderate"
   },
   "hyderabad": {
    "name": "Hyderabad",
    "tagline": "Biryani capital of India — Charminar, Golconda, and 400 years of Nizam grandeur",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 505,
+   "difficulty": "easy"
   },
   "kolanupaka": {
    "name": "Kolanupaka",
    "tagline": "2,000-year-old jade Mahaveer statue — Telangana's hidden Jain treasure",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 340,
+   "difficulty": "easy"
   },
   "laknavaram": {
    "name": "Laknavaram",
    "tagline": "13 forested islands connected by a 160m suspension bridge — Kakatiya-era engineering",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 300,
+   "difficulty": "easy"
   },
   "medak": {
    "name": "Medak",
    "tagline": "One of Asia's largest churches + a 12th-century fort — Deccan's hidden heritage",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 450,
+   "difficulty": "easy"
   },
   "nagarjuna-konda": {
    "name": "Nagarjuna Konda",
    "tagline": "Buddhist island museum — 30 monasteries submerged, treasures preserved on a hilltop",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 200,
+   "difficulty": "easy"
   },
   "pillalamarri": {
    "name": "Pillalamarri",
    "tagline": "800-year-old banyan tree — India's 2nd largest, with Sufi tombs underneath",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 400,
+   "difficulty": "easy"
   },
   "pochampally": {
    "name": "Pochampally",
    "tagline": "UNESCO-recognized ikat weaving village — India's first GI-tagged handloom",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 350,
+   "difficulty": "easy"
   },
   "ramappa-temple": {
    "name": "Ramappa Temple",
    "tagline": "UNESCO World Heritage (2021) — the only temple in India named after its sculptor",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 280,
+   "difficulty": "easy"
   },
   "warangal": {
    "name": "Warangal",
    "tagline": "Kakatiya capital — the gateway that became Telangana's state emblem",
-   "state": "Telangana"
+   "state": "Telangana",
+   "elevation_m": 302,
+   "difficulty": "easy"
   },
   "agartala": {
    "name": "Agartala",
    "tagline": "Ujjayanta Palace, Neermahal water palace, and India's most underrated state capital on the Bangladesh border.",
-   "state": "Tripura"
+   "state": "Tripura",
+   "elevation_m": 16,
+   "difficulty": "easy"
   },
   "jampui-hills": {
    "name": "Jampui Hills",
    "tagline": "Eternal Hills of Spring, Betlingchhip peak at 3,080 ft, year-round trekking",
-   "state": "Tripura"
+   "state": "Tripura",
+   "elevation_m": 914,
+   "difficulty": "easy"
   },
   "neermahal": {
    "name": "Neermahal",
    "tagline": "India's largest water palace — built in 1930 in the middle of Rudrasagar Lake, Mughal-Hindu hybrid architecture, boat access only",
-   "state": "Tripura"
+   "state": "Tripura",
+   "elevation_m": 14,
+   "difficulty": "easy"
   },
   "unakoti": {
    "name": "Unakoti",
    "tagline": "7th-8th century rock carvings in a forested hillside — giant Shiva heads (30 ft), Ganga in stone, 10 million figures of legend. India's most underrated archaeological site",
-   "state": "Tripura"
+   "state": "Tripura",
+   "elevation_m": 128,
+   "difficulty": "easy"
   },
   "agra": {
    "name": "Agra",
    "tagline": "The Taj Mahal is worth every cliche ever written about it — and Mehtab Bagh at sunset, when the crowds thin, is when it stops being a monument and starts being magic.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 171,
+   "difficulty": "easy"
   },
   "ayodhya": {
    "name": "Ayodhya",
    "tagline": "The newly built Ram Mandir has turned a 500-year-old dispute into India biggest pilgrimage boom.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 93,
+   "difficulty": "easy"
   },
   "chitrakoot": {
    "name": "Chitrakoot",
    "tagline": "Where Ram spent 11 of his 14 years of exile — the most important Ramayana site outside Ayodhya.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 317,
+   "difficulty": "easy"
   },
   "dudhwa-national-park": {
    "name": "Dudhwa National Park",
    "tagline": "UP only national park — tigers, rhinos, and swamp deer in a terai wilderness that nobody from outside UP visits.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 150,
+   "difficulty": "easy"
   },
   "fatehpur-sikri": {
    "name": "Fatehpur Sikri",
    "tagline": "Akbar built an entire capital city in 1571, used it for 14 years, then abandoned it forever — the red sandstone ghost city still stands untouched.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 175,
+   "difficulty": "easy"
   },
   "kushinagar": {
    "name": "Kushinagar",
    "tagline": "Where the Buddha died — one of the four holiest Buddhist sites on Earth and India most undervisited pilgrimage.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 84,
+   "difficulty": "easy"
   },
   "lucknow": {
    "name": "Lucknow",
    "tagline": "The city where food is religion, manners are art, and the Bara Imambara is the most underrated monument in India.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 123,
+   "difficulty": "easy"
   },
   "mathura": {
    "name": "Mathura",
    "tagline": "Krishna's birthplace — the jail cell temple, Vishram Ghat on the Yamuna, and India's most colorful Holi.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 174,
+   "difficulty": "easy"
   },
   "prayagraj": {
    "name": "Prayagraj",
    "tagline": "Where three rivers meet and 100 million people gather every 12 years — the Triveni Sangam defies every concept of scale.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 98,
+   "difficulty": "easy"
   },
   "sarnath": {
    "name": "Sarnath",
    "tagline": "Where Buddha gave his first sermon — the Dhamek Stupa has stood here for 2,500 years, and this quiet park is the antidote to Varanasi's chaos.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 80,
+   "difficulty": "easy"
   },
   "sravasti": {
    "name": "Sravasti",
    "tagline": "Where Buddha spent 24 rainy seasons — the place he lived longest, and most Buddhists skip it for Bodh Gaya.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 120,
+   "difficulty": "easy"
   },
   "varanasi": {
    "name": "Varanasi",
    "tagline": "The oldest continuously inhabited city in the world, where life and death happen simultaneously on the same riverbank and neither apologizes for the other.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 80,
+   "difficulty": "easy"
   },
   "vrindavan": {
    "name": "Vrindavan",
    "tagline": "City of 5000 temples — where Krishna grew up, Holi is a war, and spiritual energy is tangible.",
-   "state": "Uttar Pradesh"
+   "state": "Uttar Pradesh",
+   "elevation_m": 174,
+   "difficulty": "easy"
   },
   "adi-kailash": {
    "name": "Adi Kailash",
    "tagline": "India's answer to Mount Kailash, accessible via a 6-day trek.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 5945,
+   "difficulty": "hard"
   },
   "almora": {
    "name": "Almora",
    "tagline": "The Kumaoni heritage town where Kasar Devi cosmic energy attracted Swami Vivekananda, D.H. Lawrence, and Timothy Leary before Instagram discovered it.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1638,
+   "difficulty": "easy"
   },
   "auli": {
    "name": "Auli",
    "tagline": "India's best (and basically only real) ski slope, with a front-row view of Nanda Devi.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2800,
+   "difficulty": "easy"
   },
   "badrinath": {
    "name": "Badrinath",
    "tagline": "One of the four Char Dham — a 1,200-year-old Vishnu temple at 3,133m that closes for six months because even the gods leave for winter.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3133,
+   "difficulty": "moderate"
   },
   "bhimtal": {
    "name": "Bhimtal",
    "tagline": "The quiet cousin who got the better genes — Bhimtal lake without the Nainital crowds, an island in the middle, and actual birdsong.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1370,
+   "difficulty": "easy"
   },
   "binsar": {
    "name": "Binsar",
    "tagline": "300km Himalayan panorama from inside an oak forest sanctuary — and nobody around.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2420,
+   "difficulty": "easy"
   },
   "chakrata": {
    "name": "Chakrata",
    "tagline": "A cantonment town the army forgot to tell tourists about — Tiger Falls, Deoban's ancient forests, and zero commercial tourism.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2118,
+   "difficulty": "moderate"
   },
   "champawat": {
    "name": "Champawat",
    "tagline": "Where the Chand dynasty ruled Kumaon for 800 years — temples, fort ruins, and zero tourists.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1615,
+   "difficulty": "easy"
   },
   "chaukori": {
    "name": "Chaukori",
    "tagline": "Tea gardens at 2010m with Panchachuli peaks as backdrop — the view Kausani gets credit for, but Chaukori does better.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2010,
+   "difficulty": "easy"
   },
   "chopta": {
    "name": "Chopta",
    "tagline": "Mini Switzerland of Uttarakhand — rhododendron meadows, Himalayan views, and the easiest gateway to a 4000m summit.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2680,
+   "difficulty": "easy"
   },
   "devprayag": {
    "name": "Devprayag",
    "tagline": "The Alaknanda and Bhagirathi become the Ganges here—the holiest of the five confluences.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 340,
+   "difficulty": "easy"
   },
   "dhanaulti": {
    "name": "Dhanaulti",
    "tagline": "The quiet alternative to Mussoorie — 24km further, 90% fewer tourists.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2286,
+   "difficulty": "easy"
   },
   "gangotri": {
    "name": "Gangotri",
    "tagline": "The origin of the Ganges — a temple at 3,100m where Goddess Ganga descended to Earth, surrounded by deodar forests and Himalayan peaks.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3100,
+   "difficulty": "moderate"
   },
   "gopeshwar": {
    "name": "Gopeshwar",
    "tagline": "Ancient Shiva temple + gateway to Chopta-Tungnath + the town where the Chipko movement began.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1488,
+   "difficulty": "easy"
   },
   "guptkashi": {
    "name": "Guptkashi",
    "tagline": "The last comfortable town before Kedarnath — where smart pilgrims base themselves instead of suffering at 3583m.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1319,
+   "difficulty": "easy"
   },
   "har-ki-doon": {
    "name": "Har Ki Doon",
    "tagline": "Cradle-shaped valley trek in the Govind sanctuary — the classic Garhwal walk.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3565,
+   "difficulty": "hard"
   },
   "haridwar": {
    "name": "Haridwar",
    "tagline": "Where the Ganges leaves the mountains and enters the plains — evening Ganga Aarti at Har Ki Pauri is India's most electric spiritual spectacle.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 249,
+   "difficulty": "easy"
   },
   "hemkund-sahib": {
    "name": "Hemkund Sahib",
    "tagline": "Sikh pilgrimage shrine at 4,633m — a 6km walk up from Ghangaria, beside a glacial lake.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 4633,
+   "difficulty": "hard"
   },
   "corbett-national-park": {
    "name": "Jim Corbett National Park",
    "tagline": "India oldest national park and the best place to see a wild tiger without Rajasthan crowds.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 400,
+   "difficulty": "easy"
   },
   "joshimath": {
    "name": "Joshimath",
    "tagline": "One of Shankaracharya four mathas — and the town that is literally sinking since 2023.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1875,
+   "difficulty": "moderate"
   },
   "kanatal": {
    "name": "Kanatal",
    "tagline": "North India glamping capital — apple orchards, stargazing, zero cell signal.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2590,
+   "difficulty": "easy"
   },
   "karnaprayag": {
    "name": "Karnaprayag",
    "tagline": "The Alaknanda and Pindar rivers converge at this third prayag, honoring the Mahabharata hero Karna.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1050,
+   "difficulty": "easy"
   },
   "kausani": {
    "name": "Kausani",
    "tagline": "300km of Himalayan panorama from your hotel balcony — if the clouds cooperate.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1890,
+   "difficulty": "easy"
   },
   "kedarnath": {
    "name": "Kedarnath",
    "tagline": "One of the 12 Jyotirlingas, sitting at 3583m beneath a glacier — open only 6 months a year.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3583,
+   "difficulty": "hard"
   },
   "landour": {
    "name": "Landour",
    "tagline": "The secret garden above Mussoorie that Ruskin Bond will never leave — Char Dukan, Lal Tibba, and walks with no one on them.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2270,
+   "difficulty": "easy"
   },
   "lansdowne": {
    "name": "Lansdowne",
    "tagline": "Army cantonment frozen in time — silent oak forests, no commercial circus.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1706,
+   "difficulty": "easy"
   },
   "mansarovar-kailash": {
    "name": "Mount Kailash & Mansarovar",
    "tagline": "The real Mount Kailash (6,638m) and sacred Lake Mansarovar, a 24-day yatra via the Lipulekh Pass.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 6638,
+   "difficulty": "extreme"
   },
   "mukteshwar": {
    "name": "Mukteshwar",
    "tagline": "Kumaon ridge village with 180-degree Himalayan views and silence that makes you question city life.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2286,
+   "difficulty": "easy"
   },
   "munsiyari": {
    "name": "Munsiyari",
    "tagline": "Direct front-row seat to the Panchachuli range — Kumaon's most spectacular viewpoint that almost nobody goes to.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2200,
+   "difficulty": "moderate"
   },
   "mussoorie": {
    "name": "Mussoorie",
    "tagline": "The Queen of Hills — Mall Road, Kempty Falls, cloud walks, and the gateway hill station that every Indian family visits first.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 2005,
+   "difficulty": "easy"
   },
   "nainital": {
    "name": "Nainital",
    "tagline": "The lake town that India grew up with — boating, cable cars, Mall Road, and the Naini Devi temple that gives it its name.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1938,
+   "difficulty": "easy"
   },
   "nandaprayag": {
    "name": "Nandaprayag",
    "tagline": "The Alaknanda meets the Nandakini at this second sacred confluence, set in Chamoli district.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1358,
+   "difficulty": "easy"
   },
   "pithoragarh": {
    "name": "Pithoragarh",
    "tagline": "Gateway to Panchachuli peaks and Nepal border — where Kumaon gets real.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1514,
+   "difficulty": "moderate"
   },
   "ranikhet": {
    "name": "Ranikhet",
    "tagline": "An army cantonment town where the British came to escape the heat — pine forests, golf course at 1,800m, and Himalayan views without a single tout.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1829,
+   "difficulty": "easy"
   },
   "rishikesh": {
    "name": "Rishikesh",
    "tagline": "Where yoga ashrams meet white-water rapids and the Beatles met their guru.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 340,
+   "difficulty": "easy"
   },
   "roopkund": {
    "name": "Roopkund",
    "tagline": "The Skeleton Lake — a glacial lake at 5,029m where hundreds of ancient human skeletons surface every summer. India's most haunting trek.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 5029,
+   "difficulty": "hard"
   },
   "rudraprayag": {
    "name": "Rudraprayag",
    "tagline": "Where the Alaknanda and Mandakini unite at this fourth prayag, known as Shiva's meeting place.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 895,
+   "difficulty": "easy"
   },
   "tehri": {
    "name": "Tehri Lake",
    "tagline": "Asia largest dam created India largest man-made lake — and now it is becoming a water sports hub.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 640,
+   "difficulty": "easy"
   },
   "tungnath": {
    "name": "Tungnath",
    "tagline": "The highest Shiva temple in the world at 3,680m — a 3.5km trek through rhododendron forests with Chandrashila peak summit as the reward.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3680,
+   "difficulty": "moderate"
   },
   "uttarkashi": {
    "name": "Uttarkashi",
    "tagline": "The Kashi of the North — a riverside temple town that doubles as basecamp for serious Himalayan mountaineering and the Char Dham circuit.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1158,
+   "difficulty": "easy"
   },
   "valley-of-flowers": {
    "name": "Valley of Flowers",
    "tagline": "A UNESCO valley that blooms with 500+ wildflower species for exactly 8 weeks a year. Miss the window, miss the point.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3658,
+   "difficulty": "moderate"
   },
   "vishnuprayag": {
    "name": "Vishnuprayag",
    "tagline": "Where the Alaknanda and Dhauliganga meet: the first of five sacred confluences.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 1372,
+   "difficulty": "easy"
   },
   "yamunotri": {
    "name": "Yamunotri",
    "tagline": "The least visited Char Dham — a 6km trek to the source of the Yamuna with hot springs where pilgrims cook rice in muslin cloth.",
-   "state": "Uttarakhand"
+   "state": "Uttarakhand",
+   "elevation_m": 3293,
+   "difficulty": "moderate"
   },
   "darjeeling": {
    "name": "Darjeeling",
    "tagline": "The Queen of Hills — toy train, tea gardens, and Kanchenjunga sunrise. Colonial-era charm meets Tibetan-Nepali street culture.",
-   "state": "West Bengal"
+   "state": "West Bengal",
+   "elevation_m": 2042,
+   "difficulty": "easy"
   },
   "kalimpong": {
    "name": "Kalimpong",
    "tagline": "Nursery capital of India",
-   "state": "West Bengal"
+   "state": "West Bengal",
+   "elevation_m": 1247,
+   "difficulty": "easy"
   },
   "kolkata": {
    "name": "Kolkata",
    "tagline": "India's cultural capital — where the trams still run, the Puja pandals rewrite themselves every October, and College Street's coffee-house conversations haven't ended since 1940.",
-   "state": "West Bengal"
+   "state": "West Bengal",
+   "elevation_m": 9,
+   "difficulty": "easy"
   },
   "shantiniketan": {
    "name": "Shantiniketan",
    "tagline": "Rabindranath Tagore's university town",
-   "state": "West Bengal"
+   "state": "West Bengal",
+   "elevation_m": 56,
+   "difficulty": "easy"
   },
   "siliguri": {
    "name": "Siliguri",
    "tagline": "Chicken Neck gateway to the Northeast",
-   "state": "West Bengal"
+   "state": "West Bengal",
+   "elevation_m": 122,
+   "difficulty": "easy"
   },
   "sundarbans": {
    "name": "Sundarbans",
    "tagline": "Largest mangrove forest on Earth",
-   "state": "West Bengal"
+   "state": "West Bengal",
+   "elevation_m": 0,
+   "difficulty": "moderate"
   }
  },
  "months": {

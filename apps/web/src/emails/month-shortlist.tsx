@@ -1,17 +1,8 @@
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Hr,
-  Html,
-  Link,
-  Preview,
-  Section,
-  Text,
-} from "@react-email/components";
+import { Body, Container, Head, Html, Preview } from "@react-email/components";
+import { formatScoreInline } from "@itp/shared";
+import { windowStyles as s, WINDOW_IMAGE_BASE } from "./the-window";
 
-// The month shortlist — the artefact the site's newsletter ask now offers.
+// The month top 10: the email someone gets the moment they sign up.
 //
 // Every capture surface used to pitch "subscribe to The Window, every Sunday":
 // a commitment, with a vague benefit, asked of someone mid-decision. Measured
@@ -25,19 +16,24 @@ import {
 // TOP 10 since 2026-10-10 (founder). It used to list every in-season place:
 // 62 in August but 449 in October, a 247 KB email that Gmail clips at ~102 KB.
 // Now the ten best, ranked like The Window's weekly picks, plus a link to the
-// full month on the site. Nothing here is written by a model and
-// nothing is estimated — it is our own verified best_months / avoid_months.
+// full month on the site. Built on The Window's own styles (windowStyles) so
+// the first email a subscriber gets looks like every Sunday one after it:
+// № 01 hero, ranked № 02-10 cards, one CTA, colophon.
 
 export interface MonthShortlistPick {
   id: string;
   name: string;
   state: string;
   tagline: string | null;
+  score: number;
+  elevation_m: number | null;
+  difficulty: string | null;
 }
 
 interface Props {
   monthLong: string;
   monthSlug: string;
+  year: number;
   totals: {
     destinations: number;
     atTheirBest: number;
@@ -50,179 +46,206 @@ interface Props {
 
 const SITE = "https://www.nakshiq.com";
 
-export default function MonthShortlist({
-  monthLong,
-  monthSlug,
-  totals,
-  top,
-  unsubscribeUrl,
-}: Props) {
+const imageUrlFor = (id: string) => `${WINDOW_IMAGE_BASE}/destinations/${id}.jpg`;
+
+function difficultyLabel(d: string | null): string {
+  return d ? d.charAt(0).toUpperCase() + d.slice(1) : "";
+}
+
+const T = { role: "presentation", cellPadding: 0, cellSpacing: 0, border: 0, width: "100%", style: s.innerTable } as const;
+
+function DoubleRule() {
   return (
-    <Html>
-      <Head />
+    <table {...T}>
+      <tbody>
+        <tr><td style={s.hairline}>&nbsp;</td></tr>
+        <tr><td style={{ height: 4, lineHeight: "4px", fontSize: 0 }}>&nbsp;</td></tr>
+        <tr><td style={s.hairline}>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  );
+}
+
+export default function MonthShortlist({ monthLong, monthSlug, year, totals, top, unsubscribeUrl }: Props) {
+  const utm = (slot: string) =>
+    `?utm_source=newsletter&utm_medium=email&utm_campaign=top10-${year}-${monthSlug}&utm_content=${slot}`;
+  const pageFor = (id: string) => `${SITE}/en/destination/${id}/${monthSlug}`;
+  const hero = top[0];
+  const rest = top.slice(1);
+  const others = Math.max(totals.listed - top.length, 0);
+
+  return (
+    <Html lang="en">
+      <Head>
+        <meta name="color-scheme" content="dark" />
+        <meta name="supported-color-schemes" content="dark" />
+      </Head>
       <Preview>{`The ${monthLong} top ${top.length}: the best places in India this month`}</Preview>
-      <Body style={body}>
-        <Container style={container}>
-          <Text style={kicker}>THE {monthLong.toUpperCase()} TOP {top.length}</Text>
-          <Heading style={h1}>
-            The {top.length} best places in India for {monthLong}.
-          </Heading>
+      <Body style={s.body}>
+        <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" bgcolor="#060606" style={{ width: "100%", background: "#060606", borderCollapse: "collapse" }}>
+          <tbody>
+            <tr>
+              <td align="center" style={{ padding: "40px 16px", background: "#060606" }}>
+                <Container style={s.container}>
 
-          <Text style={lede}>
-            We check {totals.destinations} destinations against the month
-            you&apos;d actually travel. In {monthLong}, {totals.listed} of them
-            are in their best window and {totals.inAMonthToAvoid} are in a
-            month we&apos;d tell you to skip. These are the {top.length} we
-            rate highest, no more than two from any one state.
-          </Text>
+                  {/* Masthead */}
+                  <table {...T}>
+                    <tbody>
+                      <tr><td style={{ padding: "32px 28px 0", textAlign: "center" }}>
+                        <a href={`${SITE}/en${utm("masthead")}`} style={s.mastheadWordmark}>NakshIQ</a>
+                      </td></tr>
+                      <tr><td style={{ padding: "12px 28px 0" }}>
+                        <table {...T}><tbody><tr><td style={s.hairline}>&nbsp;</td></tr></tbody></table>
+                      </td></tr>
+                      <tr><td style={{ ...s.mastheadMeta, padding: "10px 28px 0" }}>
+                        The {monthLong} Top {top.length} · {monthLong} {year}
+                      </td></tr>
+                    </tbody>
+                  </table>
 
-          <Hr style={rule} />
+                  {/* Hero: № 01 */}
+                  {hero && (
+                    <table {...T}>
+                      <tbody><tr><td style={{ padding: "32px 0 0" }}>
+                        <a href={`${pageFor(hero.id)}${utm("hero")}`} style={s.heroBlockLink}>
+                          <table {...T} style={{ ...s.innerTable, background: "#0B0B0C" }}>
+                            <tbody><tr><td style={{ padding: "0 24px", background: "#0B0B0C" }}>
+                              <div style={{ position: "relative", lineHeight: 0 }}>
+                                <img src={imageUrlFor(hero.id)} width="552" height="368" alt={`${hero.name}, ${hero.state}`} style={s.heroImage} />
+                                <div style={s.heroScrim}>
+                                  <div style={s.heroKicker}>№ 01 · {hero.state}</div>
+                                  <div style={s.heroName}>{hero.name}</div>
+                                  {hero.tagline ? <div style={s.heroHook}>{hero.tagline}</div> : null}
+                                </div>
+                                <div style={s.heroPillWrap}>
+                                  <div style={s.heroPill}>
+                                    <span style={s.pillDot} />{formatScoreInline(hero.score)} · Peak
+                                  </div>
+                                </div>
+                              </div>
+                            </td></tr></tbody>
+                          </table>
+                        </a>
+                      </td></tr></tbody>
+                    </table>
+                  )}
 
-          {top.map((d, i) => (
-            <Link key={d.id} href={`${SITE}/en/destination/${d.id}/${monthSlug}`} style={item}>
-              <span style={rank}>{String(i + 1).padStart(2, "0")}</span>
-              <strong style={itemName}>{d.name}</strong>
-              <span style={itemState}>{d.state}</span>
-              {d.tagline ? <span style={itemTagline}>{d.tagline}</span> : null}
-            </Link>
-          ))}
+                  {/* Lede */}
+                  <table {...T}>
+                    <tbody>
+                      <tr><td style={s.dateline}>{monthLong} {year}</td></tr>
+                      <tr><td style={s.ledeText}>
+                        We check {totals.destinations} destinations against the month you&apos;d actually
+                        travel. In {monthLong}, {totals.listed} of them are in their best window and{" "}
+                        {totals.inAMonthToAvoid} are in a month we&apos;d tell you to skip. These are the{" "}
+                        {top.length} we rate highest, no more than two from any one state.
+                      </td></tr>
+                    </tbody>
+                  </table>
 
-          <Hr style={rule} />
+                  {/* Ranked spine: № 02-10 */}
+                  <table {...T}>
+                    <tbody>
+                      <tr><td style={{ padding: "56px 28px 0" }}><DoubleRule /></td></tr>
+                      <tr><td style={s.sectionLabel}>The Rest of the {monthLong} Top {top.length}</td></tr>
+                    </tbody>
+                  </table>
 
-          <Text style={text}>
-            Want the other {Math.max(totals.listed - top.length, 0)}?{" "}
-            <Link href={`${SITE}/en/where-to-go/${monthSlug}`} style={inlineLink}>
-              See every place that&apos;s good in {monthLong}
-            </Link>
-            .
-          </Text>
+                  {rest.map((p, i) => {
+                    const position = String(i + 2).padStart(2, "0");
+                    const isFirst = i === 0;
+                    return (
+                      <table key={p.id} {...T}>
+                        <tbody>
+                          <tr><td style={{ padding: isFirst ? "32px 28px 0" : "56px 28px 0" }}>
+                            {!isFirst && (
+                              <table {...T}><tbody><tr><td style={s.dashedRule}>&nbsp;</td></tr></tbody></table>
+                            )}
+                          </td></tr>
+                          <tr><td style={{ padding: isFirst ? "0 28px 0" : "20px 28px 0" }}>
+                            <table {...T}>
+                              <tbody><tr>
+                                <td valign="top"><div style={s.cardNumeral}>{position}</div></td>
+                                <td valign="bottom" style={s.cardKickerTag}>{p.state}</td>
+                                <td align="right" valign="bottom" style={s.cardScoreTag}>● {formatScoreInline(p.score)} · Peak</td>
+                              </tr></tbody>
+                            </table>
+                          </td></tr>
+                          <tr><td style={{ padding: "12px 28px 0" }}>
+                            <a href={`${pageFor(p.id)}${utm(`pick-${position}-image`)}`} style={{ display: "block", textDecoration: "none" }}>
+                              <img src={imageUrlFor(p.id)} width="544" height="306" alt={`${p.name}, ${p.state}`} style={s.cardImage} />
+                            </a>
+                          </td></tr>
+                          <tr><td style={{ padding: "14px 28px 0" }}>
+                            <a href={`${pageFor(p.id)}${utm(`pick-${position}-name`)}`} style={s.cardName}>{p.name}</a>
+                          </td></tr>
+                          <tr><td style={s.cardMeta}>
+                            {p.state}{p.elevation_m ? ` · ${p.elevation_m.toLocaleString("en-IN")}m` : ""}{p.difficulty ? ` · ${difficultyLabel(p.difficulty)}` : ""}
+                          </td></tr>
+                          {p.tagline ? <tr><td style={s.cardHook}>{p.tagline}</td></tr> : null}
+                          <tr><td style={{ padding: "14px 28px 0" }}>
+                            <a href={`${pageFor(p.id)}${utm(`pick-${position}-cta`)}`} style={s.cardCta}>
+                              Read the {p.name} {monthLong} guide →
+                            </a>
+                          </td></tr>
+                        </tbody>
+                      </table>
+                    );
+                  })}
 
-          <Text style={text}>
-            Next month the list changes: most of these close and others open.
-            The Window, our Sunday email, keeps you up to date.
-          </Text>
+                  {/* The rest of the month */}
+                  <table {...T}>
+                    <tbody>
+                      <tr><td style={{ padding: "72px 28px 0" }}><DoubleRule /></td></tr>
+                      <tr><td style={s.notebookHeading}>The Rest of {monthLong}</td></tr>
+                      <tr><td style={s.notebookLabel}>Also In Season</td></tr>
+                      <tr><td style={s.notebookBody}>
+                        {others} more places are in their best month. Every one is on the {monthLong} page.
+                      </td></tr>
+                      <tr><td style={s.notebookLabel}>Next Month</td></tr>
+                      <tr><td style={s.notebookBody}>
+                        The list changes: most of these close and others open. The Window, our Sunday
+                        email, keeps you up to date.
+                      </td></tr>
+                    </tbody>
+                  </table>
 
-          <Text style={footer}>
-            Sent by NakshIQ. We don&apos;t take payment for placement, and
-            nothing above is sponsored.
-            {unsubscribeUrl ? (
-              <>
-                {" "}
-                <Link href={unsubscribeUrl} style={footerLink}>
-                  Unsubscribe
-                </Link>
-                .
-              </>
-            ) : null}
-          </Text>
-        </Container>
+                  {/* CTA */}
+                  <table {...T}>
+                    <tbody><tr><td style={{ padding: "48px 28px 0", textAlign: "center" }}>
+                      <a href={`${SITE}/en/where-to-go/${monthSlug}${utm("cta-month")}`} style={s.primaryButton}>
+                        See every place for {monthLong} →
+                      </a>
+                    </td></tr></tbody>
+                  </table>
+
+                  {/* Colophon */}
+                  <table {...T}>
+                    <tbody><tr><td style={{ padding: "60px 28px 40px" }}>
+                      <table {...T}><tbody><tr><td style={s.hairline}>&nbsp;</td></tr></tbody></table>
+                      <div style={s.colophon}>
+                        Sent by NakshIQ because you asked for it.<br />
+                        Nothing above is sponsored. We don&apos;t take payment for placement.<br />
+                        {monthLong} {year}
+                        <div style={{ paddingTop: 12 }}>
+                          <a href={`${SITE}/en${utm("colophon")}`} style={s.colophonLink}>Visit</a>
+                          {unsubscribeUrl ? (
+                            <>
+                              {"  ·  "}
+                              <a href={unsubscribeUrl} style={s.colophonLink}>Unsubscribe</a>
+                            </>
+                          ) : null}
+                        </div>
+                      </div>
+                    </td></tr></tbody>
+                  </table>
+
+                </Container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </Body>
     </Html>
   );
 }
-
-const body: React.CSSProperties = {
-  backgroundColor: "#f6f5f3",
-  fontFamily:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
-  margin: 0,
-  padding: "32px 0",
-};
-
-const container: React.CSSProperties = {
-  backgroundColor: "#ffffff",
-  borderRadius: 8,
-  margin: "0 auto",
-  maxWidth: 600,
-  padding: "40px 36px",
-};
-
-const kicker: React.CSSProperties = {
-  color: "#9a3412",
-  fontSize: 11,
-  fontWeight: 600,
-  letterSpacing: "0.08em",
-  margin: "0 0 12px",
-};
-
-const h1: React.CSSProperties = {
-  color: "#1c1917",
-  fontSize: 27,
-  fontWeight: 600,
-  lineHeight: 1.25,
-  margin: "0 0 16px",
-};
-
-const lede: React.CSSProperties = {
-  color: "#44403c",
-  fontSize: 16,
-  lineHeight: 1.6,
-  margin: "0 0 8px",
-};
-
-const text: React.CSSProperties = {
-  color: "#44403c",
-  fontSize: 15,
-  lineHeight: 1.6,
-  margin: "16px 0",
-};
-
-const rule: React.CSSProperties = {
-  border: "none",
-  borderTop: "1px solid #e7e5e4",
-  margin: "28px 0",
-};
-
-const rank: React.CSSProperties = {
-  color: "#9a3412",
-  display: "block",
-  fontSize: 11,
-  fontWeight: 600,
-  letterSpacing: "0.08em",
-  marginBottom: 2,
-};
-
-const itemState: React.CSSProperties = {
-  color: "#a8a29e",
-  display: "block",
-  fontSize: 12,
-  letterSpacing: "0.04em",
-  marginTop: 1,
-  textTransform: "uppercase",
-};
-
-const inlineLink: React.CSSProperties = { color: "#9a3412" };
-
-const item: React.CSSProperties = {
-  borderLeft: "2px solid #e7e5e4",
-  display: "block",
-  margin: "0 0 18px",
-  paddingLeft: 12,
-  textDecoration: "none",
-};
-
-const itemName: React.CSSProperties = {
-  color: "#1c1917",
-  display: "block",
-  fontSize: 15,
-  fontWeight: 600,
-};
-
-const itemTagline: React.CSSProperties = {
-  color: "#57534e",
-  display: "block",
-  fontSize: 13.5,
-  lineHeight: 1.5,
-  marginTop: 2,
-};
-
-const footer: React.CSSProperties = {
-  borderTop: "1px solid #e7e5e4",
-  color: "#78716c",
-  fontSize: 12.5,
-  lineHeight: 1.6,
-  margin: "28px 0 0",
-  paddingTop: 16,
-};
-
-const footerLink: React.CSSProperties = { color: "#78716c" };

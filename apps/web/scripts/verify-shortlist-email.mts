@@ -53,7 +53,7 @@ type State = { state: string; destinations: Dest[] };
 
 // The data file carries all 12 months (2026-10-10); MONTH=1..12 picks one, default = current IST month.
 const raw = shortlist as unknown as {
-  destinations: Record<string, { name: string; tagline: string | null; state: string }>;
+  destinations: Record<string, { name: string; tagline: string | null; state: string; elevation_m: number | null; difficulty: string | null }>;
   months: Record<string, {
     monthLong: string;
     monthSlug: string;
@@ -65,9 +65,9 @@ const monthNum = Number(process.env.MONTH) ||
   Number(new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }));
 const picked = raw.months[String(monthNum)];
 const { monthLong, monthSlug, totals } = picked;
-const top = picked.top.map(({ id }) => ({ id, ...raw.destinations[id] }));
+const top = picked.top.map(({ id, score }) => ({ id, score, ...raw.destinations[id] }));
 
-const html = await render(MonthShortlist({ monthLong, monthSlug, totals, top }));
+const html = await render(MonthShortlist({ monthLong, monthSlug, year: 2026, totals, top }));
 writeFileSync(OUT, html);
 
 const names = top.map((d) => d.name);
@@ -97,11 +97,13 @@ const checks: [string, boolean][] = [
   [`all ${names.length} destination names rendered`, missingNames.length === 0],
   [`all ${top.length} state labels rendered`, missingStates.length === 0],
   [`exactly 10 picks`, top.length === 10],
+  [`every pick has its photo`, top.every((d) => html.includes(`/destinations/${d.id}.jpg`))],
+  [`dark Window background`, html.includes("#060606")],
   [`no state more than twice`, Object.values(top.reduce((a: Record<string, number>, d) => ({ ...a, [d.state]: (a[d.state] ?? 0) + 1 }), {})).every((n) => n <= 2)],
-  [`links go to the ${monthSlug} pages`, (html.match(new RegExp(`/en/destination/[a-z0-9-]+/${monthSlug}"`, "g")) ?? []).length === top.length],
+  [`every pick links to its ${monthSlug} page`, top.every((d) => html.includes(`/en/destination/${d.id}/${monthSlug}?`))],
   [`full-month link present`, html.includes(`/en/where-to-go/${monthSlug}`)],
   [`under Gmail's ~102 KB clip`, html.length < 100_000],
-  [`one link per destination (${linkCount}/${names.length})`, linkCount === names.length],
+  [`destination links present (${linkCount})`, linkCount >= names.length],
   ["no undefined/null leaked into the body", !/>\s*(undefined|null)\s*</.test(html)],
   ["no [object Object]", !html.includes("[object Object]")],
   ["top list is not empty", names.length > 0],
