@@ -1,0 +1,1092 @@
+{
+ "batch": "Q3",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "solan": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Mayur Hotel Bar And Restaurant",
+      "url": "https://www.cleartrip.com/hotels/details/mayur-hotel-bar-restaurant-711495",
+      "prices": {
+       "18-19 Nov 2026": 2142,
+       "20-21 Jan 2027": 2142,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room"
+     },
+     {
+      "hotel": "Hotel City Heights (Go2)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-city-heights-2882870",
+      "prices": {
+       "18-19 Nov 2026": 1748,
+       "20-21 Jan 2027": 1748,
+       "14-15 Jul 2027": 1748,
+       "18-19 Aug 2027": 1748
+      },
+      "cheapest_room_seen": "Executive room"
+     },
+     {
+      "hotel": "Hotel Himanis Resorts",
+      "url": "https://www.cleartrip.com/hotels/details/4273245",
+      "prices": {
+       "18-19 Nov 2026": 2109,
+       "20-21 Jan 2027": 2109,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Semi Deluxe Room"
+     },
+     {
+      "hotel": "Hotel K11",
+      "url": "https://www.cleartrip.com/hotels/details/5424187",
+      "prices": {
+       "18-19 Nov 2026": 3382,
+       "20-21 Jan 2027": 3720,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room Mountain view"
+     },
+     {
+      "hotel": "Parag Hotel",
+      "url": "https://www.cleartrip.com/hotels/details/5062332",
+      "prices": {
+       "18-19 Nov 2026": 1665,
+       "20-21 Jan 2027": 1665,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room Valley view"
+     },
+     {
+      "hotel": "Hotel Shagun Palace",
+      "url": "https://www.cleartrip.com/hotels/details/4673064",
+      "prices": {
+       "18-19 Nov 2026": 1350,
+       "20-21 Jan 2027": 2250,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Standard Room (NON AC); AC Semi Deluxe was 3600 on both priced nights"
+     },
+     {
+      "hotel": "Hotel Golden Benchers",
+      "url": "https://www.cleartrip.com/hotels/details/4562675",
+      "prices": {
+       "18-19 Nov 2026": 1610,
+       "20-21 Jan 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Standard Room (NON AC)"
+     },
+     {
+      "hotel": "Mont Clair Ananta Elite",
+      "url": "https://www.cleartrip.com/hotels/details/4686958",
+      "prices": {
+       "18-19 Nov 2026": 3952,
+       "20-21 Jan 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Standard/entry room, Mountain view"
+     },
+     {
+      "hotel": "Misty Meadows Resorts",
+      "url": "https://www.cleartrip.com/hotels/details/4273309",
+      "prices": {
+       "18-19 Nov 2026": 2937,
+       "20-21 Jan 2027": 4760,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Nov: Deluxe Room Non AC. Jan: only Luxury Rooms sold room-only (4760); a Superior Room was offered only with breakfast at 3400, so the Jan figure is a different room"
+     },
+     {
+      "hotel": "Hotel Namastasya",
+      "url": "https://www.cleartrip.com/hotels/details/4652743",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "20-21 Jan 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all four nights"
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "House of Lights Solan",
+      "url": "https://www.cleartrip.com/hotels/details/4291841",
+      "prices": {
+       "18-19 Nov 2026": 1457,
+       "20-21 Jan 2027": 1457,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "Standard Room"
+     },
+     {
+      "hotel": "Raina's BnB",
+      "url": "https://www.cleartrip.com/hotels/details/raina-s-bnb-5245134",
+      "prices": {
+       "18-19 Nov 2026": 1818,
+       "20-21 Jan 2027": 1818,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": 1818
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Classic Room; Jul 2027 page listed only breakfast plans (cheapest 2727), so room-only is null"
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax price of the cheapest double room, 1 room 2 adults. null on 14-15 Jul and 18-19 Aug 2027 almost always means the page says 'No rooms available' (sold out OR inventory not yet opened; the page does not say which); only City Heights (Go2 chain) shows rates for all four nights. Only 2 of 9 priced mid hotels have a price for Jul or Aug 2027, so the monsoon ratio rests on one hotel (flat 1748 on every night, a chain rate card, so no seasonal signal). Several cheapest rooms are NON AC (Shagun, Golden Benchers, Misty Nov). No local festival/event checked, events left empty. Cleartrip's own list page was Diwali-week sold out for several hotels."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Jul and Aug 2027 availability for almost every hotel (no rooms listed, cause unknown)",
+    "Whether Cleartrip rates for the City Heights chain move with season (flat 1748 on all 4 nights)"
+   ]
+  },
+  "aihole": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Wada 1 (Cleartrip 4-star, the only Aihole listing)",
+      "url": "https://www.cleartrip.com/hotels/details/wada-1-4489744",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all three nights"
+     }
+    ],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip has a single property for Aihole (Wada 1, 4-star, Aihole, Karnataka 587124), no 3-star list page, no homestay or budget list; it says 'No rooms available' on all three probe nights (sold out or not yet open, page does not say). No season probe possible. Nearby Badami/Pattadakal were NOT substituted: Badami is a separate Q3 place. Dated list pages ignored."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Badami (about 34 km; Gozocabs lists Badami Rural to Aihole at about 34 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No priced stay for 18-19 Nov 2026 found. Booking.com city page for Aihole returned empty when fetched with dates; Wada 1 on Cleartrip says No rooms available.",
+    "notes": "Search results mention Wada 1 from about 59 USD / INR 7,529 (undated 'from' prices on Booking.com and TravelTriangle) and an old Outlook Traveller guide quoting Krishna Heritage and The Heritage Resort (those two are in Badami per Cleartrip). Undated or years-old figures are not used. No dorm found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "KSTDC runs a daily Badami-Aihole-Pattadakal one-day package from Hotel Mayura Chalukya, Badami (tel 0835-7220046) but its page prints no fare (https://kstdc.co/tour_packages/badami-aihole-pattadakallu-one-day-sight-seeing/). Other results were national cab aggregators (not allowed) or blog estimates. A 2023 blog said Badami has no taxi stand.",
+    "sources": [
+     "https://kstdc.co/tour_packages/badami-aihole-pattadakallu-one-day-sight-seeing/"
+    ],
+    "notes": "null by design"
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two figure found for Aihole.",
+    "sources": [],
+    "notes": "null"
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers",
+    "taxi day",
+    "food per day",
+    "season probe"
+   ]
+  },
+  "badami": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel Rajsangam International",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-rajsangam-international-711640",
+      "prices": {
+       "18-19 Nov 2026": 1965,
+       "14-15 Apr 2027": 3275,
+       "18-19 Aug 2027": 1638
+      },
+      "cheapest_room_seen": "Cheapest = Standard Non AC (Nov, Aug); Apr only a Deluxe AC was listed",
+      "matched_room_prices": {
+       "room": "Deluxe AC Room City view",
+       "prices": {
+        "18-19 Nov 2026": 2866,
+        "14-15 Apr 2027": 3275,
+        "18-19 Aug 2027": 2456
+       }
+      }
+     },
+     {
+      "hotel": "Grand Clarks Inn Badami",
+      "url": "https://www.cleartrip.com/hotels/details/4491787",
+      "prices": {
+       "18-19 Nov 2026": 3810,
+       "14-15 Apr 2027": 2452,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room"
+     },
+     {
+      "hotel": "Hotel Badami Court",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-badami-court-4277792",
+      "prices": {
+       "18-19 Nov 2026": 3436,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Standard Room AC"
+     },
+     {
+      "hotel": "Hotel Sanman Deluxe",
+      "url": "https://www.cleartrip.com/hotels/details/4711265",
+      "prices": {
+       "18-19 Nov 2026": 1634,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Non AC Room"
+     },
+     {
+      "hotel": "Antilia Inn",
+      "url": "https://www.cleartrip.com/hotels/details/5425258",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Nov: only breakfast-included plans listed",
+      "prices_breakfast_plan_only": {
+       "18-19 Nov 2026": 3026
+      }
+     },
+     {
+      "hotel": "Krishna Heritage",
+      "url": "https://www.cleartrip.com/hotels/details/krishna-heritage-3964930",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Nov: only breakfast-included plans listed",
+      "prices_breakfast_plan_only": {
+       "18-19 Nov 2026": 4940
+      }
+     },
+     {
+      "hotel": "Shettar's Kusum Resort",
+      "url": "https://www.cleartrip.com/hotels/details/shettar-s-kusum-resort-5256376",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "only breakfast-included plans listed",
+      "prices_breakfast_plan_only": {
+       "18-19 Nov 2026": 3999,
+       "14-15 Apr 2027": 5430
+      }
+     },
+     {
+      "hotel": "Badami Heritage Resort",
+      "url": "https://www.cleartrip.com/hotels/details/badami-heritage-resort-377734",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": " page says No rooms available"
+     },
+     {
+      "hotel": "The Heritage Resort",
+      "url": "https://www.cleartrip.com/hotels/details/4561623",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available"
+     },
+     {
+      "hotel": "Hotel Grand Heritage",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-grand-heritage-5249247",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available"
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Fortune Homestay Badami",
+      "url": "https://www.cleartrip.com/hotels/details/fortune-homestay-badami-5737422",
+      "prices": {
+       "18-19 Nov 2026": 1578,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "Homestay"
+     },
+     {
+      "hotel": "Krishna Villa",
+      "url": "https://www.cleartrip.com/hotels/details/krishna-villa-4483562",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "page says No rooms available"
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax price of the cheapest double room, 1 room 2 adults. Badami has only ~10 Cleartrip hotels and most show 'No rooms available' on one or more nights (sold out or not yet open: the page does not say). Only 2 hotels have a price on 2+ nights: Grand Clarks Inn (Apr 2452 is 36% BELOW Nov 3810) and Rajsangam (matched Deluxe AC: Nov 2866, Apr 3275, Aug 2456). Aug is below Nov at Rajsangam (-14% matched AC room) and Apr is above Nov (+14%), the opposite of Grand Clarks. n=2 hotels: do not read a season ratio from this. Cheapest Rajsangam rooms are non-AC. prices_breakfast_plan_only = hotel showed no room-only plan, price is the cheapest breakfast-included plan (kept apart, not comparable). No local events checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Aug 2027 availability for 8 of 10 hotels",
+    "Apr 2027 price for Badami Court and Sanman",
+    "any homestay price beyond Nov"
+   ]
+  },
+  "belur": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Sunshine International Boarding & Lodging (JP Nagar, Belur)",
+      "url": "https://www.cleartrip.com/hotels/details/sunshine-international-boarding-lodging-4264568",
+      "prices": {
+       "18-19 Nov 2026": 1131,
+       "14-15 Apr 2027": 904,
+       "12-13 May 2027": 904
+      },
+      "cheapest_room_seen": "Standard Non AC (the only room listed)"
+     },
+     {
+      "hotel": "Hotel Saroja Palace",
+      "url": "https://www.cleartrip.com/hotels/details/5218032",
+      "prices": {
+       "18-19 Nov 2026": 1672,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "cheapest_room_seen": "Standard Room"
+     },
+     {
+      "hotel": "Hotel Samanvi International",
+      "url": "https://www.cleartrip.com/hotels/details/4670133",
+      "prices": {
+       "18-19 Nov 2026": 973,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "cheapest_room_seen": "Double Room City view"
+     },
+     {
+      "hotel": "Aqua Terra Villas",
+      "url": "https://www.cleartrip.com/hotels/details/5220259",
+      "prices": {
+       "18-19 Nov 2026": 3215,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room City view"
+     },
+     {
+      "hotel": "KSTDC Hotel Mayura Velapuri",
+      "url": "https://www.cleartrip.com/hotels/details/kstdc-hotel-mayura-velapuri-1361602",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all three nights"
+     },
+     {
+      "hotel": "Water View Holiday Retreat",
+      "url": "https://www.cleartrip.com/hotels/details/water-view-holiday-retreat-5400796",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all three nights"
+     }
+    ],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax price of the cheapest double room, 1 room 2 adults; all hotels confirmed Belur, Karnataka (573115/573121) on the page. Cleartrip lists no homestays for Belur. Only 1 hotel (Sunshine, non-AC) has a price for more than one night: Apr and May are 20% below Nov (904 vs 1131). The other three priced hotels show 'No rooms available' on 14-15 Apr and 12-13 May 2027 (sold out or not yet open, page does not say). n=1 for the ratio, treat as indicative at best. No local events were checked, events left empty."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Apr and May 2027 prices for 3 of 4 priced hotels",
+    "any homestay or budget guesthouse",
+    "local events for 14-15 Apr / 12-13 May"
+   ]
+  },
+  "bidar": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "THE CROWN TOWN BIDAR",
+      "url": "https://www.cleartrip.com/hotels/details/the-crown-town-bidar-5584069",
+      "prices": {
+       "18-19 Nov 2026": 4580,
+       "14-15 Apr 2027": 4230,
+       "18-19 Aug 2027": 4230
+      },
+      "cheapest_room_seen": "Nov: cheapest plan on page (label shows a bank-offer name, room is the entry room); Apr/Aug: Deluxe Double Room"
+     },
+     {
+      "hotel": "The Crown Town (second listing of the same hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/5392983",
+      "prices": {
+       "18-19 Nov 2026": 3044,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room. Same hotel as above but a different Cleartrip listing and a different Nov price (3044 vs 4580)"
+     },
+     {
+      "hotel": "Hotel Bidar Gateway",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-bidar-gateway-4264563",
+      "prices": {
+       "18-19 Nov 2026": 2835,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Non AC Room; Deluxe Triple AC also 2835"
+     },
+     {
+      "hotel": "Sai Baba Palace Lodging and Boarding",
+      "url": "https://www.cleartrip.com/hotels/details/sai-baba-palace-lodging-and-boarding-5556272",
+      "prices": {
+       "18-19 Nov 2026": 1414,
+       "14-15 Apr 2027": 1218,
+       "18-19 Aug 2027": 1414
+      },
+      "cheapest_room_seen": "Nov/Aug: Basic Double Room with balcony; Apr: Executive Double Room (different room type)"
+     },
+     {
+      "hotel": "Kasturi International",
+      "url": "https://www.cleartrip.com/hotels/details/kasturi-international-3935058",
+      "prices": {
+       "18-19 Nov 2026": 897,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Standard Room NON AC; Standard AC was 1153 in Nov"
+     },
+     {
+      "hotel": "Spree Ashodev Hotel",
+      "url": "https://www.cleartrip.com/hotels/details/5170815",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Tulip Inn Bidar",
+      "url": "https://www.cleartrip.com/hotels/details/5680200",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Blackbuck Resort by Jungle Lodges (4-star, for reference)",
+      "url": "https://www.cleartrip.com/hotels/details/blackbuck-resort-by-jungle-lodges-4286427",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "no room-only plan on the page",
+      "prices_breakfast_plan_only": {
+       "18-19 Nov 2026": 5403,
+       "14-15 Apr 2027": 5403,
+       "18-19 Aug 2027": 5403
+      }
+     },
+     {
+      "hotel": "Mastiff Select Bidar (4-star, for reference)",
+      "url": "https://www.cleartrip.com/hotels/details/4273337",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Nov: only breakfast-included plans",
+      "prices_breakfast_plan_only": {
+       "18-19 Nov 2026": 3589
+      }
+     }
+    ],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax price of the cheapest double room, 1 room 2 adults. Cleartrip lists no homestays for Bidar. Only 1 hotel has a price on all three nights: THE CROWN TOWN BIDAR (Apr and Aug are 8% below Nov, 4230 vs 4580, but the Nov figure comes from a bank-offer plan label so the Nov price may carry a promo; the sister listing priced the Deluxe Room at 3044 in Nov). Sai Baba Palace: Aug equals Nov (1414), Apr 1218 on a different room type. Kasturi, Bidar Gateway, Crown Town 5392983 have Nov only (Apr/Aug 'No rooms available', sold out or not yet open). Cheapest rooms at Kasturi, Bidar Gateway are NON AC. prices_breakfast_plan_only = no room-only plan on the page, cheapest breakfast-included plan, kept apart. No local events checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Apr/Aug 2027 availability for 5 of 7 hotels",
+    "a clean Nov-to-Aug ratio (only 2 hotels, one with a room-type change)",
+    "any homestay"
+   ]
+  },
+  "bijapur": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "The Fern Residency Vijayapura",
+      "url": "https://www.cleartrip.com/hotels/details/the-fern-residency-vijayapura-3911702",
+      "prices": {
+       "18-19 Nov 2026": 4029,
+       "14-15 Apr 2027": 6510,
+       "18-19 Aug 2027": 6510
+      },
+      "cheapest_room_seen": "Winter Green Room (same room name all three nights)"
+     },
+     {
+      "hotel": "Hotel Madhuvan International",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-madhuvan-international-715025",
+      "prices": {
+       "18-19 Nov 2026": 1938,
+       "14-15 Apr 2027": 1938,
+       "18-19 Aug 2027": 1938
+      },
+      "cheapest_room_seen": "Executive Deluxe"
+     },
+     {
+      "hotel": "VOV Hotels Vijayapura",
+      "url": "https://www.cleartrip.com/hotels/details/vov-vijayapura-by-fidato-hotels-4189032",
+      "prices": {
+       "18-19 Nov 2026": 1802,
+       "14-15 Apr 2027": 1802,
+       "18-19 Aug 2027": 1802
+      },
+      "cheapest_room_seen": "Deluxe Room"
+     },
+     {
+      "hotel": "Hotel Seven Grand",
+      "url": "https://www.cleartrip.com/hotels/details/5425034",
+      "prices": {
+       "18-19 Nov 2026": 1535,
+       "14-15 Apr 2027": 1668,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe AC Room"
+     },
+     {
+      "hotel": "Unnati Stay Inn Vijayapura By HRG",
+      "url": "https://www.cleartrip.com/hotels/details/unnati-stay-inn-vijayapura-by-hrg-4290860",
+      "prices": {
+       "18-19 Nov 2026": 874,
+       "14-15 Apr 2027": 958,
+       "18-19 Aug 2027": 958
+      },
+      "cheapest_room_seen": "Nov Deluxe Room City view; Apr/Aug only Luxury Room listed",
+      "matched_room_prices": {
+       "room": "Luxury Room",
+       "prices": {
+        "18-19 Nov 2026": 958,
+        "14-15 Apr 2027": 958,
+        "18-19 Aug 2027": 958
+       }
+      }
+     },
+     {
+      "hotel": "Kyriad Hotel Vijayapura by OTHPL",
+      "url": "https://www.cleartrip.com/hotels/details/kyriad-hotel-vijayapura-by-othpl-2436970",
+      "prices": {
+       "18-19 Nov 2026": 2344,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Superior Twin Room"
+     },
+     {
+      "hotel": "Hotel Town Palace",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-town-palace-3963630",
+      "prices": {
+       "18-19 Nov 2026": 2235,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room AC"
+     },
+     {
+      "hotel": "Hotel Kanishka International",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-kanishka-international-4139141",
+      "prices": {
+       "18-19 Nov 2026": 2293,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Superior AC"
+     },
+     {
+      "hotel": "Hotel Milan",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-milan-4266650",
+      "prices": {
+       "18-19 Nov 2026": 2451,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Executive Room"
+     },
+     {
+      "hotel": "Hotel Itagi Square",
+      "url": "https://www.cleartrip.com/hotels/details/4711261",
+      "prices": {
+       "18-19 Nov 2026": 1520,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe Room"
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Travel Inn (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/5219811",
+      "prices": {
+       "18-19 Nov 2026": 1351,
+       "14-15 Apr 2027": 1351,
+       "18-19 Aug 2027": 1351
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Economy NON-AC; Executive AC was 1463 on all three nights"
+     },
+     {
+      "hotel": "Hotel Megharaj (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-megharaj-3929643",
+      "prices": {
+       "18-19 Nov 2026": 964,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Non AC Room (Double)"
+     },
+     {
+      "hotel": "Hotel Pleasant Stay (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-pleasant-stay-3930495",
+      "prices": {
+       "18-19 Nov 2026": 1620,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Executive Non AC Room (AC same price)"
+     },
+     {
+      "hotel": "KSTDC Hotel Mayura Adilshahi (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/kstdc-hotel-mayura-adilshahi-bijapur-4291646",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10 (Cleartrip lists the town as Vijayapura), room-only pre-tax price of the cheapest double room, 1 room 2 adults. No homestays listed on Cleartrip for Bijapur. 5 of 10 mid hotels have 3 nights priced or 2: Madhuvan, VOV and Travel Inn are flat across Nov, Apr, Aug (rate cards, no seasonal signal); Seven Grand +9% in Apr (1535 to 1668); Unnati +10% on a room-type change (matched Luxury Room flat 958). SURPRISE: The Fern Residency is 62% DEARER in Apr and Aug (6510) than in Nov (4029) on the same room name, so for Fern the ledger's 'low' months are the expensive ones. Apr/Aug 'No rooms available' for the other hotels = sold out or not yet open, page does not say. Several cheapest rooms are NON AC (Travel Inn, Megharaj, Pleasant Stay). No local events checked."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Apr/Aug availability for 6 of 10 mid hotels",
+    "why Fern Residency is 62% higher in Apr/Aug (no event source checked)"
+   ]
+  },
+  "chitradurga": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Myspace Hotel JMR (Cleartrip 2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4705053",
+      "prices": {
+       "18-19 Nov 2026": 2459,
+       "14-15 Apr 2027": 2459,
+       "18-19 Aug 2027": 2459
+      },
+      "cheapest_room_seen": "Deluxe Room"
+     },
+     {
+      "hotel": "Sai Comforts (Cleartrip 2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4534178",
+      "prices": {
+       "18-19 Nov 2026": 1730,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Deluxe AC Room"
+     },
+     {
+      "hotel": "SPR comforts (Cleartrip 2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4695437",
+      "prices": {
+       "18-19 Nov 2026": 1922,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "Standard Room"
+     },
+     {
+      "hotel": "Chindanur Comforts (Cleartrip 3-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4532006",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "KSTDC Mayura Durg (Cleartrip 3-star resort)",
+      "url": "https://www.cleartrip.com/hotels/details/kstdc-mayura-durg-chitradurga-5479712",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Amulya Homestay Chitradurga",
+      "url": "https://www.cleartrip.com/hotels/details/amulya-homestay-chitradurga-5737768",
+      "prices": {
+       "18-19 Nov 2026": 2122,
+       "14-15 Apr 2027": 2094,
+       "18-19 Aug 2027": 2094
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "Home (whole-home listing)"
+     },
+     {
+      "hotel": "Nithyotsava stay",
+      "url": "https://www.cleartrip.com/hotels/details/nithyotsava-stay-5423438",
+      "prices": {
+       "18-19 Nov 2026": 1601,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "Utsava Homestay"
+     },
+     {
+      "hotel": "Fort heaven home stay",
+      "url": "https://www.cleartrip.com/hotels/details/fort-heaven-home-stay-5422350",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Mourya Deluxe A/C Lodge (2-star guesthouse)",
+      "url": "https://www.cleartrip.com/hotels/details/mourya-deluxe-a-c-lodge-2053150",
+      "prices": {
+       "18-19 Nov 2026": 1170,
+       "14-15 Apr 2027": 1170,
+       "18-19 Aug 2027": 1170
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Basic Double Room"
+     },
+     {
+      "hotel": "Vishwas Comforts (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4597118",
+      "prices": {
+       "18-19 Nov 2026": 1082,
+       "14-15 Apr 2027": 1188,
+       "18-19 Aug 2027": 1188
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Nov Deluxe Double Room; Apr/Aug only Standard Double Room with Fan listed (different room type)"
+     },
+     {
+      "hotel": "Amogha International Hotel (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4271280",
+      "prices": {
+       "18-19 Nov 2026": 981,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Standard Room NON-AC (A/c 1469)"
+     },
+     {
+      "hotel": "OYO 35775 Amogha International",
+      "url": "https://www.cleartrip.com/hotels/details/oyo-35775-amogha-international-5419050",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Hotel Mayura Durg (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4695176",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "18-19 Aug 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax price of the cheapest double room, 1 room 2 adults. Chitradurga has NO 3-star hotel with a price on Cleartrip: the two 3-star listings (Chindanur Comforts, KSTDC Mayura Durg) say 'No rooms available' on all three nights. The 'mid' list therefore holds Cleartrip 2-star hotels, the best available. Flat across Nov/Apr/Aug (rate cards, no seasonal signal): Myspace 2459, Mourya 1170, Amulya 2122->2094 (-1%). Apr/Aug 'No rooms available' for 6 other hotels (sold out or not yet open, page does not say). Cheapest rooms at Amogha and Vishwas are non-AC/fan. Dated list pages ignored; no local events checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "any 3-star hotel price",
+    "Apr/Aug availability for most hotels",
+    "season ratio beyond 3 flat-priced properties"
+   ]
+  },
+  "dandeli": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Townhouse Oak Dharwad (listed under Dandeli, 3-star)",
+      "url": "https://www.cleartrip.com/hotels/details/5218633",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": 4464,
+       "14-15 Jul 2027": 4464
+      },
+      "cheapest_room_seen": "Nov: No rooms available; Apr/Jul single plan with bank-offer label"
+     },
+     {
+      "hotel": "Bison River Resort (3-star resort, Badgund)",
+      "url": "https://www.cleartrip.com/hotels/details/bison-river-resort-724817",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Dandeli Rangers Camp (3-star camp)",
+      "url": "https://www.cleartrip.com/hotels/details/dandeli-rangers-camp-2426130",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      },
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Wild Kasarwadi (3-star)",
+      "url": "https://www.cleartrip.com/hotels/details/wild-kasarwadi-4484608",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      },
+      "cheapest_room_seen": "Nov: only a 7209 package-type plan (no room-only plan); Apr/Jul No rooms available"
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "PremKunj Homestay (Cleartrip 2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/premkunj-homestay-5581841",
+      "prices": {
+       "18-19 Nov 2026": 1346,
+       "14-15 Apr 2027": 7244,
+       "14-15 Jul 2027": 7181
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "Nov: Deluxe Non AC room; Apr/Jul: the only plans listed carry a bank-offer label and are far dearer (7244, 7181), possibly a different package type, so not comparable"
+     },
+     {
+      "hotel": "Dandeli River Resort: Basic Tent, Garden View (a tent, not a room)",
+      "url": "https://www.cleartrip.com/hotels/details/dandeli-river-resort-5595203",
+      "prices": {
+       "18-19 Nov 2026": 1343,
+       "14-15 Apr 2027": 1343,
+       "14-15 Jul 2027": 1322
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Basic Tent"
+     },
+     {
+      "hotel": "Dandeli Resorts Booking (1-star villa, whole home)",
+      "url": "https://www.cleartrip.com/hotels/details/dandeli-resorts-booking-5422991",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": 2008,
+       "14-15 Jul 2027": 2008
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "Home"
+     },
+     {
+      "hotel": "Cheetah Farms Jungle Stay (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/cheetah-farms-jungle-stay-5279511",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": 3736
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "Apr cheapest = Dormitory Group Stay 2716 (not a double room, excluded); Jul AC Family Room 3736"
+     },
+     {
+      "hotel": "Wild Flower Homestay",
+      "url": "https://www.cleartrip.com/hotels/details/wild-flower-home-stay-740444",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax, 1 room 2 adults. Dandeli is mostly sold as per-person jungle-stay packages with meals, which Cleartrip often shows as 'No rooms available' or breakfast-only plans, so the probe is thin. Only Dandeli River Resort (a tent, 1343 -> 1322 in Jul, -2%) has a clean matched series. PremKunj Homestay jumps from 1346 in Nov to ~7200 in Apr/Jul (5x) on different plan labels: treat as not comparable. 7 listings (Regenta Century, Whistling Woodz, Magenta, Mysa Lodge, Dandeli Stay, Jungle Nest, Panther) return HTTP 404 on Cleartrip detail pages. No local events checked."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1346,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/premkunj-homestay-5581841?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Cleartrip PremKunj Homestay Deluxe Non AC room, 18-19 Nov 2026, pre-tax, n=1. Mid, budget, dorm: null.",
+    "notes": "Every other Cleartrip Dandeli property said 'No rooms available' on 18-19 Nov 2026 or sold only meal-inclusive packages. Dandeli resorts are commonly per-person with meals (e.g. dandeli.org listings quoting per-person rates); a package price is not a room price so none is used. Booking.com homestay page (https://www.booking.com/homestay/city/in/dandeli.html) shows USD 'from' prices for undated 1-night stays, not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No sedan/SUV union or operator rate found. Local operator Dandeli Tours and Travels (Chennama Circle, Dandeli; page dated 2025-01-15) lists 'Sightseeing in and around Dandeli: starts at Rs 2000' and 'Nearby places full day (Syntheri Rocks, backwater, Honey Bee Park, Go-Karting): starts at Rs 3500', but its fleet is 20-40 seater buses/tempo travellers and the page does not say which vehicle, so it is not a 4-seat cab rate. National aggregator pages (cabbazar, hurryupcabs) were not used.",
+    "sources": [
+     "https://dandelitoursandtravels.com/"
+    ],
+    "notes": "null by design"
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only a Justdial snippet of Rs 350 for two at one Dandeli restaurant was seen in a search result; the Justdial page returned 403 and was not retried. One data point is not a basis.",
+    "sources": [],
+    "notes": "null"
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid-range room-only price",
+    "dorm bed",
+    "sedan/SUV local day rate",
+    "food per day",
+    "a matched season ratio"
+   ]
+  },
+  "dharmasthala": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "George Homestay Ujire (Cleartrip 3-star, apartments)",
+      "url": "https://www.cleartrip.com/hotels/details/george-homestay-ujire-5398653",
+      "prices": {
+       "18-19 Nov 2026": 4125,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "cheapest_room_seen": "1 Bedroom Apartment"
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Finer Things Retreat (Shivalli Stays)",
+      "url": "https://www.cleartrip.com/hotels/details/finer-things-retreat-shivalli-stays-dharmasthala-4275414",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "kind": "homestay",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Hotel Birwa Nelyadi (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/4561749",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     },
+     {
+      "hotel": "Arva Residency (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/arva-residency-5062732",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      },
+      "kind": "budget",
+      "cheapest_room_seen": "page says No rooms available on all nights"
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip detail pages fetched 2026-10-10, room-only pre-tax, 1 room 2 adults. Cleartrip lists only 4 properties for Dharmasthala and 3 of them say 'No rooms available' on 18-19 Nov 2026, 14-15 Apr and 12-13 May 2027 (sold out or not yet open, page does not say). Only George Homestay Ujire (apartments, Ujire) has a price, on Nov only. No season ratio possible. Dharmasthala is a pilgrimage town; Dharmasthala temple's own free/donation guest-house accommodation was not checked. No local events checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "every Apr/May price",
+    "any hotel price other than George Homestay in Nov",
+    "temple trust guesthouse tariffs"
+   ]
+  }
+ }
+}

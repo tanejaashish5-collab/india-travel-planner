@@ -1,0 +1,396 @@
+{
+ "batch": "Q1",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "ahobilam": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Pavana Guest House (Cleartrip class: 3-star Hotel, Ahobilam)",
+      "url": "https://www.cleartrip.com/hotels/details/5680757",
+      "prices": {
+       "18-19 Nov 2026": 978,
+       "14-15 Apr 2027": 978,
+       "14-15 Jul 2027": null,
+       "28-29 Oct 2026": 978
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Ahobilam sri lakshmi home stay (Cleartrip class: 2-star Homestay)",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/ahobilam-sri-lakshmi-home-stay-5396112",
+      "prices": {
+       "18-19 Nov 2026": 1757,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null,
+       "28-29 Oct 2026": 1734
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip lists only 2 properties for Ahobilam (https://www.cleartrip.com/hotels/hotels-in-ahobilam). Pavana is tagged 3-star but priced like a budget guesthouse; price is flat 978 on every priced night, so no season signal. 14 Jul 2027 page says 'No rooms available' for Pavana (null). Homestay: 'No rooms available' on 14 Apr and 14 Jul 2027 (null); 1757 on 18 Nov vs 1734 on 28 Oct. Prices are the header 'per night' price excluding taxes & fees (taxes shown separately, Pavana +88, homestay +157/+156)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "n=1 mid and n=1 homestay only; no season curve possible beyond Pavana flat price"
+   ]
+  },
+  "horsley-hills": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "VSR Wind Wave (3-star Resort, 3.4 rating)",
+      "url": "https://www.cleartrip.com/hotels/details/4533263",
+      "prices": {
+       "18-19 Nov 2026": 1994,
+       "14-15 Apr 2027": 1994,
+       "14-15 Jul 2027": 1994,
+       "28-29 Oct 2026": 1994
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Horsley Hills holiday homes (2-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/horsley-hills-holiday-homes-2882894",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null,
+       "28-29 Oct 2026": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip lists only 2 Horsley Hills properties (https://www.cleartrip.com/hotels/hotels-in-horsley-hills). VSR Wind Wave shows exactly 1994 (+216 taxes) on all 4 nights, so Cleartrip shows no seasonal movement for this property. Holiday homes page says 'No rooms available' on all 4 nights (null). n=1 mid."
+   },
+   "confidence": "low",
+   "unverified": [
+    "only one priceable property; flat price is a Cleartrip display, may not reflect walk-in/APTDC tariffs"
+   ]
+  },
+  "maredumilli": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [
+     {
+      "hotel": "Srivanam Resorts (2-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4671476",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null,
+       "28-29 Oct 2026": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip lists only Srivanam Resorts for Maredumilli (https://www.cleartrip.com/hotels/hotels-in-maredumilli); no 3-star list exists. Page says 'No rooms available' on all 4 probe nights. No mid-range property on Cleartrip."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no priced Cleartrip property in Maredumilli on any probe night"
+   ]
+  },
+  "gandikota": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip has no Gandikota listing: hotels-in-gandikota returns an empty page, 3-star-hotels-in-gandikota is 404 (https://www.cleartrip.com/hotels/hotels-in-gandikota), and the Cleartrip hotel search box returned 'No results found for Gandikota' on 2026-10-10. Nearest Cleartrip town Jammalamadugu has one 2-star hotel but is a different place and was not used."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no Cleartrip properties for Gandikota"
+   ]
+  },
+  "lambasingi": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip has no Lambasingi city page: hotels-in-lambasingi and 3-star-hotels-in-lambasingi are 404; variants lammasingi and lambasingi-village also 404 (checked 2026-10-10)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no Cleartrip properties for Lambasingi"
+   ]
+  },
+  "lepakshi": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip has no Lepakshi city page: hotels-in-lepakshi and 3-star-hotels-in-lepakshi are 404; hindupur also 404 (checked 2026-10-10)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no Cleartrip properties for Lepakshi"
+   ]
+  },
+  "araku-valley": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Casa Woods (3-star Hotel, 4.5)",
+      "url": "https://www.cleartrip.com/hotels/details/4670262",
+      "prices": {
+       "18-19 Nov 2026": 2670,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Valley Springs Resorts (3-star Resort, 3.4)",
+      "url": "https://www.cleartrip.com/hotels/details/valley-springs-resorts-4479813",
+      "prices": {
+       "18-19 Nov 2026": 5115,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "FabHotel B Square Valley (3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/5681439",
+      "prices": {
+       "18-19 Nov 2026": 3452,
+       "14-15 Apr 2027": 3682,
+       "14-15 Jul 2027": 3682
+      }
+     },
+     {
+      "hotel": "Casa Woods Resort @ Araku Valley (3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/casa-woods-resort-araku-valley-5395970",
+      "prices": {
+       "18-19 Nov 2026": 2055,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Ushodaya Resorts, Padmapuram (3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/araku-ushodaya-resort-721606",
+      "prices": {
+       "18-19 Nov 2026": 1672,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Vihar Holiday Resorts (3-star Resort, 4.0)",
+      "url": "https://www.cleartrip.com/hotels/details/casa-holiday-resorts-3915657",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Itsy Hotels Abhitej Inn (3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/4491027",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Sumitel Araku Mount View Camping Resort, Sunkarametta (2-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/5680349",
+      "prices": {
+       "18-19 Nov 2026": 3311,
+       "14-15 Apr 2027": 3311,
+       "14-15 Jul 2027": 3311
+      }
+     },
+     {
+      "hotel": "Vistara Resorts (2-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/vistara-resorts-4279137",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Pramani Resorts (2-star Resort)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/pramani-resorts-4685964",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Hotels found on https://www.cleartrip.com/hotels/3-star-hotels-in-araku-valley and /hotels/hotels-in-araku-valley. Prices = detail-page header 'per night' price, pre-tax (taxes shown separately). Only FabHotel B Square Valley priced on all three nights (3452 -> 3682 -> 3682, +6.7% in Apr and Jul vs Nov). Sumitel flat 3311 all nights. Casa Woods, Valley Springs, Casa Woods Resort and Ushodaya priced on 18 Nov only; their Apr and Jul 2027 pages say 'No rooms available' (null; cause unknown, may be inventory not yet loaded). Vihar, Itsy Abhitej, Vistara, Pramani: 'No rooms available' on all three nights. Two further budget names from Cleartrip's budget list (Sri Sai Suvarna Inn, Goldensand Ozone Valley Resorts) have detail URLs that return 404 so were not priced. Ushodaya is tagged Padmapuram (Araku area). No matched Apr/Jul vs Nov ratio is reliable beyond one FabHotel."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay price, dorm price, local taxi day rate, food per day: all null (no dated or rate-card source)",
+    "season curve rests on 1 hotel (FabHotel) priced on all 3 nights"
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated homestay or dorm price found. Cleartrip has no homestay list for Araku (https://www.cleartrip.com/hotels/homestays-in-araku-valley returns 0 properties). homestays.co.in (https://www.homestays.co.in/araku-valley-india) shows Ushodaya Resorts 1,400 for 2 guests but the page dates are 2024 and it does not say per night, so not used. No hostel or dorm listing found in searches.",
+    "notes": "Left null rather than use undated aggregator figures."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or dated operator rate card found. arakutrip.in (https://arakutrip.in/araku-valley-trip-cost-guide/, 2026, undated article) says local day-hire cabs run approximately 1,500-2,500; an old Tripadvisor thread (403 to fetch) is only seen as a search snippet. Left null: single undated operator-blog range, not a rate card.",
+    "sources": [
+     "https://arakutrip.in/araku-valley-trip-cost-guide/"
+    ],
+    "notes": "indicative range only, not for loading: 1500-2500"
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only one Araku restaurant with a rupee cost-for-two found: Athidhi Devo Bhava (Andhra) 700 for two on EazyDiner (https://www.eazydiner.com/visakhapatnam/restaurants/araku-valley). One venue is not a basis for a per-day figure; no thali board or menu found. arakutrip.in gives 400-500 budget and 800-1,200 comfortable per person per day (undated blog) - not used.",
+    "sources": [
+     "https://www.eazydiner.com/visakhapatnam/restaurants/araku-valley"
+    ],
+    "notes": ""
+   }
+  },
+  "konaseema": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel Somisetty Landmark, Tatipaka, Razole (3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-somisetty-landmark-742488",
+      "prices": {
+       "18-19 Nov 2026": 2070,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Rio Vista Resorts, Razole (3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/rio-vista-resorts-4684132",
+      "prices": {
+       "18-19 Nov 2026": 4018,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [],
+    "events": {},
+    "other_reference_4_star": [
+     {
+      "hotel": "Sterling Palavelli by the Godavari, Razole (4-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/sterling-palavelli-godavari-3973983",
+      "prices": {
+       "18-19 Nov 2026": 3600,
+       "14-15 Apr 2027": 3095,
+       "14-15 Jul 2027": 3095
+      }
+     },
+     {
+      "hotel": "Dindi RVR on the Godavari, Club Mahindra Associate Resort (4-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/4594998",
+      "prices": {
+       "18-19 Nov 2026": 9546,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Dindi RVR on the Godavari, A Club Mahindra Resort (4-star, second listing)",
+      "url": "https://www.cleartrip.com/hotels/details/dindi-rvr-on-the-godavari-a-club-mahindra-resort-4682978",
+      "prices": {
+       "18-19 Nov 2026": 10027,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "notes": "Cleartrip has no Konaseema or Amalapuram city page (404); the only Konaseema-area hotels are under Razole (https://www.cleartrip.com/hotels/hotels-in-razole), on the Godavari in the Konaseema delta; this is a nearest-cluster proxy, not Amalapuram. Only the two 3-star properties are in 'mid'; 4-star resorts kept separate so they do not skew a median. Only Sterling Palavelli (4-star) has a matched Nov/Apr/Jul series: 3600 -> 3095 -> 3095 (Apr and Jul are 14% BELOW Nov). The two 3-star properties are priced on 18 Nov only (Apr and Jul pages say 'No rooms available')."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay, dorm, taxi day, food per day: all null (searches returned no dated or rate-card source)",
+    "Razole used as proxy for Konaseema; mid season curve not measurable"
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Razole / Amalapuram",
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated homestay or dorm price found. Cleartrip has no Konaseema/Amalapuram city page or homestay list. A Goibibo listing for Konaseema Vididhillu (house-style stay in Amalapuram) was seen only as an undated search snippet, not fetched.",
+    "notes": "Left null."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism or dated operator rate card found for Konaseema in the searches run.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu, thali board or cost-for-two figures found for Konaseema venues in the searches run.",
+    "sources": [],
+    "notes": ""
+   }
+  },
+  "machilipatnam": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Collection O Machilipatnam Bus Terminal (formerly Vijaya Raghava Residency), 3-star Hotel",
+      "url": "https://www.cleartrip.com/hotels/details/5066872",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Jul 2027": 2779,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Super Hotel O Machilipatnam Railway Station (formerly Hasini Celebrations), 3-star Hotel, 2.7",
+      "url": "https://www.cleartrip.com/hotels/details/5066870",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Jul 2027": null,
+       "8-9 Sep 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Only these 2 properties on https://www.cleartrip.com/hotels/3-star-hotels-in-machilipatnam (hotels-in-machilipatnam is 404). Both say 'No rooms available' on 18 Nov 2026 and 8-9 Sep 2027; Vijaya Raghava shows 2779 (+250 taxes) on 14-15 Jul 2027 only. No Nov price, so no ratio possible."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no Nov 2026 price for any Machilipatnam property on Cleartrip"
+   ]
+  }
+ }
+}

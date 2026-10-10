@@ -1,0 +1,871 @@
+{
+ "batch": "Q5",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "thekkady": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Snow Hills Nature Resort (Cleartrip 3-star Resort, Periyar)",
+      "url": "https://www.cleartrip.com/hotels/details/snow-hills-resorts-3926958",
+      "prices": {
+       "18-19 Nov 2026": 2371,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "THE VIOLET THEKKADY, listing 5218285 (Cleartrip 3-star Resort, Periyar)",
+      "url": "https://www.cleartrip.com/hotels/details/5218285",
+      "prices": {
+       "18-19 Nov 2026": 6805,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "The Violet Thekkady (Cleartrip 4-star Resort, Periyar)",
+      "url": "https://www.cleartrip.com/hotels/details/the-violet-thekkady-5062755",
+      "prices": {
+       "18-19 Nov 2026": 7989,
+       "10-11 Mar 2027": 7989,
+       "14-15 Apr 2027": 7989
+      }
+     },
+     {
+      "hotel": "The Mountain Courtyard Thekkady (Cleartrip 5-star Resort, Springvalley)",
+      "url": "https://www.cleartrip.com/hotels/details/the-mountain-courtyard-thekkady-1361040",
+      "prices": {
+       "18-19 Nov 2026": 4550,
+       "10-11 Mar 2027": 4480,
+       "14-15 Apr 2027": 4480
+      }
+     },
+     {
+      "hotel": "Amaana Plantation Resort (Cleartrip 4-star Resort, Periyar)",
+      "url": "https://www.cleartrip.com/hotels/details/amaana-plantation-resort-2883430",
+      "prices": {
+       "18-19 Nov 2026": 8008,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "GMSquare (Cleartrip 3-star Homestay, Springvalley)",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/gmsquare-4687100",
+      "prices": {
+       "18-19 Nov 2026": 1259,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Rustic Roots Farm Staycation near Thekkady, Gavi (Cleartrip 1-star Hotel, Periyar)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/rustic-roots-farm-staycation-near-thekkady-gavi-5737394",
+      "prices": {
+       "18-19 Nov 2026": 2115,
+       "10-11 Mar 2027": 2115,
+       "14-15 Apr 2027": 2088
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Price = header per-night price excluding taxes & fees on each hotel's own detail response (fetch), date line on each response matched the probed Wed-Thu night (Mar/Apr responses read 'Wed, 10 Mar - Thu, 11 Mar' and 'Wed, 14 Apr - Thu, 15 Apr'). Cleartrip's 3-star list for Thekkady has only 5 properties and only Snow Hills is a genuine mid-range 3-star; others are 4-5 star resorts or a 22k estate bungalow (Thondiyar Estate, 22,185 / 22,185 / 22,364, excluded as not mid-range). Listing 5218285 and 5062755 are both The Violet (3-star and 4-star listings, different rooms). Snow Hills, Violet 5218285, Amaana, GMSquare return 'No rooms available' for 10 Mar and 14 Apr 2027 (null; could be inventory not loaded rather than sold out). Only 2 hotels (Violet 4-star, Mountain Courtyard) plus Rustic Roots priced on all 3 nights, and they are flat within 1.6% (Violet exactly flat 7989), so Cleartrip shows NO measurable Nov vs Mar vs Apr movement; do not infer a season curve from this. Budget Thekkady hotels listed at /hotels/india/thekkady/budget-hotels (Sandra Palace, KTDC Periyar House, Michaels Inn, Seasons, Green Ark, Thekkady Homestay, Mickey Homestay, Jungle Palace Homestay) were all 'No rooms available' on 18-19 Nov 2026 (checked, null). Mountain Courtyard 5-star at 4,550 is cheaper than the 3-star Violet listing: class labels are weak signals here."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only one true 3-star (Snow Hills) priced on Nov only; Mar/Apr unavailable for it",
+    "Hotels flat across nights: Cleartrip may show a static rate for far-future dates",
+    "No Mar/Apr 2027 price for most budget/homestay properties"
+   ]
+  },
+  "vagamon": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Pine Clough Holidays Vagamon (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/pine-clough-holidays-vagamon-4063441",
+      "prices": {
+       "18-19 Nov 2026": 2391,
+       "12-13 May 2027": 2982,
+       "14-15 Jul 2027": 2982,
+       "18-19 Aug 2027": 2982
+      }
+     },
+     {
+      "hotel": "Vaga Nakshathra Suites (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/vaga-nakshathra-suites-4276786",
+      "prices": {
+       "18-19 Nov 2026": 3551,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": 3082,
+       "18-19 Aug 2027": 3082
+      }
+     },
+     {
+      "hotel": "The Autumn by Maat Hotels (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/4561726",
+      "prices": {
+       "18-19 Nov 2026": 2531,
+       "12-13 May 2027": 3790,
+       "14-15 Jul 2027": 3790,
+       "18-19 Aug 2027": 3790
+      }
+     },
+     {
+      "hotel": "Kudaram County Resorts (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/kudaram-county-resorts-4565408",
+      "prices": {
+       "18-19 Nov 2026": 2549,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Adrak Summer Sand Hill Resort Vagamon (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/adrak-summer-sand-hill-resort-vagamon-2044150",
+      "prices": {
+       "18-19 Nov 2026": 2889,
+       "12-13 May 2027": 3280,
+       "14-15 Jul 2027": 3280,
+       "18-19 Aug 2027": 3280
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Vagamon Hill Chimes (Cleartrip 3-star Homestay)",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/vagamon-hill-chimes-4278647",
+      "prices": {
+       "18-19 Nov 2026": 1502,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Cee Cee Grand Resort (Cleartrip 3-star Homestay, Kolahalamedu)",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/ceecee-grand-resort-3974664",
+      "prices": {
+       "18-19 Nov 2026": 2213,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Aruvi Mountain Villa Vagamon by Voye Homes (Cleartrip 3-star Resort listing, Kolahalamedu)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4695506",
+      "prices": {
+       "18-19 Nov 2026": 1818,
+       "12-13 May 2027": 2842,
+       "14-15 Jul 2027": 2842,
+       "18-19 Aug 2027": 2842
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Price = header per-night price excluding taxes & fees on each detail response (fetch); the date line on every response matched the probed Wed-Thu night. SURPRISE: where a far-future night is priced, it is IDENTICAL on May, Jul and Aug 2027 for every hotel (e.g. Pine Clough 2982 x3, Autumn 3790 x3), and for 4 of 5 mid hotels and Aruvi it is HIGHER than 18-19 Nov 2026 (Pine Clough 2391 vs 2982, Autumn 2531 vs 3790, Adrak 2889 vs 3280, Aruvi 1818 vs 2842); only Vaga Nakshathra is lower (3551 vs 3082). Flat-across-months far-future prices look like a static rack rate rather than a seasonal price, and the near-term Nov price may be a discounted sale price, so the Nov-to-future ratio cannot be read as a season curve; matched ratio means little here. No rooms available (null): Vaga Nakshathra 12 May 2027; Kudaram County all three future nights; Hill Chimes and Cee Cee all three future nights. 3-star Cleartrip list has 33+ Vagamon properties (many Voye Homes villas, 4-5 star resorts at 5,750 to 24,491 not used). Hosteller Bam Vagamon (1126) is a hostel, not used as budget room."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Future-night prices look static (identical across May/Jul/Aug) so no real season curve was measured",
+    "Nov price may be a near-term discount"
+   ]
+  },
+  "wayanad": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Vythiri Wild Forest Resort (Cleartrip 3-star Resort, Kunnathidavaka)",
+      "url": "https://www.cleartrip.com/hotels/details/vythiri-wild-forest-resort-2043552",
+      "prices": {
+       "18-19 Nov 2026": 3108,
+       "12-13 May 2027": 3731,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": 3998
+      }
+     },
+     {
+      "hotel": "Hotel Wilton (Cleartrip 3-star Hotel, Sultan Bathery)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-wilton-3980406",
+      "prices": {
+       "18-19 Nov 2026": 4420,
+       "12-13 May 2027": 2179,
+       "16-17 Jun 2027": 2179,
+       "14-15 Jul 2027": 2179
+      }
+     },
+     {
+      "hotel": "Coffee Greens Resort (Cleartrip 3-star Resort, Muttil North)",
+      "url": "https://www.cleartrip.com/hotels/details/4289912",
+      "prices": {
+       "18-19 Nov 2026": 4403,
+       "12-13 May 2027": 4403,
+       "16-17 Jun 2027": 4089,
+       "14-15 Jul 2027": 4089
+      }
+     },
+     {
+      "hotel": "Grande Iris (Cleartrip 4-star Hotel, Sultan Bathery)",
+      "url": "https://www.cleartrip.com/hotels/details/grande-iris-3915193",
+      "prices": {
+       "18-19 Nov 2026": 2117,
+       "12-13 May 2027": 3384,
+       "16-17 Jun 2027": 3384,
+       "14-15 Jul 2027": 3384
+      }
+     },
+     {
+      "hotel": "Terrace Resorts (Cleartrip 4-star Resort, Padinjarathara)",
+      "url": "https://www.cleartrip.com/hotels/details/terrace-resorts-3980945",
+      "prices": {
+       "18-19 Nov 2026": 4305,
+       "12-13 May 2027": 4857,
+       "16-17 Jun 2027": 4857,
+       "14-15 Jul 2027": 4857
+      }
+     },
+     {
+      "hotel": "Green Gates Hotel (Cleartrip 3-star Hotel, Kalpetta)",
+      "url": "https://www.cleartrip.com/hotels/details/green-gates-hotel-41578",
+      "prices": {
+       "18-19 Nov 2026": 1967,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Bay View Suites Vythiri (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/4598104",
+      "prices": {
+       "18-19 Nov 2026": 3026,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Sky Sierra Wayanad (Cleartrip 3-star Resort, Kottappadi)",
+      "url": "https://www.cleartrip.com/hotels/details/sky-sierra-wayanad-4264283",
+      "prices": {
+       "18-19 Nov 2026": 2144,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Karapuzha Village Resort (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/karapuzha-village-resort-159811",
+      "prices": {
+       "18-19 Nov 2026": 4390,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Bonita Banasura (Cleartrip 3-star Hotel, Padinjarathara)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/bonita-banasura-3927917",
+      "prices": {
+       "18-19 Nov 2026": 1800,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Avadale Wayanad (Cleartrip 3-star Resort, Kalpetta)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4293338",
+      "prices": {
+       "18-19 Nov 2026": 1707,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Mesta Hotel (listing hotel-great-jubilee, Cleartrip 3-star Hotel, Sultan Bathery)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-great-jubilee-3980104",
+      "prices": {
+       "18-19 Nov 2026": 2176,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Price = header per-night price excluding taxes & fees on each detail response (fetch); date line on every response matched the probed Wed-Thu night. Cleartrip lists 60 Wayanad properties. Most are 'No rooms available' on all three future nights (null) for 7 of 9 mid hotels and all 3 budget ones, so only Vythiri Wild Forest, Wilton, Coffee Greens, Grande Iris and Terrace have matched future prices. SURPRISE: far-future prices are flat across May/Jun/Jul for Wilton (2179 x3), Grande Iris (3384 x3), Terrace (4857 x3) and near-flat for Coffee Greens (4403, 4089, 4089), and for Wilton and Grande Iris the Nov price differs in odd directions (Wilton Nov 4420 vs 2179 future, i.e. LOWER later; Grande Iris Nov 2117 vs 3384, HIGHER later; Terrace Nov 4305 vs 4857). Static far-future numbers look like a rack rate, not a monsoon discount; Jul (the template 'low') is NOT cheaper than May or Nov in any priced hotel except Wilton. Do not read this as a season curve."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Far-future prices appear static (flat across months), so no real season curve measured",
+    "7 of 9 mid hotels and all budget hotels unavailable on future nights"
+   ]
+  },
+  "drass": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Stago Ladakh (Cleartrip 2-star Hotel, Dras)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-stago-ladakh-5283786",
+      "prices": {
+       "18-19 Nov 2026": 3555,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "9-10 Dec 2026": 3508
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip has no Drass city page for 3-star/homestay/budget (404 on /3-star-hotels-in-drass, /hotels-in-drass, /homestays-in-drass); the spelling 'dras' (https://www.cleartrip.com/hotels/hotels-in-dras) lists exactly 2 properties: Hotel Stago Ladakh (2-star) and Hotel D Meadows Ladakh (Cleartrip 4-star). Hotel D Meadows (https://www.cleartrip.com/hotels/details/hotel-d-meadows-ladakh-4279812) returned 'No rooms available' on all four nights incl. 18-19 Nov and 9-10 Dec 2026 (null; possibly closed for winter, not confirmed). Stago priced 3,555 (18 Nov) and 3,508 (9 Dec), header per-night price excluding taxes & fees (+318 / +316 taxes); 'No rooms available' for 12 May and 14 Jul 2027 (null). Date line on each response matched the probed night. No mid-range 3-star exists on Cleartrip for Drass, so the mid season curve is NOT measured; n=1 budget hotel with two priced nights only (Nov vs Dec, -1.3%). Season ratio for peak (Jul) vs Nov could not be measured; Drass hotels likely sell via direct/Kargil bookings, not checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No mid-range hotel priced; peak-season (May/Jul) price not observable on Cleartrip",
+    "Only 1 hotel priced on 2 of 4 nights"
+   ]
+  },
+  "hanle": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Cleartrip has NO Hanle inventory: /hotels/3-star-hotels-in-hanle, /hotels/hotels-in-hanle, /hotels/homestays-in-hanle all 404; /hotels/india/hanle/budget-hotels returns 200 with no hotel links; spelling variants hanley, hanle-ladakh, hanle-village, hanle-leh also 404 (checked 2026-10-10). A web search for a Cleartrip Hanle page found none. So no season probe is possible: all probe nights (18-19 Nov 2026, 12-13 May 2027, 14-15 Jul 2027) are null by absence of any Cleartrip property. Hanle stays are homestays sold directly; the homestay tariff pages seen print undated rack rates only (below), which is not a season curve."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "budget_hotel_median_inr": null,
+    "homestay_median_inr": null,
+    "dorm_median_inr": 1000,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://lhamohomestayhanle.in/product/dormitory-room/",
+     "https://kelsanghomestaynaga.in/index.html"
+    ],
+    "price_basis": "Dorm: Lhamo Homestay Hanle page prints 'Dormitory Room ₹1,000.00 / Day' and 'Rs. 1000 per Persons', undated website tariff (site footer 2026), no meal statement. Second source Kelsang Home Stay (Naga, Hanle) prints 'Dormitory Room ₹1500 /night' with no per-bed wording and footer copyright 2024, so its unit (bed vs room) is unclear and it is NOT in the median (n=1).",
+    "notes": "Context only, not a ledger tier: Hanle private rooms on homestay websites (undated tariff cards): Lhamo single 1,500 / double 3,000 (https://lhamohomestayhanle.in/), Kelsang single 2,000 / double 3,000, Sonam single 2,500 / double 3,500 with breakfast and 'All prices include taxes' (https://sonamhomestayhanle.in/tariffs/), Gua Home Stay quotes American Plan (3 meals) 2,800 double (https://guahomestayhanle.in/tariffs.html, seen only in a search snippet). Several include meals in the room rate."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Leh to Hanle via Pangong, 3 days, Innova Crysta/Scorpio N/XUV700 (union-style rate list, Pangong Lake + Hanle, S.No 61)",
+      "inr": 27710
+     },
+     {
+      "route": "Same, Xylo/Ertiga",
+      "inr": 23554
+     },
+     {
+      "route": "Add-on 'Include or Exclude Hanle', Innova Crysta/Scorpio N/XUV700 (S.No 91)",
+      "inr": 4658
+     },
+     {
+      "route": "Add-on 'Include or Exclude Hanle to Umling La', Innova Crysta/Scorpio N/XUV700 (S.No 92)",
+      "inr": 7548
+     }
+    ],
+    "basis": "Travel Himalayas page presenting the 2026 Leh Ladakh Taxi Union rate list, 'Last updated: 28 September 2026', per vehicle per trip, not per day. It has no Hanle-only local sightseeing row. A union-style rate card was not found for a local Hanle day, so the local figure is null.",
+    "sources": [
+     "https://www.travelhimalayas.in/transportation/taxi-rental/316-leh-local-taxi-rates-2015.html"
+    ],
+    "notes": "The page is a travel agency republishing the union list, not the union's own site. Other 2026 route rows exist for Pangong+Hanle+Tso Moriri."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two found for Hanle; homestays bundle breakfast and dinner into room rates and no extra-meal prices were printed on the pages seen. Region blog ranges not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "No Cleartrip listing exists so no season probe",
+    "Local Hanle taxi day rate not found",
+    "Food per day: no rupee menu found",
+    "Dorm: n=1, undated website tariff"
+   ]
+  },
+  "tso-moriri": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Karzok Eco Lounge Tsomoriri (Cleartrip, Karzok)",
+      "url": "https://www.cleartrip.com/hotels/details/4674313",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": 5259
+      }
+     },
+     {
+      "hotel": "Rupshow Residency (Cleartrip 3-star Hotel, Karzok)",
+      "url": "https://www.cleartrip.com/hotels/details/4674311",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": 5214
+      }
+     },
+     {
+      "hotel": "Tsomoriri Hotel Lake View (Cleartrip 2-star Hotel, Karzok)",
+      "url": "https://www.cleartrip.com/hotels/details/tih-tsomoriri-hotel-lake-view-3933943",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": 4929
+      }
+     },
+     {
+      "hotel": "Tsomoriri Camp & Resort (Cleartrip, Karzok)",
+      "url": "https://www.cleartrip.com/hotels/details/4290351",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": 3094
+      }
+     },
+     {
+      "hotel": "Crean Guest House (Cleartrip 3-star Hotel, Karzok)",
+      "url": "https://www.cleartrip.com/hotels/details/crean-guest-house-4063862",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Golden Mark Camp and Cottage (Cleartrip 3-star Camp, Karzok)",
+      "url": "https://www.cleartrip.com/hotels/details/golden-mark-camp-2890716",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Tsomoriri Inn (Cleartrip 2-star Hotel, Karzok)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/tsomoriri-inn-3941619",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Kailash House Tsomoriri Lake (Cleartrip 2-star Hotel, Karzok)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4292380",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip has no 'tso-moriri' city page (404); the working page is https://www.cleartrip.com/hotels/hotels-in-karzok with 13 listings. Every one was probed on 18-19 Nov 2026, 12-13 May 2027 and 14-15 Jul 2027 on its own detail response (date lines matched). 18-19 Nov 2026: ALL 13 'No rooms available' (null). 12-13 May 2027: ALL 13 'No rooms available' (null). 14-15 Jul 2027: only 4 priced: Eco Lounge 5,259, Rupshow Residency 5,214, Tsomoriri Hotel Lake View 4,929, Tsomoriri Camp & Resort 3,094 (header per-night price excluding taxes; +599/+594/+493/+353 taxes). Unlisted rest are 'No rooms available' on all three nights (Tsomoriri Inn Cottage, Golden Mark x2, Crean x2, Snowleopard Cottage, Tsomoriri Inn x2, Kailash House); only the 8 priced-or-informative ones are shown above. So a Nov-to-Jul ratio CANNOT be computed (Nov has zero prices). A Nov 'No rooms' result is consistent with winter closure of most Korzok stays (travel guides say most camps and many guest houses close Oct-May, https://www.go2ladakh.in/city/hotels-in-tsomoriri-lake/) but Cleartrip's own text does not say closed."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-karzok"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [
+     "https://www.homestaysofindia.com/ladakh-tso-moriri-korzok-tribal-homestay/"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: all 13 Cleartrip Karzok listings 'No rooms available' for 18-19 Nov 2026 (checked by fetch of each detail URL with ?c=18112026|19112026&r=2,0). Homestay: no room-only price. Korzok Tribal Homestay prints an undated tariff card (Solo Occupancy 2,500; Classic Room 3,200; Extra Person 1,600) but with 'Complimentary: Breakfast & Dinner' and 'tariffs do not apply during festivals and holidays', so it is a meal-inclusive rate, not a room-only price, and is kept out of the median. Dorm: none found; one 2026 guide mentions Goose Homestay at 800-1,200 incl. meals in 4-8 bed rooms, not a printed dorm bed price.",
+    "notes": "Nothing bookable for 18-19 Nov on Cleartrip; sources disagree on winter opening (some homestays stay open all year per the homestay listing, camps closed). Unverifiable whether a traveller in Nov would pay anything at all; the ledger should not carry a measured Nov price for Tso Moriri."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Leh to Tso Moriri via Mahey Bridge and back to Leh, one day, Innova Crysta/Scorpio N/XUV700 (rate list S.No 55)",
+      "inr": 15703
+     },
+     {
+      "route": "Same, Xylo/Ertiga",
+      "inr": 13562
+     },
+     {
+      "route": "Leh to Tso Moriri, 2 days, return via Tso Kar, Debring (S.No 56), Innova Crysta/Scorpio N/XUV700",
+      "inr": 19010
+     }
+    ],
+    "basis": "Travel Himalayas page presenting the 2026 Leh Ladakh Taxi Union rate list, 'Last updated: 28 September 2026', per vehicle per trip, not per day. No local Korzok sightseeing row, so the local day is null.",
+    "sources": [
+     "https://www.travelhimalayas.in/transportation/taxi-rental/316-leh-local-taxi-rates-2015.html"
+    ],
+    "notes": "Page is an agency republishing the union list, not the union's own site. Permit and environment fee ₹500 per person is separate (same page)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No Nov price for any Karzok property (all sold out / not open on Cleartrip)",
+    "No room-only homestay or dorm price found",
+    "Local Korzok taxi day not found"
+   ]
+  },
+  "orchha": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "MPT Betwa Retreat (Cleartrip 3-star Resort; MP Tourism)",
+      "url": "https://www.cleartrip.com/hotels/details/mpt-betwa-retreat-320551",
+      "prices": {
+       "18-19 Nov 2026": 3607,
+       "14-15 Apr 2027": 3607,
+       "12-13 May 2027": 2254
+      }
+     },
+     {
+      "hotel": "MPT Sheesh Mahal, Orchha (Cleartrip 4-star Hotel; MP Tourism)",
+      "url": "https://www.cleartrip.com/hotels/details/mpt-sheesh-mahal-orchha-4487305",
+      "prices": {
+       "18-19 Nov 2026": 5798,
+       "14-15 Apr 2027": 4142,
+       "12-13 May 2027": 4142
+      }
+     },
+     {
+      "hotel": "The Orchha Resort (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/the-orchha-resort-by-river-side-2884614",
+      "prices": {
+       "18-19 Nov 2026": 4802,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Rajwada Palace (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-rajwada-palace-4291444",
+      "prices": {
+       "18-19 Nov 2026": 4416,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Monarch Rama Palace (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/4672832",
+      "prices": {
+       "18-19 Nov 2026": 3026,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Janki Vilas (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/4672150",
+      "prices": {
+       "18-19 Nov 2026": 2696,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Orchha Club & Resort (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/4292452",
+      "prices": {
+       "18-19 Nov 2026": 2250,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Siyavar Palace (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/5065524",
+      "prices": {
+       "18-19 Nov 2026": 2037,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Bundelkhand Riverside (Cleartrip 4-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-bundelkhand-riverside-333979",
+      "prices": {
+       "18-19 Nov 2026": 3373,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Sunset Orchha (Cleartrip 3-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-sunset-orchha-4482274",
+      "prices": {
+       "18-19 Nov 2026": 630,
+       "14-15 Apr 2027": 627,
+       "12-13 May 2027": 630
+      }
+     },
+     {
+      "hotel": "Hotel Kamla Heritage (Cleartrip 2-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4672956",
+      "prices": {
+       "18-19 Nov 2026": 1188,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "The Ortus Stays (Cleartrip 3-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4672796",
+      "prices": {
+       "18-19 Nov 2026": 1465,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Mirdul Homestay Orchha (Cleartrip 3-star Hotel listing)",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/5170818",
+      "prices": {
+       "18-19 Nov 2026": 999,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Price = header per-night price excluding taxes & fees on each detail response (fetch); date lines on every response matched the probed night. Cleartrip lists 22 Orchha properties; 18 Nov priced for 20 of them. Most go 'No rooms available' on 14 Apr and 12 May 2027 (null), so only 3 properties have a matched future price: MPT Betwa Retreat 3607 -> 3607 (Apr) -> 2254 (May, -38% vs Nov), MPT Sheesh Mahal 5798 -> 4142 -> 4142 (-29% in Apr and May vs Nov), Hotel Sunset 630 -> 627 -> 630 (flat). The two state-run MP Tourism properties are the only ones that move, and May (template 'low') is cheaper than Nov for both; Apr equals Nov for Betwa Retreat but is 29% below for Sheesh Mahal. The private mid-range hotels (Orchha Resort, Rajwada, Monarch Rama Palace, Janki Vilas, Orchha Club, Siyavar, Bundelkhand) have only the Nov price. Note the ledger's template marks Jul-Sep as PEAK for Orchha; no Jul-Sep night was in the probe set, so that claim is untested here. Mixed star labels (Cleartrip 'Hotel King rama' 623 etc. are budget guesthouses tagged 3-star) so Cleartrip class is a weak signal."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only 2 mid hotels (both MP Tourism) have matched future prices",
+    "Jul-Sep 'peak' months not probed (not in the assigned nights)"
+   ]
+  },
+  "ganpatipule": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "The Grand Kokan Resort (Cleartrip 3-star Resort, Rajwadi)",
+      "url": "https://www.cleartrip.com/hotels/details/the-grand-kokan-resort-4063140",
+      "prices": {
+       "18-19 Nov 2026": 5264,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Konkan Nest Resort (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/4291833",
+      "prices": {
+       "18-19 Nov 2026": 3685,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Shiv Sagar Palace (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/shiv-sagar-palace-211336",
+      "prices": {
+       "18-19 Nov 2026": 4063,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Durvankur (Cleartrip 3-star Hotel)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-durvankur-43050",
+      "prices": {
+       "18-19 Nov 2026": 3194,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Deepak Executive (Cleartrip 3-star Hotel, Rajwadi)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-deepak-executive-ganpatipule-4064008",
+      "prices": {
+       "18-19 Nov 2026": 3120,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Kokanwadi Resort (Cleartrip 3-star Resort, Dhokamale)",
+      "url": "https://www.cleartrip.com/hotels/details/seawind-at-kokanwadi-4067076",
+      "prices": {
+       "18-19 Nov 2026": 2314,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Atithi Lodge (Cleartrip 3-star Hotel, Rajwadi)",
+      "url": "https://www.cleartrip.com/hotels/details/atithi-lodge-3928742",
+      "prices": {
+       "18-19 Nov 2026": 2165,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Center Point Residency (Cleartrip 3-star Homestay, Rajwadi)",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/center-point-residency-2415370",
+      "prices": {
+       "18-19 Nov 2026": 1532,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Annapurna Lodging and Boarding (Cleartrip 1-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4711334",
+      "prices": {
+       "18-19 Nov 2026": 1476,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Madhuban (Cleartrip 1-star Hotel)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4672210",
+      "prices": {
+       "18-19 Nov 2026": 1476,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Price = header per-night price excluding taxes & fees on each detail response (fetch); date line on every response matched the probed night. All 7 mid hotels and 3 budget/homestay properties return 'No rooms available' for BOTH 12-13 May 2027 and 8-9 Sep 2027 (null; response date lines matched), so no matched ratio exists for Ganpatipule. Cleartrip lists 33 properties; 18 Nov priced for 21 of them. Other listed mid-priced Nov values not probed forward: Konkan area 4-5 star Westbay 4,712, Greenleaf 9,697, Blue Ocean The Fern 10,500, Redstone House 4,334 (excluded as not mid 3-star). 11 homestay listings (Sea Nest, Seaview Homestay, Budget Bliss, Mauli, etc.) show 'No rooms available' on 18-19 Nov itself."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "budget_hotel_median_inr": null,
+    "homestay_median_inr": 1000,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/center-point-residency-2415370",
+     "https://www.hotelsinganpatipule.com/Sawant-Homestay.php",
+     "https://www.hotelsinganpatipule.com/Kelkar-Homestay.php"
+    ],
+    "dorm_median_inr": 250,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.hotelsinganpatipule.com/Sawant-Homestay.php"
+    ],
+    "price_basis": "Homestay (median of 700, 1000, 1532): Center Point Residency 1,532 (Cleartrip, 18-19 Nov 2026, pre-tax); Sawant Homestay Non-AC Double Bed Room 'RS. 1000' (tariff card, undated, 'Rates subjected to change without notice'); Kelkar Homestay NonAC double 'Rs. 700' non-seasonal / 'Rs. 1200' on public holidays & weekends (tariff card, undated; 18 Nov 2026 is a Wednesday so the non-seasonal 700 is used). Dorm: Sawant Homestay 'Non-AC Dormitory RS. 250 per person', capacity upto 16 (tariff card, undated), n=1.",
+    "notes": "The tariff cards say prices include 'stay charges only with taxes and booking charges'. MTDC Beach Resort dormitory rooms exist (per-room 2,400/3,000/3,600 for 8/10/12 guests on a Goibibo listing seen only in a search summary; Goibibo fetch timed out) and are not used. Mid_median left null because the 7 Cleartrip mid prices (2,165 to 5,264) are listed in season_probe only for the season-curve task, not asked as a research category here."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or local-operator rate card found for a Ganpatipule local day. Only national aggregator pages (cabbazar, gozocabs) appeared, which the brief excludes.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No fetchable rupee menu or cost-for-two page: Justdial returned HTTP 403, Zomato timed out (not bypassed). A 2018 Tripadvisor review of Mehendale's Swaad Dining quotes a thali at about ₹110, too old and single-point to use.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "No matched season ratio: every future night sold out/unavailable on Cleartrip",
+    "Food and taxi not found from allowed sources",
+    "Dorm n=1, homestay tariffs undated"
+   ]
+  },
+  "harihareshwar": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Tranquil Beach Resort (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/tranquil-beach-resort-2443542",
+      "prices": {
+       "18-19 Nov 2026": 5354,
+       "14-15 Apr 2027": 3864,
+       "12-13 May 2027": 3864,
+       "8-9 Sep 2027": 3864
+      }
+     },
+     {
+      "hotel": "Royale Greens Resort (Cleartrip 3-star Resort)",
+      "url": "https://www.cleartrip.com/hotels/details/4292253",
+      "prices": {
+       "18-19 Nov 2026": 4554,
+       "14-15 Apr 2027": 5009,
+       "12-13 May 2027": 5009,
+       "8-9 Sep 2027": 4554
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Harihareshwar Beach Resort (Cleartrip 2-star Resort)",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/harihareshwar-beach-resort-4563386",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Apr 2027": null,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip lists only 5 Harihareshwar URLs across its city, 3-star, homestay and budget pages, and two of them (tranquil-beach-resort-2626090, harihareshwar-om-shree-bed-and-breakfast-718699) return HTTP 404 on the detail page. So only 2 mid hotels are priceable; both priced on all 4 nights (header per-night price excluding taxes & fees; date line matched each night). Tranquil Beach Resort: 5,354 (Nov) then 3,864 flat on Apr, May and Sep (-28% vs Nov; Sep and May equal). Royale Greens: 4,554 (Nov), 5,009 (Apr), 5,009 (May), 4,554 (Sep): the template 'low' months (May, Sep) are not lower than Nov for Royale Greens (May +10%), while Tranquil is lower in all three. The two hotels disagree in direction, so no reliable season curve from n=2. Harihareshwar Beach Resort (2-star) is 'No rooms available' on all four nights incl. 18-19 Nov (null). No homestay or budget guesthouse is bookable on Cleartrip."
+   },
+   "confidence": "low",
+   "unverified": [
+    "n=2 mid hotels only, opposite directions",
+    "No homestay or budget room priced"
+   ]
+  }
+ }
+}

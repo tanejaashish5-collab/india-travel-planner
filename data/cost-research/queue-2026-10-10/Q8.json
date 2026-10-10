@@ -1,0 +1,988 @@
+{
+ "batch": "Q8",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "rameswaram": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel Elite Rameswaram (3-star, 5.0) Deluxe Double Bed AC, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-elite-4281227",
+      "prices": {
+       "18-19 Nov 2026": 2515,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Rameswaram Grand (3-star, 4.7) Superior Double Bed A/c Garden view, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-rameswaram-grand-2050424",
+      "prices": {
+       "18-19 Nov 2026": 2177,
+       "14-15 Apr 2027": 2121,
+       "14-15 Jul 2027": 2433
+      }
+     },
+     {
+      "hotel": "Hotel Aalayam Rameshwaram (3-star, 4.3) DELUXE A/C, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-aalayam-rameshwaram-4264783",
+      "prices": {
+       "18-19 Nov 2026": 1030,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "JB Residency (3-star, 4.3) Deluxe Double Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/jb-residency-4670545",
+      "prices": {
+       "18-19 Nov 2026": 4785,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Sree Kumaran Residence (3-star, 3.8) Deluxe Room City view, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4263979",
+      "prices": {
+       "18-19 Nov 2026": 1850,
+       "14-15 Apr 2027": 2590,
+       "14-15 Jul 2027": 2590
+      }
+     },
+     {
+      "hotel": "Vinayaga by Poppys (3-star, 3.8) Standard Double or Twin, room only",
+      "url": "https://www.cleartrip.com/hotels/details/vinayaga-by-poppys-rameswaram-311061",
+      "prices": {
+       "18-19 Nov 2026": 3466,
+       "14-15 Apr 2027": 4409,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Harish (2-star, 3.9) AC Double sharing room, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-harish-712294",
+      "prices": {
+       "18-19 Nov 2026": 1406,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Hare Rama Hare Krishna (2-star, 3.4) Compact Twin Room, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-hare-rama-hare-krishna-298137",
+      "prices": {
+       "18-19 Nov 2026": 1643,
+       "14-15 Apr 2027": 1977,
+       "14-15 Jul 2027": 1951
+      }
+     },
+     {
+      "hotel": "Hotel Saara (2-star, 3.2) Executive Double A/C, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-saraa-2649370",
+      "prices": {
+       "18-19 Nov 2026": 1168,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "All prices from own browser-context requests to the detail URLs with ?c=<night>&r=2,0, check-in date verified equal to the night. null = Cleartrip returned 'No rooms available' for that hotel (Elite, JB, Harish, Saara sold out on both far nights) or, for Aalayam, only Non-A/C rooms were listed (matching DELUXE A/C room absent), so the ratio would be a different room class. Only Rameswaram Grand, Sree Kumaran and Hare Rama have a complete 3-night match; Sree Kumaran shows an identical 2,590 on both far nights, probably a static far-date rate. Plan type differs by hotel (room only vs with breakfast) but is constant per hotel across nights. Cleartrip's only homestay (Yatra's HomeStay Rameswaram 2) was sold out on 18-19 Nov. 14 Apr 2027 is Tamil New Year; not source-checked, so not listed in events."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay price",
+    "dorm bed price",
+    "local taxi day rate",
+    "food per day"
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip 18-19 Nov 2026 pre-tax.",
+    "notes": "Homestay: the only Cleartrip homestay (Yatra's HomeStay Rameswaram 2) was 'No rooms available' on 18-19 Nov. Dorm: Hostelworld city page https://www.hostelworld.com/hostels/Rameswaram returned HTTP 404 (no hostels listed) on 2026-10-10. Local pilgrim dormitories (Yatradham, Agrasen Bhawan) exist but no per-bed tariff was fetched."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Rameswaram to Dhanushkodi, round trip (sedan)",
+      "inr": 1600
+     }
+    ],
+    "basis": "Varahi Cabs, Sannathi Street, V.O.C Nagar, Rameswaram 623526 (page footer 'Copyright 2026'), FAQ: Rameswaram to Dhanushkodi round trip SEDAN Rs.1600, TAVERA/LODGY Rs.1900, INNOVA Rs.2300.",
+    "sources": [
+     "https://varahicabs.in/"
+    ],
+    "notes": "Same page's 'cost of Rameswaram trip' FAQ (sedan 2200) names no route or hours, so not used as a local-day rate. No union/tourism local 8h rate found; local day left null."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": null,
+    "sources": [],
+    "notes": "Zomato pages could not be fetched (timeout). A search summary mentioned Zomato cost-for-two figures from Rs.200 (Hotel Ruchi) to Rs.1,000 (Ahaan, The Curry) but the page itself was not read, so no figure is reported."
+   }
+  },
+  "tiruvannamalai": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Thaai Residency (3-star, 4.8) PREMIUM ROOM, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/thaai-residency-4291761",
+      "prices": {
+       "18-19 Nov 2026": 2551,
+       "14-15 Apr 2027": 2767,
+       "14-15 Jul 2027": 2767
+      }
+     },
+     {
+      "hotel": "Hotel Royal inn Tiruvannamalai (3-star, 4.2) Standard Room, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/4533908",
+      "prices": {
+       "18-19 Nov 2026": 2064,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "La woods village resorts (3-star, 4.2) Deluxe AC Room City view, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4533860",
+      "prices": {
+       "18-19 Nov 2026": 2125,
+       "14-15 Apr 2027": 2277,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Ramakrishna (3-star, 4.1) Double Deluxe, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-ramakrishna-743694",
+      "prices": {
+       "18-19 Nov 2026": 2205,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Anantharaa Hotel (3-star, 4.3) Standard Double, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4535525",
+      "prices": {
+       "18-19 Nov 2026": 3839,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Athena Hotel (3-star, 4.1) Premium Room, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/athena-hotel-2443130",
+      "prices": {
+       "18-19 Nov 2026": 3484,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Anukraha Home Stays (4.3) Double Room, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/anukraha-home-stays-4481720",
+      "prices": {
+       "18-19 Nov 2026": 1847,
+       "14-15 Apr 2027": 1877,
+       "14-15 Jul 2027": 1847
+      }
+     },
+     {
+      "hotel": "Nanyar Home Stay Standard Air Conditioning Room, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/nanyar-home-stay-4482864",
+      "prices": {
+       "18-19 Nov 2026": 1142,
+       "14-15 Apr 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Aalaya Homestay Double Room with Terrace, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/aalaya-homestay-5256364",
+      "prices": {
+       "18-19 Nov 2026": 2500,
+       "14-15 Apr 2027": 1705,
+       "14-15 Jul 2027": 1682
+      }
+     },
+     {
+      "hotel": "Ananda Residency (3-star, 4.0) Deluxe Room, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4271150",
+      "prices": {
+       "18-19 Nov 2026": 1546,
+       "14-15 Apr 2027": 1739,
+       "14-15 Jul 2027": 1739
+      }
+     },
+     {
+      "hotel": "Sai Murugan Lodge (1-star, 4.7) Budget Double Room with Fan (non-AC), room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/sai-murugan-lodge-1362284",
+      "prices": {
+       "18-19 Nov 2026": 569,
+       "14-15 Apr 2027": 569,
+       "14-15 Jul 2027": 569
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Own browser-context requests, check-in date verified per night. null = 'No rooms available' for that hotel on that night (Royal inn, Ramakrishna, Anantharaa, Nanyar sold out on far nights) or room class changed: Athena's 'Premium Room' is absent on both far nights, only 'Premium Room, Non Smoking' at 4,431 vs 3,484 in Nov, a different listing so not matched. Sai Murugan shows 569 on all three nights (static rate, non-AC fan room). Aalaya Homestay drops from 2,500 (Nov) to 1,705/1,682 for the same room name; unexplained, not an estimate. Hotel Seasons (4.5) sold out 18-19 Nov so excluded. Karthigai Deepam crowding is after the Nov probe night (festival date not source-checked). Only Thaai (3 of 3) and Anukraha/Aalaya/Ananda/Sai Murugan give a full 3-night match."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1847,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/anukraha-home-stays-4481720",
+     "https://www.cleartrip.com/hotels/details/nanyar-home-stay-4482864",
+     "https://www.cleartrip.com/hotels/details/aalaya-homestay-5256364"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Cleartrip 18-19 Nov 2026 pre-tax, cheapest double room per property (Anukraha 1,847; Nanyar AC room 1,142; Aalaya 2,500), n=3. Dorm: not found.",
+    "notes": "Sev-N AC Dormitory (Cleartrip) printed 667 for a unit labelled 'Homestay' on 18-19 Nov, not shown as a per-bed dorm price, so not used. Dorm: Hostelworld city page https://www.hostelworld.com/hostels/Tiruvannamalai returned HTTP 404 (no hostels listed) on 2026-10-10."
+   },
+   "confidence": "low",
+   "unverified": [
+    "dorm bed price (no Hostelworld page)"
+   ]
+  },
+  "trichy": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Vignesh Residency (3-star, 4.1) Executive Room, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/vignesh-residency-3989890",
+      "prices": {
+       "18-19 Nov 2026": 2373,
+       "10-11 Mar 2027": 2373,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Park Avenue Hotel (3-star, 4.2) Premium Room, with breakfast (listed as 'Premium Twin Room' at same 2,776 in Mar)",
+      "url": "https://www.cleartrip.com/hotels/details/4532201",
+      "prices": {
+       "18-19 Nov 2026": 2776,
+       "10-11 Mar 2027": 2776,
+       "14-15 Jul 2027": 2776
+      }
+     },
+     {
+      "hotel": "PL.A Rathna Residency (3-star, 4.2) Standard Twin, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4562576",
+      "prices": {
+       "18-19 Nov 2026": 3075,
+       "10-11 Mar 2027": 3075,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Oxina Lygon (3-star, 4.1) Executive, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-oxina-lygon-2050800",
+      "prices": {
+       "18-19 Nov 2026": 3337,
+       "10-11 Mar 2027": 3337,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "JB Residency by Rio Grande (3-star, 4.1) Deluxe Room AC City view, room only",
+      "url": "https://www.cleartrip.com/hotels/details/jb-residency-4265221",
+      "prices": {
+       "18-19 Nov 2026": 4005,
+       "10-11 Mar 2027": 4005,
+       "14-15 Jul 2027": 4005
+      }
+     },
+     {
+      "hotel": "Red Fox by Lemon Tree (3-star, 4.6) Standard Twin Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/red-fox-hotel-trichy-2884926",
+      "prices": {
+       "18-19 Nov 2026": 6218,
+       "10-11 Mar 2027": 4909,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Apple Park Inn (2-star, 4.6) Standard AC Double, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-apple-park-inn-2048648",
+      "prices": {
+       "18-19 Nov 2026": 2160,
+       "10-11 Mar 2027": 1584,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Deepam (1-star, 4.1) Deluxe Double Room City view, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-deepam-1341650",
+      "prices": {
+       "18-19 Nov 2026": 1556,
+       "10-11 Mar 2027": 2371,
+       "14-15 Jul 2027": 2371
+      }
+     },
+     {
+      "hotel": "Indian Residency (4.9) Double or Twin Room, with breakfast",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/indian-residency-4480516",
+      "prices": {
+       "18-19 Nov 2026": 3459,
+       "10-11 Mar 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Kothai Home Stay Srirangam 'Homestay' room, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/kothai-home-stay-srirangam-5732360",
+      "prices": {
+       "18-19 Nov 2026": 4896,
+       "10-11 Mar 2027": 4896,
+       "14-15 Jul 2027": 4896
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Own browser-context requests, check-in date verified per night. Cleartrip city slug is /hotels/3-star-hotels-in-trichy. null = 'No rooms available' that night, except Red Fox July: the Standard Twin Room is absent (only Standard Double Room, room only 3,846, which was 6,218 in Nov, not matched to the twin). Most far-night prices are unchanged from Nov for Vignesh, PL.A Rathna, Oxina Lygon, JB, Park Avenue, Kothai (likely static rates); only Red Fox, Apple Park Inn and Deepam move. Full 3-night match: Park Avenue, JB Residency, Deepam, Kothai. 10-11 Mar 2027 is a Wed-Thu; no event source checked."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/indian-residency-4480516",
+     "https://www.cleartrip.com/hotels/details/kothai-home-stay-srirangam-5732360",
+     "https://www.cleartrip.com/hotels/details/the-kaya-homestay-srirangam-4484134"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip 18-19 Nov 2026 pre-tax, own requests.",
+    "notes": "Cleartrip homestays on 18-19 Nov: Indian Residency 3,459 (with breakfast), Kothai Home Stay Srirangam 4,896, The Kaya Homestay Srirangam 'Standard Room' printed twice at 960 and 2,231 (ambiguous which is the double). Three values spread 960 to 4,896 with one ambiguous: no median reported. Sriram Priya Kudil and The Grand Srirangam sold out. Dorm: not found. Dorm: Hostelworld city page https://www.hostelworld.com/hostels/Tiruchirappalli returned HTTP 404 (no hostels listed) on 2026-10-10."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay median",
+    "dorm bed price",
+    "local taxi day rate",
+    "food per day"
+   ],
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": null,
+    "sources": [],
+    "notes": "No union/tourism/local-operator rate fetched. Savaari and MakeMyTrip Trichy pages did not render a price; PavanCab's Trichy page (sedan 2,500) is a multi-city template with a Mumbai address and was discarded."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": null,
+    "sources": [],
+    "notes": "Zomato pages could not be fetched (timeout). A search summary mentioned cost-for-two figures (Sri Rangasbhavan Rs.200, Sethuraman Mess Rs.250, Hotel Temple In Rs.300, Thaai Restaurant Rs.700) but the pages were not read, so no figure is reported."
+   }
+  },
+  "yercaud": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "SS Silver Oaks Resort (3-star, 4.6) Executive Room City view, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/4265388",
+      "prices": {
+       "28-29 Oct 2026": 2099,
+       "18-19 Nov 2026": 2099,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel TamilNadu Yercaud (3-star, 4.2) Double Room City view, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-tamilnadu-yercaud-4264777",
+      "prices": {
+       "28-29 Oct 2026": null,
+       "18-19 Nov 2026": 1558,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Aradhana Inn (3-star, 4.7) Deluxe Room, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-aradhana-inn-1358258",
+      "prices": {
+       "28-29 Oct 2026": 3219,
+       "18-19 Nov 2026": 2926,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "La Feliz Palacio (3-star, 4.6) Deluxe Room Garden view, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/la-feliz-palacio-4064169",
+      "prices": {
+       "28-29 Oct 2026": 2308,
+       "18-19 Nov 2026": 2308,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "TNV Casita Inn (3-star, 3.5) Deluxe Double Room AC Mountain view, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/casita-inn-2423890",
+      "prices": {
+       "28-29 Oct 2026": 2497,
+       "18-19 Nov 2026": 2497,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "MM Resorts (3-star, 4.0) Deluxe Double Room Garden view, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/mm-resorts-718261",
+      "prices": {
+       "28-29 Oct 2026": 1709,
+       "18-19 Nov 2026": 1709,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel KC Yercaud (3-star, 4.0) Standard Room City view, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-kc-yercaud-713605",
+      "prices": {
+       "28-29 Oct 2026": 2212,
+       "18-19 Nov 2026": 2212,
+       "12-13 May 2027": null,
+       "16-17 Jun 2027": null,
+       "14-15 Jul 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Own browser-context requests, check-in date verified per night. Every one of the 7 hotels returned 'No rooms available' for all three 2027 nights (12-13 May, 16-17 Jun, 14-15 Jul): recorded as null, inventory appears not open that far ahead for Yercaud on Cleartrip, so there is NO low-season (Jun-Aug) price at all from this source and the May/Jun/Jul season curve is unmeasured. Only Oct vs Nov available: five hotels show the same price both nights (static rates); Aradhana Inn moved 3,219 (28-29 Oct) to 2,926 (18-19 Nov). Hotel TamilNadu's Oct night: the 'Double Room City view' was absent, so null. Cleartrip homestays in Yercaud: all sold out on 18-19 Nov except Marvel Homestay (only 2- and 3-bedroom apartments, 4,137 / 6,774, not a double room)."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/marvel-homestay-4487904"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Cleartrip 18-19 Nov 2026 pre-tax.",
+    "notes": "No homestay double-room price: Melody Inn, Grand Inn, Kavitha Nest, SR Stone House sold out 18-19 Nov; Marvel Homestay lists apartments only. Hotel TamilNadu Yercaud lists a '10 Bed Non AC Dormitory Hall' at 2,526 (room only, whole hall, not per bed): not a dorm-bed price. Dorm: Hostelworld city page https://www.hostelworld.com/hostels/Yercaud returned HTTP 404 (no hostels listed) on 2026-10-10."
+   },
+   "confidence": "low",
+   "unverified": [
+    "all 2027 nights",
+    "homestay double-room price",
+    "dorm bed price",
+    "taxi is one resort quote"
+   ],
+   "taxi_day": {
+    "local_sightseeing_8h_inr": 2800,
+    "vehicle": "sedan (Swift Dzire / Etios, 4 passengers)",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "Heaven Resorts, HP Petrol Bunk Back Side, Yercaud: full-day sightseeing (about 8 AM to 6 PM, 14 spots) Dzire/Etios Rs.2,800, Ertiga Rs.3,000, Innova Rs.3,500; page says negotiable, no date stamp; tolls, parking, entry fees extra.",
+    "sources": [
+     "https://heavenresorts.in/car-travels-in-yercaud/"
+    ],
+    "notes": "Single resort-desk quote, n=1. Yercaud Travels (page footer 2019, tel 09578784000) lists Dzire Rs.2,000, Innova Rs.2,500 for the same 14-spot full day (http://yercaudtravels.com/Full-Day-Sightseeing/): stale by years, shown as a range floor only. Real transacted fare is probably between."
+   }
+  },
+  "prayagraj": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Max Hotel Prayagraj (3-star, 4.6) Max Comfort, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-polo-max-allahabad-867338",
+      "prices": {
+       "18-19 Nov 2026": 3885,
+       "10-11 Mar 2027": 6395,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Cennet Hotel (3-star, 4.1) Standard Room, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/cennet-hotel-3917830",
+      "prices": {
+       "18-19 Nov 2026": 2835,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Hira Inn (3-star, 4.0) Deluxe Room, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-hira-inn-3974855",
+      "prices": {
+       "18-19 Nov 2026": 2809,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "FabHotel Raka Inn (3-star, 4.1) Deluxe Room City view, room only",
+      "url": "https://www.cleartrip.com/hotels/details/fabhotel-raka-inn-4064433",
+      "prices": {
+       "18-19 Nov 2026": 1515,
+       "10-11 Mar 2027": 783,
+       "14-15 Apr 2027": 783
+      }
+     },
+     {
+      "hotel": "Radhe Krishna Residency (3-star, 4.2) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4672336",
+      "prices": {
+       "18-19 Nov 2026": 2250,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Naveen Continental (3-star, 5.0) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-naveen-continental-3945136",
+      "prices": {
+       "18-19 Nov 2026": 1777,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Luxury Sangam Stays (5.0) Deluxe Room, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/5220090",
+      "prices": {
+       "18-19 Nov 2026": 1308,
+       "10-11 Mar 2027": 1308,
+       "14-15 Apr 2027": 1560
+      }
+     },
+     {
+      "hotel": "S K Homestay Deluxe, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/s-k-homestay-5249148",
+      "prices": {
+       "18-19 Nov 2026": 681,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Shree Radhey (2-star) Classic, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/shree-radhey-4685053",
+      "prices": {
+       "18-19 Nov 2026": 892,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Picasso (3-star, 3.3) Deluxe, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4294136",
+      "prices": {
+       "18-19 Nov 2026": 2060,
+       "10-11 Mar 2027": null,
+       "14-15 Apr 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Own browser-context requests, check-in date verified per night. null = 'No rooms available' on Cleartrip that night (8 of 10 properties sold out on one or both 2027 nights, so the season curve rests on very few matched pairs: Luxury Sangam Stays 1,308/1,308/1,560, Raka Inn 1,515/783/783, Max 3,885/6,395/not matched). Max Hotel: 'Max Comfort' absent on 14-15 Apr (only cheaper-named rooms with breakfast like 'Comfort Room' 2,473), so null, and the 10-11 Mar price of 6,395 is 1.6x Nov for the same room with no event I could source. Raka Inn halves in Mar/Apr (783), unexplained. Prayagraj is a pilgrimage/Magh Mela city; no festival source was checked for these nights."
+   },
+   "confidence": "low",
+   "unverified": [
+    "most 2027 nights unavailable on Cleartrip"
+   ]
+  },
+  "vrindavan": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel Idhayan Palace (3-star, 4.7) Standard Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-idhayan-palace-3974386",
+      "prices": {
+       "18-19 Nov 2026": 3292,
+       "20-21 Jan 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Tulsi Grand Inn (3-star, 4.4) Deluxe Double Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4562598",
+      "prices": {
+       "18-19 Nov 2026": 1797,
+       "20-21 Jan 2027": 3456,
+       "18-19 Aug 2027": 2160
+      }
+     },
+     {
+      "hotel": "Annekaa Heights (3-star, 4.5) Deluxe Room Temple view, room only",
+      "url": "https://www.cleartrip.com/hotels/details/annekaa-heights-4684539",
+      "prices": {
+       "18-19 Nov 2026": 2686,
+       "20-21 Jan 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Treebo Brij Kaushal near Prem Mandir (3-star, 4.2) Standard Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/treebo-brij-kaushal-near-prem-mandir-4535661",
+      "prices": {
+       "18-19 Nov 2026": 1808,
+       "20-21 Jan 2027": 3858,
+       "18-19 Aug 2027": 2411
+      }
+     },
+     {
+      "hotel": "Radha Bihari Nikunj Inn (3-star, 4.2) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4292830",
+      "prices": {
+       "18-19 Nov 2026": 1683,
+       "20-21 Jan 2027": 1683,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Kridha Residency (3-star, 4.2) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/kridha-residency-374863",
+      "prices": {
+       "18-19 Nov 2026": 2349,
+       "20-21 Jan 2027": 2349,
+       "18-19 Aug 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Shri Krishna Kunj Homestay (1-star) Double Bed AC Room, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/shri-krishna-kunj-homestay-4684244",
+      "prices": {
+       "18-19 Nov 2026": 970,
+       "20-21 Jan 2027": 969,
+       "18-19 Aug 2027": 969
+      }
+     },
+     {
+      "hotel": "Hotel Vrinda Palace (3-star, 4.3) Standard Double Room, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/vrinda-palace-sewa-dham-721563",
+      "prices": {
+       "18-19 Nov 2026": 1679,
+       "20-21 Jan 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Gopika Resort (3-star, 3.0) Standard Room, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/4535332",
+      "prices": {
+       "18-19 Nov 2026": 1448,
+       "20-21 Jan 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Krishnam near Bankey Temple (3-star, 3.6) Super Deluxe Room, room only",
+      "kind": "budget",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-krishnam-3958130",
+      "prices": {
+       "18-19 Nov 2026": 1445,
+       "20-21 Jan 2027": 1546,
+       "18-19 Aug 2027": 1546
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Own browser-context requests, check-in date verified per night. null = 'No rooms available' that night, or (Annekaa) the matching 'Deluxe Room Temple view' absent: 20 Jan shows only 'Double Room' 2,459, Aug only Family Room/Suite, different classes. Two hotels double on 20-21 Jan 2027 (Tulsi Grand 1,797 to 3,456; Treebo Brij Kaushal 1,808 to 3,858) while Radha Bihari, Kridha, Krishnam and the homestay are flat; no event source was checked for 20-21 Jan, so the cause is unknown (do not assume a festival). Aug 2027 (monsoon, Janmashtami is later in Aug/Sep, not source-checked) shows Tulsi 2,160 and Treebo 2,411 vs Nov 1,797 / 1,808, i.e. Aug is HIGHER than Nov at both hotels with an Aug price. Complete 3-night matches: Tulsi, Treebo, Homestay, Krishnam."
+   },
+   "confidence": "low",
+   "unverified": [
+    "cause of the Jan jumps"
+   ]
+  },
+  "chakrata": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Chakrata Inn (3-star, 3.7) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/chakrata-inn-resort-3974947",
+      "prices": {
+       "18-19 Nov 2026": 2007,
+       "14-15 Jul 2027": 1892,
+       "18-19 Aug 2027": 1204
+      }
+     },
+     {
+      "hotel": "Chakrata Hills Resort (3-star) Deluxe Room Mountain View, with breakfast",
+      "url": "https://www.cleartrip.com/hotels/details/chakrata-hills-resort-5289321",
+      "prices": {
+       "18-19 Nov 2026": 2803,
+       "14-15 Jul 2027": 2758,
+       "18-19 Aug 2027": 2803
+      }
+     },
+     {
+      "hotel": "Deodar Inn Resort (3-star) Deluxe Double or Twin Room Balcony Mountain View, room only",
+      "url": "https://www.cleartrip.com/hotels/details/deodar-inn-resort-5290622",
+      "prices": {
+       "18-19 Nov 2026": 3581,
+       "14-15 Jul 2027": 3581,
+       "18-19 Aug 2027": 3581
+      }
+     },
+     {
+      "hotel": "Room On The Roof Viraatkhai (3-star, 4.1) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/room-on-the-roof-viraatkhai-chakrata-by-himalayan-eco-lodges-3980678",
+      "prices": {
+       "18-19 Nov 2026": 4140,
+       "14-15 Jul 2027": 4140,
+       "18-19 Aug 2027": 4140
+      }
+     },
+     {
+      "hotel": "Tiger Fall Eco Resort (3-star, 4.5) Stream Cottage, room only",
+      "url": "https://www.cleartrip.com/hotels/details/tiger-fall-eco-resort-4280165",
+      "prices": {
+       "18-19 Nov 2026": 5764,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "The Hosteller Chakrata (4.7) bed in 6-bed mixed dormitory, bed only, per bed",
+      "kind": "hostel-dorm",
+      "url": "https://www.cleartrip.com/hotels/details/4294192",
+      "prices": {
+       "18-19 Nov 2026": 1579,
+       "14-15 Jul 2027": 1416,
+       "18-19 Aug 2027": 1307
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Own browser-context requests, check-in date verified per night. Three of five mid hotels (Deodar Inn, Room On The Roof, Chakrata Hills) are flat or near-flat all three nights (probably static rates); Chakrata Inn falls 2,007 to 1,892 to 1,204 (Aug), the only clear low-season drop. Tiger Fall sold out both 2027 nights. Cleartrip homestays/guesthouses (Nehra Home Stay, Aastha Home Stay, Escape Tribal Camps, Himalayan Eco Lodges Viraatkhai) all 'No rooms available' on 18-19 Nov, so no homestay probe; Resort Prakriti Unwind (4.8) and The Kured Resort list only board plans (breakfast and dinner) or cottages at 6,765+, not used. The Hosteller dorm is a hostel bed price, not a room."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 1579,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.cleartrip.com/hotels/details/4294192"
+    ],
+    "price_basis": "Dorm: Cleartrip 18-19 Nov 2026 pre-tax, 'Bed in 6 Bed Mixed Dormitory', bed only, per bed (The Hosteller Chakrata); its balcony-view 6-bed dorm was 1,800 and 4-bed 2,040. Homestay: none bookable on 18-19 Nov.",
+    "notes": "n=1 hostel, so the dorm figure is a single property."
+   },
+   "confidence": "low",
+   "unverified": [
+    "homestay price (all Cleartrip homestays sold out)",
+    "food per day"
+   ],
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": null,
+    "sources": [],
+    "notes": "Zomato/Tripadvisor menu pages not read. A search summary mentioned Justdial listing Pahadi Rasoi Rs.550 for two and Devna Rs.100 for two, but those pages were not fetched, so no figure is reported."
+   }
+  },
+  "chaukori": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Neelgagan Resort (3-star, 4.6) Double Room With Forest View, room only",
+      "url": "https://www.cleartrip.com/hotels/details/neelgagan-resort-4479821",
+      "prices": {
+       "18-19 Nov 2026": 2464,
+       "16-17 Jun 2027": 1960,
+       "18-19 Aug 2027": 1960
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Devbhoomi Inn Homestay (3-star) Deluxe Room, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/devbhoomi-inn-homestay-5299294",
+      "prices": {
+       "18-19 Nov 2026": 1981,
+       "16-17 Jun 2027": null,
+       "18-19 Aug 2027": 1981
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Only 2 of 9 Cleartrip properties for Chaukori had any room on 18-19 Nov (Parwati Resort x2, BN Resort, Hardik Resort, Gaurav Resort, Gaurav Resorts by StayApart, Hotel Himshikhar returned 'No rooms available' on all three nights), so fewer than the 3 mid hotels the brief asks for; the season ratio rests on Neelgagan alone: 2,464 (Nov) vs 1,960 (16-17 Jun and 18-19 Aug), ratio 0.80. Devbhoomi Inn Homestay is flat at 1,981 in Nov and Aug and sold out 16-17 Jun. Own browser-context requests, check-in date verified."
+   },
+   "confidence": "low",
+   "unverified": [
+    "only 1 mid hotel and 1 homestay bookable on Cleartrip; tiny place"
+   ]
+  },
+  "corbett-national-park": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Corbett Fun Resort (3-star, 4.4) Garden Fun Cottage, room only",
+      "url": "https://www.cleartrip.com/hotels/details/corbett-fun-resort-379810",
+      "prices": {
+       "18-19 Nov 2026": 1690,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Three Heavens Corbett (3-star, 4.3) Deluxe Room Garden view, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4673257",
+      "prices": {
+       "18-19 Nov 2026": 2280,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Corbett Kingdom (3-star, 4.4) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-corbett-kingdom-717561",
+      "prices": {
+       "18-19 Nov 2026": 3204,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Heartwood City Corbett (3-star) Deluxe Room Balcony, room only",
+      "url": "https://www.cleartrip.com/hotels/details/5679561",
+      "prices": {
+       "18-19 Nov 2026": 2224,
+       "12-13 May 2027": 2046,
+       "8-9 Sep 2027": 2046
+      }
+     },
+     {
+      "hotel": "Corbett Wild Resort (3-star) Deluxe Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/corbett-wild-resort-a-river-access-property-1325840",
+      "prices": {
+       "18-19 Nov 2026": 2843,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     },
+     {
+      "hotel": "Earavat Resort by Aamod (3-star) Jungle View Room, room only",
+      "url": "https://www.cleartrip.com/hotels/details/4562570",
+      "prices": {
+       "18-19 Nov 2026": 2664,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Echo Home Stay 'Home' unit, room only",
+      "kind": "homestay",
+      "url": "https://www.cleartrip.com/hotels/details/echo-home-stay-5258398",
+      "prices": {
+       "18-19 Nov 2026": 5304,
+       "12-13 May 2027": null,
+       "8-9 Sep 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Place = Ramnagar / Jim Corbett area (Cleartrip city slug /hotels/3-star-hotels-in-ramnagar; the corbett slug returned no hotels). Own browser-context requests, check-in date verified per night. Only Hotel Heartwood City Corbett returned a price for 12-13 May and 8-9 Sep 2027 (2,224 Nov, 2,046 May, 2,046 Sep: identical May and Sep, probably a static far-date rate). The other five mid hotels and the homestay returned 'No rooms available' on both 2027 nights, so there is NO usable season curve; null is not a low-season price. Many Corbett lodges are full-board/safari packages or luxury (Rattan Elwood, Cotton Tree, The Forest Roar printed room-only 24,750 to 29,000, Earavat cottages 25,160): excluded as not mid-range double rooms. Corbett's park-season/closure dates were not source-checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "season curve (5 of 6 hotels sold out 2027 nights)"
+   ]
+  }
+ }
+}

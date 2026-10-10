@@ -1,0 +1,2499 @@
+{
+ "batch": "T1",
+ "researched_on": "2026-10-10",
+ "corporation_status": {
+  "KMVN (Uttarakhand, Kumaon)": "DONE. 39 properties pulled from the site's own Check Tariff popup (kmvn.in, endpoints /custom/ajax/tarif.php and getTarifByPackage.php, plain POST like the page's own button). 28 have Main + Autumn + Off Season rates for a common room type; 11 are single flat rate or Main-only. Fetched 2026-10-10.",
+  "HPTDC (Himachal)": "SEASON DATES ONLY. Official Privilege Card terms on hptdc.in (Wayback snapshot 2026-06-15): Prime Time (season) 1 Apr-30 Jun, 15 Sep-15 Nov, 23 Dec-2 Jan; Leisure Time (off-season) 1 Jul-14 Sep, 16 Nov-22 Dec, 3 Jan-31 Mar. NO room-rate table obtained: the hotel pages on hptdc.in carry no tariffs, and the booking portal (hptdchotelbooking.hp.gov.in) and hptdc.hp.gov.in do not resolve from here. Dated rates seen in search snippets are only the 23-30 Dec peak/festival package (2024), which cannot give a ratio.",
+  "GMVN (Uttarakhand, Garhwal)": "NOT OBTAINED. gmvnonline.com returns HTTP 403 to every request here (curl and WebFetch); not bypassed. Wayback snapshots of room-tariff pages hold no rate table (it loads by script). Only third-party listings and a Garhwal Post report (MD says winter-season tariffs were cut 50 percent and a revision is awaited) exist; neither is a tariff card, so nothing recorded.",
+  "JKTDC (J&K)": "NO TARIFF CARD. jktdc.co.in shows only per-date prices from a booking form (no season/off-season table, empty Download Section). Not queried date by date.",
+  "UPSTDC (Uttar Pradesh)": "NO TARIFF CARD on upstdc.co.in; rates only appear per date inside the booking engine.",
+  "Haryana Tourism": "Citizen charter PDF (haryanatourism.gov.in, 2024 upload) prints ONE EP tariff per room 'as on 10.7.2020' (e.g. Badkhal Deluxe 2399, Standard 1999). No season/off-season split except hall/lawn charges. Nothing recorded.",
+  "DTTDC (Delhi)": "No hotel tariff card; citizen charter covers buses, packages and B&B scheme only.",
+  "Punjab Tourism": "Site did not resolve from here (punjabtourism.gov.in); not checked further.",
+  "Ladakh": "ladakh.gov.in loads but has no tariff card; Leh hotels found publish a single summer card only (Hotel Choskor: one card valid 15 Apr-30 Oct 2025, no winter card), so no pair recorded.",
+  "Private hotels": "15 rows from hotels' own tariff pages: Manali 6, Mussoorie 2, Shimla/Kufri 4, Nainital 2, McLeod Ganj 1. None found with a usable own-site season/off-season pair for Rishikesh, Kasol, Srinagar, Leh (Srinagar Lake View page is script-rendered; others publish no seasonal card)."
+ },
+ "properties": [
+  {
+   "town": "Bhikiyasen",
+   "property": "KMVN TRH Bhikiyasen",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 59,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "DB Standard",
+     "occupancy": 2,
+     "meal_plan": "EP plan",
+     "main_season_inr": 937,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": true,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=59 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Katarmal (Almora)",
+   "property": "KMVN TRH Katarmal",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 53,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "MAP Plan",
+    "main_season_inr": 4000,
+    "autumn_season_inr": 3500,
+    "off_season_inr": 3000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [],
+   "autumn_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=53 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Ranikhet",
+   "property": "KMVN TRH Chilianaula Ranikhet (Himadri)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 48,
+   "headline_room": {
+    "room_type": "Double Bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP",
+    "main_season_inr": 3500,
+    "autumn_season_inr": 2600,
+    "off_season_inr": 2400,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double Bed Executive",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 3500,
+     "autumn_season_inr": 2600,
+     "off_season_inr": 2400,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1600,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Deluxe",
+     "occupancy": 4,
+     "meal_plan": "CP",
+     "main_season_inr": 3500,
+     "autumn_season_inr": 2700,
+     "off_season_inr": 2400,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=48 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Kakrighat (Bhowali)",
+   "property": "KMVN Gyan Vriksh TRH Kakrighat",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 46,
+   "headline_room": {
+    "room_type": "Double bed Super deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP",
+    "main_season_inr": 2500,
+    "autumn_season_inr": 2000,
+    "off_season_inr": 1800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1200,
+     "autumn_season_inr": 1500,
+     "off_season_inr": 1300,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1250,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=46 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Ranikhet",
+   "property": "KMVN TRH Monal (Ranikhet)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 45,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Cottage Double Bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 990,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": true,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=45 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Binsar",
+   "property": "KMVN TRH Binsar (Nanda Devi TRH Binsar)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 44,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Cottage Double Bed Executive",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 8000,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 5500,
+     "autumn_season_inr": 5625,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Semi Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 5000,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Standard",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 4687,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Standard",
+     "occupancy": 4,
+     "meal_plan": "MAP",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 7031,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 6093,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=44 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Ranikhet",
+   "property": "KMVN TRH Ranikhet (Kalika)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 38,
+   "headline_room": {
+    "room_type": "Cottage Executive",
+    "occupancy": 2,
+    "meal_plan": "CP",
+    "main_season_inr": 5000,
+    "autumn_season_inr": 4000,
+    "off_season_inr": 3500,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Cottage Executive",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2400,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Royal",
+     "occupancy": 4,
+     "meal_plan": "CP",
+     "main_season_inr": 6000,
+     "autumn_season_inr": 5000,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=38 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Mohaan",
+   "property": "KMVN TRH Mohaan",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 36,
+   "headline_room": {
+    "room_type": "Cottage Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP",
+    "main_season_inr": 3800,
+    "autumn_season_inr": 3200,
+    "off_season_inr": 3200,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Cottage Four Bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 4500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 3800,
+     "autumn_season_inr": 3200,
+     "off_season_inr": 3200,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2500,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/almora",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=36 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Baijnath",
+   "property": "KMVN TRH Baijnath",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 42,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP",
+    "main_season_inr": 2200,
+    "autumn_season_inr": 2000,
+    "off_season_inr": 1800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1800,
+     "autumn_season_inr": 1600,
+     "off_season_inr": 1400,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 2800,
+     "autumn_season_inr": 2400,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1200,
+     "autumn_season_inr": 1100,
+     "off_season_inr": 1000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 2200,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "DB Royal (P)",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 5600,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/bageshwar",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=42 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Kausani",
+   "property": "KMVN TRH Kausani (Trishul)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 39,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP",
+    "main_season_inr": 2950,
+    "autumn_season_inr": 2500,
+    "off_season_inr": 1800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 2950,
+     "autumn_season_inr": 2500,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Royal (P)",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 4500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 5500,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "CP",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Executive",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 6000,
+     "autumn_season_inr": 5000,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/bageshwar",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=39 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Champawat",
+   "property": "KMVN TRH Champawat",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 60,
+   "headline_room": {
+    "room_type": "DB Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 1875,
+    "autumn_season_inr": 1875,
+    "off_season_inr": 1800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "DB Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 1875,
+     "autumn_season_inr": 1875,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2250,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-30",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/champawat",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=60 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Tanakpur",
+   "property": "KMVN TRH Tanakpur",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 17,
+   "headline_room": {
+    "room_type": "Double bed Super deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 2500,
+    "autumn_season_inr": 1875,
+    "off_season_inr": 1800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 1875,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2000,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 1700,
+     "autumn_season_inr": 1650,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Super deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3500,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-30",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/champawat",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=17 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Lohaghat",
+   "property": "KMVN TRH Lohaghat",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 15,
+   "headline_room": {
+    "room_type": "DB Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 3000,
+    "autumn_season_inr": 2500,
+    "off_season_inr": 2000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "DB Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2500,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "DB Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 1400,
+     "autumn_season_inr": 1200,
+     "off_season_inr": 1100,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Super deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 5155,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/champawat",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=15 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Abbott Mount",
+   "property": "KMVN TRH Abbott Mount (Gold Creast Eco log huts)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 11,
+   "headline_room": {
+    "room_type": "Cottage Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP Meal",
+    "main_season_inr": 4800,
+    "autumn_season_inr": 3800,
+    "off_season_inr": 3500,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Cottage Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP Meal",
+     "main_season_inr": 4800,
+     "autumn_season_inr": 3800,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/champawat",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=11 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Dhikuli (Ramnagar)",
+   "property": "KMVN Holiday Home Dhikuli",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 52,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "DB Cottage",
+     "occupancy": 2,
+     "meal_plan": "EP PLan",
+     "main_season_inr": 2200,
+     "autumn_season_inr": 2062,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "DB Balcony Hut",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2900,
+     "autumn_season_inr": 2812,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=52 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Sigri (Corbett)",
+   "property": "KMVN Jungle camp Sigri  (Tent sharing accommodation)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 37,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Single folding bed",
+     "occupancy": 1,
+     "meal_plan": "Single folding bed",
+     "main_season_inr": 1500,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "28 Feb 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": true,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=37 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Khairna",
+   "property": "KMVN TRH Khairna",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 35,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "Double bed Standard",
+     "main_season_inr": 1250,
+     "autumn_season_inr": 1406,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=35 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Padampuri",
+   "property": "KMVN TRH Padampuri",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 29,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 900,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "four bed Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2000,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": true,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=29 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Ramgarh",
+   "property": "KMVN TRH Ramgarh",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 27,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 4000,
+    "autumn_season_inr": 2500,
+    "off_season_inr": 2000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 2500,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2400,
+     "off_season_inr": 1900,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=27 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Sattal",
+   "property": "KMVN TRH Sattal",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 26,
+   "headline_room": {
+    "room_type": "Double bed Super deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 3800,
+    "autumn_season_inr": 3400,
+    "off_season_inr": 3000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3800,
+     "autumn_season_inr": 3400,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3500,
+     "autumn_season_inr": 3000,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2800,
+     "autumn_season_inr": 2200,
+     "off_season_inr": 2063,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Executive (ECO HUT)",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=26 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Mukteshwar",
+   "property": "KMVN TRH Mukteshwar",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 23,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "MAP Plan",
+    "main_season_inr": 4900,
+    "autumn_season_inr": 4000,
+    "off_season_inr": 3000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 4900,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 5200,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 6200,
+     "autumn_season_inr": 5400,
+     "off_season_inr": 4600,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 6600,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 4500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Semi Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 4700,
+     "autumn_season_inr": 4200,
+     "off_season_inr": 3600,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=23 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Ramnagar",
+   "property": "KMVN TRH Ramnagar",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 20,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Double Bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 2000,
+     "autumn_season_inr": 1875,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2813,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 4687,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=20 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Pithoragarh",
+   "property": "KMVN TRH Pithoragarh",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 49,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP",
+    "main_season_inr": 1800,
+    "autumn_season_inr": 1800,
+    "off_season_inr": 1250,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 3000,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1250,
+     "autumn_season_inr": 1250,
+     "off_season_inr": 900,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2500,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1800,
+     "autumn_season_inr": 1800,
+     "off_season_inr": 1250,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=49 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Patal Bhuvneshwar",
+   "property": "KMVN TRH Patal Bhuvneshwar",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 33,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 3,
+     "meal_plan": "CP",
+     "main_season_inr": 1800,
+     "autumn_season_inr": 1500,
+     "off_season_inr": 1100,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 1875,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=33 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Gangolihat",
+   "property": "KMVN TRH Gangolihat",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 32,
+   "headline_room": {
+    "room_type": "Double bed Super deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP PLAN",
+    "main_season_inr": 2500,
+    "autumn_season_inr": 2000,
+    "off_season_inr": 1800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP PLan",
+     "main_season_inr": 2000,
+     "autumn_season_inr": 1800,
+     "off_season_inr": 1600,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP PLAN",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=32 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Dharchula",
+   "property": "KMVN TRH Dharchula",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 31,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 3600,
+    "autumn_season_inr": 1800,
+    "off_season_inr": 1700,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3600,
+     "autumn_season_inr": 1800,
+     "off_season_inr": 1700,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3100,
+     "autumn_season_inr": 1300,
+     "off_season_inr": 1200,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-30",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=31 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Birthi",
+   "property": "KMVN TRH Birthi",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 28,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP",
+    "main_season_inr": 2000,
+    "autumn_season_inr": 1800,
+    "off_season_inr": 1600,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 2000,
+     "autumn_season_inr": 1800,
+     "off_season_inr": 1600,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Executive",
+     "occupancy": 2,
+     "meal_plan": "CP",
+     "main_season_inr": 2200,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=28 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Chaukori",
+   "property": "KMVN TRH Chaukori",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 25,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "MAP",
+    "main_season_inr": 3800,
+    "autumn_season_inr": 3500,
+    "off_season_inr": 3000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 3500,
+     "autumn_season_inr": 3000,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 3800,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3800,
+     "off_season_inr": 3200,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Royal",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 5500,
+     "autumn_season_inr": 5000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "06 Oct 2026-20 Dec 2026",
+    "21 Dec 2026-09 Jan 2027",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=25 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Munsyari",
+   "property": "KMVN TRH Munsyari",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 24,
+   "headline_room": {
+    "room_type": "Double Bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "MAP Plan",
+    "main_season_inr": 2300,
+    "autumn_season_inr": 1800,
+    "off_season_inr": 1500,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double Bed Royal",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2600,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Executive",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 2700,
+     "autumn_season_inr": 2400,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 2300,
+     "autumn_season_inr": 1800,
+     "off_season_inr": 1500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "MAP Plan",
+     "main_season_inr": 3400,
+     "autumn_season_inr": 3000,
+     "off_season_inr": 2200,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Deluxe",
+     "occupancy": 5,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2000,
+     "autumn_season_inr": 1800,
+     "off_season_inr": 1600,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "30 Jun 2026-20 Dec 2026",
+    "21 Dec 2026-09 Jan 2027",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=24 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Didihat",
+   "property": "KMVN TRH Didihat",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 21,
+   "headline_room": {
+    "room_type": "Double Bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP",
+    "main_season_inr": 1800,
+    "autumn_season_inr": 1400,
+    "off_season_inr": 1250,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1250,
+     "autumn_season_inr": 900,
+     "off_season_inr": 900,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 1800,
+     "autumn_season_inr": 1400,
+     "off_season_inr": 1250,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP",
+     "main_season_inr": 844,
+     "autumn_season_inr": 900,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Executive",
+     "occupancy": 4,
+     "meal_plan": "EP",
+     "main_season_inr": 2343,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/pithoragarh",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=21 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Jaspur",
+   "property": "KMVN TRH Jaspur",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 43,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP plan",
+     "main_season_inr": 900,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 1000,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": true,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/us-nagar",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=43 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Nanakmatta",
+   "property": "KMVN TRH Nanakmatta",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 41,
+   "headline_room": null,
+   "rooms": [
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 1050,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 700,
+     "autumn_season_inr": null,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [],
+   "off_season_last_dated_period_ends": null,
+   "flat_single_rate": true,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/us-nagar",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=41 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Naukuchiatal",
+   "property": "KMVN Nine corner Retreat TRH Naukuchiyatal",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 14,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "- MAP Plan",
+    "main_season_inr": 5500,
+    "autumn_season_inr": 4800,
+    "off_season_inr": 4000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "- MAP Plan",
+     "main_season_inr": 6000,
+     "autumn_season_inr": 5200,
+     "off_season_inr": 4500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "- MAP Plan",
+     "main_season_inr": 5500,
+     "autumn_season_inr": 4800,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "- MAP Plan",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4200,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=14 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Naukuchiatal",
+   "property": "KMVN Parichay Resort (Naukuchiyatal)",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 16,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "",
+    "main_season_inr": 5000,
+    "autumn_season_inr": 4000,
+    "off_season_inr": 3500,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Royal (P)",
+     "occupancy": 2,
+     "meal_plan": "MAp",
+     "main_season_inr": 7000,
+     "autumn_season_inr": 6000,
+     "off_season_inr": 5600,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 5000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 5000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=16 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Bhimtal",
+   "property": "KMVN Sarovar Bliss TRH Bhimtal",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 12,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 4000,
+    "autumn_season_inr": 3500,
+    "off_season_inr": 2800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3500,
+     "off_season_inr": 2800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3500,
+     "autumn_season_inr": 3000,
+     "off_season_inr": 2100,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Cottage Four bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 3900,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Standard",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2000,
+     "off_season_inr": 1800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Executive",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 5000,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 3800,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=12 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Bhowali",
+   "property": "KMVN TRH Bhowali",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 7,
+   "headline_room": {
+    "room_type": "Double Bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "EP Plan",
+    "main_season_inr": 2400,
+    "autumn_season_inr": 2300,
+    "off_season_inr": 2200,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2400,
+     "autumn_season_inr": 2300,
+     "off_season_inr": 2200,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Super Deluxe",
+     "occupancy": 4,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2800,
+     "off_season_inr": 2700,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Deluxe",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 2500,
+     "autumn_season_inr": 2000,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "EP Plan",
+     "main_season_inr": 3500,
+     "autumn_season_inr": 3000,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=7 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Nainital",
+   "property": "KMVN TRH Snowview (Nainital) Snowview Heritage",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 6,
+   "headline_room": {
+    "room_type": "Double Bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "MAP",
+    "main_season_inr": 4000,
+    "autumn_season_inr": 3000,
+    "off_season_inr": 2800,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "MAP",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3000,
+     "off_season_inr": 2800,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [],
+   "autumn_season_periods_from_2026_04": [
+    "31 Mar 2026-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=6 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Nainital",
+   "property": "KMVN TRH Sukhatal (Nainital) Mount view",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 5,
+   "headline_room": {
+    "room_type": "Double Bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP PLan",
+    "main_season_inr": 5500,
+    "autumn_season_inr": 4500,
+    "off_season_inr": 3000,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Cottage Hut Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 4000,
+     "autumn_season_inr": 3200,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Standard",
+     "occupancy": 2,
+     "meal_plan": "CP PLan",
+     "main_season_inr": 3000,
+     "autumn_season_inr": 2500,
+     "off_season_inr": 2000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP PLan",
+     "main_season_inr": 5500,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double Bed Royal (P)",
+     "occupancy": 2,
+     "meal_plan": "CP PLan",
+     "main_season_inr": 6000,
+     "autumn_season_inr": 5000,
+     "off_season_inr": 3800,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Premium",
+     "occupancy": 2,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 7500,
+     "autumn_season_inr": 6500,
+     "off_season_inr": 5000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four Bed Super Deluxe",
+     "occupancy": 5,
+     "meal_plan": "CP PLan",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 3500,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "30 Jun 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=5 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Nainital",
+   "property": "KMVN TRH Tallital (Nainital) Sarovar",
+   "corporation": "KMVN (Uttarakhand)",
+   "kmvn_hotel_id": 9,
+   "headline_room": {
+    "room_type": "Double bed Super Deluxe",
+    "occupancy": 2,
+    "meal_plan": "CP Plan",
+    "main_season_inr": 4500,
+    "autumn_season_inr": 3200,
+    "off_season_inr": 2500,
+    "meal_plan_same_across_columns": true
+   },
+   "rooms": [
+    {
+     "room_type": "Double bed Royal (P)",
+     "occupancy": 2,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 7000,
+     "autumn_season_inr": 6500,
+     "off_season_inr": 5100,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Royal",
+     "occupancy": 2,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 6500,
+     "autumn_season_inr": 5200,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Royal",
+     "occupancy": 4,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 7000,
+     "autumn_season_inr": 5500,
+     "off_season_inr": 4500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Executive",
+     "occupancy": 2,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 5500,
+     "autumn_season_inr": 4000,
+     "off_season_inr": 3000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Double bed Super Deluxe",
+     "occupancy": 2,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 4500,
+     "autumn_season_inr": 3200,
+     "off_season_inr": 2500,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Four bed Executive",
+     "occupancy": 4,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 6200,
+     "autumn_season_inr": 4500,
+     "off_season_inr": 4000,
+     "meal_plan_same_across_columns": true
+    },
+    {
+     "room_type": "Presidential Suite",
+     "occupancy": 3,
+     "meal_plan": "CP Plan",
+     "main_season_inr": 25000,
+     "autumn_season_inr": 25000,
+     "off_season_inr": null,
+     "meal_plan_same_across_columns": true
+    }
+   ],
+   "main_season_periods_from_2026_04": [
+    "31 Mar 2026-29 Jun 2026",
+    "21 Dec 2026-09 Jan 2027"
+   ],
+   "autumn_season_periods_from_2026_04": [
+    "17 May 2026-29 Jun 2026",
+    "30 Jun 2026-20 Dec 2026",
+    "19 Jul 2026-20 Dec 2026",
+    "10 Jan 2027-30 Mar 2027"
+   ],
+   "off_season_last_dated_period_ends": "2025-03-26",
+   "flat_single_rate": false,
+   "tax_basis": "ex-GST (page header: Tariff (Ex. GST)); GST % per row, mostly 5",
+   "tariff_year": "live calendar fetched 2026-10-10, chips run to 30 Mar 2027",
+   "url": "https://www.kmvn.in/booking/nainital",
+   "data_endpoint": "POST https://www.kmvn.in/custom/ajax/getTarifByPackage.php id=8|9|10 hid=9 (the site's own Check Tariff popup)"
+  },
+  {
+   "town": "Manali",
+   "property": "Hotel Day Night",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.hoteldaynightmanali.com/tariff-packages-manali-hotel.htm",
+   "room_type": "Deluxe Room",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Peak Season: 15th April to 15th July; 21st Dec to 5th Jan",
+   "season_rate_inr": 3000,
+   "off_season_rate_inr": 1200,
+   "off_season_periods_as_printed": "Off Season: 06th Jan to 14 April; 16th July to 20th Dec",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "not stated on page",
+   "tariff_year": "undated",
+   "stale_over_1yr": false,
+   "note": null
+  },
+  {
+   "town": "Manali",
+   "property": "Hotel Manali (hotelmanali.in)",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.hotelmanali.in/tariff-packages.php",
+   "room_type": "Deluxe Room",
+   "meal_plan": "CP (breakfast)",
+   "season_periods_as_printed": "PEAK SEASON RATE VALID: 15th APR TO 30th JUN & 15th DEC TO 02nd JAN",
+   "season_rate_inr": 3000,
+   "off_season_rate_inr": 1500,
+   "off_season_periods_as_printed": "OFF-SEASON RATE VALIDITY 3rd JAN TO 14th APR, 1st JUL TO 14th DEC",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "not stated on page",
+   "tariff_year": "undated (page footer 2025)",
+   "stale_over_1yr": false,
+   "note": "MAP: peak 4000, off 2500"
+  },
+  {
+   "town": "Manali",
+   "property": "Highway Inn",
+   "corporation": "private hotel (own website)",
+   "url": "http://highwayinnmanali.com/tariff-packages.php",
+   "room_type": "Deluxe Room (2 pax)",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "SEASON TARIFF - From 16th April to 30th June and 16th December to 10th January",
+   "season_rate_inr": 3000,
+   "off_season_rate_inr": 1200,
+   "off_season_periods_as_printed": "OFF-SEASON TARIFF - From 1st July to 15th December and 11th January to 15th April",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "12% or 18% GST extra",
+   "tariff_year": "undated",
+   "stale_over_1yr": false,
+   "note": "CP 3400 vs 1400; MAP 4200 vs 1800"
+  },
+  {
+   "town": "Manali",
+   "property": "Hotel Manali Heaven",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.manaliheaven.com/tariff.html",
+   "room_type": "Deluxe Room (per day, 2 persons)",
+   "meal_plan": "CP (breakfast)",
+   "season_periods_as_printed": "High-season 20 Dec. to 5 Jan - 14 April to 15 July",
+   "season_rate_inr": 3000,
+   "off_season_rate_inr": 1700,
+   "off_season_periods_as_printed": "Low-season 5 Jan - 14 April & 15 July - 20 Dec.",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "not stated on page",
+   "tariff_year": "undated",
+   "stale_over_1yr": false,
+   "note": "MAP 3500 vs 2200"
+  },
+  {
+   "town": "Manali",
+   "property": "Hotel Monal",
+   "corporation": "private hotel (own website)",
+   "url": "https://hotelmonalmanali.com/tariff",
+   "room_type": "Super Deluxe (2 pax)",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "PEAK SEASON: From 15 April to 05 July, 16 dec to 5 jan",
+   "season_rate_inr": 3120,
+   "off_season_rate_inr": 2200,
+   "off_season_periods_as_printed": "LEAN SEASON: From 6 July to 15 Dec, 06 Jan to 14 April",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "Taxes, service charges and levies as per government norms (extra)",
+   "tariff_year": "undated (page footer 2021-2026)",
+   "stale_over_1yr": false,
+   "note": "CP 3575 vs 2650; MAP 4150 vs 3250"
+  },
+  {
+   "town": "Manali",
+   "property": "Holiday Heaven (STALE 2018-19)",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.holidayheavenmanali.com/tariff/room-tariff.html",
+   "room_type": "Deluxe Room (2 guests)",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Peak Season 16th April 2018 to 05th July 2018 and 20th December 2018 to 05th January 2019",
+   "season_rate_inr": 3500,
+   "off_season_rate_inr": 1900,
+   "off_season_periods_as_printed": "Off-Season 06th July 2018 to 19th December 2018 and 06 January 2019 to 15th April 2019",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "Government taxes as applicable",
+   "tariff_year": "2018-19",
+   "stale_over_1yr": true,
+   "note": "kept only to show the date pattern; rates are 7+ years old"
+  },
+  {
+   "town": "Mussoorie",
+   "property": "Hotel Mussoorie Gateway",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.mussooriegateway.com/rooms-tariff.php",
+   "room_type": "Premium Club Room",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Peak Season column: (1st June to 30th June); also national holidays, long weekends, Christmas and New Year week. High Season column: (1st May to 31st May), (1st July to 31st July)",
+   "season_rate_inr": 6000,
+   "off_season_rate_inr": 2500,
+   "off_season_periods_as_printed": "Low Season column: (1st Aug. to 31st Mar.). Mid Season column: (1st Apr. to 31st Apr. [sic]), (15th July to 31st July) = 2500",
+   "peak_or_festival_rate_inr": 6000,
+   "mid_season_rate_inr": 2500,
+   "tax_basis": "GST, Luxury Tax, VAT and Service Tax extra as applicable",
+   "tariff_year": "undated",
+   "stale_over_1yr": false,
+   "note": "Four tiers: Low 2500 / Mid 2500 / High 4500 / Peak 6000 (EP). season_rate_inr here = Peak tier; High tier (May, Jul) = 4500. Column date layout on the page is ambiguous for July (appears under both Mid and High). Low season covers Aug-Mar INCLUDING Oct-Dec.",
+   "high_season_rate_inr": 4500
+  },
+  {
+   "town": "Mussoorie",
+   "property": "CALUX Hill Queen",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.caluxhotels.com/hill-queen-mussoorie/room-tariff.html",
+   "room_type": "Amara Comfort Room",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Peak-Season - 15th April - 15th July and 20th December - 5th January",
+   "season_rate_inr": 5500,
+   "off_season_rate_inr": 3000,
+   "off_season_periods_as_printed": "Regular-Season - 16th July - 19th Dec and 6th January - 14th April",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "+ tax (taxes as applicable)",
+   "tariff_year": "undated",
+   "stale_over_1yr": false,
+   "note": "With breakfast 6000 vs 3500"
+  },
+  {
+   "town": "Shimla",
+   "property": "Snow Valley Resorts Shimla",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.snowvalleyresorts.com/room/shimla-tariff/",
+   "room_type": "Standard Room (couple)",
+   "meal_plan": "CP AI (breakfast, taxes included)",
+   "season_periods_as_printed": "High Season: 23rd April to 05th July, 18th Dec to 30th Dec & long Holiday Weekends",
+   "season_rate_inr": 7800,
+   "off_season_rate_inr": 5800,
+   "off_season_periods_as_printed": "Mid Season: 06th July to 17th Dec, 04th Jan to 21st April (excluding long Holiday Weekends)",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "Rates inclusive of GST",
+   "tariff_year": "2026-27",
+   "stale_over_1yr": false,
+   "note": "MAP AI 8900 vs 6800. Page prints two tiers only (High, Mid); 31 Dec-3 Jan not assigned to a tier. Mid is the lower tier, not a true low season."
+  },
+  {
+   "town": "Kufri (Shimla)",
+   "property": "JMR Hotel Kufri (The Jungle Mountain Retreat)",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.thejunglemountainretreat.com/pages/tariff",
+   "room_type": "Standard Room",
+   "meal_plan": "EPAI (room only, taxes included)",
+   "season_periods_as_printed": "Peak Season: 15th April 2025 - 10th July 2025 & 15th Dec 2025 - 05th Jan 2026, Holidays & Long weekend",
+   "season_rate_inr": 6000,
+   "off_season_rate_inr": 4000,
+   "off_season_periods_as_printed": "Off Season: 11th July 2025 - 14th Dec 2025 & 6th Jan 2026 - 14th April 2026",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "Rates inclusive of GST",
+   "tariff_year": "2025-26 (ended 14 Apr 2026; 2026-27 card not yet posted)",
+   "stale_over_1yr": false,
+   "note": "Page also lists extra discounts: Low-season 30% (10 Jan-15 Mar, 5 Jul-1 Oct) and Mid-season 20% (15 Mar-15 Apr, 1 Oct-15 Dec) off these rates."
+  },
+  {
+   "town": "Shimla",
+   "property": "Willow Banks",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.willowbanks.com/deluxe.php",
+   "room_type": "Deluxe room Mall Road facing",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Summer (16 April - 15 July), Autumn (1 Oct- 15 Nov), Winter (15 Dec- 5 Jan) and all long weekends",
+   "season_rate_inr": 7199,
+   "off_season_rate_inr": 5799,
+   "off_season_periods_as_printed": "All other dates off season rates apply",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "18% GST extra on room tariff",
+   "tariff_year": "undated",
+   "stale_over_1yr": false,
+   "note": null
+  },
+  {
+   "town": "Shimla",
+   "property": "Hotel Fairmount (Fairvacanze Inns & Suites)",
+   "corporation": "private hotel (own website)",
+   "url": "http://www.fairmountindia.com/tariff/",
+   "room_type": "Deluxe Rooms",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Peak Season 01-Apr to 15-July and 19-Dec to 03-Jan",
+   "season_rate_inr": 3800,
+   "off_season_rate_inr": 2600,
+   "off_season_periods_as_printed": "Off Season 16-Jul to 18-Dec and 04-Jan to 31-Mar",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "Taxes as applicable",
+   "tariff_year": "undated (page footer 2023)",
+   "stale_over_1yr": false,
+   "note": "CP 4300 vs 3100; MAP 5200 vs 4000"
+  },
+  {
+   "town": "Nainital",
+   "property": "Hotel Green Leaf",
+   "corporation": "private hotel (own website)",
+   "url": "https://hotelgreenleafnainital.com/Room-tariff.htm",
+   "room_type": "Deluxe Double Bed Room (Non Valley View)",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "Season Rates 15 May - 2 July",
+   "season_rate_inr": 3300,
+   "off_season_rate_inr": 2000,
+   "off_season_periods_as_printed": "Off Season Rates 3 July - 23 Dec; 2 Jan - 31 March",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": 2400,
+   "tax_basis": "GST 12% up to Rs 7499, 18% above",
+   "tariff_year": "undated (long-weekend dates listed without year)",
+   "stale_over_1yr": false,
+   "note": "Mid Season 1 April - 14 May = 2400. Long-weekend rate 2400 (Apr 18-20, May 10-12, Jul 26-27, Aug 9-10 & 15-17, Sep 5-7, Oct 21-23, Nov 22-24, Dec 25-28). 24 Dec-1 Jan not assigned to any tier. CP 2600/3100/4000, MAP 3600/4400/5300 (off/mid/season)."
+  },
+  {
+   "town": "Nainital",
+   "property": "Hotel Himalaya (STALE 2019)",
+   "corporation": "private hotel (own website)",
+   "url": "https://www.himalayapavilion.com/hotel-himalaya-nainital/tariff/tariff.html",
+   "room_type": "Deluxe Lake Facing Room",
+   "meal_plan": "EP (room only)",
+   "season_periods_as_printed": "High Season Validity - 29th March to 1st April, 12th May to 1st July, 29th September to 2nd October, 18th October to 21st October (as printed, 2019)",
+   "season_rate_inr": 4700,
+   "off_season_rate_inr": 3000,
+   "off_season_periods_as_printed": "Off Season Validity - till 28th March, July 16th to 28th September, 24th November to 20th December, 1st Jan to 31st March 2019",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": 3600,
+   "tax_basis": "18% GST on all rooms",
+   "tariff_year": "2019",
+   "stale_over_1yr": true,
+   "note": "Mid Season 3600 (26-28 Jan, 1-4 Mar, 2 Apr-11 May, 2-15 Jul, 3 Oct-23 Nov, 21-31 Dec, 14-15 Aug). Kept only for the date pattern: it puts Oct-Nov at MID, mid-May to Jun at HIGH, Jul-Sep and 24 Nov-20 Dec at OFF."
+  },
+  {
+   "town": "McLeod Ganj (Dharamshala)",
+   "property": "Flourishing Flora (homestay)",
+   "corporation": "private hotel (own website)",
+   "url": "https://mcleodganjhomestay.net/tariffs/",
+   "room_type": "Deluxe room (1st floor), double",
+   "meal_plan": "CP (breakfast included)",
+   "season_periods_as_printed": "Rates Valid From 15 May- 30 June 2026",
+   "season_rate_inr": 2600,
+   "off_season_rate_inr": 2400,
+   "off_season_periods_as_printed": "Base card: Rates Valid till 31 dec 2026",
+   "peak_or_festival_rate_inr": null,
+   "mid_season_rate_inr": null,
+   "tax_basis": "not stated on page",
+   "tariff_year": "2026",
+   "stale_over_1yr": false,
+   "note": "Only a 15 May-30 Jun uplift (+8%) over the base card; not a true low-season card."
+  }
+ ],
+ "notes": "HOW TO READ. kmvn rows: headline_room is a double-occupancy room present in all three season tables with the SAME meal plan (EP/CP/MAP differs by property, flagged per room); rates are ex-GST (5 percent on most rooms). main_season / autumn_season / off_season are KMVN's own three column names. Private/other rows: season_rate_inr and off_season_rate_inr are the same room and meal plan; tax_basis says whether GST is in or out.\n\nKMVN CALENDAR (the key finding). For 2026-27 the KMVN hill-station TRHs (Ranikhet, Mohaan, Kausani, Abbott Mount, Ramgarh, Sattal, Mukteshwar, Chaukori, Munsyari, Naukuchiatal, Bhimtal, Bhowali, Nainital Sukhatal/Tallital; 16 properties) assign only TWO bands: Main Season = 31 Mar-29 Jun and 21 Dec-9 Jan; Autumn Season = 30 Jun-20 Dec and 10 Jan-30 Mar (so Oct and Nov are the mid tier, NOT the top tier; the Main bands are summer and the Christmas-New Year window). The Off Season tariff column still exists, but its last dated period ends 26 Mar 2025, so it is not applied to any 2026-27 date on the site calendar. Median over 28 properties: off/main 0.70, autumn/main 0.82 (same medians for the 16-hill-station subset). Properties with a flat single rate (Pithoragarh area, Dharchula etc.) show Main only or Main with no date split. Some remote TRHs (Dharchula, Katarmal, Snowview, Chaukori) have bespoke date lists; their printed chips are in main_season_periods_from_2026_04 / autumn_season_periods_from_2026_04. Earlier years (2023-25) used weekday/weekend chips for Autumn vs Off Season, visible in the raw endpoint output.\n\nHPTDC. Only season definitions retrieved (see corporation_status). Season = 1 Apr-30 Jun, 15 Sep-15 Nov, 23 Dec-2 Jan; Leisure = 1 Jul-14 Sep, 16 Nov-22 Dec, 3 Jan-31 Mar. That makes June peak and also puts mid-Sep to mid-Nov in season.\n\nPRIVATE HOTELS. Manali (6 hotels): every card puts peak = mid/15 Apr to 30 Jun or 15 Jul plus mid-Dec to 5-10 Jan; off = rest. Manali June is PEAK on all 5 current cards (the ledger calls it low season). Manali off/season ratios on the headline room: 0.40-0.71 (median 0.50); the ledger's peak=1.35x, low=0.65x implies low/peak = 0.48, so the SIZE of the swing is about right for Manali but the MONTHS are wrong (all 5 undated-but-current Manali cards run season from mid-April to 30 Jun-15 Jul, plus mid-Dec to early Jan). Mussoorie Gateway puts Aug-Mar at a flat LOW tier (incl Dec-Jan; peak only on holidays/long weekends/Christmas week), Calux Hill Queen uses Manali-style dates (15 Apr-15 Jul + 20 Dec-5 Jan). Shimla cards: Fairmount and Snow Valley Shimla 2026-27 start season at 1 Apr / 23 Apr and end it 5-15 Jul; Willow Banks adds 1 Oct-15 Nov as Autumn season. Nainital: Green Leaf season = 15 May-2 Jul only, mid 1 Apr-14 May, off 3 Jul-23 Dec + 2 Jan-31 Mar (off/season 0.61 EP); stale 2019 Hotel Himalaya card shows Oct as MID and mid-May to Jun as HIGH. 'Stale' rows (2018-19) are kept for date pattern only and excluded from the ratio.\n\nMEDIANS: KMVN off/main 0.70 (n=28 properties, one room each); private hotels off/season 0.59 (n=12 current cards, range 0.40-0.81; the two stale rows 0.54 and 0.64 are excluded; Flourishing Flora excluded as it is not a true low-season card); all 40 together 0.70.\n\nCAVEATS. KMVN rates are MAP/CP/EP depending on the property (compare within a property only). KMVN Main vs Autumn ratio 0.82 means the dated KMVN calendar swings far less than the private hotels' 0.4-0.6. Two JMR/Snow Valley cards include GST while others quote ex-GST; ratios are unaffected. No rate was taken from memory; every number here was read from the URL in its row on 2026-10-10. Aggregator figures (allseasonsz, euttaranchal, ashextourism) were seen in search results and deliberately not used."
+}

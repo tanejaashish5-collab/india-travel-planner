@@ -1,0 +1,713 @@
+{
+ "batch": "Q2",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "nagarjuna-sagar": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "No Cleartrip hotels found for Nagarjuna Sagar. cleartrip.com/hotels/hotels-in-nagarjuna-sagar, hotels-in-nagarjunasagar, hotels-in-nagarjuna-sagar-dam, hotels-in-nandikonda, hotels-in-hill-colony and 3-star-hotels-in-nagarjuna-sagar all return HTTP 404 (checked 2026-10-10); the unrelated /hotels/india/nagarjunasagar/ redirects to Sagar in Madhya Pradesh. Web search for 'Cleartrip Nagarjuna Sagar hotels' returned no Cleartrip detail page for the dam town (only Vinukonda and Guntur hotels). Nearest Cleartrip city page found, Miryalaguda, is a different town and was deliberately not substituted."
+   },
+   "confidence": "low",
+   "unverified": [
+    "season probe for 18-19 Nov 2026, 14-15 Apr 2027, 14-15 Jul 2027: no Cleartrip-listed hotels exist for Nagarjuna Sagar / Hill Colony"
+   ]
+  },
+  "pulicat-lake": {
+   "season_probe": {
+    "mid": [],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "No Cleartrip hotels found for Pulicat or Pulicat Lake. cleartrip.com/hotels/hotels-in-pulicat, hotels-in-pulicat-lake and 3-star-hotels-in-pulicat-lake return HTTP 404 (checked 2026-10-10). hotels-in-sullurupeta (the nearest town) loads but lists zero hotels. Tada and Gummidipoondi have Cleartrip pages but are ~30 km and ~20 km away and were not substituted because the scope does not name a nearest base."
+   },
+   "confidence": "low",
+   "unverified": [
+    "season probe for 18-19 Nov 2026, 10-11 Mar 2027, 14-15 Jul 2027: no Cleartrip-listed lodging at Pulicat Lake"
+   ]
+  },
+  "srikalahasti": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel MGM Grand (3-star, 4.2, 1k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-mgm-grand-710505",
+      "prices": {
+       "18-19 Nov 2026": 3360,
+       "14-15 Jul 2027": 3360,
+       "8-9 Sep 2027": 3360,
+       "28-29 Oct 2026": 3360
+      }
+     },
+     {
+      "hotel": "Hotel KSR Grand (3-star, new listing, no rating)",
+      "url": "https://www.cleartrip.com/hotels/details/4711803",
+      "prices": {
+       "18-19 Nov 2026": 905,
+       "14-15 Jul 2027": 905,
+       "8-9 Sep 2027": 905,
+       "28-29 Oct 2026": 905
+      }
+     },
+     {
+      "hotel": "Hotel Vijaya Grand (2-star on Cleartrip, 4.2, 3k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4675006",
+      "prices": {
+       "18-19 Nov 2026": 1170,
+       "14-15 Jul 2027": 1170,
+       "8-9 Sep 2027": null,
+       "28-29 Oct 2026": 1170
+      }
+     },
+     {
+      "hotel": "Hotel GMR Pearls (2-star)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-gmr-pearls-5063178",
+      "prices": {
+       "18-19 Nov 2026": 2037,
+       "14-15 Jul 2027": 1739,
+       "8-9 Sep 2027": 1834,
+       "28-29 Oct 2026": 1834
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "SSR Hotel (2-star, 3.7, 1k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/ssr-hotel-1324704",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 790,
+       "14-15 Jul 2027": 790,
+       "8-9 Sep 2027": 1343,
+       "28-29 Oct 2026": 790
+      }
+     },
+     {
+      "hotel": "Hotel KSR Grand (2-star listing, 3.7)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-ksr-grand-710434",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 605,
+       "14-15 Jul 2027": 605,
+       "8-9 Sep 2027": null,
+       "28-29 Oct 2026": 605
+      }
+     },
+     {
+      "hotel": "Hotel Shubhanga Residency (2-star, Bahadur Pet)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-shubhanga-residency-1360956",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 1638,
+       "14-15 Jul 2027": null,
+       "8-9 Sep 2027": null,
+       "28-29 Oct 2026": 702
+      }
+     },
+     {
+      "hotel": "Blue Stone Hotel Srikalahasti (2-star, 4.4, 2k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4534034",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "14-15 Jul 2027": null,
+       "8-9 Sep 2027": null,
+       "28-29 Oct 2026": 1003
+      }
+     },
+     {
+      "hotel": "MSN Homestay (only homestay Cleartrip lists here)",
+      "url": "https://www.cleartrip.com/hotels/details/msn-homestay-5267834",
+      "kind": "homestay",
+      "prices": {
+       "18-19 Nov 2026": 640,
+       "14-15 Jul 2027": null,
+       "8-9 Sep 2027": null,
+       "28-29 Oct 2026": 640
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Cleartrip Srikalahasti list (hotels-in-srikalahasti) has only 4 hotels tagged 3-star that price on the list date; the rest are 2-star. Mid group therefore mixes 2 three-star and 2 well-reviewed 2-star hotels. Prices are the headline pre-tax per-night price on each detail page for 1 room, 2 adults (url ?c=<dates>&r=2,0), read in my own isolated browser session, date echoed on page checked against the requested night. null = page said No rooms available / sold out. Many hotels show the SAME price on every night (Cleartrip static rate), which is real page behaviour, not copying. Hotel KSR Grand 4711803 (Rs 905) and 710434 (Rs 605) are two separate listings. Siva Darshan Lodge (Rs 47,450 on list) excluded as an obvious data error. No local events checked/seen on a source for the probe nights."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Srikalahasti has no real 3-star set on Cleartrip; mid group includes 2-star listings",
+    "no event calendar checked for 28-29 Oct 2026, 14-15 Jul 2027, 8-9 Sep 2027"
+   ]
+  },
+  "haflong": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "The Landmark Hotel Haflong (Cleartrip 2-star, 3.7, 150+ ratings; Booking.com snippet says 3-star AC)",
+      "url": "https://www.cleartrip.com/hotels/details/landmark-hotel-2043894",
+      "prices": {
+       "18-19 Nov 2026": 1968,
+       "14-15 Apr 2027": 1968,
+       "14-15 Jul 2027": 1968
+      }
+     }
+    ],
+    "homestay_or_budget": [],
+    "events": {},
+    "notes": "Prices are the headline pre-tax per-night price on each hotel's Cleartrip detail page (url ?c=<dates>&r=2,0, 1 room, 2 adults), read from a page I loaded myself in an isolated browser, with the dates echoed on the page checked against the requested night. null = page showed 'No rooms available' (sold out or not open for booking on Cleartrip) or no price. A hotel's headline price is the cheapest rate Cleartrip shows for that stay, not a verified 'double room' category. Haflong has ONE hotel on Cleartrip (hotels-in-haflong, homestays-in-haflong list the same single property; budget-hotels-in-haflong lists none), so n=1. Price is identical (1,968) on all three nights: a flat Cleartrip rate, not a measured seasonal curve. No homestays or guesthouses on Cleartrip. Booking.com search page does not render results to an automated browser and Tripadvisor returned 403, so no second source."
+   },
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1968,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/landmark-hotel-2043894?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax, single property (Landmark Hotel). Budget, homestay, dorm: not found.",
+    "notes": "Only one Cleartrip property in Haflong; Cleartrip labels it 2-star. A blog (unpaqd.com/blog/haflong-hill-station-guide, 11 Feb 2026) lists Nothao Lodge, guesthouses and Laisong homestays with 'est. 2026' prices; those are the blog's own estimates and were NOT used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union or operator rate card found that I could open. waytoindia.com/travel-guide/assam/haflong (updated Jun 2026) says rates are negotiable and gives no figure; unpaqd.com/blog/haflong-hill-station-guide (11 Feb 2026) quotes only 'Jatinga 9 km, Rs 200 by auto or taxi' and 'Maibang Rs 1,000 round trip by taxi or local bus', ambiguous shared/one-way fares, not used. MakeMyTrip Haflong cab page and heygoldie.com would not load.",
+    "sources": [],
+    "notes": "null by design"
+   },
+   "confidence": "low",
+   "unverified": [
+    "budget hotel, homestay and dorm prices",
+    "taxi local sightseeing day rate",
+    "season ratio rests on one hotel with a flat price"
+   ]
+  },
+  "diu": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel Apaar with Sea Face Garden Restaurant (3-star, 4.4, 2k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-apaar-387335",
+      "prices": {
+       "18-19 Nov 2026": 3416,
+       "10-11 Mar 2027": null,
+       "12-13 May 2027": 6150
+      }
+     },
+     {
+      "hotel": "Rainbow Resort & Spa (3-star, 3.2, 950+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4271366",
+      "prices": {
+       "18-19 Nov 2026": 2510,
+       "10-11 Mar 2027": 2510,
+       "12-13 May 2027": 2510
+      }
+     },
+     {
+      "hotel": "Prince Hotel Diu (3-star, 4.1, 1k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-prince-3919304",
+      "prices": {
+       "18-19 Nov 2026": 4754,
+       "10-11 Mar 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Ankur (3-star, 4.2)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-ankur-383934",
+      "prices": {
+       "18-19 Nov 2026": 5004,
+       "10-11 Mar 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Cidade De Diu (3-star, 3.9)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-cidade-de-diu-2431650",
+      "prices": {
+       "18-19 Nov 2026": 2159,
+       "10-11 Mar 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "The Grand Highness (3-star, 4.2, 3k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/the-grand-highness-1361516",
+      "prices": {
+       "18-19 Nov 2026": 4270,
+       "10-11 Mar 2027": null,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel The Tulip (3-star)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-the-tulip-4482548",
+      "prices": {
+       "18-19 Nov 2026": 6054,
+       "10-11 Mar 2027": null,
+       "12-13 May 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Golden Paying Guest House (2-star guest house, 3.4)",
+      "url": "https://www.cleartrip.com/hotels/details/4292489",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 2470,
+       "10-11 Mar 2027": 1714,
+       "12-13 May 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel LAABH (1-star, 2.9, 350+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4292490",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 2380,
+       "10-11 Mar 2027": 1087,
+       "12-13 May 2027": 1087
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Prices are the headline pre-tax per-night price on each hotel's Cleartrip detail page (url ?c=<dates>&r=2,0, 1 room, 2 adults), read from a page I loaded myself in an isolated browser, with the dates echoed on the page checked against the requested night. null = page showed 'No rooms available' (sold out or not open for booking on Cleartrip) or no price. A hotel's headline price is the cheapest rate Cleartrip shows for that stay, not a verified 'double room' category. Diu: most 3-star hotels (and Prince, Ankur, Cidade, Grand Highness) show 'No rooms available' for 10-11 Mar 2027 and 12-13 May 2027 on repeat loads, so only Apaar (May), Rainbow (flat 2,510 on all 3 nights), Golden PG (Mar) and LAABH (Mar, May) give a matched ratio; the other mid hotels give Nov only. Also tried and excluded: 4-star Ginger Diu (7,043 Nov / 6,191 Mar / null May), Kostamar Beach Resort (Rs 38,000 on 18 Nov, treated as a data outlier, 4-star), and 12 other hotels with No rooms on all nights (Palacio De Diu, Apple Inn, Relax Inn, Prabhat, Diamond, Samrat, Kohinoor, Krishna Beach, Sai PG, Premium, Apana). No homestays listed on Cleartrip for Diu. No local events checked on a source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid-range ratio rests on 2 mid hotels (Apaar, Rainbow) for May and 0 for Mar",
+    "Mar 2027 and May 2027 prices missing for 5 of 7 mid hotels"
+   ]
+  },
+  "kasol": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Dream Valley Kasol (3-star, 4.4, 350+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4533258",
+      "prices": {
+       "18-19 Nov 2026": 2548,
+       "20-21 Jan 2027": 1365,
+       "14-15 Apr 2027": 1365
+      }
+     },
+     {
+      "hotel": "Hotel Devlok International Kasol (3-star, 3.8, 650+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-devlok-international-3928121",
+      "prices": {
+       "18-19 Nov 2026": 1748,
+       "20-21 Jan 2027": 1748,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Kasol Inn (3-star, 4.1, 90+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-kasol-inn-main-market-kasol-4058466",
+      "prices": {
+       "18-19 Nov 2026": 1681,
+       "20-21 Jan 2027": 1557,
+       "14-15 Apr 2027": 1557
+      }
+     },
+     {
+      "hotel": "Hotel Mid Orchard Kasol River Side (3-star, 4.6, 40+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-mid-orchard-kasol-l-river-side-4288039",
+      "prices": {
+       "18-19 Nov 2026": 1755,
+       "20-21 Jan 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Anupam Kasol (3-star, Jari, 3.7, 70+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/anupam-by-mid-orchard-4058463",
+      "prices": {
+       "18-19 Nov 2026": 1628,
+       "20-21 Jan 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "The Rainbow Inn (3-star, no rating)",
+      "url": "https://www.cleartrip.com/hotels/details/4673824",
+      "prices": {
+       "18-19 Nov 2026": 1464,
+       "20-21 Jan 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Purnima Riverside (3-star, 4.0, 350+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-purnima-kasol-3989214",
+      "prices": {
+       "18-19 Nov 2026": 7650,
+       "20-21 Jan 2027": 10200,
+       "14-15 Apr 2027": 10200
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Shivalik (2-star, Manikaran, 3.8)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-shivalik-3962360",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 1900,
+       "20-21 Jan 2027": 1900,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Turquoise Lodge (2-star guest house, 3.9, 10+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4561362",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 4140,
+       "20-21 Jan 2027": null,
+       "14-15 Apr 2027": null
+      }
+     },
+     {
+      "hotel": "Himalayan Mud Resort (homestay, Jari, 4.5, 10+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4292176",
+      "kind": "homestay",
+      "prices": {
+       "18-19 Nov 2026": 3588,
+       "20-21 Jan 2027": 3059,
+       "14-15 Apr 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Prices are the headline pre-tax per-night price on each hotel's Cleartrip detail page (url ?c=<dates>&r=2,0, 1 room, 2 adults), read from a page I loaded myself in an isolated browser, with the dates echoed on the page checked against the requested night. null = page showed 'No rooms available' (sold out or not open for booking on Cleartrip) or no price. A hotel's headline price is the cheapest rate Cleartrip shows for that stay, not a verified 'double room' category. Kasol: Cleartrip lists ~146 properties but the large majority show 'No rooms available' on 18-19 Nov 2026 (checked ~16 of them on 18-19 Nov, 20-21 Jan and 14-15 Apr: almost all No rooms), so the usable set is the 10 that price. Only 3 mid hotels (Dream Valley, Kasol Inn, Devlok International) price on 2+ nights. Dream Valley is CHEAPER in Jan and in Apr (1,365 both) than in Nov (2,548), and Kasol Inn is cheaper in Jan/Apr (1,557) than in Nov (1,681): Apr is listed as peak season in the ledger but Cleartrip shows it at the Jan level. Hotel Purnima (7,650 Nov, 10,200 Jan and Apr) probably shows a different room class; treat as outlier. No local events checked on a source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Apr 2027 and Jan 2027 prices missing for 4 of 7 mid hotels (No rooms)",
+    "season ratio rests on 3 hotels"
+   ]
+  },
+  "manali": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Thomas Villa, Hotel and Cottages (3-star resort, 4.3, 2k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/thomas-villa-hotel-and-cottages-manali-746900",
+      "prices": {
+       "18-19 Nov 2026": 2044,
+       "17-18 Feb 2027": 2036,
+       "16-17 Jun 2027": 3167
+      }
+     },
+     {
+      "hotel": "Kalista Resort (3-star, 4.7, 450+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/kalista-resort-your-home-in-mountains-2432010",
+      "prices": {
+       "18-19 Nov 2026": 2064,
+       "17-18 Feb 2027": 2580,
+       "16-17 Jun 2027": 4554
+      }
+     },
+     {
+      "hotel": "Manali Mountain Regency (3-star, 4.5, 500+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/manali-mountain-regency-1358080",
+      "prices": {
+       "18-19 Nov 2026": 1656,
+       "17-18 Feb 2027": null,
+       "16-17 Jun 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Snow View Manali Mall Road (3-star, 4.3, 500+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4531902",
+      "prices": {
+       "18-19 Nov 2026": 1585,
+       "17-18 Feb 2027": 2096,
+       "16-17 Jun 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Vintage Manali (3-star, 4.3, 450+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-vintage-42951",
+      "prices": {
+       "18-19 Nov 2026": 1790,
+       "17-18 Feb 2027": 2576,
+       "16-17 Jun 2027": 2576
+      }
+     },
+     {
+      "hotel": "Sarthak Regency (3-star, 4.2, 600+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/sarthak-regency-centrally-heated-air-cooled-2044538",
+      "prices": {
+       "18-19 Nov 2026": 1357,
+       "17-18 Feb 2027": 1357,
+       "16-17 Jun 2027": 1086
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Himalayan Rose (3-star guest house, 4.3)",
+      "url": "https://www.cleartrip.com/hotels/details/4561643",
+      "kind": "homestay",
+      "prices": {
+       "18-19 Nov 2026": 1703,
+       "17-18 Feb 2027": 1703,
+       "16-17 Jun 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Rockland Inn (3-star, budget price, 4.2, 1k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-rockland-inn-2856254",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 1131,
+       "17-18 Feb 2027": 8868,
+       "16-17 Jun 2027": 8408
+      }
+     },
+     {
+      "hotel": "Hotel Wild Rose (3-star, budget price, 4.2, 500+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/wild-rose-2856802",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 1453,
+       "17-18 Feb 2027": 1453,
+       "16-17 Jun 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Prices are the headline pre-tax per-night price on each hotel's Cleartrip detail page (url ?c=<dates>&r=2,0, 1 room, 2 adults), read from a page I loaded myself in an isolated browser, with the dates echoed on the page checked against the requested night. null = page showed 'No rooms available' (sold out or not open for booking on Cleartrip) or no price. A hotel's headline price is the cheapest rate Cleartrip shows for that stay, not a verified 'double room' category. Manali (188 hotels on Cleartrip; picked 3-star, 4.0+ rating, 450+ ratings). Summer (16-17 Jun 2027) is DEARER than 18-19 Nov for Thomas Villa (2,044 to 3,167), Kalista (2,064 to 4,554) and Vintage (1,790 to 2,576); Feb is also dearer than Nov for Kalista, Snow View and Vintage. Sarthak Regency is the only mid hotel cheaper in June (1,357 to 1,086). Hotel Rockland Inn shows 8,868 (Feb) and 8,408 (Jun) against 1,131 in Nov: probably a different room class in the headline price; treat as an outlier. No local events checked on a source."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Manali Mountain Regency, Snow View, Himalayan Rose, Wild Rose: June 2027 not bookable (No rooms) on Cleartrip",
+    "Rockland Inn Feb/Jun price looks like a room-class switch, not a season effect"
+   ]
+  },
+  "sangla": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "The Kamru Riverside Camps and Resorts (3-star, 4.8, 150+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/the-kamru-riverside-camps-and-resorts-4276223",
+      "prices": {
+       "18-19 Nov 2026": 2800,
+       "20-21 Jan 2027": 5040,
+       "16-17 Jun 2027": null,
+       "9-10 Dec 2026": 2800
+      }
+     },
+     {
+      "hotel": "Hotel Prakash Regency Sangla (3-star, 4.4, 400+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-prakash-regency-sangla-4489982",
+      "prices": {
+       "18-19 Nov 2026": 2790,
+       "20-21 Jan 2027": null,
+       "16-17 Jun 2027": null,
+       "9-10 Dec 2026": 2763
+      }
+     },
+     {
+      "hotel": "Sattva Pine Resort, Seringche listing (3-star, no rating)",
+      "url": "https://www.cleartrip.com/hotels/details/4694956",
+      "prices": {
+       "18-19 Nov 2026": 5269,
+       "20-21 Jan 2027": null,
+       "16-17 Jun 2027": null,
+       "9-10 Dec 2026": 5269
+      }
+     },
+     {
+      "hotel": "Sattva Pine Resort, Kamru listing (3-star, 5.0, 300+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/sattva-pine-resort-4283432",
+      "prices": {
+       "18-19 Nov 2026": 7486,
+       "20-21 Jan 2027": null,
+       "16-17 Jun 2027": null,
+       "9-10 Dec 2026": 7419
+      }
+     },
+     {
+      "hotel": "Apple Orchard Farm and Camping (3-star)",
+      "url": "https://www.cleartrip.com/hotels/details/apple-orchard-farm-and-camping-2882296",
+      "prices": {
+       "18-19 Nov 2026": 3937,
+       "20-21 Jan 2027": null,
+       "16-17 Jun 2027": null,
+       "9-10 Dec 2026": null
+      }
+     },
+     {
+      "hotel": "Hotel Batseri (3-star, 4.8, 200+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-batseri-2044256",
+      "prices": {
+       "18-19 Nov 2026": null,
+       "20-21 Jan 2027": null,
+       "16-17 Jun 2027": 7820,
+       "9-10 Dec 2026": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "The Lake View Resort (2-star, Kupa)",
+      "url": "https://www.cleartrip.com/hotels/details/the-lake-view-resort-2893934",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 2238,
+       "20-21 Jan 2027": 2238,
+       "16-17 Jun 2027": 3581,
+       "9-10 Dec 2026": 2238
+      }
+     },
+     {
+      "hotel": "Hotel Mount Kailash (2-star, Kamru)",
+      "url": "https://www.cleartrip.com/hotels/details/5220820",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 3738,
+       "20-21 Jan 2027": null,
+       "16-17 Jun 2027": null,
+       "9-10 Dec 2026": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Prices are the headline pre-tax per-night price on each hotel's Cleartrip detail page (url ?c=<dates>&r=2,0, 1 room, 2 adults), read from a page I loaded myself in an isolated browser, with the dates echoed on the page checked against the requested night. null = page showed 'No rooms available' (sold out or not open for booking on Cleartrip) or no price. A hotel's headline price is the cheapest rate Cleartrip shows for that stay, not a verified 'double room' category. Sangla: Cleartrip lists 22 properties; I probed 12 of them (all hotels, camps and the one 'StayApart Kailash View' homestay that priced or looked mid-range); the Zostel hostel and 9 tiny villas/homestays were not probed. Most show 'No rooms available' on 20-21 Jan 2027 and 16-17 Jun 2027 (Jan: road/winter closure or not open for booking on Cleartrip; cannot tell which). Matched series: Kamru Riverside 2,800 Nov, 5,040 Jan (dearer in Jan), 2,800 Dec; Lake View Resort 2,238 Nov/Jan/Dec and 3,581 Jun; Prakash Regency 2,790 Nov vs 2,763 Dec. Hotel Batseri prices only in Jun (7,820). Sattva Pine appears as two separate Cleartrip listings (5,269 and 7,486 in Nov): kept separate. 9-10 Dec 2026 probe night included as the 4th probe night. No local events checked on a source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Jun 2027 price exists for only 2 hotels (Lake View, Batseri); Jan 2027 for 2 (Kamru, Lake View)",
+    "cannot tell sold out from booking window or winter closure"
+   ]
+  },
+  "shimla": {
+   "season_probe": {
+    "mid": [
+     {
+      "hotel": "Hotel Kapil (3-star, Longwood, 4.6, 850+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-kapil-791504",
+      "prices": {
+       "18-19 Nov 2026": 2122,
+       "12-13 May 2027": 2954,
+       "14-15 Jul 2027": 2954,
+       "18-19 Aug 2027": 2954
+      }
+     },
+     {
+      "hotel": "Hotel Silverine (3-star, The Mall, 3.8, 850+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-silverine-42227",
+      "prices": {
+       "18-19 Nov 2026": 2720,
+       "12-13 May 2027": 3060,
+       "14-15 Jul 2027": 3060,
+       "18-19 Aug 2027": 2720
+      }
+     },
+     {
+      "hotel": "Euphoria Grand (3-star, Longwood, 4.4, 2k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/euphoria-grand-2883726",
+      "prices": {
+       "18-19 Nov 2026": 2415,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": 4364
+      }
+     },
+     {
+      "hotel": "Treebo Varuna (3-star, The Mall, 3.8, 800+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/treebo-trend-varuna-shimla-718944",
+      "prices": {
+       "18-19 Nov 2026": 2739,
+       "12-13 May 2027": 6112,
+       "14-15 Jul 2027": 6112,
+       "18-19 Aug 2027": 6112
+      }
+     },
+     {
+      "hotel": "Hotel Victory (3-star, Cart Road, 3.7, 1k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-victory-2882384",
+      "prices": {
+       "18-19 Nov 2026": 3766,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": 2700
+      }
+     },
+     {
+      "hotel": "Hotel Sangeet The Mall Road (3-star, 3.7, 850+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-sangeet-2882326",
+      "prices": {
+       "18-19 Nov 2026": 2079,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "Hotel Shingar The Mall Road (3-star, 4.0, 1k+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/hotel-shingar-3971382",
+      "prices": {
+       "18-19 Nov 2026": 2916,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     }
+    ],
+    "homestay_or_budget": [
+     {
+      "hotel": "Hotel Amar Palace (3-star, budget price, 3.7, 450+ ratings)",
+      "url": "https://www.cleartrip.com/hotels/details/4269762",
+      "kind": "budget",
+      "prices": {
+       "18-19 Nov 2026": 1320,
+       "12-13 May 2027": 9167,
+       "14-15 Jul 2027": 9250,
+       "18-19 Aug 2027": 9167
+      }
+     },
+     {
+      "hotel": "Dusk N Dawn (homestay, Khalini, 4.1)",
+      "url": "https://www.cleartrip.com/hotels/details/dusk-n-dawn-3926511",
+      "kind": "homestay",
+      "prices": {
+       "18-19 Nov 2026": 2228,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     },
+     {
+      "hotel": "The Hill Crest Inn (homestay, Combley Banks, 4.1)",
+      "url": "https://www.cleartrip.com/hotels/details/the-hill-crest-inn-3989266",
+      "kind": "homestay",
+      "prices": {
+       "18-19 Nov 2026": 2691,
+       "12-13 May 2027": null,
+       "14-15 Jul 2027": null,
+       "18-19 Aug 2027": null
+      }
+     }
+    ],
+    "events": {},
+    "notes": "Prices are the headline pre-tax per-night price on each hotel's Cleartrip detail page (url ?c=<dates>&r=2,0, 1 room, 2 adults), read from a page I loaded myself in an isolated browser, with the dates echoed on the page checked against the requested night. null = page showed 'No rooms available' (sold out or not open for booking on Cleartrip) or no price. A hotel's headline price is the cheapest rate Cleartrip shows for that stay, not a verified 'double room' category. Shimla: Cleartrip lists ~190 3-star properties, but of 23 hotels probed on 12-13 May, 14-15 Jul and 18-19 Aug 2027 only 7 show a price for any summer night; most show 'No rooms available' (sold out or not open for booking, cannot tell which). Matched series: Kapil 2,122 Nov to 2,954 May/Jul/Aug (+39%); Silverine 2,720 Nov, 3,060 May/Jul, 2,720 Aug; Euphoria Grand 2,415 Nov, 4,364 Aug; Victory 3,766 Nov, 2,700 Aug (cheaper). Treebo Varuna 2,739 Nov vs 6,112 on all three summer nights and Hotel Amar Palace 1,320 Nov vs 9,167-9,250 summer look like room-class switches in the headline price; treat as outliers. Probed 14 more hotels (Auckland, Ameera, British Resort, Surya, Brightland, Honeymoon Inn, Fairmount, Snow Lotus, Le Talbot, Himland East, Woodrina and others) that price on 18 Nov but show No rooms on all summer nights; they are not listed. No local events checked on a source."
+   },
+   "confidence": "low",
+   "unverified": [
+    "summer prices exist for only 5 mid hotels, 2 of them look like outliers",
+    "cannot tell sold out from not open for booking"
+   ]
+  }
+ }
+}

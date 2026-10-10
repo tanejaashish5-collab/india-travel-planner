@@ -184,3 +184,29 @@ Budget-room pass (2026-10-10, batches C1-C4)
   medians null rather than borrowing a nearby town.
 - Output: the normal regional shape (`stay`, and no taxi/food unless you happen to have them), one file per batch
   `queue-2026-10-10/C<n>.json`, rewritten after each place.
+- SHARED BROWSER (learned in Q1, 2026-10-10): up to 3 agents drive ONE Playwright browser at once, so the page on
+  screen may be another agent's. Read every price only from your own request: `browser_evaluate` with
+  `fetch("<full detail URL with ?c=...&r=2,0>")`, parse that response, record it against that exact URL. Never take a
+  price from a snapshot or screenshot. Plain curl/WebFetch of Cleartrip returns 403.
+- Q1 (small Andhra towns) found many far-future nights "No rooms available"; that is a valid null, not a reason to
+  pick another night.
+- Q4: other agents' navigation kills in-page fetch() calls. The robust way is the browser's own request context
+  (`page.context().request.get("<detail URL with ?c=...&r=2,0>")` via browser_run_code), then check the response's
+  check-in date equals the probe night. A hotel showing one identical price on every far-future night is probably a
+  static rate: record it, and say "same price every night" in notes. Note when a night's cheapest room is a
+  different room or plan type from November's (it breaks the ratio).
+
+Published season tariffs pass (2026-10-10, batches T1-T3)
+- Why: the season-curve probes showed Cleartrip prices 3-10 months ahead are mostly one flat rack rate (78 of 123
+  hotels identical on every far night), and near-term prices carry sale discounts, so OTA forward prices cannot
+  measure seasonality. Official tariff cards can: state tourism corporations print "season" and "off-season" room
+  rates AND the dates each applies.
+- Sources: the corporation's own site or its official PDF tariff (HPTDC, GMVN, KMVN, JKTDC, UPSTDC; MTDC, RTDC, MPT,
+  Gujarat Tourism, GTDC Goa; KTDC Kerala, KSTDC Karnataka, TTDC Tamil Nadu, APTDC, TGTDC; plus any other state
+  corporation you find). Private hotels that publish their own season/off-season tariff page also count. A
+  newspaper report quoting the corporation's new tariff counts if dated. No aggregators, no blogs paraphrasing.
+- For each property record: place (town), destination id if obvious, property name, room type, the season periods
+  exactly as printed (dates or months, e.g. "15 Apr-30 Jun, 15 Sep-15 Nov, 20 Dec-5 Jan"), season rate, off-season
+  rate, any "peak/festival" rate, tax basis, tariff year or "undated", and the URL. Same room type across columns.
+- Output: `queue-2026-10-10/T<n>.json` = {"batch","researched_on","properties":[{...}],"notes"}, rewritten after each
+  corporation. Report what each corporation's tariff says about which months are season, per region.
