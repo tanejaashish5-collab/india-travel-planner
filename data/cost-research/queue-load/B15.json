@@ -1,0 +1,219 @@
+{
+ "batch": "C7",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "rishikesh": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2622,
+    "mid_n": 9,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/holywater-by-ganga-kinare-3908150?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-green-one-earth-4043648?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4651283?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265800?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-ganesha-inn-375002?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hill-top-swiss-cottage-867902?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-keshav-nandan-718663?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-hideaway-bedzzz-rishikesh-by-leisure-hotels-3915349?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/shivansh-inn-resort-718640?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 840,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-madhu-sudan-868124?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-shiv-ganga-739524?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-orange-classic-868066?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sonu-guest-house-868106?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages, PRE-TAX discounted sale price, 18-19 Nov 2026, 2 adults 1 room, cheapest room, HOLYWATER Hotel by Ganga Kinare 5,427 (4.8), Hotel Green Behind Parmarth Niketan 3,578 (4.5), Check Inn Homes 2,040 (4.5), Indira Nikunj Rubystone Exotic 3,119 (4.4), Hotel Ganesha Inn Ganga View 2,299 (4.3), Hill Top Swiss Cottage 2,622 (4.3), Hotel Keshav Nandan 2,075 (4.3), Bedzzz Rishikesh by Leisure Hotels 2,390 (4.2), Shivansh Inn Resort 3,653 (4.1); median 2,622. Budget: Cleartrip detail pages, PRE-TAX discounted sale price, 18-19 Nov 2026, Hotel Madhusudan 936 (2-star, 4.2), Shiv Ganga Hotel 743 (2-star, 3.6), Hotel Orange Classic 676 (2-star, 2.8), Sonu Guest House 1,365 (1-star guest house, 4.6); median 840. Mid and budget are the SAME site, night and tax basis (Cleartrip pre-tax). Mid = every Cleartrip-tagged 3-star Hotel-type property in Rishikesh rated >=4.0 that I found on Cleartrip's Rishikesh 3-star, budget and homestay lists (n=9, all with a priced room; ratings in brackets). Budget = Cleartrip 1-2 star hotels/guest houses from its Rishikesh budget list, hostels excluded. Prices read from my own request to each detail page; check-in date 18/11/2026 confirmed in each response.",
+    "notes": "Homestay median left null: Cleartrip's Rishikesh 'homestay' list is a mix (Himgiri Home Stay 803, Jaiswal Homestay 1,528, Anandam Home Stay 1,571, Leisure Cave By Ganges 2,356, The Rivanta Tapovan 2,466, Karwaan by the Ganges 4,094, Blue Bird Stays 7,755, Hotel Tapovan Inn 9,738; detail pages 18-19 Nov 2026), including mislabeled hotels, so no honest homestay median. Ashram/Parmarth/GMVN printed tariff cards were not fetched; the OTA budget tier was used. Budget median is for basic 1-2 star rooms and includes a 2.8-rated hotel. 18 Nov is not a Rishikesh festival peak; Kartik Purnima (24 Nov) is after. Other Cleartrip budget-list properties had no price on the night (LN Hotel and Restaurant, Hotel Welcome Home) or a 404 detail page."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Homestay tier not measured (list is mixed)",
+    "No ashram/GMVN printed tariff card fetched",
+    "Budget tier n=4, includes a 2.8-rated hotel and a 1-star guest house"
+   ]
+  },
+  "yercaud": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3825,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price"
+    ],
+    "budget_hotel_median_inr": 3019,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2&order=price",
+     "https://www.booking.com/searchresults.html?ss=Yercaud&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2&order=price"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com dated search results, TAX-INCLUSIVE, cheapest listed room per property, address 'Yercaud', 18-19 Nov 2026, 2 adults 1 room, cheapest room, O blue shine resort (Double Room, 8.4/7 rev) 1,890, Hotel Lemon Stay (Deluxe Queen, 8.1/20) 3,149, The Valley Rose Farmstay (Double, 9.4/75) 3,660, TNV Casita Inn (Deluxe Room, 7.5/7) 3,990, Treebo Golden Paradise (Deluxe Room, 7.6/70) 5,712, Casazia (King Room, 8.9/16) 6,248; median 3,825. Budget: Booking.com dated search results, TAX-INCLUSIVE, cheapest listed room per property, address 'Yercaud', 18-19 Nov 2026, Breeze & blooms villa (Studio, 3.6/7 rev) 2,099, Hotel GVS Residency (Budget Double, 7.8/7) 2,624, SD Residency (Deluxe Room 1 double bed, 8.0/82) 2,625, Premier Inn (Deluxe Room, 8.0/5) 3,413, Cholai Resorts & Hotels (Deluxe Room, 7.4/45) 3,675, Hotel Grand Square (Superior Deluxe Double, 7.0/95) 5,249; median 3,019. Mid (Booking class=3) and budget (Booking class=2) come from the SAME site, night and tax basis, so they pair. Rule: Booking star class 3 = mid, class 2 = budget; double/queen/king-bed room only (villas and apartments dropped); mid also needs review score >=7.5. Search URLs are the sources (property names and prices read from the result cards, check-in 2026-11-18 confirmed in the page). Cross-check on Cleartrip (pre-tax, detail pages 18-19 Nov 2026): 9 rated-4.0+ 3-star hotels (Cliff View 3,660, Le Yercaud 4,680, Mango Hill 6,543, Ihotels 3,320, Hotel TamilNadu 1,558, Sarvakaya Timber Trails 3,374, SS Silver Oaks 2,099, TNV Casita 2,497, MM Resorts 1,709) median 3,320, about 3,720 with 12% GST: consistent with Booking mid.",
+    "notes": "Booking's 2-star supply in Yercaud is thin at the bottom; Cleartrip shows cheaper basic rooms that Booking does not list: Sri Silver Inn (2-star, 3.8) 1,304 pre-tax and TTDC Hotel TamilNadu (3-star, 4.2) 1,558 pre-tax on 18-19 Nov 2026 (https://www.cleartrip.com/hotels/details/hotel-sri-silver-inn-739336?c=18112026|19112026&r=2,0 and https://www.cleartrip.com/hotels/details/hotel-tamilnadu-yercaud-4264777?c=18112026|19112026&r=2,0). Cleartrip has no other priced budget hotel for the night (Hotel Shoba, Madha Home Resorts, Wellington Hill Resort showed no price). So the Booking budget median (3,019) may overstate what a backpacker actually pays; true cheapest rooms are about 1,300-1,600. Booking homestay list is villas/bungalows at 4,900-28,000 or 1-2 review listings: homestay left null. Cleartrip homestay list also not a clean tier (Casazia 3,177, Marvel Homestay 4,128, Inglewood Bungalow 10,800, Day Night Residency 6,460, ARV 9,345)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget tier is Booking 2-star class (mostly Deluxe rooms, 5-95 reviews); basic Yercaud rooms near 1,300-1,600 only on Cleartrip",
+    "Homestay tier not measured",
+    "Several properties have under 10 reviews"
+   ]
+  },
+  "dhanaulti": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2302,
+    "mid_n": 11,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/the-bliss-dhanaulti-4064217?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sunrise-resort-4285853?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-alpine-musk-3989819?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/apple-orchard-resort-3931904?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292939?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/glamwood-resort-dhanaulti-3979934?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/himalayan-camps-resort-3931277?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292836?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/rock-resort-2402612?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/lacliff-nature-home-4063944?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/viewtoria-resort-3929582?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages, PRE-TAX discounted sale price, 18-19 Nov 2026, 2 adults 1 room, cheapest room, The Bliss Dhanaulti 1,812 (hotel, 4.6), Sunrise Resort 2,187 (resort, 4.3), Hotel Alpine Musk 3,289 (hotel, 4.2), Apple Orchard Resort 2,990 (resort, 4.0), Hotel Dhanolti View by LA Riqueza 2,312 (hotel, 4.3), Glamwood Resort 1,598 (hotel, 4.1), Himalayan Camps and Resort 3,792 (resort, 4.6), The Wild Arena 3,204 (hotel, 4.5), Rock Resort 1,673 (resort, 4.0), LaCliff Nature Home 1,155 (hotel, 4.5), Viewtoria Resort 2,302 (resort, 4.4); median 2,302. Mid = every Cleartrip 3-star Hotel/Resort-type property in Dhanaulti rated >=4.0 on Cleartrip's Dhanaulti 3-star list (n=11; 'Aurevelle Kastura Resort Kanatal' excluded as it is in Kanatal, 'Countryside Villa' excluded as a villa; Hotel Mount View, Hanshdi, Himalaya View rated <4.0 excluded). Prices from my own request to each detail page, check-in 18/11/2026 confirmed. Budget NOT measured: no 1-2 star hotel or guesthouse is priced on Cleartrip or Booking for the night in Dhanaulti.",
+    "notes": "No budget tier exists on the OTAs for Dhanaulti on 18-19 Nov 2026: Cleartrip's budget list has 1 property (Silver Dew Resorts, detail page 404) and its homestay list is Rosetree Homestay 1,614 (no rating), Memento Vivere 4,313, The Divine Home Stay 7,440, Blossom 13,690 (not a tier). Booking.com 18-19 Nov 2026 (tax-incl) has no 1-2 star property in Dhanaulti (class=2 returns Kanatal/Mussoorie/Dehradun), class=3 Bhandari Cottages 1,675 (8.0/42 reviews, 8 km from centre), Via Neilkanth 3,534, Valley View 4,253, and two guest houses: The Groove Garden 2,310 (7.9/43) and Hill Queen Guest House 3,213 (single room): https://www.booking.com/searchresults.html?ss=Dhanaulti&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price . Lowest priced room on Cleartrip is LaCliff Nature Home 1,155 pre-tax (rated 4.5). GMVN Dhanaulti Heights tariff page (gmvnonline.com) sits behind a bot challenge (403) and was not bypassed; third-party sites quote 'from 1,250' undated and are not used. Dhanaulti is a small ridge with a handful of properties, so mid prices here are low for a 3-star tag."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget tier not measurable (no 1-2 star priced on Cleartrip or Booking)",
+    "GMVN Dhanaulti Heights official tariff not retrievable (bot challenge)",
+    "Homestay tier not measured",
+    "Cleartrip 3-star tags in Dhanaulti are generous (rates 1,155-3,792)"
+   ]
+  },
+  "prayagraj": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3142,
+    "mid_n": 8,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Prayagraj&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 1732,
+    "budget_n": 6,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Prayagraj&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2",
+     "https://www.booking.com/searchresults.html?ss=Prayagraj&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216&order=price"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com dated search results, TAX-INCLUSIVE, cheapest listed room per property, 'Prayagraj' listings within ~5 km of centre, 18-19 Nov 2026, 2 adults 1 room, cheapest room, Hotel Legacy (Deluxe Double, 7.3/402 rev) 2,551, Icon Residency Inn (Superior Double, 8.6/84) 4,620, Radhe Krishna Residency (Deluxe Room, 8.3/86) 3,732, Subhash Hotel (Double Room, 7.5/127) 1,408, Treebo Divine Stay (Standard Double, 8.1/48) 7,797, Roomquet comfort (Deluxe Double, 7.4/103) 2,520, FabHotel Shri Ram Kashi (Deluxe Room, 7.0/225) 2,148, Super Collection O Bus Stop (Standard Double, 8.7/49) 4,276; median 3,142. Budget: Booking.com dated search results, TAX-INCLUSIVE, cheapest listed room per property, 'Prayagraj' listings within ~5 km of centre, 18-19 Nov 2026, City Hotel (2-star, Deluxe Room, 5.5/198) 1,181, Hotel Pleasure Inn (2-star, Double, 7.0/3) 1,701, Hotel D Crown (2-star, Budget Double, unrated) 2,625, Madina Inn (2-star, Double with Private Bathroom, 7.8/18) 4,172, Hotel Gargi's Inn (guest house, Double with Balcony, 8.0) 1,607, Laxmi Narayan Guest House (Double with Private Bathroom, unrated) 1,764; median 1,732. Mid (Booking class=3, popularity order) and budget (Booking class=2 hotels + guest-house filter) are from the SAME site, night and tax basis, so they pair. Rules: double-type room only (Triple/Family rooms, villas dropped); mid also needs review score >=7.0 and >=48 reviews; OYO-brand listings with no reviews skipped; check-in 2026-11-18 confirmed in the result page. Cross-check on Cleartrip (pre-tax, detail pages 18-19 Nov 2026, 3-star Hotel rated >=4.0, n=5): Cennet Hotel 2,835, Hotel Hira Inn 2,809, Radhe Krishna Residency 2,250, Blessings Imperia 4,589, WelcomHeritage Badi Kothi 6,899, median 2,835 (about 3,175 with 12% GST): agrees with the Booking mid.",
+    "notes": "Cleartrip has no 1-2 star or budget list for Prayagraj; its cheap end is tagged 3-star or homestay: Hotel Swagatam 597 (3.3), S K Homestay 568, Shree Radhey 892, FabHotel Raka Inn 1,439 (3.7), Luxury Sangam Stays 1,308 (5.0), all pre-tax 18-19 Nov 2026 (e.g. https://www.cleartrip.com/hotels/details/hotel-swagatam-710452?c=18112026|19112026&r=2,0, https://www.cleartrip.com/hotels/details/s-k-homestay-5249148?c=18112026|19112026&r=2,0): so the true floor is well below the Booking budget median of 1,732, but those Cleartrip tags are not a clean tier and were not used. Booking's 2-star list is dominated by OYO-brand triple-room listings (many 17-23 km from centre) and has few reviewed double rooms, so budget n=6 is thin. Ashram/dharamshala printed tariffs (Prayagraj is a pilgrim town) were not fetched. Mid Booking listings sit within 4.1 m-3.5 km of Booking's centre. 18-19 Nov is outside Magh Mela (Jan-Feb) so this is off-season pricing. Homestay left null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget tier thin: 2-star Booking list is mostly OYO triple-room listings; n=6 incl. 2 guest houses with 0 reviews",
+    "No printed ashram/dharamshala tariff card fetched",
+    "Homestay tier not measured",
+    "Magh Mela off-season: prices are not representative of January-February"
+   ]
+  },
+  "vrindavan": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2625,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Vrindavan&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 1628,
+    "budget_n": 7,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Vrindavan&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2",
+     "https://www.booking.com/searchresults.html?ss=Vrindavan&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com dated search results, TAX-INCLUSIVE, cheapest listed room per property, listings in 'Vrindavan' (not 'Featured'/Mathura/Govardhan), 18-19 Nov 2026, 2 adults 1 room, cheapest room, Perfectstayz Premium (King Room, 8.3/57 rev) 6,048, Hotel Brij Stone (Deluxe Double, 9.9/31) 2,520, Goyal Hotelirs Hotel Vasudha (Deluxe Double w balcony, 8.1/304) 3,360, K D Dham Hotel (Superior Double, 7.9/115) 1,640, Radha Bihari Nikunj Inn (Standard Double, 8.6/28) 2,625; median 2,625. Budget: Booking.com dated search results, TAX-INCLUSIVE, cheapest listed room per property, listings in 'Vrindavan' (not 'Featured'/Mathura/Govardhan), 18-19 Nov 2026, H B K Hotel Near Prem Mandir (2-star, Deluxe Double 2A+1C, 9.1/39) 1,747, Maa Durga Dham (2-star, Deluxe Room, 8.0/16) 2,099, Naval Kishori Kunj (guest house, Double, 8.5/12) 1,628, Upvan (guest house, Double w private bath, 8.7/67) 1,040, Shreeji Nikunjdham (guest house, Double, 9.7/30) 1,322, BRiJWAS DHAM (guest house, Deluxe Double, 8.3/192) 2,624, KALiCHARAN BHAWAN (guest house, Deluxe Double 2A+1C, 7.7/10) 1,133; median 1,628. Mid (Booking class=3) and budget (Booking class=2 hotels + guest-house filter, i.e. the lodges and dharamshala-style guest houses pilgrims use) are from the SAME site, night and tax basis, so they pair. Rules: double/king-bed room only; mid needs score >=7.5 and >=25 reviews; budget needs >=10 reviews; check-in 2026-11-18 confirmed in the result page. Cross-check on Cleartrip (pre-tax, detail pages 18-19 Nov 2026, 3-star Hotel rated >=4.0, n=4): Tulsi Grand Inn 1,797, Treebo Brij Kaushal 1,808, Hotel Krishnam 1,445, Annekaa Heights 2,686, median 1,803 pre-tax (about 2,020 with 12% GST): lower than the Booking mid, which is weighted to Prem Mandir hotels with bigger review counts.",
+    "notes": "Printed per-room tariffs of Vrindavan ashrams/dharamshalas (ISKCON guest house, Bhakti Ashram etc.) were not fetched; Booking guest houses are the proxy for the cheap pilgrim-lodge end. Cleartrip's cheapest priced Vrindavan listings, pre-tax 18-19 Nov 2026: Chaudhary Residency 856 (homestay tag, no rating), Shri Krishna Kunj homestay 970 (1-star), Shri Laddu Gopal Guest House 1,447 (2.5) e.g. https://www.cleartrip.com/hotels/details/shri-krishna-kunj-homestay-4684244?c=18112026|19112026&r=2,0 : not used as a tier. Cleartrip budget list had 4 entries, 3 with dead detail pages. Booking homestay filter returns whole houses/apartments (2BHK) and Mathura/Govardhan listings, so homestay left null. 18 Nov 2026 is a normal weekday: Kartik Purnima (24 Nov) and Govardhan Parikrama crowds are after."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Homestay tier not measured",
+    "No printed ashram/dharamshala tariff card fetched",
+    "Many budget listings have under 20 reviews",
+    "Booking and Cleartrip mid differ (2,625 tax-incl vs 1,803 pre-tax)"
+   ]
+  },
+  "chaukori": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3990,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chaukori&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com dated search results (all property types, no star filter: Booking returns no class=2/3 properties for Chaukori), TAX-INCLUSIVE, cheapest listed room per property, listings labelled 'Chaukori' and <=1 km from centre, 18-19 Nov 2026, 2 adults 1 room, cheapest room, Apna Ghar Hotel And Resort (Double Room w private bath, 9.5/27 rev) 2,843, Hotel Atithi Himalaya View (Double w mountain view, 9.6/14) 3,779, The Himalayan Woods (King Room w garden view, 8.7/50) 4,200, Neelgagan Resort (Double w garden view, 8.6/8) 4,620; median 3,990. Mid only: Booking.com has no star-classed (class=2/3) listing for Chaukori, so 'mid' = the four reviewed in-town hotels/resorts (score >=8.5, >=8 reviews, double/king room); unreviewed or <8-review listings dropped. Check-in 2026-11-18 confirmed in the result page. Budget NOT measured (see notes). Cleartrip cross-check, pre-tax, 18-19 Nov 2026: Neelgagan Resort 2,464 (4.6) and Ojaswi Resort 3,158 (4.8) were the only rated Chaukori properties with a price; Parwati Resort, BN Resort, Hardik Resort, Gaurav Resort, Hotel Himshikhar and Chestnut Grove Lodge showed no price for the night.",
+    "notes": "No budget median: only one budget-priced in-town room per site. Booking: Saurabh Inn 'Budget Double Room' 1,575 tax-incl (unrated, 2.7 km from centre) and Rajlaxmi Homestay Double 1,575 (rating 10, no review count, 6.4 km from centre); Booking homestay/guest-house filters return Berinag, Pithoragarh, Binsar and Jageshwar listings, not Chaukori. Cleartrip: Hotel Himshikar (2-star, no rating) 2,279 pre-tax (https://www.cleartrip.com/hotels/details/4711511?c=18112026|19112026&r=2,0) and Devbhoomi Inn Homestay 1,981 (no rating). Berinag listings on Cleartrip (Goroomgo Himalaya Darshan 1,170) are in Berinag town about 10 km away and were not used. KMVN Chaukori tourist rest house tariff not fetched. Mid is far apart between sites for the same hotel (Neelgagan 4,620 Booking tax-incl vs 2,464 Cleartrip pre-tax), so the Booking figure may be a different room or rate; treat as a range 2,500-4,600. Chaukori has about a dozen properties in total."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget tier not measurable (one priced unrated room per site)",
+    "KMVN Chaukori rest house tariff not fetched",
+    "Mid n=4 with 8-50 reviews each; same hotel differs 1.9x between Booking and Cleartrip",
+    "Homestay tier not measured"
+   ]
+  }
+ }
+}

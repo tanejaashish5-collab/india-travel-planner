@@ -1,0 +1,259 @@
+{
+ "batch": "C6",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "vagamon": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 5316,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Vagamon&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3",
+     "https://www.booking.com/searchresults.html?ss=Vagamon&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3&order=price"
+    ],
+    "budget_hotel_median_inr": 3302,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Vagamon&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204&order=price"
+    ],
+    "homestay_median_inr": 2045,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Vagamon&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222&order=price"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Booking.com search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, 3-star class filter, cheapest listed room per property, 5 properties in Vagamon with score >=7.0 and >=3 reviews and a double-type room: SPATHODEA 3,087 (8.5, 28 reviews), Kudaram County Resort 4,515 (9.8, 4), Winterfell Inn Plantation Resort 5,316 (9.2, 6; unit shown only as 88 m2), Celestial Nymph 5,355 (7.3, 3), Orange Valley Hills Resort 5,775 (7.6, 6); median 5,316. Budget: Booking.com same date, TAX-INCLUSIVE, Hotels property-type filter sorted by price, the 5 cheapest Vagamon hotels with a double-type room and >=20 reviews: VAGAMON VAGADROPS 2,552 (Standard Double, 5.5, 28 reviews), The Cloud by Daan 2,835 (Deluxe Double, 8.9, 27), CeeCee Grand 3,302 (Deluxe Room, 6.9, 43), Earth Lounge Resort 3,307 (Standard Double, 6.7, 39), Hill Monk Whispering Mist 3,674 (Deluxe Room, 7.4, 69); median 3,302. Homestay: Booking.com same date, tax-inclusive, Homestay filter sorted by price, the 4 cheapest double-type rooms with >=20 reviews: Roamwander rooms 944 (6.9, 26 reviews), Thekkekara Tourist Home 1,575 (7.0, 33), Allora homestay 2,514 (9.0, 73), Pine Trees Home Holidays 2,625 (Deluxe Double, 6.9, 57); median 2,045. All three tiers are Booking tax-inclusive 18-19 Nov 2026, so they pair. Budget and homestay are the cheapest reviewed rooms (floor samples), not a whole-market median.",
+    "notes": "Cleartrip cross-check, same night, PRE-TAX, 5 first-listed 3-star hotels/resorts rated >=4.0: Eagle Red Casino 5,123, Green Hill Estate 5,184, Vaga Nakshathra Suites 3,551, The Autumn by Maat Hotels 2,531, Saj Vagamon Hideout 13,000; median 5,123 (https://www.cleartrip.com/hotels/details/eagle-red-casino-4286687?c=18112026|19112026&r=2,0 ; green-hill-estate-2050048 ; vaga-nakshathra-suites-4276786 ; 4561726 ; saj-vagamon-hideout-714241, same URL pattern). Cleartrip has no budget hotels for Vagamon (its budget-hotels page lists one, Namaste Inn, which 404s), so no Cleartrip pairing is possible. Booking locality shown as Vagamon for every property used; several are 4-10 km from the centre. Cheapest bookable rooms are Roamwander at Rs 944-1,260 and Thekkekara Tourist Home Rs 1,575 tax-inclusive: a blog 'Rooms Rs 400-1,000' is only reachable at the very floor. Cheaper rows with 0-3 reviews were left out of the medians: Medows Holidays 1,523, X8 holidays 2,100, Roamwander doublerooms 1,260. No event found for the night."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget and homestay are floor samples (cheapest listed), not a typical-market median",
+    "No Cleartrip budget tier for Vagamon",
+    "No printed tariff card found for state/temple rest houses"
+   ]
+  },
+  "wayanad": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3026,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/bonita-banasura-3927917?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/green-gates-hotel-41578?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-wilton-3980406?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4598104?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/karapuzha-village-resort-159811?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1097,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/icon-residency-2362194?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/dream-land-residency-1360390?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/green-palace-residency-423629?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2876,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/nivaasana-bed-breakfast-3989552?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/chembra-adobe-3921794?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/zostel-homes-wayanad-karapuzha-4488933?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/misty-heights-by-the-sanihara-4479877?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All three tiers Cleartrip detail pages, check-in 18/11/2026 confirmed in each response, 2 adults 1 room, PRE-TAX discounted sale price, so they pair. Mid (18-19 Nov 2026): first 5 in Cleartrip's 3-star list that are 3-star hotels/resorts rated >=4.0: Bonita Banasura 1,800 (4.8), Green Gates Hotel Kalpetta 1,967 (4.2), Hotel Wilton Sultan Bathery 4,420 (4.5), Bay View Suites Vythiri 3,026 (4.5), Karapuzha Village Resort 4,390 (4.3); median 3,026. Budget (18-19 Nov 2026): the three 2-star hotels with a price on Cleartrip's budget list: Icon Residency Mandayapuram 1,097 (4.7), Dream Land Residency 1,024 (4.1), Hotel Green Palace Residency Sultan Bathery 3,026 (4.1); median 1,097 (n=3; 9 other budget-list pages return 404 and 2 show no price that night). Homestay (18-19 Nov 2026): first 4 priced 3-star homestays in Cleartrip's homestay list: Nivaasana B&B 1,510 (4.7), Chembra Adobe Kalpetta 4,062 (4.5), Zostel Homes Karapuzha 3,831 (4.1), Misty Heights Vythiri 1,921 (4.5); median 2,876.",
+    "notes": "Wayanad is a district; properties span Kalpetta, Sultan Bathery, Vythiri, Padinjarathara, all labelled Wayanad by Cleartrip. Other priced 3-star hotels on the same night not in the first-5 sample: Hotel Mintflower Sultan Bathery 1,762, Avadale Wayanad 1,707, Mesta Hotel 2,176, Sky Sierra 2,144, Vythiri Wild Forest Resort 3,108, Coffee Greens 4,403. Hiliya Resort (2-star homestay tag) 2,735 not used in the budget median. Budget median rests on 3 hotels; Green Palace (3,026) is much dearer than the other two. No event found for the night."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget n=3 only; most of Cleartrip's budget list is unavailable (404) or unpriced",
+    "No printed tariff card checked for KTDC or other Kerala tourism properties in Wayanad"
+   ]
+  },
+  "drass": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No figure. Nothing priced for 18-19 Nov 2026.",
+    "notes": "Drass has a handful of guesthouses (Tololing Eco Resort, Hotel Hill View, Mushkoo Valley Guest House, Hotel Drass Heights, Hotel D' Meadows, Mount View Homestay per Tripadvisor/Booking/Thrillophilia listings seen in search), but none shows a price for 18-19 Nov 2026. Cleartrip has no Drass pages (list URLs return 404). Booking.com's dated search for 'Drass'/'Dras'/'Drās' resolves to Croatian/Greek towns, not Drass; the Tololing Eco Resort page (https://www.booking.com/hotel/in/tololing-eco-resort.html?checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1) loaded but printed no room price for that night. An undated Thrillophilia snippet quotes Hotel Hill View standard room Rs 1,500 (old listing, not used). Kargil town prices exist (e.g. Booking Kargil 1,155-4,199) but are not borrowed. Drass sits on the Srinagar-Kargil road and is among the coldest inhabited places in India in winter; guesthouses may be shut or reduced in Nov, not confirmed."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No dated price for any Drass property on 18-19 Nov 2026",
+    "Whether Drass guesthouses are open in Nov is unconfirmed",
+    "No printed tariff card (JKTDC/Ladakh tourism) found for Drass"
+   ]
+  },
+  "hanle": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 4384,
+    "homestay_n": 2,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Hanle&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&order=price"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay only: Booking.com search 'Hanle' 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, two homestays located in Hanle (1 km and 3.6 km from the village centre): Phayoul Homestay 3,308 (Double or Twin Room, no reviews), New Milky Way Homestay 5,460 (Deluxe Double Room with Balcony, no reviews); median 4,384 (n=2). Mid and budget hotel: null, no hotel is bookable in Hanle on that night. The same search also lists Norbu Linga 2,048 and Lhakpa home stay 2,625, but their locality is Pungook, not Hanle, so they are excluded.",
+    "notes": "Printed per-room tariffs, UNDATED (tariff card, undated), shown for reference and not mixed into the median: Sonam Homestay Hanle double bed room Rs 3,500 incl. taxes and breakfast, single Rs 2,500 (https://sonamhomestayhanle.in/tariffs/); Lhamo Home Stay standard room Rs 1,500, family room Rs 3,000 (https://lhamohomestayhanle.in/). Hanle has no 3-star or budget hotel on Booking or Cleartrip (Cleartrip pages 404). Booking Hanle city page lists Padma House at about USD 51 for a night, undated (not used). Homestays are the only lodging; some may be closed or only partly heated in late Nov (search reports say operating but cold; unconfirmed). Hanle needs no ILP for Indian citizens per one 2026 guide, not verified here."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Homestay n=2, both with no reviews",
+    "No mid or budget hotel exists on OTAs",
+    "Tariff-card prices undated and not reconciled with Booking prices",
+    "Winter opening not confirmed"
+   ]
+  },
+  "tso-moriri": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No median. Only one property priced: Booking.com search 'Karzok' 18-19 Nov 2026, tax-inclusive: Chupgo homestay (Karzok Gompa, 1.3 km from centre, 1 review) 2,457 for a Double Room with SHARED bathroom; n=1 and shared bath, so not a private-room median.",
+    "notes": "Tso Moriri's lodging is at Korzok (Karzok) village on the lake. Booking returns just that one property for the night; 'Tso Moriri' and 'Korzok' searches resolve to German/Greek towns, Cleartrip has no pages. Tented camps (Tsomoriri Camp and Resort etc.) are seasonal, normally May/June to Sept/Oct; no source seen confirms whether any is open in Nov. Undated blog figures (homestays 800-1,500 incl. meals, Lake View guest house 2,000-2,500) are not room prices for the night and not used. Not borrowed from Leh. Source: https://www.booking.com/searchresults.html?ss=Karzok&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&order=price"
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only one bookable property, shared bathroom, 1 review",
+    "Camps likely closed in Nov, unconfirmed",
+    "No printed tariff card with a date found"
+   ]
+  },
+  "pushkar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2453,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-12-02&checkout=2026-12-03&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 525,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-12-02&checkout=2026-12-03&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204&order=price",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-12-02&checkout=2026-12-03&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216&order=price"
+    ],
+    "homestay_median_inr": 998,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-12-02&checkout=2026-12-03&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222&order=price"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers Booking.com dated search 2-3 Dec 2026, 2 adults 1 room, TAX-INCLUSIVE, cheapest listed room per property, so mid and budget pair. Mid (2-3 Dec 2026): 3-star class filter, first 5 in Booking's default order that are in Pushkar with a private double/king/family room: Kanhaia Haveli 1,060 (9.2, 1,375 reviews), Inn Seventh Heaven 2,453 (8.9, 634; Family Room), Hotel Holy Pushkar 5,103 (9.1, 8), Hotel Kota Kunj Heritage 2,310 (8.0, 144), Jagat Palace 5,821 (8.5, 50); median 2,453. Budget (2-3 Dec 2026): Hotels and Guest-house property-type filters sorted by price, the 5 cheapest Pushkar properties with a private double room and >=20 reviews: Hotel Diamond Pushkar 519 (7.4, 21), Suri Guest House 520 (7.6, 121), Varah Square Guest House 525 (7.8, 232), Hotel Paramount Palace 630 (9.0, 103), Hotel Zoola Palace 683 (8.8, 212); median 525. This is a floor sample (cheapest reviewed rooms), not a whole-market median. Homestay (2-3 Dec 2026): Homestay filter, 3 Pushkar properties (others listed are Ajmer/Jamb): ganpati homestay 756 (1 review), Hom stay moon light Pushkar 998 (no reviews), Pushkar Cooking Art and Home Stay 2,034 (9.3, 232); median 998.",
+    "notes": "Pushkar Camel Fair 2026 is 17-24 Nov (Incredible India https://www.incredibleindia.gov.in/en/festivals-and-events/pushkar-camel-fair ; Kartik Purnima 24 Nov), so 2-3 Dec is after the fair; no event for 2-3 Dec was found on any source seen (not proof there is none, e.g. wedding season). Reference, not used in the figures: the 15 cheapest hotel-filter listings on Booking for that night span 519 to 1,417 with a median of 840; 10 of them have >=20 reviews (median about 775). Cleartrip cross-check, same night, PRE-TAX, first 5 priced 3-star hotels/resorts rated >=4.0 in list order: Lalit International 1,645, Hotel 777 3,418, Treebo Premium Royal Amar 2,775, Hotel Kanhaia Haveli 1,265, Cattle Inn 2,253; median 2,253 (https://www.cleartrip.com/hotels/details/lalit-international-a-boutique-hotel-3973929?c=02122026|03122026&r=2,0; https://www.cleartrip.com/hotels/details/hotel-777-4008248?c=02122026|03122026&r=2,0; https://www.cleartrip.com/hotels/details/treebo-tryst-royal-amar-3973399?c=02122026|03122026&r=2,0; https://www.cleartrip.com/hotels/details/hotel-kanhaia-haveli-382810?c=02122026|03122026&r=2,0; https://www.cleartrip.com/hotels/details/4562216?c=02122026|03122026&r=2,0). Cleartrip has no priced 2-star/budget hotels for the night (budget-list pages 404 or show no room), so no Cleartrip budget pairing. Several Cleartrip hotels (Country Side Resort, Sawai Bagh, Green Genius) showed no price for the night."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget is a floor sample of the cheapest reviewed rooms",
+    "Homestay n=3 with two having 0-1 reviews",
+    "No printed RTDC/temple tariff card checked",
+    "No local event data beyond the fair dates"
+   ]
+  },
+  "ooty": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3675,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Ooty&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 1571,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Ooty&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204&order=price",
+     "https://www.booking.com/searchresults.html?ss=Ooty&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216&order=price"
+    ],
+    "homestay_median_inr": 2310,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Ooty&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222&order=price"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers Booking.com dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, cheapest listed room per property, so mid and budget pair. Mid (18-19 Nov 2026): 3-star class filter, first 5 in Booking's default order in Ooty with score >=7.0, >=3 reviews, double-type room: Beverly villa 3,108 (9.1, 657 reviews), Lake Residency Ooty 3,234 (7.6, 73), The Tamarillo 3,675 (8.3, 200), King's Cliff 5,874 (8.6, 174), Delightz Inn 4,027 (8.9, 73); median 3,675. Budget (18-19 Nov 2026): Hotels and Guest-house type filters sorted by price, the 5 cheapest Ooty properties with a double-type room and >=20 reviews: Rainbow Cottages 921 (Deluxe Double, 6.5, 380), REFLECTIONS Guest House 1,050 (Budget Double, 7.1, 157), Seven Endue Cottages 1,571 (Standard Double, 6.3, 30), Aakash Rooms and Cottages 1,882 (Standard Double, 8.2, 134), SV Residency 1,890 (5.8, 26); median 1,571. Homestay (18-19 Nov 2026): Homestay filter sorted by price, 4 cheapest double-type rooms with >=20 reviews: Coolspot Cottage 1,311 (Budget Double, 6.1, 63), Karpagam Residency 1,890 (9.1, 159), The Abode by Brown Tree 2,730 (7.1, 68), Crown Crest 2,835 (7.7, 114); median 2,310. Budget and homestay are the cheapest reviewed rooms (floor samples), not a whole-market median.",
+    "notes": "Cleartrip cross-check, same night, PRE-TAX, first 5 3-star hotels/resorts rated >=4.0 in Cleartrip's 3-star list order: Stays By MindEscapes 8,400, Kluney Manor 4,615, Trident 4,192, The Byke Select Sunshine Grand 2,711, Beverly Villa 2,072; median 4,192 (https://www.cleartrip.com/hotels/details/4491795?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/kluney-manor-2856526?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/trident-3989613?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/the-byke-sunshine-grand-3931318?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/beverly-villa-2857446?c=18112026|19112026&r=2,0). Cleartrip's 'budget hotels' list is not budget (priced 1,431-5,244, ratings 2.3-3.9, 3-star tags), so it was not used for the budget tier; low Cleartrip prices that night include Garden Manor 1,080 (3.8), Hotel Blue Bird 1,431 (3.4), Hotel Sapphire Garden View 1,418 (3.2), Sivaraja Residency homestay 1,405 (4.1). Several Booking budget rows have mediocre scores (5.8-6.5). No event found for the night."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget and homestay are floor samples of cheapest reviewed rooms",
+    "No printed tariff card checked for Tamil Nadu TTDC Hotel Tamilnadu Ooty (Cleartrip lists it at 2,025 pre-tax on the night)"
+   ]
+  },
+  "tiruvannamalai": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4095,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tiruvannamalai&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 1314,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tiruvannamalai&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204&order=price",
+     "https://www.booking.com/searchresults.html?ss=Tiruvannamalai&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216&order=price"
+    ],
+    "homestay_median_inr": 1036,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tiruvannamalai&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222&order=price"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers Booking.com dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, cheapest listed room per property, so mid and budget pair. Mid (18-19 Nov 2026): 3-star class filter, first 5 in Booking's default order in Tiruvannamalai with score >=7.0, >=3 reviews, double-type room: Arudra Residency 4,095 (8.3, 256 reviews), Athena Hotel 4,608 (7.8, 605), Bliss Giriya By Bergamont 3,864 (8.3, 11), Majestic Meridian 3,071 (7.4, 13), Haraa Suites 4,199 (8.5, 17); median 4,095 (Ramana Towers 2,678, 8.1, 756 reviews, was skipped because its cheapest unit shows only as 46 m2). Budget (18-19 Nov 2026): Hotels and Guest-house type filters sorted by price, the 5 cheapest properties with a double-type room and >=20 reviews: Sathya Guest House 1,134 (7.7, 140), Near by Annamalaiyar temple 2 Home stay 1,260 (King Room, 8.2, 74), Collection O Thangam Residency 1,314 (Small Double, 7.6, 71), Sivasakthi Residences 1,365 (8.6, 206), SA Residency 1,521 (Budget Double, 8.0, 71); median 1,314. Homestay (18-19 Nov 2026): Homestay filter sorted by price, the 4 cheapest double-type rooms with >=20 reviews: SRI KRISHNA's Non-AC 945 (9.3, 34; 5.6 km out), SSN Residency 1,008 (6.9, 37), Ashwin Home Stay 1,064 (8.4, 198), TADY Homes 1,469 (9.4, 232); median 1,036. Budget and homestay are the cheapest reviewed rooms (floor samples), not a whole-market median.",
+    "notes": "EVENT: 18-19 Nov 2026 falls inside the 10-day Karthigai Brahmotsavam (flag hoisting 15 Nov, Maha Deepam lit 24 Nov, Arunachaleswarar Temple) per https://thiruvannamalai.in/tiruvannamalai-temple/tiruvannamalai-karthigai-deepam/ and https://omarunachala.com/thirukarthigai-deepam-festival-2026/ (search snippets: Maha Deepam 24 Nov 2026); prices may carry a festival premium but are peak only near 24 Nov. Cleartrip cross-check, same night, PRE-TAX, first 5 priced 3-star hotels rated >=4.0 in list order: Ramana Towers 1,950, La woods village resorts 2,125, Anantharaa Hotel 3,839, Ashreya Suites 3,623, Thaai Residency 2,551; median 2,551 (https://www.cleartrip.com/hotels/details/ramana-towers-3939322?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/4533860?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/4535525?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/aashreya-suites-tiruvannamalai-4284718?c=18112026|19112026&r=2,0; https://www.cleartrip.com/hotels/details/thaai-residency-4291761?c=18112026|19112026&r=2,0). The Booking mid list is its popularity order, so it runs above Cleartrip's. Cleartrip's budget list is mostly 404; the only priced budget row is Sai Murugan Lodge 569 (1-star guest house, 3.5) and Collection O Thangam 790, too few for a median. Tiruvannamalai also has ashram/temple guest houses (Ramana Ashram, Sri Seshadri Ashram) but no printed room tariff was fetched."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget and homestay are floor samples of cheapest reviewed rooms",
+    "No printed ashram/temple tariff card fetched",
+    "Booking mid vs Cleartrip mid differ by 60 percent because they sample different hotels"
+   ]
+  }
+ }
+}

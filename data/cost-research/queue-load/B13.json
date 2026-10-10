@@ -1,0 +1,320 @@
+{
+ "batch": "C5",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "manali": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1978,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Manali&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3%3Bht_id%3D204"
+    ],
+    "budget_hotel_median_inr": 1470,
+    "budget_n": 14,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Manali&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D0%3Bclass%3D1%3Bclass%3D2%3Bht_id%3D204"
+    ],
+    "homestay_median_inr": 2730,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Manali&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All three tiers from Booking.com dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property, members-only prices excluded, first 15 results of each filtered search (so mid and budget are paired on the same site, night and tax basis). Mid: Booking 3-star hotels (class=3, type hotel), score>=7.5 with >=10 reviews, n=6: Tripli Hotels Stone House Cottage suite 1,554; Honeymoon Inn 4,620; Tripli Drilbu 2,898; Beholden Stay & Cafe 2,401; Namaste Inn Beas Valley 1,323; Hotel Old Manali 1,134; median 1,978. Budget: Booking hotels classed 0-2 stars, n=14, all priced non-member cards: 1,092 (Hotel The Destination) / 1,134 (Bayith) / 1,260 (UM Hotels) / 1,305 (Hotel O Simsa) / 1,313 (Samiru Budget Double; Highway Inn) / 1,364 (Snow Mountain Mall Road) / 1,575 (Blue Heaven) / 1,890 (Royal The Mall) / 2,625 (Dream Land; Indiotel) / 2,940 (Ivy Mansion) / 3,555 (Apple Nest) / 3,675 (Satkar Residency); median 1,470 (middle half 1,300-2,600, so thin and noisy). Homestay: Booking homestay filter, score present with >=5 reviews, n=5: Apple Flower 2,730, Ahorastays 1,680, Noel Home's 1,586, Gruhum 3,779, Hygge Home 5,775; median 2,730 (boutique-skewed, wide spread). Cross-check, Cleartrip 18-19 Nov 2026 PRE-TAX discounted price, 6 hotels tagged 3-star with rating >=4.0: Echor Himalayan Aurum 2,230; Hotel Vintage 1,965; Satkar Residency 1,638; DLS Kapoor Resort 2,727; Manali Mountain Regency 1,822; Countryside Himalayan Resort 2,390; median 2,098 (agrees with Booking mid).",
+    "notes": "Cleartrip's own cheap end for the same night (pre-tax): Village House homestay Economic Room 754, The Prasher Lodge (2-star) 786, Manali Crest 1,015, Woodstock Inn Budget Double Room 1,277, Hotel Himalayan Rose guest house 1,880. These are not used as the budget median because Cleartrip lists too few basic hotels to median consistently; they show Cleartrip's budget end sits ~750-1,900. Booking budget hotels are noisy because some prices are one-off deals; treat 1,470 as a mid-point of 1,100-2,900. Pairing is Booking mid 1,978 vs Booking budget 1,470 (budget about 74% of mid). Mid is low for a hill town because 18-19 Nov is shoulder season after Diwali and Booking shows 'Late Escape Deal' prices on some. Printed state tariff (HPTDC) not fetched.",
+    "cleartrip_mid_cross_check": {
+     "median_pretax_inr": 2098,
+     "n": 6,
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/echor-himalayan-aurum-mountain-view-rooms-3931457?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-vintage-42951?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-satkar-residency-42346?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/kapoor-resort-by-dls-hotels-50786?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/manali-mountain-regency-1358080?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/countryside-himalayan-resort-manali-3989278?c=18112026|19112026&r=2,0"
+     ]
+    }
+   },
+   "confidence": "medium",
+   "unverified": [
+    "HPTDC printed tariff not fetched",
+    "Booking budget prices include one-off deals; 18-19 Nov is one night only"
+   ]
+  },
+  "kasol": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2309,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kasol&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3%3Bht_id%3D204",
+     "https://www.booking.com/searchresults.html?ss=Kasol&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204"
+    ],
+    "budget_hotel_median_inr": 1223,
+    "budget_n": 8,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kasol&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": 1229,
+    "homestay_n": 6,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kasol&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All three tiers from Booking.com dated search 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE ('Includes taxes and fees'), cheapest listed room per property, members-only prices excluded, only properties within 2.5 km of Kasol downtown (Booking also returns Jari, Manikaran, Manali, Kullu: discarded). Mid: Booking 3-star hotels (class=3, type hotel), score>=7.5 and >=10 reviews, n=4: Lee Garden Himalayan Wooden Cottage 1,870; Sony Place Villa and Resort 2,099; The Royal Pinewood 2,519; The Hillside 4,590; median 2,309. Budget: Booking guest-house filter, private-bath double rooms, >=10 reviews, n=8: Parbati Headquarters 450; Clovees by Mountain Bliss 851; House of Brahma 944; Ronak Hilltop Homestay (Budget Double) 1,050; Destination of Choj 1,396; Majestic Mountain Bhaiji 1,570; Chojh Inn 1,605; Breathe Inn 1,890; median 1,223. Homestay: Booking homestay filter, >=5 reviews, private bath, n=6: Maya Homestay & Cafe 630; Little Hamlet Choj 1,166; Shanti Cafe Signature Stays 1,197; Moksha Cottages 1,260; Kasolview Homestay 1,574; Dhi Ananta Homestay 2,310; median 1,229.",
+    "notes": "Booking lists only 1 class<=2 hotel in Kasol (Hotel Parwati Nest 1,890), so the budget tier uses Booking's guest-house category instead; Booking's guest-house and homestay categories overlap in practice (Ronak Hilltop is both), which is why budget (1,223) and homestay (1,229) are near-identical. Cleartrip cross-check for the same night, PRE-TAX discounted price, 3-star-tagged hotels rated >=4.0 with >=25 reviews, n=5: Hotel Kasol Inn 1,898; Hotel Mid Orchard 1,966; Dream Valley 2,800; The Royal Orchard 3,737; Hotel Purnima 9,630 (outlier); median 2,800. Cleartrip has almost no basic hotels in Kasol (The Forest View homestay 2-star 1,140; The Rainbow Inn unreviewed 1,680); its 3-star list is mostly hostels (dorm beds 991-1,580 per bed, not used). Several guest houses are 1.2-2.4 km out toward Chalal/Choj. Kasol is an off-peak November weekday here; no festival found on the night.",
+    "cleartrip_mid_cross_check": {
+     "median_pretax_inr": 2800,
+     "n": 5,
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/hotel-kasol-inn-main-market-kasol-4058466?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-mid-orchard-kasol-l-river-side-4288039?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4533258?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/the-royal-orchard-3990727?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/hotel-purnima-kasol-3989214?c=18112026|19112026&r=2,0"
+     ]
+    }
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Booking guest-house/homestay classification overlaps",
+    "one night only (Wed 18 Nov)"
+   ]
+  },
+  "solan": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2366,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/mayur-hotel-bar-restaurant-711495?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4273245?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-city-heights-2882870?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1768,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4673064?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4562675?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/raina-s-bnb-5245134?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 1647,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/4291841?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid, Budget and Homestay all from Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, PRE-TAX discounted sale price, cheapest room per property, check-in date 18/11/2026 confirmed on each response (paired on the same site and night). Mid, n=3, AC rooms in Solan town hotels tagged 3-star: Mayur Hotel Bar & Restaurant Deluxe Room 2,372 (4.0, 476 reviews); Hotel Himanis Resorts Semi Deluxe 2,366 (3.8, 220); Hotel City Heights Executive Room 1,919 (3.3, 141); median 2,366. Budget, n=3, cheapest NON-AC or unreviewed standard rooms: Hotel Shagun Palace Standard Non-AC 1,485 (3.8, 55); Hotel Golden Benchers Standard Non-AC 1,768 (3.5, 39); Raina's BnB Classic Room 1,978 (unreviewed); median 1,768. Homestay, n=1: House of Lights Solan Standard Room 1,647 (3.9, 94). Cross-check on Booking.com 18-19 Nov 2026 TAX-INCLUSIVE (dated search 'Solan, Himachal Pradesh, India'): 3-star hotels in town Paradise Boutique Stays 3,192 (8.3, 37), Hotel Namastasya 3,675 (8.5, 19), Treebo Anand The Mall 2,525 (6.1, 52), median 3,192; budget: Solan Regency Budget Double Room 1,467 (6.7, 149), Mayur Hotel 2,625; homestay Riddhi Homestays 1,378 (7.5, 101).",
+    "notes": "Solan is a thin market: a working town, not a tourist stop, so n is 1-3 per tier. Cleartrip's 'Solan' lists also include Kasauli, Barog and Dagshai properties (Parag Resort Kasauli, Le Halcyon Kasauli, Misty Meadows) which were excluded as outside the town; for a few kept hotels (Shagun Palace, City Heights, Raina's BnB, House of Lights) Cleartrip prints only 'Solan', so locality is not confirmed beyond the town name. Hotel Namastasya returned no price on Cleartrip for the night (0). Booking.com 'Solan' without the state resolves to Solanas, Uruguay; the state was added. Booking.com also lists Solan-labelled properties 5-13 km out (Kasauli, Oakhill) which were excluded. HPTDC Solan/Baghal properties exist on Cleartrip (Hotel Baghal HPTDC) but returned no detail data; no printed tariff fetched.",
+    "booking_cross_check": {
+     "mid_median_taxincl_inr": 3192,
+     "mid_n": 3,
+     "url": "https://www.booking.com/searchresults.html?ss=Solan%2C%20Himachal%20Pradesh%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3%3Bht_id%3D204"
+    }
+   },
+   "confidence": "low",
+   "unverified": [
+    "n=1-3 per tier",
+    "HPTDC tariff not fetched",
+    "locality unconfirmed for some Cleartrip rows"
+   ]
+  },
+  "dandeli": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dandeli%2C%20Karnataka%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3%3Bht_id%3D204",
+     "https://www.booking.com/searchresults.html?ss=Dandeli%2C%20Karnataka%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D204",
+     "https://www.booking.com/searchresults.html?ss=Dandeli%2C%20Karnataka%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D206"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dandeli%2C%20Karnataka%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D0%3Bclass%3D1%3Bclass%3D2%3Bht_id%3D204",
+     "https://www.booking.com/searchresults.html?ss=Dandeli%2C%20Karnataka%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": 1260,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dandeli%2C%20Karnataka%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay only: Booking.com dated search 'Dandeli, Karnataka, India' 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, cheapest listed room, homestay filter, within 2 km of Dandeli downtown, >=5 reviews, n=3: Dandeli Crocodile Edge Home Stay Double Room with Garden View 840 (8.2, 95 reviews); Dandeli Nakadi Home Stay Deluxe Room 1,260 (8.7, 56); Dandeli Crocodile Valley Homestay Double Room 1,575 (8.9, 20); median 1,260. Mid and Budget medians NOT claimed: Dandeli has no hotel stock to median (Booking returns 1 three-star hotel, Stone Wood Premier Dandeli 10,608 for the night, 8.3 with 200 reviews, 10 km out; 1 two-star, The Parijat Cottages 10,194, 6.1 km out; 1 guest house 18.7 km out). Cleartrip has no priced Dandeli hotel: its 3-star list is tents, villas and 'No rooms' entries (Dandeli River Resort Basic Tent 1,463 is a tent, not a room; PremKunj Homestay Deluxe Non-AC room 1,465 pre-tax, unreviewed).",
+    "notes": "Dandeli lodging is jungle resorts, riverside camps/tents and homestays, so there is no 3-star-versus-budget-hotel ladder to pair. The two Booking hotel prices (10,194 and 10,608) are far above the homestays and are probably jungle-resort rates that bundle meals or activities, but the listing does not say, so they are not used. Booking resort filter (ht_id=206) shows Whistling Woodzs Resort 16,402 and Dandeli Jungle Retreat Resort 5,250, both unverified for inclusions. A blog quoting Rooms: Rs 400-1,000 would only match tents/dorm-style camps; the cheapest priced listing found is a Dandeli Jungle Resort tent at 765 (2.6 score, 9 reviews). Kali Side Resort (Double Room 2,599, unrated, 0.6 km from downtown) sits in the Booking homestay list but was excluded for having no reviews.",
+    "cleartrip_homestay_cross_check": {
+     "premkunj_homestay_pretax_inr": 1465,
+     "url": "https://www.cleartrip.com/hotels/details/premkunj-homestay-5581841?c=18112026|19112026&r=2,0"
+    }
+   },
+   "confidence": "low",
+   "unverified": [
+    "no mid or budget hotel tier measurable",
+    "jungle-resort inclusions (meals/activities) not shown",
+    "homestay n=3"
+   ]
+  },
+  "gokarna": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2746,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/kudle-beach-view-resort-and-spa-gokarna-741256?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/silver-sand-beach-resort-4485160?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/om-bodhi-retreat-2877040?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/viraz-valley-3919370?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1551,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-gokarna-international-716646?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561655?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/nimmu-house-3981334?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/gokarna-international-beach-resort-3979936?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2616,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/4670322?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/poornima-beach-stay-4280233?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/blue-ocean-sands-3974835?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/west-coast-gokarna-4290346?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All three tiers from Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, PRE-TAX discounted sale price, cheapest room per property, check-in date 18/11/2026 confirmed on every response (paired on the same site and night). Mid, n=4, Cleartrip 3-star-tagged hotels/resorts rated >=4.0 with >=100 reviews: Kudle Beach View Resort & Spa Garden View Room 5,939 (4.8, 2,494 reviews); Silver Sand Beach Resort Bamboo Cottage Non-AC 2,068 (4.2, 466); Om Bodhi Retreat garden-view budget cottage 3,423 (4.9, 708); Viraz Valley AC Double Deluxe 1,624 (4.3, 693); median 2,746 (2,745.5). Budget, n=4, basic hotels/guest house: Hotel Gokarna International 2-star Double Non-AC 1,131 (3.0, 323); Golden IBS Gokarna Deluxe Non-AC 1,434 (4.3, 18); Nimmu House guest house Standard Double 1,667 (4.5, 364); Gokarna International Kudle Beach Deluxe Non-AC 2,280 (2.9, 668); median 1,551 (1,550.5). Homestay, n=4: ARTKARNA Farm Stay Deluxe Room 1,642 (4.8, 27); Poornima Beach Stay Deluxe Suite 2,576 (4.2, 325); Blue Ocean Sands Deluxe Family Room 2,656 (3.8, 49); West Coast Gokarna Deluxe Double 5,639 (4.0, 39); median 2,616.",
+    "notes": "Gokarna's mid ladder is wide: mid 4 properties span 1,624-5,939. Non-AC beach cottages and AC rooms are mixed, so the 2,746 mid is a mid-point of a wide spread. The budget set includes non-AC rooms (1,131-1,434) and an unreviewed-style small sample (Golden IBS 18 reviews). Cleartrip homestay tier is thin: 6 of 10 homestay listings returned no price for the night (0), and Vibes and Tides' only price is a Quadruple Room (5,651, excluded). Cleartrip 4-star rows (Godavari 5,764; Stone Wood Premier 13,558) were not used. 18-19 Nov is early season for Gokarna; no festival found for the night. No Booking.com cross-check was run for Gokarna. Lower-end beach huts and cheaper Om/Kudle beach stays are mostly off Cleartrip, so a blog's Rs 400-1,000 range cannot be confirmed or rejected from this source."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Booking.com cross-check not run",
+    "cheapest beach huts not on Cleartrip",
+    "one night only (Wed 18 Nov)"
+   ]
+  },
+  "munnar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3754,
+    "mid_n": 6,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Munnar%2C%20Kerala%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3%3Bht_id%3D204"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Munnar%2C%20Kerala%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Munnar%2C%20Kerala%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D2",
+     "https://www.booking.com/searchresults.html?ss=Munnar%2C%20Kerala%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D0%3Bclass%3D1%3Bclass%3D2%3Bht_id%3D204",
+     "https://www.cleartrip.com/hotels/details/jays-inn-714477?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561165?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 2625,
+    "homestay_n": 7,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Munnar%2C%20Kerala%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid and Homestay from Booking.com dated search 'Munnar, Kerala, India' 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, cheapest listed room, members-only prices excluded, properties within 8 km of Munnar downtown. Mid, n=6, Booking 3-star hotels (class=3, type hotel), score>=7.5 and >=10 reviews: Stayva Rooms Standard Queen 2,100 (8.6, 13); Kurinji Wanderlust Resort 2,493 (8.1, 645); Rhythm Stays 3,150 (9.0, 35); Beauty Spot Munnar 4,358 (8.1, 171); Issacs Residency 6,484 (8.1, 677); The Saray Munnar Luxury Resort 7,130 (8.7, 66); median 3,754. Homestay, n=7, Booking homestay filter, double rooms, >=10 reviews: Drizzle Valley Cottage 1,607; Green Shades 2,339; Tea Dale Budget Double 2,520; Peace Valley 2,625; Grace Inn 3,150; S & B Dreams House 4,515; K Mansion 4,725; median 2,625. Budget: NOT claimed (see notes). Cross-check, Cleartrip 18-19 Nov 2026 PRE-TAX discounted price, 8 hotels/resorts tagged 3-star, rated >=4.0 with >=100 reviews: Cleveland Resorts 2,503; Rainforest Munnar Resort 2,545; Forestscape 3,814; Olive Brook 3,880; Carmel Top Resort 4,132; Westwood Riverside 4,151; Issacs Residency 5,125; Forest County 5,704; median 4,006.",
+    "notes": "Munnar has no clean budget-hotel tier on either OTA for 18-19 Nov (peak season, Oct-Mar). Booking's guest-house and 2-star listings within 8 km (Rheinberg Town Haus 1,890, Green Shades 2,339, Cozy Winterfell 2,362, Green Valley Vista 3,780, Spice Jungle 4,001, M3 Homes 4,389, Crayons Guest House 4,725, Royal Mist Villa 4,914; n=8) have median 3,891, which is HIGHER than the 3-star median 3,754, because the category holds villas and resort-style rooms; a budget median from them would be misleading, so it is left null. Cheapest basic rooms actually seen: Booking Rheinberg Town Haus Standard Double 1,890 (250 m from downtown, 7.9 with 349 reviews); Cleartrip Jays Inn (3.5, 450 reviews) Standard Double 1,643 pre-tax; Cleartrip MistyBush Cottages guest house Standard Double 2,486 pre-tax; Cleartrip Lumino Emerald Inn basement Standard Double 3,375 pre-tax. No printed KTDC (Tea County) tariff was fetched. So the lowest private double room found for the night is about 1,640-1,900; a blog quoting Rs 400-1,000 is not supported by anything seen here. Cleartrip's budget-hotels page for Munnar lists 14 properties but 10 of their detail pages returned no data, so that route could not be priced.",
+    "cleartrip_mid_cross_check": {
+     "median_pretax_inr": 4006,
+     "n": 8,
+     "urls": [
+      "https://www.cleartrip.com/hotels/details/4293259?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/rainforest-munnar-resort-2359518?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4598169?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/olive-brook-41056?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/4491814?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/westwood-riverside-resort-42342?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/issacs-residency-388163?c=18112026|19112026&r=2,0",
+      "https://www.cleartrip.com/hotels/details/forest-county-3960714?c=18112026|19112026&r=2,0"
+     ]
+    }
+   },
+   "confidence": "medium",
+   "unverified": [
+    "no clean budget tier measured; KTDC tariff not fetched",
+    "one night only (Wed 18 Nov, peak season)"
+   ]
+  },
+  "konaseema": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Amalapuram / Razole",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-somisetty-landmark-742488?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/rio-vista-resorts-4684132?c=18112026|19112026&r=2,0",
+     "https://www.booking.com/searchresults.html?ss=Amalapuram%2C%20Andhra%20Pradesh%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Amalapuram%2C%20Andhra%20Pradesh%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Razole%2C%20Andhra%20Pradesh%2C%20India&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No median claimed for any tier: Konaseema (Amalapuram / Razole delta) has only 2-3 priced properties per site, too few to median, and no budget-hotel tier is visible. Observed prices for 18-19 Nov 2026: Cleartrip PRE-TAX, check-in 18/11/2026 confirmed: Hotel Somisetty Landmark, Tatipaka Razole (3-star, 3.7 with 67 reviews) Deluxe Room 2,340; Rio Vista Resorts Razole (3-star, unrated) Executive Room 4,372; Sterling Palavelli by the Godavari Razole (4-star, 4.6 with 362 reviews) 3,780 (4-star, not mid). Booking.com TAX-INCLUSIVE dated search: Satya Farm House Amalapuram (class 3, 8.9 with 17 reviews, 7.3 km out) Deluxe Double 2,625; Monday Hotels Amalapuram Heights (class 3, 7.0 with 6 reviews) 4,988; Hotel Satkar Amalapuram (6.0, 1 review) Double Room 2,415; Rio Vista Razole Standard Family Room 4,620; Sterling Palavelli 3,990. Booking lists a homestay-category count of 0 for Amalapuram and none for Razole; the only guest house/budget-like listings are 20-30 km away (Kottapeta Vididhi Micro Stay 1,575; Drakshar-ama Sri Annapurna Residency 1,785).",
+    "notes": "Cleartrip has no Konaseema or Amalapuram city page (404); Razole is the only Konaseema cluster, as Q1 also found. Booking.com for 'Konaseema' returns no listing; Amalapuram has 3 and Razole 3 properties in their own town. Mid candidates exist on both sites for the same night (Cleartrip 2,340 pre-tax at Somisetty vs Booking 2,415-2,625 tax-inclusive at Hotel Satkar / Satya Farm House) but n=2 per site is not a median and they are different properties. Budget tier: the cheapest private double seen in the delta is Hotel Satkar Amalapuram 2,415 (Booking, 1 review) and Kottapeta Vididhi Micro Stay 1,575 (20 km away, entire micro-unit), so a blog Rooms: Rs 400-1,000 cannot be checked from OTA data. No APTDC/Haritha tariff for the delta was fetched."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no tier has n>=3",
+    "no printed APTDC/Haritha tariff fetched",
+    "Konaseema is a region; Razole/Amalapuram used as its towns"
+   ]
+  },
+  "nagarjuna-sagar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No price claimed. Cleartrip has no Nagarjuna Sagar / Vijayapuri / Macherla city pages (all 404; Nalgonda and Miryalaguda exist but are 80+ km away and were not used). Booking.com dated search 18-19 Nov 2026 returns no listing for 'Nagarjuna Sagar', 'Nagarjunasagar' or 'Nagarjuna Sagar Dam' (empty search page); 'Macherla, Andhra Pradesh' returns 1 property, Sagar Hotel For Family at 945 (unrated, about 30 km away on the AP side), which is not Nagarjuna Sagar and was not used. The only lodging is two state Haritha hotels: Telangana Tourism Haritha Vijay Vihar (Hill Colony) and APTDC Haritha Vijayapuri South.",
+    "notes": "Official pages checked and found to print NO tariff: aptourismresorts.in Nagarjunasagar Haritha Vijayapuri South lists 'AC Rooms' and 'Non AC Rooms' with no price; aptourismhotels.in/info prints no room rate; tgtdc.in carries no tariff text for Vijay Vihar. Third-party aggregators (bestbus.in, yatradham.org, ocean6holidays.com, xploreall) quote undated and mutually conflicting rates (e.g. APTDC AC 1,450 / non-AC 1,050 plus tax; Vijay Vihar AC Standard 1,400-2,100, non-AC 1,100); they are NOT official tariff cards and are not used as figures. A press report says Telangana cut Haritha hotel tariffs 50% for weekdays on a pilot basis (newsmeter.in, not checked for dates)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "no OTA coverage",
+    "no official dated or printed tariff found for Haritha Vijay Vihar or Haritha Vijayapuri South"
+   ]
+  }
+ }
+}

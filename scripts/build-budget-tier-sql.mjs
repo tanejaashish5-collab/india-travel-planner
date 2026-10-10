@@ -55,6 +55,7 @@ for (const region of REGIONS) {
       if ((s.budget_n ?? 0) < 2 || !hasUrl(s.budget_sources)) { skip("budget n<2 or no URL"); continue; }
       if (s.mid_median_inr == null || (s.mid_n ?? 0) < 3) { skip("no measured 3-star to pair with"); continue; }
       if (ex.stay?.[id]?.["hotel-mid"]) { skip("3-star excluded for this place"); continue; }
+      if (ex.budget?.[id]) { skip("budget excluded for this place"); continue; }
       const basis = s.price_basis ?? "";
       const bSeg = seg(basis, "budget"), mSeg = seg(basis, "mid");
       if (STAY_PROXY.test(`${basis} ${s.notes ?? ""}`) || /proxy|borrowed|nearby town/i.test(bSeg ?? "")) { skip("budget borrowed from another town"); continue; }

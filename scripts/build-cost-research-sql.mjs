@@ -48,7 +48,12 @@ const PROXY = /proxy|regional default|template|estimate|assumed|stand-in|same ba
 const STAY_PROXY = /[Cc]ity figures used|[Cc]ity medians|[Ff]igures are (the )?[A-Z]{4,}\b|used as the base|nearest town with data|stand-in for/;
 const round = (v, step) => Math.max(step, Math.round(v / step) * step);
 const SEASONS = ["shoulder", "peak", "low"];
-const RATIO = { peak: 1.35, shoulder: 1, low: 0.65 };
+const RATIO0 = { peak: 1.35, shoulder: 1, low: 0.65 };
+// Since 103 (2026-10-10) each place has a tariff-based low/peak ratio r (data/cost-research/season-model.json):
+// levels peak 1, shoulder (1+r)/2, low r, i.e. in shoulder units peak 2/(1+r), low 2r/(1+r). A low-season
+// observation is no longer held for those places: the ratio that scales it is now measured (official tariffs).
+const SEASON_MODEL = fs.existsSync("data/cost-research/season-model.json") ? JSON.parse(fs.readFileSync("data/cost-research/season-model.json", "utf8")) : {};
+const ratioFor = (dest) => { const r = SEASON_MODEL[dest]?.r; return r ? { peak: 2 / (1 + r), shoulder: 1, low: (2 * r) / (1 + r) } : RATIO0; };
 const MONTH_NAMES = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 // Season months per destination+category, read live (the months arrays are the site's own season definition).
@@ -161,7 +166,8 @@ for (const f of files) {
           // The premium was measured on 3-star hotels: dorm beds are never deflated by it (095, 2026-10-10).
           const dInfo = inDiwali && cat !== "hostel-dorm" ? diwaliRatio(id) : null; const dRatio = dInfo?.ratio ?? 1;
           if (dInfo && hw.unmeasured === "hold" && /^overall/.test(dInfo.basis)) { stats.skipped.push(`${id} ${cat} (held: holiday-week stay date, no measured premium in this state)`); stats.held.push(`${id}/${cat}`); continue; }
-          if (anchor === "low") { stats.skipped.push(`${id} ${cat} (held: ${MONTH_NAMES[mon]} is low season here; peak unmeasured)`); stats.held.push(`${id}/${cat}`); continue; }
+          const RATIO = ratioFor(id);
+          if (anchor === "low" && !SEASON_MODEL[id]) { stats.skipped.push(`${id} ${cat} (held: ${MONTH_NAMES[mon]} is low season here; peak unmeasured)`); stats.held.push(`${id}/${cat}`); continue; }
           const forced = exclude.anchor?.[id]?.[cat];
           const A = forced ?? anchor ?? "shoulder";
           let observed = v * mult / dRatio;
@@ -177,7 +183,7 @@ for (const f of files) {
           const derived = SEASONS.filter((se) => se !== A).join(" and ");
           const pooledNote = pooled ? ` Combined (geometric mean, shoulder-equivalent) with the ${nn.town} ordinary-night median of ${nn.n} hotels on ${nn.date} (a ${nnSeason} night), ${Math.round(nn.inr)} pre-tax.` : "";
           const forcedNote = forced ? ` Anchored to ${forced}: ${exclude.anchorWhy?.[id] ?? "see _exclude.json"}.` : "";
-          const note = `${tag}. Median of ${n} listings${mult > 1 ? " x1.12 GST est." : ""} (${dated}).${pooledNote}${forcedNote} ${derived} by model ratio (peak = shoulder x1.35 measured, low = shoulder x0.65 unmeasured).`;
+          const note = `${tag}. Median of ${n} listings${mult > 1 ? " x1.12 GST est." : ""} (${dated}).${pooledNote}${forcedNote} ${derived} ${SEASON_MODEL[id] ? `by the tariff season model (103: ${SEASON_MODEL[id].type}, low/peak ${SEASON_MODEL[id].r})` : "by model ratio (peak = shoulder x1.35 measured, low = shoulder x0.65 unmeasured)"}.`;
           if (pooled) stats.pooled = (stats.pooled ?? 0) + 1;
           for (const se of SEASONS) setRow(id, cat, se, vals[se], step, note);
           stats.anchors[A] = (stats.anchors[A] ?? 0) + 1;

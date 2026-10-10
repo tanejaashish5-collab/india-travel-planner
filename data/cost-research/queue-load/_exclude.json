@@ -1,8 +1,7 @@
 {
  "stay": {
   "pushkar": {
-   "hotel-mid": "priced 18-19 Nov 2026 inside the Pushkar Camel Fair (RTDC fair tariff 17-24 Nov)",
-   "homestay": "fair week",
+   "homestay": "C3 homestay priced in camel-fair week (17-24 Nov); C6 re-priced mid on 2-3 Dec, after the fair",
    "hostel-dorm": "fair week"
   },
   "coonoor": {
@@ -10,6 +9,23 @@
   },
   "raigad-fort": {
    "hotel-mid": "priced at Mahad, 25 km away (borrowed base town); the fort's own ropeway rooms are 2,850 (tariff card)"
+  },
+  "tiruvannamalai": {
+   "hotel-mid": "C6 night 18-19 Nov falls inside Karthigai Brahmotsavam (15-24 Nov)",
+   "homestay": "festival week",
+   "hostel-dorm": "festival week"
+  },
+  "kasol": {
+   "hotel-mid": "CONFLICT: C5 Booking median 2,309 (tax-incl) vs earlier measured Cleartrip ~3,800 pre-tax (1.85x); earlier kept until a third source settles it"
+  },
+  "vagamon": {
+   "hotel-mid": "CONFLICT: C6 Booking 5,316 vs earlier measured 2,800 (1.9x); earlier kept"
+  },
+  "hanle": {
+   "homestay": "C6 n=2, likely meal-inclusive homestays"
+  },
+  "ooty": {
+   "homestay": "CONFLICT: C6 vs earlier measured 4,250 (1.7x); earlier kept"
   }
  },
  "holiday": {
@@ -17,5 +33,12 @@
   "to": 16,
   "unmeasured": "hold"
  },
- "anchor": {}
+ "anchor": {},
+ "budget": {
+  "yercaud": "C7 Booking budget 3,019 vs Cleartrip basic rooms 1,300-1,600: not a budget median",
+  "vagamon": "C6 Booking budget = cheapest reviewed rooms (floor sample), not a median",
+  "ooty": "C6 Booking floor sample",
+  "pushkar": "C6 Booking floor sample (525)",
+  "tiruvannamalai": "festival week"
+ }
 }
