@@ -11,6 +11,9 @@ export function getResend(): Resend | null {
 }
 
 export const FROM_ADDRESS = "The Window <newsletter@nakshiq.com>";
+// The month top 10 sent on signup is not The Window (that is the Sunday
+// newsletter), so it gets its own display name on the same verified address.
+export const SHORTLIST_FROM_ADDRESS = "NakshIQ <newsletter@nakshiq.com>";
 // Internal ops alerts (cron failures, SOS staleness, road-conditions sweeps).
 // Goes only to ADMIN_EMAIL; never to subscribers. Keeps consumer newsletter
 // brand separate from admin noise. Requires ops@nakshiq.com to be a verified

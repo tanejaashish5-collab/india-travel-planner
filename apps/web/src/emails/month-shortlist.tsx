@@ -18,7 +18,10 @@ import { windowStyles as s, WINDOW_IMAGE_BASE } from "./the-window";
 // Now the ten best, ranked like The Window's weekly picks, plus a link to the
 // full month on the site. Built on The Window's own styles (windowStyles) so
 // the first email a subscriber gets looks like every Sunday one after it:
-// № 01 hero, ranked № 02-10 cards, one CTA, colophon.
+// ranked № 01-10 cards, one CTA, colophon. № 01 is a card like the rest, NOT
+// The Window's photo-overlay hero: that hero relies on position:absolute,
+// which Gmail strips, so its text fell below the photo onto a grey fade
+// (founder's iPhone Gmail, 2026-10-10).
 
 export interface MonthShortlistPick {
   id: string;
@@ -70,8 +73,6 @@ export default function MonthShortlist({ monthLong, monthSlug, year, totals, top
   const utm = (slot: string) =>
     `?utm_source=newsletter&utm_medium=email&utm_campaign=top10-${year}-${monthSlug}&utm_content=${slot}`;
   const pageFor = (id: string) => `${SITE}/en/destination/${id}/${monthSlug}`;
-  const hero = top[0];
-  const rest = top.slice(1);
   const others = Math.max(totals.listed - top.length, 0);
 
   return (
@@ -103,33 +104,6 @@ export default function MonthShortlist({ monthLong, monthSlug, year, totals, top
                     </tbody>
                   </table>
 
-                  {/* Hero: № 01 */}
-                  {hero && (
-                    <table {...T}>
-                      <tbody><tr><td style={{ padding: "32px 0 0" }}>
-                        <a href={`${pageFor(hero.id)}${utm("hero")}`} style={s.heroBlockLink}>
-                          <table {...T} style={{ ...s.innerTable, background: "#0B0B0C" }}>
-                            <tbody><tr><td style={{ padding: "0 24px", background: "#0B0B0C" }}>
-                              <div style={{ position: "relative", lineHeight: 0 }}>
-                                <img src={imageUrlFor(hero.id)} width="552" height="368" alt={`${hero.name}, ${hero.state}`} style={s.heroImage} />
-                                <div style={s.heroScrim}>
-                                  <div style={s.heroKicker}>№ 01 · {hero.state}</div>
-                                  <div style={s.heroName}>{hero.name}</div>
-                                  {hero.tagline ? <div style={s.heroHook}>{hero.tagline}</div> : null}
-                                </div>
-                                <div style={s.heroPillWrap}>
-                                  <div style={s.heroPill}>
-                                    <span style={s.pillDot} />{formatScoreInline(hero.score)} · Peak
-                                  </div>
-                                </div>
-                              </div>
-                            </td></tr></tbody>
-                          </table>
-                        </a>
-                      </td></tr></tbody>
-                    </table>
-                  )}
-
                   {/* Lede */}
                   <table {...T}>
                     <tbody>
@@ -147,12 +121,12 @@ export default function MonthShortlist({ monthLong, monthSlug, year, totals, top
                   <table {...T}>
                     <tbody>
                       <tr><td style={{ padding: "56px 28px 0" }}><DoubleRule /></td></tr>
-                      <tr><td style={s.sectionLabel}>The Rest of the {monthLong} Top {top.length}</td></tr>
+                      <tr><td style={s.sectionLabel}>The {monthLong} Top {top.length}</td></tr>
                     </tbody>
                   </table>
 
-                  {rest.map((p, i) => {
-                    const position = String(i + 2).padStart(2, "0");
+                  {top.map((p, i) => {
+                    const position = String(i + 1).padStart(2, "0");
                     const isFirst = i === 0;
                     return (
                       <table key={p.id} {...T}>

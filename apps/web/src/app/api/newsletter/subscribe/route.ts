@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { render } from "@react-email/render";
-import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
+import { getResend, FROM_ADDRESS, SHORTLIST_FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 import ConfirmSubscription from "@/emails/confirm-subscription";
 import SavedListWelcome from "@/emails/saved-list-welcome";
 import MonthShortlist from "@/emails/month-shortlist";
@@ -232,7 +232,7 @@ async function sendMonthShortlist(
     ].join("\n");
 
     await resend.emails.send({
-      from: FROM_ADDRESS,
+      from: SHORTLIST_FROM_ADDRESS,
       to,
       replyTo: REPLY_TO,
       subject: `The ${monthLong} top ${top.length}: the best places in India this month`,
