@@ -1680,12 +1680,22 @@ def _synth_eleven_lines(lines: list, voice_id: str, api_key: str, out_mp3: Path,
 
 
 def _synth_eleven(text: str, lines: list, voice_id: str, api_key: str,
-                  out_mp3: Path) -> list:
+                  out_mp3: Path, what: str = "yt_shorts_v2") -> list:
     """ElevenLabs TTS with char-level timestamps. Writes mp3 and returns
     per-sentence bounds [(start_s, dur_s, sentence)] mapped from the alignment,
-    so the caption pipeline (caption_lines) works unchanged. [] on failure."""
+    so the caption pipeline (caption_lines) works unchanged. [] on failure.
+
+    The ONE place ElevenLabs is called, so the character budget is enforced
+    here for every route (eleven_budget.py, founder 2026-10-10). A refusal
+    returns [] like any other failure: nothing is spent."""
     import base64
     import requests
+    import eleven_budget as EB
+    try:
+        EB.require(len(text), what)
+    except EB.BudgetError as e:
+        print(str(e))
+        return []
     url = ELEVEN_TTS_URL.format(vid=voice_id)
     try:
         r = requests.post(
@@ -1705,6 +1715,7 @@ def _synth_eleven(text: str, lines: list, voice_id: str, api_key: str,
         print("ElevenLabs: no audio in response")
         return []
     out_mp3.write_bytes(base64.b64decode(b64))
+    EB.record(len(text), what)
     al = data.get("alignment") or data.get("normalized_alignment") or {}
     chars = al.get("characters") or []
     starts = al.get("character_start_times_seconds") or []

@@ -1,0 +1,77 @@
+{
+  "id": "shimla__friends_swap",
+  "angle": "friends_swap",
+  "slug": "shimla",
+  "lang_en": "Four of us got one November weekend off, and Rohan picked Shimla.\nHe wanted Mall Road at night and a hotel on it.\nMeher wanted quiet, so nothing got booked while they argued.\nThat went on for days, until Meher read one line aloud.\nNobody spoke, and a pressure cooker whistled in the kitchen.\nNakshIQ called Mall Road weekends a nightmare, and named where Shimla's locals escape.\nThe catch is zero Mall Road and only a few stays, so not for shoppers.\nThen Rohan saw Chail's cricket ground, the world's highest, and forgot Mall Road.\nTravel intelligence is knowing who a place isn't for.\nNakshIQ.",
+  "lang_hi": "हम चारों को नवंबर का एक ही वीकेंड मिला, और रोहन ने शिमला चुन लिया।\nउसे रात वाला मॉल रोड चाहिए था, और होटल भी ठीक उसी पर।\nमेहर को सुकून चाहिए था, तो दोनों की बहस में कुछ बुक ही नहीं हुआ।\nये कई दिन चला, फिर एक दिन मेहर ने एक लाइन पढ़कर सुनाई।\nकोई कुछ नहीं बोला, बस किचन में कुकर की सीटी बजी।\nNakshIQ पर लिखा था कि वीकेंड पर मॉल रोड का बुरा हाल होता है, और ये भी कि शिमला वाले खुद कहाँ घूमने जाते हैं।\nबस दिक्कत ये कि वहाँ मॉल रोड है ही नहीं, रुकने की जगहें भी गिनी चुनी, तो शॉपिंग करने वालों के लिए ये जगह नहीं।\nफिर रोहन ने चैल का क्रिकेट ग्राउंड देखा, दुनिया का सबसे ऊँचा, और मॉल रोड भूल गया।\nट्रैवल इंटेलिजेंस है ये जानना कि कोई जगह किसके लिए नहीं है।\nNakshIQ.",
+  "cover": {
+    "hook": "Four of us got one November weekend off, | and *Rohan picked Shimla*."
+  },
+  "cover_short": "Shimla, or where|*Shimla's locals escape?*",
+  "facts": [
+    {
+      "kind": "month",
+      "slug": "shimla",
+      "month": 11,
+      "label": "go"
+    },
+    {
+      "kind": "month",
+      "slug": "chail",
+      "month": 11,
+      "label": "go"
+    },
+    {
+      "kind": "crowd",
+      "slug": "shimla",
+      "is": "note",
+      "quote": "Mall Road on weekends is a nightmare"
+    },
+    {
+      "kind": "trap",
+      "slug": "shimla",
+      "trap": "shimla",
+      "alt": "chail",
+      "field": "why_better",
+      "quote": "the hill station Shimla locals escape to"
+    },
+    {
+      "kind": "trap",
+      "slug": "shimla",
+      "trap": "shimla",
+      "alt": "chail",
+      "field": "why_better",
+      "quote": "zero Mall Road"
+    },
+    {
+      "kind": "trap",
+      "slug": "shimla",
+      "trap": "shimla",
+      "alt": "chail",
+      "field": "infrastructure_difference",
+      "quote": "a few private stays"
+    },
+    {
+      "kind": "trap",
+      "slug": "shimla",
+      "trap": "shimla",
+      "alt": "chail",
+      "field": "vibe_difference",
+      "quote": "World's highest cricket ground"
+    }
+  ],
+  "allowed_numbers": [
+    "4"
+  ],
+  "shots": [
+    "Late afternoon in a small flat: four friends in their late 20s, two men and two women, sit around a low table with a laptop and phones, seen from behind and the side, faces turned away, every screen turned away from camera.",
+    "Medium shot in the same flat, late afternoon: one woman sits looking down at the phone in her hands, seen over her shoulder from behind, the screen blurred, the other three sitting still and facing her.",
+    "Late afternoon in the same flat's small kitchen: a steel pressure cooker on a gas stove, a thin jet of steam rising from its whistle, no people in frame.",
+    "Late afternoon, wide from behind: the four friends walk slowly along the edge of a flat green cricket ground on a hilltop, tall pine forest all around it, nobody else on the ground.",
+    "Late afternoon: one of the men stands alone on the grass just inside the boundary of the cricket ground, seen from behind, hands in his jacket pockets, looking out at the forest, the other three small and still at the boundary behind him.",
+    "Very wide in late afternoon light: the whole cricket ground on its hilltop ringed by dark pine forest, the four friends small on the grass, no buildings, shops or other people in frame."
+  ],
+  "status": "approved",
+  "origin": "claude-writer 2026-10-10",
+  "approved": "2026-10-10 founder approved all 5 in chat (\"approve all\")"
+}

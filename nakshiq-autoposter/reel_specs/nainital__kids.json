@@ -1,0 +1,213 @@
+{
+ "auto": true,
+ "id": "nainital__kids",
+ "slug": "nainital",
+ "angle": "kids",
+ "format": "kids",
+ "tone": "warm",
+ "script_approved": "approved",
+ "script_file": "reel_scripts/_drafts_2026-10-10/nainital__kids.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "parents in their 30s with a child of 2 to 4",
+ "narrator": "the father",
+ "setting_basis": "A family driveway and front steps on one ordinary morning, then an uneven stone path beside a still lake ringed by wooded hills in the same morning light; the footage shows no real landmark, boat stand or signage, and makes no claim beyond what the script says.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_father",
+   "prompt": "Full-length photograph of an Indian man in his mid thirties with short black hair and light stubble, wearing a forest-green fleece jacket over a white t-shirt, dark blue jeans and grey trail shoes, standing outdoors in soft morning daylight, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_mother",
+   "prompt": "Full-length photograph of an Indian woman in her early thirties with shoulder-length dark hair tied in a low bun, wearing a maroon knit cardigan over a white top, beige trousers and white sneakers, standing outdoors in soft morning daylight, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_daughter",
+   "prompt": "Full-length photograph, taken from a few metres away, of a four-year-old Indian girl with short dark hair, wearing a yellow cotton sun hat with a wide brim, a lavender puffer jacket, pink leggings and small white shoes, standing outdoors in soft morning daylight, three-quarter view, calm expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_house",
+   "prompt": "The front of a modest Indian family house in soft morning daylight: a short paved driveway with a silver hatchback parked nose-in so its rear faces the street, a cream boundary wall, a wooden front door with two stone steps, a few potted plants, a plain footpath along the front, photorealistic, no people, no text, the number plate blank."
+  },
+  {
+   "name": "ref_lake",
+   "prompt": "An uneven stone footpath along the edge of a still green lake in soft morning light, steep wooded hills rising all round the lake, a low stone parapet beside the path, thin mist on the water, photorealistic, no people, no boats, no text, no signage."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_father",
+    "ref_house"
+   ],
+   "tone": "confident, sorted",
+   "prompt": "Medium shot from the side in soft morning daylight at the rear of the silver hatchback in the driveway: the boot is open and a folded grey child's pram lies inside it; the father in the forest-green fleece stands beside the open boot, his right hand resting on the folded pram, his left arm at his side, his face turned away from camera toward the boot, the number plate blank."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "ref_mother",
+    "ref_daughter",
+    "ref_house"
+   ],
+   "tone": "tender, ordinary",
+   "prompt": "Medium shot from the side in soft morning daylight on the footpath in front of the house: the same grey pram stands open and still, its canopy pulled forward, the little girl asleep inside under a pale blanket, only her small white shoes and the yellow brim of her sun hat showing, her face hidden by the canopy; the mother in the maroon cardigan stands beside the pram with her right hand resting on its handle, her face turned away from camera."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s1",
+    "ref_mother"
+   ],
+   "tone": "a quiet doubt, brushed off",
+   "prompt": "Wide shot of the house front in the same morning light as the reference: the mother in the maroon cardigan stands on the lower front step holding her phone in her left hand, its screen only a soft glow, looking across at her husband; the father in the forest-green fleece stands in the driveway beside the open boot of the silver hatchback with both hands in his fleece pockets, relaxed, the folded grey pram visible inside the boot; both seen side-on with their faces turned away from camera, nobody else."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "kf_s3"
+   ],
+   "tone": "she lets it go, not really",
+   "prompt": "Over-the-shoulder from behind the mother at the open boot of the silver hatchback, same driveway and morning light as the reference: she stands still with her arms folded, looking down at the folded grey pram lying inside the boot, her maroon cardigan and low bun on one side of the frame, the pram sharp in the centre, nobody else in the shot."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_father",
+    "ref_house"
+   ],
+   "tone": "checking, mostly to win",
+   "prompt": "Medium shot from the side in the same soft morning light on the front steps of the house: the father in the forest-green fleece sits on the top step holding his phone low in his right hand, its screen facing him and only a soft glow; beside him on the step lies an empty charcoal-grey soft child back carrier with padded shoulder straps; behind him the folded grey pram stands on its own against the wall beside the closed wooden front door; his face turned away from camera toward the carrier, nobody else."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_father",
+    "ref_mother",
+    "ref_daughter",
+    "ref_lake"
+   ],
+   "tone": "a quiet win, she's asleep",
+   "prompt": "Medium shot from behind in soft morning light on the uneven stone path beside the still lake: the father in the forest-green fleece walks slowly away from camera in the centre of the frame, carrying the little girl on his back in the charcoal-grey soft child back carrier; she is asleep with her head resting against his shoulder, her yellow sun hat hiding her face, her arms tucked inside the carrier; the mother in the maroon cardigan walks beside him on the left; still green water and wooded hills beyond the low stone parapet, nobody else."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. His right hand stays on the folded pram and nudges it once a little further into the boot; he stays standing in place the whole time.",
+   "sound": "The pram's frame scraping softly on the boot floor, sparrows chirping in a hedge, quiet suburban morning tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. A light breeze stirs the edge of the blanket; the mother's hand stays on the pram handle and the pram stays still the whole time.",
+   "sound": "Leaves rustling in a light breeze, sparrows chirping, quiet suburban morning tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. He keeps his hands in his pockets and gives a small shrug; she stays on the step with the phone in her left hand the whole time.",
+   "sound": "A scooter passing far off, sparrows in the hedge, quiet suburban morning tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "Slow push-in over her shoulder toward the folded pram. She stays standing with her arms folded the whole time and tilts her head slightly.",
+   "sound": "A dog barking far down the street, a light breeze, quiet suburban morning tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "Slow push-in. He stays seated on the step the whole time with the phone kept in his right hand, and glances down from the phone to the carrier beside him.",
+   "sound": "A gate creaking far off, birdsong in the hedge, quiet suburban morning tone."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "The camera follows slowly behind them along the stone path; they keep walking at an easy pace and stay in frame the whole time, the girl staying asleep on his back.",
+   "sound": "Footsteps on uneven stone, small ripples lapping at the lake edge, a crow calling far off, quiet lakeside morning tone."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 2.0,
+   "zoom": 1.3
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 2.0,
+   "zoom": 1.3
+  }
+ ],
+ "vo": {
+  "en": [
+   "Everyone said the lake town suits kids, so I packed the pram.",
+   "Our daughter is four and still falls asleep in it on long walks.",
+   "My wife asked about paths, and I said lake walks are flat.",
+   "She let it go, but kept eyeing the pram in the boot.",
+   "So before we left, mostly to win, I looked it up for her age.",
+   "NakshIQ said go with kids four and up, but bring a child carrier for the uneven paths.",
+   "The pram stayed home, and halfway round Nainital's lake that October, she fell asleep on my back.",
+   "Travel intelligence is packing for the path.\nNakshIQ."
+  ],
+  "hi": [
+   "सबने कहा था कि वो झील वाला शहर बच्चों के लिए बढ़िया है, तो मैंने प्रैम गाड़ी में रख ली।",
+   "हमारी बेटी चार साल की है, और लंबी सैर पर अब भी उसी में सो जाती है।",
+   "बीवी ने रास्तों के बारे में पूछा, और मैंने कहा झील के किनारे तो सब समतल होता है।",
+   "उसने बात वहीं छोड़ दी, पर डिक्की में रखी प्रैम को देखती रही।",
+   "तो निकलने से पहले, बस बहस जीतने के लिए, मैंने उसकी उम्र के हिसाब से देखा।",
+   "NakshIQ ने कहा चार साल और उससे बड़े बच्चों के साथ जाओ, पर ऊबड़ खाबड़ रास्तों के लिए चाइल्ड कैरियर ले जाओ।",
+   "प्रैम घर पर ही रही, और उस अक्टूबर नैनीताल की झील का आधा चक्कर होते होते वो मेरी पीठ पर सो गई।",
+   "ट्रैवल इंटेलिजेंस है रास्ता देखकर सामान बाँधना।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "Everyone said bring the pram.|*Should we?*",
+  "still": "kf_s1"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Morning outside a house: close on a man's hands, already in frame, lowering a folded child's pram into the open boot of a parked car, his face out of frame, soft daylight.",
+  "Wide in the morning beside the same parked car: a couple in their 30s stand still at the open boot with the folded pram inside, a girl of about four standing between them holding her mother's hand, all three seen from behind and in frame from start to end.",
+  "Medium shot from the side in the morning at the same car: the woman stands still looking down at the folded pram in the open boot, her face turned away from camera, the man beside her holding his phone low with the screen turned away.",
+  "Morning, a still shot of the folded pram standing on its own against the wall beside a closed front door, no people.",
+  "Wide in the morning on an uneven stone lakeside path: the man walks slowly away from camera carrying the little girl in a soft back carrier, the woman walking beside him, still water and wooded hills beyond, all three in frame from start to end, nobody else.",
+  "Medium shot from behind in morning light: the little girl asleep in the soft back carrier, her head resting against her father's shoulder with her face hidden, his face out of frame, the lake soft and blurred beyond."
+ ]
+}

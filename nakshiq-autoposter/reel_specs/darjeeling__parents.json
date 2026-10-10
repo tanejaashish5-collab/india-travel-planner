@@ -1,0 +1,214 @@
+{
+ "auto": true,
+ "id": "darjeeling__parents",
+ "slug": "darjeeling",
+ "angle": "parents",
+ "format": "parents",
+ "tone": "warm",
+ "script_approved": "approved",
+ "script_file": "reel_scripts/_drafts_2026-10-10/darjeeling__parents.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "a son in his 30s and his parents in their 60s",
+ "narrator": "the son",
+ "setting_basis": "An ordinary family living room on one evening lit by a single lamp, then a flat paved hill-town promenade above a misty valley in the same evening light; the footage shows no real hotel, landmark, Chowrasta or signage, and makes no claim beyond what the script says.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_son",
+   "prompt": "Full-length photograph of an Indian man in his mid thirties with short black hair and a neatly trimmed beard, wearing a navy-blue crew-neck wool sweater over a white collared shirt, khaki chinos and brown leather loafers, standing indoors in soft warm lamp light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_mother",
+   "prompt": "Full-length photograph of an Indian woman in her mid sixties with grey hair in a low bun, wearing a maroon cotton salwar kameez with a cream wool shawl over her shoulders and flat black sandals, standing indoors in soft warm lamp light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_father",
+   "prompt": "Full-length photograph of an Indian man in his late sixties with short grey hair and a grey moustache, wearing a mustard-yellow cardigan over a pale blue shirt, dark grey trousers and black walking shoes, standing upright indoors in soft warm lamp light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_livingroom",
+   "prompt": "An Indian family living room in the evening lit by one warm standing lamp: a wooden dining table with two wooden chairs, a beige three-seater sofa and a matching armchair on a patterned rug, a low wooden side table, bare cream walls, a curtained window dark with evening outside, photorealistic, no people, no text, no pictures on the walls."
+  },
+  {
+   "name": "ref_promenade",
+   "prompt": "A wide, flat, paved promenade along the top of a hill town in warm low evening sun: smooth grey stone paving, an old black iron railing along the open edge, a few tall dark trees, and beyond the railing a deep valley filled with soft mist and layered blue forested hills, small old two-storey buildings set back on the far side of the paving, photorealistic, no people, no text, no signage, no logos."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_son",
+    "ref_mother",
+    "ref_father",
+    "ref_livingroom"
+   ],
+   "tone": "keen, planning it like his own trip",
+   "prompt": "Wide shot from the side in the family living room in the evening, lit by one warm standing lamp: the son in the navy sweater sits at the wooden dining table in the foreground with an open laptop in front of him, its screen facing him and away from camera, only a soft glow on him, both his hands resting on the table, his phone lying face down beside the laptop; in the background his mother in the maroon kameez and his father in the mustard cardigan sit quietly side by side on the beige sofa, all three still, faces in soft profile or turned away, none close to the camera."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "a mother's careful question",
+   "prompt": "Medium shot from the side at the same dining table, same evening lamp light as the reference: the mother in the maroon kameez and cream shawl stands just behind the son's chair with one hand resting on its backrest, looking at the open laptop, its screen turned away from camera and only a soft glow; the son in the navy sweater sits at the table with his hands on it; both faces turned away from camera; the sofa is out of shot."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "ref_father",
+    "ref_livingroom"
+   ],
+   "tone": "quiet, already decided",
+   "prompt": "Medium shot from the side in the same lamp-lit living room in the evening: the father in the mustard cardigan and black walking shoes sits alone and upright in the armchair, both hands resting on his knees, his back straight, his face turned away from camera toward the dining table, warm lamp light on his shoulder."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "ref_mother",
+    "ref_livingroom"
+   ],
+   "tone": "care, without a word",
+   "prompt": "Medium shot from the side, framed low, in the same lamp-lit living room in the evening: an open grey suitcase lies on the rug full of neatly folded clothes, a plain wooden walking stick with a curved handle lying across the very top of the clothes; the mother in the maroon kameez sits on the edge of the beige sofa beside it, her right hand resting on the stick's curved handle, her face turned away from camera and above the top of the frame."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_son",
+    "kf_s4"
+   ],
+   "tone": "a small doubt, worth checking",
+   "prompt": "Wide shot from behind in the same lamp-lit living room in the evening, the same open grey suitcase as the reference on the rug with the wooden walking stick across its top: the son in the navy sweater sits alone on the arm of the beige sofa, looking down at the suitcase, his phone held low in his right hand with its screen facing him, only a soft glow, nobody else in the room."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_son",
+    "ref_mother",
+    "ref_father",
+    "ref_promenade"
+   ],
+   "tone": "easy, unhurried, a quiet win",
+   "prompt": "Wide shot from behind in warm low evening sun on the flat paved promenade: the father in the mustard cardigan walks a step ahead in the centre of the frame with both hands free, the mother in the maroon kameez beside him with a cream cloth bag on her shoulder and the curved handle of the wooden walking stick showing from the top of the bag, the son in the navy sweater a few paces behind them, all three walking slowly away from camera along the paving, the misty valley and layered blue hills beyond the iron railing, nobody else."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "Slow push-in toward the table. He stays seated with both hands on the table the whole time; his parents stay seated on the sofa in the background.",
+   "sound": "A wall clock ticking, a laptop fan whirring softly, quiet evening room tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. She leans a little closer to the laptop screen, her hand staying on the chair back; he stays seated the whole time.",
+   "sound": "The wall clock ticking, the soft hum of the laptop, quiet evening room tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "Slow push-in. He stays seated upright with both hands on his knees the whole time and gives one slow nod.",
+   "sound": "A ceiling fan turning slowly, the wall clock ticking, quiet evening room tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "Slow push-in toward the walking stick on the suitcase. Her hand stays resting on its curved handle, barely moving, the whole time.",
+   "sound": "Folded cloth settling in the suitcase, the wall clock ticking, quiet evening room tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "Slow push-in from behind. He stays seated on the sofa arm the whole time with the phone kept in his right hand, and lowers his head a little toward the stick.",
+   "sound": "The wall clock ticking, distant traffic beyond the window, quiet evening room tone."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "The camera follows slowly behind them along the flat paving; all three keep walking at an easy pace and stay in frame the whole time, the stick staying in the bag.",
+   "sound": "Footsteps on stone paving, wind moving through tall trees, a crow calling far off, quiet hill evening tone."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 2.0,
+   "zoom": 1.3
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 2.0,
+   "zoom": 1.3
+  }
+ ],
+ "vo": {
+  "en": [
+   "I planned my parents' November trip like my own, with a half past four alarm for sunrise.",
+   "Mummy asked how steep it was, and I said everyone manages.",
+   "Papa only nodded, which means he'd already decided to keep up.",
+   "The evening before we left, she packed his walking stick on top.",
+   "Nobody mentioned it, but that stick made me check.",
+   "NakshIQ said it suits older travellers with care, so stay near Chowrasta and skip the dawn start if it's tiring.",
+   "We did both, and two kilometres up in Darjeeling, Papa's stick never left the bag.",
+   "Travel intelligence is knowing which alarm to cancel.\nNakshIQ."
+  ],
+  "hi": [
+   "मैंने मम्मी पापा की नवंबर वाली ट्रिप अपनी ट्रिप की तरह प्लान की, सनराइज़ के लिए सुबह साढ़े चार बजे का अलार्म लगाकर।",
+   "मम्मी ने पूछा चढ़ाई कितनी है, और मैंने कह दिया सब कर लेते हैं।",
+   "पापा ने बस सिर हिला दिया, यानी वो ठान चुके थे कि मुझसे पीछे नहीं रहेंगे।",
+   "निकलने से पहले वाली शाम, मम्मी ने उनकी छड़ी बैग में सबसे ऊपर रख दी।",
+   "किसी ने कुछ कहा नहीं, पर उस छड़ी को देखकर मैंने एक बार चेक कर लिया।",
+   "NakshIQ पर लिखा था कि बड़ी उम्र वालों के लिए ठीक है पर ध्यान से, चौरास्ता के पास रुको और थकान लगे तो सुबह का सनराइज़ छोड़ दो।",
+   "हमने दोनों बातें मानीं, और समंदर से दो किलोमीटर ऊपर दार्जिलिंग में, पापा की छड़ी एक बार भी बैग से नहीं निकली।",
+   "ट्रैवल इंटेलिजेंस है ये जानना कि कौन सा अलार्म बंद करना है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "My parents, my pace.|*What did I miss?*",
+  "still": "kf_s1"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Evening in a family living room lit by one warm lamp: a man in his 30s sits at a dining table with an open laptop, seen from behind, the screen turned away from camera, his parents in their 60s seated on a sofa beyond him, all three already in frame and still.",
+  "Medium shot from the side in the same lamp-lit living room in the evening: the father in his 60s sits still in an armchair with his hands resting on his knees, his face turned away from camera.",
+  "Close in the same lamp-lit living room in the evening: an open suitcase on the floor with folded clothes, a plain wooden walking stick lying across the top, the mother's hands already resting on a folded shawl beside it, her face out of frame.",
+  "Wide in the same living room in the evening: the son sits alone on the arm of the sofa looking down at the suitcase with the walking stick on top, seen from behind, lamp light only.",
+  "Evening, a very wide shot of a hill town of small houses stacked on a steep forested slope above a valley filled with soft mist, warm low sun, no people visible, no readable signage.",
+  "Wide in evening light on the same paved path through tea bushes: the father walks a step ahead with his hands free, the mother beside him with a cloth bag on her shoulder and the wooden stick's handle showing from it, the son a few steps behind, all three seen from behind and in frame from start to end, nobody else."
+ ]
+}

@@ -393,9 +393,12 @@ def voice(spec: dict, lang: str, tdp: Path):
     VOICE_CACHE.mkdir(parents=True, exist_ok=True)
     mp3, js = VOICE_CACHE / f"{h}.mp3", VOICE_CACHE / f"{h}.json"
     if not (mp3.exists() and js.exists()):
-        bounds = Y._synth_eleven("\n\n".join(lines), lines, vid, key, tdp / "vo.mp3")
+        # _synth_eleven checks the character budget before paying and logs after
+        # (eleven_budget.py, founder 2026-10-10). A refusal fails this cut only.
+        bounds = Y._synth_eleven("\n\n".join(lines), lines, vid, key, tdp / "vo.mp3",
+                                 what=f"{spec.get('id')} {lang}")
         if not bounds:
-            raise SystemExit("ElevenLabs synthesis failed")
+            raise SystemExit("ElevenLabs synthesis failed or refused by the budget (see the line above)")
         shutil.copy(tdp / "vo.mp3", mp3)
         js.write_text(json.dumps(bounds))
     return mp3, [tuple(b) for b in json.loads(js.read_text())]

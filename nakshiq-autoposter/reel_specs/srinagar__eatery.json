@@ -1,0 +1,202 @@
+{
+ "auto": true,
+ "id": "srinagar__eatery",
+ "slug": "srinagar",
+ "angle": "eatery",
+ "format": "eatery",
+ "tone": "warm",
+ "script_approved": "approved",
+ "script_file": "reel_scripts/_drafts_2026-10-10/srinagar__eatery.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "two friends, a man and a woman, late 20s",
+ "narrator": "the man",
+ "setting_basis": "A narrow night street of identical open-air charcoal barbecue stalls with plain wooden benches and a plain wooden counter; the footage shows no real eatery, interior, name or signage, does not pretend to be Khayam Chowk, and makes no claim beyond what the script says.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_man",
+   "prompt": "Full-length photograph of an Indian man in his late twenties with short black hair and a trimmed beard, wearing a navy-blue padded jacket zipped halfway over a grey t-shirt, black jeans and white sneakers, standing outdoors at night under one warm bare bulb, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_woman",
+   "prompt": "Full-length photograph of an Indian woman in her late twenties with long dark hair in a low ponytail, wearing a mustard-yellow wool coat over a cream turtleneck sweater, dark blue jeans and brown ankle boots, standing outdoors at night under one warm bare bulb, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_street",
+   "prompt": "A narrow street at night lined on both sides with small open-air barbecue stalls under bare warm bulbs, each stall with an identical long charcoal grill of metal skewers of minced mutton glowing over red coals, thick smoke drifting up into the bulb light, plain blank boards, and at the nearest stall a plain wooden counter with a long plain wooden bench in front of it, photorealistic, no people, no text, no signage, no logos."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_man",
+    "ref_woman",
+    "ref_street"
+   ],
+   "tone": "hungry, every stall the same",
+   "prompt": "Wide shot from behind at night: the man in the navy padded jacket and the woman in the mustard wool coat stand still side by side in the middle of the empty narrow street, small open-air barbecue stalls lining both sides, each with an identical long charcoal grill of mutton skewers glowing over red coals, smoke drifting under bare warm bulbs, nobody else."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1"
+   ],
+   "tone": "a friendly standoff",
+   "prompt": "Medium shot from the side in the same street and the same night light as the reference: the woman in the mustard coat points ahead with her left arm toward an empty plain wooden bench at the nearest stall; the man in the navy jacket stands beside her looking down at the phone in his right hand, its screen only a soft glow; both faces turned away from camera, grill smoke drifting behind them."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s2"
+   ],
+   "tone": "she has already decided",
+   "prompt": "Wide shot from the side at the nearest stall, same night light as the reference: the woman in the mustard coat sits on the plain wooden bench in front of the bare wooden counter, her hands resting in her lap; the man in the navy jacket stands a step behind her holding the phone in his right hand, its screen only a soft glow; the long charcoal grill glows beside the counter; both faces turned away from camera, nobody else."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "kf_s3"
+   ],
+   "tone": "impatient, half joking",
+   "prompt": "Over-the-shoulder from behind the woman on the bench, same stall and night light as the reference: she sits with her arms folded, her mustard coat and ponytail filling one side of the frame, looking up at the man in the navy jacket, who stands side-on a step away holding the phone in his right hand, its screen only a soft glow, his face turned down to it and in shadow."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_man",
+    "ref_street"
+   ],
+   "tone": "searching for a reason in the smoke",
+   "prompt": "Medium shot from the side at night: the man in the navy padded jacket stands alone and still in thick drifting grill smoke beside a long open charcoal grill, rows of minced-mutton seekh skewers glowing over red coals filling the foreground, bare warm bulbs above, his phone held low in his right hand with only a soft glow, his face turned away from camera toward the grill, nobody else."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_man",
+    "ref_woman",
+    "ref_street"
+   ],
+   "tone": "full, happy, she won",
+   "prompt": "Medium shot from behind at night at the nearest stall: the man in the navy jacket and the woman in the mustard coat sit side by side on the plain wooden bench with their backs to the camera, facing the wooden counter; on the counter, centred between them, one round steel plate holding a single mutton seekh kebab and nothing else, and beside the plate three small steel bowls of chutney, one green, one pale brown, one red; both of them have their hands resting in their laps; the charcoal grill glowing and smoke drifting softly beyond the counter; nobody else."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "Slow push-in from behind as smoke drifts across the bulb light; both stay standing side by side in place the whole time.",
+   "sound": "Fat sizzling on hot charcoal, metal skewers clinking on a grill rail, quiet night street tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. She slowly lowers her pointing arm; he keeps looking at the phone in his right hand the whole time.",
+   "sound": "Charcoal crackling in a grill, a scooter passing far off, quiet night street tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. She stays seated with her hands in her lap the whole time and turns her head toward the grill, away from the camera; he stays standing behind her with the phone in his right hand.",
+   "sound": "A wooden bench creaking, fat hissing on red coals, quiet night street tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "The camera holds still. She keeps her arms folded and taps one foot on the ground; he stays standing in place with the phone in his right hand the whole time.",
+   "sound": "Coals hissing, a metal skewer clinking on the grill rail, quiet night street tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "Slow push-in. He stays standing still beside the grill the whole time with the phone kept in his right hand, as smoke rolls up past him from the glowing skewers.",
+   "sound": "Fat dripping and hissing on glowing coals, charcoal crackling, quiet night street tone."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "Slow push-in toward the plate on the counter. Both stay seated side by side with their backs to the camera and their hands in their laps the whole time; she tilts her head toward him once. The plate and the three bowls stay untouched on the counter.",
+   "sound": "Charcoal crackling beyond the counter, a scooter horn far off, quiet night street tone."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 2.0,
+   "zoom": 1.3
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 2.0,
+   "zoom": 1.3
+  }
+ ],
+ "vo": {
+  "en": [
+   "One October night, every stall on that street grilled the same skewers, and Zoya was starving.",
+   "She wanted the first free bench, and I wanted one good reason.",
+   "She sat at the nearest stall while I was deciding.",
+   "I asked for one minute, and she started counting out loud.",
+   "So I stood in the smoke, looking for a story.",
+   "NakshIQ had one, among the oldest skewer shops on the chowk, roasting mutton seekh over charcoal.",
+   "Its tip said order by the dozen, chutneys and all, and on Srinagar's Khayam Chowk, Zoya ate more than me.",
+   "Travel intelligence is knowing which smoke to follow.\nNakshIQ."
+  ],
+  "hi": [
+   "अक्टूबर की एक रात, उस गली की हर दुकान पर एक जैसी सीख़ें सिक रही थीं, और ज़ोया को ज़ोर की भूख लगी थी।",
+   "उसे बस पहली खाली बेंच चाहिए थी, और मुझे कोई एक ठीक वजह।",
+   "मैं सोच ही रहा था कि वो सबसे पास वाली दुकान पर जाकर बैठ गई।",
+   "मैंने एक मिनट माँगा, और वो ज़ोर ज़ोर से गिनती गिनने लगी।",
+   "तो मैं धुएँ में खड़ा होकर कोई कहानी ढूँढने लगा।",
+   "NakshIQ पर मिली, इस चौक की सबसे पुरानी सीख़ वाली दुकानों में एक, जहाँ कोयले पर मटन सीख़ सिकती है।",
+   "टिप थी कि दर्जन के हिसाब से मँगाओ और चटनियाँ मत छोड़ो, और श्रीनगर के ख़य्याम चौक पर ज़ोया ने मुझसे ज़्यादा खाया।",
+   "ट्रैवल इंटेलिजेंस है ये जानना कि किस धुएँ के पीछे जाना है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "Every stall, same skewers.|*Which one?*",
+  "still": "kf_s1"
+ },
+ "caption_name": "Sher Barbeque Cafeteria, Khayam Chowk",
+ "shot_notes": [
+  "Night, close on a long open-air charcoal grill: rows of metal skewers of minced mutton over glowing coals, thick smoke rising under a bare bulb, no people, no readable signage.",
+  "Wide shot from behind at night: two friends in their late 20s, a man and a woman, stand still side by side in a narrow street lined with lit open-air barbecue stalls, smoke drifting under bare bulbs, both already in frame, nobody else, no readable signage.",
+  "Medium shot from the side at night: the woman sits on a plain wooden bench at the nearest stall with her hands resting in her lap, the man standing a step behind her, both faces turned away from camera, charcoal glow beside them.",
+  "Wide from behind at night: the man stands alone and still in drifting grill smoke between two lit stalls, holding his phone low with the screen turned away from camera.",
+  "Close at night on a wooden counter: one steel plate holding a row of charcoal-roasted mutton seekh kebabs and one folded flatbread, beside three small steel bowls of green, pale brown and red chutney, smoke drifting across, no hands, no people.",
+  "Wide at night: the two friends sit side by side on the wooden bench at the stall counter, between them one steel plate with only a single kebab left and the three chutney bowls, the woman's hand resting on the counter beside the plate, charcoal glow and smoke behind them, both faces turned away, nobody else in frame."
+ ]
+}

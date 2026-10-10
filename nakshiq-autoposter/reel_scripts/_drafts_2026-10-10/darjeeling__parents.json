@@ -1,0 +1,69 @@
+{
+  "id": "darjeeling__parents",
+  "angle": "parents",
+  "slug": "darjeeling",
+  "lang_en": "I planned my parents' November trip like my own, with a half past four alarm for sunrise.\nMummy asked how steep it was, and I said everyone manages.\nPapa only nodded, which means he'd already decided to keep up.\nThe evening before we left, she packed his walking stick on top.\nNobody mentioned it, but that stick made me check.\nNakshIQ said it suits older travellers with care, so stay near Chowrasta and skip the dawn start if it's tiring.\nWe did both, and two kilometres up in Darjeeling, Papa's stick never left the bag.\nTravel intelligence is knowing which alarm to cancel.\nNakshIQ.",
+  "lang_hi": "मैंने मम्मी पापा की नवंबर वाली ट्रिप अपनी ट्रिप की तरह प्लान की, सनराइज़ के लिए सुबह साढ़े चार बजे का अलार्म लगाकर।\nमम्मी ने पूछा चढ़ाई कितनी है, और मैंने कह दिया सब कर लेते हैं।\nपापा ने बस सिर हिला दिया, यानी वो ठान चुके थे कि मुझसे पीछे नहीं रहेंगे।\nनिकलने से पहले वाली शाम, मम्मी ने उनकी छड़ी बैग में सबसे ऊपर रख दी।\nकिसी ने कुछ कहा नहीं, पर उस छड़ी को देखकर मैंने एक बार चेक कर लिया।\nNakshIQ पर लिखा था कि बड़ी उम्र वालों के लिए ठीक है पर ध्यान से, चौरास्ता के पास रुको और थकान लगे तो सुबह का सनराइज़ छोड़ दो।\nहमने दोनों बातें मानीं, और समंदर से दो किलोमीटर ऊपर दार्जिलिंग में, पापा की छड़ी एक बार भी बैग से नहीं निकली।\nट्रैवल इंटेलिजेंस है ये जानना कि कौन सा अलार्म बंद करना है।\nNakshIQ.",
+  "cover": {
+    "hook": "I planned my parents' November trip *like my own*, | with a *half past four alarm* for sunrise."
+  },
+  "cover_short": "My pace, my parents' trip.|*What did I miss?*",
+  "facts": [
+    {
+      "kind": "month",
+      "slug": "darjeeling",
+      "month": 11,
+      "label": "go"
+    },
+    {
+      "kind": "persona",
+      "slug": "darjeeling",
+      "key": "elderly",
+      "quote": "Suitable with caveats"
+    },
+    {
+      "kind": "persona",
+      "slug": "darjeeling",
+      "key": "elderly",
+      "quote": "Darjeeling town is built on steep slopes"
+    },
+    {
+      "kind": "persona",
+      "slug": "darjeeling",
+      "key": "elderly",
+      "quote": "Book hotels near Mall/Chowrasta to minimize walking"
+    },
+    {
+      "kind": "persona",
+      "slug": "darjeeling",
+      "key": "elderly",
+      "quote": "4:30am start is demanding"
+    },
+    {
+      "kind": "persona",
+      "slug": "darjeeling",
+      "key": "elderly",
+      "quote": "skip if tiring"
+    },
+    {
+      "kind": "elevation",
+      "slug": "darjeeling",
+      "value": 2042
+    }
+  ],
+  "allowed_numbers": [
+    "4:30",
+    "2"
+  ],
+  "shots": [
+    "Evening in a family living room lit by one warm lamp: a man in his 30s sits at a dining table with an open laptop, seen from behind, the screen turned away from camera, his parents in their 60s seated on a sofa beyond him, all three already in frame and still.",
+    "Medium shot from the side in the same lamp-lit living room in the evening: the father in his 60s sits still in an armchair with his hands resting on his knees, his face turned away from camera.",
+    "Close in the same lamp-lit living room in the evening: an open suitcase on the floor with folded clothes, a plain wooden walking stick lying across the top, the mother's hands already resting on a folded shawl beside it, her face out of frame.",
+    "Wide in the same living room in the evening: the son sits alone on the arm of the sofa looking down at the suitcase with the walking stick on top, seen from behind, lamp light only.",
+    "Evening, a very wide shot of a hill town of small houses stacked on a steep forested slope above a valley filled with soft mist, warm low sun, no people visible, no readable signage.",
+    "Wide in evening light on the same paved path through tea bushes: the father walks a step ahead with his hands free, the mother beside him with a cloth bag on her shoulder and the wooden stick's handle showing from it, the son a few steps behind, all three seen from behind and in frame from start to end, nobody else."
+  ],
+  "status": "approved",
+  "origin": "claude-writer 2026-10-10",
+  "approved": "2026-10-10 founder approved all 5 in chat (\"approve all\")"
+}

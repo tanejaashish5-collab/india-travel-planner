@@ -1,0 +1,88 @@
+{
+  "id": "srinagar__eatery",
+  "angle": "eatery",
+  "slug": "srinagar",
+  "lang_en": "One October night, every stall on that street grilled the same skewers, and Zoya was starving.\nShe wanted the first free bench, and I wanted one good reason.\nShe sat at the nearest stall while I was deciding.\nI asked for one minute, and she started counting out loud.\nSo I stood in the smoke, looking for a story.\nNakshIQ had one, among the oldest skewer shops on the chowk, roasting mutton seekh over charcoal.\nIts tip said order by the dozen, chutneys and all, and on Srinagar's Khayam Chowk, Zoya ate more than me.\nTravel intelligence is knowing which smoke to follow.\nNakshIQ.",
+  "lang_hi": "अक्टूबर की एक रात, उस गली की हर दुकान पर एक जैसी सीख़ें सिक रही थीं, और ज़ोया को ज़ोर की भूख लगी थी।\nउसे बस पहली खाली बेंच चाहिए थी, और मुझे कोई एक ठीक वजह।\nमैं सोच ही रहा था कि वो सबसे पास वाली दुकान पर जाकर बैठ गई।\nमैंने एक मिनट माँगा, और वो ज़ोर ज़ोर से गिनती गिनने लगी।\nतो मैं धुएँ में खड़ा होकर कोई कहानी ढूँढने लगा।\nNakshIQ पर मिली, इस चौक की सबसे पुरानी सीख़ वाली दुकानों में एक, जहाँ कोयले पर मटन सीख़ सिकती है।\nटिप थी कि दर्जन के हिसाब से मँगाओ और चटनियाँ मत छोड़ो, और श्रीनगर के ख़य्याम चौक पर ज़ोया ने मुझसे ज़्यादा खाया।\nट्रैवल इंटेलिजेंस है ये जानना कि किस धुएँ के पीछे जाना है।\nNakshIQ.",
+  "cover": {
+    "hook": "One October night, *every stall on that street* grilled the same skewers, | and *Zoya was starving*."
+  },
+  "cover_short": "Every stall, same skewers.|*Which one?*",
+  "caption_name": "Sher Barbeque Cafeteria, Khayam Chowk",
+  "facts": [
+    {
+      "kind": "month",
+      "slug": "srinagar",
+      "month": 10,
+      "label": "go"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "is_legendary",
+      "value": true
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "area",
+      "quote": "Khayam Chowk"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "why_it_matters",
+      "quote": "among the oldest skewer shops on the chowk"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "signature_dish",
+      "quote": "mutton seekh"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "why_it_matters",
+      "quote": "charcoal-roasted"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "insider_tip",
+      "quote": "Order by the dozen"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "insider_tip",
+      "quote": "are part of the experience"
+    },
+    {
+      "kind": "eatery",
+      "slug": "srinagar",
+      "name": "Sher Barbeque Cafeteria",
+      "field": "insider_tip",
+      "quote": "don't skip them"
+    }
+  ],
+  "allowed_numbers": [],
+  "shots": [
+    "Night, close on a long open-air charcoal grill: rows of metal skewers of minced mutton over glowing coals, thick smoke rising under a bare bulb, no people, no readable signage.",
+    "Wide shot from behind at night: two friends in their late 20s, a man and a woman, stand still side by side in a narrow street lined with lit open-air barbecue stalls, smoke drifting under bare bulbs, both already in frame, nobody else, no readable signage.",
+    "Medium shot from the side at night: the woman sits on a plain wooden bench at the nearest stall with her hands resting in her lap, the man standing a step behind her, both faces turned away from camera, charcoal glow beside them.",
+    "Wide from behind at night: the man stands alone and still in drifting grill smoke between two lit stalls, holding his phone low with the screen turned away from camera.",
+    "Close at night on a wooden counter: one steel plate holding a row of charcoal-roasted mutton seekh kebabs and one folded flatbread, beside three small steel bowls of green, pale brown and red chutney, smoke drifting across, no hands, no people.",
+    "Wide at night: the two friends sit side by side on the wooden bench at the stall counter, between them one steel plate with only a single kebab left and the three chutney bowls, the woman's hand resting on the counter beside the plate, charcoal glow and smoke behind them, both faces turned away, nobody else in frame."
+  ],
+  "status": "approved",
+  "origin": "claude-writer 2026-10-10",
+  "approved": "2026-10-10 founder approved all 5 in chat (\"approve all\")"
+}

@@ -1,0 +1,231 @@
+{
+ "auto": true,
+ "id": "shimla__friends_swap",
+ "slug": "shimla",
+ "angle": "friends_swap",
+ "format": "friends_swap",
+ "tone": "warm",
+ "script_approved": "approved",
+ "script_file": "reel_scripts/_drafts_2026-10-10/shimla__friends_swap.json",
+ "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
+ "cast": "four friends, late 20s, two men and two women",
+ "narrator": "one of the friends",
+ "setting_basis": "All in late-afternoon light: a small city flat (living room with a sofa, a low table and a window seat, and its small kitchen with a pressure cooker on a gas stove), then the cricket ground at Chail, a wide green ground ringed by tall deodar trees on a hilltop. Shimla and Mall Road are only talked about and never shown; no shops, hotels, players, crowd or signage appear, and the footage makes no altitude, crowd or stay-count claim of its own; those are the script's.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "refs": [
+  {
+   "name": "ref_rohan",
+   "prompt": "Full-length photograph of a tall Indian man in his late twenties with short side-parted black hair and a light beard, in a rust-red crew-neck wool sweater, dark blue jeans and white sneakers, standing in soft late-afternoon window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_meher",
+   "prompt": "Full-length photograph of an Indian woman in her late twenties with long straight black hair worn loose past her shoulders, in a cream cable-knit sweater, olive-green wide-leg trousers and tan ankle boots, standing in soft late-afternoon window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_friend_navy",
+   "prompt": "Full-length photograph of a stocky Indian man in his late twenties with short curly black hair and round black-rimmed glasses, in a plain navy-blue hoodie, grey joggers and black sneakers, standing in soft late-afternoon window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_friend_mustard",
+   "prompt": "Full-length photograph of an Indian woman in her late twenties with a chin-length black bob, in a mustard-yellow cardigan over a plain black top, black jeans and white sneakers, standing in soft late-afternoon window light, three-quarter view, neutral expression, photorealistic, no text."
+  },
+  {
+   "name": "ref_flat",
+   "prompt": "The living room of a small Indian city flat in soft late-afternoon light: a grey fabric sofa, a low wooden coffee table, a cushioned window seat under a big window with sheer white curtains, a potted plant, a ceiling fan, plain walls, no people, no posters, photorealistic, no text."
+  },
+  {
+   "name": "ref_kitchen",
+   "prompt": "The small kitchen of an Indian city flat in soft late-afternoon light: a two-burner gas stove on a grey granite counter, a plain steel pressure cooker with its weighted whistle on one burner, steel spice tins beside it, a small window behind, no people, no brand labels, photorealistic, no text."
+  },
+  {
+   "name": "ref_ground",
+   "prompt": "The cricket ground at Chail in Himachal Pradesh in soft late-afternoon light: a wide, flat green grass ground on a hilltop ringed by tall dark deodar trees, hazy blue hills beyond the trees, no players, no crowd, no buildings, no scoreboard, no signage, no people, photorealistic, no text."
+  }
+ ],
+ "keyframes": [
+  {
+   "name": "kf_s1",
+   "refs": [
+    "ref_rohan",
+    "ref_meher",
+    "ref_friend_navy",
+    "ref_friend_mustard",
+    "ref_flat"
+   ],
+   "tone": "one weekend, one pick",
+   "prompt": "Wide shot from the side and slightly behind in the small flat's living room in soft late-afternoon light: the four friends sit around the low wooden table with one open laptop on it, its screen angled away from camera; the man in the rust-red sweater sits forward at the laptop, the woman in the cream sweater beside him, the man in the navy hoodie and the woman in the mustard cardigan on the sofa behind them; all faces turned away from camera."
+  },
+  {
+   "name": "kf_s2",
+   "refs": [
+    "kf_s1",
+    "ref_rohan"
+   ],
+   "tone": "his heart set on the bright street",
+   "prompt": "Medium shot from the side in the same flat and light: the man in the rust-red sweater sits on the edge of the sofa holding his phone out toward the others in his right hand, its screen only a soft glow, his face turned away from camera; the woman in the cream sweater soft and out of focus beside him."
+  },
+  {
+   "name": "kf_s3",
+   "refs": [
+    "kf_s1",
+    "ref_meher"
+   ],
+   "tone": "she wants quiet, nothing booked",
+   "prompt": "Medium shot from the side in the same flat and light: the woman in the cream sweater sits apart on the cushioned window seat, knees drawn up, looking out of the window, her face turned away from camera; behind her, soft and out of focus, the man in the rust-red sweater sits on the sofa with the laptop shut on the table in front of him, the other two beside him."
+  },
+  {
+   "name": "kf_s4",
+   "refs": [
+    "kf_s3",
+    "ref_meher"
+   ],
+   "tone": "one line changes it",
+   "prompt": "Over-the-shoulder from just behind the woman in the cream sweater on the window seat, same flat and light: she looks down at the phone held in her right hand, its screen only a soft glow; beyond her, soft and out of focus, the man in the rust-red sweater, the man in the navy hoodie and the woman in the mustard cardigan sit still on the sofa, seen side-on, heads turned toward her."
+  },
+  {
+   "name": "kf_s5",
+   "refs": [
+    "ref_kitchen"
+   ],
+   "tone": "nobody spoke",
+   "prompt": "Insert in the same late-afternoon light: the steel pressure cooker on the gas stove in the small flat kitchen, a thin jet of steam rising from its whistle, a low blue flame under it, no people in frame."
+  },
+  {
+   "name": "kf_s6",
+   "refs": [
+    "ref_rohan",
+    "ref_meher",
+    "ref_friend_navy",
+    "ref_friend_mustard",
+    "ref_ground"
+   ],
+   "tone": "he forgot Mall Road",
+   "prompt": "Wide shot from behind in late-afternoon light: the man in the rust-red sweater stands alone on the grass just inside the edge of the wide green cricket ground on the hilltop, hands in his jeans pockets, looking out across it at the ring of tall deodar trees; the woman in the cream sweater, the man in the navy hoodie and the woman in the mustard cardigan stand still together at the edge behind him, smaller in the frame; no players, no buildings, no signage, nobody else."
+  }
+ ],
+ "shots": [
+  {
+   "id": "s1",
+   "mode": "frames",
+   "start": "kf_s1",
+   "prompt": "The camera holds still. All four stay seated in place the whole time; the man in the rust-red sweater leans a little closer to the laptop.",
+   "sound": "A ceiling fan turning, traffic far below the window, quiet afternoon room tone."
+  },
+  {
+   "id": "s2",
+   "mode": "frames",
+   "start": "kf_s2",
+   "prompt": "The camera holds still. He holds the phone out a little further, and it stays in his right hand the whole time.",
+   "sound": "A ceiling fan turning, a car horn far below the window, quiet room tone."
+  },
+  {
+   "id": "s3",
+   "mode": "frames",
+   "start": "kf_s3",
+   "prompt": "The camera holds still. She stays seated at the window the whole time as the sheer curtain moves softly in the breeze.",
+   "sound": "A ceiling fan turning, a pigeon cooing on the window ledge, quiet room tone."
+  },
+  {
+   "id": "s4",
+   "mode": "frames",
+   "start": "kf_s4",
+   "prompt": "A slow push in over her shoulder. She holds the phone still in her right hand, and the three on the sofa stay in place the whole time.",
+   "sound": "A wall clock ticking, a ceiling fan turning, quiet room tone."
+  },
+  {
+   "id": "s5",
+   "mode": "frames",
+   "start": "kf_s5",
+   "prompt": "The camera holds still as a thin jet of steam rises from the cooker's whistle over the low blue flame.",
+   "sound": "A steel pressure cooker whistling on a gas stove, the gas flame hissing, quiet kitchen tone."
+  },
+  {
+   "id": "s6",
+   "mode": "frames",
+   "start": "kf_s6",
+   "prompt": "A slow push in as the wind moves the tops of the deodars. All four stay standing in place the whole time.",
+   "sound": "Wind in the deodar trees, a crow calling across the ground, quiet hilltop tone."
+  }
+ ],
+ "beats": [
+  {
+   "shot": "s1",
+   "from": 0.0
+  },
+  {
+   "shot": "s2",
+   "from": 0.0
+  },
+  {
+   "shot": "s3",
+   "from": 0.0
+  },
+  {
+   "shot": "s4",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
+   "shot": "s5",
+   "from": 2.0,
+   "zoom": 1.3
+  },
+  {
+   "shot": "s6",
+   "from": 0.0
+  },
+  {
+   "shot": "s6",
+   "from": 2.0,
+   "zoom": 1.3
+  },
+  {
+   "shot": "s1",
+   "from": 3.0,
+   "zoom": 1.35
+  }
+ ],
+ "vo": {
+  "en": [
+   "Four of us got one November weekend off, and Rohan picked Shimla.",
+   "He wanted Mall Road at night and a hotel on it.",
+   "Meher wanted quiet, so nothing got booked while they argued.",
+   "That went on for days, until Meher read one line aloud.",
+   "Nobody spoke, and a pressure cooker whistled in the kitchen.",
+   "NakshIQ called Mall Road weekends a nightmare, and named where Shimla's locals escape.",
+   "The catch is zero Mall Road and only a few stays, so not for shoppers.",
+   "Then Rohan saw Chail's cricket ground, the world's highest, and forgot Mall Road.",
+   "Travel intelligence is knowing who a place isn't for.\nNakshIQ."
+  ],
+  "hi": [
+   "हम चारों को नवंबर का एक ही वीकेंड मिला, और रोहन ने शिमला चुन लिया।",
+   "उसे रात वाला मॉल रोड चाहिए था, और होटल भी ठीक उसी पर।",
+   "मेहर को सुकून चाहिए था, तो दोनों की बहस में कुछ बुक ही नहीं हुआ।",
+   "ये कई दिन चला, फिर एक दिन मेहर ने एक लाइन पढ़कर सुनाई।",
+   "कोई कुछ नहीं बोला, बस किचन में कुकर की सीटी बजी।",
+   "NakshIQ पर लिखा था कि वीकेंड पर मॉल रोड का बुरा हाल होता है, और ये भी कि शिमला वाले खुद कहाँ घूमने जाते हैं।",
+   "बस दिक्कत ये कि वहाँ मॉल रोड है ही नहीं, रुकने की जगहें भी गिनी चुनी, तो शॉपिंग करने वालों के लिए ये जगह नहीं।",
+   "फिर रोहन ने चैल का क्रिकेट ग्राउंड देखा, दुनिया का सबसे ऊँचा, और मॉल रोड भूल गया।",
+   "ट्रैवल इंटेलिजेंस है ये जानना कि कोई जगह किसके लिए नहीं है।\nNakshIQ."
+  ]
+ },
+ "captions": {
+  "hi": "en"
+ },
+ "cover": {
+  "hook": "Shimla, or where|*Shimla's locals escape?*",
+  "still": "kf_s1"
+ },
+ "caption_name": null,
+ "shot_notes": [
+  "Late afternoon in a small flat: four friends in their late 20s, two men and two women, sit around a low table with a laptop and phones, seen from behind and the side, faces turned away, every screen turned away from camera.",
+  "Medium shot in the same flat, late afternoon: one woman sits looking down at the phone in her hands, seen over her shoulder from behind, the screen blurred, the other three sitting still and facing her.",
+  "Late afternoon in the same flat's small kitchen: a steel pressure cooker on a gas stove, a thin jet of steam rising from its whistle, no people in frame.",
+  "Late afternoon, wide from behind: the four friends walk slowly along the edge of a flat green cricket ground on a hilltop, tall pine forest all around it, nobody else on the ground.",
+  "Late afternoon: one of the men stands alone on the grass just inside the boundary of the cricket ground, seen from behind, hands in his jacket pockets, looking out at the forest, the other three small and still at the boundary behind him.",
+  "Very wide in late afternoon light: the whole cricket ground on its hilltop ringed by dark pine forest, the four friends small on the grass, no buildings, shops or other people in frame."
+ ]
+}

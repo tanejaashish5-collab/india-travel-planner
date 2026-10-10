@@ -1,0 +1,63 @@
+{
+  "id": "nainital__kids",
+  "angle": "kids",
+  "slug": "nainital",
+  "lang_en": "Everyone said the lake town suits kids, so I packed the pram.\nOur daughter is four and still falls asleep in it on long walks.\nMy wife asked about paths, and I said lake walks are flat.\nShe let it go, but kept eyeing the pram in the boot.\nSo before we left, mostly to win, I looked it up for her age.\nNakshIQ said go with kids four and up, but bring a child carrier for the uneven paths.\nThe pram stayed home, and halfway round Nainital's lake that October, she fell asleep on my back.\nTravel intelligence is packing for the path.\nNakshIQ.",
+  "lang_hi": "सबने कहा था कि वो झील वाला शहर बच्चों के लिए बढ़िया है, तो मैंने प्रैम गाड़ी में रख ली।\nहमारी बेटी चार साल की है, और लंबी सैर पर अब भी उसी में सो जाती है।\nबीवी ने रास्तों के बारे में पूछा, और मैंने कहा झील के किनारे तो सब समतल होता है।\nउसने बात वहीं छोड़ दी, पर डिक्की में रखी प्रैम को देखती रही।\nतो निकलने से पहले, बस बहस जीतने के लिए, मैंने उसकी उम्र के हिसाब से देखा।\nNakshIQ ने कहा चार साल और उससे बड़े बच्चों के साथ जाओ, पर ऊबड़ खाबड़ रास्तों के लिए चाइल्ड कैरियर ले जाओ।\nप्रैम घर पर ही रही, और उस अक्टूबर नैनीताल की झील का आधा चक्कर होते होते वो मेरी पीठ पर सो गई।\nट्रैवल इंटेलिजेंस है रास्ता देखकर सामान बाँधना।\nNakshIQ.",
+  "cover": {
+    "hook": "Everyone said the lake town suits kids, | so *I packed the pram*."
+  },
+  "cover_short": "Everyone said bring the pram.|*Should we?*",
+  "facts": [
+    {
+      "kind": "month",
+      "slug": "nainital",
+      "month": 10,
+      "label": "go"
+    },
+    {
+      "kind": "kids",
+      "slug": "nainital",
+      "field": "min_recommended_age",
+      "value": 4
+    },
+    {
+      "kind": "kids",
+      "slug": "nainital",
+      "field": "stroller_accessible",
+      "value": false
+    },
+    {
+      "kind": "kids",
+      "slug": "nainital",
+      "field": "family_verdict",
+      "quote": "Go with kids 4+"
+    },
+    {
+      "kind": "kids",
+      "slug": "nainital",
+      "field": "family_verdict",
+      "quote": "non-stroller terrain"
+    },
+    {
+      "kind": "kids",
+      "slug": "nainital",
+      "field": "family_verdict",
+      "quote": "bring a child carrier for uneven paths around the lake and hills"
+    }
+  ],
+  "allowed_numbers": [
+    "4"
+  ],
+  "shots": [
+    "Morning outside a house: close on a man's hands, already in frame, lowering a folded child's pram into the open boot of a parked car, his face out of frame, soft daylight.",
+    "Wide in the morning beside the same parked car: a couple in their 30s stand still at the open boot with the folded pram inside, a girl of about four standing between them holding her mother's hand, all three seen from behind and in frame from start to end.",
+    "Medium shot from the side in the morning at the same car: the woman stands still looking down at the folded pram in the open boot, her face turned away from camera, the man beside her holding his phone low with the screen turned away.",
+    "Morning, a still shot of the folded pram standing on its own against the wall beside a closed front door, no people.",
+    "Wide in the morning on an uneven stone lakeside path: the man walks slowly away from camera carrying the little girl in a soft back carrier, the woman walking beside him, still water and wooded hills beyond, all three in frame from start to end, nobody else.",
+    "Medium shot from behind in morning light: the little girl asleep in the soft back carrier, her head resting against her father's shoulder with her face hidden, his face out of frame, the lake soft and blurred beyond."
+  ],
+  "status": "approved",
+  "origin": "claude-writer 2026-10-10",
+  "approved": "2026-10-10 founder approved all 5 in chat (\"approve all\")"
+}

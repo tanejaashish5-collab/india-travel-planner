@@ -1,0 +1,108 @@
+{
+  "id": "rishikesh__hidden_gem",
+  "angle": "hidden_gem",
+  "slug": "rishikesh",
+  "lang_en": "I went to Rishikesh alone in October for one quiet morning by the Ganga.\nBut it was peak season, and the weekend brought Delhi's day-trippers.\nAt the aarti I couldn't see the river for phones.\nEveryone had come to raft, and by Sunday I'd had enough.\nI was checking trains home when one line stopped me.\nNakshIQ pointed to a twenty-five kilometre drive that nobody makes.\nSo I drove up before dawn and climbed a hundred steps.\nAt sunrise on Kunjapuri the Ganga lay far below, snow peaks behind, and nobody else came.\nTravel intelligence is knowing where the quiet moved to.\nNakshIQ.",
+  "lang_hi": "अक्टूबर में मैं अकेला ऋषिकेश गया था, बस गंगा किनारे एक शांत सुबह के लिए।\nपर वो पीक सीज़न था, और वीकेंड पर दिल्ली से एक दिन के लिए घूमने वाले भी आ गए।\nआरती में इतने फ़ोन ऊपर उठे थे कि गंगा दिख ही नहीं रही थी।\nसब राफ़्टिंग करने आए थे, और रविवार तक मेरा मन भर गया।\nमैं घर की ट्रेन देख रहा था, तभी एक लाइन पर नज़र रुक गई।\nNakshIQ ने बताया, पच्चीस किलोमीटर दूर एक ड्राइव है जो कोई करता ही नहीं।\nतो मैं अँधेरे में ही गाड़ी लेकर ऊपर गया, और सौ सीढ़ियाँ चढ़ा।\nसूरज निकला तो कुंजापुरी से गंगा बहुत नीचे दिखी, पीछे बर्फ़ की चोटियाँ, और कोई और नहीं आया।\nट्रैवल इंटेलिजेंस है ये जानना कि सुकून अब कहाँ मिलेगा।\nNakshIQ.",
+  "cover": {
+    "hook": "I went to Rishikesh alone in October | for *one quiet morning by the Ganga*."
+  },
+  "cover_short": "Rishikesh was packed.|*Where was the quiet?*",
+  "facts": [
+    {
+      "kind": "crowd",
+      "slug": "rishikesh",
+      "is": "level",
+      "value": "crowded"
+    },
+    {
+      "kind": "crowd",
+      "slug": "rishikesh",
+      "month": 10,
+      "is": "peak"
+    },
+    {
+      "kind": "month",
+      "slug": "rishikesh",
+      "month": 10,
+      "label": "go"
+    },
+    {
+      "kind": "crowd",
+      "slug": "rishikesh",
+      "is": "note",
+      "quote": "Weekends bring Delhi day-trippers"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Triveni Ghat Pre-Dawn Swim",
+      "field": "why_unknown",
+      "quote": "Evening aarti is tourist packed"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "why_unknown",
+      "quote": "Tourists do rafting"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "why_unknown",
+      "quote": "Kunjapuri is a 25km drive nobody makes"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "distance_km",
+      "value": 25
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "why_go",
+      "quote": "Drive up, 100 steps"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "why_go",
+      "quote": "sunrise view"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "why_go",
+      "quote": "Ganga flowing below"
+    },
+    {
+      "kind": "gem",
+      "slug": "rishikesh",
+      "name": "Kunjapuri Temple Sunrise",
+      "field": "why_go",
+      "quote": "Himalayan snow peaks behind"
+    }
+  ],
+  "allowed_numbers": [
+    "25",
+    "100"
+  ],
+  "shots": [
+    "Blue dawn light at a wide stone ghat on the Ganga: a man in his 30s stands alone at the top of the steps, seen from behind, one blurred stranger's raised phone filling the near corner between him and the river.",
+    "Same ghat in blue dawn light: close on the man's hands holding a phone, its screen turned away from camera, a small packed backpack resting on the stone step beside him, the river out of focus behind.",
+    "Blue pre-dawn light: the man drives alone up an empty winding hill road, seen from the back seat over his shoulder, headlights lighting the road ahead, no other cars.",
+    "Blue pre-dawn light: the man climbs a long flight of plain stone steps up a hilltop, alone, seen from behind, a small backpack on, no one else on the steps.",
+    "Sunrise, wide from behind: the man sits alone on a low stone wall at the hilltop, a river valley far below him with the Ganga a pale winding thread, layered hills beyond.",
+    "Sunrise, very wide: a line of snow peaks on the far horizon catching the first light above layered blue hills, the man small and still in the near corner, seen from behind, nobody else in frame."
+  ],
+  "status": "approved",
+  "origin": "claude-writer 2026-10-10",
+  "approved": "2026-10-10 founder approved all 5 in chat (\"approve all\")"
+}

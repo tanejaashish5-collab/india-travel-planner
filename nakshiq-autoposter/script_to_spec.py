@@ -34,15 +34,23 @@ def group(lines: list[str], n_beats: int = 6) -> list[list[str]]:
     if n < n_beats + 1:
         raise SystemExit(f"{n} lines cannot fill {n_beats} beats with a 2-line close")
     head = lines[:4]
-    rest = lines[4:]
-    close = rest[-2:]                   # travel intelligence + NakshIQ.
-    middle = rest[:-2]                  # 1 or more lines
-    b5 = middle[: max(1, (len(middle) + 1) // 2)]
-    b6 = middle[len(b5):] + close
-    return [[l] for l in head] + [b5, b6]
+    close = lines[-2:]                  # travel intelligence + NakshIQ.
+    middle = lines[4:-2]                # 1 or more lines
+    # The close never shares a beat with a story line. Amritsar 2026-10-02: with the
+    # close inside beat 6 the last beat ran 13 s on an 8 s clip and the picture froze
+    # 3.4 s; reel_v3.render now refuses that. 7 lines: the close takes beat 6 (s6).
+    # 8+ lines: beats 5-6 share the middle and the close is a 7th beat on s6 again,
+    # punched in (CLOSE_BEAT), so it reads as a new angle.
+    if len(middle) == 1:
+        return [[l] for l in head] + [middle, close]
+    b5 = middle[: (len(middle) + 1) // 2]
+    return [[l] for l in head] + [b5, middle[len(b5):], close]
 
 
-def build(script: dict) -> dict:
+CLOSE_BEAT = {"shot": "s6", "from": 1.5, "zoom": 1.35}
+
+
+def build(script: dict, src: Path | None = None) -> dict:
     en = [l.strip() for l in script["lang_en"].splitlines() if l.strip()]
     hi = [l.strip() for l in script["lang_hi"].splitlines() if l.strip()]
     g_en = group(en)
@@ -62,7 +70,7 @@ def build(script: dict) -> dict:
         "format": angle,
         "tone": script.get("tone", "warm"),
         "script_approved": script.get("status", "draft"),
-        "script_file": f"reel_scripts/_round1_2026-10-01/{script['id']}.json",
+        "script_file": str(src.resolve().relative_to(HERE)) if src else f"reel_scripts/{script['id']}.json",
         "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
         "cast": fmt["cast"],
         "narrator": fmt["narrator"],
@@ -71,10 +79,10 @@ def build(script: dict) -> dict:
         "refs": [],
         "keyframes": [],
         "shots": [],
-        "beats": [{"shot": f"s{i + 1}", "from": 0.0} for i in range(6)],
+        "beats": [{"shot": f"s{i + 1}", "from": 0.0} for i in range(6)] + ([dict(CLOSE_BEAT)] if len(g_en) == 7 else []),
         "vo": {"en": ["\n".join(b) for b in g_en], "hi": ["\n".join(b) for b in g_hi]},
         "captions": {"hi": "en"},
-        "cover": {"hook": script["cover"]["hook"], "still": "kf_s1"},
+        "cover": {"hook": script.get("cover_short") or script["cover"]["hook"], "still": "kf_s1"},   # covers are <= 8 words (reel_v3.check); the long hook is line 1
         "caption_name": script.get("caption_name"),
         "shot_notes": script.get("shots") or [],
     }
@@ -82,7 +90,7 @@ def build(script: dict) -> dict:
 
 if __name__ == "__main__":
     src = Path(sys.argv[1])
-    spec = build(json.loads(src.read_text()))
+    spec = build(json.loads(src.read_text()), src)
     out = HERE / "reel_specs" / f"{spec['id']}.json"
     if out.exists() and "--refresh-vo" in sys.argv:
         # A revised script: keep the visual pass (refs/keyframes/shots), replace the words.
