@@ -127,20 +127,28 @@ def _crowd_level(score: int) -> str:
             2: "heavy", 1: "extreme"}.get(score, "moderate")
 
 
-def _daily_cost_inr(state: str, score: int) -> int:
-    """Heuristic daily-cost band by state + score (placeholder until API ships)."""
-    base = {
-        "Goa": 2500, "Kerala": 2200, "Himachal Pradesh": 1800,
-        "Uttarakhand": 1500, "Jammu & Kashmir": 2000, "Ladakh": 2800,
-        "Rajasthan": 1800, "Maharashtra": 2500, "Karnataka": 2000,
-        "Tamil Nadu": 1800, "Sikkim": 2000, "Arunachal Pradesh": 2200,
-        "Meghalaya": 1800, "Nagaland": 2000, "West Bengal": 1500,
-    }.get(state, 1500)
-    if score == 5:
-        return base
-    if score <= 2:
-        return base - 400
-    return base - 200
+_REEL_DATA = None
+
+
+def _ledger_day_inr(dest: dict, month: int) -> str:
+    """The site's own mid-range day per person for this destination and month (one cost source, 2026-10-10).
+
+    Read from ~/Automation/nakshiq-veo/data/reel-data.json (scripts/export-reel-data.mjs), whose mid_day_pp is
+    the same figure the destination page's day-cost box and the trip board show (cost_day_tiers, migration 091).
+    Returns "" when the ledger has no figure, so the placeholder stays [MISSING] and cost formats are skipped.
+    Replaced a state-level heuristic ("placeholder until API ships") that invented a cost for every destination.
+    """
+    global _REEL_DATA
+    if _REEL_DATA is None:
+        p = os.path.expanduser("~/Automation/nakshiq-veo/data/reel-data.json")
+        try:
+            with open(p) as f:
+                _REEL_DATA = json.load(f).get("costs", {})
+        except (OSError, ValueError):
+            _REEL_DATA = {}
+    rows = _REEL_DATA.get(dest.get("id") or dest.get("destination_id") or "") or []
+    row = next((r for r in rows if month in (r.get("months") or [])), None)
+    return str(row["mid_day_pp"]) if row and row.get("mid_day_pp") else ""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -267,8 +275,8 @@ def build_fill_data(dest: dict, today: date) -> dict:
         "crowd_hindi": {"low": "कम भीड़", "manageable": "ठीक भीड़",
                         "moderate": "मध्यम भीड़", "heavy": "ज़्यादा भीड़",
                         "extreme": "बहुत भीड़"}.get(_crowd_level(score), ""),
-        "daily_cost_inr": str(_daily_cost_inr(state, score)),
-        "cost_inr": str(_daily_cost_inr(state, score)),
+        "daily_cost_inr": _ledger_day_inr(dest, month),
+        "cost_inr": _ledger_day_inr(dest, month),
         "weather_hindi": {5: "एकदम सही मौसम", 4: "अच्छा मौसम",
                           3: "ठीक मौसम", 2: "मुश्किल मौसम",
                           1: "बहुत मुश्किल"}.get(score, ""),

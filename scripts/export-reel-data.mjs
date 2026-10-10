@@ -18,8 +18,12 @@
  *   crowd  -> quiet_month. peak_months / quiet_months are SEASONAL, not hourly.
  *             A quiet month is often quiet because the place is shut, so the
  *             format must intersect it with a good month verdict.
- *   costs  -> real_cost. A mid-range day = hotel-mid (per night) + food per day
- *             + a day's taxi, only where all three exist for that season.
+ *   costs  -> real_cost. hotel_mid (per night), food_day, taxi_day, plus mid_day_pp: the mid-range day PER
+ *             PERSON exactly as the site's day-cost box and trip board compute it (cost_day_tiers(), migration
+ *             091: half a room + food + half a cab + half an activity). Quote mid_day_pp for "a mid-range day".
+ *
+ * Connection: direct Postgres when SUPABASE_DB_URL is set; otherwise the Supabase Management API
+ * (SUPABASE_ACCESS_TOKEN), which also returns aggregated rows only. Re-run after any destination_costs write.
  *   vs     -> which_two. Only pairs that already have a live /vs/ page.
  */
 import pg from "pg";
@@ -31,9 +35,23 @@ import os from "os";
 const REPO = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = process.argv[2] || join(os.homedir(), "Automation", "nakshiq-veo", "data", "reel-data.json");
 const url = process.env.SUPABASE_DB_URL || process.env.DATABASE_URL;
-if (!url) { console.error("[reel-data] no SUPABASE_DB_URL in env"); process.exit(1); }
+const mgmtToken = process.env.SUPABASE_ACCESS_TOKEN, supaUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+if (!url && !(mgmtToken && supaUrl)) { console.error("[reel-data] need SUPABASE_DB_URL or SUPABASE_ACCESS_TOKEN + NEXT_PUBLIC_SUPABASE_URL"); process.exit(1); }
 
-const client = new pg.Client({ connectionString: url, ssl: { rejectUnauthorized: false } });
+// Same interface for both transports: query(sql) -> { rows }.
+const client = url ? new pg.Client({ connectionString: url, ssl: { rejectUnauthorized: false } }) : {
+  async connect() {}, async end() {},
+  async query(sql) {
+    if (/^(BEGIN|COMMIT|ROLLBACK)/i.test(sql.trim())) return { rows: [] };
+    const ref = new URL(supaUrl).hostname.split(".")[0];
+    const res = await fetch(`https://api.supabase.com/v1/projects/${ref}/database/query`, {
+      method: "POST", headers: { Authorization: `Bearer ${mgmtToken}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ query: sql }),
+    });
+    if (!res.ok) throw new Error(await res.text());
+    return { rows: await res.json() };
+  },
+};
 await client.connect();
 try {
   await client.query("BEGIN READ ONLY");
@@ -52,15 +70,19 @@ try {
     where crowd_calendar is not null and crowd_calendar::text not in ('{}','null')`)).rows;
 
   const costs = (await client.query(`
-    select destination_id, season, (array_agg(months))[1] as months,
+    select destination_id, season, (array_agg(array_to_string(months, ',')) filter (where category = 'hotel-mid'))[1] as months_csv,
       max(typical_inr) filter (where category = 'hotel-mid')          as hotel_mid,
       max(typical_inr) filter (where category = 'food-per-day')       as food_day,
-      max(typical_inr) filter (where category = 'transport-taxi-day') as taxi_day
+      max(typical_inr) filter (where category = 'transport-taxi-day') as taxi_day,
+      (round(max(typical_inr) filter (where category = 'hotel-mid') / 2 / 10.0) * 10
+       + round(max(typical_inr) filter (where category = 'food-per-day') / 10.0) * 10
+       + round(max(typical_inr) filter (where category = 'transport-taxi-day') / 2 / 10.0) * 10
+       + coalesce(round(max(typical_inr) filter (where category = 'activity-sample') / 2 / 10.0) * 10, 0))::int as mid_day_pp
     from destination_costs
-    where category in ('hotel-mid','food-per-day','transport-taxi-day')
+    where category in ('hotel-mid','food-per-day','transport-taxi-day','activity-sample')
       and typical_inr is not null
     group by destination_id, season
-    having count(distinct category) = 3`)).rows;
+    having count(distinct category) filter (where category <> 'activity-sample') = 3`)).rows;
 
   // Full-year verdicts. The IG verdict pack only spans its Sep-Nov look-ahead,
   // which starved quiet_month and which_two; they need every month. This was
@@ -91,7 +113,7 @@ try {
     generated_at: new Date().toISOString(),
     treks: byDest(treks),
     crowd: Object.fromEntries(crowd.map((r) => [r.id, r.crowd_calendar])),
-    costs: byDest(costs),
+    costs: byDest(costs.map(({ months_csv, ...r }) => ({ ...r, months: months_csv ? months_csv.split(',').map(Number) : [] }))),
     vs_pairs: pairs,
     months: monthRows.reduce((a, r) => {
       (a[r.destination_id] ||= {})[String(r.month)] = { score: r.score, label: r.verdict || null };

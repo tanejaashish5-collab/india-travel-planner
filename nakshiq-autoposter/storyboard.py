@@ -1373,18 +1373,26 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
     # from this destination's own crowd calendar (peak months -> peak, quiet ->
     # low, otherwise shoulder), and the voice-over names the SEASON, which the
     # cost row states directly, rather than claiming a month it does not.
-    crowd = dest.get("crowd") or {}
-    if not crowd:
-        raise StoryboardError(f"real_cost: {dest.get('id')} has no crowd calendar to place {_month_name(month)} in a season")
-    season = ("peak" if month in (crowd.get("peak_months") or [])
-              else "low" if month in (crowd.get("quiet_months") or []) else "shoulder")
-    row = next((r for r in (dest.get("costs") or []) if r.get("season") == season
-                and all(r.get(k) for k in ("hotel_mid", "food_day", "taxi_day"))), None)
+    # 2026-10-10: destination_costs rows now carry months (reel-data exports them), so the season is the
+    # cost ledger's own season for this month, the same one the cost page and the day-cost box use. The crowd
+    # calendar is only a fallback for an export without months.
+    costs = dest.get("costs") or []
+    season = next((r.get("season") for r in costs if month in (r.get("months") or [])), None)
+    if season is None:
+        crowd = dest.get("crowd") or {}
+        if not crowd:
+            raise StoryboardError(f"real_cost: {dest.get('id')} has no cost months or crowd calendar to place {_month_name(month)} in a season")
+        season = ("peak" if month in (crowd.get("peak_months") or [])
+                  else "low" if month in (crowd.get("quiet_months") or []) else "shoulder")
+    row = next((r for r in costs if r.get("season") == season
+                and all(r.get(k) for k in ("hotel_mid", "food_day", "taxi_day", "mid_day_pp"))), None)
     if not row:
         raise StoryboardError(
             f"real_cost: {dest.get('id')} has no complete {season}-season cost day")
     h, f, t = int(row["hotel_mid"]), int(row["food_day"]), int(row["taxi_day"])
-    day = int(round((h + f + t) / 100.0) * 100)
+    # ONE cost source: the mid-range day is the site's own per-person figure (cost_day_tiers, migration 091):
+    # half a 3-star room + food + half a day cab + half an activity, for two travelling together.
+    day = int(round(int(row["mid_day_pp"]) / 100.0) * 100)
     name, mon = dest["name"], _month_name(month)
     seas = "off" if season == "low" else season
     seas_hi = {"peak": "पीक", "low": "ऑफ़", "shoulder": "शोल्डर"}[season]
@@ -1411,7 +1419,7 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         says=(f"The first price we heard in {name} made him raise an eyebrow at me.",
               "The taxi driver's number was not much better. Everyone smiling, nobody budging.",
               "So we stood on the street with our bags, guessing what was fair.",
-              f"Then I checked NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees.",
+              f"Then I checked NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees each.",
               "The next conversation with the driver was very short."),
         caps=("",
               "",
@@ -1421,14 +1429,14 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         says_hi=(f"{name} में हमारा दिन बजट में निकला, बिना बहस के। कैसे, देखो।",
                  "रिसेप्शन पर पहला दाम सुना, और उसने मेरी तरफ़ देखा।",
                  "टैक्सी वाले का नंबर भी कुछ बेहतर नहीं था। सब मुस्कुरा रहे थे, कोई हिल नहीं रहा था।",
-                 f"फिर NakshIQ देखा। यहाँ {seas_hi} सीज़न में मिड-रेंज दिन लगभग {day:,} रुपये।",
+                 f"फिर NakshIQ देखा। यहाँ {seas_hi} सीज़न में मिड-रेंज दिन लगभग {day:,} रुपये प्रति व्यक्ति।",
                  "ड्राइवर से अगली बात बहुत छोटी रही।"),
         caps_hi=(f"Our day in {name} came in on budget, no arguing. Here is how.",
                  "The first price at the desk, and he looked at me.",
                  "The taxi driver's number was no better. Everyone smiling, nobody moving.",
-                 f"Then NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees.",
+                 f"Then NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees each.",
                  "The next conversation with the driver was very short."),
-        payoff_say="That is a mid-range room, food and a taxi, from its NakshIQ cost page. Check it before you haggle.",
+        payoff_say="That is each of us, sharing a mid-range room and a taxi, from its NakshIQ cost page. Check it before you haggle.",
         payoff_cap=f"room ₹{h:,} · food ₹{f:,} · taxi ₹{t:,}",
         payoff_say_hi="कमरा, खाना और टैक्सी, सब NakshIQ के कॉस्ट पेज पर। बहस से पहले देख लो।",
         payoff_cap_hi="Room, food and taxi, all on the NakshIQ cost page. Check before you haggle.")
