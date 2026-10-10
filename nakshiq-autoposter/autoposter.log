@@ -27094,3 +27094,47 @@ Date range: 2026-04-15 → 2026-10-09
 2026-10-11 01:37:24  INFO          Uploading to R2 (timeout=300s)...
 2026-10-11 01:37:48  INFO          R2 PUT OK. Confirming...
 2026-10-11 01:37:50  INFO          Media ready: x4pvc (53,195,175 bytes · chandipur__friends_swap__en.mp4)
+2026-10-10 18:43:19  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-10 18:43:19  INFO      ════════════════════════════════════════════════════════════
+2026-10-10 18:43:19  INFO      Nakshiq Autoposter · EVENING · 2026-10-10 · weekday=5
+2026-10-10 18:43:19  INFO      ════════════════════════════════════════════════════════════
+2026-10-10 18:43:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-10 18:44:11  INFO      Synced → 20 destinations · 100 traps · 6 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-10 18:44:11  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-10 18:44:14  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-10 18:44:14  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-10 18:44:14  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-10 18:44:30  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-10 18:44:30  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_eatery, pillar:scenario_friends_swap, pillar:scenario_guide seen <2d)
+2026-10-10 18:44:30  INFO      Evening format (balance→anti_trap): v2_tourist_trap_split [0% vs target 15%] (0/15 never featured)
+2026-10-10 18:44:30  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: route_spotlight  ·  Audience: families
+2026-10-10 18:44:30  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 51
+2026-10-10 18:44:30  INFO      Audience filter 'families' → 15 destinations match.
+2026-10-10 18:44:30  INFO      Fingerprint dedup snapshot — 44 dests in 7d · 73 (dest,fmt) pairs in 30d · 222 media in 60d
+2026-10-10 18:44:30  INFO      Route locked: Classic Andaman Circuit
+2026-10-10 18:44:32  INFO      Shared best destination locked: Kasauli
+2026-10-10 18:44:32  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: darjeeling has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: mumbai has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: leh has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: munnar has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: mathura has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: old-goa has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: coorg has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-10 18:44:32  INFO      [facebook/Nakshiq] Caption ready (506 chars, dest=vrindavan)
+2026-10-10 18:44:32  INFO      [facebook/Nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-10-10 18:44:32  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/vrindavan.mp4?v=20260915
+2026-10-10 18:44:35  INFO          Brand-stamp applied: vrindavan.mp4 (6,363,458 → 3,478,485 bytes)
+2026-10-10 18:44:35  INFO          Requesting upload URL for vrindavan.mp4 (3,478,485 bytes, video/mp4)
+2026-10-10 18:44:36  INFO          Uploading to R2 (timeout=300s)...
+2026-10-10 18:44:37  INFO          R2 PUT OK. Confirming...
+2026-10-10 18:44:40  INFO          Media ready: L1Q9f (3,478,485 bytes · vrindavan.mp4)
+2026-10-10 18:44:40  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-10 18:44:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=WmeeB · Platform=1648742836967281
+2026-10-10 18:44:52  INFO      State saved. Run complete.
+2026-10-10 18:44:52  INFO      ════════════════════════════════════════════════════════════

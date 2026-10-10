@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-09",
-    "PdMu0_evening": "2026-10-09",
+    "PdMu0": "2026-10-10",
+    "PdMu0_evening": "2026-10-10",
     "PdMu0_carousel": "2026-10-10"
   },
-  "last_sync": "2026-10-09T19:39:47.554352+00:00",
+  "last_sync": "2026-10-10T18:44:11.890898+00:00",
   "posted_destinations": [
     {
       "destination_id": "cherai",
@@ -169,6 +169,10 @@
     {
       "destination_id": "kolhapur",
       "date": "2026-10-10"
+    },
+    {
+      "destination_id": "vrindavan",
+      "date": "2026-10-10"
     }
   ],
   "posted_formats": {
@@ -196,7 +200,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "tourist_trap",
       "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
@@ -216,7 +219,8 @@
       "v2_women_solo_brief_video",
       "v2_cost_vs_feeling",
       "v2_score_card_pov",
-      "data_carousel"
+      "data_carousel",
+      "v2_tourist_trap_split"
     ]
   },
   "post_log": [
@@ -10705,6 +10709,35 @@
       "destination": "kolhapur",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-10-10"
+    },
+    {
+      "timestamp": "2026-10-10T14:37:19.847862+00:00",
+      "date": "2026-10-10",
+      "platform": "instagram",
+      "post_id": "jUDfA",
+      "destination": "amritsar",
+      "format": "scenario_eatery",
+      "media_id": "dIbf8"
+    },
+    {
+      "timestamp": "2026-10-10T14:38:06.442893+00:00",
+      "date": "2026-10-10",
+      "platform": "youtube",
+      "post_id": "Eqx6D",
+      "destination": "chandipur",
+      "format": "scenario_friends_swap",
+      "media_id": "x4pvc"
+    },
+    {
+      "timestamp": "2026-10-10T18:44:52.608671+00:00",
+      "date": "2026-10-10",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "WmeeB",
+      "destination": "vrindavan",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "vrindavan.mp4"
     }
   ],
   "theme_usage": {
@@ -11084,6 +11117,9 @@
       ],
       "dzukou-valley": [
         "2026-10-09"
+      ],
+      "vrindavan": [
+        "2026-10-10"
       ]
     },
     "morning_formats": {
@@ -11141,7 +11177,8 @@
         "2026-05-31",
         "2026-06-15",
         "2026-06-19",
-        "2026-08-04"
+        "2026-08-04",
+        "2026-10-10"
       ],
       "score_card": [
         "2026-06-01",
@@ -11445,6 +11482,9 @@
       ],
       "tungnath": [
         "2026-10-09"
+      ],
+      "vrindavan": [
+        "2026-10-10"
       ]
     },
     "audience_tags": {
@@ -11480,7 +11520,8 @@
         "2026-08-29",
         "2026-09-05",
         "2026-09-26",
-        "2026-10-03"
+        "2026-10-03",
+        "2026-10-10"
       ],
       "adventurers": [
         "2026-05-29",
@@ -11698,7 +11739,8 @@
       "kolhapur": [
         "2026-10-08"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11712,7 +11754,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kedarnath",
+    "shared_best": "kasauli",
     "collection": "fort-trail-maharashtra"
   },
   "manual_skip_dests": {},
