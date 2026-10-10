@@ -38,14 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-09",
     "PdMu0_evening": "2026-10-09",
-    "PdMu0_carousel": "2026-10-09"
+    "PdMu0_carousel": "2026-10-10"
   },
   "last_sync": "2026-10-09T19:39:47.554352+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kiphire",
-      "date": "2026-09-25"
-    },
     {
       "destination_id": "cherai",
       "date": "2026-09-26"
@@ -169,6 +165,10 @@
     {
       "destination_id": "sravasti",
       "date": "2026-10-09"
+    },
+    {
+      "destination_id": "kolhapur",
+      "date": "2026-10-10"
     }
   ],
   "posted_formats": {
@@ -10678,6 +10678,33 @@
       "format": "data_carousel",
       "has_media": true,
       "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-10-10T07:37:03.451349+00:00",
+      "date": "2026-10-10",
+      "platform": "instagram",
+      "post_id": "XlSzc",
+      "destination": "kasol",
+      "format": "scenario_guide",
+      "media_id": "Jsd24"
+    },
+    {
+      "timestamp": "2026-10-10T07:37:42.664685+00:00",
+      "date": "2026-10-10",
+      "platform": "youtube",
+      "post_id": "OeKZc",
+      "destination": "kasol",
+      "format": "scenario_guide",
+      "media_id": "ZzwCb"
+    },
+    {
+      "timestamp": "2026-10-10T13:56:48.136056+00:00",
+      "date": "2026-10-10",
+      "platform": "facebook",
+      "post_id": "HNCIY",
+      "destination": "kolhapur",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-10"
     }
   ],
   "theme_usage": {
@@ -10726,6 +10753,10 @@
         "2026-06-05",
         "2026-08-04",
         "2026-10-07"
+      ],
+      "kedarnath": [
+        "2026-05-24",
+        "2026-10-09"
       ],
       "shimla": [
         "2026-05-24",
@@ -10788,6 +10819,10 @@
         "2026-07-11",
         "2026-07-28",
         "2026-09-06"
+      ],
+      "tungnath": [
+        "2026-06-02",
+        "2026-10-09"
       ],
       "pangong-lake": [
         "2026-06-02",
@@ -11047,13 +11082,7 @@
       "kolhapur": [
         "2026-10-08"
       ],
-      "tungnath": [
-        "2026-10-09"
-      ],
       "dzukou-valley": [
-        "2026-10-09"
-      ],
-      "kedarnath": [
         "2026-10-09"
       ]
     },
@@ -11726,7 +11755,15 @@
       "Gangotri Diwali (Temple Closing)",
       "Tihar (Deepawali)",
       "Nainital Autumn Festival",
-      "Kinnaur Dussehra (Fulaich)"
+      "Kinnaur Dussehra (Fulaich)",
+      "Navratri at Mahalaxmi Temple",
+      "Mysore Dasara",
+      "Mysore Dasara Exhibition",
+      "Cauvery Sankriti (Tula Sankramana)",
+      "Hogenakkal Mela",
+      "Srivari Brahmotsavam",
+      "Vijayawada Dussehra (Durga Navaratri)",
+      "Bathukamma"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
