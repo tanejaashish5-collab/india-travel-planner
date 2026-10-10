@@ -245,7 +245,13 @@ def _data_card_row(plat: str, surf: dict, led: dict, dry: bool):
                "kind": "data_card", "lang": "en", "platform": plat, "file": str(out),
                "status": "ready", "six_beat": False,
                "rendered_at": datetime.now(timezone.utc).isoformat(),
-               "best": f["best"], "best_score": f["scores"][f["best_i"]], "name": f["name"]}
+               "best": f["best"], "best_score": f["scores"][f["best_i"]], "name": f["name"],
+               # what the card shows, for cost_gate (the peak and low figures are the 3-star typical rates)
+               "screen_text": [f["hook"], f["facts"], f["note"], f["sub"], f["peak"], f["low"]],
+               "cost_basis": [{"category": "hotel-mid", "season": k, "value": int("".join(c for c in f[k] if c.isdigit()))}
+                              for k in ("peak", "low")]}
+        if not _cost_ok(row, led):
+            continue
         led[f"{slug}__data_card__{plat}"] = row
         _save_ledger(led)
         return row
@@ -411,12 +417,15 @@ def publish(dry: bool = False, kind: str = "story") -> int:
             if not ready:
                 _log(f"{plat}: no guide reel ready")
                 continue
-            row = ready[0]
             acct = accounts.get(plat)
             if not acct:
                 _log(f"{plat}: account not connected — skipping")
                 continue
-            published += _post(ap, led, row, plat, acct, today, dry)
+            for row in ready:              # a reel cost_gate holds steps aside for the next one
+                n = _post(ap, led, row, plat, acct, today, dry)
+                published += n
+                if n or row.get("status") != "review":
+                    break
             continue
         # ROUND ROBIN (founder 2026-10-01: "use all angles before repetition so
         # everyday there is new stuff"): the ready reel whose angle was published
@@ -431,6 +440,7 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                         and v.get("kind") not in ("data_card", "guide")
                         and Path(v["file"]).exists() and _cleared(v)),
                        key=lambda v: (last.get(v.get("angle") or "month", ""), not v.get("six_beat"), v["rendered_at"]))
+        ready = [v for v in ready if _cost_ok(v, led)]
         if not ready:
             dc = _data_card_row(plat, surf, led, dry)
             if not dc:
@@ -474,9 +484,27 @@ def _cleared(row: dict) -> bool:
     return not why
 
 
+def _cost_ok(row: dict, led: dict, caption: str = "") -> bool:
+    """cost_gate (founder 2026-10-10: "ensure further reels show the correct numbers from here on always"):
+    every rupee figure in the cut and its caption must match today's live ledger. A stale cut is held for a
+    re-cut (guide_reel.py daily re-cuts guides itself); an unreachable ledger means skip this slot, not post."""
+    import cost_gate
+    ok, why = cost_gate.check(row, caption)
+    if ok:
+        return True
+    if ok is False:
+        row.update(status="review", held=why)
+        if row.get("file") and any(v is row for v in led.values()):
+            _save_ledger(led)
+    _log(f"{row.get('platform')}: {row.get('storyboard')} NOT posted: {why}")
+    return False
+
+
 def _post(ap, led: dict, row: dict, plat: str, acct: dict, today: str, dry: bool) -> int:
     """Upload, publish, confirm and log one reel. Returns 1 if it posted."""
     cap, title = caption_for(row)
+    if not _cost_ok(row, led, cap):        # last check, on the exact caption that would go out
+        return 0
     if dry:
         _log(f"DRY {plat} ← {Path(row['file']).name}\n  title: {title}\n{cap}")
         return 0

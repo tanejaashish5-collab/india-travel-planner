@@ -1,24 +1,23 @@
 #!/usr/bin/env node
 /**
  * Regenerate every derived cost field from destination_costs (one cost source): destinations.daily_cost
- * (migration 091) and confidence_cards.sleep.price_range_inr (migration 093).
+ * (migrations 091/096) and confidence_cards.sleep.price_range_inr (migration 093).
  *
  *   node --env-file=apps/web/.env.local scripts/sync-daily-cost.mjs          # apply + bust reference caches
  *   DRY=1 node --env-file=apps/web/.env.local scripts/sync-daily-cost.mjs    # roll back, print a sample
  *
  * Run after ANY write to destination_costs. The tier maths lives only in the SQL function cost_day_tiers()
- * (mirrors apps/web/src/lib/trip-cost.ts); the UPDATE statement is read from migration 091 so there is one copy.
+ * (mirrors apps/web/src/lib/trip-cost.ts); the UPDATE statement is read from migration 096 so there is one copy.
  * Afterwards revalidate the destination pages whose costs changed (scripts/verify-touched-pages.mjs --dest ... --revalidate).
  */
 import fs from "node:fs";
 import { bustReferenceCache } from "./_lib/pg-bulk.mjs";
 
-const mig = fs.readFileSync("supabase/migrations/091_one_cost_source_daily_tiers.sql", "utf8");
-const start = mig.indexOf("WITH t AS (\n  SELECT * FROM cost_day_tiers(");
-const endMarker = "FROM tier WHERE tier.destination_id = d.id;";
-const end = mig.indexOf(endMarker);
-if (start < 0 || end < 0) { console.error("Could not find the daily_cost UPDATE in migration 091."); process.exit(1); }
-const update = mig.slice(start, end + endMarker.length).replace("regenerated 2026-10-10", `regenerated ${new Date().toISOString().slice(0, 10)}`);
+// The daily_cost UPDATE lives between SYNC-START and SYNC-END in migration 096 (it superseded 091's copy).
+const mig = fs.readFileSync("supabase/migrations/096_cost_tiers_pooled_budget_cab_typical_luxury_room.sql", "utf8");
+const update = mig.slice(mig.indexOf("-- SYNC-START"), mig.indexOf("-- SYNC-END"))
+  .replace("regenerated 2026-10-10", `regenerated ${new Date().toISOString().slice(0, 10)}`);
+if (!update.includes("UPDATE destinations d SET")) { console.error("Could not find the daily_cost UPDATE in migration 096."); process.exit(1); }
 const m93 = fs.readFileSync("supabase/migrations/093_confidence_sleep_range_from_ledger.sql", "utf8");
 const sleepSync = m93.slice(m93.indexOf("-- SYNC-START"), m93.indexOf("-- SYNC-END"));
 if (!sleepSync.includes("UPDATE confidence_cards")) { console.error("Could not find the confidence-card UPDATE in migration 093."); process.exit(1); }

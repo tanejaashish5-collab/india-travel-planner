@@ -105,8 +105,10 @@ function band(
  * Model (kept deliberately transparent — the UI shows every assumption):
  *   nights        = days − 1 (min 1)
  *   stay          = budget → dorm bed × people; mid/luxury → hotel room × ceil(people/2)
+ *                   (luxury prices the room at its typical rate, not the top of its band: 2026-10-10)
  *   food          = per-day × people × days
- *   localTransport= taxi-day × ceil(people/4) × days   (1 cab per 4)
+ *   localTransport= mid/luxury: taxi-day × ceil(people/4) × days   (1 cab per 4)
+ *                   budget: taxi-day × people/4 × days (a cab or jeep pooled four ways: 2026-10-10)
  *   intercity     = per representative leg × people
  *   activities    = activity-sample × people × ceil(days/2)  (~1 paid thing every 2 days)
  *   permits       = flat entry/permit fee × people (always typical — a fee, not a tier)
@@ -133,9 +135,12 @@ export function estimateTrip(rows: CostRow[], inputs: TripInputs): TripEstimate 
       tier === "luxury"
         ? ["hotel-splurge", "hotel-mid", "homestay"]
         : ["hotel-mid", "homestay"];
+    // Luxury rows are mostly modelled; their range_high is the most expensive suite in town,
+    // which put a luxury day in Udaipur at ₹26,000 a head. Price the room at its typical rate.
+    const stayCol = tier === "luxury" ? "typical_inr" : col;
     let perNight: number | null = null;
     for (const cat of chain) {
-      perNight = band(rows, cat, season, col);
+      perNight = band(rows, cat, season, stayCol);
       if (perNight != null) break;
     }
     if (perNight != null) {
@@ -148,10 +153,11 @@ export function estimateTrip(rows: CostRow[], inputs: TripInputs): TripEstimate 
   const food = band(rows, "food-per-day", season, col);
   if (food != null) lines.push({ key: "food", amount: food * P * D, qty: { people: P, days: D } });
 
-  // Local transport (day taxi, shared across a group of 4)
+  // Local transport (day taxi, shared across a group of 4). Backpackers pool a cab or shared
+  // jeep four ways rather than hiring one for two (Spiti's backpacker day had been ₹1,950).
   const taxi = band(rows, "transport-taxi-day", season, col);
   if (taxi != null) {
-    const cabs = Math.ceil(P / 4);
+    const cabs = tier === "budget" ? P / 4 : Math.ceil(P / 4);
     lines.push({ key: "localTransport", amount: taxi * cabs * D, qty: { cabs, days: D } });
   }
 

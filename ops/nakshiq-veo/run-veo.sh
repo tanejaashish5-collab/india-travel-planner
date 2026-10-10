@@ -65,11 +65,14 @@ fi
 #     fails and the job uses the last snapshot, which is safe because these facts
 #     change slowly -- but a snapshot older than 30 days is flagged every run.
 REPO="$HOME/Desktop/India Travel Planner"
-if [ "$(date +%u)" = "1" ] || [ ! -f data/reel-data.json ]; then
+# Every run since 2026-10-10 (was Mondays only): prices change whenever the cost ledger does, and data cards
+# render straight from this file (founder: reels show the ledger's numbers, always). Management API fallback,
+# so SUPABASE_DB_URL is no longer needed. cost_gate.py re-checks every figure against the live ledger at post time.
+if true; then
   if node --env-file="$REPO/apps/web/.env.local" "$REPO/scripts/export-reel-data.mjs" >/dev/null 2>&1; then
     say "reel-data refreshed"
   else
-    say "WARN reel-data refresh failed (SUPABASE_DB_URL missing?) — using the existing snapshot"
+    say "WARN reel-data refresh failed — using the existing snapshot"
   fi
 fi
 AGE=$(python3 -c "import json,datetime as d;g=json.load(open('data/reel-data.json'))['generated_at'];print((d.datetime.now(d.timezone.utc)-d.datetime.fromisoformat(g)).days)" 2>/dev/null || echo 999)

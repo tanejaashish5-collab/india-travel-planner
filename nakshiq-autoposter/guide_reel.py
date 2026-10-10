@@ -866,6 +866,35 @@ def fact_pack(slug: str) -> dict | None:
     return load_pack(slug)
 
 
+def refresh_costs(slug: str) -> bool:
+    """Re-read this place's prices from the live ledger into its fact pack, keeping every other fact as it
+    was when the stills were queued (the stills are matched to slides by position, so the slide set must not
+    move under them). Founder 2026-10-10: reels show the ledger's numbers, always. False = could not refresh;
+    the cut still goes ahead and cost_gate stops it at post time if a price is stale."""
+    p = FACTS / f"{slug}.json"
+    old = load_pack(slug)
+    r = subprocess.run(["node", str(REPO / "scripts/reel-fact-pack.mjs"), slug], cwd=REPO,
+                       capture_output=True, text=True, env=os.environ)
+    new = load_pack(slug) if r.returncode == 0 else None
+    if old is None:
+        return new is not None
+    if new and new.get("costs"):
+        old["costs"] = new["costs"]
+    p.write_text(json.dumps(old, ensure_ascii=False, indent=1))
+    return bool(new)
+
+
+def cost_basis(pack: dict, month: int) -> list[dict]:
+    """The exact ledger rows the cost slide quotes, so cost_gate can check each one strictly at post time."""
+    season = next((k for k, v in (pack.get("costs") or {}).items()
+                   if any(month in (c.get("months") or []) for c in v.values())), None)
+    if not season:
+        return []
+    c = pack["costs"][season]
+    return [{"category": k, "season": season, "value": int(round(float(c[k]["typical_inr"])))}
+            for k in ("hotel-mid", "food-per-day", "transport-taxi-day") if c.get(k)]
+
+
 HOLD = HERE / "HOLD_FOR_REVIEW"     # same kill switch as the story reels
 
 
@@ -953,6 +982,8 @@ def make_cover(out: Path, img: Path, hook: str) -> str:
 
 
 def cut(slug: str, month: int, led: dict) -> bool:
+    if not refresh_costs(slug):
+        print(f"[guide] {sb_id(slug, month)}: could not refresh prices from the ledger; cost_gate checks them at post time")
     pack = load_pack(slug)
     sl = slides(pack, month)
     allowed = len(sl)
@@ -973,6 +1004,9 @@ def cut(slug: str, month: int, led: dict) -> bool:
             or (f"slides look alike: {same}" if same else ""))
     now = datetime.now(timezone.utc).isoformat()
     for plat in PLATFORMS:
+        prev = led.get(f"{sb_id(slug, month)}__{plat}") or {}
+        if prev.get("status") in ("published", "unconfirmed"):
+            continue                       # a re-cut never resets a reel that is already out
         led[f"{sb_id(slug, month)}__{plat}"] = {
             "storyboard": sb_id(slug, month), "slug": slug, "format": "guide", "kind": "guide",
             "angle": "guide", "month": month, "name": pack["destination"]["name"], "lang": "en",
@@ -980,7 +1014,10 @@ def cut(slug: str, month: int, led: dict) -> bool:
             **({"held": held} if held else {}),
             "rendered_at": now, "file": str(out), "seconds": round(total, 1), "cover": cover,
             "slides": len(sl), "dropped_slides": missing, "kinds": [x["kind"] for x in sl],
-            "sources": {k: sum(1 for _, x in imgs if x == k) for k in ("photo", "hero", "ai")}}
+            "sources": {k: sum(1 for _, x in imgs if x == k) for k in ("photo", "hero", "ai")},
+            # What the viewer reads, and the ledger rows the cost slide quotes: cost_gate checks both at post time.
+            "screen_text": [[x["eyebrow"], x["title"], x["body"]] for x in sl],
+            "cost_basis": cost_basis(pack, month) if any(x["kind"] == "cost" for x in sl) else []}
     _save(led)
     print(f"[guide] cut {out.name}: {len(sl)} slides, {total:.1f}s, {missing} dropped (no picture of their own)" + (f", HELD: {held}" if held else ""))
     return True
@@ -1001,6 +1038,17 @@ def daily() -> int:
         if any(v.get("storyboard") == sb for v in led.values()):
             continue
         try:
+            cut(slug, m, led)
+        except SystemExit as e:
+            print(f"[guide] {sb}: {e}")
+    # 1a. a cut that cost_gate held because a price changed is re-cut from fresh prices (its stills are kept)
+    recut = sorted({v["storyboard"] for v in led.values() if v.get("kind") == "guide" and v.get("pipeline") == "guide"
+                    and v.get("status") == "review" and str(v.get("held") or "").startswith("cost:")
+                    and "__guide_m" in v.get("storyboard", "")})
+    for sb in recut:
+        slug, m = sb.split("__guide_m")[0], int(sb.split("__guide_m")[1])
+        try:
+            print(f"[guide] {sb}: re-cut with today's prices")
             cut(slug, m, led)
         except SystemExit as e:
             print(f"[guide] {sb}: {e}")
