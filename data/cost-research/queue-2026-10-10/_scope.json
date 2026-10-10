@@ -1,0 +1,3493 @@
+{
+ "coimbatore": {
+  "name": "Coimbatore",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "shimla": {
+  "name": "Shimla",
+  "state": "himachal-pradesh",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    5,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "kumbakonam": {
+  "name": "Kumbakonam",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   }
+  ],
+  "research_categories": []
+ },
+ "trichy": {
+  "name": "Trichy (Tiruchirappalli)",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "lambasingi": {
+  "name": "Lambasingi",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "badami": {
+  "name": "Badami",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "dhanaulti": {
+  "name": "Dhanaulti",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "tiruvannamalai": {
+  "name": "Tiruvannamalai",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    10
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "homestay",
+   "hostel-dorm"
+  ]
+ },
+ "manali": {
+  "name": "Manali",
+  "state": "himachal-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    2,
+    9
+   ],
+   "shoulder": [
+    1,
+    3,
+    8,
+    11
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 2,
+    "label": "17-18 Feb 2027",
+    "url_c": "17022027|18022027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   }
+  ],
+  "research_categories": []
+ },
+ "diu": {
+  "name": "Diu",
+  "state": "daman-diu",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   }
+  ],
+  "research_categories": []
+ },
+ "dandeli": {
+  "name": "Dandeli",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "chidambaram": {
+  "name": "Chidambaram",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   }
+  ],
+  "research_categories": []
+ },
+ "madurai": {
+  "name": "Madurai",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "drass": {
+  "name": "Drass",
+  "state": "ladakh",
+  "season_months_now": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 12,
+    "label": "9-10 Dec 2026",
+    "url_c": "09122026|10122026"
+   }
+  ],
+  "research_categories": []
+ },
+ "rishikesh": {
+  "name": "Rishikesh",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    9,
+    10,
+    11,
+    3,
+    4
+   ],
+   "shoulder": [
+    2,
+    5,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "gandikota": {
+  "name": "Gandikota",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "courtallam": {
+  "name": "Courtallam (Kutralam)",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    1
+   ],
+   "shoulder": [
+    2,
+    5
+   ],
+   "low": [
+    3,
+    4
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "rameswaram": {
+  "name": "Rameswaram",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "hanle": {
+  "name": "Hanle",
+  "state": "ladakh",
+  "season_months_now": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "vagamon": {
+  "name": "Vagamon",
+  "state": "kerala",
+  "season_months_now": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    8
+   ],
+   "low": [
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "thekkady": {
+  "name": "Thekkady (Periyar)",
+  "state": "kerala",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   }
+  ],
+  "research_categories": []
+ },
+ "tarkarli": {
+  "name": "Tarkarli",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "poovar": {
+  "name": "Poovar",
+  "state": "kerala",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "ooty": {
+  "name": "Ooty (Udagamandalam)",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "vrindavan": {
+  "name": "Vrindavan",
+  "state": "uttar-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    2,
+    3
+   ],
+   "shoulder": [
+    1,
+    4,
+    9,
+    12
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "puducherry": {
+  "name": "Puducherry (Pondicherry)",
+  "state": "puducherry",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "pulicat-lake": {
+  "name": "Pulicat Lake",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    10
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "maredumilli": {
+  "name": "Maredumilli",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": []
+ },
+ "murud-janjira": {
+  "name": "Murud-Janjira",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "nagarjuna-sagar": {
+  "name": "Nagarjuna Sagar",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "chaukori": {
+  "name": "Chaukori",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    9,
+    12
+   ],
+   "low": [
+    1,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "kanyakumari": {
+  "name": "Kanyakumari",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "araku-valley": {
+  "name": "Araku Valley",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "yercaud": {
+  "name": "Yercaud",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": [
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "karnaprayag": {
+  "name": "Karnaprayag",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    4,
+    5,
+    6,
+    10
+   ],
+   "shoulder": [
+    3,
+    7,
+    9,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    8,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "nainital": {
+  "name": "Nainital",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    4,
+    10,
+    3,
+    9,
+    11
+   ],
+   "shoulder": [
+    2,
+    5,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   }
+  ],
+  "research_categories": [
+   "transport-taxi-day"
+  ]
+ },
+ "nelliyampathy": {
+  "name": "Nelliyampathy",
+  "state": "kerala",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "ganpatipule": {
+  "name": "Ganpatipule",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "munnar": {
+  "name": "Munnar",
+  "state": "kerala",
+  "season_months_now": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "bijapur": {
+  "name": "Bijapur (Vijayapura)",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "gokarna": {
+  "name": "Gokarna",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "dharmasthala": {
+  "name": "Dharmasthala",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   }
+  ],
+  "research_categories": []
+ },
+ "machilipatnam": {
+  "name": "Machilipatnam",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "belur": {
+  "name": "Belur",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   }
+  ],
+  "research_categories": []
+ },
+ "wayanad": {
+  "name": "Wayanad",
+  "state": "kerala",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "harihareshwar": {
+  "name": "Harihareshwar",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "gulbarga": {
+  "name": "Gulbarga (Kalaburagi)",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "malvan": {
+  "name": "Malvan",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "joshimath": {
+  "name": "Joshimath",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   }
+  ],
+  "research_categories": []
+ },
+ "lepakshi": {
+  "name": "Lepakshi",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "mysore": {
+  "name": "Mysore",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": []
+ },
+ "sangla": {
+  "name": "Sangla Valley",
+  "state": "himachal-pradesh",
+  "season_months_now": {
+   "peak": [
+    5,
+    6,
+    9,
+    10
+   ],
+   "shoulder": [
+    4,
+    7,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 12,
+    "label": "9-10 Dec 2026",
+    "url_c": "09122026|10122026"
+   }
+  ],
+  "research_categories": []
+ },
+ "raigad-fort": {
+  "name": "Raigad Fort",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "bidar": {
+  "name": "Bidar",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "chettinad": {
+  "name": "Chettinad",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "chakrata": {
+  "name": "Chakrata",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm"
+  ]
+ },
+ "prayagraj": {
+  "name": "Prayagraj",
+  "state": "uttar-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   }
+  ],
+  "research_categories": []
+ },
+ "aihole": {
+  "name": "Aihole",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "jodhpur": {
+  "name": "Jodhpur",
+  "state": "rajasthan",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2
+   ],
+   "shoulder": [
+    3,
+    9
+   ],
+   "low": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "kukke-subramanya": {
+  "name": "Kukke Subramanya",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "coonoor": {
+  "name": "Coonoor",
+  "state": "tamil-nadu",
+  "season_months_now": {
+   "peak": [
+    9,
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    8
+   ],
+   "low": [
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm"
+  ]
+ },
+ "ahobilam": {
+  "name": "Ahobilam",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": []
+ },
+ "kashid": {
+  "name": "Kashid",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "srikalahasti": {
+  "name": "Srikalahasti",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": []
+ },
+ "konaseema": {
+  "name": "Konaseema",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    9
+   ],
+   "shoulder": [
+    4,
+    8
+   ],
+   "low": [
+    5,
+    6,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "food-per-day",
+   "homestay",
+   "hostel-dorm",
+   "transport-taxi-day"
+  ]
+ },
+ "horsley-hills": {
+  "name": "Horsley Hills",
+  "state": "andhra-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 10,
+    "label": "28-29 Oct 2026",
+    "url_c": "28102026|29102026"
+   }
+  ],
+  "research_categories": []
+ },
+ "orchha": {
+  "name": "Orchha",
+  "state": "madhya-pradesh",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    4,
+    6
+   ],
+   "low": [
+    5
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   }
+  ],
+  "research_categories": []
+ },
+ "solan": {
+  "name": "Solan",
+  "state": "himachal-pradesh",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    12
+   ],
+   "low": [
+    1,
+    7
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "haflong": {
+  "name": "Haflong",
+  "state": "assam",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "tso-moriri": {
+  "name": "Tso Moriri",
+  "state": "ladakh",
+  "season_months_now": {
+   "peak": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    1,
+    2,
+    3,
+    4,
+    11,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": [
+   "homestay",
+   "hostel-dorm",
+   "hotel-mid",
+   "transport-taxi-day"
+  ]
+ },
+ "murudeshwar": {
+  "name": "Murudeshwar",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "corbett-national-park": {
+  "name": "Jim Corbett National Park",
+  "state": "uttarakhand",
+  "season_months_now": {
+   "peak": [
+    11,
+    12,
+    1,
+    2,
+    3,
+    4
+   ],
+   "shoulder": [
+    5,
+    10
+   ],
+   "low": [
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 5,
+    "label": "12-13 May 2027",
+    "url_c": "12052027|13052027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "hampi": {
+  "name": "Hampi",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ },
+ "ratnagiri": {
+  "name": "Ratnagiri",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "shoulder": [
+    6,
+    9
+   ],
+   "low": [
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 6,
+    "label": "16-17 Jun 2027",
+    "url_c": "16062027|17062027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   },
+   {
+    "month": 9,
+    "label": "8-9 Sep 2027",
+    "url_c": "08092027|09092027"
+   }
+  ],
+  "research_categories": []
+ },
+ "nagpur": {
+  "name": "Nagpur",
+  "state": "maharashtra",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 3,
+    "label": "10-11 Mar 2027",
+    "url_c": "10032027|11032027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 7,
+    "label": "14-15 Jul 2027",
+    "url_c": "14072027|15072027"
+   }
+  ],
+  "research_categories": []
+ },
+ "kasol": {
+  "name": "Kasol",
+  "state": "himachal-pradesh",
+  "season_months_now": {
+   "peak": [
+    3,
+    4,
+    5,
+    9,
+    10
+   ],
+   "shoulder": [
+    2,
+    6,
+    8,
+    11
+   ],
+   "low": [
+    1,
+    7,
+    12
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 1,
+    "label": "20-21 Jan 2027",
+    "url_c": "20012027|21012027"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   }
+  ],
+  "research_categories": []
+ },
+ "chitradurga": {
+  "name": "Chitradurga",
+  "state": "karnataka",
+  "season_months_now": {
+   "peak": [
+    10,
+    11,
+    12,
+    1,
+    2,
+    3
+   ],
+   "shoulder": [
+    4,
+    9
+   ],
+   "low": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "probe_nights": [
+   {
+    "month": 11,
+    "label": "18-19 Nov 2026",
+    "url_c": "18112026|19112026"
+   },
+   {
+    "month": 4,
+    "label": "14-15 Apr 2027",
+    "url_c": "14042027|15042027"
+   },
+   {
+    "month": 8,
+    "label": "18-19 Aug 2027",
+    "url_c": "18082027|19082027"
+   }
+  ],
+  "research_categories": []
+ }
+}

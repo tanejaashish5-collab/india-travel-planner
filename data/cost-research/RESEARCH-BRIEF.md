@@ -137,3 +137,50 @@ South India, Central India and Islands pass (2026-10-10)
   Coorg, Varkala, Kovalam). A fare from the base to a far sight is `point_to_point`, not the local day.
 - Never reuse one food figure across several places. A state-wide or region-wide blog range is not a place's
   food cost; leave the place null instead.
+
+Season-curve and queue pass (2026-10-10)
+- Why: the ledger's low-season prices were never measured (low = shoulder x 0.65), and most places' season months
+  are a template (South India: peak Oct-Mar, shoulder Apr/Sep, low May-Aug), so prose that says "Hampi in August"
+  or "Manali in June" conflicts with the ledger. This pass measures how one place's prices move across the year.
+- Files: `data/cost-research/queue-2026-10-10/` (`_scope.json`, `_batches.json`). Each place lists `probe_nights`
+  (always 18-19 Nov 2026 first, then 2-4 more Wed-Thu nights) and `research_categories` (ledger rows that are still
+  a model: research those with the normal method above, on 18-19 Nov 2026).
+- SEASON PROBE: pick 3 to 5 3-star / well-reviewed mid-range hotels in the place (or nearest base if the scope
+  says so). Open EACH hotel's Cleartrip detail page once per probe night, date in the URL:
+  `https://www.cleartrip.com/hotels/details/<slug-id>?c=<url_c>&r=2,0`, and record the pre-tax price of the
+  cheapest double room. Same hotels on every night: the matched ratio is the point. Sold out or no price = null
+  (never estimate). If Cleartrip has fewer than 3 such hotels for a place, use the ones it has and say so. If a
+  far-future night will not load (booking window), record null and say "not open for booking" in notes.
+- Also probe 2 to 3 homestays or budget guesthouses the same way when Cleartrip lists them (same nights).
+- If a probe night falls on a local festival, fair, long weekend or school holiday you can SEE on a source, keep
+  the price and name the event + URL in `events` for that night. Do not move the night.
+- Output shape (one JSON file per batch, written AFTER EACH PLACE so nothing is lost if you stop):
+```json
+{"batch": "Q1", "researched_on": "2026-10-10", "destinations": {"<id>": {
+  "season_probe": {
+    "mid": [{"hotel": "name", "url": "detail url without ?c", "prices": {"18-19 Nov 2026": 3200, "14-15 Jul 2027": 2100}}],
+    "homestay_or_budget": [{"hotel": "name", "kind": "homestay|budget", "url": "...", "prices": {"18-19 Nov 2026": 1500}}],
+    "events": {"14-15 Jul 2027": "Guru Purnima fair, url"},
+    "notes": ""},
+  "stay": {"...only if research_categories has hotel-mid / homestay / hostel-dorm, normal shape...": null},
+  "taxi_day": {"...only if research_categories has transport-taxi-day...": null},
+  "food_per_person_day": {"...only if research_categories has food-per-day...": null},
+  "confidence": "high | medium | low", "unverified": []}}}
+```
+
+Budget-room pass (2026-10-10, batches C1-C4)
+- Why: blogs quote "Rooms: ₹400-1,000" for these places; the ledger had no budget-room price to check them against.
+  Files: `queue-2026-10-10/_scope-budget.json` and `_batches-budget.json`. One night for every place: 18-19 Nov 2026.
+- Measure, on the SAME night, so the two can be paired: `mid_median_inr` (3 to 5 3-star / well-reviewed hotels) AND
+  `budget_hotel_median_inr` (3 to 5 basic hotels / guesthouses, private room), plus `homestay_median_inr` (2 to 4)
+  where they exist. Cleartrip detail pages with `?c=18112026|19112026&r=2,0` as in the East pass; write
+  "18-19 Nov 2026" tier by tier in `price_basis` ("Mid: ... Budget: ... Homestay: ...").
+- The cheap end is often off the OTAs: state tourism rest houses (GMVN, KMVN, HPTDC, JKTDC, MPT, RTDC), temple trust
+  or ashram guest houses, dharamshalas with a printed room tariff, registered-homestay lists. These count as budget
+  rooms when the page prints a per-room tariff: list them in `budget_sources` and name them in `price_basis` with
+  "tariff card, undated" (or its date). A donation-only dharamshala is not a price; mention it in `notes`.
+- Places that close for winter (Kedarnath, Chitkul, Nako, Pangong, Zanskar, Roopkund base, Gurez...): if nothing is
+  open for 18-19 Nov 2026, say so in `notes`, give any published season tariff with its season, and leave the
+  medians null rather than borrowing a nearby town.
+- Output: the normal regional shape (`stay`, and no taxi/food unless you happen to have them), one file per batch
+  `queue-2026-10-10/C<n>.json`, rewritten after each place.
