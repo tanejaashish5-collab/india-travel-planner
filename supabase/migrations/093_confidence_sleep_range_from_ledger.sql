@@ -1,3 +1,4 @@
+-- APPLIED 2026-10-10 via scripts/run-sql-file.mjs. Not in schema_migrations.
 -- 093: the confidence card's nightly stay range ("₹500–15,000/night") is derived from destination_costs (2026-10-10).
 --
 -- Why: confidence_cards.sleep.price_range_inr was hand-written and feeds the destination page's "How to do it"

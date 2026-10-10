@@ -1,0 +1,92 @@
+[
+ {
+  "n": 2027,
+  "tc": "destination_months.who_should_go",
+  "id": "mussoorie/8",
+  "season": null,
+  "old": "Extreme budget travelers — hotels practically beg for bookings at ₹600-800\"}",
+  "new": "Extreme budget travelers — hotels practically beg for bookings at around ₹1,650\"}",
+  "reason": "price disagrees with ledger typical",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 2029,
+  "tc": "destination_months.who_should_go",
+  "id": "solan/2",
+  "season": null,
+  "old": "Budget hill station seekers at ₹600-1,000 hotels\"}",
+  "new": "Budget hill station seekers at around ₹1,800 hotels\"}",
+  "reason": "price disagrees with ledger typical",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 2581,
+  "tc": "destinations.local_logistics",
+  "id": "mount-abu",
+  "season": null,
+  "old": "Local taxi full-day ₹1500.\", \"shop_hours\": \"Nakki Lake market 10am-10pm.",
+  "new": "Local taxi full-day ₹2100.\", \"shop_hours\": \"Nakki Lake market 10am-10pm.",
+  "reason": "day_cab 2100 vs 1500",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 3114,
+  "tc": "confidence_cards.sleep",
+  "id": "orchha",
+  "season": null,
+  "old": "{\"note\": \"Sheesh Mahal is a hotel INSIDE the palace — unique experience, book early\", \"price_range_inr\": \"₹400-800/night — homestays and basic guesthouses – ₹1200-3500/night — Orchha Resort, Bundelkhand Riverside\"}",
+  "new": "{\"note\": \"Sheesh Mahal is a hotel INSIDE the palace — unique experience, book early\", \"price_range_inr\": \"around ₹1450/night — homestays and basic guesthouses – ₹1200-3500/night — Orchha Resort, Bundelkhand Riverside\"}",
+  "reason": "Homestay/guesthouse range excludes ledger shoulder typical 1,450",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 3121,
+  "tc": "confidence_cards.sleep",
+  "id": "cherrapunji",
+  "season": null,
+  "old": "Limited rooms overall.\", \"price_range_inr\": \"₹500-1000/night — guesthouses in Sohra – ₹1500-3500/night — Cherrapunji Holiday Resort, Polo Orchid\"}",
+  "new": "Limited rooms overall.\", \"price_range_inr\": \"around ₹1800/night — guesthouses in Sohra – ₹1500-3500/night — Cherrapunji Holiday Resort, Polo Orchid\"}",
+  "reason": "Sohra guesthouses 500-1000 vs ledger shoulder homestay 1,800",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 3130,
+  "tc": "confidence_cards.sleep",
+  "id": "kohima",
+  "season": null,
+  "old": "{\"note\": \"Hornbill Festival week (Dec 1-10) — prices double, book 2 months ahead.\", \"price_range_inr\": \"₹800-1500/night — guesthouses – ₹2000-4000/night — Hotel Vivor, Razhu Pru\"}",
+  "new": "{\"note\": \"Hornbill Festival week (Dec 1-10) — prices double, book 2 months ahead.\", \"price_range_inr\": \"around ₹1750/night — guesthouses – ₹2000-4000/night — Hotel Vivor, Razhu Pru\"}",
+  "reason": "Guesthouse range excludes ledger shoulder homestay typical 1,750",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 3136,
+  "tc": "confidence_cards.sleep",
+  "id": "namchi",
+  "season": null,
+  "old": "{\"note\": \"Fewer tourists than Gangtok — availability usually fine.\", \"price_range_inr\": \"₹500-1200/night — town guesthouses – ₹1500-3000/night — Cherry Resort, Summit Namnang\"}",
+  "new": "{\"note\": \"Fewer tourists than Gangtok — availability usually fine.\", \"price_range_inr\": \"around ₹1950/night — town guesthouses – ₹1500-3000/night — Cherry Resort, Summit Namnang\"}",
+  "reason": "Town guesthouse range excludes ledger shoulder typical 1,950",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 3137,
+  "tc": "confidence_cards.sleep",
+  "id": "ravangla",
+  "season": null,
+  "old": "Book ahead for peak season.\", \"price_range_inr\": \"₹500-1000/night — homestays – ₹1500-3000/night — Mt.",
+  "new": "Book ahead for peak season.\", \"price_range_inr\": \"around ₹1950/night — homestays – ₹1500-3000/night — Mt.",
+  "reason": "Homestay range excludes ledger shoulder typical 1,950",
+  "why": "quote or backslash inside structured field"
+ },
+ {
+  "n": 3162,
+  "tc": "confidence_cards.sleep",
+  "id": "khonoma",
+  "season": null,
+  "old": "Kohima has more options.\", \"price_range_inr\": \"₹500-1000/night — Khonoma homestays (limited) – ₹1500-3000/night — Kohima hotels\"}",
+  "new": "Kohima has more options.\", \"price_range_inr\": \"around ₹1650/night — Khonoma homestays (limited) – ₹1500-3000/night — Kohima hotels\"}",
+  "reason": "Khonoma homestay range excludes ledger shoulder typical 1,650",
+  "why": "quote or backslash inside structured field"
+ }
+]

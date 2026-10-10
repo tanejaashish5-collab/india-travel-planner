@@ -1,3 +1,4 @@
+-- APPLIED 2026-10-10 via scripts/run-sql-file.mjs. Not in schema_migrations.
 -- 091: one cost source. Every per-day cost figure the site shows is derived from destination_costs (2026-10-10).
 --
 -- Why: destinations.daily_cost (the "What a day actually costs" box, /vs, /compare, the trip board library filter)

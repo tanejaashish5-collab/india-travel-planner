@@ -1,0 +1,332 @@
+[
+ {
+  "n": 1076,
+  "tc": "destination_months.prose_lead",
+  "id": "madurai/5",
+  "season": "low",
+  "old": "Hotel rates at year-low outside the festival tail: Heritage Madurai at ₹4-6k, mid-bracket ₹2,000-3,500, homestays ₹1,000-1,800.",
+  "new": "Hotel rates at year-low outside the festival tail: Heritage Madurai at ₹4-6k, mid-bracket around ₹1,450, homestays around ₹900.",
+  "reason": "May low hotel mid 1,450, homestay 900",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1160,
+  "tc": "destination_months.prose_lead",
+  "id": "murudeshwar/7",
+  "season": "low",
+  "old": "Hotel rates year-low: RN Shetty Resort ₹2-3k, Naveen Beach Resort ₹1.5-2.5k, town hotels ₹700-1300.",
+  "new": "Hotel rates year-low: RN Shetty Resort ₹2-3k, Naveen Beach Resort ₹1.5-2.5k, town hotels around ₹1,700.",
+  "reason": "Low-season hotel typical 1,700 above range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1173,
+  "tc": "destination_months.prose_lead",
+  "id": "munnar/6",
+  "season": "low",
+  "old": "Hotels run year-low rates (luxury ₹4-7k, mid ₹2,500-4k, homestays ₹1,200-1,800).",
+  "new": "Hotels run year-low rates (luxury ₹4-7k, mid around ₹2,150, homestays ₹1,200-1,800).",
+  "reason": "Low-season hotel typical 2,150 below range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1175,
+  "tc": "destination_months.prose_lead",
+  "id": "murudeshwar/8",
+  "season": "low",
+  "old": "Hotel rates year-low: RN Shetty Resort ₹2-3.2k, Naveen Beach Resort ₹1.7-2.7k, town hotels ₹800-1400.",
+  "new": "Hotel rates year-low: RN Shetty Resort ₹2-3.2k, Naveen Beach Resort ₹1.7-2.7k, town hotels around ₹1,700.",
+  "reason": "Low-season hotel typical 1,700 above range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1177,
+  "tc": "destination_months.prose_lead",
+  "id": "murudeshwar/6",
+  "season": "low",
+  "old": "Hotel rates at year-low: RN Shetty Resort ₹2-3.2k, Naveen Beach Resort ₹1.5-2.5k, town hotels ₹800-1400.",
+  "new": "Hotel rates at year-low: RN Shetty Resort ₹2-3.2k, Naveen Beach Resort ₹1.5-2.5k, town hotels around ₹1,700.",
+  "reason": "Low-season hotel typical 1,700 above range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1179,
+  "tc": "destination_months.prose_lead",
+  "id": "murudeshwar/5",
+  "season": "low",
+  "old": "Hotel rates at year-low: RN Shetty Resort ₹2.2-3.5k, Naveen Beach Resort ₹1.8-2.8k, town hotels ₹900-1600.",
+  "new": "Hotel rates at year-low: RN Shetty Resort ₹2.2-3.5k, Naveen Beach Resort ₹1.8-2.8k, town hotels around ₹1,700.",
+  "reason": "Low-season hotel typical 1,700 above range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1195,
+  "tc": "destination_months.prose_lead",
+  "id": "ooty/7",
+  "season": "low",
+  "old": "Hotel rates at year-low: luxury at ₹4-7k, mid-bracket ₹2,500-4k, homestays ₹1,000-1,800.",
+  "new": "Hotel rates at year-low: luxury at ₹4-7k, mid-bracket around ₹2,350, homestays around ₹1,900.",
+  "reason": "Low-season hotel 2,350 and homestay 1,900 outside ranges",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1223,
+  "tc": "destination_months.prose_payoff",
+  "id": "orchha/5",
+  "season": "low",
+  "old": "Hotel rates are at annual lows—properties that charge ₹3000 in winter drop to ₹1000.",
+  "new": "Hotel rates are at annual lows—properties that charge ₹3000 in winter drop to ₹1,350.",
+  "reason": "May low typical 1,350; winter 3,000 within 20%",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1293,
+  "tc": "destination_months.prose_payoff",
+  "id": "dhanaulti/7",
+  "season": "low",
+  "old": "Rooms: ₹600-1,200/night.",
+  "new": "Rooms: around ₹1,300/night.",
+  "reason": "Low-season hotel typical 1,300 above range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1351,
+  "tc": "destination_months.prose_payoff",
+  "id": "jodhpur/6",
+  "season": "low",
+  "old": "Rooms: ₹2000-8000.",
+  "new": "Rooms: around ₹1,850.",
+  "reason": "low hotel_mid 1850",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1375,
+  "tc": "destination_months.prose_payoff",
+  "id": "sangla/12",
+  "season": "low",
+  "old": "Very few guesthouses stay open — ₹500-800 with room heaters.",
+  "new": "Very few guesthouses stay open — around ₹1,250 with room heaters.",
+  "reason": "low homestay 1250",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1379,
+  "tc": "destination_months.prose_payoff",
+  "id": "shimla/7",
+  "season": "low",
+  "old": "Room rates hit annual lows: ₹800-1,200 for places that charge ₹3,000 in May.",
+  "new": "Room rates hit annual lows: around ₹1,350 for places that charge ₹2,050 in May.",
+  "reason": "low 1350, May shoulder 2050",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1386,
+  "tc": "destination_months.prose_payoff",
+  "id": "solan/7",
+  "season": "low",
+  "old": "Hotels at ₹500-800 reflect the absence of tourism.",
+  "new": "Hotels at around ₹1,200 reflect the absence of tourism.",
+  "reason": "low hotel_mid 1200",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1398,
+  "tc": "destination_months.prose_payoff",
+  "id": "jodhpur/5",
+  "season": "low",
+  "old": "Rooms: ₹3000-10000, annual lows.",
+  "new": "Rooms: around ₹1,850, annual lows.",
+  "reason": "low hotel_mid 1850",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1463,
+  "tc": "destination_months.prose_payoff",
+  "id": "chakrata/7",
+  "season": "low",
+  "old": "Accommodation runs ₹500-800/night with near-zero occupancy.",
+  "new": "Accommodation runs around ₹1,100/night with near-zero occupancy.",
+  "reason": "low hotel_mid 1100",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1495,
+  "tc": "destination_months.prose_payoff",
+  "id": "joshimath/3",
+  "season": "low",
+  "old": "Room rates: ₹800-1500.",
+  "new": "Room rates: around ₹1,900.",
+  "reason": "low hotel_mid 1900",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1497,
+  "tc": "destination_months.prose_payoff",
+  "id": "jodhpur/7",
+  "season": "low",
+  "old": "Room rates: ₹2000-8000, excellent availability.",
+  "new": "Room rates: around ₹1,850, excellent availability.",
+  "reason": "low hotel_mid 1850",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1553,
+  "tc": "destination_months.prose_payoff",
+  "id": "drass/12",
+  "season": "low",
+  "old": "Homestays: ₹500-800/night for the brave.",
+  "new": "Homestays: around ₹850/night for the brave.",
+  "reason": "Drass low homestay 850",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1570,
+  "tc": "destination_months.prose_payoff",
+  "id": "prayagraj/4",
+  "season": "low",
+  "old": "Hotels are at their cheapest (₹800-1200 for decent rooms).",
+  "new": "Hotels are at their cheapest (around ₹1,650 for decent rooms).",
+  "reason": "Replaced range with ledger typical",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1588,
+  "tc": "destination_months.prose_payoff",
+  "id": "shimla/8",
+  "season": "low",
+  "old": "Room rates are rock-bottom: ₹600-1,000 for rooms that cost ₹3,500 in May.",
+  "new": "Room rates are rock-bottom: around ₹1,350 for rooms that cost ₹2,050 in May.",
+  "reason": "Replaced range with ledger typical",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1649,
+  "tc": "destination_months.prose_payoff",
+  "id": "chaukori/8",
+  "season": "low",
+  "old": "Rooms: ₹500-1,000/night.",
+  "new": "Rooms: around ₹1,250/night.",
+  "reason": "Replaced range with ledger typical",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1844,
+  "tc": "destination_months.prose_payoff",
+  "id": "vrindavan/8",
+  "season": "low",
+  "old": "Hotels book out weeks ahead (₹2,000-5,000).",
+  "new": "Hotels book out weeks ahead (around ₹1,200).",
+  "reason": "August low hotel_mid 1,200",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1858,
+  "tc": "destination_months.prose_payoff",
+  "id": "jodhpur/8",
+  "season": "low",
+  "old": "Room rates: ₹2000-8000.",
+  "new": "Room rates: around ₹1,850.",
+  "reason": "August low hotel_mid 1,850",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1902,
+  "tc": "destination_months.prose_payoff",
+  "id": "solan/1",
+  "season": "low",
+  "old": "Hotels at ₹500-1,000.",
+  "new": "Hotels at around ₹1,200.",
+  "reason": "Jan low hotel_mid 1,200",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 1960,
+  "tc": "destination_months.prose_payoff",
+  "id": "sangla/1",
+  "season": "low",
+  "old": "The few guesthouses that stay open charge ₹500-800 and provide room heaters.",
+  "new": "The few guesthouses that stay open charge around ₹1,250 and provide room heaters.",
+  "reason": "Jan low homestay 1,250",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 2023,
+  "tc": "destination_months.who_should_go",
+  "id": "shimla/7",
+  "season": "low",
+  "old": "Budget travellers — annual-low hotel rates at ₹800-1,200",
+  "new": "Budget travellers — annual-low hotel rates at around ₹1,350",
+  "reason": "price disagrees with ledger typical",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 325,
+  "tc": "destination_months.prose_lead",
+  "id": "corbett-national-park/9",
+  "season": "low",
+  "old": "Room rates are off-season at ₹3000-6000.",
+  "new": "Room rates are off-season at around ₹1,750.",
+  "reason": "Low hotel typical 1,750",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 428,
+  "tc": "destination_months.prose_lead",
+  "id": "thekkady/4",
+  "season": "low",
+  "old": "Stays in Kumily (4km from gate): Spice Village CGH Earth at ₹8-12k (versus ₹14-22k January), Carmelia Haven at ₹4-6k, homestays ₹1,200-2,500.",
+  "new": "Stays in Kumily (4km from gate): Spice Village CGH Earth at ₹8-12k (versus ₹14-22k January), Carmelia Haven at ₹4-6k, homestays around ₹800.",
+  "reason": "Low homestay is 800",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 502,
+  "tc": "destination_months.prose_lead",
+  "id": "madurai/7",
+  "season": "low",
+  "old": "Hotel rates climb 20 percent off June lows on weekends: Heritage Madurai ₹5-6k, mid-bracket ₹2,500-3,500, homestays ₹1,000-1,800.",
+  "new": "Hotel rates climb 20 percent off June lows on weekends: Heritage Madurai ₹5-6k, mid-bracket around ₹1,450, homestays around ₹900.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 542,
+  "tc": "destination_months.prose_lead",
+  "id": "chettinad/5",
+  "season": "low",
+  "old": "Hotel rates at year-low non-festival: The Bangala ₹5-8k, Visalam ₹9-14k, Saratha Vilas ₹6-10k, mid-bracket ₹1,800-3,000.",
+  "new": "Hotel rates at year-low non-festival: The Bangala ₹5-8k, Visalam ₹9-14k, Saratha Vilas ₹6-10k, mid-bracket around ₹1,700.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 641,
+  "tc": "destination_months.prose_lead",
+  "id": "chettinad/7",
+  "season": "low",
+  "old": "Hotel rates climb 15 percent off June: The Bangala ₹6-9k, Visalam ₹11-16k, Saratha Vilas ₹8-12k, mid-bracket ₹2,500-4k.",
+  "new": "Hotel rates climb 15 percent off June: The Bangala ₹6-9k, Visalam ₹11-16k, Saratha Vilas ₹8-12k, mid-bracket around ₹1,700.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 865,
+  "tc": "destination_months.prose_lead",
+  "id": "madurai/6",
+  "season": "low",
+  "old": "Hotel rates remain at year-low: Heritage Madurai ₹4-5k, mid-bracket ₹2,000-3,000, homestays ₹900-1,500.",
+  "new": "Hotel rates remain at year-low: Heritage Madurai ₹4-5k, mid-bracket around ₹1,450, homestays ₹900-1,500.",
+  "reason": "Jun low hotel_mid 1450 outside range",
+  "why": "low-season stay (ledger unmeasured)"
+ },
+ {
+  "n": 902,
+  "tc": "destination_months.prose_lead",
+  "id": "coimbatore/8",
+  "season": "low",
+  "old": "Hotels: business district at ₹4-7k, mid-bracket ₹2,000-3,500.",
+  "new": "Hotels: business district at ₹4-7k, mid-bracket around ₹1,400.",
+  "reason": "Aug low hotel mid 1,400",
+  "why": "low-season stay (ledger unmeasured)"
+ }
+]

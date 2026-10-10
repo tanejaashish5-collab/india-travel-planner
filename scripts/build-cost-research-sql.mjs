@@ -149,8 +149,9 @@ for (const f of files) {
           const hw = exclude.holiday ?? { from: 7, to: 15 };
           const inDiwali = od?.mon === 11 && od.day != null && od.day >= hw.from && od.day <= hw.to;
           if (inDiwali && !diwali) { stats.skipped.push(`${id} ${cat} (Diwali-week stay date; premium not measured yet)`); continue; }
-          const dInfo = inDiwali ? diwaliRatio(id) : null; const dRatio = dInfo?.ratio ?? 1;
-          if (inDiwali && hw.unmeasured === "hold" && /^overall/.test(dInfo.basis)) { stats.skipped.push(`${id} ${cat} (held: holiday-week stay date, no measured premium in this state)`); stats.held.push(`${id}/${cat}`); continue; }
+          // The premium was measured on 3-star hotels: dorm beds are never deflated by it (095, 2026-10-10).
+          const dInfo = inDiwali && cat !== "hostel-dorm" ? diwaliRatio(id) : null; const dRatio = dInfo?.ratio ?? 1;
+          if (dInfo && hw.unmeasured === "hold" && /^overall/.test(dInfo.basis)) { stats.skipped.push(`${id} ${cat} (held: holiday-week stay date, no measured premium in this state)`); stats.held.push(`${id}/${cat}`); continue; }
           if (anchor === "low") { stats.skipped.push(`${id} ${cat} (held: ${MONTH_NAMES[mon]} is low season here; peak unmeasured)`); stats.held.push(`${id}/${cat}`); continue; }
           const forced = exclude.anchor?.[id]?.[cat];
           const A = forced ?? anchor ?? "shoulder";
@@ -163,7 +164,7 @@ for (const f of files) {
           const pooled = !!(nn && nnSeason && RATIO[nnSeason]);
           if (pooled) observed = Math.sqrt((observed / RATIO[A]) * (nn.inr * 1.12 / RATIO[nnSeason])) * RATIO[A];
           const vals = Object.fromEntries(SEASONS.map((se) => [se, se === A ? round(observed, step) : round(observed / RATIO[A] * RATIO[se], step)]));
-          const dated = (od.undated ? `listing undated, viewed Oct 2026, a ${A} month here` : `stay ${od.day ? od.day + " " : ""}${MONTH_NAMES[mon]}, a ${A} month here`) + (inDiwali ? `; Diwali-week price / ${dRatio.toFixed(2)} (same-hotel premium: ${dInfo.basis})` : "");
+          const dated = (od.undated ? `listing undated, viewed Oct 2026, a ${A} month here` : `stay ${od.day ? od.day + " " : ""}${MONTH_NAMES[mon]}, a ${A} month here`) + (dInfo ? `; Diwali-week price / ${dRatio.toFixed(2)} (same-hotel premium: ${dInfo.basis})` : inDiwali ? "; dorm bed, not deflated (premium measured on 3-star hotels)" : "");
           const derived = SEASONS.filter((se) => se !== A).join(" and ");
           const pooledNote = pooled ? ` Combined (geometric mean, shoulder-equivalent) with the ${nn.town} ordinary-night median of ${nn.n} hotels on ${nn.date} (a ${nnSeason} night), ${Math.round(nn.inr)} pre-tax.` : "";
           const forcedNote = forced ? ` Anchored to ${forced}: ${exclude.anchorWhy?.[id] ?? "see _exclude.json"}.` : "";

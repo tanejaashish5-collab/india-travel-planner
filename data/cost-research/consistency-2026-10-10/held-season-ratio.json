@@ -1,0 +1,432 @@
+[
+ {
+  "n": 995,
+  "tc": "destination_months.prose_lead",
+  "id": "konaseema/4",
+  "season": "shoulder",
+  "old": "Hotel rates run 25-30 percent below February: Sterling Dindi ₹2.5-3.5k, Coconut Country ₹1.8-2.5k, homestays ₹800-1.5k.",
+  "new": "Hotel rates run 25 percent below February: Sterling Dindi ₹2.5-3.5k, Coconut Country ₹1.8-2.5k, homestays ₹800-1.5k.",
+  "reason": "Apr shoulder 1,750 vs Feb peak 2,350 is 26% below",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 998,
+  "tc": "destination_months.prose_lead",
+  "id": "srikalahasti/10",
+  "season": "peak",
+  "old": "Hotel rates climb 25 percent off September: APCO budget rooms ₹1,500-2,800, temple-side guest houses ₹1,800-3,500.",
+  "new": "Hotel rates climb 35 percent off September: APCO budget rooms ₹1,500-2,800, temple-side guest houses ₹1,800-3,500.",
+  "reason": "Oct peak 1,500 vs Sep shoulder 1,100 is 36% up",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1353,
+  "tc": "destination_months.prose_payoff",
+  "id": "tarkarli/9",
+  "season": "shoulder",
+  "old": "Stays at 35% off peak — MTDC Tarkarli Resort ₹3000-5000/night, private homestays ₹2200-4000/night.",
+  "new": "Stays at 25% off peak — MTDC Tarkarli Resort ₹3000-5000/night, private homestays around ₹2,100/night.",
+  "reason": "shoulder vs peak hotel_mid 25%; homestay 2100",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1358,
+  "tc": "destination_months.prose_payoff",
+  "id": "ratnagiri/6",
+  "season": "shoulder",
+  "old": "Stay at Hotel Landmark ₹1800-3000/night or MTDC Resort ₹1500-2800/night at 40-50% off peak.",
+  "new": "Stay at Hotel Landmark ₹1800-3000/night or MTDC Resort ₹1500-2800/night at 25% off peak.",
+  "reason": "shoulder 2050 vs peak 2750 = 25% off",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1520,
+  "tc": "destination_months.prose_payoff",
+  "id": "murud-janjira/9",
+  "season": "shoulder",
+  "old": "Stays at 30-40% off peak — ₹1500-3500/night.",
+  "new": "Stays at 25% off peak — ₹1500-3500/night.",
+  "reason": "shoulder 3050 vs peak 4100 = 25% off",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1529,
+  "tc": "destination_months.prose_payoff",
+  "id": "harihareshwar/4",
+  "season": "shoulder",
+  "old": "MTDC Resort ₹1500-2800/night, Konkan homestays ₹1200-2500/night at 30% off February peak.",
+  "new": "MTDC Resort ₹1500-2800/night, Konkan homestays ₹1200-2500/night at 25% off February peak.",
+  "reason": "shoulder 3050 vs peak 4100 = 25% off",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1555,
+  "tc": "destination_months.prose_payoff",
+  "id": "harihareshwar/9",
+  "season": "shoulder",
+  "old": "Stays at 35% off peak — MTDC Resort ₹1500-2800/night, homestays ₹1200-2500/night.",
+  "new": "Stays at 25% off peak — MTDC Resort ₹1500-2800/night, homestays ₹1200-2500/night.",
+  "reason": "Peak 4100 to shoulder 3050 is about 25%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1567,
+  "tc": "destination_months.prose_payoff",
+  "id": "raigad-fort/10",
+  "season": "peak",
+  "old": "Stays: MTDC Raigad Resort Pachad ₹2200-4000/night, private homestays ₹1500-3000/night at shoulder-rate (20% below December peak).",
+  "new": "Stays: MTDC Raigad Resort Pachad ₹2200-4000/night, private homestays ₹1500-3000/night at shoulder-rate (25% below December peak).",
+  "reason": "Peak to shoulder homestay 2400 to 1750, about 25%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1624,
+  "tc": "destination_months.prose_payoff",
+  "id": "ganpatipule/9",
+  "season": "shoulder",
+  "old": "Stays at 35% off peak — MTDC Resort ₹2500-4000/night, Hotel Atithi Parinay ₹2000-3500/night.",
+  "new": "Stays at 25% off peak — MTDC Resort ₹2500-4000/night, Hotel Atithi Parinay ₹2000-3500/night.",
+  "reason": "Replaced range with ledger typical",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1631,
+  "tc": "destination_months.prose_payoff",
+  "id": "ratnagiri/9",
+  "season": "shoulder",
+  "old": "Stays at 35% off peak — Hotel Landmark ₹2200-3500/night, MTDC Resort ₹2000-3000/night.",
+  "new": "Stays at 25% off peak — Hotel Landmark ₹2200-3500/night, MTDC Resort ₹2000-3000/night.",
+  "reason": "Replaced range with ledger typical",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1650,
+  "tc": "destination_months.prose_payoff",
+  "id": "malvan/9",
+  "season": "shoulder",
+  "old": "Stays at 35% off peak — MTDC Tarkarli Resort ₹2500-4000/night, private homestays ₹2000-3500/night.",
+  "new": "Stays at 25% off peak — MTDC Tarkarli Resort ₹2500-4000/night, private homestays ₹2000-3500/night.",
+  "reason": "Peak 3300 to shoulder 2450 is about 25%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1778,
+  "tc": "destination_months.prose_payoff",
+  "id": "raigad-fort/6",
+  "season": "shoulder",
+  "old": "Stays: MTDC Raigad Resort Pachad ₹1800-3500/night, private homestays ₹1200-2800/night at 40% off peak.",
+  "new": "Stays: MTDC Raigad Resort Pachad ₹1800-3500/night, private homestays ₹1200-2800/night at 25% off peak.",
+  "reason": "Shoulder vs peak hotel_mid 3,050/4,100 = 25% off",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 1798,
+  "tc": "destination_months.prose_payoff",
+  "id": "kashid/9",
+  "season": "shoulder",
+  "old": "Stays at 30-40% off peak — Kashid Beach Resort ₹2200-3500/night, Hotel Sea Shell ₹1800-3000/night.",
+  "new": "Stays at 25% off peak — Kashid Beach Resort ₹2200-3500/night, Hotel Sea Shell ₹1800-3000/night.",
+  "reason": "Shoulder vs peak hotel_mid 3,600/4,850 = 25% off",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 327,
+  "tc": "destination_months.prose_lead",
+  "id": "nainital/5",
+  "season": "shoulder",
+  "old": "Hotel rates hit 4x off-season — a ₹1,500 room in January costs ₹6,000 now.",
+  "new": "Hotel rates hit 1.5x off-season — a ₹1,650 room in January costs ₹2,550 now.",
+  "reason": "Jan low 1,650 vs May shoulder 2,550",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 383,
+  "tc": "destination_months.prose_lead",
+  "id": "rameswaram/4",
+  "season": "shoulder",
+  "old": "Hotel rates run 30 percent off January: Daiwik ₹2,000-3,500, Hyatt Place ₹3,000-4,500, beach homestays ₹700-1,200.",
+  "new": "Hotel rates run 25 percent off January: Daiwik ₹2,000-3,500, Hyatt Place ₹3,000-4,500, beach homestays around ₹1,550.",
+  "reason": "Jan peak to Apr shoulder -25%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 403,
+  "tc": "destination_months.prose_lead",
+  "id": "kumbakonam/3",
+  "season": "shoulder",
+  "old": "Hotel rates ease 20 percent: Mantra Veppathur Resort ₹3.5-5k, Hotel Sara Regency ₹2-3.5k, basic lodges ₹600-1200.",
+  "new": "Hotel rates ease 25 percent: Mantra Veppathur Resort ₹3.5-5k, Hotel Sara Regency ₹2-3.5k, basic lodges ₹600-1200.",
+  "reason": "Peak to shoulder hotel -25%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 444,
+  "tc": "destination_months.prose_lead",
+  "id": "maredumilli/10",
+  "season": "peak",
+  "old": "Hotel rates climb 25 percent off September: Vana Vihari Eco-Camp ₹2,200-4,000, tribal homestays ₹1,000-2,200.",
+  "new": "Hotel rates climb 35 percent off September: Vana Vihari Eco-Camp ₹2,200-4,000, tribal homestays ₹1,000-2,200.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 468,
+  "tc": "destination_months.prose_lead",
+  "id": "puducherry/9",
+  "season": "shoulder",
+  "old": "Hotel rates sit 40-50 percent below February peak — Le Dupleix walk-in below ₹6,500, Maison Perumal below ₹5,000.",
+  "new": "Hotel rates sit 25 percent below February peak — Le Dupleix walk-in below ₹6,500, Maison Perumal below ₹5,000.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 472,
+  "tc": "destination_months.prose_lead",
+  "id": "puducherry/4",
+  "season": "shoulder",
+  "old": "Hotel rates run 30-35 percent below February peak — Le Dupleix walk-in below ₹7,000, Maison Perumal below ₹5,500.",
+  "new": "Hotel rates run 25 percent below February peak — Le Dupleix walk-in below ₹7,000, Maison Perumal below ₹5,500.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 491,
+  "tc": "destination_months.prose_lead",
+  "id": "chidambaram/4",
+  "season": "low",
+  "old": "Hotel rates drop 25-30 percent versus February: Hotel Saradharam ₹2-3.5k, Hotel Akshaya ₹1.5-2.5k, basic dharmashalas ₹400-800.",
+  "new": "Hotel rates drop 50 percent versus February: Hotel Saradharam ₹2-3.5k, Hotel Akshaya ₹1.5-2.5k, basic dharmashalas ₹400-800.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 494,
+  "tc": "destination_months.prose_lead",
+  "id": "kumbakonam/4",
+  "season": "low",
+  "old": "Hotel rates drop 25-30 percent versus February: Mantra Veppathur Resort ₹3-4.5k, Hotel Sara Regency ₹1.8-3k, basic lodges ₹500-1000.",
+  "new": "Hotel rates drop 55 percent versus February: Mantra Veppathur Resort ₹3-4.5k, Hotel Sara Regency ₹1.8-3k, basic lodges ₹500-1000.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 513,
+  "tc": "destination_months.prose_lead",
+  "id": "kanyakumari/9",
+  "season": "shoulder",
+  "old": "Hotel rates climb 15 percent off August lows: Sparsa Resort ₹2,500-4k, Singaar ₹2-3,500, beach homestays ₹600-1,000.",
+  "new": "Hotel rates climb 55 percent off August lows: Sparsa Resort ₹2,500-4k, Singaar ₹2-3,500, beach homestays around ₹1,350.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 534,
+  "tc": "destination_months.prose_lead",
+  "id": "nelliyampathy/4",
+  "season": "shoulder",
+  "old": "Hotel rates drop 35 percent versus January peak: plantation bungalows at ₹2,500-5,500, homestays at ₹900-2,200.",
+  "new": "Hotel rates drop 25 percent versus January peak: plantation bungalows at ₹2,500-5,500, homestays at ₹900-2,200.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 547,
+  "tc": "destination_months.prose_lead",
+  "id": "pulicat-lake/3",
+  "season": "shoulder",
+  "old": "Hotel rates ease 20 percent off February: Sullurupeta lodges ₹600-1,200, Nellore highway hotels ₹1,500-2,500.",
+  "new": "Hotel rates ease 25 percent off February: Sullurupeta lodges ₹600-1,200, Nellore highway hotels ₹1,500-2,500.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 574,
+  "tc": "destination_months.prose_lead",
+  "id": "srikalahasti/9",
+  "season": "shoulder",
+  "old": "Hotel rates at -20 percent off January peak: APCO budget rooms ₹1,200-2,200, temple-side guest houses ₹1,500-2,900.",
+  "new": "Hotel rates at -25 percent off January peak: APCO budget rooms ₹1,200-2,200, temple-side guest houses around ₹1,450.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 645,
+  "tc": "destination_months.prose_lead",
+  "id": "yercaud/10",
+  "season": "peak",
+  "old": "Hotel rates climb 15 percent from September: heritage at ₹3,600-6,000, mid-bracket ₹2,300-3,800, homestays ₹1,300-2,000.",
+  "new": "Hotel rates climb 40 percent from September: heritage at ₹3,600-6,000, mid-bracket ₹2,300-3,800, homestays around ₹2,050.",
+  "reason": "Price/ratio disagrees with ledger typical for that season",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 670,
+  "tc": "destination_months.prose_lead",
+  "id": "gokarna/9",
+  "season": "shoulder",
+  "old": "Hotel rates climb 15-20 percent versus August lows: Om Beach Resort ₹2.5-4k, SwaSwara CGH Earth ₹7-10k, Kudle Beach huts (early reopens) ₹300-800, town hotels ₹700-1700.",
+  "new": "Hotel rates climb 60 percent versus August lows: Om Beach Resort ₹2.5-4k, SwaSwara CGH Earth ₹7-10k, Kudle Beach huts (early reopens) ₹300-800, town hotels ₹700-1700.",
+  "reason": "Sep shoulder 2450 vs Aug low 1550: +58%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 671,
+  "tc": "destination_months.prose_lead",
+  "id": "courtallam/6",
+  "season": "peak",
+  "old": "Hotel rates climb 60 percent off May lows: Hotel Vetri Mahal ₹2,500-4k, Sundara Mahal ₹3-4,500, homestays ₹1,200-2,000.",
+  "new": "Hotel rates climb 35 percent off May lows: Hotel Vetri Mahal ₹2,500-4k, Sundara Mahal ₹3-4,500, homestays ₹1,200-2,000.",
+  "reason": "Jun peak 2650 vs May shoulder 1950: +36%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 675,
+  "tc": "destination_months.prose_lead",
+  "id": "dharmasthala/4",
+  "season": "shoulder",
+  "old": "Hotel rates 30 percent below February peak: temple-trust guesthouses ₹400-1100, Sri Sai Krupa ₹1100-2000, Hotel Soubhagya ₹1300-2200.",
+  "new": "Hotel rates 25 percent below February peak: temple-trust guesthouses ₹400-1100, Sri Sai Krupa ₹1100-2000, Hotel Soubhagya ₹1300-2200.",
+  "reason": "Apr shoulder 3500 vs Feb peak 4750: 26% below",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 676,
+  "tc": "destination_months.prose_lead",
+  "id": "kukke-subramanya/4",
+  "season": "shoulder",
+  "old": "Hotel rates 30 percent below February peak: temple-trust guesthouses ₹400-1000, Hotel Kukke Royale ₹1.4-2.2k, homestays ₹1-1.8k.",
+  "new": "Hotel rates 25 percent below February peak: temple-trust guesthouses ₹400-1000, Hotel Kukke Royale ₹1.4-2.2k, homestays ₹1-1.8k.",
+  "reason": "Apr shoulder 2750 vs Feb peak 3700: 26% below",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 677,
+  "tc": "destination_months.prose_lead",
+  "id": "chidambaram/11",
+  "season": "peak",
+  "old": "Hotel rates climb to 75-85 percent of December peak: Hotel Saradharam ₹4-5.5k, Hotel Akshaya ₹3-4.5k, basic dharmashalas ₹800-1500.",
+  "new": "Hotel rates climb to 100 percent of December peak: Hotel Saradharam ₹4-5.5k, Hotel Akshaya ₹3-4.5k, basic dharmashalas ₹800-1500.",
+  "reason": "Nov and Dec both peak, same hotel_mid",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 679,
+  "tc": "destination_months.prose_lead",
+  "id": "kukke-subramanya/9",
+  "season": "shoulder",
+  "old": "Hotel rates climb 15-20 percent versus August lows: temple-trust guesthouses ₹500-1100, Hotel Kukke Royale ₹1.5-2.4k, homestays ₹1.1-1.9k.",
+  "new": "Hotel rates climb 55 percent versus August lows: temple-trust guesthouses ₹500-1100, Hotel Kukke Royale ₹1.5-2.4k, homestays ₹1.1-1.9k.",
+  "reason": "Sep shoulder 2750 vs Aug low 1750: +57%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 725,
+  "tc": "destination_months.prose_lead",
+  "id": "machilipatnam/9",
+  "season": "shoulder",
+  "old": "Hotel rates climb 15 percent versus August lows but remain 40-45 percent below January peak: Vadarevu ₹1,400-2,000, Hotel Trishul ₹1,000-1,500.",
+  "new": "Hotel rates climb 55 percent versus August lows but remain 25 percent below January peak: Vadarevu ₹1,400-2,000, Hotel Trishul ₹1,000-1,500.",
+  "reason": "Sep 2450 vs Aug 1600 +53%; vs Jan peak 3350 -27%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 726,
+  "tc": "destination_months.prose_lead",
+  "id": "machilipatnam/11",
+  "season": "peak",
+  "old": "Hotel rates climb to 80 percent of January peak: Vadarevu ₹2,000-3,000, Hotel Trishul ₹1,500-2,200.",
+  "new": "Hotel rates climb to 100 percent of January peak: Vadarevu ₹2,000-3,000, Hotel Trishul ₹1,500-2,200.",
+  "reason": "Nov and Jan both peak, same hotel_mid",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 743,
+  "tc": "destination_months.prose_lead",
+  "id": "belur/11",
+  "season": "peak",
+  "old": "Hotels climb to 75 percent of January peak: Hoysala Village Resort ₹4,500-6,500, Mallige Madhuvana ₹3,200-4,500.",
+  "new": "Hotels climb to 100 percent of January peak: Hoysala Village Resort ₹4,500-6,500, Mallige Madhuvana ₹3,200-4,500.",
+  "reason": "Nov and Jan both peak, same hotel_mid",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 748,
+  "tc": "destination_months.prose_lead",
+  "id": "lepakshi/9",
+  "season": "shoulder",
+  "old": "Hotel rates climb 20 percent versus August lows: Bengaluru base ₹4-6k, local Lepakshi lodges ₹800-1,400.",
+  "new": "Hotel rates climb 55 percent versus August lows: Bengaluru base ₹4-6k, local Lepakshi lodges ₹800-1,400.",
+  "reason": "Sep shoulder 2450 vs Aug low 1600: +53%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 783,
+  "tc": "destination_months.prose_lead",
+  "id": "nagarjuna-sagar/11",
+  "season": "peak",
+  "old": "Hotel rates climb to 80 percent of January peak: Haritha Hill Colony ₹2-3k, Project Tiger forest guest houses ₹1,200-2,200, mid-bracket lodges ₹900-1,800.",
+  "new": "Hotel rates climb to 100 percent of January peak: Haritha Hill Colony ₹2-3k, Project Tiger forest guest houses ₹1,200-2,200, mid-bracket lodges ₹900-1,800.",
+  "reason": "Nov and Jan both peak, same hotel_mid",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 784,
+  "tc": "destination_months.prose_lead",
+  "id": "ahobilam/10",
+  "season": "peak",
+  "old": "Hotel rates climb 20 percent off September: Mutt guesthouse ₹600-1,800, Nandyal homestays ₹1,200-2,500.",
+  "new": "Hotel rates climb 40 percent off September: Mutt guesthouse ₹600-1,800, Nandyal homestays ₹1,200-2,500.",
+  "reason": "Oct peak 3850 vs Sep shoulder 2800: +37.5%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 790,
+  "tc": "destination_months.prose_lead",
+  "id": "lambasingi/3",
+  "season": "shoulder",
+  "old": "Hotel rates ease 35 percent off January peak: APTDC log cabins ₹2,000-3,500, private cottages ₹1,200-2,500, tribal homestays ₹800-1,800.",
+  "new": "Hotel rates ease 25 percent off January peak: APTDC log cabins ₹2,000-3,500, private cottages ₹1,200-2,500, tribal homestays ₹800-1,800.",
+  "reason": "Mar shoulder 2450 vs Jan peak 3350: 27% below",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 804,
+  "tc": "destination_months.prose_lead",
+  "id": "horsley-hills/4",
+  "season": "shoulder",
+  "old": "Hotel rates at 30 percent off February peak: APTDC Haritha ₹1,500-3,200; AP Forest guest house ₹900-2,000; private homestays in Madanapalle valley ₹600-1,400.",
+  "new": "Hotel rates at 25 percent off February peak: APTDC Haritha ₹1,500-3,200; AP Forest guest house ₹900-2,000; private homestays in Madanapalle valley ₹600-1,400.",
+  "reason": "Apr shoulder 3500 vs Feb peak 4700: 26% below",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 808,
+  "tc": "destination_months.prose_lead",
+  "id": "horsley-hills/10",
+  "season": "peak",
+  "old": "Hotel rates climb 25 percent off September: APTDC Haritha ₹2,000-4,000; AP Forest guest house ₹1,100-2,400; private homestays in Madanapalle valley ₹700-1,700.",
+  "new": "Hotel rates climb 35 percent off September: APTDC Haritha ₹2,000-4,000; AP Forest guest house ₹1,100-2,400; private homestays in Madanapalle valley ₹700-1,700.",
+  "reason": "Oct peak 4700 vs Sep shoulder 3500: +34%",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 812,
+  "tc": "destination_months.prose_lead",
+  "id": "gandikota/4",
+  "season": "shoulder",
+  "old": "Hotel rates at 30 percent off February: APTDC Haritha ₹1,800-3,400; Tadipatri-Jammalamadugu guest houses ₹800-1,800.",
+  "new": "Hotel rates at 25 percent off February: APTDC Haritha ₹1,800-3,400; Tadipatri-Jammalamadugu guest houses ₹800-1,800.",
+  "reason": "Apr shoulder 2450 vs Feb peak 3350: 27% below",
+  "why": "season ratio (model constant)"
+ },
+ {
+  "n": 914,
+  "tc": "destination_months.prose_lead",
+  "id": "gokarna/4",
+  "season": "shoulder",
+  "old": "Hotel rates 30 percent below February peak: Om Beach Resort ₹3-5k, SwaSwara CGH Earth ₹8-12k, Kudle Beach huts ₹300-900, Zostel ₹400-800.",
+  "new": "Hotel rates 25 percent below February peak: Om Beach Resort ₹3-5k, SwaSwara CGH Earth ₹8-12k, Kudle Beach huts ₹300-900, Zostel ₹400-800.",
+  "reason": "Apr shoulder 2,450 vs Feb peak 3,300 is 26% below",
+  "why": "season ratio (model constant)"
+ }
+]

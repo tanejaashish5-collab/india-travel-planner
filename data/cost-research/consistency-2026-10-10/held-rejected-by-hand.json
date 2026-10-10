@@ -1,0 +1,142 @@
+[
+ {
+  "n": 1658,
+  "tc": "destination_months.prose_payoff",
+  "id": "malvan/12",
+  "season": null,
+  "old": "Stays: MTDC Tarkarli Resort water-villa ₹5500-9500/night (Christmas-NYE peak), private homestays ₹3500-7000/night.",
+  "new": "Stays: MTDC Tarkarli Resort water-villa ₹5500-9500/night (Christmas-NYE peak), private homestays around ₹2,800/night.",
+  "reason": "Peak homestay 2800",
+  "why": "rejected by hand: Christmas-week price, not the season average"
+ },
+ {
+  "n": 117,
+  "tc": "articles.content",
+  "id": "complete-guide-sangla-valley",
+  "season": null,
+  "old": "**Budget (₹800-1,500/night):** Family-run guesthouses with basic rooms.",
+  "new": "**Budget (around ₹1,950/night):** Family-run guesthouses with basic rooms.",
+  "reason": "Shoulder homestay typical 1,950",
+  "why": "rejected by hand: budget guesthouse, no ledger tier"
+ },
+ {
+  "n": 131,
+  "tc": "articles.content",
+  "id": "pushkar-in-october-scored",
+  "season": null,
+  "old": "- **Room rates.** October budget double: ₹700–1,200.",
+  "new": "- **Room rates.** October budget double: around ₹1,450.",
+  "reason": "Oct peak guesthouse typical 1,450",
+  "why": "rejected by hand: budget double, no ledger tier"
+ },
+ {
+  "n": 145,
+  "tc": "articles.content",
+  "id": "complete-guide-spiti-valley",
+  "season": null,
+  "old": "**Mid-range (₹2,500–4,000):** Private room in guesthouse (₹1,000–2,000).",
+  "new": "**Mid-range (around ₹5,600):** Private room in guesthouse (around ₹2,650).",
+  "reason": "Shoulder mid day 5,610; guesthouse room 2,650",
+  "why": "rejected by hand: guesthouse tier and article-wide band"
+ },
+ {
+  "n": 151,
+  "tc": "articles.content",
+  "id": "hampi-in-february-scored",
+  "season": null,
+  "old": "Mid-range on Hippie Island runs ₹2,000–3,500/night (Goan Corner Guesthouse is our pick — see the [Hampi stays section](/en/destination/hampi) for vetted options).",
+  "new": "Mid-range on Hippie Island runs around ₹4,350/night (Goan Corner Guesthouse is our pick — see the [Hampi stays section](/en/destination/hampi) for vetted options).",
+  "reason": "Feb peak hotel mid typical 4,350",
+  "why": "rejected by hand: Hippie Island sub-area"
+ },
+ {
+  "n": 157,
+  "tc": "articles.content",
+  "id": "ladakh-first-timer-complete-guide",
+  "season": null,
+  "old": "- **Accommodation in Leh:** ₹800-1,500/night (guesthouse), ₹2,000-5,000/night (hotel), ₹5,000-15,000/night (luxury camp)",
+  "new": "- **Accommodation in Leh:** around ₹1,900/night (guesthouse), ₹2,000-5,000/night (hotel), ₹5,000-15,000/night (luxury camp)",
+  "reason": "Shoulder guesthouse typical 1,900; hotel range fits",
+  "why": "rejected by hand: guesthouse, no ledger tier"
+ },
+ {
+  "n": 170,
+  "tc": "articles.content",
+  "id": "complete-guide-kalpa",
+  "season": null,
+  "old": "**Budget (₹800-1,500/night):** Guesthouses and homestays with basic rooms.",
+  "new": "**Budget (around ₹1,950/night):** Guesthouses and homestays with basic rooms.",
+  "reason": "Shoulder homestay typical 1,950",
+  "why": "rejected by hand: budget guesthouse, no ledger tier"
+ },
+ {
+  "n": 218,
+  "tc": "articles.content",
+  "id": "matheran-vs-mahabaleshwar",
+  "season": null,
+  "old": "Mahabaleshwar runs slightly higher: budget near ₹1,700, midrange ₹4,200, luxury ₹9,900, with the note that strawberry season (October–May) carries the highest rates and mid-week stays cost noticeably less.",
+  "new": "Mahabaleshwar runs slightly higher: budget near ₹1,900, midrange ₹4,600, luxury ₹18,700, with the note that strawberry season (October–May) carries the highest rates and mid-week stays cost noticeably less.",
+  "reason": "Totals fixed; mid now below Matheran so 'higher' loose",
+  "why": "rejected by hand: day totals incl. luxury tier (model pending)"
+ },
+ {
+  "n": 2440,
+  "tc": "destinations.local_logistics",
+  "id": "pachmarhi",
+  "season": null,
+  "old": "Local full-day ₹2000.\", \"shop_hours\": \"Main bazaar 9am-9pm.\", \"cash_vs_upi\": \"UPI at hotels.",
+  "new": "Local full-day ₹5800.\", \"shop_hours\": \"Main bazaar 9am-9pm.\", \"cash_vs_upi\": \"UPI at hotels.",
+  "reason": "day_cab 5750 vs 2000",
+  "why": "rejected by hand: Pachmarhi cab reverted to 1,750 in 094; 5,750 was a gypsy for six"
+ },
+ {
+  "n": 2645,
+  "tc": "destinations.local_logistics",
+  "id": "bomdila",
+  "season": null,
+  "old": "Withdraw enough in Tezpur for the whole AP leg — assume ₹500–800 per day per person for food + ₹2000/night for mid-range homestay.\", \"checkin_norms\": \"Homestays open from ~10am; most don't mind early arrival if you call ahead.",
+  "new": "Withdraw enough in Tezpur for the whole AP leg — assume around ₹900 per day per person for food + ₹3700/night for mid-range homestay.\", \"checkin_norms\": \"Homestays open from ~10am; most don't mind early arrival if you call ahead.",
+  "reason": "Food and homestay disagree with shoulder ledger 920 and 3700.",
+  "why": "rejected by hand: fragment; would leave its trip total inconsistent"
+ },
+ {
+  "n": 2660,
+  "tc": "destinations.local_logistics",
+  "id": "chopta",
+  "season": null,
+  "old": "Local Chopta taxi for Deoria Tal + Ukhimath: ₹2000/day.",
+  "new": "Local Chopta taxi for Deoria Tal + Ukhimath: ₹2600/day.",
+  "reason": "Day cab ledger 2600, original 2000.",
+  "why": "rejected by hand: named-route taxi, not a generic day cab"
+ },
+ {
+  "n": 2685,
+  "tc": "destinations.local_logistics",
+  "id": "gurez-valley",
+  "season": null,
+  "old": "₹8000–12000 cash for a 3-day trip (homestay ₹1500–2500/night + food ₹500/day).\", \"checkin_norms\": \"Permit first, check-in second.",
+  "new": "₹8000–12000 cash for a 3-day trip (homestay around ₹2800/night + food ₹900/day).\", \"checkin_norms\": \"Permit first, check-in second.",
+  "reason": "Homestay shoulder 2800, food 920; trip total left untouched.",
+  "why": "rejected by hand: fragment; would leave its trip total inconsistent"
+ },
+ {
+  "n": 866,
+  "tc": "destination_months.prose_lead",
+  "id": "malvan/12",
+  "season": null,
+  "old": "Christmas weekend (Dec 24-25) and NYE (Dec 31-Jan 1) drive Mumbai-Pune-Bangalore dive-tour traffic — MTDC stilt water-villas at year-peak ₹5500-9500/night, private homestays ₹3500-6500/night, Sindhudurg-Chipi flights premium ₹5500-9500.",
+  "new": "Christmas weekend (Dec 24-25) and NYE (Dec 31-Jan 1) drive Mumbai-Pune-Bangalore dive-tour traffic — MTDC stilt water-villas at year-peak ₹5500-9500/night, private homestays around ₹2,800/night, Sindhudurg-Chipi flights premium ₹5500-9500.",
+  "reason": "Dec peak homestay typical 2800",
+  "why": "rejected by hand: Christmas-week price, not the season average"
+ },
+ {
+  "n": 867,
+  "tc": "destination_months.prose_lead",
+  "id": "tarkarli/12",
+  "season": null,
+  "old": "Christmas weekend (Dec 24-25) and NYE (Dec 31-Jan 1) drive Mumbai-Pune-Bangalore dive-tour traffic — MTDC stilt-villas at year-peak ₹5500-9500/night, private homestays ₹3500-6500/night.",
+  "new": "Christmas weekend (Dec 24-25) and NYE (Dec 31-Jan 1) drive Mumbai-Pune-Bangalore dive-tour traffic — MTDC stilt-villas at year-peak ₹5500-9500/night, private homestays around ₹2,800/night.",
+  "reason": "Dec peak homestay typical 2800",
+  "why": "rejected by hand: Christmas-week price, not the season average"
+ }
+]

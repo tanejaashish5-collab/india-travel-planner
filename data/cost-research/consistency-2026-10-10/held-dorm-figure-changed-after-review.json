@@ -1,0 +1,72 @@
+[
+ {
+  "n": 48,
+  "tc": "articles.content",
+  "id": "best-time-to-visit-varanasi",
+  "season": null,
+  "old": "Hotels range from ₹500 dormitories to ₹15,000 heritage havelis on the ghats.",
+  "new": "Hotels range from ₹300 dormitories to ₹15,000 heritage havelis on the ghats.",
+  "reason": "Shoulder dorm 300; heritage haveli price kept",
+  "why": "dorm figure changed after review (095)"
+ },
+ {
+  "n": 1156,
+  "tc": "destination_months.prose_lead",
+  "id": "varkala/8",
+  "season": "low",
+  "old": "Walk-in rates run year-low: Taj Gateway ₹3-5k, mid-tier cliff cafes-with-rooms ₹800-2k, hostels ₹300-1000.",
+  "new": "Walk-in rates run year-low: Taj Gateway ₹3-5k, mid-tier cliff cafes-with-rooms ₹800-2k, hostels around ₹250.",
+  "reason": "Low-season dorm bed typical 250, outside range",
+  "why": "dorm figure changed after review (095)"
+ },
+ {
+  "n": 1706,
+  "tc": "destination_months.prose_payoff",
+  "id": "jodhpur/1",
+  "season": "peak",
+  "old": "Stay: RAAS Jodhpur (₹12000-25000, boutique heritage in the old city), Ajit Bhawan (₹5000-10000, Jodhpur's first heritage hotel), or the hostels near Clock Tower (₹500-800 dorm).",
+  "new": "Stay: RAAS Jodhpur (₹12000-25000, boutique heritage in the old city), Ajit Bhawan (₹5000-10000, Jodhpur's first heritage hotel), or the hostels near Clock Tower (around ₹350 dorm).",
+  "reason": "Peak dorm bed 370",
+  "why": "dorm figure changed after review (095)"
+ },
+ {
+  "n": 130,
+  "tc": "articles.content",
+  "id": "pushkar-in-october-scored",
+  "season": "peak",
+  "old": "- **Room rates.** Mid-October budget dorm: ₹400–600.",
+  "new": "- **Room rates.** Mid-October budget dorm: around ₹300.",
+  "reason": "Oct peak dorm typical 320",
+  "why": "dorm figure changed after review (095)"
+ },
+ {
+  "n": 143,
+  "tc": "articles.content",
+  "id": "complete-guide-spiti-valley",
+  "season": null,
+  "old": "**Budget (₹1,000–1,500):** Homestay dormitory or shared room (₹300–500).",
+  "new": "**Budget (around ₹1,950):** Homestay dormitory or shared room (around ₹650).",
+  "reason": "Shoulder budget day 1,930 and dorm 650",
+  "why": "dorm figure changed after review (095)"
+ },
+ {
+  "n": 849,
+  "tc": "destination_months.prose_lead",
+  "id": "varkala/9",
+  "season": "shoulder",
+  "old": "Walk-in rates climb 15-20 percent versus August: Taj Gateway Varkala ₹4-6k, Eden Garden Ayurvedic ₹2.5-4k, mid-tier cliff cafes-with-rooms ₹1-2.5k, hostels ₹400-1200.",
+  "new": "Walk-in rates climb 55 percent versus August: Taj Gateway Varkala ₹4-6k, Eden Garden Ayurvedic ₹2.5-4k, mid-tier cliff cafes-with-rooms ₹1-2.5k, hostels around ₹350.",
+  "reason": "Sep 2550 vs Aug 1650 +55%; dorm typical 370",
+  "why": "dorm figure changed after review (095)"
+ },
+ {
+  "n": 859,
+  "tc": "destination_months.prose_lead",
+  "id": "varkala/6",
+  "season": "low",
+  "old": "Walk-in rates run year-low: Taj Gateway Varkala ₹3-5k, Eden Garden Ayurvedic ₹2-3.5k, mid-tier cliff cafes-with-rooms ₹800-1.5k, hostels ₹300-800.",
+  "new": "Walk-in rates run year-low: Taj Gateway Varkala ₹3-5k, Eden Garden Ayurvedic ₹2-3.5k, mid-tier cliff cafes-with-rooms ₹800-1.5k, hostels around ₹250.",
+  "reason": "Jun low dorm_bed typical 240",
+  "why": "dorm figure changed after review (095)"
+ }
+]
