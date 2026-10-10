@@ -120,6 +120,46 @@ export default function TheWindow(props: WindowIssueProps) {
   const hero = picks[0];
   const rest = picks.slice(1, 5);
 
+  const renderCard = (p: PickBlock, position: number, topPad: string, showRule: boolean) => (
+                      <table key={p.id} role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                        <tbody>
+                          <tr><td style={{ padding: topPad }}>
+                            {showRule && (
+                              <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                                <tbody><tr><td style={dashedRule}>&nbsp;</td></tr></tbody>
+                              </table>
+                            )}
+                          </td></tr>
+                          <tr><td style={{ padding: showRule ? "20px 28px 0" : "0 28px 0" }}>
+                            <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                              <tbody><tr>
+                                <td valign="top"><div style={cardNumeral}>{String(position).padStart(2, "0")}</div></td>
+                                <td valign="bottom" style={cardKickerTag}>{categoryTag(p.primary_tag)}</td>
+                                <td align="right" valign="bottom" style={cardScoreTag}>● {formatScoreInline(p.score)} · Peak</td>
+                              </tr></tbody>
+                            </table>
+                          </td></tr>
+                          <tr><td style={{ padding: "12px 28px 0" }}>
+                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-image`)}`} style={{ display: "block", textDecoration: "none" }}>
+                              <img src={imageUrlFor(p.id)} width="544" height="306" alt={`${p.name} — ${p.state ?? ""}`} style={cardImage} />
+                            </a>
+                          </td></tr>
+                          <tr><td style={{ padding: "14px 28px 0" }}>
+                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-name`)}`} style={cardName}>{p.name}</a>
+                          </td></tr>
+                          <tr><td style={cardMeta}>
+                            {p.state ?? ""}{p.elevation_m ? ` · ${p.elevation_m.toLocaleString()}m` : ""}{p.difficulty ? ` · ${difficultyLabel(p.difficulty)}` : ""}
+                          </td></tr>
+                          <tr><td style={cardHook}>{p.why_this_week}</td></tr>
+                          <tr><td style={{ padding: "14px 28px 0" }}>
+                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-cta`)}`} style={cardCta}>
+                              Read the {p.name} {monthName} guide →
+                            </a>
+                          </td></tr>
+                        </tbody>
+                      </table>
+  );
+
   const previewText = `${bestScore.name} scores ${formatScoreInline(bestScore.score)} this week. And one place to skip.`;
 
   return (
@@ -161,41 +201,11 @@ export default function TheWindow(props: WindowIssueProps) {
                     </tbody>
                   </table>
 
-                  {/* Hero — pick 01 */}
-                  {hero && (
-                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
-                      <tbody><tr><td style={{ padding: "32px 0 0" }}>
-                        <a href={`https://www.nakshiq.com/en/destination/${hero.id}/${monthSlug}${utmFor("hero")}`} style={heroBlockLink}>
-                          <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={{ ...innerTable, background: "#0B0B0C" }}>
-                            <tbody><tr><td style={{ padding: "0 24px", background: "#0B0B0C" }}>
-                              <div style={{ position: "relative", lineHeight: 0 }}>
-                                <img src={imageUrlFor(hero.id)} width="552" height="368" alt={`${hero.name} — ${hero.state ?? ""}`} style={heroImage} />
-                                <div style={heroScrim}>
-                                  <div style={heroKicker}>№ 01 · {hero.state ?? ""}</div>
-                                  <div style={heroName}>{hero.name}</div>
-                                  <div style={heroHook}>{hero.why_this_week}</div>
-                                </div>
-                                <div style={heroPillWrap}>
-                                  <div style={heroPill}>
-                                    <span style={pillDot} />{formatScoreInline(hero.score)} · Peak
-                                  </div>
-                                </div>
-                              </div>
-                            </td></tr></tbody>
-                          </table>
-                        </a>
-                      </td></tr></tbody>
-                    </table>
-                  )}
-
-                  {/* Photo credit */}
-                  {hero && (
-                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
-                      <tbody><tr><td style={photoCredit}>
-                        Photograph · {hero.name}{hero.state ? `, ${hero.state}` : ""} · {monthName} {year}
-                      </td></tr></tbody>
-                    </table>
-                  )}
+                  {/* Pick 01: a card like 02-05. Until 2026-10-10 it was a photo with
+                      the name, line and score laid over it via position:absolute,
+                      which Gmail strips: on the founder's iPhone the text fell
+                      below the photo onto a grey fade. */}
+                  {hero && renderCard(hero, 1, "32px 28px 0", false)}
 
                   {/* Signed lede */}
                   <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
@@ -239,49 +249,7 @@ export default function TheWindow(props: WindowIssueProps) {
                   </table>
 
                   {/* Picks 02-05 */}
-                  {rest.map((p, i) => {
-                    const position = i + 2;
-                    const isFirst = i === 0;
-                    return (
-                      <table key={p.id} role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
-                        <tbody>
-                          <tr><td style={{ padding: isFirst ? "32px 28px 0" : "56px 28px 0" }}>
-                            {!isFirst && (
-                              <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
-                                <tbody><tr><td style={dashedRule}>&nbsp;</td></tr></tbody>
-                              </table>
-                            )}
-                          </td></tr>
-                          <tr><td style={{ padding: isFirst ? "0 28px 0" : "20px 28px 0" }}>
-                            <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
-                              <tbody><tr>
-                                <td valign="top"><div style={cardNumeral}>{String(position).padStart(2, "0")}</div></td>
-                                <td valign="bottom" style={cardKickerTag}>{categoryTag(p.primary_tag)}</td>
-                                <td align="right" valign="bottom" style={cardScoreTag}>● {formatScoreInline(p.score)} · Peak</td>
-                              </tr></tbody>
-                            </table>
-                          </td></tr>
-                          <tr><td style={{ padding: "12px 28px 0" }}>
-                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-image`)}`} style={{ display: "block", textDecoration: "none" }}>
-                              <img src={imageUrlFor(p.id)} width="544" height="306" alt={`${p.name} — ${p.state ?? ""}`} style={cardImage} />
-                            </a>
-                          </td></tr>
-                          <tr><td style={{ padding: "14px 28px 0" }}>
-                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-name`)}`} style={cardName}>{p.name}</a>
-                          </td></tr>
-                          <tr><td style={cardMeta}>
-                            {p.state ?? ""}{p.elevation_m ? ` · ${p.elevation_m.toLocaleString()}m` : ""}{p.difficulty ? ` · ${difficultyLabel(p.difficulty)}` : ""}
-                          </td></tr>
-                          <tr><td style={cardHook}>{p.why_this_week}</td></tr>
-                          <tr><td style={{ padding: "14px 28px 0" }}>
-                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-cta`)}`} style={cardCta}>
-                              Read the {p.name} {monthName} guide →
-                            </a>
-                          </td></tr>
-                        </tbody>
-                      </table>
-                    );
-                  })}
+                  {rest.map((p, i) => renderCard(p, i + 2, i === 0 ? "32px 28px 0" : "56px 28px 0", i !== 0))}
 
                   {/* From the Notebook */}
                   <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
