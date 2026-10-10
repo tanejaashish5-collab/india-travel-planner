@@ -184,7 +184,9 @@ def render() -> int:
             out = R.VEO / "reels" / f"{key}.mp4"
             try:
                 R.render(s, lang, out, stand, SB.pick_music(s.get("format", ""), s["slug"]))
-            except Exception as e:  # one bad cut must not stop the others
+            except (Exception, SystemExit) as e:  # one bad cut must not stop the others
+                # reel_v3 refuses with SystemExit (freeze limit, missing footage, ffmpeg, voice);
+                # Exception alone let a Darjeeling refusal on 2026-10-10 end the whole run.
                 print(f"[v3_daily] {key} failed: {e}")
                 continue
             cover = None

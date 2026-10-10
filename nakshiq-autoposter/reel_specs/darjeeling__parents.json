@@ -31,7 +31,7 @@
   },
   {
    "name": "ref_promenade",
-   "prompt": "A wide, flat, paved promenade along the top of a hill town in warm low evening sun: smooth grey stone paving, an old black iron railing along the open edge, a few tall dark trees, and beyond the railing a deep valley filled with soft mist and layered blue forested hills, small old two-storey buildings set back on the far side of the paving, photorealistic, no people, no text, no signage, no logos."
+   "prompt": "Darjeeling's Chowrasta, the flat open square and Mall promenade at the top of the hill town in the Eastern Himalaya, India, in warm low evening sun: grey stone paving, old black cast-iron lamp posts and railing, colonial-era two-storey buildings with corrugated tin roofs painted green and red, tall slim Himalayan cedar trees, and beyond the railing deep misty valleys, tea-garden slopes and layered blue Himalayan ridges with one faint snow peak far away. Not Europe: no Mediterranean pines, no cypresses, no terracotta villas. Photorealistic, no people, no text, no signage, no logos."
   }
  ],
  "keyframes": [
@@ -90,7 +90,7 @@
     "ref_promenade"
    ],
    "tone": "easy, unhurried, a quiet win",
-   "prompt": "Wide shot from behind in warm low evening sun on the flat paved promenade: the father in the mustard cardigan walks a step ahead in the centre of the frame with both hands free, the mother in the maroon kameez beside him with a cream cloth bag on her shoulder and the curved handle of the wooden walking stick showing from the top of the bag, the son in the navy sweater a few paces behind them, all three walking slowly away from camera along the paving, the misty valley and layered blue hills beyond the iron railing, nobody else."
+   "prompt": "Wide shot from behind in warm low evening sun on the flat paved Chowrasta promenade of the reference: the father in the mustard cardigan walks in the centre of the frame, the mother in the maroon kameez beside him with a closed cream cloth bag on her shoulder and nothing sticking out of it, the son in the navy sweater a pace behind them; nobody holds a walking stick or anything else, their hands empty at their sides; tin-roofed colonial buildings on one side, misty Himalayan ridges beyond the iron railing, nobody else."
   }
  ],
  "shots": [
@@ -133,7 +133,7 @@
    "id": "s6",
    "mode": "frames",
    "start": "kf_s6",
-   "prompt": "The camera follows slowly behind them along the flat paving; all three keep walking at an easy pace and stay in frame the whole time, the stick staying in the bag.",
+   "prompt": "The camera follows slowly behind them along the flat paving; all three keep walking at an easy pace and stay in frame the whole time, hands empty, the bag closed on her shoulder.",
    "sound": "Footsteps on stone paving, wind moving through tall trees, a crow calling far off, quiet hill evening tone."
   }
  ],
@@ -155,21 +155,21 @@
    "from": 0.0
   },
   {
-   "shot": "s5",
-   "from": 0.0
-  },
-  {
-   "shot": "s5",
-   "from": 2.0,
+   "shot": "s4",
+   "from": 1.5,
    "zoom": 1.3
   },
   {
+   "shot": "s5",
+   "from": 0.0
+  },
+  {
    "shot": "s6",
    "from": 0.0
   },
   {
    "shot": "s6",
-   "from": 2.0,
+   "from": 1.5,
    "zoom": 1.3
   }
  ],
@@ -210,5 +210,20 @@
   "Wide in the same living room in the evening: the son sits alone on the arm of the sofa looking down at the suitcase with the walking stick on top, seen from behind, lamp light only.",
   "Evening, a very wide shot of a hill town of small houses stacked on a steep forested slope above a valley filled with soft mist, warm low sun, no people visible, no readable signage.",
   "Wide in evening light on the same paved path through tea bushes: the father walks a step ahead with his hands free, the mother beside him with a cloth bag on her shoulder and the wooden stick's handle showing from it, the son a few steps behind, all three seen from behind and in frame from start to end, nobody else."
+ ],
+ "retakes": [
+  {
+   "date": "2026-10-11",
+   "shots": [
+    "s6"
+   ],
+   "keyframes": [
+    "kf_s6"
+   ],
+   "refs": [
+    "ref_promenade"
+   ],
+   "why": "s6 looked like Tuscany (umbrella pines, terracotta villas: the ref said only 'hill town') and the stick handle out of the bag read as the mother carrying a cane, against 'Papa's stick never left the bag'"
+  }
  ]
 }

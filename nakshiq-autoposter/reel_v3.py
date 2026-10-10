@@ -228,6 +228,11 @@ def check(spec: dict) -> list[str]:
             errs.append(f"beat uses unknown shot {b['shot']!r}")
         if not 1.0 <= float(b.get("zoom", 1.0)) <= MAX_ZOOM:
             errs.append(f"beat on {b['shot']}: zoom {b.get('zoom')} outside 1.0-{MAX_ZOOM}")
+        for sp in b.get("split") or []:
+            if sp.get("shot") not in shots:
+                errs.append(f"beat on {b['shot']}: split uses unknown shot {sp.get('shot')!r}")
+            if not 1.0 <= float(sp.get("zoom", 1.0)) <= MAX_ZOOM:
+                errs.append(f"beat on {b['shot']}: split zoom {sp.get('zoom')} outside 1.0-{MAX_ZOOM}")
         if not all(0.0 <= float(v) <= 1.0 for v in b.get("focus", [0.5, 0.5])):
             errs.append(f"beat on {b['shot']}: focus {b.get('focus')} must be fractions 0-1")
     for lang, lines in spec["vo"].items():
@@ -519,9 +524,28 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     full = total + Y.ENDCARD_DUR
     segs = [(starts[i], (starts[i + 1] if i + 1 < n else total) - starts[i]) for i in range(n)]
 
+    # A beat may split its PICTURE across set-ups ("split": [{"shot", "from", "zoom", "focus"}, ...])
+    # while its voice line stays one entry, so the saved voice track is reused, nothing re-billed
+    # (2026-10-11: Gangtok/Katra/Udaipur had two lines on one 8 s clip and froze; re-voicing all
+    # three would have cost ~3,750 ElevenLabs credits). The beat's time is shared by the length
+    # of its sub-lines when they match the parts, else equally.
+    pics = []
+    for i, (b, (st, seg)) in enumerate(zip(spec["beats"], segs)):
+        parts = [b] + list(b.get("split") or [])
+        sub = [x for x in spec["vo"][lang][i].splitlines() if x.strip()]
+        k_ = len(parts)
+        # one sub-line per part, the remaining lines (the close) all on the last part
+        w = ([len(x) for x in sub[:k_ - 1]] + [sum(len(x) for x in sub[k_ - 1:])]
+             if len(sub) >= k_ else [1] * k_)
+        t = st
+        for p, wi in zip(parts, w):
+            d = seg * wi / sum(w)
+            pics.append((i, p, t, d))
+            t += d
+
     shots = {s["id"]: s for s in spec["shots"]}
     ins, vf, af = [], [], []
-    for i, (b, (_, seg)) in enumerate(zip(spec["beats"], segs)):
+    for k, (i, b, _, seg) in enumerate(pics):
         src = Path(stand_in.get(b["shot"]) or (CLIPS / clip_name(spec, b["shot"])))
         if not src.exists():
             raise SystemExit(f"missing footage for {b['shot']}: {src}")
@@ -533,9 +557,10 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
             raise SystemExit(
                 f"beat {i + 1} ({b['shot']} from {frm:.1f}s, {lang}) needs {seg:.1f}s of picture but the clip "
                 f"gives {avail / speed:.1f}s even slowed to {speed:.2f}x: the last frame would freeze for "
-                f"{short:.1f}s (limit {FREEZE_MAX}s). Split the line into two beats or use a longer clip")
+                f"{short:.1f}s (limit {FREEZE_MAX}s). Give the beat a \"split\" (a second set-up, no new voice) "
+                "or split the line into two beats")
         ins += ["-i", str(src)]
-        k = i
+        i = k   # filter labels count pictures, not beats
         # Scale to 1080x1920 first so every shot shares one grade and grain.
         vf.append(f"[{k}:v]trim=start={frm:.3f}:duration={min(avail, seg * speed):.3f},"
                   f"setpts=(PTS-STARTPTS)/{speed:.4f},fps=30,{_punch(src, b)}"
@@ -548,7 +573,7 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
                       f"afade=t=in:d=0.08,apad=whole_dur={seg:.3f},atrim=duration={seg:.3f}[a{i}]")
         else:
             af.append(f"anullsrc=r=48000:cl=stereo,atrim=duration={seg:.3f}[a{i}]")
-    vi = len(spec["beats"])
+    vi = len(pics)
     ins += ["-i", str(vo)]
     mi = None
     if music and Path(music).exists():
@@ -631,10 +656,12 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         raise SystemExit("ffmpeg failed:\n" + r.stderr[-1500:])
-    # Where each beat sits in the cut, so qa can look at the finished picture.
+    # Where each picture sits in the cut, so qa can look at the finished picture
+    # (a split beat writes one entry per set-up; look_alike treats a same-shot,
+    # later-"from" neighbour as a continuation, not a repeat).
     beat_map(out).write_text(json.dumps({"beats": [
         {"shot": b["shot"], "from": float(b.get("from", 0.0)), "zoom": float(b.get("zoom", 1.0)),
-         "start": round(st, 3), "dur": round(du, 3)} for b, (st, du) in zip(spec["beats"], segs)]}))
+         "start": round(st, 3), "dur": round(du, 3)} for _, b, st, du in pics]}))
     # English goes to YouTube (@naksh-iq), Hindi to Instagram (@nakshiq).
     # Assigned, never setdefault: one process cuts HI then EN (v3_daily), and
     # setdefault let the English cut inherit "@nakshiq" (Manali, 2026-09-29).

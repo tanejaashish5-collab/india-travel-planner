@@ -149,7 +149,14 @@
   },
   {
    "shot": "s6",
-   "from": 0.0
+   "from": 0.0,
+   "split": [
+    {
+     "from": 1.5,
+     "zoom": 1.3,
+     "shot": "s6"
+    }
+   ]
   }
  ],
  "vo": {
@@ -185,5 +192,14 @@
   "Close on his paddle dipping into still water between mangrove roots in morning light, ripples spreading, no one else in frame.",
   "Wide in the morning: a Chinese fishing net lifting out of still water at the village edge with nobody in front of it, the man small on the bank behind his camera, seen from behind.",
   "Wide in the morning: the man sits alone on the bank beside the raised net, camera resting in his lap, seen from behind, the water still."
+ ],
+ "retakes": [
+  {
+   "date": "2026-10-11",
+   "beats_split": [
+    6
+   ],
+   "why": "beat ran past its 8 s clip (freeze rule); picture split onto a second set-up, saved voice reused, 0 ElevenLabs"
+  }
  ]
 }

@@ -69,7 +69,7 @@
     "ref_parents"
    ],
    "tone": "relief, looked after",
-   "prompt": "Medium shot from the side inside a small heritage hotel lobby in warm early evening light: the son and his parents stand together inside an old lift whose brass folding grille is folded open, the mother's arm through the son's, the son's other hand on the brass button panel, the father beside them; dark wood panelling, no signs."
+   "prompt": "Wide shot from the side in the small open courtyard of an old heritage hotel in warm early evening light: the mother and father sit on a carved wooden bench, the son stands beside them with one hand on the bench back; behind them against the pale wall an old lift with a brass folding grille, the grille closed and the lift empty; potted plants, carved arches, no signs."
   },
   {
    "name": "kf_s6",
@@ -115,7 +115,7 @@
    "id": "s5",
    "mode": "frames",
    "start": "kf_s5",
-   "prompt": "The camera holds still. The brass grille stays folded fully open and never moves. All three stay standing in the same places the whole time; the son presses the brass button once and the mother smiles.",
+   "prompt": "The camera holds still. The lift grille behind them stays closed and empty and never moves; all three stay in place the whole time; the mother adjusts the edge of her shawl once.",
    "sound": "A soft brass button click, the lift motor's low hum starting, quiet lobby tone."
   },
   {
@@ -149,7 +149,14 @@
   },
   {
    "shot": "s6",
-   "from": 0.0
+   "from": 0.0,
+   "split": [
+    {
+     "from": 1.5,
+     "zoom": 1.3,
+     "shot": "s6"
+    }
+   ]
   }
  ],
  "vo": {
@@ -199,6 +206,23 @@
    ],
    "keyframes": [],
    "why": "clip_qa still flagged after the 10-08 retake: s3 phone vanishes from his hand; s5 grille closes and the people blur"
+  },
+  {
+   "date": "2026-10-11",
+   "beats_split": [
+    6
+   ],
+   "why": "beat ran past its 8 s clip (freeze rule); picture split onto a second set-up, saved voice reused, 0 ElevenLabs"
+  },
+  {
+   "date": "2026-10-11",
+   "shots": [
+    "s5"
+   ],
+   "keyframes": [
+    "kf_s5"
+   ],
+   "why": "2nd lift take: Veo closed the grille anyway and the family blurred behind it; now a courtyard bench with the lift closed and empty behind them"
   }
  ]
 }
