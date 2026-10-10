@@ -38,6 +38,7 @@ BASE_URL=http://localhost:3000 npx playwright test -g "<title>"
 - Verified backfills that write `destinations` also stamp `content_reviewed_at = now()` on touched rows (else the Monday review digest re-inflates).
 - After any `destinations` insert, regenerate `apps/web/data/known-destination-slugs.json` in the same PR (middleware allowlist).
 - Scores are quoted on the displayed 0–10 scale (DB value × 2).
+- **One cost source: `destination_costs`.** Day-cost box, trip board, stay range and social figures are derived from it (091/093). After ANY cost write run `scripts/sync-daily-cost.mjs`, `scripts/export-reel-data.mjs` and `scripts/reel-fact-pack.mjs <slugs>`, then revalidate. Never hand-write a destination-wide price in prose or a caption; quote the ledger.
 
 ## Audits, commits, deploys
 
