@@ -1,0 +1,153 @@
+{
+ "batch": "Q3",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "solan": {
+   "confidence": "low",
+   "unverified": [
+    "Jul and Aug 2027 availability for almost every hotel (no rooms listed, cause unknown)",
+    "Whether Cleartrip rates for the City Heights chain move with season (flat 1748 on all 4 nights)"
+   ]
+  },
+  "aihole": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Badami (about 34 km; Gozocabs lists Badami Rural to Aihole at about 34 km)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No priced stay for 18-19 Nov 2026 found. Booking.com city page for Aihole returned empty when fetched with dates; Wada 1 on Cleartrip says No rooms available.",
+    "notes": "Search results mention Wada 1 from about 59 USD / INR 7,529 (undated 'from' prices on Booking.com and TravelTriangle) and an old Outlook Traveller guide quoting Krishna Heritage and The Heritage Resort (those two are in Badami per Cleartrip). Undated or years-old figures are not used. No dorm found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "KSTDC runs a daily Badami-Aihole-Pattadakal one-day package from Hotel Mayura Chalukya, Badami (tel 0835-7220046) but its page prints no fare (https://kstdc.co/tour_packages/badami-aihole-pattadakallu-one-day-sight-seeing/). Other results were national cab aggregators (not allowed) or blog estimates. A 2023 blog said Badami has no taxi stand.",
+    "sources": [
+     "https://kstdc.co/tour_packages/badami-aihole-pattadakallu-one-day-sight-seeing/"
+    ],
+    "notes": "null by design"
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two figure found for Aihole.",
+    "sources": [],
+    "notes": "null"
+   },
+   "confidence": "low",
+   "unverified": [
+    "all stay tiers",
+    "taxi day",
+    "food per day",
+    "season probe"
+   ]
+  },
+  "badami": {
+   "confidence": "low",
+   "unverified": [
+    "Aug 2027 availability for 8 of 10 hotels",
+    "Apr 2027 price for Badami Court and Sanman",
+    "any homestay price beyond Nov"
+   ]
+  },
+  "belur": {
+   "confidence": "low",
+   "unverified": [
+    "Apr and May 2027 prices for 3 of 4 priced hotels",
+    "any homestay or budget guesthouse",
+    "local events for 14-15 Apr / 12-13 May"
+   ]
+  },
+  "bidar": {
+   "confidence": "low",
+   "unverified": [
+    "Apr/Aug 2027 availability for 5 of 7 hotels",
+    "a clean Nov-to-Aug ratio (only 2 hotels, one with a room-type change)",
+    "any homestay"
+   ]
+  },
+  "bijapur": {
+   "confidence": "medium",
+   "unverified": [
+    "Apr/Aug availability for 6 of 10 mid hotels",
+    "why Fern Residency is 62% higher in Apr/Aug (no event source checked)"
+   ]
+  },
+  "chitradurga": {
+   "confidence": "low",
+   "unverified": [
+    "any 3-star hotel price",
+    "Apr/Aug availability for most hotels",
+    "season ratio beyond 3 flat-priced properties"
+   ]
+  },
+  "dandeli": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": 1346,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/premkunj-homestay-5581841?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Cleartrip PremKunj Homestay Deluxe Non AC room, 18-19 Nov 2026, pre-tax, n=1. Mid, budget, dorm: null.",
+    "notes": "Every other Cleartrip Dandeli property said 'No rooms available' on 18-19 Nov 2026 or sold only meal-inclusive packages. Dandeli resorts are commonly per-person with meals (e.g. dandeli.org listings quoting per-person rates); a package price is not a room price so none is used. Booking.com homestay page (https://www.booking.com/homestay/city/in/dandeli.html) shows USD 'from' prices for undated 1-night stays, not used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No sedan/SUV union or operator rate found. Local operator Dandeli Tours and Travels (Chennama Circle, Dandeli; page dated 2025-01-15) lists 'Sightseeing in and around Dandeli: starts at Rs 2000' and 'Nearby places full day (Syntheri Rocks, backwater, Honey Bee Park, Go-Karting): starts at Rs 3500', but its fleet is 20-40 seater buses/tempo travellers and the page does not say which vehicle, so it is not a 4-seat cab rate. National aggregator pages (cabbazar, hurryupcabs) were not used.",
+    "sources": [
+     "https://dandelitoursandtravels.com/"
+    ],
+    "notes": "null by design"
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only a Justdial snippet of Rs 350 for two at one Dandeli restaurant was seen in a search result; the Justdial page returned 403 and was not retried. One data point is not a basis.",
+    "sources": [],
+    "notes": "null"
+   },
+   "confidence": "low",
+   "unverified": [
+    "mid-range room-only price",
+    "dorm bed",
+    "sedan/SUV local day rate",
+    "food per day",
+    "a matched season ratio"
+   ]
+  },
+  "dharmasthala": {
+   "confidence": "low",
+   "unverified": [
+    "every Apr/May price",
+    "any hotel price other than George Homestay in Nov",
+    "temple trust guesthouse tariffs"
+   ]
+  }
+ }
+}

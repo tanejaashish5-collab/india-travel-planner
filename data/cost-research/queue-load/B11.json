@@ -1,0 +1,153 @@
+{
+ "batch": "Q7",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "madurai": {
+   "confidence": "low",
+   "unverified": [
+    "May-Aug 2027 prices for Madurai Residency, Mani's Residency, CR Grande, Hotel Duke (No rooms available)",
+    "no homestays listed on Cleartrip for Madurai (homestay lists returned ordinary hotels)",
+    "far-night prices are flat static rates, not observed demand"
+   ]
+  },
+  "ooty": {
+   "confidence": "low",
+   "unverified": [
+    "Jul/Aug 2027 prices for Maneck, Vinayaga Inn, Glanton Manor, Hidden Heaven, Rainbow Cottages (No rooms available)",
+    "same-room match for Blue Bird and Avalon in Jul/Aug (room list not parseable)",
+    "no Cleartrip hotel in the working set is well-reviewed 3-star above 4.0 apart from Vinayaga Inn (3.9)"
+   ]
+  },
+  "coimbatore": {
+   "confidence": "low",
+   "unverified": [
+    "Apr/Aug 2027 prices for Istay, Vijai Paradise, Nahar Manchester Inn (No rooms available)",
+    "same room class for Sri Kamadhenu and SPR Inn (Aug) on far nights",
+    "no homestays listed on Cleartrip"
+   ]
+  },
+  "kanyakumari": {
+   "confidence": "low",
+   "unverified": [
+    "all Jul and Sep 2027 prices (No rooms available)",
+    "no AC-room price for the cheapest Kanyakumari 3-stars",
+    "no homestays on Cleartrip"
+   ]
+  },
+  "kumbakonam": {
+   "confidence": "low",
+   "unverified": [
+    "Mar and Apr 2027 prices for both hotels (no matched room / No rooms available)",
+    "any 3-5 hotel panel for Kumbakonam on Cleartrip",
+    "homestays (one listed, sold out)"
+   ]
+  },
+  "chidambaram": {
+   "confidence": "low",
+   "unverified": [
+    "Mar/Apr 2027 prices for Grand Park, Anbu Grand Inn, Saradharam Heritage (No rooms available)",
+    "Apr 2027 for Hotel Tamilnadu; Mar 2027 for Divine Homestay",
+    "homestay prices are whole-unit rates"
+   ]
+  },
+  "chettinad": {
+   "confidence": "low",
+   "unverified": [
+    "any mid-range, budget or homestay price in Chettinad",
+    "season ratio for Chettinad (no matched hotel-nights)"
+   ]
+  },
+  "coonoor": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": null,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": null,
+    "budget_sources": [],
+    "homestay_median_inr": 4406,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/devashola-homestay-3947394",
+     "https://www.cleartrip.com/hotels/details/vijaya-deepa-guest-house-3926858",
+     "https://www.cleartrip.com/hotels/details/4671812",
+     "https://www.cleartrip.com/hotels/details/sunvalley-homestay-coonoor-4273345"
+    ],
+    "dorm_median_inr": 699,
+    "dorm_n": 3,
+    "dorm_sources": [
+     "https://www.hostelworld.com/hostels/Coonoor?currency=INR"
+    ],
+    "price_basis": "Homestay: Cleartrip 18-19 Nov 2026, pre-tax header price of the cheapest room: Devashola Homestay 2,886; Vijaya Deepa Guest House 3,293; Check Inn Today (2-star homestay) 5,519; Sunvalley Homestay (4-star homestay) 6,142; median of 4 = 4,406, wide spread. Dorm: Hostelworld 'dorms from' undated (page says 2026 only): The Birdhouse 588; The Door to Nirvana Kotagiri 699 (Kotagiri, not Coonoor town); Mad & Nomad Backpackers Hostel 850; median 699 n=3 (excluding Kotagiri the two-point median is 719). Mid/budget medians left to the season probe above.",
+    "notes": "Homestay rows are mixed quality: the two cheaper ones (Devashola, Vijaya Deepa) sit near 2,900-3,300, the two others are premium. Cleartrip also listed White Fern, Nasya Stays, Amariyah House, YWCA Wyoming Guesthouse, Orchid Valley Cottage and ama Stays Aberdeen as 'No rooms available' for 18-19 Nov (not priced)."
+   },
+   "taxi_day": null,
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "NOT RESEARCHED to a usable standard. Zomato Coonoor list timed out on two fetches, Justdial and Tripadvisor returned HTTP 403 (not bypassed). The only fetched page with rupee figures, Holidify, prints single unlabelled figures (Quality Restaurant INR 500, Hotel Lakshmi INR 100, La Belle Vie INR 450, Taj Garden Retreat INR 1000) without saying for-one or for-two, and EazyDiner lists just Habba Kadal Kashmiri at 1700 for two. That is not enough to derive a day cost.",
+    "sources": [
+     "https://www.holidify.com/places/coonoor/restaurants-places-to-eat-local-cuisine.html",
+     "https://www.eazydiner.com/coonoor/restaurants"
+    ],
+    "notes": "Leave null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "food-per-day (no usable fetched page)",
+    "Jul/Aug 2027 prices for 5 of 8 properties",
+    "mid and budget hotel medians not set here (see probe)"
+   ]
+  },
+  "courtallam": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": null,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": null,
+    "budget_sources": [],
+    "homestay_median_inr": 2494,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Kuttalam&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": null,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com search 'Kuttalam', 1 night 2 adults 18-19 Nov 2026, TAX-INCLUSIVE ('Includes taxes and charges'), 'Kutralam Home Stay' Superior King Room (3 single beds) Rs. 2,494, n=1 (it is the only property on the first result page whose name says homestay). Cleartrip is pre-tax elsewhere in this file; this figure is not pre-tax.",
+    "notes": "Booking.com 18-19 Nov 2026 first page (15 properties, all tax-inclusive, 1 night 2 adults, own request): Saaral Resorts & Hotels 3,360 (Deluxe Double or Twin); Mount Zion Holidays 3,150 (Family Room with Balcony); Saraa Grand 2,231 (was 2,625); Five Falls Ramana Villa 3,016 (Triple Room); Meridian Inn 4,988; WESTN Resorts 2,940 (Deluxe Room 2 Adults + 1 Child); Drizzle Residence 6,300; Hotel Kurinji (Kurinji Villa Tourist Home) 3,675 (Double Room Mountain View); Hotel TamilNadu Courtallam II 2,205 (Double Room, breakfast incl.); Laughing Waters Fine Stay 3,413 (Deluxe King Studio, entire studio); Kutralam Home Stay 2,494; ClayNest Resorts 2,930 (members-only price, 3,255 list); Hotel O Courtallam Waterfalls (ex Heavens Hut) 1,261 (was 3,503, +34 taxes); LE Falls 1,888 (Double Room Mountain View); Shree Suites 4,200 (Superior King Suite). Property types and star classes were not extracted, so no mid/budget median is claimed. No dorm: Hostelworld has no Courtallam page (HTTP 404) and no hostel was found. Courtallam is a monsoon waterfall season (about June to September) per travel listings; the 18-19 Nov date is post-monsoon, so these prices may sit above or below season levels."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No taxi union, tourism-department or local-operator rate card was found. Only national or Chennai-based aggregators surfaced (CabBazar, Silver Taxi Tamil Nadu with a Chennai airport address, Reke India, Gozocabs); per the brief these template aggregator rates are not used. Silver Taxi's Tenkasi page prints per-km only (Sedan Rs 13 one way / 12 round trip, driver bata Rs 300) and no sightseeing package, so no local day figure exists.",
+    "sources": [
+     "https://silvertaxi.in/call-taxi-service-tenkasi/"
+    ],
+    "notes": "Leave null; ask the Courtallam/Tenkasi taxi stand for the posted board rate."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No Courtallam restaurant with a rupee menu or cost-for-two figure was found (Zomato/Justdial/Swiggy results returned nothing for Courtallam; the one Justdial hit, Courtallam Border Rahmath Kadai at Rs 850 for two, is in Anna Nagar, Chennai, so is excluded).",
+    "sources": [],
+    "notes": "Leave null."
+   },
+   "confidence": "low",
+   "unverified": [
+    "every Courtallam category except one tax-inclusive homestay price (n=1)",
+    "season ratio",
+    "taxi",
+    "food",
+    "dorm"
+   ]
+  }
+ }
+}

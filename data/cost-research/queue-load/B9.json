@@ -1,0 +1,201 @@
+{
+ "batch": "Q5",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "thekkady": {
+   "confidence": "low",
+   "unverified": [
+    "Only one true 3-star (Snow Hills) priced on Nov only; Mar/Apr unavailable for it",
+    "Hotels flat across nights: Cleartrip may show a static rate for far-future dates",
+    "No Mar/Apr 2027 price for most budget/homestay properties"
+   ]
+  },
+  "vagamon": {
+   "confidence": "low",
+   "unverified": [
+    "Future-night prices look static (identical across May/Jul/Aug) so no real season curve was measured",
+    "Nov price may be a near-term discount"
+   ]
+  },
+  "wayanad": {
+   "confidence": "low",
+   "unverified": [
+    "Far-future prices appear static (flat across months), so no real season curve measured",
+    "7 of 9 mid hotels and all budget hotels unavailable on future nights"
+   ]
+  },
+  "drass": {
+   "confidence": "low",
+   "unverified": [
+    "No mid-range hotel priced; peak-season (May/Jul) price not observable on Cleartrip",
+    "Only 1 hotel priced on 2 of 4 nights"
+   ]
+  },
+  "hanle": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "budget_hotel_median_inr": null,
+    "homestay_median_inr": null,
+    "dorm_median_inr": 1000,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://lhamohomestayhanle.in/product/dormitory-room/",
+     "https://kelsanghomestaynaga.in/index.html"
+    ],
+    "price_basis": "Dorm: Lhamo Homestay Hanle page prints 'Dormitory Room ₹1,000.00 / Day' and 'Rs. 1000 per Persons', undated website tariff (site footer 2026), no meal statement. Second source Kelsang Home Stay (Naga, Hanle) prints 'Dormitory Room ₹1500 /night' with no per-bed wording and footer copyright 2024, so its unit (bed vs room) is unclear and it is NOT in the median (n=1).",
+    "notes": "Context only, not a ledger tier: Hanle private rooms on homestay websites (undated tariff cards): Lhamo single 1,500 / double 3,000 (https://lhamohomestayhanle.in/), Kelsang single 2,000 / double 3,000, Sonam single 2,500 / double 3,500 with breakfast and 'All prices include taxes' (https://sonamhomestayhanle.in/tariffs/), Gua Home Stay quotes American Plan (3 meals) 2,800 double (https://guahomestayhanle.in/tariffs.html, seen only in a search snippet). Several include meals in the room rate."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Leh to Hanle via Pangong, 3 days, Innova Crysta/Scorpio N/XUV700 (union-style rate list, Pangong Lake + Hanle, S.No 61)",
+      "inr": 27710
+     },
+     {
+      "route": "Same, Xylo/Ertiga",
+      "inr": 23554
+     },
+     {
+      "route": "Add-on 'Include or Exclude Hanle', Innova Crysta/Scorpio N/XUV700 (S.No 91)",
+      "inr": 4658
+     },
+     {
+      "route": "Add-on 'Include or Exclude Hanle to Umling La', Innova Crysta/Scorpio N/XUV700 (S.No 92)",
+      "inr": 7548
+     }
+    ],
+    "basis": "Travel Himalayas page presenting the 2026 Leh Ladakh Taxi Union rate list, 'Last updated: 28 September 2026', per vehicle per trip, not per day. It has no Hanle-only local sightseeing row. A union-style rate card was not found for a local Hanle day, so the local figure is null.",
+    "sources": [
+     "https://www.travelhimalayas.in/transportation/taxi-rental/316-leh-local-taxi-rates-2015.html"
+    ],
+    "notes": "The page is a travel agency republishing the union list, not the union's own site. Other 2026 route rows exist for Pangong+Hanle+Tso Moriri."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two found for Hanle; homestays bundle breakfast and dinner into room rates and no extra-meal prices were printed on the pages seen. Region blog ranges not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "No Cleartrip listing exists so no season probe",
+    "Local Hanle taxi day rate not found",
+    "Food per day: no rupee menu found",
+    "Dorm: n=1, undated website tariff"
+   ]
+  },
+  "tso-moriri": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/hotels-in-karzok"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [
+     "https://www.homestaysofindia.com/ladakh-tso-moriri-korzok-tribal-homestay/"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: all 13 Cleartrip Karzok listings 'No rooms available' for 18-19 Nov 2026 (checked by fetch of each detail URL with ?c=18112026|19112026&r=2,0). Homestay: no room-only price. Korzok Tribal Homestay prints an undated tariff card (Solo Occupancy 2,500; Classic Room 3,200; Extra Person 1,600) but with 'Complimentary: Breakfast & Dinner' and 'tariffs do not apply during festivals and holidays', so it is a meal-inclusive rate, not a room-only price, and is kept out of the median. Dorm: none found; one 2026 guide mentions Goose Homestay at 800-1,200 incl. meals in 4-8 bed rooms, not a printed dorm bed price.",
+    "notes": "Nothing bookable for 18-19 Nov on Cleartrip; sources disagree on winter opening (some homestays stay open all year per the homestay listing, camps closed). Unverifiable whether a traveller in Nov would pay anything at all; the ledger should not carry a measured Nov price for Tso Moriri."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "SUV",
+    "outstation_per_km_inr": null,
+    "point_to_point": [
+     {
+      "route": "Leh to Tso Moriri via Mahey Bridge and back to Leh, one day, Innova Crysta/Scorpio N/XUV700 (rate list S.No 55)",
+      "inr": 15703
+     },
+     {
+      "route": "Same, Xylo/Ertiga",
+      "inr": 13562
+     },
+     {
+      "route": "Leh to Tso Moriri, 2 days, return via Tso Kar, Debring (S.No 56), Innova Crysta/Scorpio N/XUV700",
+      "inr": 19010
+     }
+    ],
+    "basis": "Travel Himalayas page presenting the 2026 Leh Ladakh Taxi Union rate list, 'Last updated: 28 September 2026', per vehicle per trip, not per day. No local Korzok sightseeing row, so the local day is null.",
+    "sources": [
+     "https://www.travelhimalayas.in/transportation/taxi-rental/316-leh-local-taxi-rates-2015.html"
+    ],
+    "notes": "Page is an agency republishing the union list, not the union's own site. Permit and environment fee ₹500 per person is separate (same page)."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No Nov price for any Karzok property (all sold out / not open on Cleartrip)",
+    "No room-only homestay or dorm price found",
+    "Local Korzok taxi day not found"
+   ]
+  },
+  "orchha": {
+   "confidence": "low",
+   "unverified": [
+    "Only 2 mid hotels (both MP Tourism) have matched future prices",
+    "Jul-Sep 'peak' months not probed (not in the assigned nights)"
+   ]
+  },
+  "ganpatipule": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "budget_hotel_median_inr": null,
+    "homestay_median_inr": 1000,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/center-point-residency-2415370",
+     "https://www.hotelsinganpatipule.com/Sawant-Homestay.php",
+     "https://www.hotelsinganpatipule.com/Kelkar-Homestay.php"
+    ],
+    "dorm_median_inr": 250,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.hotelsinganpatipule.com/Sawant-Homestay.php"
+    ],
+    "price_basis": "Homestay (median of 700, 1000, 1532): Center Point Residency 1,532 (Cleartrip, 18-19 Nov 2026, pre-tax); Sawant Homestay Non-AC Double Bed Room 'RS. 1000' (tariff card, undated, 'Rates subjected to change without notice'); Kelkar Homestay NonAC double 'Rs. 700' non-seasonal / 'Rs. 1200' on public holidays & weekends (tariff card, undated; 18 Nov 2026 is a Wednesday so the non-seasonal 700 is used). Dorm: Sawant Homestay 'Non-AC Dormitory RS. 250 per person', capacity upto 16 (tariff card, undated), n=1.",
+    "notes": "The tariff cards say prices include 'stay charges only with taxes and booking charges'. MTDC Beach Resort dormitory rooms exist (per-room 2,400/3,000/3,600 for 8/10/12 guests on a Goibibo listing seen only in a search summary; Goibibo fetch timed out) and are not used. Mid_median left null because the 7 Cleartrip mid prices (2,165 to 5,264) are listed in season_probe only for the season-curve task, not asked as a research category here."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or local-operator rate card found for a Ganpatipule local day. Only national aggregator pages (cabbazar, gozocabs) appeared, which the brief excludes.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No fetchable rupee menu or cost-for-two page: Justdial returned HTTP 403, Zomato timed out (not bypassed). A 2018 Tripadvisor review of Mehendale's Swaad Dining quotes a thali at about ₹110, too old and single-point to use.",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "No matched season ratio: every future night sold out/unavailable on Cleartrip",
+    "Food and taxi not found from allowed sources",
+    "Dorm n=1, homestay tariffs undated"
+   ]
+  },
+  "harihareshwar": {
+   "confidence": "low",
+   "unverified": [
+    "n=2 mid hotels only, opposite directions",
+    "No homestay or budget room priced"
+   ]
+  }
+ }
+}

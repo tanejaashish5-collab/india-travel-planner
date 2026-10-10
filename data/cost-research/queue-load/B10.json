@@ -1,0 +1,162 @@
+{
+ "batch": "Q6",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "jodhpur": {
+   "confidence": "low",
+   "unverified": [
+    "a reliable Nov-vs-summer ratio (far-future prices near-static and out of line with Nov sale prices)"
+   ]
+  },
+  "kashid": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3459,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5067091",
+     "https://www.cleartrip.com/hotels/details/atithi-farm-house-3961596",
+     "https://www.cleartrip.com/hotels/details/suryansh-beach-resort-4282202",
+     "https://www.cleartrip.com/hotels/details/5528224",
+     "https://www.cleartrip.com/hotels/details/cocos-inn-resort-by-spicy-mango-4535625"
+    ],
+    "budget_hotel_median_inr": 1485,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/aashray-guestroom-5401395"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax sale price, 5 hotels (3,164 / 3,387 / 3,459 / 4,293 / 4,631). Budget: Cleartrip 18-19 Nov 2026, Aashray Guestroom only (n=1).",
+    "notes": "Homestays on Cleartrip's Kashid list (Shraddha Saburi, O'NEST) were 'No rooms available' 18-19 Nov; ama Stays Skyfall (55,575) is a luxury villa, not a homestay price. No hostel dorm found: a web search of Tripadvisor/Expedia hostel pages for Kashid listed only places 11-38 miles away with no dorm price. Hostel dorm and homestay left null."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or local-operator rate card found for Kashid; only national cab-aggregator route quotes (Kashid to Alibag, Kashid to Mumbai) which were not used.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two figure retrievable from a page I could fetch: Tripadvisor returned 403 (not bypassed); a Holidify page printed only two entries with inconsistent figures (650 / 75).",
+    "sources": [],
+    "notes": ""
+   },
+   "confidence": "low",
+   "unverified": [
+    "taxi_day",
+    "food_per_person_day",
+    "homestay_median_inr",
+    "dorm_median_inr",
+    "season ratio (most Jul/Sep 2027 nights unavailable)"
+   ]
+  },
+  "malvan": {
+   "confidence": "low",
+   "unverified": [
+    "season ratio (most May/Sep 2027 nights unavailable; three hotels static)"
+   ]
+  },
+  "murud-janjira": {
+   "confidence": "low",
+   "unverified": [
+    "any Murud-Janjira hotel, homestay or budget room price (Cleartrip has none bookable)"
+   ]
+  },
+  "nagpur": {
+   "confidence": "medium",
+   "unverified": [
+    "homestay season ratio (only Paradise Homestay priced, erratic)",
+    "whether Nov sale prices for budget hotels are promotional"
+   ]
+  },
+  "puducherry": {
+   "confidence": "low",
+   "unverified": [
+    "a clean Nov-vs-monsoon ratio (most pairs distorted by promotions or room changes)"
+   ]
+  },
+  "raigad-fort": {
+   "confidence": "low",
+   "unverified": [
+    "Raigad Fort-side lodging (Pachad / Raigadwadi / MTDC) prices",
+    "summer and monsoon prices (almost all later nights unavailable)",
+    "taxi_day local rate",
+    "food_per_person_day",
+    "homestay prices at Pachad/Raigadwadi",
+    "MTDC Raigad Fort Resort tariff"
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Mahad (Cleartrip has no hotels at Raigad Fort itself); fort-side rooms exist, see notes",
+    "mid_median_inr": 1755,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5218308",
+     "https://www.cleartrip.com/hotels/details/4597450",
+     "https://www.cleartrip.com/hotels/details/4696635",
+     "https://www.cleartrip.com/hotels/details/5392889"
+    ],
+    "budget_hotel_median_inr": 1551,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-dwarka-gauri-4683512"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 850,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://raigadropeway.com/accommodation.html"
+    ],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax sale price at Mahad (1,057 / 1,594 / 1,915 / 2,030; median 1,755, a town 25 km away, not Raigad Fort). Budget: Cleartrip 18-19 Nov 2026, Hotel Dwarka Gauri (2-star), n=1. Dorm: Raigad Ropeway tariff card, undated, excludes 5% GST (from 22 Sep 2025), non-AC dormitory bed at Hirkani lower station, n=1.",
+    "notes": "On the fort itself, Raigad Ropeway's tariff card (https://raigadropeway.com/accommodation.html, undated, GST extra) prints: AC Room at Hirkani (lower station) 2,850 per double; Deluxe rooms at Bhavani (upper station) 3,125; Super Deluxe 3,600; Deluxe Suite 3,800; Tent (2 persons) 900; Tent House (4) 2,500. These are the tariffs at the fort and are NOT in the medians. A web-search summary quoted homestay rooms at Pachad/Raigadwadi (Sakshi Nivas ~800-1,800, Jay Bhavani Farm House ~1,200-2,000) from a 2026 guide but I could not fetch that page (domain parked), so those are not recorded. MTDC Raigad Fort Resort page timed out, no tariff obtained."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": 13.5,
+    "point_to_point": [
+     {
+      "route": "Mahad to Raigad (Raigad Fort), about 43 km, one way, sedan (Dzire or similar)",
+      "inr": 2017
+     }
+    ],
+    "basis": "Gozocabs Mahad-Raigad route page, indicative one-way fares before GST: compact 1,961, sedan 2,017, small SUV (Ertiga) 2,425, large SUV 4,038; 'from 13.50/km'. This is a national aggregator, so treat as low confidence; no union or tourism-department rate found.",
+    "sources": [
+     "https://www.gozocabs.com/book-taxi/mahad-raigad"
+    ],
+    "notes": "No local-sightseeing rate on the page."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two page fetched for Mahad or Raigad Fort.",
+    "sources": [],
+    "notes": ""
+   }
+  },
+  "ratnagiri": {
+   "confidence": "low",
+   "unverified": [
+    "monsoon-season price movement (almost all later nights unavailable)"
+   ]
+  },
+  "tarkarli": {
+   "confidence": "low",
+   "unverified": [
+    "season movement (nearly all later nights unavailable)"
+   ]
+  }
+ }
+}

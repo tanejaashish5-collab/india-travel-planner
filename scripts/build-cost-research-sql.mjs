@@ -131,9 +131,18 @@ for (const f of files) {
         const basis = s.price_basis ?? "";
         const taxIncl = /tax[- ]?incl|incl\.? tax|inclusive/i.test(basis) && !/pre-tax|before tax/i.test(basis);
         const gst = taxIncl ? 1 : 1.12;
+        // Per tier when the basis is written tier by tier ("Mid: Cleartrip pre-tax ... Homestay: Booking tax-incl"):
+        // the queue batches (2026-10-10) mix pre-tax and tax-inclusive sites within one place.
+        const tierGst = (cat) => {
+          const seg = basis.match(SEG[cat])?.[1];
+          if (!seg) return gst;
+          if (/pre-tax|before tax|ex-?gst/i.test(seg)) return 1.12;
+          if (/tax[- ]?incl|incl\.? tax|inclusive|booking\.com/i.test(seg)) return 1;
+          return gst;
+        };
         for (const [cat, v, n, src, minN, mult] of [
-          ["hotel-mid", s.mid_median_inr, s.mid_n, s.mid_sources, 3, gst],
-          ["homestay", s.homestay_median_inr, s.homestay_n, s.homestay_sources, 2, gst],
+          ["hotel-mid", s.mid_median_inr, s.mid_n, s.mid_sources, 3, tierGst("hotel-mid")],
+          ["homestay", s.homestay_median_inr, s.homestay_n, s.homestay_sources, 2, tierGst("homestay")],
           ["hostel-dorm", s.dorm_median_inr, s.dorm_n, s.dorm_sources, 2, 1],
         ]) {
           if (v == null) continue;

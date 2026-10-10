@@ -1,0 +1,97 @@
+{
+ "batch": "Q2",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "nagarjuna-sagar": {
+   "confidence": "low",
+   "unverified": [
+    "season probe for 18-19 Nov 2026, 14-15 Apr 2027, 14-15 Jul 2027: no Cleartrip-listed hotels exist for Nagarjuna Sagar / Hill Colony"
+   ]
+  },
+  "pulicat-lake": {
+   "confidence": "low",
+   "unverified": [
+    "season probe for 18-19 Nov 2026, 10-11 Mar 2027, 14-15 Jul 2027: no Cleartrip-listed lodging at Pulicat Lake"
+   ]
+  },
+  "srikalahasti": {
+   "confidence": "medium",
+   "unverified": [
+    "Srikalahasti has no real 3-star set on Cleartrip; mid group includes 2-star listings",
+    "no event calendar checked for 28-29 Oct 2026, 14-15 Jul 2027, 8-9 Sep 2027"
+   ]
+  },
+  "haflong": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1968,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/landmark-hotel-2043894?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax, single property (Landmark Hotel). Budget, homestay, dorm: not found.",
+    "notes": "Only one Cleartrip property in Haflong; Cleartrip labels it 2-star. A blog (unpaqd.com/blog/haflong-hill-station-guide, 11 Feb 2026) lists Nothao Lodge, guesthouses and Laisong homestays with 'est. 2026' prices; those are the blog's own estimates and were NOT used."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union or operator rate card found that I could open. waytoindia.com/travel-guide/assam/haflong (updated Jun 2026) says rates are negotiable and gives no figure; unpaqd.com/blog/haflong-hill-station-guide (11 Feb 2026) quotes only 'Jatinga 9 km, Rs 200 by auto or taxi' and 'Maibang Rs 1,000 round trip by taxi or local bus', ambiguous shared/one-way fares, not used. MakeMyTrip Haflong cab page and heygoldie.com would not load.",
+    "sources": [],
+    "notes": "null by design"
+   },
+   "confidence": "low",
+   "unverified": [
+    "budget hotel, homestay and dorm prices",
+    "taxi local sightseeing day rate",
+    "season ratio rests on one hotel with a flat price"
+   ]
+  },
+  "diu": {
+   "confidence": "low",
+   "unverified": [
+    "mid-range ratio rests on 2 mid hotels (Apaar, Rainbow) for May and 0 for Mar",
+    "Mar 2027 and May 2027 prices missing for 5 of 7 mid hotels"
+   ]
+  },
+  "kasol": {
+   "confidence": "low",
+   "unverified": [
+    "Apr 2027 and Jan 2027 prices missing for 4 of 7 mid hotels (No rooms)",
+    "season ratio rests on 3 hotels"
+   ]
+  },
+  "manali": {
+   "confidence": "medium",
+   "unverified": [
+    "Manali Mountain Regency, Snow View, Himalayan Rose, Wild Rose: June 2027 not bookable (No rooms) on Cleartrip",
+    "Rockland Inn Feb/Jun price looks like a room-class switch, not a season effect"
+   ]
+  },
+  "sangla": {
+   "confidence": "low",
+   "unverified": [
+    "Jun 2027 price exists for only 2 hotels (Lake View, Batseri); Jan 2027 for 2 (Kamru, Lake View)",
+    "cannot tell sold out from booking window or winter closure"
+   ]
+  },
+  "shimla": {
+   "confidence": "low",
+   "unverified": [
+    "summer prices exist for only 5 mid hotels, 2 of them look like outliers",
+    "cannot tell sold out from not open for booking"
+   ]
+  }
+ }
+}

@@ -1,0 +1,1362 @@
+{
+ "batch": "T3",
+ "researched_on": "2026-10-10",
+ "corporation_status": {
+  "RTDC (Rajasthan)": "DONE. rtdc.tourism.rajasthan.gov.in HotelDetails pages (plain GET, 2026-10-10). 24 hotels listed; 23 pages carry tariff tables for 2026-27 (Ajmer Ajaymeru and Motel Barr returned no table). RTDC prints dated periods, NOT the words season/off-season. 12 hotels have a lower 01 Apr-30 Sep 2026 rate and a higher 01 Oct 2026-31 Mar 2027 rate; Pushkar, Mount Abu, Jodhpur, Sariska, Siliserh are flat all year with only Diwali / Christmas-New Year / fair windows higher.",
+  "GTDC (Goa)": "DONE. Official tariff card PDFs on goa-tourism.com (/download/ page): Tarrif-Card-Updated.pdf (23 Dec 2025-1 Jan 2026 peak; 2 Jan-15 Jun 2026 regular) and GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf (16 Jun-22 Dec 2026, scanned image, read visually). 7 residencies. NO off-season discount is printed: the monsoon-spanning 16 Jun-22 Dec card is higher than the Jan-Jun card. Peak premium only ~4-8 percent. 2026-27 peak (23 Dec 2026 on) not yet published.",
+  "MTDC (Maharashtra)": "NOT OBTAINED. New mtdc.co shows only booking-engine prices (api-be.mtdc.co lowestPrice, and a Stayflexi per-date calendar limited to ~85 days ahead), no tariff card or season table. The old official tariff PDFs are not on mtdc.co; only third-party agent pages (sevadoot, gagangiri, a 2020 chart on wsimg) and a 2017-18 chart on WordPress carry season/off-season columns, so nothing recorded.",
+  "ANIIDCO (Andaman)": "DONE. aniidco.and.nic.in resort pages, fetched 2026-10-10: Dolphin Resort Havelock and Hornbill Nest Port Blair carry the card w.e.f. 1 Oct 2026; Megapode Port Blair still shows the Oct 2025-Sep 2026 card. All print Season (Oct-Apr, Megapode Oct-May) and Off Season (May-Sept); Dolphin also prints Peak 15 Dec 2026-15 Jan 2027. The Directorate of Tourism's Island Tourist Home tariff not found.",
+  "ATDC (Assam)": "PARTIAL. tourismcorporation.assam.gov.in/information-services/tourist-lodges prints one 'Tourist Season (Nov-Apr)' tariff (as on Feb 2025) for Aranya Kaziranga and Prashanti lodges Guwahati, no off-season column, so no ratio.",
+  "Private hotels": "DONE (what exists). HRH Group (Udaipur x4, Ranakpur, Bikaner x2): two official half-year PDFs, Apr-Sep 2026 vs Oct 2026-Mar 2027. Also Killa Bhawan Jaisalmer (30% low-season rule), Kothi Heritage Jodhpur (2025-26), Over The Hill Poovar Kerala (4 tiers), Dreamland/Gautam/Girivihar Mahabaleshwar (Apr-Jun only; Gautam flat), Anjuna Beach Resort (2018-19 stale). Flat annual cards with no seasons: Jaiwana Haveli Jaisalmer, Lake Pichola Udaipur, Windamere Darjeeling, Hotel Gautam Lonavala and Goa. Not found with a published season card: Gangtok, Puri, Mount Abu, Lonavala resorts (searches returned only aggregators).",
+  "MP Tourism (MPSTDC)": "NOT OBTAINED. mptourism.com/accomodation.php shows a rate range per property (e.g. Amaltas INR 2990-3290) with no season split; mpstdc.com is a script app with no tariff text. The only season rule (20 percent higher in peak at Bandhavgarh, Bhedaghat, Kanha, Maheshwar, Mandu, Orchha, Pachmarhi, Pench) sits in an undated PDF hosted by a travel agent (sanyogtours.com), not recorded.",
+  "Gujarat Tourism (TCGL)": "NOT OBTAINED. gujarattourism.com returns 403 to every request; not bypassed. Official Rann Utsav site (rannutsavgujarat.in) prints only 'starts from' package prices with no dates (Rann Utsav tent city runs 1 Nov 2026-7 Mar 2027 per search report).",
+  "Chhattisgarh Tourism": "NOT OBTAINED. tourism.cgstate.gov.in and cgtourism.in do not resolve or return 530; chhattisgarhtourism.net returns a stub. No tariff card seen.",
+  "OTDC (Odisha)": "NOT OBTAINED. odishatourism.gov.in lists Panthanivas properties and room types only; prices come from the bookodisha.com booking app (script-rendered, per-date). No printed season/off-season card found. Search snippet 'from' prices (Puri Standard 4,000, Konark Deluxe 1,700, Gopalpur Deluxe 1,800) are not tariff cards.",
+  "WBTDC (West Bengal, Darjeeling, Digha)": "NOT OBTAINED. wbtdcl.wbtourismgov.in lists only a min-max range per property (e.g. Darjeeling 2,800-3,700, Dighali-I 2,600-4,200 per room per night) with no season labels or dates; booking is per-date. The only season rules seen are a 2013 PDF on a third-party site, not recorded.",
+  "Sikkim tourism (STDC)": "NOT OBTAINED. sikkimstdc.com carries no tariff; sikkimtourism.gov.in has an expired TLS certificate (not bypassed). The season dates in search results come from an IRCTC package, not STDC.",
+  "Meghalaya (MTDC)": "NOT OBTAINED. meghalayatourism.in and app.meghalayatourism.in list properties without tariffs."
+ },
+ "properties": [
+  {
+   "corporation": "ANIIDCO (Andaman & Nicobar)",
+   "town": "Havelock (Swaraj Dweep)",
+   "destination_id": "havelock-island",
+   "property": "Dolphin Resort",
+   "room_type": "Deluxe Cottage",
+   "occupancy": "double",
+   "plan": "CP (breakfast included)",
+   "season_periods": {
+    "season": "Season (Oct - April), as printed",
+    "off_season": "Off Season (May - Sept), as printed",
+    "peak": "Peak Season (15/12/26 - 15/01/27)"
+   },
+   "labels_printed": true,
+   "season_rate_inr": 6500,
+   "off_season_rate_inr": 5200,
+   "peak_rate_inr": 7500,
+   "all_rooms": [
+    {
+     "room": "VIP Cottage",
+     "season": 11000,
+     "off": 7500,
+     "peak": 11000
+    },
+    {
+     "room": "Deluxe Suite Cottage",
+     "season": 7000,
+     "off": 5600,
+     "peak": 8000
+    },
+    {
+     "room": "Deluxe Cottage",
+     "season": 6500,
+     "off": 5200,
+     "peak": 7500
+    },
+    {
+     "room": "Executive Cottage",
+     "season": 6000,
+     "off": 4800,
+     "peak": 7000
+    },
+    {
+     "room": "Standard Cottage",
+     "season": 4000,
+     "off": 3200,
+     "peak": 5000
+    }
+   ],
+   "tax_basis": "excluding GST (5% on all but VIP Cottage, 18% on VIP, per the page)",
+   "tariff_year": "w.e.f. 1 Oct 2026",
+   "url": "https://aniidco.and.nic.in/dolphin-resort.php",
+   "notes": "Fetched 2026-10-10. All five categories have the same off/season ratio of 0.73-0.80 (VIP 0.68); peak is 0-25 percent above season."
+  },
+  {
+   "corporation": "ANIIDCO (Andaman & Nicobar)",
+   "town": "Port Blair",
+   "destination_id": "port-blair",
+   "property": "Megapode Resort",
+   "room_type": "Deluxe Room",
+   "occupancy": "double",
+   "plan": "CP (breakfast included)",
+   "season_periods": {
+    "season": "Season (Oct - May), as printed",
+    "off_season": "Off Season (1st April 26 - 30th Sept 26), as printed",
+    "peak": null
+   },
+   "labels_printed": true,
+   "season_rate_inr": 5500,
+   "off_season_rate_inr": 3300,
+   "peak_rate_inr": null,
+   "all_rooms": [
+    {
+     "room": "Nicobari Cottage",
+     "season": 7500,
+     "off": 4500
+    },
+    {
+     "room": "Bamboo Cottage",
+     "season": 5500,
+     "off": 3300
+    },
+    {
+     "room": "Deluxe Room",
+     "season": 5500,
+     "off": 3300
+    },
+    {
+     "room": "Semi-Deluxe Room",
+     "season": 5000,
+     "off": 3300
+    },
+    {
+     "room": "Semi-Deluxe Room (118) for Divyang",
+     "season": 4000,
+     "off": 2400
+    }
+   ],
+   "tax_basis": "excluding GST",
+   "tariff_year": "1 Oct 2025 - 30 Sep 2026 (the 2026-27 card is not yet posted)",
+   "url": "https://aniidco.and.nic.in/megapode-resort.php",
+   "notes": "Fetched 2026-10-10. The card prints Season as Oct-May but off-season as 1 Apr-30 Sep 2026, so April-May is printed in both columns; the Oct 2025-Mar 2026 season dates are the unambiguous part. Off/season = 0.60. This is the 2025-26 card; Dolphin and Hornbill already carry the 1 Oct 2026 card."
+  },
+  {
+   "corporation": "ANIIDCO (Andaman & Nicobar)",
+   "town": "Port Blair",
+   "destination_id": "port-blair",
+   "property": "Hornbill Nest Resort",
+   "room_type": "Deluxe Room",
+   "occupancy": "double",
+   "plan": "CP (breakfast included)",
+   "season_periods": {
+    "season": "Season (Oct - April), as printed",
+    "off_season": "Off Season (May 2027 - Sept 27), as printed",
+    "peak": null
+   },
+   "labels_printed": true,
+   "season_rate_inr": 5500,
+   "off_season_rate_inr": 4400,
+   "peak_rate_inr": null,
+   "all_rooms": [
+    {
+     "room": "Super Deluxe Room",
+     "season": 6000,
+     "off": 4800
+    },
+    {
+     "room": "Deluxe Room",
+     "season": 5500,
+     "off": 4400
+    },
+    {
+     "room": "Semi-Deluxe Room",
+     "season": 5000,
+     "off": 4000
+    }
+   ],
+   "tax_basis": "excluding GST (5% per the page)",
+   "tariff_year": "w.e.f. 1 Oct 2026",
+   "url": "https://aniidco.and.nic.in/hornbill-nest.php",
+   "notes": "Fetched 2026-10-10. Off/season = 0.80 for all three categories. Note the card's off-season is printed as May 2027 - Sept 27, so Apr 2027 is season."
+  },
+  {
+   "corporation": "ATDC (Assam)",
+   "town": "Kohora (Kaziranga)",
+   "destination_id": "kaziranga",
+   "property": "Aranya Tourist Lodge",
+   "room_type": "Standard Room",
+   "occupancy": "as printed",
+   "plan": "room only (not stated)",
+   "season_periods": {
+    "season": "Tourist Season (From November to April), as printed",
+    "off_season": null,
+    "peak": null
+   },
+   "labels_printed": true,
+   "season_rate_inr": 1600,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": null,
+   "base_rate_inr": 1429,
+   "tax_basis": "total incl 12% GST (basic rate printed separately)",
+   "tariff_year": "as on Feb. 2025 (stale; GST has since changed)",
+   "url": "https://tourismcorporation.assam.gov.in/information-services/tourist-lodges",
+   "notes": "Season-only: ATDC prints just the Nov-Apr tourist-season tariff, no off-season column. Page fetched 2026-10-10. "
+  },
+  {
+   "corporation": "ATDC (Assam)",
+   "town": "Guwahati",
+   "destination_id": "guwahati",
+   "property": "Prashanti Tourist Lodge (Station Road)",
+   "room_type": "Standard Room (4th & 5th floor), double",
+   "occupancy": "as printed",
+   "plan": "room only (not stated)",
+   "season_periods": {
+    "season": "Tourist Season (From November to April), as printed",
+    "off_season": null,
+    "peak": null
+   },
+   "labels_printed": true,
+   "season_rate_inr": 1600,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": null,
+   "base_rate_inr": 1429,
+   "tax_basis": "total incl 12% GST (basic rate printed separately)",
+   "tariff_year": "as on Feb. 2025 (stale; GST has since changed)",
+   "url": "https://tourismcorporation.assam.gov.in/information-services/tourist-lodges",
+   "notes": "Season-only: ATDC prints just the Nov-Apr tourist-season tariff, no off-season column. Page fetched 2026-10-10. "
+  },
+  {
+   "corporation": "ATDC (Assam)",
+   "town": "Guwahati (Kamakhya)",
+   "destination_id": "guwahati",
+   "property": "Prashaanti Tourist Lodge, Kamakhya",
+   "room_type": "Delux Double",
+   "occupancy": "as printed",
+   "plan": "room only (not stated)",
+   "season_periods": {
+    "season": "Tourist Season (From November to April), as printed",
+    "off_season": null,
+    "peak": null
+   },
+   "labels_printed": true,
+   "season_rate_inr": 2000,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": null,
+   "base_rate_inr": 1786,
+   "tax_basis": "total incl 12% GST (basic rate printed separately)",
+   "tariff_year": "as on Feb. 2025 (stale; GST has since changed)",
+   "url": "https://tourismcorporation.assam.gov.in/information-services/tourist-lodges",
+   "notes": "Season-only: ATDC prints just the Nov-Apr tourist-season tariff, no off-season column. Page fetched 2026-10-10. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Panaji",
+   "destination_id": "panaji",
+   "property": "Panaji Residency",
+   "room_type": "AC Room",
+   "occupancy": "double",
+   "plan": "breakfast included",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 4500,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 4700,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 4500
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 4750
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 4700
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Margao",
+   "destination_id": "",
+   "property": "Margao Residency",
+   "room_type": "AC Room",
+   "occupancy": "double",
+   "plan": "breakfast included",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2450,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 2650,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 2450
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 2600
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 2650
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Vasco da Gama",
+   "destination_id": "",
+   "property": "Vasco Residency",
+   "room_type": "AC Room",
+   "occupancy": "double",
+   "plan": "breakfast included",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2450,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 2650,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 2450
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 2600
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 2650
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Old Goa",
+   "destination_id": "old-goa",
+   "property": "Old Goa Residency",
+   "room_type": "AC Room",
+   "occupancy": "double",
+   "plan": "breakfast included",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2300,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 2500,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 2300
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 2400
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 2500
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Farmagudi (Ponda)",
+   "destination_id": "",
+   "property": "Farmagudi Residency",
+   "room_type": "AC Room",
+   "occupancy": "double",
+   "plan": "room only (breakfast excluded)",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 1750,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 1950,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 1750
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 1850
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 1950
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Mayem",
+   "destination_id": "",
+   "property": "Mayem Lake View Residency",
+   "room_type": "AC Room (Lake View)",
+   "occupancy": "double",
+   "plan": "room only (breakfast excluded)",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2050,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 2250,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 2050
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 2150
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 2250
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. "
+  },
+  {
+   "corporation": "GTDC (Goa Tourism Development Corporation)",
+   "town": "Calangute",
+   "destination_id": "calangute-baga",
+   "property": "Calangute Residency",
+   "room_type": "AC Deluxe Room (Resort Front)",
+   "occupancy": "double",
+   "plan": "room only (breakfast excluded)",
+   "season_periods": {
+    "regular_printed": "02 Jan 2026 to 15 Jun 2026",
+    "peak_printed": "23 Dec 2025 to 01 Jan 2026",
+    "later_card_printed": "16 Jun 2026 to 22 Dec 2026 (covers monsoon AND Oct-Dec; not labelled season or off-season)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 4150,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 4350,
+   "period_rates": [
+    {
+     "period": "02 Jan 2026 to 15 Jun 2026",
+     "rate_inr": 4150
+    },
+    {
+     "period": "16 Jun 2026 to 22 Dec 2026",
+     "rate_inr": 4650
+    },
+    {
+     "period": "23 Dec 2025 to 01 Jan 2026 (peak)",
+     "rate_inr": 4350
+    }
+   ],
+   "tax_basis": "exclusive of GST (card says so; GST 12% up to Rs 7,500/day, 18% above)",
+   "tariff_year": "2025-26 cards (peak+regular, uploaded Oct 2025) and 2026 card (16 Jun-22 Dec 2026, file dated Mar 2026)",
+   "url": "https://goa-tourism.com/wp-content/uploads/2025/10/Tarrif-Card-Updated.pdf",
+   "url_later_card": "https://goa-tourism.com/wp-content/uploads/2020/06/GTDC-RESIDENCIES-TARIFF-CARD-2026.pdf",
+   "notes": "GTDC prints three dated cards, no 'off-season' column. The 16 Jun-22 Dec 2026 card (a scanned image PDF; read visually) is HIGHER than the 02 Jan-15 Jun 2026 card, i.e. the monsoon months are priced the same as Oct-Dec and are not discounted. Peak premium over the regular card is only about 4-8 percent. Calangute's room tariff was revised w.e.f. 15 Jan 2026 (printed on the 2026 card); the 02 Jan-15 Jun 2026 figure on the Oct 2025 card therefore applied only to 2-14 Jan 2026, so do not use it as a seasonal baseline. Peak-vs-regular ratio not valid for Calangute.",
+   "ratio_valid": false
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Udaipur",
+   "destination_id": "udaipur",
+   "property": "Shiv Niwas Palace (HRH)",
+   "room_type": "Palace room, non lake facing",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 20000,
+   "off_season_rate_inr": 15000,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Udaipur",
+   "destination_id": "udaipur",
+   "property": "Jagmandir Island Palace (HRH)",
+   "room_type": "Suite",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 25000,
+   "off_season_rate_inr": 20000,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Udaipur",
+   "destination_id": "udaipur",
+   "property": "Shikarbadi Hotel (HRH)",
+   "room_type": "Deluxe room",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 13000,
+   "off_season_rate_inr": 9000,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Udaipur",
+   "destination_id": "udaipur",
+   "property": "Garden Hotel (HRH)",
+   "room_type": "Standard room",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 11000,
+   "off_season_rate_inr": 8000,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Ranakpur",
+   "destination_id": "ranakpur",
+   "property": "Fateh Bagh (HRH)",
+   "room_type": "Deluxe room",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 11000,
+   "off_season_rate_inr": 7000,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Bikaner (Gajner)",
+   "destination_id": "bikaner",
+   "property": "Gajner Palace (HRH)",
+   "room_type": "Deluxe room",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 10500,
+   "off_season_rate_inr": 7500,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel (HRH Group)",
+   "town": "Bikaner",
+   "destination_id": "bikaner",
+   "property": "Karni Bhawan Palace (HRH)",
+   "room_type": "Regular room",
+   "occupancy": "single/double (one rate)",
+   "plan": "room only",
+   "season_periods": {
+    "higher_rate_period": "Tariff effective from 1st October 2026 to 31st March 2027",
+    "lower_rate_period": "Tariff effective from 1st April to 30th September 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 8500,
+   "off_season_rate_inr": 5500,
+   "peak_rate_inr": null,
+   "tax_basis": "government taxes extra as applicable; no service charge",
+   "tariff_year": "2026-27 (two half-year PDFs)",
+   "url": "https://hrhhotels.com/pdfs/Tariff-oct-26-mar-27.pdf",
+   "url_lower_rate_period": "https://hrhhotels.com/pdfs/Tariff-apr-26-sep-26.pdf",
+   "notes": "Two official half-year tariff PDFs on hrhhotels.com, fetched and text-extracted 2026-10-10. HRH does not print the words season/off-season; higher_rate = Oct-Mar, lower_rate = Apr-Sep. No separate festival rate printed. "
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Jaisalmer",
+   "destination_id": "jaisalmer",
+   "property": "Killa Bhawan (Jaisalmer Fort)",
+   "room_type": "Heritage",
+   "occupancy": "not stated",
+   "plan": "breakfast included",
+   "season_periods": {
+    "base": "1 May 2026 to 30 April 2027 (one base rate)",
+    "low_season": "15 July to 30 September 2026: 30% discount on base rates of all rooms",
+    "peak": "Christmas and New Year 18 December 2026 to 4 January 2027: page says no increase on standard rates (min 2 nights)"
+   },
+   "labels_printed": true,
+   "season_rate_inr": 11000,
+   "off_season_rate_inr": null,
+   "off_season_rule": "30% discount on base rate, 15 Jul-30 Sep 2026 (implied ratio 0.70; the page prints the rule, not a rupee figure)",
+   "peak_rate_inr": null,
+   "tax_basis": "excl 18% GST (Killa Bhawan); KB Lodge excl 12%",
+   "tariff_year": "1 May 2026 - 30 Apr 2027",
+   "url": "https://www.hotelkillabhawan.com/en/jaisalmer-heritage-hotel-killa-bhawan-tariffs/",
+   "notes": "Fetched 2026-10-10. Base rates: Deluxe Heritage 18,500; Heritage 11,000; Heritage Family 8,000; KB Lodge Standard 3,450 (KB Lodge gets +20% for Diwali 6-16 Nov 2026 and for Christmas/New Year, the latter printed with a typo year 2024). Only a 3.5-month monsoon discount, no winter peak premium on the fort rooms."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Jodhpur",
+   "destination_id": "jodhpur",
+   "property": "The Kothi Heritage",
+   "room_type": "Deluxe Room",
+   "occupancy": "not stated (page does not say double)",
+   "plan": "breakfast included",
+   "season_periods": {
+    "season": "Validity: 1st October 2025 to 31st March 2026",
+    "off_season": "Validity: 1st April 2025 to 31th September 2025 (as printed)",
+    "peak": "festive season and New Year printed as a supplement, no amount"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 5350,
+   "off_season_rate_inr": 3950,
+   "peak_rate_inr": null,
+   "all_rooms": [
+    {
+     "room": "Executive Room",
+     "off": 2800,
+     "season": 3750
+    },
+    {
+     "room": "Deluxe Room",
+     "off": 3950,
+     "season": 5350
+    },
+    {
+     "room": "Super Deluxe",
+     "off": 4800,
+     "season": 7000
+    }
+   ],
+   "tax_basis": "GST extra (page also says MAP meal price includes taxes)",
+   "tariff_year": "2025-26 (stale by 6 months: the page showed no 2026-27 card on 2026-10-10)",
+   "url": "http://www.thekothiheritage.com/tariff-hotel-in-jodhpur.htm",
+   "notes": "Fetched 2026-10-10 via WebFetch. Off/season = 0.74 (Deluxe), 0.75 Executive, 0.69 Super Deluxe. Year-old card; use for the ratio only."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Darjeeling",
+   "destination_id": "darjeeling",
+   "property": "Windamere Hotel",
+   "room_type": "Standard Preferred (Double/Twin)",
+   "occupancy": "single or double, same rate",
+   "plan": "CP (breakfast)",
+   "season_periods": {
+    "single_period": "Valid from 1st June 2025 - 31st March 2026",
+    "peak": "25% surcharge on 24, 25, 26 and 31 December"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 13000,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": null,
+   "peak_rule": "+25% on the printed tariff for bookings on 24-26 and 31 Dec",
+   "tax_basis": "plus taxes (page: 'Tax is 18%')",
+   "tariff_year": "1 Jun 2025 - 31 Mar 2026 (stale; no 2026-27 card on page)",
+   "url": "https://www.windamerehotel.com/tariff",
+   "notes": "Flat tariff, no seasons. Fetched 2026-10-10. Shows a luxury heritage Darjeeling hotel prices flat across Jun-Mar except 4 December nights."
+  },
+  {
+   "corporation": "Private hotel (out of T3 region, Kerala; for T2 merge)",
+   "town": "Poovar",
+   "destination_id": "poovar",
+   "property": "Over The Hill",
+   "room_type": "Garden View (EP)",
+   "occupancy": "not stated",
+   "plan": "EP room only",
+   "season_periods": {
+    "off_season": "Off season 1st April 2026 to 30th Sep 2026",
+    "season": "Season 1st Oct 2026 to Nov 30th 2026 and Feb 1st 2027 to March 31st 2027",
+    "shoulder_season": "1st Dec 2026 to 19th Dec 2026 and 16 Jan 2027 to 31st Jan 2027",
+    "peak": "Super peak 20th Dec 2026 to 15th Jan 2027"
+   },
+   "labels_printed": true,
+   "season_rate_inr": 5100,
+   "off_season_rate_inr": 4300,
+   "peak_rate_inr": 7800,
+   "shoulder_rate_inr": 6100,
+   "all_rooms": [
+    {
+     "room": "Single Cottage",
+     "off": 5300,
+     "season": 6400,
+     "shoulder": 7500,
+     "peak": 8900
+    },
+    {
+     "room": "Sea View",
+     "off": 4900,
+     "season": 5700,
+     "shoulder": 6700,
+     "peak": 8400
+    },
+    {
+     "room": "Garden View",
+     "off": 4300,
+     "season": 5100,
+     "shoulder": 6100,
+     "peak": 7800
+    },
+    {
+     "room": "Premium Pool Cottage",
+     "off": 11500,
+     "season": 13500,
+     "shoulder": 15500,
+     "peak": 18500
+    }
+   ],
+   "tax_basis": "12% GST + 1% cess up to Rs 7,500; 18% GST + 1% cess above (added to tariff)",
+   "tariff_year": "1 Apr 2026 - 31 Mar 2027",
+   "url": "http://www.overthehill.in/tariff.php",
+   "notes": "Fetched 2026-10-10 via WebFetch (curl got a mod_security block, not bypassed). Kerala coast, not in my batch; included because it is a four-tier published card. Occupancy basis not stated. Off/season 0.84, season/peak 0.65."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Mahabaleshwar",
+   "destination_id": "mahabaleshwar",
+   "property": "Hotel Dreamland",
+   "room_type": "Executive Room (Sunday to Wednesday, two persons, lodging with breakfast)",
+   "occupancy": "two persons",
+   "plan": "breakfast",
+   "season_periods": {
+    "periods": "17-30 Apr 2026 6,500; 30 Apr-21 May 7,500; 21 May-7 Jun 9,000; 8-15 Jun 6,500 (Sun-Wed rows)",
+    "season": null,
+    "off_season": null,
+    "peak": "21 May to 7 June 2026"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 6500,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 9000,
+   "period_rates": [
+    {
+     "period": "17 Apr - 30 Apr 2026, Sun-Wed",
+     "rate_inr": 6500
+    },
+    {
+     "period": "30 Apr - 21 May 2026, Sun-Wed",
+     "rate_inr": 7500
+    },
+    {
+     "period": "21 May - 7 Jun 2026, Sun-Wed",
+     "rate_inr": 9000
+    },
+    {
+     "period": "8 Jun - 15 Jun 2026, Sun-Wed",
+     "rate_inr": 6500
+    },
+    {
+     "period": "21 May - 7 Jun 2026, Thu-Sun",
+     "rate_inr": 10000
+    },
+    {
+     "period": "8 Jun - 15 Jun 2026, Thu-Sun",
+     "rate_inr": 7000
+    }
+   ],
+   "tax_basis": "GST applicable (extra)",
+   "tariff_year": "Apr-Jun 2026 only (no monsoon or winter card posted)",
+   "url": "https://www.hoteldreamland.com/tariff",
+   "notes": "Fetched 2026-10-10. Only the Apr-Jun 2026 window is posted; it shows a late-May to 7-Jun peak 38% above the late-April Sun-Wed rate, collapsing back by 8 June. No off-season card, so no ratio."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Mahabaleshwar",
+   "destination_id": "mahabaleshwar",
+   "property": "Hotel Gautam Mahabaleshwar",
+   "room_type": "Pool Side Room (2 persons), without food",
+   "occupancy": "two persons",
+   "plan": "room only",
+   "season_periods": {
+    "single_period": "Tariff applicable w.e.f. 1st April 2026 (weekdays Sunday-Thursday)",
+    "peak": "Weekend (Fri & Sat) tariff applicable only 20 May to 7 June 2026"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 5250,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 6250,
+   "tax_basis": "inclusive of all taxes",
+   "tariff_year": "w.e.f. 1 Apr 2026",
+   "url": "https://www.hotelgautam.com/tariff-mahabaleshwar.html",
+   "notes": "Flat all year; the only uplift printed is a Fri/Sat weekend rate (+1,000, +19%) during 20 May-7 Jun. With food: 7,750 weekday / 8,750 weekend. Sister pages: Lonavala https://www.hotelgautam.com/tariff-lonavala.html (Executive Room 4,000 weekday / 5,000 weekend, double occupancy, valid from 1 Apr 2026, no seasons) and Goa https://www.hotelgautam.com/tariff-goa.html (Standard 3,750 room only, valid from 22 Sep 2025, no seasons, no festival uplift)."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Mahabaleshwar",
+   "destination_id": "mahabaleshwar",
+   "property": "Hotel Girivihar",
+   "room_type": "Deluxe (2 persons, breakfast+lunch+dinner)",
+   "occupancy": "two persons",
+   "plan": "MAP-style (all three meals) as quoted",
+   "season_periods": {
+    "season": "Season tariff 01/04/2026 to 30/04/2026",
+    "peak": "Peak season tariff 01/05/2026 to 13/06/2026",
+    "off_season": null
+   },
+   "labels_printed": true,
+   "season_rate_inr": 5900,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 6400,
+   "tax_basis": "not stated in snippet",
+   "tariff_year": "Apr-Jun 2026",
+   "url": "https://www.hotelgirivihar.com/tariff.html",
+   "notes": "FROM A SEARCH-RESULT SNIPPET: the page itself would not load here (certificate error, the connection returned a Telstra block page), not bypassed. Snippet also gave Super Deluxe 6400/7400, Executive 6700/8200, Classic 7100/8500, Premium 8000/9100 (season/peak). Peak is +8-22% over season. Re-verify before use."
+  },
+  {
+   "corporation": "Private hotel (STALE 2018-19)",
+   "town": "Anjuna",
+   "destination_id": "anjuna",
+   "property": "Anjuna Beach Resort",
+   "room_type": "Standard AC (DBL)",
+   "occupancy": "double",
+   "plan": "complimentary breakfast per search listing",
+   "season_periods": {
+    "periods": "05/01/2018-31/03/2018 4,000; 01/04-31/05/2018 3,500; 01/06-30/09/2018 3,000; 01/10-31/10/2018 4,000; 01/11-20/12/2018 4,500"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 4500,
+   "off_season_rate_inr": 3000,
+   "peak_rate_inr": null,
+   "stale": true,
+   "tax_basis": "GST 18% on nett amount (as printed)",
+   "tariff_year": "2018-19 (STALE: use the shape only, not the levels)",
+   "url": "http://www.anjunabeachresort.com/season-tariff-anjuna-beach-resort-anjuna-goa%20.html",
+   "notes": "Page still live 2026-10-10 under heading 'Room Tariff 2018 - 2019'; fetched via WebFetch. Jun-Sep rate = 0.67 of the highest Nov-Dec 2018 rate and 0.75 of the Jan-Mar rate. Nothing printed from 21 Dec."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Jaisalmer",
+   "destination_id": "jaisalmer",
+   "property": "Jaiwana Haveli",
+   "room_type": "Standard Double Room",
+   "occupancy": "double",
+   "plan": "room only (breakfast Rs 500 extra)",
+   "season_periods": {
+    "single_period": "TARIFF - 01 October 2026 Onwards (previous card 01 Oct 2025 to 30 Sep 2026)"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 5500,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": null,
+   "tax_basis": "GST 5% extra",
+   "tariff_year": "1 Oct 2026 onwards; 2025-26 was 5,000",
+   "url": "https://jaiwanahaveli.com/tariff/",
+   "notes": "Flat annual card (Oct to Sep), no seasons, no festival uplift printed; 'special discounts' apply 1 Apr 2026-30 Sep 2027 with no amount. Fetched 2026-10-10. +10% year on year."
+  },
+  {
+   "corporation": "Private hotel",
+   "town": "Udaipur",
+   "destination_id": "udaipur",
+   "property": "Lake Pichola Hotel",
+   "room_type": "Standard double (per search result)",
+   "occupancy": "double",
+   "plan": "buffet breakfast",
+   "season_periods": {
+    "single_period": "1 October 2026 to 30 September 2027"
+   },
+   "labels_printed": false,
+   "season_rate_inr": 8100,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": null,
+   "tax_basis": "taxes extra",
+   "tariff_year": "2026-27 (2025-26 was 7,400)",
+   "url": "https://www.lakepicholahotel.in/tariff-reservation/",
+   "notes": "FROM A SEARCH-RESULT SNIPPET: the page returned a mod_security 'Not Acceptable' block to curl, not bypassed. Snippet: Standard 7,400 single / 8,100 double, Deluxe 11,300/12,100, Suite 16,700/18,700. Flat annual card, no seasons. Re-verify before use."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Alwar",
+   "destination_id": "alwar",
+   "property": "Hotel Meenal",
+   "room_type": "Deluxe",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 1200,
+   "off_season_rate_inr": 1000,
+   "peak_rate_inr": null,
+   "peak_plan": null,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=AlwarMeenal",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Jaipur",
+   "destination_id": "jaipur",
+   "property": "Hotel Gangaur",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2100,
+   "off_season_rate_inr": 1800,
+   "peak_rate_inr": null,
+   "peak_plan": null,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=JaipurGangaur",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Jaipur",
+   "destination_id": "jaipur",
+   "property": "Hotel Teej",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2000,
+   "off_season_rate_inr": 1700,
+   "peak_rate_inr": null,
+   "peak_plan": null,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=JaipurTeej",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Sawai Madhopur (Ranthambore)",
+   "destination_id": "ranthambore",
+   "property": "Hotel Jhoomar Baori (Heritage)",
+   "room_type": "AC Deluxe Heritage",
+   "occupancy": "double",
+   "plan": "MAP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 23 Dec 2026, 01 Jan 2027 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "24 Dec 2026 to 31 Dec 2026 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 6500,
+   "off_season_rate_inr": 4800,
+   "peak_rate_inr": 7450,
+   "peak_plan": "MAP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=SawaiMadhopurJhoomarBaori",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (MAP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Sawai Madhopur (Ranthambore)",
+   "destination_id": "ranthambore",
+   "property": "Hotel Vinayak",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "MAP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 06 Nov 2026, 16 Nov 2026 to 23 Dec 2026, 02 Jan 2027 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "07 Nov 2026 to 15 Nov 2026 (Diwali Period (No Discount Applicable))",
+     "24 Dec 2026 to 01 Jan 2027 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 4500,
+   "off_season_rate_inr": 3500,
+   "peak_rate_inr": 6000,
+   "peak_plan": "AP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=SawaiMadhopurVinayak",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (MAP) in both. Rates are per night, double occupancy, as printed. Peak/festival plan is AP vs MAP in base periods, so peak is not like-for-like with season."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Udaipur",
+   "destination_id": "udaipur",
+   "property": "Hotel Kajri",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 07 Nov 2026, 16 Nov 2026 to 22 Dec 2026, 02 Jan 2027 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "08 Nov 2026 to 15 Nov 2026 (Diwali Period (No Discount Applicable))",
+     "23 Dec 2026 to 01 Jan 2027 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2300,
+   "off_season_rate_inr": 2000,
+   "peak_rate_inr": 3300,
+   "peak_plan": "MAP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=UdaipurKajri",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed. Peak/festival plan is MAP vs CP in base periods, so peak is not like-for-like with season."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Jaisalmer",
+   "destination_id": "jaisalmer",
+   "property": "Hotel Moomal",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 01 Nov 2026, 11 Nov 2026 to 23 Dec 2026, 03 Jan 2027 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "02 Nov 2026 to 10 Nov 2026 (Diwali Period (No Discount Applicable))",
+     "24 Dec 2026 to 02 Jan 2027 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2450,
+   "off_season_rate_inr": 1650,
+   "peak_rate_inr": 3950,
+   "peak_plan": "MAP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=JaisalmerMoomal",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed. Peak/festival plan is MAP vs CP in base periods, so peak is not like-for-like with season."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Bikaner",
+   "destination_id": "bikaner",
+   "property": "Hotel Dhola Maru",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 1700,
+   "off_season_rate_inr": 1200,
+   "peak_rate_inr": null,
+   "peak_plan": null,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=BikanerDholaMaru",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Bharatpur",
+   "destination_id": "bharatpur",
+   "property": "Hotel Bharatpur Forest Lodge",
+   "room_type": "AC - Deluxe",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 23 Dec 2026, 01 Jan 2027 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "24 Dec 2026 to 31 Dec 2026 (no label printed)"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 5500,
+   "off_season_rate_inr": 4000,
+   "peak_rate_inr": 6499,
+   "peak_plan": "CP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=BharatpurBharatpurForestLodge",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Jhalawar",
+   "destination_id": "jhalawar",
+   "property": "Hotel Gavdi Talab",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 22 Nov 2026, 26 Nov 2026 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "23 Nov 2026 to 25 Nov 2026 (Chandrabhaga Fair)"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 1200,
+   "off_season_rate_inr": 999,
+   "peak_rate_inr": 2700,
+   "peak_plan": "MAP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=JhalawarGavdiTalab",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed. Peak/festival plan is MAP vs CP in base periods, so peak is not like-for-like with season."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Nathdwara",
+   "destination_id": "nathdwara",
+   "property": "Hotel Gokul (Heritage)",
+   "room_type": "AC - Deluxe",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": null
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2500,
+   "off_season_rate_inr": 2000,
+   "peak_rate_inr": null,
+   "peak_plan": null,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=NathdwaraGokul",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed."
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Jaisalmer (Sam dunes)",
+   "destination_id": "jaisalmer",
+   "property": "Hotel Sam Dhani",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "higher_rate_periods": "01 Oct 2026 to 01 Nov 2026, 11 Nov 2026 to 23 Dec 2026, 03 Jan 2027 to 31 Mar 2027",
+    "lower_rate_period": "01 Apr 2026 to 30 Sep 2026",
+    "peak": [
+     "02 Nov 2026 to 10 Nov 2026 (Diwali Period (No Discount Applicable))",
+     "24 Dec 2026 to 02 Jan 2027 (New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 4750,
+   "off_season_rate_inr": 2750,
+   "peak_rate_inr": 5750,
+   "peak_plan": "AP",
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27 (periods print 01 Apr 2026 to 31 Mar 2027)",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=JaisalmerSamDhani",
+   "notes": "RTDC prints NO 'season'/'off-season' labels; it prints dated periods. season_rate = the higher-rate Oct-Mar period(s), off_season_rate = the lower-rate 01 Apr-30 Sep 2026 period, same room type and same meal plan (CP) in both. Rates are per night, double occupancy, as printed. WARNING meal plan differs (CP in Apr-Sep vs MAP in Oct-Mar): the ratio is not like-for-like, do not use. Peak/festival plan is AP vs MAP in base periods, so peak is not like-for-like with season.",
+   "ratio_valid": false
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Pushkar",
+   "destination_id": "pushkar",
+   "property": "Hotel Sarovar (Heritage)",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "single_period": "01 Apr 2026 to 16 Nov 2026",
+    "peak": [
+     "17 Nov 2026 to 24 Nov 2026 (Pushkar Fair, no discount)"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 1500,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 3000,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=PushkarSarovar",
+   "notes": "FLAT: one base rate 01 Apr-16 Nov 2026 and again 25 Nov 2026-31 Mar 2027 (CP, A.C. double 1500); only Pushkar Fair 17-24 Nov 2026 differs (MAP, A.C. double 3000, no discount). No seasonal base difference. Peak is MAP vs CP so not like-for-like.",
+   "peak_plan": "MAP"
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Mount Abu",
+   "destination_id": "mount-abu",
+   "property": "Hotel Shikhar",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "single_period": "01 Apr 2026 to 08 Nov 2026; 15 Nov to 24 Dec 2026; 01 Jan to 31 Mar 2027",
+    "peak": [
+     "09 Nov to 14 Nov 2026 (Diwali)",
+     "25 Dec to 31 Dec 2026 (Christmas & New Year)"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2000,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 3200,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=MountAbuShikhar",
+   "notes": "FLAT: one CP base rate 01 Apr-08 Nov 2026, 15 Nov-24 Dec 2026 and 01 Jan-31 Mar 2027 (A.C. double 2000). Only Diwali 09-14 Nov 2026 and Christmas/New Year 25-31 Dec 2026 differ (MAP, A.C. double 3200, no discount). No printed summer-vs-winter difference even though Mount Abu has a May-June tourist peak.",
+   "peak_plan": "MAP"
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Jodhpur",
+   "destination_id": "jodhpur",
+   "property": "Hotel Ghoomar",
+   "room_type": "Deluxe",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "single_period": "01 Apr 2026 to 31 Mar 2027 except peak windows",
+    "peak": [
+     "08 Nov 2026 to 13 Nov 2026 (Diwali Period (No Discount Applicable))",
+     "24 Dec 2026 to 31 Dec 2026 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2000,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 3100,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=JodhpurGhoomar",
+   "notes": "FLAT: same MAP/CP base rate all year; only Diwali/Christmas-New Year windows differ (peak plan differs). No seasonal base difference printed.",
+   "peak_plan": "MAP"
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Sariska",
+   "destination_id": "sariska",
+   "property": "Hotel Tiger Den",
+   "room_type": "A.C.",
+   "occupancy": "double",
+   "plan": "CP",
+   "season_periods": {
+    "single_period": "01 Apr 2026 to 31 Mar 2027 except peak windows",
+    "peak": [
+     "23 Dec 2026 to 31 Dec 2026 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 2500,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 4500,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=SariskaTigerDen",
+   "notes": "FLAT: same MAP/CP base rate all year; only Diwali/Christmas-New Year windows differ (peak plan differs). No seasonal base difference printed.",
+   "peak_plan": "AP"
+  },
+  {
+   "corporation": "RTDC (Rajasthan)",
+   "town": "Siliserh (Alwar)",
+   "destination_id": "alwar",
+   "property": "Hotel Lake Palace (Heritage)",
+   "room_type": "AC Superior",
+   "occupancy": "double",
+   "plan": "MAP",
+   "season_periods": {
+    "single_period": "01 Apr 2026 to 31 Mar 2027 except peak windows",
+    "peak": [
+     "24 Dec 2026 to 01 Jan 2027 (Christmas & New Year Period (No Discount Applicable))"
+    ]
+   },
+   "labels_printed": false,
+   "season_rate_inr": 4600,
+   "off_season_rate_inr": null,
+   "peak_rate_inr": 6400,
+   "tax_basis": "GST extra",
+   "tariff_year": "2026-27",
+   "url": "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=SiliserhLakePalace",
+   "notes": "FLAT: same MAP/CP base rate all year; only Diwali/Christmas-New Year windows differ (peak plan differs). No seasonal base difference printed.",
+   "peak_plan": "AP"
+  }
+ ],
+ "notes": "Method: every figure was read from the corporation's own page or PDF fetched 2026-10-10 (RTDC HotelDetails pages by plain GET; GTDC tariff-card PDFs, the 2026 one is a scanned image read visually; ANIIDCO resort pages; ATDC lodges page; HRH hotel PDFs, text-extracted; private hotel tariff pages). Two private rows (Girivihar, Lake Pichola) come from search-result snippets because the live page would not load (certificate / mod_security block, not bypassed) and are marked.\nKey findings: (1) Only ANIIDCO labels the words Season/Off Season (Andaman: Oct-Apr season, May-Sep off season, 15 Dec-15 Jan peak; off/season 0.60-0.80). (2) RTDC prints dated periods, not labels: Apr-Sep rate is 0.67-0.87 of the Oct-Mar rate for 11 hotels (Moomal Jaisalmer 0.67, Jhoomar Baori 0.74, Kajri Udaipur 0.87), but Mount Abu, Pushkar, Jodhpur, Sariska and Siliserh are flat all year with only Diwali/Christmas/fair windows higher; those windows are mostly MAP vs CP so not like-for-like. (3) GTDC Goa prints NO off-season discount: monsoon-spanning 16 Jun-22 Dec 2026 card is higher than the Jan-Jun card; peak (23 Dec-1 Jan) premium is only 4-8 percent. (4) HRH palaces: Apr-Sep = 0.64-0.80 of Oct-Mar. (5) Several private hotels (Jaiwana, Lake Pichola, Windamere, Gautam) publish one flat annual card. (6) Against the ledger's low = shoulder x 0.65: 23 like-for-like off/season pairs have median 0.75 (range 0.60-0.87), so 0.65 is at the low end; only Megapode (0.60), Fateh Bagh (0.64), Karni Bhawan (0.65) and Moomal (0.67) sit near it. Peak premiums printed over the season rate are 4-8 percent (GTDC), 0-25 percent (ANIIDCO Dolphin), 0 (Killa Bhawan fort rooms) and up to 53 percent (Over The Hill, Kerala, 20 Dec-15 Jan 'super peak' vs season); RTDC Diwali/Christmas windows are +33-61 percent but also upgrade CP to MAP/AP. A x1.35 peak is not contradicted by Over The Hill but is far above GTDC.\nCaveats: RTDC/ATDC/GTDC rates are per night, double occupancy as printed, GST extra unless stated. Ratios compare same room type and same meal plan only. rows with ratio_valid=false (Sam Dhani, Calangute) or stale=true must not be used for ratios."
+}

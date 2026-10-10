@@ -1,0 +1,293 @@
+{
+ "batch": "C2",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "sonamarg": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3226,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-mount-view-3962462?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-glacier-heights-383815?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/namrose-resort-724282?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/imperial-resorts-1344246?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/lemon-tree-hotel-sonamarg-4483095?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 3688,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/hotel-barzman-725041?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4563039?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-mughal-india-4491614?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4533231?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room per hotel, PRE-TAX (taxes & fees listed separately on the page). Mid: 3-star Hotels with Cleartrip rating >=4.0 (Mount View 2,259; Glacier Heights 2,790; Namrose 3,226; Imperial 3,602; Lemon Tree Riverside 6,621). Budget: 3-star Hotels with Cleartrip or user rating below 4.0 (Barzman 1,230; Welcome Resort 3,536; Mughal India 3,839; North Cliff 5,796). Homestay: none listed on Cleartrip. Same site for mid and budget.",
+    "notes": "Cleartrip star rating is loose and does not separate price here: budget-tier median (3,688) is ABOVE mid-tier median (3,226) because low-rated hotels still price at rack rate. Lowest measured room in the whole listing is Hotel Barzman 1,230 (rated 3.4-3.7); next lowest Mount View 2,259, Sonamarg Mount Resort 2,406 (unrated, excluded), Mitra Hostel 2,651 (hostel, excluded). So nothing at or below the blog's Rs 400-1,000 was found on Cleartrip. Excluded: 4-5 star resorts (Snowland 4,605, Arco 3,289, Four Points 8,500, etc.), a camp (Snowber 4,248), unrated 3-star Xenious 3,891 and Villa Himalaya 8,816. Sonamarg is a late-season/snow-risk stop in mid-Nov (Zojila usually shuts around Dec); Cleartrip showing a price does not prove the hotel is open. JKTDC Sonamarg huts/Tourist Bungalow: only unofficial, conflicting figures in search snippets (Rs 300 old go2kashmir, 1,000-2,000 blog, 3,000-7,000 Outlook/Curly Tales); no official printed tariff found, so not used."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "JKTDC Sonamarg tourist bungalow/hut tariff not found on an official page",
+    "Unrated 3-star hotels excluded from budget tier",
+    "No homestays listed",
+    "Whether listed hotels are physically open in mid-Nov not confirmed"
+   ]
+  },
+  "kishtwar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced for 18-19 Nov 2026. Cleartrip hotels-in-kishtwar lists zero properties; Booking.com search for Kishtwar 18-19 Nov 2026 returns 'No properties found in Kishtwar' (page also carries a government travel-advisory notice).",
+    "notes": "Only undated OTA price found: Goibibo lists one property, Hotel Blue Sapphire and Restaurant (3.2/5, 13 ratings), Rs 1,500 struck to Rs 1,311 + Rs 150 taxes per night, date of the quote not shown on the page (https://www.goibibo.com/hotels/hotels-in-kishtwar-with-room-service/), so it is not used as a median. A search-result snippet quoted a Kishtwar Development Authority list (Sapphire Guest House Rs 800, Hotel Snow Valley Rs 800-1,800, Blue Sapphire Rs 1,000-1,500, Heritage Bagh Rs 1,500-2,000) from kishtwartourism.com/hotel, but that domain serves a JS challenge and then redirects to a different host with an invalid certificate, so the tariff could not be verified and is not used. JKTDC Kishtwar tourist rest house: no published tariff found. A search snippet cites the J&K Forest Huts portal listing FRH Sangrambhatta (Kishtwar) from Rs 2,000, not opened here. Kishtwar town is the base for Paddar/Machail/Kishtwar High Altitude NP; winter (Nov) road/snow closures above town not checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No dated 18-19 Nov price on any OTA",
+    "KDA / kishtwartourism.com tariff list not verifiable (site redirect with bad certificate)",
+    "JKTDC Kishtwar rest house tariff not found",
+    "Goibibo Blue Sapphire price undated"
+   ]
+  },
+  "lolab-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Kupwara",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced for 18-19 Nov 2026. Cleartrip has no page for Lolab Valley or Kupwara (404). Booking.com has no property for Lolab or Kupwara: searches for 'Lolab Valley' return fuzzy matches elsewhere (Albania, Kerala) and 'Lolab, Jammu & Kashmir' redirects to the homepage with 'search string not found'.",
+    "notes": "The Kupwara district site lists government hutments in the valley (Lalpora 20 km from Kupwara, Chandigam 25 km, Devar 30 km, plus Khumriyal, TRC Kupwara hutments) with contact numbers but NO tariff (https://kupwara.nic.in/accommodation/, page last updated Sep 18 2026). Search snippets quoted Hotel Lolab Valley (Lalpora) at Rs 6,050 for a Double Deluxe room on a booking site and a 2024 reviewer quoted Rs 10,000 by the owner; neither is dated to 18-19 Nov, not used. A Justdial listing for Tourist Hut Chandigam under 'Rs 500 & Below' is a price band, not a tariff, not used. Nothing measured; the blog range Rs 400-1,000 can be neither confirmed nor contradicted. Kupwara town (TRC hutments) is the nearest base with more lodging."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No dated price on any OTA for Lolab/Kupwara",
+    "Government hutment tariff (Lalpora, Chandigam, Devar) not published on kupwara.nic.in",
+    "Private hotel prices only undated snippets"
+   ]
+  },
+  "verinag": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Anantnag",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced for 18-19 Nov 2026. Cleartrip: one Verinag listing (Hotel Raj Shah Palace, listed as an Apartment) returns no price for 18-19 Nov 2026 on its detail page; Hotel Hayat Residency and White House Guest House (Anantnag, 26 km away) also return no price. Booking.com 'Verinag' search: '0 properties are available in and around this destination' for 18-19 Nov 2026; the wider 'Verinag, Jammu & Kashmir' search returns only properties 12-22 km away in Banihal, Qazigund, Anantnag, Ramban, which are not Verinag.",
+    "notes": "JKTDC Verinag Resort (huts: Deluxe/Super Deluxe 1 BHK, Deluxe/Super Deluxe 2 BHK, Deluxe 4 BHK, Yatri Niwas Dormitory) is listed on jktdc.co.in (https://www.jktdc.co.in/info.aspx?id=34 and CityHotels.aspx?Cid=13) but the pages print no tariff; rates sit behind the JKTDC booking engine. Search snippets quoting Rs 600-800 (Outlook Traveller, 2018 tourism lodge list, for the old Alpine Resort rooms) are years old and a different room type, not used. Nearby-town prices (Banihal Rs 2,520-3,150, Ramban Rs 735) deliberately NOT borrowed. Verinag is a small spring-garden site with a season of about April to November; nothing measured."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No dated 18-19 Nov price for any Verinag property",
+    "JKTDC Verinag hut tariff not printed on public pages",
+    "Cleartrip Verinag apartment has no price for the night"
+   ]
+  },
+  "chikmagalur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2263,
+    "mid_n": 10,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4535534?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-aadrika-3909653?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-spectrum-resort-chikmagalur-708262?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-blue-pearl-2179650?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-3c-comforts-4264103?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/sukhi-a-luxury-stay-inn-3990113?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kalarava-4586961?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hunkal-stays-4562894?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-trend-the-meridian-stadium-road-3934033?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-grand-krishna-luxury-hotel-715370?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1903,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/maharaja-inn-chikmagalur-3974782?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-the-royal-shalimar-boutique-stay-4188783?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/manjunatha-residency-4264820?c=18112026|19112026&r=2,0"
+    ],
+    "homestay_median_inr": 5235,
+    "homestay_n": 7,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/gm-farm-mountain-view-homestay-5265124?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/jhari-an-eco-stay-3980457?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561240?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4672398?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4687747?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/bougain-villea-homestay-5475607?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/vastare-homestay-and-resort-4686202?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room per property, PRE-TAX (taxes & fees listed separately). Mid: 3-star Hotels/Resorts with Cleartrip rating 4.0 or above (n=10: Treebo Meridian 1,565; Grand Krishna 1,727; Kalarava 1,993; Hunkal 2,208; Blue Pearl 2,244; Treebo Sky Vista 2,282; Sukhi 2,385; Aadrika 3,239; Sunyata 3,290; Spectrum 4,050). Budget: 3-star Hotels rated below 4.0 (Maharaja INN 1,903; Royal Shalimar 2,347; Manjunatha Residency 787). Homestay: Cleartrip property type Homestay, 3-star, priced (GM Farm 800; Jhari 4,805; Nature Nirvana 4,560; Village Stay 6,430; Blue Mount 7,110; Bougain Villea 5,235; Vastare 5,420). Same site for all three tiers.",
+    "notes": "Budget n=3 only: Cleartrip lists few low-rated plain hotels; its own star/rating split puts many cheap Treebo/Kalarava-type hotels in the mid tier, so mid median (2,263) is only slightly above budget (1,903). Lowest measured rooms: Manjunatha Residency 787 and GM Farm Mountain View Homestay 800 (both single hotel pages, cheapest room only; other rooms at GM Farm start 1,868), next lowest Treebo Meridian 1,565 and Hosteller hostel 1,526 (hostel, excluded). So Rs 400-1,000 exists only as a floor outlier, not as a median. Homestay spread is wide (800-7,110) because Cleartrip tags coffee-estate villas and apartments as Homestay; median 5,235 is for estate-style stays, not village rooms. Excluded: 4-5 star resorts, apartments (SScoconest Service Apartments 2,368), Deepwoodz 20,000, and three properties with no price for the night (City Service Apartment, Bhagawathi Nature Camp, Heaven's Gate, Townhouse Hoysala). 18-19 Nov is mid-week outside Diwali; Chikmagalur has no named festival that week that I could see."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Budget tier n=3",
+    "Cheapest-room-per-property may be a smaller or non-AC room type",
+    "Homestay tag on Cleartrip is loose",
+    "No government/KSTDC tariff checked"
+   ]
+  },
+  "idukki": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2625,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Idukki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 1890,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Idukki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D204",
+     "https://www.booking.com/searchresults.html?ss=Idukki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D2"
+    ],
+    "homestay_median_inr": 1575,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Idukki&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers: Booking.com search results 18-19 Nov 2026, 2 adults 1 room, cheapest listed room per property, TAX-INCLUSIVE ('Includes taxes and charges'), not pre-tax; same site for all three tiers. Booking's 'Idukki' is the whole district, so only properties within about 11 km of its Idukki centre are used. Mid: Booking class=3 filter (Hotel Idukki Castle 2,100; Calvary Mount Mistybreeze 2,625; Nutmeg Valley 3,623, a lake-view suite). Budget: hotels not rated 3-star (Apsara Residency 1,785; Igloo Heritage 1,838; Anemoi Chimes 1,890; Vanyora 2,415 and Avadale 3,360, both class 2). Homestay: Booking homestay filter, private-bathroom doubles (Cherukunnel 1,049; Ellickal 1,575; Best Mist 1,575; Avis 2,457).",
+    "notes": "Mid n=3 only (Booking has just 7 class-3 properties district-wide; 4 are 24-38 km away and excluded; Nutmeg Valley is a suite). Cleartrip 'hotels-in-idukki' is mostly Vagamon and Calvary Mount villas, apartments and cottages (several with no price for the night) and was not used for medians; e.g. Arabian Holiday Resort Calvary Mount 2,077 pre-tax, GEE Resorts 2,948 pre-tax. Cheapest measured private double is Cherukunnel jose 1,049 incl. tax (Budget Double Room) and Idukki Nest 1,260 with a shared bathroom (excluded); so the blog's Rs 400-1,000 is just below the measured floor. Booking prices include tax, Cleartrip would be roughly 5-12% lower. Idukki town sits near the dam and Calvary Mount; the district's tourist stays (Munnar, Vagamon, Thekkady) are not Idukki and were not borrowed."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Mid n=3",
+    "Distance rule (<=11 km of Booking's Idukki centre) is my own cut-off",
+    "Booking class/type filters not independently verified beyond the result pages",
+    "No KTDC/government tariff checked"
+   ]
+  },
+  "ponmudi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 2150,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.ktdc.com/golden-peak"
+    ],
+    "homestay_median_inr": 2645,
+    "homestay_n": 5,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Ponmudi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: not priced (no 3-star property exists at Ponmudi on Booking.com for 18-19 Nov 2026: class=3 filter returns 'No properties found'; Cleartrip has no Ponmudi listings). Budget: KTDC Golden Peak tariff card, undated within the printed 1 Apr 2026 to 31 Mar 2027 tariff year, NORMAL tariff (June to March 2027, except Fri/Sat weekends and holidays), Deluxe room Rs 2,150 double/single with breakfast (CP), GST extra; 18 Nov 2026 is a Wednesday and not in the printed Onam (20-30 Aug) or Christmas (23 Dec-3 Jan) holiday windows, so the normal tariff applies. Homestay: Booking.com homestay filter (ht_id=222) results for 18-19 Nov 2026, 2 adults 1 room, cheapest room per property, TAX-INCLUSIVE (Garden Gate's cheapest is a triple room).",
+    "notes": "Budget n=1: the only government/budget lodging; its Hill view room (14 of 28 rooms) is Rs 3,500 and Cliff view Rs 4,300 on the same card; peak tariff (weekends, Apr-May, Onam, Christmas) Deluxe 2,500, Hill view 4,100. Mixed sites across tiers: budget is a printed government tariff (pre-GST, breakfast included), homestay is Booking tax-inclusive, so they are not like-for-like. Booking finds no hotel at Ponmudi at all (hotel filter ht_id=204 returns 'No properties found'); hotels shown after the genuine results (Thenmala Heritage 1,995, etc.) are in other towns and were not borrowed. Homestay 'properties found' count = 5, all within the Ponmudi search. Lowest priced homestay room: Garden Gate 1,575; blog range Rs 400-1,000 is not matched by anything measured."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "No mid-range hotel exists on OTAs for Ponmudi",
+    "Budget n=1 (KTDC only), different basis from homestays",
+    "KTDC rate is pre-GST with breakfast; Booking rates include tax"
+   ]
+  },
+  "lamayuru": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 2100,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Lamayuru&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: not priced (no 3-star on Booking or Cleartrip; Cleartrip has no Lamayuru listings). Budget: Booking.com search for Lamayuru, 18-19 Nov 2026, 2 adults 1 room, cheapest double per property, TAX-INCLUSIVE ('Includes taxes and charges'); only the two guesthouses 2.1 km from Lamayuru centre are used (Welcome Guest House 1,575 room only; Shanglang Guesthouse 2,625 with breakfast). Homestay: not priced.",
+    "notes": "Budget n=2 and the meal plans differ (room-only vs breakfast included), so 2,100 is a thin median; the room-only price is 1,575. Booking's 'Lamayuru: 3 properties found' = these two + Wanla Eco Homestay (10.2 km away in Wanla village, Rs 5,145 incl. breakfast and dinner, NOT used). Other Lamayuru guesthouses named in search snippets (Siachen, Greenland, Tongspon, Mingoeks, Moonland, OM Homestay Rs 2,999 via WhatsApp) show no dated 18-19 Nov price on Booking, so they are not priced; MakeMyTrip pages ignore the date parameter. Many Ladakh guesthouses shut in winter; Booking showing availability is not proof they are open (Welcome Guest House: 2 reviews, Shanglang: no review score). Blog range Rs 400-1,000 not matched: lowest measured is Rs 1,575 incl. tax."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget n=2, different meal plans",
+    "Winter closure of Lamayuru guesthouses not confirmed",
+    "Other Lamayuru guesthouses have no dated price",
+    "No homestay measured"
+   ]
+  },
+  "likir": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier priced as a room rate for 18-19 Nov 2026. Booking.com 'Likir, Ladakh' search for 18-19 Nov 2026 finds one Likir property, Old Likir Traditional Farm Stay: Double Room with Mountain View Rs 3,150 (Rs 2,835 members-only price), tax-inclusive, but the rate INCLUDES BREAKFAST AND DINNER (half board), so it is a meal-plan price, not a room price. Cleartrip has no Likir listings (404).",
+    "notes": "Not used as a median: Old Likir Traditional Farm Stay 3,150 half-board (https://www.booking.com/hotel/in/old-likir-traditional-authentic-homestay-likir.en-gb.html). The other cards on the search page (Chhuma homestay 2,520 and Sumdo Saspochey farmstay 3,150, both breakfast and dinner included, listed at Saspul Gompa area; Skarat Home Stay 2,625 at Sogra; Moljoks Heritage House 21,771) are in other villages and were not borrowed. In a search without the ', Ladakh' suffix, Old Likir showed 'unavailable on our site for your dates', so availability on 18-19 Nov is not reliable. A search snippet for Homestays of India lists a Likir homestay at Rs 2,250-3,600 with breakfast and dinner; undated, not opened, not used. Likir's lodging is essentially half-board homestays and monastery stays; no budget hotel tier exists. Rs 400-1,000 for a room can neither be confirmed nor excluded for the monastery or village guesthouses; nothing at that level was found."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Only room price found is half-board",
+    "No room-only price for any Likir property",
+    "Winter operation of Likir homestays not confirmed",
+    "No mid or budget hotel tier exists on OTAs"
+   ]
+  }
+ }
+}

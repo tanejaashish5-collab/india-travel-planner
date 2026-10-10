@@ -1,0 +1,157 @@
+{
+ "batch": "Q4",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "gokarna": {
+   "confidence": "low",
+   "unverified": [
+    "No season curve is reliable: 10 of 13 mid and 4 of 6 homestay properties are null for every 2027 night.",
+    "Flat repeated prices on 2027 nights may be static rack rates; treat as weak evidence.",
+    "Events on probe nights not researched."
+   ]
+  },
+  "gulbarga": {
+   "confidence": "low",
+   "unverified": [
+    "Only one hotel-pair (Enrise Nov vs Apr) gives any seasonal ratio.",
+    "Aug 2027 null for all 12 properties.",
+    "Events on probe nights not researched."
+   ]
+  },
+  "hampi": {
+   "confidence": "low",
+   "unverified": [
+    "No usable Aug 2027 curve: only one (flat) hotel prices it.",
+    "Several 'mid' stays are in Hosapete town, ~13 km from Hampi village.",
+    "Events on probe nights not researched."
+   ]
+  },
+  "murudeshwar": {
+   "confidence": "low",
+   "unverified": [
+    "No mid-range 2027 prices at all.",
+    "CR7 2027 prices are a different room type; do not use.",
+    "Events on probe nights not researched."
+   ]
+  },
+  "mysore": {
+   "confidence": "low",
+   "unverified": [
+    "Only 5 of 15 mid hotels price Apr/May 2027; the other 10 are 'No rooms available'.",
+    "Flat repeated prices may be static rack rates, not live seasonal rates.",
+    "Events (Dasara, Diwali tail) on probe nights not checked against a source."
+   ]
+  },
+  "munnar": {
+   "confidence": "medium",
+   "unverified": [
+    "Static-looking identical prices on 3-4 nights may not reflect live seasonality.",
+    "Events on probe nights not researched (Onam falls close to 8-9 Sep 2027).",
+    "Hotels sold out on 18-19 Nov (Sunrise, Green Cove) have no Nov anchor."
+   ]
+  },
+  "kukke-subramanya": {
+   "confidence": "low",
+   "unverified": [
+    "No mid-range price on any night.",
+    "No 2027 price for any property.",
+    "No homestays on Cleartrip.",
+    "Events on probe nights not researched."
+   ]
+  },
+  "poovar": {
+   "confidence": "low",
+   "unverified": [
+    "Only one matched series (Over The Hill).",
+    "No homestay/budget probe possible.",
+    "Events on probe nights not researched.",
+    "Homestay, dorm, taxi and food not priced (no fetched rupee source).",
+    "Mid n=3 only."
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3326,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/leela-backwater-inn-2883186",
+     "https://www.cleartrip.com/hotels/details/4479504",
+     "https://www.cleartrip.com/hotels/details/over-the-hill-787194"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026, header per-night price pre-tax, own request to each detail URL with ?c=18112026|19112026&r=2,0: Leela Backwaters Inn 3326, Phoenix Island Resort Poovar 2516, Over The Hill Resort 4907 (median 3326). Homestay and dorm: none priced for 18-19 Nov 2026.",
+    "notes": "Poovar properties are filed under Kulathoor, Thiruvananthapuram on Cleartrip. Geethu International (3-star), Poovar Island Resort and GoGo Land (4-star) are 'No rooms available' for 18-19 Nov 2026 so are excluded. No homestay, guesthouse or hostel for Poovar on Cleartrip; Booking.com and Holidify list Poovar homestays but only with undated USD 'from' prices, which I did not use. No Hostelworld dorm found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or operator local-day rate found. Pages found were aggregator transfer quotes (CabBazar, Goibibo, Gozocabs, MakeMyTrip) that disagree by 2x on the same route (Trivandrum-Poovar 1,499 to 2,576 for a sedan), and the MakeMyTrip pages timed out when fetched, so none are recorded.",
+    "sources": [],
+    "notes": "Left null rather than quote aggregator figures."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two figure fetched for Poovar restaurants.",
+    "sources": [],
+    "notes": ""
+   }
+  },
+  "nelliyampathy": {
+   "confidence": "low",
+   "unverified": [
+    "n=1 mid hotel.",
+    "No homestay/budget on Cleartrip.",
+    "Events on probe nights not researched.",
+    "Homestay, dorm, taxi and food not priced (no fetched rupee source).",
+    "Mid n=1."
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4917,
+    "mid_n": 1,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/vanya-by-citrine-3981232"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026, header per-night price pre-tax, own request to the detail URL with ?c=18112026|19112026&r=2,0: Vanya Holiday Resort 4917 (n=1, so the 'median' is that single hotel). Homestay and dorm: none priced for 18-19 Nov 2026.",
+    "notes": "Cleartrip lists one Nelliyampathy hill property. Booking.com and Holidify list Nelliyampathy homestays (e.g. Geetha Ravi Nilayam, K.K Residency) but only with undated A$/USD 'from' prices and several are in Kollengode, not on the hills, so not used. No hostel dorm found."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union or tourism-department rate card found. Search snippets show only blog and aggregator figures (Holidify jeep 'Rs 1000 per day' truncated, a 2015 Wikivoyage entry, CabBazar Palakkad-Nelliyampathy 1800 sedan); none from a fetched primary page, so none recorded.",
+    "sources": [],
+    "notes": "Left null. Jeeps are hired at Pulayanpara/Nenmara per Kerala Travel Pal (unfetched)."
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu or cost-for-two figure fetched for Nelliyampathy restaurants.",
+    "sources": [],
+    "notes": ""
+   }
+  }
+ }
+}

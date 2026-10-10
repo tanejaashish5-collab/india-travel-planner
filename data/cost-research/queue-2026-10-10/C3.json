@@ -1,0 +1,352 @@
+{
+ "batch": "C3",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "pangong-lake": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All medians null: Pangong is largely shut on 18-19 Nov 2026 and no published tariff for that night exists. Evidence, Cleartrip detail pages 18-19 Nov 2026 (checked per page, check-in date confirmed 18/11/2026): 12 of the 15 Spangmik-listed properties return 'No rooms available'. Only 3 return a price, PRE-TAX: Pangong Holiday Cottage (guest house) 1,885; Wilderness Retreat 3,015; Mystic Mountain Cottage 30,600 (not a credible room price). Booking.com dated search 18-19 Nov 2026 (TAX-INCLUDED) still lists priced rooms, but an OTA listing does not show a property is operating (Cleartrip's own inventory shows most closed).",
+    "notes": "Pangong status: sources (non-official tour-operator and travel-guide pages) say most Spangmik/Lukung/Man/Merak camps and cottages close by about mid-November, and only a few heated homestays stay open into winter; no official Ladakh tourism tariff or closure notice was found (tourism.ladakh.gov.in lists no tariff). Because Cleartrip shows 12 of 15 sold out/closed and nothing official confirms operation, no median is claimed. Booking.com card prices 18-19 Nov 2026, TAX-INCLUDED, listed only for transparency and NOT medians (operating status unconfirmed): Tangtse Thangpa homestay 2,267 (Tangtse village, not on the lake); Deachen Khangsar (Spangmik) 2,730; Ibex Spangri Cottage (Lukung) 2,730; Grand Lodge Lukung 3,150; Native Retreat Cottage Lukung 3,150; Wanderlust Cottage 3,938; Ri-Youl House Lukung 3,990; Cottage Blue Chill 4,043; Soma Retreat 4,410; Eco Residence 5,250; Astrostays (Man) 5,103; Padma Cottage 6,615; Astro Retreat (Man) 7,875; Otsal Residency (Merak) 8,400. No state-tourism hut tariff and no season tariff card found. Nothing borrowed from Leh or any other town. URLs: https://www.cleartrip.com/hotels/hotels-in-spangmik ; https://www.booking.com/searchresults.html?ss=Pangong+Lake&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR ; https://www.cleartrip.com/hotels/details/pangong-holiday-cottages-2050712?c=18112026|19112026&r=2,0 ; https://www.cleartrip.com/hotels/details/4292926?c=18112026|19112026&r=2,0"
+   },
+   "confidence": "low",
+   "unverified": [
+    "Whether any Pangong camp/cottage/homestay is operating on 18-19 Nov 2026 not confirmed",
+    "No official tariff or closure notice found",
+    "All medians null by design"
+   ]
+  },
+  "zanskar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All medians null: Zanskar (Padum) is effectively closed for tourists in mid-November and no published tariff exists. Cleartrip detail pages 18-19 Nov 2026 (check-in date 18/11/2026 confirmed per page): Dee Grand Marq Hotel and The Zurfis Hotel (3-star listing) return 'No rooms available'; The Zurfis Hotel (2-star listing) shows 2,669 and Konka Guest House shows 2,136, both PRE-TAX. Booking.com has no Padum properties (its 'Padum' search resolves to Trakai, Lithuania, and was discarded).",
+    "notes": "Zanskar status: non-official guides say the valley is cut off from about November to May (Pensi La closes with winter snow, Shinku La closes early October), guesthouses and homestays reopen in late June, and only pre-arranged groups (Chadar trek, January-February) stay in winter. No official Ladakh tourism closure notice or tariff was found (kargil.nic.in lists a Tourist Bungalow and Tourist Complex at Padum with no rates). Two Cleartrip rates exist for the night (Zurfis 2,669, Konka 2,136 pre-tax) but with roads closed and 2 of 4 listings sold out, they are unconfirmed and are not turned into medians. No published season tariff found. Nothing borrowed from Leh or any other town. URLs: https://www.cleartrip.com/hotels/hotels-in-padum ; https://www.cleartrip.com/hotels/details/5420384?c=18112026|19112026&r=2,0 ; https://www.cleartrip.com/hotels/details/konka-guest-house-5273622?c=18112026|19112026&r=2,0 ; https://www.cleartrip.com/hotels/details/dee-grand-marq-hotel-4009057?c=18112026|19112026&r=2,0"
+   },
+   "confidence": "low",
+   "unverified": [
+    "Whether any Padum property operates on 18-19 Nov 2026 not confirmed",
+    "No official tariff or closure notice found",
+    "All medians null by design"
+   ]
+  },
+  "chittorgarh": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2869,
+    "mid_n": 7,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4674063?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670626?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4271374?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292383?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4332841?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4561766?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4292408?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1888,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=ChittorgarhPanna",
+     "https://www.cleartrip.com/hotels/details/hotel-padmavati-fort-view-3915031?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-rajasi-palace-3919722?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sai-kripa-chittorgarh-4484888?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-kirti-plaza-741812?c=18112026|19112026&r=2,0",
+     "https://www.booking.com/searchresults.html?ss=Chittorgarh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room per hotel, PRE-TAX (taxes listed separately, +7-17%). Budget: 4 Cleartrip hotels 18-19 Nov 2026 pre-tax (Padmavati Fort View 1,716; Rajasi 1,888; Sai Kripa 2,199; Kirti Plaza guest house 2,476) plus RTDC Hotel Panna non-AC double 1,200 from the RTDC official tariff card for 1 Apr 2026-31 Mar 2027 (tariff card, undated for the night; CP incl. breakfast, GST extra, availability not checked). Homestay: none on Cleartrip; Booking.com 18-19 Nov 2026 listed only entire-house units and one room, so left null. Mid and budget are the same site (Cleartrip, pre-tax).",
+    "notes": "Mid = every Cleartrip 3-star hotel/resort rated >=4.0 with a price that night (7: Hari Leela 2,268; Imagica 2,465; Kukda 3,497; Pride of Chittor 2,869; Amrit Manthan 3,184; Solista 2,940; Keshav Residency 2,076). Budget = lower-rated (<4.0) or unrated basic 3-star hotels/guest house under about 2,500 pre-tax, plus the RTDC card; pricier low-rated resorts (Castle Narela 7,020, Pratap Palace 4,830, Aravali Hill 5,545, Meera 4,140, Kumbha 3,373, Anant 3,115) and Eera Chittorgarh (no price that night) excluded as not basic. Cross-check, Booking.com dated search 18-19 Nov 2026, TAX-INCLUDED, price of the room shown on the card: Hotel Paradise 1,360, KK Place 1,417, KK Palace 1,733, Aadimata 1,771, New Star 1,943, A Sons 1,995, Seven Suites Fort View (homestay, king room) 1,155; entire-house homestays Parinuj 1,995, Mahadev Bhavan 2,153, Sukh Sagar apartment 3,170 (not a room price). So the cheapest measured private rooms in town are about Rs 1,150-1,400 incl. tax; nothing near the blog's lower figures was found. Cleartrip also lists Amrit Manthan twice (4332841 and 3926438, 3,184 vs 3,244): counted once. No festival found for 18-19 Nov in Chittorgarh."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "RTDC Panna availability on the night not checked (tariff card only)",
+    "No Cleartrip/Booking homestay rooms in Chittorgarh town besides one Booking listing (n=1), so homestay median left null",
+    "Booking.com card prices are the room shown on the search card, not guaranteed cheapest room"
+   ]
+  },
+  "dungarpur": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 2512,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4562027?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/river-view-resort-4281933?c=18112026|19112026&r=2,0",
+     "https://www.booking.com/searchresults.html?ss=Dungarpur&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room, PRE-TAX (Hotel Lake view, Shastri Colony 1,931, unrated; River View Resort 3,092, rated 3.6). Mid: not measured (null). Homestay: none found with a price (Cleartrip homestays-in-dungarpur page lists the same 4 hotels; Booking.com homestay/guest-house filters returned 0 properties). Booking.com dated search 18-19 Nov 2026 is TAX-INCLUDED and was used only as a cross-check.",
+    "notes": "Dungarpur has very thin online supply: Cleartrip lists 4 properties and Booking.com 4 (Udai Bilas Palace, Green Valley Resort, KING'SWAY Hotel & Resort, Akashganga Heritage Hills Resort). The only well-reviewed one is Udai Bilas Palace, a heritage palace (Cleartrip rating 4.5, 10,736 pre-tax; Booking 14,750 tax-incl, 18-19 Nov 2026), which is not a 3-star mid-range price, so mid_median is null rather than n=1. Booking tax-incl cards, 18-19 Nov 2026: Green Valley Resort 2,625 (address Dungarpur 314001), KING'SWAY 3,615, Akashganga 14,160 (out of town on the Bichhiwara road). Cleartrip Hotel Lake view (Shivaji Nagar, 3.7) has no price that night. Budget n=2 only: indicative, not a robust median. No RTDC property in Dungarpur found. Blog-style 'from' prices on MakeMyTrip/TripAdvisor (~Rs 900-1,065) are undated and were not used."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Mid tier not measurable: only a heritage palace is well reviewed",
+    "Budget n=2 (Cleartrip only)",
+    "No homestay price found",
+    "No dharamshala/RTDC tariff found"
+   ]
+  },
+  "pushkar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 4380,
+    "mid_n": 11,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/green-genius-resort-3912355?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-country-side-resort-334722?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-777-4008248?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/lalit-international-a-boutique-hotel-3973929?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4265637?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/treebo-tryst-royal-amar-3973399?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4562216?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671655?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-kanhaia-haveli-382810?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-radhika-palace-2874552?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4673132?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2363,
+    "budget_n": 7,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://rtdc.tourism.rajasthan.gov.in/Client/HotelDetails.aspx?HotelID=PushkarSarovar"
+    ],
+    "homestay_median_inr": 1575,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Pushkar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "PUSHKAR CAMEL FAIR IS ON (RTDC prints a fair tariff for 17-24 Nov 2026), so every figure is a fair-week price. Mid: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room, PRE-TAX. Budget: Booking.com dated search 18-19 Nov 2026 with property-type filter Guest house, TAX-INCLUDED, price of the room shown on each card (Rajguru 2,808; Suri 2,363; Shree Savitri Palace 2,363; Ram Shyam 1,342; Tara 3,150; Bohosthal 2,625; IL Padrino 1,050). Homestay: Booking.com dated search 18-19 Nov 2026 with filter Homestay, TAX-INCLUDED (Los Amigos 1,260; Moon Light 1,575; Ganpati 2,520). Mid is Cleartrip pre-tax and budget/homestay are Booking tax-incl, so they are NOT on the same basis (Cleartrip had too few basic hotels with a price: Master Paradise 1,722 pre-tax only). Booking card addresses were checked on each property page: only properties with a Pushkar address are counted (Ajmer-area results such as Natraj, Kesar, Chetrama, Vishwa Villa, Orchid Stays dropped).",
+    "notes": "Camel fair: RTDC Hotel Sarovar's official tariff card prints a separate 'Pushkar Fair 17 Nov 2026 to 24 Nov 2026' rate, no discount: Non-AC double 2,500, AC double 3,000, both on MAP (room + breakfast + one meal), GST extra (regular season to 16 Nov 2026: Non-AC double 1,000, AC double 1,500, CP; the same card page). That Rs 2,500 is a fair-week government budget-room price but is MAP, so it is not in the room-only median. Mid = all 11 Cleartrip 3-star hotels/resorts rated >=4.0 with a price (range 1,663-8,255; wide because fair week and resort-style 3-stars). Cleartrip had no usable budget tier (only Master Paradise 1,722 pre-tax, 3.3 rating; Laal Gaon 5,954 is not basic; the one Cleartrip homestay Mountain Hideaway 3,325 pre-tax; Dia Home Stay no price). Guest-house card rooms: Rajguru shown as Queen Room (1 single bed), Natraj/Milkman excluded (outside Pushkar / 4-single-bed family room). Cheapest verified room in Pushkar town that night is about 1,050-1,350 incl. tax; dharamshalas not priced."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Booking.com card price is the room shown on the card, not necessarily the cheapest room",
+    "Budget/homestay tiers (Booking, tax-incl) and mid tier (Cleartrip, pre-tax) are on different bases",
+    "Dharamshala/ashram guest houses not priced (no printed tariff found)",
+    "Fair week inflates all prices vs a normal November night"
+   ]
+  },
+  "chitrakoot": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2929,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4671131?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4673964?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mpt-mandakini-resort-730355?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/rao-resort-4488867?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4671106?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1326,
+    "budget_n": 8,
+    "budget_sources": [
+     "https://www.cleartrip.com/hotels/details/4711239?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/mpt-tourist-bungalow-43045?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4670885?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4695735?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4563593?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5337665?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5062106?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5337666?c=18112026|19112026&r=2,0",
+     "https://www.booking.com/searchresults.html?ss=Chitrakoot&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.upstdc.co.in/hotels-in-chitrakoot"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid and Budget both: Cleartrip detail pages 18-19 Nov 2026, 2 adults 1 room, cheapest room per property, PRE-TAX (taxes listed separately, about 7-17%). Mid = Cleartrip 3-star hotels/resorts rated >=3.7 (only 2 reach 4.0, so the bar was lowered). Budget = 1-2 star hotels and unrated or low-rated basic 3-star-class hotels plus the MPT Tourist Bungalow (state tourism property, price from Cleartrip, not a printed tariff card). Homestay: none in Chitrakoot (Cleartrip homestay page repeats the same hotels; Booking.com homestay results are village rural homestays in Karwi, Raipura, Badausa and similar, 10-40 km away, excluded). Mid and budget are the same site and basis.",
+    "notes": "Budget: Hanumat Dham Hotel 755; MPT Tourist Bungalow 787; Hotel Raj 818; Shraddha Shivam Residency 1,295; Hotel Mandakini The Heritage 1,357; GuruKripa Inn 1,391; Hotel Parth 1,932; Ramghat Inn 2,504 (all Cleartrip pre-tax, 18-19 Nov 2026), n=8, median 1,326. Lowest measured private rooms in town: about 755-820 pre-tax, so a blog floor near Rs 800-1,000 is plausible, Rs 300-400 was not seen. Excluded from both tiers: Panchvati by Arogyadham 2,469 (unrated, sister of Arogyadham), River Front Resort 2,225, Hotel Rudra 4,272 (3.0), Jaipuria Smriti Bhawan 7,271, and three Cleartrip listings with no price that night (Shree Jee Bhawan, Hotel KW Residency). Booking.com dated search 18-19 Nov 2026, TAX-INCLUDED cross-check, room on the card: Hare Krishna guest house 1,378; Hotel Pramod Residency 1,784; Hotel Sphatic 1,785; Ma Parvati Residency 609 (1 review, score 1.0); Maa Mandakini economy double 2,663. UPSTDC Rahi Tourist Bungalow Chitrakoot (45 rooms) exists but its tariff sits behind a dynamic booking engine and no printed rate card was found. Dharamshalas/ashram stays are mostly donation-based: not priced."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "UPSTDC Rahi Tourist Bungalow tariff not found (dynamic booking engine)",
+    "No homestay inside Chitrakoot Dham with a price",
+    "Cleartrip star classes are loose; tier split is by class+rating",
+    "Dharamshala/ashram tariffs not found"
+   ]
+  },
+  "sarnath": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3169,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR"
+    ],
+    "budget_hotel_median_inr": 1575,
+    "budget_n": 12,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.upstdc.co.in/hotels-in-varanasi"
+    ],
+    "homestay_median_inr": 2079,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Sarnath&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "ALL tiers: Booking.com dated search results 18-19 Nov 2026 (checkin=2026-11-18, 2 adults, 1 room), TAX-INCLUDED ('Includes taxes and charges'), price of the room shown on each result card. Same site and basis for mid, budget and homestay. Cleartrip has no hotels with a Sarnath locality (its 'Sarnath' page lists Varanasi city hotels), so it was not used. Only properties whose Booking page address is in Sarnath (Buddha City, Ghurahupur, Chaukhandi Stupa, Sarnath Temple/Ashram/Ashok Road, 'SA' ward numbers) are counted; Varanasi ghat and cantonment results in the same search were dropped.",
+    "notes": "Mid (n=4): Treebo Saumendra Residency 2,328; Treebo Little Buddha 2,979; Hotel Maya's Nest 3,359; Hotel KS Palace 3,360. Sarnath has no real 3-star market: this is the best-run hotel tier and the sample is small. Budget (n=12): Mohit Stay Inn 1,155; Sumedha Galaxy Inn 1,228; Vishwanath Villa 1,339; FabHotel Sarnath Residency 1,515; Shiva Stay Inn 1,527; Pratimalaya 1,575; Rahul Guest House 1,575; FabHotel US Inn 1,730; FabHotel Lumbini 1,858; Sangha Residency 1,890; Friends Table Guest House 1,920; Shree Nanda Guest House 2,381. Homestay (n=3): Maati House 1,995; Vatika Homestay 2,079; Roma Homestay 3,308. Excluded: Samarpan Stay Inn 1,680 (address is only a plus code), Shanvi Home Stay (Nati Imli, not Sarnath). The cheapest measured private room in Sarnath is about 1,150-1,230 incl. tax, so a blog floor under Rs 1,000 was not seen on Booking. UPSTDC Rahi Tourist Bungalow Sarnath, Mahabodhi Society and Thai/Tibetan/Burmese monastery guest houses are the likely sub-1,000 options but no dated or printed room tariff was found (UPSTDC's tariff sits behind a dynamic booking engine; monastery stays are donation or phone-quote based), so they are not priced. Some Booking cards show a room with a single bed or 4-5 beds."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "UPSTDC Rahi Tourist Bungalow Sarnath tariff not found",
+    "Mahabodhi Society / monastery guest-house tariffs not found (donation or undated)",
+    "Cleartrip has no Sarnath-locality hotels, so no Cleartrip cross-check",
+    "Booking card price is the room shown, not necessarily the cheapest"
+   ]
+  },
+  "sravasti": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No tier has enough priced properties for a median, so all three medians are null. Individual dated prices seen, 18-19 Nov 2026: Cleartrip detail page, PRE-TAX: Hotel Shravasti Buddha Residency (Katra) 3,440. Booking.com dated search, TAX-INCLUDED, room shown on the card: Tulip Inn Shravasti 6,000 (a second request the same minute showed 6,750); Metta Shaanti Hotel 5,358. Tariff cards: none found.",
+    "notes": "Sravasti (Shravasti) has about 5 bookable properties online. On 18-19 Nov 2026 Cleartrip shows 'No rooms available' for Hotel Platinum Shravasti (checked) and returns no price for Buddha Residency by DD and Hotel Sravasti Residency; Booking shows no price for Hotel Sravasti Residency. Only three rooms carry a price: 3,440 pre-tax (Buddha Residency, Cleartrip), 6,000 and 5,358 tax-incl (Tulip Inn, Metta Shaanti, Booking). No basic hotel or guesthouse in Sravasti has a priced room that night. Booking results for 'Shravasti' that are not in Sravasti were dropped after checking their addresses: Hotel O Aparna and Marriage Lawn (1,048, address Bishunapur, Balrampur 271201) and Sukoon E Bahar homestay (3,308, Balrampur Bypass Road). The cheap end in Sravasti is monasteries (Thai, Sri Lankan, Burmese, Tibetan, Chinese) and the UPSTDC Rahi Tourist Bungalow Shravasti, which UPSTDC lists on its booking page; no printed room tariff or dated price was found for any of them, and monastery stays are donation-based, so no budget price is claimed. Booking.com prices for the same hotel moved between two requests (6,000 vs 6,750), so single card prices are indicative. Source URLs: https://www.cleartrip.com/hotels/details/4533878?c=18112026|19112026&r=2,0 ; https://www.cleartrip.com/hotels/details/hotel-platinum-shravasti-4279938?c=18112026|19112026&r=2,0 ; https://www.booking.com/searchresults.html?ss=Shravasti&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR ; https://www.upstdc.co.in/Booking/HotelBooking"
+   },
+   "confidence": "low",
+   "unverified": [
+    "No budget hotel/guesthouse price found",
+    "UPSTDC Rahi Tourist Bungalow Shravasti tariff not found (dynamic booking engine)",
+    "Monastery/dharamshala stays are donation-based, not priced",
+    "Mid tier has 3 differently-based single prices, so no median"
+   ]
+  },
+  "gopeshwar": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": 2208,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": 1995,
+    "homestay_n": 14,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/searchresults.html?ss=Gopeshwar&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&group_children=0&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.cleartrip.com/hotels/details/vamoose-the-ghughuti-4684901?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: not measured (null): no 3-star or comparable mid-range hotel in Gopeshwar town has a priced room. Budget and Homestay: Booking.com dated search 18-19 Nov 2026 (checkin=2026-11-18, 2 adults, 1 room), TAX-INCLUDED, price of the room shown on each result card; only properties whose Booking page address is Gopeshwar 246401 are counted (Ukhimath, Guptkashi, Pokhri, Joshimath, Gaurikund, Chopta and Sari results dropped). Cleartrip cross-check, 18-19 Nov 2026 PRE-TAX: Vamoose The Ghughuti homestay 1,888 (Booking shows the same homestay at 2,100 incl. tax); Shiva Homestay 2,907.",
+    "notes": "Budget hotels/guest houses (n=3): Astha Guest House 1,626; Hotel Dharohar (Mandal, Chopta Road) 2,208; The Jade Inn (Dewaldhar) 3,150. Homestays (n=14, wide spread 418-4,620): Maa Chandika Rudranath 418; Rudranath Home Stay 453; Shreekanth Home Stay 840; Pinak Home Stey 1,137; Maa Chandika Home Stay 1,421; Panch Kedar 1,680; Bhandari 1,890; Rudra Trails 2,100; Chandramauleshwar 2,100; Ghughuti 2,100; StayApart Himalayan Stay 2,993; Shreekanth (2nd listing) 3,150; StayApart Hari Keshari 3,374; Pinaki Himalayan 4,620. The two cheapest (418, 453) are Sagar-village homestays at the Rudranath trek start, a few km out of Gopeshwar town; the card shows several rooms/beds per listing. Excluded: Srishti dorm (1,680, 8-bed dormitory), Pinaki Home Stay (entire house 2,352), and any non-Gopeshwar address. So a measured homestay floor of about Rs 420-850 incl. tax exists, supporting a blog floor near Rs 500, while hotels start near Rs 1,600. GMVN Tourist Rest House Gopeshwar exists but GMVN's booking site (gmvnonline.com) returned HTTP 403 to a plain request and was not bypassed; no printed GMVN tariff was retrieved, and third-party figures (MakeMyTrip about 1,544 + taxes, eUttaranchal 'from 750') are undated, so not used. Booking card prices can shift between requests."
+   },
+   "confidence": "low",
+   "unverified": [
+    "GMVN Tourist Rest House Gopeshwar printed tariff not retrieved (site returned 403, not bypassed)",
+    "Mid tier not measurable",
+    "Budget hotel n=3 only; homestay spread is wide",
+    "Booking card price is the room shown, not necessarily cheapest"
+   ]
+  }
+ }
+}

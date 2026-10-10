@@ -1,0 +1,122 @@
+{
+ "batch": "Q1",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "ahobilam": {
+   "confidence": "low",
+   "unverified": [
+    "n=1 mid and n=1 homestay only; no season curve possible beyond Pavana flat price"
+   ]
+  },
+  "horsley-hills": {
+   "confidence": "low",
+   "unverified": [
+    "only one priceable property; flat price is a Cleartrip display, may not reflect walk-in/APTDC tariffs"
+   ]
+  },
+  "maredumilli": {
+   "confidence": "low",
+   "unverified": [
+    "no priced Cleartrip property in Maredumilli on any probe night"
+   ]
+  },
+  "gandikota": {
+   "confidence": "low",
+   "unverified": [
+    "no Cleartrip properties for Gandikota"
+   ]
+  },
+  "lambasingi": {
+   "confidence": "low",
+   "unverified": [
+    "no Cleartrip properties for Lambasingi"
+   ]
+  },
+  "lepakshi": {
+   "confidence": "low",
+   "unverified": [
+    "no Cleartrip properties for Lepakshi"
+   ]
+  },
+  "araku-valley": {
+   "confidence": "low",
+   "unverified": [
+    "homestay price, dorm price, local taxi day rate, food per day: all null (no dated or rate-card source)",
+    "season curve rests on 1 hotel (FabHotel) priced on all 3 nights"
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated homestay or dorm price found. Cleartrip has no homestay list for Araku (https://www.cleartrip.com/hotels/homestays-in-araku-valley returns 0 properties). homestays.co.in (https://www.homestays.co.in/araku-valley-india) shows Ushodaya Resorts 1,400 for 2 guests but the page dates are 2024 and it does not say per night, so not used. No hostel or dorm listing found in searches.",
+    "notes": "Left null rather than use undated aggregator figures."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": "sedan",
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism-department or dated operator rate card found. arakutrip.in (https://arakutrip.in/araku-valley-trip-cost-guide/, 2026, undated article) says local day-hire cabs run approximately 1,500-2,500; an old Tripadvisor thread (403 to fetch) is only seen as a search snippet. Left null: single undated operator-blog range, not a rate card.",
+    "sources": [
+     "https://arakutrip.in/araku-valley-trip-cost-guide/"
+    ],
+    "notes": "indicative range only, not for loading: 1500-2500"
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "Only one Araku restaurant with a rupee cost-for-two found: Athidhi Devo Bhava (Andhra) 700 for two on EazyDiner (https://www.eazydiner.com/visakhapatnam/restaurants/araku-valley). One venue is not a basis for a per-day figure; no thali board or menu found. arakutrip.in gives 400-500 budget and 800-1,200 comfortable per person per day (undated blog) - not used.",
+    "sources": [
+     "https://www.eazydiner.com/visakhapatnam/restaurants/araku-valley"
+    ],
+    "notes": ""
+   }
+  },
+  "konaseema": {
+   "confidence": "low",
+   "unverified": [
+    "homestay, dorm, taxi day, food per day: all null (searches returned no dated or rate-card source)",
+    "Razole used as proxy for Konaseema; mid season curve not measurable"
+   ],
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Razole / Amalapuram",
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No dated homestay or dorm price found. Cleartrip has no Konaseema/Amalapuram city page or homestay list. A Goibibo listing for Konaseema Vididhillu (house-style stay in Amalapuram) was seen only as an undated search snippet, not fetched.",
+    "notes": "Left null."
+   },
+   "taxi_day": {
+    "local_sightseeing_8h_inr": null,
+    "vehicle": null,
+    "outstation_per_km_inr": null,
+    "point_to_point": [],
+    "basis": "No union, tourism or dated operator rate card found for Konaseema in the searches run.",
+    "sources": [],
+    "notes": ""
+   },
+   "food_per_person_day": {
+    "budget_inr": null,
+    "standard_inr": null,
+    "basis": "No rupee menu, thali board or cost-for-two figures found for Konaseema venues in the searches run.",
+    "sources": [],
+    "notes": ""
+   }
+  },
+  "machilipatnam": {
+   "confidence": "low",
+   "unverified": [
+    "no Nov 2026 price for any Machilipatnam property on Cleartrip"
+   ]
+  }
+ }
+}

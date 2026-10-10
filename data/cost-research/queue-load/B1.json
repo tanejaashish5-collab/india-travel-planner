@@ -1,0 +1,327 @@
+{
+ "batch": "C1",
+ "researched_on": "2026-10-10",
+ "destinations": {
+  "tawang": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3190,
+    "mid_n": 2,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tawang&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 2284,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tawang&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "homestay_median_inr": 3318,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tawang&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All three tiers: Booking.com search results for 18-19 Nov 2026, 2 adults 1 room, cheapest listed room per property, TAX-INCLUSIVE ('Includes taxes and charges'), not pre-tax. Mid: Booking class=3 filter, Altitude 10k Tawang 2,625 + Sherap Inn 3,754 (Hotel Sonam Tawang 6,300 left out: breakfast+dinner plan, 1.0 score). Budget: Sunrise hotel 1,733, Hotel Mon Valley (Budget Double) 2,205, Hotel Kunzin (guesthouse) 2,363, Nye Chan Guest House (twin) 2,410. Homestay: Lhamus 1,365, Pine Yard 2,646, Bliss 3,990, Rang Khem 4,935 (Bliss and Rang Khem include breakfast). Cleartrip 18-19 Nov 2026 pre-tax lists only 2 priced hotels, both luxury: Vivanta 22,500, Timilo Boutique 15,456 (both ex-tax).",
+    "notes": "Cleartrip hotels-in-tawang lists 14 properties; 12 show 'No rooms available' for 18-19 Nov (Tawang Holiday, Regency, Inn, Vivid, Tashi Ga Tsel, White Tara, Mountain Resort, Tayatha, Yangsel, Amala, Dawa, Mountain Mist), so Cleartrip gives no mid or budget price. Government Tourist Lodge/Circuit House: tawang.nic.in/tourism/accommodation lists them (updated 08.10.2026) but prints NO tariff; a 2023 Yatra review reported Rs 600 for a twin room (https://www.yatra.com/hotels/hotels-in-tawang/govt-tourist-lodge), undated hearsay, not used. Cheapest measured room is ~1,365-1,733 incl tax, above the blog's Rs 400-1,000. Booking's cheapest-room is sometimes a triple/family room; only double rooms used. Mid n=2 only."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No 3-star Cleartrip price; mid n=2 from Booking only",
+    "Govt Tourist Lodge tariff not published",
+    "Booking prices tax-inclusive, Cleartrip pre-tax: not mixed within a tier"
+   ]
+  },
+  "chitkul": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Sangla (about 25 km down valley)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chitkul&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 3308,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chitkul&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+     "https://www.booking.com/hotel/in/chitkul.html",
+     "https://www.booking.com/hotel/in/abbus-dream-nest.html",
+     "https://www.booking.com/hotel/in/zostel-chitkul.html"
+    ],
+    "homestay_median_inr": 2940,
+    "homestay_n": 1,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Chitkul&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Budget and Homestay: Booking.com search results for 18-19 Nov 2026, 2 adults 1 room, cheapest listed room, TAX-INCLUSIVE ('Includes taxes and charges'). Budget (non-star hotels in Chitkul, double bed): Abbu's Dream Nest 3,150 (Deluxe Room), Hotel Chitkul 3,308 (Double), Zostel Chitkul 3,810 (private Deluxe Room). Homestay: Madhurvi baker's and homestay 2,940 (Double with Balcony). Mid: null, no 3-star in Chitkul (Booking class=3 filter returns only Sangla/Kalpa properties).",
+    "notes": "Cleartrip has no Chitkul page (hotels-in-chitkul returns no hotels). Only 6 properties appear in Chitkul on Booking for this night; Pujaras Cottages (triple, 10,532) and Himalayan Tribe Hostel (quadruple, 12,980) are not double rooms and are excluded. Booking showing a bookable price for 18-19 Nov does not prove the property is staffed: Chitkul/Sangla valley winters (snow from about Dec) close many homestays and the road can shut; no source checked for actual winter opening. Cheapest measured Chitkul room 2,940 incl tax, vs blog's Rs 400-1,000. Nearest bigger base Sangla not used for medians."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No 3-star mid tier exists in Chitkul",
+    "budget n=3, homestay n=1",
+    "Actual winter opening of these properties not confirmed",
+    "No PWD/forest rest house tariff found"
+   ]
+  },
+  "dalhousie": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2257,
+    "mid_n": 10,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4519474?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4290925?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4563434?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4491818?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-snow-castle-3980359?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4532849?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-white-orchid-4264477?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/grace-mount-inn-suites-297593?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4475537?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-gateway-dalhousie-3930692?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 1434,
+    "budget_n": 4,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Dalhousie%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D2",
+     "https://www.booking.com/searchresults.html?ss=Dalhousie%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": 1141,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.cleartrip.com/hotels/details/comfort-homestay-3934501?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/kavyansh-forest-valley-4479667?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/comfort-s-stay-dalhousie-4682569?c=18112026|19112026&r=2,0"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax, cheapest double, 10 hotels on Cleartrip's 3-star Dalhousie list with rating >=4.0 and >=50 reviews: Kavin Highland 1,755; Namaskar Heights 2,220; Mid Conifer 1,988; Blue Heaven 2,293; Snow Castle 1,260; The Seasons 6,170; White Orchid 3,120; Grace Mount 2,760; Pax Sunrise View 2,202; Nazaara Nature Retreat 2,538. Budget: Booking.com 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE (not pre-tax): class=2 Hotel Forest View 1,418, Wow Hotels Green View 1,449, Green View By Wow Hotels (Banikhet) 1,304, plus guest house Wild Sapiens Station 1,890. Homestay: Cleartrip 18-19 Nov 2026 pre-tax: Comfort Homestay 1,151, Kavyansh Forest Valley 1,057, Comfort's Stay 1,141.",
+    "notes": "Cleartrip's 3-star list has 16 Dalhousie hotels in all; 3-star list cheapest are Snow Castle 1,260 and Kings Dalhousie 1,317 (3.6 rating, 186 reviews), so the 3-star band overlaps the budget band. Budget measured tier is Booking class=2 (no Cleartrip budget-hotels list exists for Dalhousie). Booking homestays (tax-incl, same night) range 1,260 (Kavyansh Forest Valley) to 2,811; cheapest Booking hostel-style room The Hosteller 2,284. 6 of 11 Cleartrip homestays show 'No rooms available' that night (Serenya, Merak, OutHouse Kalatop, Happy Stay, Mystical Greens, Sandringham). HPTDC site (hptdc.hp.gov.in) did not resolve from this machine, so no state-run tariff was read; an undated third-party directory (https://www.hotelsindalhousie.in/geetanjali-hotel-dalhousie.html) prints Geetanjali Standard 600 / Deluxe 1,000 / Family 1,500 with no date and no HPTDC attribution: NOT used in any median, indicative only. Cheapest dated room measured: 1,057 pre-tax (Kavyansh Forest Valley)."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "HPTDC Geetanjali/Manimahesh tariff not read from an official source",
+    "Budget tier is tax-inclusive Booking, mid and homestay are pre-tax Cleartrip"
+   ]
+  },
+  "jibhi": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 1968,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Jibhi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3"
+    ],
+    "budget_hotel_median_inr": 2499,
+    "budget_n": 5,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Jibhi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D2",
+     "https://www.booking.com/searchresults.html?ss=Jibhi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D216"
+    ],
+    "homestay_median_inr": 2100,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Jibhi&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers: Booking.com search results 18-19 Nov 2026, 2 adults 1 room, cheapest listed room per property, TAX-INCLUSIVE. Mid (class=3 filter, review score 8+, double room): Woodpecker Inn 2,100; Sharaji Cottage 1,890; Sunrise Farm Stays 1,968; The Tree Hub 1,890; Whoopers Boutique Resort 2,986. Budget (class=2 or guest-house filter, double room): Rustic Jibhi Backpackers 1,912; Jibhi Dreams 2,100; Village Mud House 2,499; Venky's Place 2,520; Mystic Vibes 2,729. Homestay (homestay filter, double room): Crystal Mountain Homestay 1,881; Village View Homestay 1,890; The Midhimalayan 2,310; Jibhi Emberwood 2,363. Cleartrip 18-19 Nov 2026 pre-tax (not used in medians): Jibhi Dreams 1,228; Sunshine Cafe & Cottage 1,112; Jibhi Village By River side 1,778; Getaway Stays 1,972; Whoopers Hostel 751; The Hosteller Jibhi 952.",
+    "notes": "Cleartrip lists 20 Jibhi/Shoja properties for the night but almost all have 0-3 reviews and its 3-star list mixes hostels, so Cleartrip was not used for the medians; its prices for the same property can be well under Booking's (Jibhi Dreams 1,228 pre-tax on Cleartrip vs 2,100 tax-incl on Booking), so Jibhi room prices vary by seller and the Booking medians are not a floor. Hostel beds (Whoopers 751, Hosteller 952 on Cleartrip) are not double rooms. Only Booking cards whose location reads Jibhi were used; whole chalets and 3-adult rooms excluded. Cheapest private room found: Sunshine Cafe & Cottage Riverside 1,112 pre-tax on Cleartrip (https://www.cleartrip.com/hotels/details/sunshine-cafe-cottage-riverside-5288411), 1,881 tax-incl on Booking. No state rest house tariff found for Jibhi (HPTDC site unresolvable from this machine)."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Cleartrip vs Booking price gap unexplained",
+    "No government rest house tariff",
+    "Cleartrip class labels unreliable so not used for mid"
+   ]
+  },
+  "nako": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 1,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Nako%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "homestay_median_inr": 2100,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Nako%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/hotel/in/nature-view-homestay-nako.html",
+     "https://www.booking.com/hotel/in/bodhi-nest.html",
+     "https://www.booking.com/hotel/in/risar-homestay.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Homestay: Booking.com search results 18-19 Nov 2026, 2 adults 1 room, cheapest listed room, TAX-INCLUSIVE: Nature View Homestay 2,100 (Double), Bodhi Nest 1,890 (Double, private bathroom), RISAR Homestay 3,024 (Double with Mountain View). Budget hotel and mid: null. Nako has no starred hotel and only one non-homestay property, The Mount View Retreat, 3,675 incl tax with breakfast (one property, class unknown, not a median).",
+    "notes": "Booking shows 6 Nako properties for the night; Cleartrip has no Nako page. Excluded: Jigmey homestay 1,575 (shared bathroom, 1 single bed, breakfast), Dhuung Karpo Home Stay 6,035 (2 rooms). So the cheapest private-bathroom room measured is Bodhi Nest 1,890 tax-incl. Booking showing a price for 18-19 Nov does not prove these homestays are staffed in winter; Nako/Hangrang valley homestays often close once snow arrives (Dec onward), not verified from any source. No HPTDC/PWD/forest rest house tariff found for Nako."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No mid or budget-hotel tier (one non-homestay property)",
+    "Winter opening unverified",
+    "No government rest house tariff"
+   ]
+  },
+  "sarahan": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3293,
+    "mid_n": 3,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/4673769?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/5220129?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/hotel-sarahan-inn-5285279?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": null,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Sarahan%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR"
+    ],
+    "homestay_median_inr": 1680,
+    "homestay_n": 3,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Sarahan%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+     "https://www.booking.com/hotel/in/hare-krishna-homestay-sarahan.html",
+     "https://www.booking.com/hotel/in/the-shonitpur-home-stay.html",
+     "https://www.booking.com/hotel/in/laxman-homestay.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax, cheapest double, 3 hotels on Cleartrip's Sarahan 3-star list that were priced: Sarahan Holiday Inn 1,976 (4.0 from 19 reviews), Bushahr Heights 3,293 (no reviews), Hotel Sarahan Inn 4,028 (no reviews). Homestay: Booking.com 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE: Hare Krishna Homestay 1,134 (Double, 9.8), The Shonitpur Home Stay 1,680 (Double), Laxman Homestay 2,457 (Deluxe Double, 9.5). Budget hotel: null (see notes).",
+    "notes": "Cleartrip hotels in Sarahan: 8 listed, 3 priced, 5 'No rooms available' that night (Kasang guest house, Grand Shangri-la, Highlander homestay, Kailash view, Sarahan Holliday Inn). Budget hotel left null: only two non-homestay budget properties in Sarahan on Booking, Hotel Trehans 2,268 tax-incl (score 6.7, room is 2 adults + 1 child) and The Heritage, Sarahan 1,470 (a Quadruple Room, not a double), too few and not comparable. Booking prices the same Sarahan Holiday Inn at 5,623 tax-incl vs Cleartrip 1,976 pre-tax: the two sellers disagree, so the mid figure is Cleartrip-only. Government/temple end NOT measured: HPTDC site (hptdc.hp.gov.in) does not resolve from this machine. A reseller page (https://hotel-srikhand-sarahan-shimla.hotelsgds.com/rooms-category/) prints undated Srikhand (HPTDC) tariffs DBR Regular 2,200 / Deluxe 3,090 / Cozy Deluxe 3,600 / Suite 3,800 / Cottage 3,900 (not verified as official, not used). Bhimakali temple trust guest house: only old traveller reviews (Rs 350-550, 2018 onward) on Tripadvisor, no printed tariff, not used. Cheapest dated private room measured: Hare Krishna Homestay 1,134 tax-incl."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No HPTDC or temple trust tariff read from an official page",
+    "Budget-hotel tier null",
+    "Cleartrip and Booking disagree for Sarahan Holiday Inn"
+   ]
+  },
+  "sissu": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 3923,
+    "mid_n": 5,
+    "mid_sources": [
+     "https://www.cleartrip.com/hotels/details/5679126?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4673773?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-jharna-sissu-5295442?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/4941078?c=18112026|19112026&r=2,0",
+     "https://www.cleartrip.com/hotels/details/the-bulevar-whispering-willow-4486254?c=18112026|19112026&r=2,0"
+    ],
+    "budget_hotel_median_inr": 2591,
+    "budget_n": 2,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Sissu%2C%20Himachal%20Pradesh&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR",
+     "https://www.booking.com/hotel/in/bros-hostel-amp-cafe.html",
+     "https://www.booking.com/hotel/in/zostel-sissu-sissu.html"
+    ],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": 1423,
+    "dorm_n": 1,
+    "dorm_sources": [
+     "https://www.cleartrip.com/hotels/details/pack-sissu-5764846?c=18112026|19112026&r=2,0"
+    ],
+    "price_basis": "Mid: Cleartrip 18-19 Nov 2026 pre-tax, cheapest room, 5 Sissu properties (address Sissu on each page): PACK Sissu 3,166; Utpala House 3,699; The Jharna Sissu 3,923; The Bulevar Alpine 5,330; The Bulevar Whispering Willows 6,268. Budget: Booking.com 18-19 Nov 2026, 2 adults 1 room, TAX-INCLUSIVE, private rooms at the two hostel-brand stays: Bros Hostel & Cafe 2,295 (Deluxe Room, 2 adults + 1 child), Zostel Sissu 2,886 (Deluxe Room). Dorm: Cleartrip 18-19 Nov 2026 pre-tax, PACK Sissu bed in a 6-bed mixed dorm 1,423.",
+    "notes": "Cleartrip lists 12 for 'Sissu'; 6 priced in Sissu, 5 'No rooms available' (Bulevar Kunsil x2, Musafir Hostels, Lapiti cafe & stay, Fairyfolk Homes). Moustache Koksar Luxuria (1,100 pre-tax, Cleartrip) is at Khoksar, not Sissu, excluded. Sissu has no homestay tier on Booking (homestay filter returned none), no starred hotel on Booking (class=3 returned none). Budget tier is hostel-brand private rooms (n=2), not hotels or guesthouses; Booking's cheapest dorm line for PACK Sissu shows 4,195 for a 6-bed dorm room (not a per-bed price), ignored. Cheapest private room measured: Bros Hostel & Cafe 2,295 tax-incl; cheapest bed: 1,423 pre-tax. Both above the blog's Rs 400-1,000. Winter: Cleartrip and Booking show bookable rooms for 18-19 Nov, which does not prove staffing; Lahaul has heavy snow from Dec and the Atal Tunnel road can close. No HPTDC/PWD/forest rest house tariff read."
+   },
+   "confidence": "low",
+   "unverified": [
+    "Budget n=2 hostel-brand rooms",
+    "No homestay or government rest house tariff",
+    "Winter staffing unverified"
+   ]
+  },
+  "tirthan-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": null,
+    "mid_median_inr": 2730,
+    "mid_n": 4,
+    "mid_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tirthan%20Valley&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=class%3D3",
+     "https://www.booking.com/hotel/in/offbeat-abodes-tirthan-valley.html",
+     "https://www.booking.com/hotel/in/tirthan-ecostay.html",
+     "https://www.booking.com/hotel/in/the-riverwalk.html",
+     "https://www.booking.com/hotel/in/neervan-by-tirva.html"
+    ],
+    "budget_hotel_median_inr": 2174,
+    "budget_n": 3,
+    "budget_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tirthan%20Valley&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D216",
+     "https://www.booking.com/hotel/in/tirthan-river-edge-chippni.html",
+     "https://www.booking.com/hotel/in/flachan-valley-river-touch.html",
+     "https://www.booking.com/hotel/in/atulya-orchard-retreat-tirthan-valley.html"
+    ],
+    "homestay_median_inr": 2337,
+    "homestay_n": 4,
+    "homestay_sources": [
+     "https://www.booking.com/searchresults.html?ss=Tirthan%20Valley&checkin=2026-11-18&checkout=2026-11-19&group_adults=2&no_rooms=1&selected_currency=INR&nflt=ht_id%3D222",
+     "https://www.booking.com/hotel/in/zostel-homes-tirthan-gushaini.html",
+     "https://www.booking.com/hotel/in/the-void-tirthan.html",
+     "https://www.booking.com/hotel/in/apple-bush-retreat-pekhri.html",
+     "https://www.booking.com/hotel/in/mizuki-retreat-and-cafe-tirthan-valley.html"
+    ],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "All tiers: Booking.com search results 18-19 Nov 2026, 2 adults 1 room, cheapest listed room per property, TAX-INCLUSIVE; only properties whose Booking location reads Gushaini, Banjar or Bathad. Mid (class=3 filter, double room): Offbeat Abodes 2,835; Tirthan Ecostay 1,865 (2 adults + 1 child room); The Riverwalk 4,200 (breakfast included); Neervan By Tirva 2,625. Budget (guest-house filter, double room): Tirthan river edge 1,418 (breakfast included); Flachan Valley River Touch 2,174; Atulya Orchard Retreat 2,351. Homestay (homestay filter): The VOID 2,310; Apple Blush Retreat 2,100; Mizuki Retreat and Cafe 2,363; Zostel Homes Tirthan 3,464.",
+    "notes": "Cleartrip has no Tirthan Valley or Gushaini page (Gushaini has 1 property, NOAH VILLA, No rooms available). Its Banjar page mixes Tirthan, Jibhi and Jalori properties, so it was not used for medians; for the record its priced Banjar entries on 18-19 Nov 2026 (pre-tax) include Pinehill cottage 1,769, Tattva 3,047, Tirthan River Echoes 3,485, and Forest Rest House Banjar 5,069 (state forest rest house sold on Cleartrip: https://www.cleartrip.com/hotels/details/5682210?c=18112026|19112026&r=2,0), 9 of 16 other Banjar-page listings show 'No rooms available'. Excluded from Booking lists: whole chalets, shared-bathroom rooms (The Woods 2,977), triple rooms (Bisht Niwas 2,625), Sainj/Shangarh and Rohru properties. No government rest house tariff card found. Cheapest private double with bath measured: Tirthan river edge 1,418 incl tax."
+   },
+   "confidence": "medium",
+   "unverified": [
+    "Cleartrip not used (no Tirthan page)",
+    "No state rest house tariff card",
+    "Mid tier mixes a breakfast-included rate"
+   ]
+  },
+  "gurez-valley": {
+   "stay": {
+    "no_lodging": false,
+    "nearest_base": "Bandipora (Gurez is reached over Razdan Pass; winter access by helicopter only)",
+    "mid_median_inr": null,
+    "mid_n": 0,
+    "mid_sources": [],
+    "budget_hotel_median_inr": null,
+    "budget_n": 0,
+    "budget_sources": [],
+    "homestay_median_inr": null,
+    "homestay_n": 0,
+    "homestay_sources": [],
+    "dorm_median_inr": null,
+    "dorm_n": 0,
+    "dorm_sources": [],
+    "price_basis": "No price measured for 18-19 Nov 2026. Cleartrip has no Gurez page (hotels-in-gurez and hotels-in-gurez-valley return no hotels). Booking.com search for Gurez Valley, 18-19 Nov 2026, 2 adults: the only Gurez property, 'Gurez valley camping site', reads 'This property is unavailable on our site for your dates'; all other results are Srinagar.",
+    "notes": "Winter closure, not a data gap: the Gurez-Bandipora road over Razdan Pass was closed to all but emergency vehicles after the first snow on 5 Nov 2025 (https://www.greaterkashmir.com/latest-news/fresh-snowfall-forces-closure-of-gurez-bandipora-road-authorities-urge-travellers-to-confirm-status-before-journey/), and was shut again on 22 Jan 2025 (https://kashmirreader.com/2025/01/22/traffic-suspended-on-gurez-bandipora-road/); travel guides give May-October as the open season (https://travelmykashmir.com/best-time-to-visit-gurez-valley/). Season tariffs found, all undated and NOT used for any median: Tripmore lists Dawar hotels 'from' 4,000-5,500/night with CP/MEP plans (Gurez Inn 3,500 CP / 4,000 MEP, Grand Gurez 4,500 / 5,000, Kaka Palace 5,000 / 5,500), page gives no season or date (https://tripmore.in/hotels-in-kashmir/hotels-in-gurez-valley/); JKTDC Gurez huts/guest house: no tariff published anywhere found (only an old Tripadvisor review of Rs 500 per person, not a tariff). Blog's Rs 400-1,000 cannot be checked."
+   },
+   "confidence": "low",
+   "unverified": [
+    "No measured room price: closed for winter on 18-19 Nov",
+    "JKTDC Gurez hut tariff not found",
+    "Tripmore season tariffs undated"
+   ]
+  }
+ }
+}
