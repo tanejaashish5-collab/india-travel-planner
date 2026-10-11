@@ -1,0 +1,185 @@
+{
+  "ok": false,
+  "date": "2026-10-11",
+  "controlQuery": "lansdowne vs kasauli",
+  "controlStatus": "blocked",
+  "probed": 20,
+  "succeeded": 0,
+  "blocked": 19,
+  "errored": 2,
+  "withAiOverview": 0,
+  "citedCount": 0,
+  "citationRate": null,
+  "results": [
+    {
+      "query": "lansdowne vs kasauli",
+      "page": "/en/vs/lansdowne-vs-kasauli",
+      "impressions": null,
+      "position": null,
+      "isControl": true,
+      "status": "blocked"
+    },
+    {
+      "query": "जैसलमेर घूमने का खर्चा",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 678,
+      "position": 8.6,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "मसूरी घूमने का खर्च",
+      "page": "/hi/cost/mussoorie",
+      "impressions": 284,
+      "position": 7.2,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "vietnam vs india",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 250,
+      "position": 7.3,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "india vs vietnam",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 112,
+      "position": 5.9,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "jaisalmer trip cost",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 100,
+      "position": 9.6,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "jaisalmer ghumne ka kharcha",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 96,
+      "position": 6.3,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "nagpur vs pune",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 92,
+      "position": 7.5,
+      "isControl": false,
+      "status": "error",
+      "error": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "query": "shimla vs mussoorie",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 90,
+      "position": 8.8,
+      "isControl": false,
+      "status": "error",
+      "error": "page.waitForTimeout: Target page, context or browser has been closed"
+    },
+    {
+      "query": "manali jane ka kharcha",
+      "page": "/hi/cost/manali",
+      "impressions": 84,
+      "position": 10,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "jaisalmer ghumne me kitna kharcha aayega",
+      "page": "/hi/cost/jaisalmer",
+      "impressions": 80,
+      "position": 5.4,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "mussoorie vs shimla",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 75,
+      "position": 8.2,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "shimla or mussoorie which is better",
+      "page": "/en/vs/shimla-vs-mussoorie",
+      "impressions": 73,
+      "position": 7.7,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "manali jane ka kharcha kitna hai",
+      "page": "/hi/cost/manali",
+      "impressions": 72,
+      "position": 9.8,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "is vietnam better than india",
+      "page": "/en/india-vs/vietnam",
+      "impressions": 64,
+      "position": 6.8,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "coorg vs kodaikanal",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 61,
+      "position": 6.6,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "pune vs nagpur",
+      "page": "/en/vs/nagpur-vs-pune",
+      "impressions": 59,
+      "position": 7.9,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "coorg or kodaikanal which is better",
+      "page": "/en/vs/coorg-vs-kodaikanal",
+      "impressions": 58,
+      "position": 6.9,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "manali jane me kitna kharcha aayega",
+      "page": "/hi/cost/manali",
+      "impressions": 56,
+      "position": 9.4,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "mussoorie vs nainital",
+      "page": "/en/vs/mussoorie-vs-nainital",
+      "impressions": 54,
+      "position": 9.7,
+      "isControl": false,
+      "status": "blocked"
+    },
+    {
+      "query": "haflong trip cost",
+      "page": "/en/cost/haflong",
+      "impressions": 51,
+      "position": 5.6,
+      "isControl": false,
+      "status": "blocked"
+    }
+  ]
+}
