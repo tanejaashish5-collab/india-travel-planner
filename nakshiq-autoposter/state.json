@@ -38,18 +38,11 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-10",
     "PdMu0_evening": "2026-10-10",
-    "PdMu0_carousel": "2026-10-10"
+    "PdMu0_carousel": "2026-10-11",
+    "PdMu0_greeting": "2026-10-11"
   },
   "last_sync": "2026-10-10T18:44:11.890898+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "cherai",
-      "date": "2026-09-26"
-    },
-    {
-      "destination_id": "gurez-valley",
-      "date": "2026-09-26"
-    },
     {
       "destination_id": "hanle",
       "date": "2026-09-27"
@@ -173,6 +166,14 @@
     {
       "destination_id": "vrindavan",
       "date": "2026-10-10"
+    },
+    {
+      "destination_id": "vadodara",
+      "date": "2026-10-11"
+    },
+    {
+      "destination_id": "khajuraho",
+      "date": "2026-10-11"
     }
   ],
   "posted_formats": {
@@ -10738,6 +10739,24 @@
       "format": "v2_tourist_trap_split",
       "has_media": true,
       "media_id": "vrindavan.mp4"
+    },
+    {
+      "timestamp": "2026-10-11T14:15:02.694157+00:00",
+      "date": "2026-10-11",
+      "platform": "facebook",
+      "post_id": "QkoAl",
+      "destination": "vadodara",
+      "format": "greeting.navratri",
+      "media_id": "greeting_navratri_2026-10-11"
+    },
+    {
+      "timestamp": "2026-10-11T14:16:33.439184+00:00",
+      "date": "2026-10-11",
+      "platform": "facebook",
+      "post_id": "iyYCS",
+      "destination": "khajuraho",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-10-11"
     }
   ],
   "theme_usage": {
@@ -11739,8 +11758,7 @@
       "kolhapur": [
         "2026-10-08"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
