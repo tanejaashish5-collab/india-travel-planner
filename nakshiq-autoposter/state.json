@@ -36,12 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-10",
-    "PdMu0_evening": "2026-10-10",
+    "PdMu0": "2026-10-11",
+    "PdMu0_evening": "2026-10-11",
     "PdMu0_carousel": "2026-10-11",
     "PdMu0_greeting": "2026-10-11"
   },
-  "last_sync": "2026-10-10T18:44:11.890898+00:00",
+  "last_sync": "2026-10-11T19:03:04.087010+00:00",
   "posted_destinations": [
     {
       "destination_id": "hanle",
@@ -174,6 +174,10 @@
     {
       "destination_id": "khajuraho",
       "date": "2026-10-11"
+    },
+    {
+      "destination_id": "darjeeling",
+      "date": "2026-10-11"
     }
   ],
   "posted_formats": {
@@ -201,7 +205,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "route_spotlight_short",
       "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "score_card",
@@ -221,7 +224,8 @@
       "v2_cost_vs_feeling",
       "v2_score_card_pov",
       "data_carousel",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "v3_tl_poll_reel"
     ]
   },
   "post_log": [
@@ -10757,6 +10761,35 @@
       "destination": "khajuraho",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-10-11"
+    },
+    {
+      "timestamp": "2026-10-11T14:37:04.597550+00:00",
+      "date": "2026-10-11",
+      "platform": "instagram",
+      "post_id": "g4Sb3",
+      "destination": "gangtok",
+      "format": "scenario_solo_woman",
+      "media_id": "k6XVj"
+    },
+    {
+      "timestamp": "2026-10-11T14:37:47.517038+00:00",
+      "date": "2026-10-11",
+      "platform": "youtube",
+      "post_id": "DbA48",
+      "destination": "gangtok",
+      "format": "scenario_solo_woman",
+      "media_id": "NpJWG"
+    },
+    {
+      "timestamp": "2026-10-11T19:03:52.151522+00:00",
+      "date": "2026-10-11",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "1udme",
+      "destination": "darjeeling",
+      "format": "v3_tl_poll_reel",
+      "has_media": true,
+      "media_id": "darjeeling.mp4"
     }
   ],
   "theme_usage": {
@@ -11139,6 +11172,9 @@
       ],
       "vrindavan": [
         "2026-10-10"
+      ],
+      "darjeeling": [
+        "2026-10-11"
       ]
     },
     "morning_formats": {
@@ -11309,6 +11345,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v3_tl_poll_reel": [
+        "2026-10-11"
       ]
     },
     "reels": {
@@ -11504,6 +11543,9 @@
       ],
       "vrindavan": [
         "2026-10-10"
+      ],
+      "darjeeling": [
+        "2026-10-11"
       ]
     },
     "audience_tags": {
@@ -11772,7 +11814,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kasauli",
+    "shared_best": "kausani",
     "collection": "fort-trail-maharashtra"
   },
   "manual_skip_dests": {},

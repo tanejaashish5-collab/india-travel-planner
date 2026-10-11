@@ -27264,3 +27264,34 @@ Date range: 2026-04-15 → 2026-10-10
 2026-10-12 01:37:09  INFO          Uploading to R2 (timeout=300s)...
 2026-10-12 01:37:29  INFO          R2 PUT OK. Confirming...
 2026-10-12 01:37:32  INFO          Media ready: NpJWG (44,160,130 bytes · gangtok__solo_woman_her_saira__en.mp4)
+2026-10-11 19:02:09  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-11 19:02:09  INFO      ════════════════════════════════════════════════════════════
+2026-10-11 19:02:09  INFO      Nakshiq Autoposter · EVENING · 2026-10-11 · weekday=6
+2026-10-11 19:02:09  INFO      ════════════════════════════════════════════════════════════
+2026-10-11 19:02:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-11 19:03:04  INFO      Synced → 20 destinations · 100 traps · 5 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-11 19:03:04  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-11 19:03:05  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-11 19:03:05  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-11 19:03:05  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-11 19:03:21  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-11 19:03:21  INFO      [diversity] feed: 37 → 33 options · cooldown dropped 4 (carousel, pillar:anti_trap, pillar:greeting.navratri, pillar:scenario_eatery, pillar:scenario_friends_swap, pillar:scenario_guide, pillar:scenario_solo_woman seen <2d)
+2026-10-11 19:03:21  INFO      Evening format (balance→moment): v3_tl_poll_reel [17% vs target 20%] (0/15 never featured)
+2026-10-11 19:03:21  INFO      Formats — IG: v3_tl_poll_reel  ·  FB: v3_tl_poll_reel  ·  Story: kids_intel
+2026-10-11 19:03:21  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 52
+2026-10-11 19:03:21  INFO      Fingerprint dedup snapshot — 45 dests in 7d · 75 (dest,fmt) pairs in 30d · 225 media in 60d
+2026-10-11 19:03:21  INFO      Kids destination locked: Trichy (Tiruchirappalli)
+2026-10-11 19:03:22  INFO      Shared best destination locked: Kausani
+2026-10-11 19:03:22  INFO      [facebook/Nakshiq] Generating v3_tl_poll_reel post...
+2026-10-11 19:03:23  INFO      [facebook/Nakshiq] Caption ready (350 chars, dest=darjeeling)
+2026-10-11 19:03:23  INFO      [facebook/Nakshiq] CSV video format (v3_tl_poll_reel) — using dest Ken Burns clip as fallback
+2026-10-11 19:03:23  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/darjeeling.mp4?v=20260915
+2026-10-11 19:03:25  INFO          Brand-stamp applied: darjeeling.mp4 (3,769,032 → 2,107,915 bytes)
+2026-10-11 19:03:25  INFO          Requesting upload URL for darjeeling.mp4 (2,107,915 bytes, video/mp4)
+2026-10-11 19:03:27  INFO          Uploading to R2 (timeout=300s)...
+2026-10-11 19:03:28  INFO          R2 PUT OK. Confirming...
+2026-10-11 19:03:30  INFO          Media ready: GusM2 (2,107,915 bytes · darjeeling.mp4)
+2026-10-11 19:03:30  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-11 19:03:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=1udme · Platform=971816862016154
+2026-10-11 19:03:52  INFO      State saved. Run complete.
+2026-10-11 19:03:52  INFO      ════════════════════════════════════════════════════════════
