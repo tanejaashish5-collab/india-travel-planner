@@ -16,8 +16,16 @@ Runs on the Claude Max plan. **No metered API calls** — see
 ## Scope
 
 Rows in `road_reports` where `status NOT IN ('open','good')` and
-`greatest(reported_at, last_reviewed_at) < now() - interval '14 days'`, plus any row
-whose `expires_at` has passed, plus any row with a NULL `source_url`.
+`greatest(reported_at, last_reviewed_at) < now() - interval '13 days'`, plus any row
+whose `expires_at < now() + interval '1 day'`, plus any row with a NULL `source_url`.
+
+**Pull with that one-day margin, never "already expired".** This routine fires
+before the 02:00 UTC sweep email, and never at exactly the same minute each week.
+On 2026-10-05 it set five passes to `expires_at = now() + 7 days`; on 2026-10-12 it
+ran 9 minutes before that moment, saw nothing expired, skipped all five, and the
+email went out an hour later listing them, with a whole week to wait for the next
+run. For the same reason, when you set a recheck window in step 4, **never set
+`expires_at` more than 6 days out** for a row you want back next week.
 
 ## Procedure
 
@@ -38,6 +46,11 @@ whose `expires_at` has passed, plus any row with a NULL `source_url`.
    and was actually from **31 August 2025** — using it would have put a year-old
    order on live pages as present fact. Confirm the publication year of every
    article, and confirm that any regulation window quoted has not expired.
+   It happened again on 2026-10-05: four pass rows were rewritten around a
+   "13 Sep 2026 closure" whose Tribune source was dated **2 Jan 2026**, and around
+   "traffic back to normal by 17 Sep" from an article that said nothing about
+   traffic. Open the article, read the date on the page, and quote the sentence
+   that carries the claim. No quote, no claim.
 
    **"Unreachable" from this sandbox is not "gone dark".** Many Indian state
    portals are geo-fenced and silently time out from outside India. On 2026-10-05,

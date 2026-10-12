@@ -28,6 +28,7 @@
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs pick --n 41 --out <batch.json> [--min-age-days 84]
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs apply --batch <batch.json> --entries <entries.json>            # validate only
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs apply --batch <batch.json> --entries <entries.json> --commit   # stamp
+ *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs recount [--commit]   # after settling open items by hand
  *
  * entries.json:
  *   { "reviews": [ { "id": "spiti-valley", "verdict": "confirmed" | "needs_correction",
@@ -117,8 +118,45 @@ if (cmd === "pick") {
   process.exit(0);
 }
 
+// recount — run after settling open items by hand (row fixed, or the claim
+// rejected, and content_reviewed_at stamped either way). The watchdog reads
+// alerts_count off the newest run row, which is only rewritten by the next
+// review, so without this it kept emailing "DEGRADED" for up to four days about
+// pages that were already settled (2026-10-12). alerts_count is defined as the
+// LIVE number of open research items, so the newest row is corrected in place;
+// run_at is left alone so a reviewer that stops running still reads as stale.
+if (cmd === "recount") {
+  const open = await openItems();
+  const research = [...open].filter(([, e]) => e.why !== "correction awaiting approval");
+  const detail = research.length
+    ? `${research.length} page(s) may state something no longer true and need research by hand: ${research.map(([id, e]) => `${id} (${e.why})`).join("; ")}`
+    : null;
+  const { data: last, error } = await supabase
+    .from("ops_reports")
+    .select("id, run_at, alerts_count, summary")
+    .eq("job", "freshness-review")
+    .order("run_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error || !last) { console.error(`FATAL: no freshness-review run to recount${error ? `: ${error.message}` : ""}`); process.exit(1); }
+  console.log(`run ${last.run_at}: alerts_count ${last.alerts_count} → ${research.length}${detail ? `\n${detail}` : " (nothing open)"}`);
+  if (COMMIT && last.alerts_count !== research.length) {
+    const summary = {
+      ...(last.summary ?? {}),
+      detail,
+      // What the run itself counted, kept so the row still shows its own history.
+      alerts_at_run: last.summary?.alerts_at_run ?? last.alerts_count,
+      recounted_at: new Date().toISOString(),
+    };
+    const { error: upErr } = await supabase.from("ops_reports").update({ alerts_count: research.length, summary }).eq("id", last.id);
+    if (upErr) { console.error(`FATAL: recount write failed: ${upErr.message}`); process.exit(1); }
+  }
+  console.log(`RESULT open=${research.length} ${COMMIT ? "written" : "dry-run (add --commit)"}`);
+  process.exit(0);
+}
+
 if (cmd !== "apply") {
-  console.error("usage: freshness-review.mjs pick|apply …");
+  console.error("usage: freshness-review.mjs pick|apply|recount …");
   process.exit(1);
 }
 

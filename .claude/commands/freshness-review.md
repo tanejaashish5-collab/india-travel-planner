@@ -68,6 +68,18 @@ changed" check, not a rewrite.
     Airport/railhead: "Name — ~Nkm / Alternate — Nkm"; take distances from the district `.nic.in`
     "How to reach" page where one exists, never estimate them.
   - Any other field (best_months, daily_cost, local_logistics …) is escalated for a manual edit.
+    Every escalation emails the founder daily until someone settles it, so it has to be real.
+    On 2026-10-10 two of three were not: Chinnar's `best_months` change quoted Kerala Tourism as
+    saying "Oct–Mar" when the page says "December to April", and Dwarka's `avoid_months` change
+    cited a "July 2026 flood" from articles dated August 2024. Before proposing one:
+    - `best_months` / `avoid_months` change only on an official advisory or closure that is in
+      force now. A tourism board's general "best time to visit" line is not a changed fact, and
+      one bad-weather event is not a season. Put the exact sentence from the source in `source`.
+    - Read the year on every article. A flood, closure or order from a previous year is history.
+    - A temporary closure of the main attraction (falls shut for repairs, a park closed by
+      order) is real and worth escalating, but there is no `access_advisory` column. Use the
+      field name `temporary_closure`, state only what the source states (do not add which other
+      sites are open unless it says so), and give the source's own date.
   - Use the official name as the authority publishes it today; a proposed or former name is wrong.
 
 ## Working method

@@ -47,6 +47,14 @@ ENTRIES="$WORK/entries-$TODAY.json"
 NOTE="data/audits/sos-backlog-$TODAY.md"
 say() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
 
+# Second opinion on rows the cloud verifier could not load (a site that refuses
+# Vercel but loads from here). Runs on EVERY fire, before the week marker: it is
+# a handful of fetches, and a row confirmed here never builds the three-week
+# streak that puts it in the Monday SOS email. Added 2026-10-12, when that email
+# listed 4 rows and no number had changed. Never fatal to the backlog run.
+node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --env-file=apps/web/.env.local scripts/sos-recheck-unreachable.mjs --commit 2>&1 \
+  | while IFS= read -r line; do say "recheck: $line"; done || true
+
 if [ -f "$MARKER" ]; then
   say "week $WEEK already completed ($(cat "$MARKER")) — nothing to do"
   exit 0
