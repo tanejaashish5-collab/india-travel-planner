@@ -3,6 +3,7 @@ import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { difficultyExplainer } from "@/lib/difficulty-copy";
 import { NewsletterSignup } from "./newsletter-signup";
+import { ClosureNotice } from "./closure-notice";
 import { WhatsAppShare } from "./whatsapp-share";
 import { PeakAlertHook } from "./peak-alert-hook";
 import { shortlistSummaryNow } from "@/lib/month-shortlist-summary";
@@ -904,6 +905,8 @@ export function DestinationMonth({
           </nav>
         </div>
       </div>
+
+      <ClosureNotice dest={destination} locale={locale} className="mb-6" />
 
       <MediaHero />
 

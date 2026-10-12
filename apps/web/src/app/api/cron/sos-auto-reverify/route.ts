@@ -6,6 +6,7 @@ import {
   type SosRow,
   extractPageTokens,
   needsHuman,
+  nextFailStreak,
   stalenessReasons,
   urlsForRow,
   verifyRow,
@@ -97,7 +98,7 @@ export async function GET(req: NextRequest) {
     .from("emergency_sos")
     .select(
       "destination_id, verified, verified_date, source_url, source_map, " +
-        "auto_verify_fail_streak, auto_verified_at, " +
+        "auto_verify_fail_streak, auto_verify_status, auto_verified_at, " +
         "police, ambulance, fire, women_helpline, tourist_helpline, road_accident, " +
         "local_police_station, nearest_hospital, rescue_contact, mountain_rescue",
     );
@@ -152,7 +153,7 @@ export async function GET(req: NextRequest) {
 
     const prevStreak = row.auto_verify_fail_streak ?? 0;
     const confirmed = verdict.status === "confirmed";
-    const failStreak = confirmed ? 0 : prevStreak + 1;
+    const failStreak = nextFailStreak(verdict.status, row.auto_verify_status, prevStreak);
 
     const patch: Record<string, unknown> = {
       source_map: verdict.nextSourceMap,

@@ -426,6 +426,7 @@ async function getMonthData(id: string, month: string) {
       .from("destinations")
       .select(`
         id, name, tagline, translations, difficulty, elevation_m, budget_tier, best_months, crowd_calendar, content_reviewed_at, nearest_airport, nearest_railhead,
+        notice_text, notice_source_url, notice_posted_at, notice_expires_at,
         state:states(id, name),
         kids_friendly(*),
         confidence_cards(*),

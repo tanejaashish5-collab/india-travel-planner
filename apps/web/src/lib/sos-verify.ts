@@ -49,6 +49,7 @@ export type SosRow = {
   source_url: string | null;
   source_map: SourceMap | null;
   auto_verify_fail_streak?: number | null;
+  auto_verify_status?: string | null;
   auto_verified_at?: string | null;
 } & Partial<Record<PhoneField, string | null>>;
 
@@ -333,6 +334,24 @@ export function verifyRow(row: SosRow, pages: PageCache, today: string): RowVerd
  * alarm, and treating it as one is what produced a 42-row email about rows that
  * were all fine.
  */
+/**
+ * The streak after this run. When the verdict is `source_unreachable` it has to
+ * mean "weeks in a row the source did not load", because that is what
+ * needsHuman() and the Monday email claim. It used to count every non-confirmed
+ * week, so a row parked in `needs_source` for ten weeks escalated the first
+ * Monday its page failed: 2026-10-12, three MP Tourism rows went out as "failed
+ * to load three weeks running" on week one (their page had loaded on 09-28).
+ */
+export function nextFailStreak(
+  status: RowVerdict["status"],
+  prevStatus: string | null | undefined,
+  prevStreak: number,
+): number {
+  if (status === "confirmed") return 0;
+  if (status === "source_unreachable" && prevStatus !== "source_unreachable") return 1;
+  return prevStreak + 1;
+}
+
 export function needsHuman(v: RowVerdict, failStreak: number): boolean {
   if (v.status === "number_changed") return true;
   if (v.status === "source_unreachable" && failStreak >= 3) return true;

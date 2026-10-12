@@ -199,7 +199,55 @@ for (const c of silentCases) {
   );
 }
 
-const total = cases.length + silentCases.length;
+// ── repeatsYesterday: an unchanged open-items list is emailed once ──────────
+// 2026-10-07 to 10-12: the same three pages went out six mornings running under
+// "FAILING SILENTLY". Too loud is the failure here, but so is going quiet on a
+// real outage, so both directions are pinned.
+const ry = src.match(/export function repeatsYesterday\([\s\S]*?\n\}\n/);
+const ak = src.match(/export type AlertKey = \{[\s\S]*?\n\};\n/);
+const oij = src.match(/const OPEN_ITEM_JOBS = [^\n]*\n/);
+if (!ry || !ak || !oij) {
+  console.error(`✗ could not locate repeatsYesterday / AlertKey / OPEN_ITEM_JOBS in ${SRC} — renamed or moved?`);
+  process.exit(1);
+}
+const tmp2 = join(dir, "repeat.ts");
+writeFileSync(tmp2, oij[0] + "\n" + ak[0] + "\n" + ry[0]);
+const { repeatsYesterday } = await import(tmp2);
+const stuckJob = (job, detail, n = 3) => ({ job, status: "needs_review_stuck", detail, last_alerts_count: n });
+const LIST = "3 page(s) … chinnar; courtallam; dwarka";
+const repeatCases = [
+  { name: "open items, same list as yesterday → not emailed again", h: stuckJob("freshness-review", LIST), prev: [stuckJob("freshness-review", LIST)], expect: true },
+  { name: "open items, a different list → emailed", h: stuckJob("freshness-review", "2 page(s) … hampi; gokarna", 2), prev: [stuckJob("freshness-review", LIST)], expect: false },
+  { name: "open items, same text but count moved → emailed", h: stuckJob("freshness-review", LIST, 2), prev: [stuckJob("freshness-review", LIST, 3)], expect: false },
+  { name: "open items, no earlier snapshot → emailed", h: stuckJob("freshness-review", LIST), prev: null, expect: false },
+  { name: "open items, yesterday only needs_review (first day past the fuse) → emailed", h: stuckJob("freshness-review", LIST), prev: [{ ...stuckJob("freshness-review", LIST), status: "needs_review" }], expect: false },
+  { name: "canary-probe stuck, identical to yesterday → STILL emailed daily (pages are 500ing)", h: stuckJob("canary-probe", null, 4), prev: [stuckJob("canary-probe", null, 4)], expect: false },
+  { name: "errored job, identical to yesterday → STILL emailed daily", h: { job: "freshness-review", status: "errored", detail: LIST, last_alerts_count: 3 }, prev: [{ job: "freshness-review", status: "errored", detail: LIST, last_alerts_count: 3 }], expect: false },
+];
+for (const c of repeatCases) {
+  const got = repeatsYesterday(c.h, c.prev);
+  const ok = got === c.expect;
+  if (!ok) failed++;
+  console.log(`${ok ? "\x1b[32m✓\x1b[0m" : "\x1b[31m✗\x1b[0m"} ${c.name}` + (ok ? "" : `\n    expected ${c.expect}, got ${got}`));
+}
+
+// ── nextFailStreak: "three weeks running" must mean three unreachable weeks ──
+const { nextFailStreak } = await import(new URL("../apps/web/src/lib/sos-verify.ts", import.meta.url).href);
+const streakCases = [
+  { name: "THE 10-12 SCAR — 10 weeks of needs_source, then the page fails once → streak 1, not 11", args: ["source_unreachable", "needs_source", 10], expect: 1 },
+  { name: "third unreachable week in a row → 3 (escalates)", args: ["source_unreachable", "source_unreachable", 2], expect: 3 },
+  { name: "confirmed → 0", args: ["confirmed", "source_unreachable", 7], expect: 0 },
+  { name: "needs_source keeps counting as before", args: ["needs_source", "needs_source", 4], expect: 5 },
+  { name: "never-run row whose page fails → 1", args: ["source_unreachable", null, 0], expect: 1 },
+];
+for (const c of streakCases) {
+  const got = nextFailStreak(...c.args);
+  const ok = got === c.expect;
+  if (!ok) failed++;
+  console.log(`${ok ? "\x1b[32m✓\x1b[0m" : "\x1b[31m✗\x1b[0m"} ${c.name}` + (ok ? "" : `\n    expected ${c.expect}, got ${got}`));
+}
+
+const total = cases.length + silentCases.length + repeatCases.length + streakCases.length;
 console.log(`\n${total - failed}/${total} passed`);
 if (failed) {
   console.error(`\n✗ ${failed} case(s) failed — the escalation is NOT safe to ship.`);
