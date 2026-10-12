@@ -165,6 +165,36 @@ const ALERT_STATUSES = new Set([
   "silent_failure",
 ]);
 
+// Jobs whose alerts_count is a list of things waiting on a person, not a count of
+// the job's own failures. Past its fuse such a job is still alertable, but it is
+// described as open items rather than "FAILING SILENTLY", and an unchanged list is
+// emailed once instead of every morning (see repeatsYesterday).
+const OPEN_ITEM_JOBS = new Set(["freshness-review"]);
+
+export type AlertKey = {
+  job: string;
+  status: string;
+  detail?: string | null;
+  last_alerts_count?: number | null;
+};
+
+/**
+ * True when an open-items alert says exactly what the previous snapshot said.
+ *
+ * A real outage (errored / missing / stale / silent_failure, or a failure-counting
+ * job stuck past its fuse) is emailed every day until it is fixed. An open-items
+ * job is different: the job is running and is reporting a to-do list. 2026-10-07 to
+ * 10-12 that list was the same three pages six mornings running, under a "FAILING
+ * SILENTLY" subject, and the founder was deleting them unread. An unchanged list is
+ * now emailed once and then left to the Monday digest; a changed list (new item, or
+ * one settled) is news and is emailed again.
+ */
+export function repeatsYesterday(h: AlertKey, prevHealth: AlertKey[] | null): boolean {
+  if (h.status !== "needs_review_stuck" || !OPEN_ITEM_JOBS.has(h.job)) return false;
+  const key = (x: AlertKey) => `${x.job}|${x.detail ?? ""}|${x.last_alerts_count ?? ""}`;
+  return (prevHealth ?? []).some((p) => p.status === "needs_review_stuck" && key(p) === key(h));
+}
+
 export type OpsRun = {
   run_at: string;
   alerts_count: number | null;
@@ -410,6 +440,18 @@ export async function GET(req: NextRequest) {
   // gap of collections without a cover_video URL until Cowork's queue drains.
   const assetCoverage = await computeAssetCoverage(supabase);
 
+  // Yesterday's snapshot, read BEFORE today's is written, so an unchanged
+  // open-items list is not emailed again (repeatsYesterday).
+  const { data: prevSnap } = await supabase
+    .from("ops_reports")
+    .select("summary")
+    .eq("job", "watchdog")
+    .order("run_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  const prevHealth = (prevSnap?.summary as { health?: AlertKey[] } | null)?.health ?? null;
+  const toEmail = alertable.filter((h) => !repeatsYesterday(h, prevHealth));
+
   // Persist the snapshot before any side effects so we always have the
   // record even if email sending throws.
   await supabase.from("ops_reports").insert({
@@ -425,7 +467,7 @@ export async function GET(req: NextRequest) {
   let alertEmailed = false;
   let digestEmailed = false;
   const resend = getResend();
-  if (resend && alertable.length > 0 && !isFirstRun) {
+  if (resend && toEmail.length > 0 && !isFirstRun) {
     try {
       await resend.emails.send({
         from: OPS_FROM_ADDRESS,
@@ -435,8 +477,19 @@ export async function GET(req: NextRequest) {
         // ok:true reads as healthy everywhere else, so the subject is the only
         // place it can announce itself before you open anything.
         subject: (() => {
+          const openItems = alertable.filter(
+            (h) => h.status === "needs_review_stuck" && OPEN_ITEM_JOBS.has(h.job)
+          );
+          // Nothing is broken: every alertable job is running and waiting on a
+          // person. Say that, not DEGRADED.
+          if (openItems.length === alertable.length) {
+            const n = openItems.reduce((s, h) => s + (h.last_alerts_count ?? 0), 0);
+            return `[NakshIQ ops] ${n} open item(s) waiting on a fix (${openItems.map((h) => h.job).join(", ")}). Jobs are running.`;
+          }
           const silent = alertable.filter(
-            (h) => h.status === "silent_failure" || h.status === "needs_review_stuck"
+            (h) =>
+              h.status === "silent_failure" ||
+              (h.status === "needs_review_stuck" && !OPEN_ITEM_JOBS.has(h.job))
           );
           return silent.length > 0
             ? `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s), ${silent.length} FAILING SILENTLY (${silent.map((h) => h.job).join(", ")})`
@@ -516,6 +569,9 @@ function reviewSuffix(h: JobHealth): string {
   if (h.needs_review_days === null || h.needs_review_runs === null) return "";
   const fuse = h.escalation_after_days;
   const core = `flagged ${h.needs_review_runs} run(s) in a row over ${h.needs_review_days}d`;
+  if (h.status === "needs_review_stuck" && OPEN_ITEM_JOBS.has(h.job)) {
+    return ` — OPEN ITEMS: ${core}, past its ${fuse}d limit. The job itself is running; the items listed below are waiting on a fix.`;
+  }
   return h.status === "needs_review_stuck"
     ? ` — STUCK: ${core}, past its ${fuse}d limit. Reporting ok:true, so it looks healthy; check whether its items are actually failing.`
     : ` — ${core} (escalates at ${fuse}d)`;

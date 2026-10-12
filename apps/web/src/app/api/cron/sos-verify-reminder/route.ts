@@ -143,9 +143,17 @@ export async function GET(req: NextRequest) {
        </p>`
     : "";
 
+  // Say which of the two problems it is. "N numbers changed at source" used to
+  // cover both, so on 2026-10-12 four pages that merely failed to load (0 numbers
+  // changed) arrived looking like four wrong emergency numbers.
+  const changedCount = exceptions.filter((r) => r.status === "number_changed").length;
+  const notLoading = exceptions.length - changedCount;
+  const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
   const subject = !verifierRan
     ? "[NakshIQ · SOS] auto-verifier has stopped running"
-    : `[NakshIQ · SOS] ${exceptions.length} number${exceptions.length === 1 ? "" : "s"} changed at source`;
+    : changedCount > 0
+      ? `[NakshIQ · SOS] ${plural(changedCount, "number")} changed at source${notLoading ? `, ${plural(notLoading, "source page")} not loading` : ""}`
+      : `[NakshIQ · SOS] ${plural(notLoading, "source page")} not loading, no number changed`;
 
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 640px;">
