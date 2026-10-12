@@ -104,8 +104,8 @@ Parked on `parked/ops-email-honesty-2026-10-12` (ships with the next web push):
 
 ## 5. Still open
 
-- Courtallam's notice still sits in October's month text until the banner (section 6)
-  ships. Then strip the prefix and suffix from section 1; the banner replaces them.
+- Nothing from section 1: the banner (section 6) shipped the same day and the
+  hand-written prefix and suffix were stripped from October's month text.
 - MP Tourism's certificate: if it is still expired in three weeks the SOS email will
   say so, correctly this time.
 - Chinnar March/April scores (above).
@@ -140,9 +140,14 @@ down, with no "cron health" email and no hand-edit to remember.
   destination-page version has its own dark ground; on the month page it moved from
   below the hero image to above it. No hydration errors on a clean dev server.
 
-Parked with the email-wording change on `parked/ops-email-honesty-2026-10-12`.
+Shipped 2026-10-12 in 02ec4695 together with the email-wording change (one Vercel
+build, founder's go-ahead). Verified live: banner present on /en and /hi
+destination/courtallam and on /en/destination/courtallam/october; the hand-written
+October notice is gone; sw.js at v66. The 22 Oct follow-up was cancelled, since the
+weekly review's re-check and the 21-day expiry now do that job. Not yet seen running
+in production: the watchdog's daily clear (first run 13 Oct 02:00 UTC).
 
-## 7. Chinnar, March and April: evidence gathered, not changed
+## 7. Chinnar, March and April: evidence, then one notch up each
 
 Kerala Tourism contradicts itself: the English page says "best time ... December to
 April"; the Malayalam page says November and December are the most suitable months;
@@ -158,5 +163,21 @@ in the low visitor zone near 33–34C in March and 34–35C in April.
 What that supports: our direction (hot, go early) matches three of four sources. Not
 supported by anything opened: April's "Trails become dangerous past 9am", "wildlife
 spotting futile", "Falls reduce to trickles", and the "skip" verdict at 2/10. March at
-4/10 "wait" is harsher than any source. Scores left as they are pending the founder's
-call.
+4/10 "wait" is harsher than any source.
+
+Founder chose option A (one notch up each, unsupported lines out). Applied 2026-10-12;
+old rows in `data/backups/chinnar-months-3-4-before-2026-10-12.json` (local, untracked).
+- March 4/10 → 6/10, verdict stays "wait". April 2/10 "skip" → 4/10 "wait".
+- `destinations.avoid_months` [3,4,5,6,7,8] → [4,5,6,7,8].
+- Removed: "Trails become dangerous past 9am", "wildlife spotting futile", "Falls reduce
+  to trickles", "hits dangerous heat", the falls-discharge fractions, the dated April
+  thunderstorm claim, and the statement that the Forest Department restricts the
+  Thoovanam trek to a 6am to 10am window "under safety rules". Kerala Tourism lists
+  that trek as 8am to 2pm, about three hours, moderate, with no seasonal rule.
+- note / why_go / why_not rewritten to what the sources say; the temperature is given
+  as an estimate and labelled as one.
+- Left alone and NOT verified: the rest of both month leads (squirrel population,
+  sighting odds, room prices, sandalwood reserve hours). The same kind of unsourced
+  specific runs through month prose across the catalogue; that is a separate job.
+- Verified live: /en/destination/chinnar/march shows 6.0/10, /april shows 4.0/10, and
+  none of the removed phrases remain on either page or the destination page.
