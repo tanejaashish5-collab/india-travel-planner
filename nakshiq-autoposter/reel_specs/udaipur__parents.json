@@ -42,7 +42,7 @@
     "kf_s1"
    ],
    "tone": "a mother's quiet worry",
-   "prompt": "Close-up on the table beside the laptop, same room and same evening light as the reference: the mother's hands rest on the tablecloth, one thumb turning a gold bangle on her wrist, the son's hand still on the trackpad; faces are out of frame."
+   "prompt": "Close-up on the table beside the laptop, same room and same evening light as the reference, shot from the mother's side of the table. In the frame there are exactly three hands: the mother's two forearms in maroon sleeves resting on the cream tablecloth, a gold bangle on her right wrist, and the son's one hand in a light blue cuff resting on the laptop trackpad at the right edge. No faces, no shoulders, no shawl and no other arm or hand anywhere in the frame; behind the table the room is dark and out of focus."
   },
   {
    "name": "kf_s3",
@@ -94,7 +94,7 @@
    "id": "s2",
    "mode": "frames",
    "start": "kf_s2",
-   "prompt": "Slow push-in. Her thumb turns the bangle once, then stops; his hand leaves the trackpad.",
+   "prompt": "Slow push-in. Her left hand turns the bangle on her right wrist once, then rests; his hand lifts off the trackpad and rests beside the laptop. The same three hands stay in the frame from start to end and no other hand or arm appears.",
    "sound": "A gold bangle tapping softly on the wooden table, quiet room tone, a ceiling fan turning."
   },
   {
@@ -223,6 +223,16 @@
     "kf_s5"
    ],
    "why": "2nd lift take: Veo closed the grille anyway and the family blurred behind it; now a courtyard bench with the lift closed and empty behind them"
+  },
+  {
+   "date": "2026-10-12",
+   "shots": [
+    "s2"
+   ],
+   "keyframes": [
+    "kf_s2"
+   ],
+   "why": "clip check: the mother sat behind the son AND a second maroon-sleeved arm with a bangle reached in from the front (one person too many). Still now shot from her side, exactly three hands, nothing else in frame. Voice unchanged, 0 ElevenLabs"
   }
  ]
 }
