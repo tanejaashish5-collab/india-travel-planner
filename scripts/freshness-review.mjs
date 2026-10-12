@@ -60,7 +60,15 @@ const TIME_SENSITIVE = [
   "nearest_airport", "nearest_railhead",
   "atm_available", "cell_network", "medical_facility",
   "best_months", "avoid_months", "daily_cost", "local_logistics",
+  // Closure notice in force, if any (migration 113): the reviewer has to see it
+  // to renew it or take it down.
+  "notice_text", "notice_source_url", "notice_expires_at",
 ].join(", ");
+
+// A destination whose closure notice lapses within this many days is pulled to
+// the front of the batch whatever its review date. The notice takes itself down
+// on expiry, so this is the last look at whether the place has reopened.
+const NOTICE_RECHECK_DAYS = 5;
 
 // How long a destination with an open item stays out of the picks. A pending
 // correction clears when approved or rejected; an escalation clears when a human
@@ -111,10 +119,21 @@ if (cmd === "pick") {
     .limit(n);
   if (open.size) q = q.not("id", "in", `(${[...open.keys()].join(",")})`);
   if (minAge > 0) q = q.or(`content_reviewed_at.is.null,content_reviewed_at.lt.${new Date(Date.now() - minAge * 86400000).toISOString()}`);
-  const { data, error } = await q;
+  const { data: stalest, error } = await q;
   if (error) { console.error(`FATAL: ${error.message}`); process.exit(1); }
+  let nq = supabase
+    .from("destinations")
+    .select(TIME_SENSITIVE)
+    .not("notice_text", "is", null)
+    .lt("notice_expires_at", new Date(Date.now() + NOTICE_RECHECK_DAYS * 86400000).toISOString())
+    .limit(n);
+  if (open.size) nq = nq.not("id", "in", `(${[...open.keys()].join(",")})`);
+  const { data: lapsing, error: nErr } = await nq;
+  if (nErr) { console.error(`FATAL: ${nErr.message}`); process.exit(1); }
+  const seen = new Set(lapsing.map((d) => d.id));
+  const data = [...lapsing, ...stalest.filter((d) => !seen.has(d.id))].slice(0, n);
   writeFileSync(out, JSON.stringify({ picked_at: new Date().toISOString(), destinations: data }, null, 2));
-  console.log(`picked ${data.length} → ${out} (oldest ${data[0]?.content_reviewed_at ?? "none"}; ${open.size} held for open items${minAge ? `; only rows older than ${minAge}d` : ""})`);
+  console.log(`picked ${data.length} → ${out} (oldest ${stalest[0]?.content_reviewed_at ?? "none"}; ${lapsing.length} with a closure notice lapsing within ${NOTICE_RECHECK_DAYS}d; ${open.size} held for open items${minAge ? `; only rows older than ${minAge}d` : ""})`);
   process.exit(0);
 }
 
@@ -222,6 +241,9 @@ const QUEUE_FIELDS = {
   permit_lead_days: (v) => Number.isInteger(v) && v >= 0 && v <= 60,
   nearest_airport: (v) => typeof v === "string" && v.trim().length >= 3 && v.length <= 200 && !/\n/.test(v),
   nearest_railhead: (v) => typeof v === "string" && v.trim().length >= 3 && v.length <= 200 && !/\n/.test(v),
+  // Closure notice (migration 113), published word for word at the top of the
+  // page for 21 days. null takes a notice down. Same limits as the DB constraint.
+  notice_text: (v) => v === null || (typeof v === "string" && v.trim().length >= 20 && v.trim().length <= 320 && !/\n/.test(v)),
 };
 const firstUrl = (s) => (typeof s === "string" ? s.match(/https?:\/\/[^\s,)]+/)?.[0] ?? null : null);
 const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
@@ -235,7 +257,7 @@ async function queueGate(r, row) {
   for (const c of cs) {
     if (!(c.field in QUEUE_FIELDS)) return `${c.field} needs a manual edit`;
     if (!QUEUE_FIELDS[c.field](c.proposed)) return `${c.field}: proposed value has the wrong shape (${JSON.stringify(c.proposed).slice(0, 60)})`;
-    if (same(c.proposed, row[c.field])) return `${c.field}: proposed value equals the current one`;
+    if (same(c.proposed, row[c.field]) && c.field !== "notice_text") return `${c.field}: proposed value equals the current one`;
     if (!same(c.current, row[c.field])) return `${c.field}: reviewer's "current" does not match the page`;
     const u = firstUrl(c.source);
     if (!u) return `${c.field}: source has no URL`;
@@ -259,11 +281,12 @@ for (const r of reviews) {
     corrections.push(r);
     const why = await queueGate(r, rowsById.get(r.id));
     if (why) { escalated.push({ id: r.id, fields: (r.corrections ?? []).map((c) => c.field), why }); continue; }
-    toQueue.push({
-      destination_id: r.id,
-      changes: r.corrections.map((c) => ({ field: c.field, expected: rowsById.get(r.id)[c.field] ?? null, value: c.proposed, source: c.source })),
-      notes: r.notes ?? null,
-    });
+    const row = rowsById.get(r.id);
+    const changes = r.corrections.map((c) => ({ field: c.field, expected: row[c.field] ?? null, value: c.proposed, source: c.source }));
+    // A notice goes up with the link it rests on, so the page can show its source.
+    const notice = r.corrections.find((c) => c.field === "notice_text" && c.proposed !== null);
+    if (notice) changes.push({ field: "notice_source_url", expected: row.notice_source_url ?? null, value: firstUrl(notice.source), source: notice.source });
+    toQueue.push({ destination_id: r.id, changes, notes: r.notes ?? null });
     continue;
   }
   if (r.verdict !== "confirmed") { dropped.push({ id: r.id, why: `unknown verdict ${r.verdict}` }); continue; }

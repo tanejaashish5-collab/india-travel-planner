@@ -104,8 +104,59 @@ Parked on `parked/ops-email-honesty-2026-10-12` (ships with the next web push):
 
 ## 5. Still open
 
-- There is nowhere on a destination page for a dated closure notice with an expiry.
-  The Courtallam notice sits in October's month text and must be removed by hand.
+- Courtallam's notice still sits in October's month text until the banner (section 6)
+  ships. Then strip the prefix and suffix from section 1; the banner replaces them.
 - MP Tourism's certificate: if it is still expired in three weeks the SOS email will
   say so, correctly this time.
 - Chinnar March/April scores (above).
+
+## 6. Closure notice slot (built the same day, at the founder's request)
+
+Number named before building: a temporary closure turned up in 1 of 4 weekly review
+runs (about 164 pages checked), so roughly one a month. It will not move traffic.
+Success is that the next one reaches the founder as one Approve click and takes itself
+down, with no "cron health" email and no hand-edit to remember.
+
+- Migration 113 (applied 2026-10-12, additive): `destinations.notice_text`,
+  `notice_source_url`, `notice_posted_at`, `notice_expires_at`;
+  `apply_destination_corrections()` now accepts the two notice fields, sets a 21-day
+  life on post, and a null value takes the notice down.
+  Tested in a rolled-back transaction: posts with a 21-day life and stamps the row;
+  refuses a stale edit, a non-web source, any other field, and a too-short notice;
+  takes a notice down cleanly.
+- Life-cycle: approve (one click) → shown under the hero on the destination page and
+  above it on the month page, with posted date and source link → the weekly review
+  pulls the page to the front of its batch when the notice has 5 days left → the
+  browser hides it on expiry and the daily watchdog clears it and revalidates.
+- `scripts/freshness-review.mjs`: the reviewer sees any notice in force; `notice_text`
+  is queueable (same limits as the DB constraint, official or named-news source that
+  opens); re-proposing the same wording is a renewal; the source link is queued with it.
+  Dry-run on three synthetic proposals: renewal queued, a too-short notice escalated,
+  a travel-blog source escalated.
+- Courtallam's notice is already in the slot (expires Mon 2 Nov 2026), invisible until
+  the web change ships.
+- Looked at before calling it done: 375px and 1440px screenshots of both page types,
+  English and Hindi. First pass was hard to read over the hero photograph, so the
+  destination-page version has its own dark ground; on the month page it moved from
+  below the hero image to above it. No hydration errors on a clean dev server.
+
+Parked with the email-wording change on `parked/ops-email-honesty-2026-10-12`.
+
+## 7. Chinnar, March and April: evidence gathered, not changed
+
+Kerala Tourism contradicts itself: the English page says "best time ... December to
+April"; the Malayalam page says November and December are the most suitable months;
+its eco-tourism page says "Trekking along the dry forests here in summer is almost
+like walking through a desert country" and calls the heat extreme. The Week
+(3 Jul 2025) describes a third-week-of-April 2025 stay at the log house in "scorching
+heat", so the sanctuary was operating. No summer or fire-season trekking closure was
+found for 2024 to 2026, but the Forest Department and Munnar Wildlife Division sites
+could not be opened, so that is unchecked at source, not confirmed. No measured
+temperatures were found; reanalysis (ERA5, modelled, ESTIMATED) puts mean daily highs
+in the low visitor zone near 33–34C in March and 34–35C in April.
+
+What that supports: our direction (hot, go early) matches three of four sources. Not
+supported by anything opened: April's "Trails become dangerous past 9am", "wildlife
+spotting futile", "Falls reduce to trickles", and the "skip" verdict at 2/10. March at
+4/10 "wait" is harsher than any source. Scores left as they are pending the founder's
+call.

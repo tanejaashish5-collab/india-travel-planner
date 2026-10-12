@@ -77,9 +77,18 @@ changed" check, not a rewrite.
       one bad-weather event is not a season. Put the exact sentence from the source in `source`.
     - Read the year on every article. A flood, closure or order from a previous year is history.
     - A temporary closure of the main attraction (falls shut for repairs, a park closed by
-      order) is real and worth escalating, but there is no `access_advisory` column. Use the
-      field name `temporary_closure`, state only what the source states (do not add which other
-      sites are open unless it says so), and give the source's own date.
+      order) is real and it IS queueable: use the field `notice_text`. There is no
+      `access_advisory` or `temporary_closure` column. `proposed` is one or two plain sentences,
+      20 to 320 characters, published word for word at the top of the page for 21 days: what is
+      closed, since when as the source dates it, and the reopening date only if the source gives
+      one. State only what the source states (do not add which other sites are open unless it
+      says so). `current` is the row's `notice_text` as shown in the batch (usually null).
+  - **A row that already carries a `notice_text`** was pulled into the batch because the notice
+    lapses within 5 days and takes itself down. Check that one thing first. Still closed: propose
+    `notice_text` again (the same wording is fine; that renews it for 21 days) with a source
+    dated within the last 3 weeks. Reopened: verdict `confirmed` as usual and say so in `notes`;
+    if it reopened with more than a few days left on the notice, propose `notice_text` with
+    `proposed: null` and a dated source for the reopening, which takes it down on approval.
   - Use the official name as the authority publishes it today; a proposed or former name is wrong.
 
 ## Working method
