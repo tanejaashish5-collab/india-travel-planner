@@ -36,12 +36,18 @@ export function esc(v: unknown): string {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 }
 
+// Plain names for fields whose column name would not mean much in an email.
+const FIELD_LABELS: Record<string, string> = {
+  notice_text: "Notice at the top of the page (stays up 21 days, then takes itself down)",
+  notice_source_url: "Source link shown under the notice",
+};
+
 /** Old → new table, shared by the email and the approval page. */
 export function changesHtml(changes: CorrectionChange[]): string {
   return changes
     .map(
       (c) => `<div style="margin:0 0 14px;padding:12px 14px;border:1px solid #e5e5e5;border-radius:6px">
-  <div style="font:600 12px ui-monospace,monospace;color:#525252;margin-bottom:6px">${esc(c.field)}</div>
+  <div style="font:600 12px ui-monospace,monospace;color:#525252;margin-bottom:6px">${esc(FIELD_LABELS[c.field] ?? c.field)}</div>
   <div style="color:#b91c1c;text-decoration:line-through;margin-bottom:4px">${esc(c.expected)}</div>
   <div style="color:#15803d;font-weight:600">${esc(c.value)}</div>
   ${c.source ? `<div style="font-size:12px;color:#525252;margin-top:6px">Source: ${esc(c.source)}</div>` : ""}

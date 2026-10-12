@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { createClient } from "@supabase/supabase-js";
 import { getResend, OPS_FROM_ADDRESS, REPLY_TO } from "@/lib/resend";
 
@@ -304,6 +305,33 @@ type AssetCoverage = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+/**
+ * Take down closure notices that have lapsed (destinations.notice_*, migration 113).
+ *
+ * Housekeeping rather than monitoring, but this is the one job that runs every
+ * day and a lapsed notice cannot wait for a weekly one: month pages are cached
+ * for 30 days and only a revalidate takes the notice out of the cached HTML
+ * (the browser already hides it, see closure-notice.tsx). Never throws: a
+ * failure here must not cost the health check.
+ */
+async function expireClosureNotices(supabase: any): Promise<string[]> {
+  try {
+    const { data, error } = await supabase
+      .from("destinations")
+      .update({ notice_text: null, notice_source_url: null, notice_posted_at: null, notice_expires_at: null })
+      .not("notice_text", "is", null)
+      .lt("notice_expires_at", new Date().toISOString())
+      .select("id");
+    if (error) throw new Error(error.message);
+    const ids: string[] = (data ?? []).map((r: { id: string }) => r.id);
+    for (const id of ids) for (const l of ["en", "hi"]) revalidatePath(`/${l}/destination/${id}`, "layout");
+    return ids;
+  } catch (err) {
+    console.error("[watchdog] expiring closure notices failed:", err instanceof Error ? err.message : err);
+    return [];
+  }
+}
+
 async function computeAssetCoverage(supabase: any): Promise<AssetCoverage | null> {
   // One query, two counters. Informational only — never alertable.
   // Surfaces the gap until Cowork's collection-cover queue is drained.
@@ -354,6 +382,8 @@ export async function GET(req: NextRequest) {
     .select("*", { count: "exact", head: true })
     .eq("job", "watchdog");
   const isFirstRun = (priorWatchdogRuns ?? 0) === 0;
+
+  const expiredNotices = await expireClosureNotices(supabase);
 
   // For each tracked job, fetch the most recent ops_reports row and
   // compute days-since. We use a separate query per job rather than one
@@ -456,7 +486,7 @@ export async function GET(req: NextRequest) {
   // record even if email sending throws.
   await supabase.from("ops_reports").insert({
     job: "watchdog",
-    summary: { overall, monday_digest: monday, health, asset_coverage: assetCoverage },
+    summary: { overall, monday_digest: monday, health, asset_coverage: assetCoverage, expired_notices: expiredNotices },
     alerts_count: alertable.length,
     ok: overall === "ok",
   });
