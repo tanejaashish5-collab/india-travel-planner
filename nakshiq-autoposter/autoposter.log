@@ -27358,3 +27358,35 @@ Date range: 2026-04-15 → 2026-10-11
 2026-10-12 15:57:31  INFO      brand_stamp: registered 443 destinations for overlay lookup
 2026-10-12 15:57:32  ERROR     Could not fetch accounts: 402 Client Error: Payment Required for url: https://api.outstand.so/v1/social-accounts
 2026-10-12 15:57:32  WARNING   No active connected accounts.
+2026-10-12 16:54:28  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-12 16:54:28  INFO      ════════════════════════════════════════════════════════════
+2026-10-12 16:54:28  INFO      Nakshiq Autoposter · CAROUSEL · 2026-10-12
+2026-10-12 16:54:28  INFO      ════════════════════════════════════════════════════════════
+2026-10-12 16:54:28  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-12 16:55:19  INFO      Synced → 20 destinations · 100 traps · 4 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-12 16:55:44  INFO      Carousel built: fmt=collection, 8 slides, primary=tirthan-valley
+2026-10-12 16:55:44  INFO          Requesting upload URL for carousel_collection_2026-10-12_01.jpg (301,570 bytes, image/jpeg)
+2026-10-12 16:55:45  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:45  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:45  INFO          Requesting upload URL for carousel_collection_2026-10-12_02.jpg (275,707 bytes, image/jpeg)
+2026-10-12 16:55:46  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:46  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:46  INFO          Requesting upload URL for carousel_collection_2026-10-12_03.jpg (243,408 bytes, image/jpeg)
+2026-10-12 16:55:47  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:47  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:47  INFO          Requesting upload URL for carousel_collection_2026-10-12_04.jpg (255,481 bytes, image/jpeg)
+2026-10-12 16:55:48  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:48  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:48  INFO          Requesting upload URL for carousel_collection_2026-10-12_05.jpg (263,188 bytes, image/jpeg)
+2026-10-12 16:55:49  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:49  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:49  INFO          Requesting upload URL for carousel_collection_2026-10-12_06.jpg (249,142 bytes, image/jpeg)
+2026-10-12 16:55:49  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:49  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:49  INFO          Requesting upload URL for carousel_collection_2026-10-12_07.jpg (238,866 bytes, image/jpeg)
+2026-10-12 16:55:50  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:50  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:50  INFO          Requesting upload URL for carousel_collection_2026-10-12_08.jpg (255,913 bytes, image/jpeg)
+2026-10-12 16:55:51  WARNING       outstand_post_req /v1/media/upload HTTP 402: {"success":false,"error":"Your organization does not have an active subscription.","code":"subscription_inactive","billingUrl":"https://www.outstand.so/app/settings/billing"}
+2026-10-12 16:55:51  WARNING       Upload URL failed: {'success': False, 'error': 'Your organization does not have an active subscription.', 'code': 'subscription_inactive', 'billingUrl': 'https://www.outstand.so/app/settings/billing', 'http_status': 402}
+2026-10-12 16:55:51  ERROR     Carousel: only 0/8 slides uploaded — aborting (need >=3).
