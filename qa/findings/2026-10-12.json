@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-10-12",
+    "date": "2026-10-12",
+    "started_utc": "2026-10-12T01:03:00Z",
+    "completed_utc": "2026-10-12T02:15:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled QA task), following the nakshiq-daily-qa skill against the live site, compared against last week's (2026-10-05) findings as the regression baseline. Ran unattended.",
+    "mode": "scheduled-headless",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 72,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [
+    {
+      "id": "BLOCKER-2026-10-12-001",
+      "severity": "low",
+      "title": "Vercel MCP connector still not authenticating this session (2nd consecutive weekly run)",
+      "detail": "mcp__Vercel__get_auth_user again returned '404 Not Found: User not found', identical failure to the 2026-10-05 run. No runtime-error/statement-timeout window could be pulled this run either.",
+      "consequence": "NEW-2026-08-03-002 and NEW-2026-08-10-002 (Postgres statement-timeout tracking) carried forward unverified for a second straight week -- that data point is now two weeks stale.",
+      "recommendation": "Ashish: the Vercel connector has failed to authenticate on 2 consecutive weekly runs (10-05 and 10-12). Worth re-linking it rather than assuming next week self-resolves."
+    }
+  ],
+  "phases_completed": [
+    "A - soft-404 regression (2 bad slugs, 2 garbage-string month sub-routes, 2 numeric-garbage month sub-routes)",
+    "A2 - state/UT slug-collision targeted re-check (22 state/UT-name slugs)",
+    "B - destination availability + TTFB (10-slug random sample from sitemap/1.xml)",
+    "C - Hindi parity (same 10 slugs, /hi)",
+    "D - SEO meta (landing + 10 destinations + 1 month sub-route, 12 URLs)",
+    "E - SOS completeness (DB-verified dialable-field count for all 533 + fresh per-sample breakdown for today's 10)",
+    "F - API smoke (/api/chat, /api/itinerary, /api/weather, /api/webhooks/resend -- incl. malformed + valid payloads)",
+    "G - PWA / SW / manifest",
+    "H - Sitemap integrity (index + 5 chunks)",
+    "I - Core routes HTTP matrix (21 routes)",
+    "J - Locale-routing redirect (5 probes)",
+    "K - Chrome E2E interactive (Claude in Chrome: /explore Leaflet map incl. programmatic map-toggle click + console check; tawang cinematic-atlas check en+hi+full-reload; betla check en+hi -- discovered betla is no longer the non-cinematic template, see new_findings_today NEW-2026-10-12-001; /treks spot-check)",
+    "L - Hero/cover images (live node scripts/audit-hero-images.mjs run, 533/533)",
+    "DB cross-checks via Supabase MCP (destinations, emergency_sos, confidence_cards, newsletter_subscribers/sends/events, migrations, security advisors)",
+    "Source-level root-cause read of the betla template discovery -- grepped apps/web/src for isCinematicDestination/cinematic-destinations.ts and git log, instead of just reporting a probe anomaly without explanation",
+    "SEO month-sub-route URL-scheme discovery and correction (numeric -> named months), with a live-page re-verification after the correction"
+  ],
+  "phases_skipped": [
+    { "phase": "axe-core accessibility audit", "reason": "Cost-aware rule in SKILL.md/CLAUDE.md: skip axe daily unless the site shipped material a11y-relevant changes since the last deep pass. The destination-template-universal change discovered this run (NEW-2026-10-12-001) does change markup on every destination page and is plausibly a11y-relevant, but a full axe pass was still time-boxed out of this run -- flagged as a real gap, not silently skipped. Recommend running axe next week regardless of the cost-aware rule, given the scale of the template change." },
+    { "phase": "Lighthouse performance audit", "reason": "Same cost-aware rule; Phase-4-carry-perf not re-tested today." },
+    { "phase": "Welcome-tour-modal interactive re-test (E2E-2026-05-04-A1)", "reason": "Time-boxed this run; carried forward from last verified pass per SKILL.md failure-mode guidance." },
+    { "phase": "Vercel runtime-error / statement-timeout check (NEW-2026-08-03-002, NEW-2026-08-10-002)", "reason": "Vercel MCP connector failed to authenticate this session again (see blockers). Carried forward unverified rather than fabricated." },
+    { "phase": "refresh-stay-picks-agent egress-block root cause (NEW-2026-08-19-001) and destination-selection stuck-loop (NEW-2026-09-14-002)", "reason": "Out of scope for the site-facing QA matrix this run; would need that agent's own run logs." },
+    { "phase": "Newsletter recipient-level investigation (NEW-2026-09-07-001)", "reason": "Time-boxed; DB-level send/event counts checked (all grew normally) but the per-recipient delivery gap was not re-investigated." },
+    { "phase": "Full blast-radius audit of the destination-template-universal migration (other pages/consumers that branch on content_tier, or on the old DestinationDetail component)", "reason": "Discovered mid-run via source inspection, not pre-planned; a full blast-radius audit is a separate engineering task. Flagged as a recommendation rather than attempted same-session." }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "curl /en/destination/this-destination-does-not-exist-xyz123 -> 404; /en/destination/zzzzzz-fake-place-9999 -> 404."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "FIXED",
+      "today_status": "STILL CLOSED",
+      "evidence": "tawang/not-a-month -> 404; tawang/999 -> 404; tawang/13 -> 404; tawang/00 -> 404. Note: this run also discovered the live month-sub-route URL scheme is now NAMED months (/tawang/december), not numeric (/tawang/12) -- see NEW-2026-10-12-003. All of today's probed numeric/garbage values correctly 404 either way, so this item's closure is unaffected, but the reason a numeric probe like /tawang/12 404s has changed (no numeric route exists at all now, not a soft-404 catch)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "GET /api/chat -> 404; POST /api/chat with malformed JSON -> 404. Route still has no live handler; no 500 possible."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary malformed JSON -> 400. Valid payload (destinationIds:[manali,shimla,jaipur], month:12, days:7, travelerType:family, origin:Delhi) -> 200 with real generated itinerary."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template title stutter",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Generated itinerary title: 'December · 7-day family trip from Delhi' -- no stutter, identical format to last week."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "12/12 sampled URLs (incl. the corrected-format month sub-route /en/destination/vedanthangal/december) carry og:image."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN",
+      "today_status": "STILL GREEN",
+      "evidence": "sw.js CACHE_VERSION=nakshiq-v65 (up from v63); manifest.json: 3 icons, 5 shortcuts; /en/offline -> 200."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "confidence_cards.people_who_help object-shape rows unchanged at 93/525 (array-shape 432/525, array-shape-nonempty 84/525); 0 console errors observed across all pages visited this run."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "emergency_sos.local_helpers non-empty 178/533, identical to the last several weeks -- coverage opportunity unchanged, not a defect."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet dual-template)",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "This item's underlying premise (a dual destination-page template, atlas vs Leaflet) no longer exists as of the 2026-10-04 deploy -- see NEW-2026-10-12-001. Every known destination (533/533) now renders the atlas/cinematic template; there is no remaining Leaflet-template destination page to probe for this item to regress against. Status held at NOT_REPRODUCED, but the reason has changed from 'probing the wrong template' to 'the other template no longer exists on destination pages at all'. Recommend retiring this regression-matrix row next week in favour of tracking NEW-2026-10-12-001 directly."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration; marker rendering",
+      "prior_status": "FIXED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "betla, this item's long-standing verification target (non-cinematic/Leaflet template), now itself renders the atlas/cinematic template -- 0 .leaflet-container, 0 occurrences of the string 'leaflet' anywhere in its page HTML (verified via javascript_tool). This is not a regression of the Leaflet map rendering itself (the 2026-05 fix was real and held for months); it's that the Leaflet destination-page template was retired site-wide on 2026-10-04 (git commit 8574f057, 'new design is the default for every destination; backfill the 28 left behind') and betla was one of the 28 backfilled. There is no longer a Leaflet-template destination page anywhere on the site to hold this item FIXED against, so NOT_REPRODUCED (can't-test-anymore) is more honest than FIXED (implies the thing being tested still exists). See NEW-2026-10-12-001 for the full writeup; recommend archiving this row next week."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N x 80.5E) on every cinematic destination page",
+      "prior_status": "REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "tawang (Arunachal Pradesh, nowhere near 23.5N/80.5E): literal string '23.5' confirmed present in rendered page text, same as every prior week. Unchanged decorative-not-dynamic behavior. Given the template is now universal (NEW-2026-10-12-001), this decorative-coordinate bug's reach is now also effectively every one of the 533 destination pages, not ~377 -- worth folding into the same severity conversation as the H1 gap below."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 console errors across every observation this run: /en/explore (incl. map-toggle click), /en/destination/tawang (en, incl. full navigate-reload), /hi/destination/tawang, /en/destination/betla, /hi/destination/betla, /en/treks."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not re-tested interactively this run (time-boxed); carried forward from last verified pass per SKILL.md failure-mode guidance."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero H1 + body copy render in English on /hi despite complete Hindi translation data",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "0/10 of today's random sample showed Devanagari H1 (as every week recently). Critical scope update: this gap was previously understood to be specific to the 'cinematic template', covering ~377/533 (71%) of destinations per qa/cinematic-readiness.md. This run discovered that the cinematic template became the DEFAULT for every known destination (533/533) on 2026-10-04 (see NEW-2026-10-12-001) -- so this H1-English gap is very likely now universal across the entire catalog, not a majority-of-catalog issue. Directly confirmed on betla (previously the designated non-cinematic control, H1='Betla.' in English on /hi, where it used to correctly render 'बेतला') in addition to tawang. Recommend re-scoping this item's severity given the escalation from ~70% to ~100% of the catalog."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "node scripts/audit-hero-images.mjs: 533/533 ok, 0 missing, 0 errors."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrink regression watch",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Sitemap total URLs up to 25,057 (was 25,032 on 10-05, +25). Destination slug count flat (533). Destination month-URL count 6,410 (was 6,396, +14). Cost URLs flat (525 en). No shrink."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "axe-core skipped this run per cost-aware rule, though see the phases_skipped note recommending this be revisited given the template-universal change."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Same as above -- axe-core skipped this run."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse skipped this run per cost-aware rule."
+    },
+    {
+      "id": "NEW-2026-08-03-002",
+      "title": "Recurring Postgres statement-timeout (57014) on /explore, traced to an uncached query bypassing cached-data.ts",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Vercel MCP connector failed to authenticate again this run (2nd week running -- see blockers). Status carried forward from 09-28/10-05 rather than re-measured."
+    },
+    {
+      "id": "NEW-2026-08-10-002",
+      "title": "Postgres statement-timeout pattern breadth -- weekly trend",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Same Vercel MCP auth failure as above -- trend not re-measured for the 2nd week running."
+    },
+    {
+      "id": "NEW-2026-08-19-001",
+      "title": "refresh-stay-picks-agent's network egress block -- root cause still unresolved",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Out of scope for the site-facing QA matrix this run; would need that agent's own logs."
+    },
+    {
+      "id": "NEW-2026-08-24-002",
+      "title": "Consecutive-day 0/10-non-cinematic random destination sample -- Section K coverage risk",
+      "prior_status": "STILL CLOSED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "This item's premise (that a 'non-cinematic' template exists to be sampled into) is now moot -- see NEW-2026-10-12-001. Every destination, including Section K's own designated non-cinematic pin (betla), is cinematic now. There is no remaining template-coverage question to re-check for destination pages; the surviving map-template question is only /explore and /treks (both still Leaflet, both checked this run). Recommend retiring this row in favour of NEW-2026-10-12-001."
+    },
+    {
+      "id": "NEW-2026-08-25-002",
+      "title": "Security-advisor INFO/WARN count trend",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Security advisors now 23 total (was 19 on 10-05): 15 rls_enabled_no_policy (+2) + 1 extension_in_public + 3 anon_security_definer_function_executable (+1) + 3 authenticated_security_definer_function_executable (+1) + 1 auth_leaked_password_protection. See new_findings_today NEW-2026-10-12-002 for the breakdown of what's new."
+    },
+    {
+      "id": "NEW-2026-09-05-001",
+      "title": "Destination slugs that collide with an Indian state/UT name bypass the soft-404 check",
+      "prior_status": "FIXED",
+      "today_status": "STILL CLOSED",
+      "evidence": "All 22 tested state/UT-name slugs still return 301 -> /en/state/<slug> (verified goa, sikkim, assam, kerala, punjab, haryana, bihar, odisha, manipur, mizoram, tripura, meghalaya, nagaland, jharkhand, telangana, karnataka, gujarat, rajasthan, maharashtra, uttarakhand, chhattisgarh, ladakh). Fix from last week holds."
+    },
+    {
+      "id": "NEW-2026-09-07-001",
+      "title": "The 2026-09-06 newsletter send reached only 8 of 14 currently-active subscribers",
+      "prior_status": "NOT INVESTIGATED",
+      "today_status": "NOT INVESTIGATED",
+      "evidence": "Not re-investigated at the recipient level this run (time-boxed). DB-level counts continue to grow normally: subscribers 20 total/18 active (flat), sends 62 (was 52), events 190 (was 155)."
+    },
+    {
+      "id": "NEW-2026-09-14-001",
+      "title": "The scheduled task that runs this QA suite fires weekly (Monday-only), not daily",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "This run itself fired exactly 7 days after the 10-05 run (both Mondays), consistent with the known weekly-only cron (CRON_TZ=Australia/Sydney 0 12 * * 1) remaining unchanged. The cadence mismatch is still Ashish's call to change."
+    },
+    {
+      "id": "NEW-2026-09-14-002",
+      "title": "refresh-stay-picks-agent's nightly destination-selection logic is stuck re-processing the same ~15-20 thin-lodging destinations",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Out of scope for the site-facing test matrix this run (time-boxed); status carried forward unverified."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-10-12-001",
+      "severity": "high",
+      "title": "The cinematic destination-page template became the default for EVERY known destination on 2026-10-04 -- the long-tracked Hindi-H1 gap (NEW-2026-07-09-001) and decorative-coordinate bug (NEW-2026-06-06-003) are now effectively universal (533/533), not scoped to ~70% of the catalog",
+      "detail": "This run's Section K check hit betla, the SKILL.md's long-standing designated 'known non-cinematic destination' used every week specifically to keep Leaflet-template coverage from being lost to random sampling (per NEW-2026-08-24-002). betla no longer renders the Leaflet template: 0 .leaflet-container elements, 0 occurrences of the string 'leaflet' anywhere in its page HTML, and it now shows the same atlas SVG (viewBox 0 0 1000 1100) as every cinematic destination. A second spot-check (arambol, Goa, also DB content_tier='B') confirmed the same. Reading the source directly (apps/web/src/lib/cinematic-destinations.ts) explains why: 'Cinematic template gate. Since 2026-10-04 EVERY known destination renders via DestinationDetailCinematic by default... Until then this was a hand-kept allowlist frozen at 505 slugs (2026-05-16); the 28 destinations added later silently kept the old DestinationDetail page for months (founder spotted betla).' The file's own LEGACY_DESTINATIONS escape-hatch set is empty, and known-destination-slugs.json has exactly 533 entries matching destinations_total_db -- so isCinematicDestination() returns true for all 533 destinations with no exceptions. Git commit 8574f057 ('feat(destination): new design is the default for every destination; backfill the 28 left behind') made this change. The qa/cinematic-readiness.md tracker's 'A+HS-B=377 cinematic-eligible' figure is a CONTENT-completeness gate (widget data thresholds for gems/eats/stays), not a template-selection gate -- it no longer describes which destinations get the cinematic page shell, only which ones have enough data to fill every section of it. Confirmed directly in DB: betla and arambol are both content_tier='B' (not in the 377 'eligible' count) yet both render the cinematic template live. Downstream consequence: NEW-2026-07-09-001 (destination H1 renders in English on /hi) and NEW-2026-06-06-003 (decorative '23.5' coordinate string on every cinematic page) were both scoped in every prior week's report as affecting '~377/533 (71%) of the catalog, the cinematic template'. That scoping is now out of date -- both bugs are very likely present on all 533 destination pages, since all 533 now use the cinematic template. This was not independently re-verified on all 533 pages this run (time-boxed to the two spot-checked destinations, tawang and betla), but the code-level evidence (empty LEGACY_DESTINATIONS, 533/533 known-slugs match) is unambiguous that the template itself is universal.",
+      "evidence": "javascript_tool on live betla page: leaflet_count=0, leaflet_string_count=0, atlas_svg=true. Same on arambol. apps/web/src/lib/cinematic-destinations.ts source read via device_bash: LEGACY_DESTINATIONS is an empty Set; comment states 'Since 2026-10-04 EVERY known destination renders via DestinationDetailCinematic by default'. git log -- apps/web/src/lib/cinematic-destinations.ts shows commit 8574f057 'new design is the default for every destination; backfill the 28 left behind'. DB: SELECT content_tier FROM destinations WHERE id IN ('betla','arambol') -> both 'B'. known-destination-slugs.json slug count = 533 = destinations_total_db.",
+      "recommendation": "Three separate actions: (1) Ashish/engineering -- given the Hindi-H1 gap (NEW-2026-07-09-001) likely now affects 100% of destinations instead of ~70%, consider re-prioritizing it; it was already flagged as the most visible open item in last week's business report at 70% scope. (2) SKILL.md maintenance -- the Section K 'map-type note' describing a destination-page dual-template (atlas vs Leaflet) is now stale; update it to state the Leaflet destination-page template was fully retired 2026-10-04 and only /explore and /treks still use real Leaflet. The designated 'known non-cinematic destination' probe target (betla) should be retired or replaced with a note that no such destination exists anymore. (3) QA follow-up -- next run (or a one-off this week if convenient) should sample a few more destinations across different content_tier values (A/HS-B/B) to directly confirm the H1-English gap is indeed present on all of them, not just the two checked here, before fully closing the re-scoping loop."
+    },
+    {
+      "id": "NEW-2026-10-12-002",
+      "severity": "low",
+      "title": "Security advisors up 4 (19 -> 23): 2 new backup-table RLS findings + 1 new anon/authenticated SECURITY DEFINER function pair",
+      "detail": "rls_enabled_no_policy count is up from 13 to 15: the two new rows are backups.articles_20261009 and backups.destination_costs_20261009, both dated-suffix tables consistent with a routine pre-migration or scheduled backup snapshot taken 2026-10-09 (between last week's run and this one) -- same low-severity, likely-intentional pattern as the other 13 already-flagged tables, not a new class of issue. Separately, anon_security_definer_function_executable and authenticated_security_definer_function_executable each grew from 2 to 3: the new function in both is public.get_trip_logistics(p_destination_ids text[], p_travel_month integer), callable via /rest/v1/rpc/get_trip_logistics by both anon and authenticated roles. This is plausibly tied to the 079_sub_destination_pages migration (20261006041552), which landed between the two runs, or to the itinerary/trip-planning feature area generally (cost_day_tiers and get_trip_logistics are both trip-planning RPCs). Total: 15 rls_enabled_no_policy + 1 extension_in_public (vector, unchanged) + 3 anon_security_definer + 3 authenticated_security_definer + 1 auth_leaked_password_protection (unchanged) = 23.",
+      "evidence": "mcp__Supabase__get_advisors(type=security): rls_enabled_no_policy findings list includes backups.articles_20261009 and backups.destination_costs_20261009 (both new vs 10-05's list); anon/authenticated_security_definer_function_executable findings list includes public.get_trip_logistics (new) alongside the already-known public.cost_day_tiers and public.get_shared_trip_board.",
+      "recommendation": "No urgent action -- same backend-hardening pattern as the 13 other flagged tables. If get_trip_logistics is meant to be internal-only (not a public anon-callable RPC), consider REVOKE EXECUTE for the anon role or switching it to SECURITY INVOKER, consistent with the guidance already on file for cost_day_tiers and get_shared_trip_board."
+    },
+    {
+      "id": "NEW-2026-10-12-003",
+      "severity": "info",
+      "title": "Destination month sub-route URL scheme is now NAMED months (/destination/<slug>/december), not numeric (/destination/<slug>/12) -- a probe-methodology note, not a site defect",
+      "detail": "This run's first pass at the Section D month-sub-route SEO check used /en/destination/vedanthangal/12 (numeric), which 404'd -- initially looked like a possible regression. Checking the live destination page's own month-navigation links showed they are all named (e.g. href=\"/en/destination/tawang/december\"), and every numeric path (1 through 12) 404s for every destination tested (tawang, vedanthangal, hanle). Re-running the check against the correct named-month URL (/en/destination/vedanthangal/december) returned 200 with a correct, non-stuttering title ('Vedanthangal Bird Sanctuary in December: 21–28°C | NakshIQ'), canonical, all three hreflang tags, and og:image all present. This mirrors last week's hreflang case-sensitivity gotcha (NEW-2026-10-05-003) -- a probe-methodology issue that could have been misreported as a site regression if not double-checked against the live page's own markup first.",
+      "evidence": "curl /en/destination/tawang/12, /1, /6, /10, /11 -- all 404. grep of tawang's rendered HTML for href=\"/en/destination/tawang/<month-name>\" -- all 12 named months present and linked. curl /en/destination/vedanthangal/december -> 200, title/canonical/hreflang/og:image all correct.",
+      "recommendation": "If Section A's garbage-month-sub-route probes are ever changed to use specific numeric values as 'known-good' controls (they currently use clearly-invalid values like 999/13/00, which still correctly 404 either way), update them to use a named-month value instead so a future run doesn't misread the named-month migration as a routing regression."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 19,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 2,
+    "core_routes_TTFB_ms": { "min": 174, "median": 229, "p90": 350, "max": 387 },
+    "core_routes_TTFB_note": "21 routes probed; 19 at 200, 2 at 404 (/en/ask and /en/quiz -- same two known honest-gap routes every week). Route list: /en, /en/explore, /en/trip, /en/sos, /en/blog, /en/treks, /en/india-travel, /en/india/north, /en/state/goa, /en/about, /en/contact, /en/privacy, /en/terms, /en/where-to-go, /en/offline, /en/ask, /en/quiz, 2 sampled destination pages, /en/plan, /hi. Swapped /en/faq and /en/cost (confirmed genuine 404s, not part of the known-good route family) for /en/where-to-go and /en/plan, both confirmed working.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 270, "median": 386, "max": 2258 },
+    "destinations_TTFB_note": "poovar (2258ms) and anamalai (1773ms) were cold-cache outliers; the other 8 ranged 270-553ms. Consistent with normal cold/warm cache variance, not a regression signal on its own.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_h1_devanagari_count": 0,
+    "hindi_h1_devanagari_note": "0/10 today. IMPORTANT SCOPE UPDATE (see NEW-2026-10-12-001): this is no longer explainable as 'today's random sample happened to land on the cinematic template' -- the cinematic template is now universal (533/533 destinations) as of the 2026-10-04 deploy, so 0/10 is the expected result for ANY sample from now on, not a sampling artifact. betla, previously the designated non-cinematic control that reliably showed the correct Devanagari H1, now also shows the English H1 on /hi.",
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "seo_note": "See new_findings_today NEW-2026-10-12-003 -- the month sub-route probe initially used a numeric URL (/12) that 404s under the current named-month scheme; corrected to /december before reporting. All 12/12/12/12/12/0-stutter figures above use the corrected URL.",
+    "soft_404_regression_passes": 6,
+    "soft_404_regression_misses": 0,
+    "soft_404_regression_note": "6 targeted Section-A probes (bad slug x2, garbage-string month sub-route x2, numeric-garbage month sub-route x2), all 404 as expected. Section-A2 state/UT-collision re-check: 22/22 still correctly redirect to real state pages (NEW-2026-09-05-001 fix holds).",
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.81,
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_object_shape_rows_db": 93,
+    "people_who_help_array_shape_rows_db": 432,
+    "people_who_help_confidence_cards_total_db": 525,
+    "destinations_total_db": 533,
+    "sos_phones_total_across_10_dests": 76,
+    "sos_phones_invalid_format": 0,
+    "sos_phones_across_10_dests_note": "Fresh per-sample dialable breakdown computed directly from each destination's live rendered emergencySos payload for today's actual 10 slugs: gulmarg 9, hanle 9, sravasti 9, kausani 8, poovar 8, varkala 8, anamalai 7, vedanthangal 7, kodaikanal 6, pattadakal 5 -- sum 76, min 5, max 9, 0 malformed, 0 empty. Every sampled destination at/above the 3-field safety floor. (Methodology note: counted the same 12 named structured dialable fields the skill specifies, parsed from the live page's serialized emergencySos object rather than a raw RSC string-grep, to avoid the 'phone' key false-negative documented in SKILL.md.)",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "Live node scripts/audit-hero-images.mjs run directly this session -- 533/533 ok.",
+    "api_endpoints_probed": 9,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 4,
+    "api_2xx_valid_returned": 2,
+    "api_404_expected_or_removed_returned": 2,
+    "api_405_method_not_allowed_returned": 1,
+    "api_401_returned": 1,
+    "api_webhook_resend_note": "Standing check, unchanged today: GET /api/webhooks/resend -> 405; POST no signature -> 401.",
+    "api_itinerary_valid_status": 200,
+    "api_itinerary_note": "Live probe (Dec/family, destinationIds=[manali,shimla,jaipur], days=7, origin=Delhi) using the correct payload shape (month as integer) -- returned real, non-empty generated itinerary ('December · 7-day family trip from Delhi'). Malformed JSON body -> 400 as expected.",
+    "api_weather_note": "GET /api/weather?id=vedanthangal -> 200 (live data). Missing param -> 400 'Missing destination id'; wrong param name (?destinationId=) -> 400, both as expected.",
+    "api_chat_note": "/api/chat returns 404 for GET and POST alike -- route still has no live handler, consistent with the AI-surface-removal effort. No 500 possible; DEEP-Phase7-A1 remains STILL CLOSED.",
+    "vercel_runtime_errors_note": "Not available this run (2nd consecutive week) -- the Vercel MCP connector again failed to authenticate. See blockers.",
+    "service_worker_version": "nakshiq-v65",
+    "service_worker_version_prior": "nakshiq-v63",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 25057,
+    "sitemap_total_urls_delta_note": "Up 25 vs 10-05 (25,032 -> 25,057). Destination slug count flat (533); destination month-URL count up 14 (6,396 -> 6,410); cost URLs flat (525 en). No shrink, no chunk-load failures.",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6410,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "Identical marker count to every prior run since 08-03 (519/519). Map toggle button had to be clicked programmatically (unattended run), confirmed via javascript_tool after locating the real Map/Grid toggle with the find tool, not a screenshot-only check. 0 console errors.",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 0,
+    "map_dest_pages_atlas_template": 2,
+    "map_dest_atlas_note": "BOTH tawang (cinematic, already known) and betla (previously the designated non-cinematic control) now render the atlas template: svg viewBox 0 0 1000 1100 present, india-outline.svg referenced, leaflet=0 by design on both. tawang H1='Tawang.' (English, known gap). betla H1='Betla.' (English -- NEW, previously rendered correct Devanagari 'बेतला'). Decorative '23.5' coordinate string confirmed present on tawang. See new_findings_today NEW-2026-10-12-001 -- this is a site-wide template change discovered this run, not a sampling fluke.",
+    "map_dest_leaflet_note": "No Leaflet-template destination page could be found this run (betla, the known-good target, has migrated). Source inspection confirms none exist: LEGACY_DESTINATIONS escape-hatch set in apps/web/src/lib/cinematic-destinations.ts is empty. Leaflet maps remain live and working only on /explore (confirmed, 519 markers) and /treks (listing page loaded cleanly; individual trek trail-map pages not re-verified this run, time-boxed).",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 6,
+    "console_react_418_fired_loads": "0 of 6 console-tracked observations (explore map incl. toggle click, tawang en incl. full reload, tawang hi, betla en, betla hi, treks listing) -- NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": true,
+    "deploy_evidence": "sw.js CACHE_VERSION jumped nakshiq-v63 -> nakshiq-v65 since 10-05 (2 deploys). 1 new migration since 10-05: 079_sub_destination_pages (20261006041552). Most significant: the destination-template-universal change (git commit 8574f057) landed 2026-10-04, inside the window already flagged informationally last week (NEW-2026-10-05-001) as 'a new production deploy' -- this run is the first to actually examine what that deploy contained at the template-selection level, rather than just noting the dpl-id and cache-version changed.",
+    "destinations_total_db_note": "Steady at 533 (100+ days with no new destinations).",
+    "newsletter_subscribers_total_db": 20,
+    "newsletter_subscribers_active_db": 18,
+    "newsletter_sends_total_db": 62,
+    "newsletter_events_total_db": 190,
+    "newsletter_note": "Subscribers flat (20/18), sends up 52->62 (+10), events up 155->190 (+35) -- continued steady engagement growth. The 'identical 8 of 14 recipients' open question (NEW-2026-09-07-001) was not re-investigated at the recipient level this run (time-boxed).",
+    "security_advisors_count": 23,
+    "security_advisors_count_prior": 19,
+    "security_advisors_note": "Up 4 to 23 today (was 19 on 10-05) -- 15 rls_enabled_no_policy (+2: two new dated backup-table snapshots) + 1 extension_in_public (unchanged) + 3 anon_security_definer_function_executable (+1: new get_trip_logistics RPC) + 3 authenticated_security_definer_function_executable (+1: same function) + 1 auth_leaked_password_protection (unchanged). See new_findings_today NEW-2026-10-12-002.",
+    "migrations_latest": "079_sub_destination_pages (20261006041552)",
+    "migrations_note": "1 new migration since 10-05 (079_sub_destination_pages, 2026-10-06). The destination-template-universal change (NEW-2026-10-12-001) was a code/deploy change, not itself a DB migration, though it landed in the same general window as the two migrations noted last week.",
+    "scheduled_task_cadence_note": "Still weekly (Monday-only) -- this run fired exactly 7 days after 10-05, both Mondays, consistent with the unchanged cron. NEW-2026-09-14-001 remains open; this is Ashish's call to change, not something this QA session changes on its own."
+  },
+  "deliverables": [
+    "qa/findings/2026-10-12.json",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "Vercel MCP connector failed to authenticate this session for the 2nd consecutive weekly run (get_auth_user -> 404 'User not found'). The two statement-timeout regression rows (NEW-2026-08-03-002, NEW-2026-08-10-002) are now two weeks stale, not freshly measured.",
+    "The single biggest finding this run -- that the cinematic destination-page template is now universal (533/533), retiring the Leaflet destination-page template entirely -- was discovered via Section K's routine betla probe and confirmed by reading the application source directly (apps/web/src/lib/cinematic-destinations.ts and its git history), not by a planned, comprehensive re-audit of all 533 pages. Only 2 destinations (tawang, betla) plus 1 additional spot-check (arambol, content_tier='B', template-only) were directly verified live. The claim that the Hindi-H1 gap and decorative-coordinate bug are now universal is a strong inference from clear code-level evidence (empty LEGACY_DESTINATIONS set, exact 533/533 slug match), not an exhaustive live re-test of all 533 pages -- flagged honestly as inference-from-code rather than full re-verification, with a recommendation to broaden the live sample next run.",
+    "Today's random 10-destination sample for Sections B/C/D/E happened to include no destination from the state/UT-collision list and no previously-untested template edge case; standard random variance.",
+    "axe-core and Lighthouse were skipped per the SKILL.md cost-aware rule. Given the scale of the template change discovered this run, this is flagged as a real coverage gap rather than a routine skip -- recommend running axe next week even without other visible a11y-relevant changes, specifically to check whether the template-universal change introduced or fixed any accessibility issues at scale.",
+    "Welcome-tour-modal (E2E-2026-05-04-A1), refresh-stay-picks-agent's egress block (NEW-2026-08-19-001) and stuck-loop (NEW-2026-09-14-002), and the newsletter recipient-level gap (NEW-2026-09-07-001) were all time-boxed out of this run; their statuses are carried forward, not re-verified.",
+    "The month-sub-route URL scheme (numeric -> named months) and the destination-template-universal change were both pre-existing site states this run happened to discover, not new changes caused by this run. Both were live before this QA session started; this run is simply the first to notice and report them accurately rather than carrying forward a now-outdated understanding."
+  ],
+  "business_summary": {
+    "headline": "The site is healthy and fast this week, with no broken pages, no server errors, and every safety-critical emergency number still in place across all 533 destinations. The main story this week isn't something that broke -- it's something this check discovered mid-run: a feature rollout that finished site-wide on October 4th turned out to be bigger than last week's report understood. The newer, more polished destination-page design (the one most of the catalog had already switched to) is now actually used on every single destination page, not most of them. That's good news on its own -- a cleaner, more consistent experience everywhere -- but it also means a cosmetic issue we've been tracking for weeks (Hindi destination pages showing their main heading in English) likely now touches the whole catalog instead of about 70% of it, since the page design that carries that issue is no longer the exception, it's the rule. Nothing about this is a new problem introduced this week; it's an existing, known, cosmetic issue whose true size this check is only now correctly measuring. Two smaller, routine items also came up: a connection issue with one of our monitoring tools continued for a second week, and a small number of new backend access-control items appeared alongside a database update, all low-priority and expected as the product keeps evolving.",
+    "traffic_lights": [
+      ["Site availability", "green", "Every page we checked loaded correctly -- 10/10 sampled destinations, all core sections (trip planner, explore, emergency info, blog, treks, and more), both languages. Two pages loaded a bit slower than usual on their first (cold) load, which is expected and not a problem."],
+      ["Emergency contact info (SOS)", "green", "All 533 destinations in the catalog have verified emergency numbers on file. The 10 we sampled in detail averaged about 7.6 working phone numbers each, every one above our minimum safety threshold."],
+      ["Search visibility (SEO)", "green", "All 12 pages we checked have correct titles, correct canonical links, correct language-alternate links, and social-preview images. One of our own checks briefly used an outdated web-address format for a specific kind of page before we caught and corrected it -- the site itself was never at fault, see 'About this report'."],
+      ["Design consistency across the destination catalog", "green", "NEW THIS WEEK (confirmed, not newly shipped): the newer, more polished destination-page design -- which most of the site had already moved to -- is now confirmed live on literally every one of the 533 destination pages, not just the roughly 70% we understood it to cover as of last week. This is a positive consistency win: visitors now get the same modern page design wherever they go on the site."],
+      ["Hindi version of the site", "yellow", "Hindi pages load correctly with correct Hindi titles everywhere. On destination pages specifically, the big on-page headline still shows in English instead of Hindi, even though everything else on the page -- including the browser tab title -- is correctly in Hindi. This is the same known issue as last week, but this week's check revealed it almost certainly now affects every destination page rather than about 70% of them, because of the design-consistency item above. Nothing changed about the bug itself this week; we just now understand its true size."],
+      ["Behind-the-scenes automation", "yellow", "Two internal automations that run independently of the main website (a newsletter-delivery checker and the 'where to stay' recommendation refresher) each still have an open question from prior weeks that wasn't re-investigated this run, to keep this week's check efficient. Neither affects anything a visitor sees today."],
+      ["This automated check's own schedule", "yellow", "Still running weekly instead of the originally-intended daily cadence -- unchanged from last week, still a configuration decision for Ashish, not a website problem."],
+      ["Site traffic & errors (behind the scenes)", "gray", "Couldn't check this for the second week running -- the tool we use to look at server error logs still isn't connecting. Not an indication of a site problem, just a continuing gap in this week's check."],
+      ["Newsletter growth", "green", "Sends and engagement both grew again this week (sends up from 52 to 62, engagement events up from 155 to 190); subscriber count held steady."],
+      ["Backend access-control housekeeping", "green", "A small number of new low-priority backend items appeared this week -- two routine database backup snapshots and one new internal function that isn't yet locked down to only the people who should use it. None of this is visible to visitors or affects how the site behaves; it's the kind of routine hardening checklist item that accumulates naturally as the product keeps shipping new features."]
+    ],
+    "whats_changed": [
+      "DISCOVERED this week (not newly shipped this week -- it happened October 4th and this check is the first to accurately report its true scope): the newer destination-page design is now used on all 533 destinations, not about 70% as previously understood. This is a positive consistency change for visitors, but it also means the Hindi-headline cosmetic issue (see below) almost certainly now has a much wider reach than previously reported.",
+      "The Hindi-headline-shows-in-English issue is unchanged in nature but now understood to affect the whole catalog rather than most of it -- this is a correction to our understanding of an existing issue's size, not a new defect.",
+      "Newsletter sends and engagement both grew again this week, continuing steady organic growth.",
+      "A small website update went out with one new database change and a couple of routine backend housekeeping items -- nothing visitors would notice."
+    ],
+    "risks": [
+      "The Hindi-headline issue on destination pages is now understood to likely affect all 533 destinations rather than about 70% of them -- it remains cosmetic (the rest of each page, including the browser tab title, is correctly in Hindi), but this raises its visibility and makes it a stronger candidate for a near-term fix given how many more pages it now touches.",
+      "This week's discovery came from a routine spot-check noticing something unexpected, not from a planned full audit -- only 3 of 533 destination pages were directly re-checked live this week to confirm the new understanding. The next check should broaden that sample to build more confidence before treating the 100%-scope conclusion as fully settled.",
+      "This automated check is still running weekly instead of daily -- worth deciding whether that's intentional going forward.",
+      "The server-error-log monitoring tool has now failed to connect for two weeks running, which is itself worth a look even though it hasn't caused any visible site issue -- it just means two weeks with no visibility into that one category of behind-the-scenes errors."
+    ],
+    "bottom_line": [
+      "No urgent action needed -- the site is healthy, fast, and safety-critical information (emergency contacts) remains complete everywhere.",
+      "The most useful thing to come out of this week's check is a corrected understanding of how far the Hindi-headline issue reaches -- worth factoring into any decision about when to schedule a fix, since it likely now affects the entire destination catalog rather than most of it.",
+      "Worth a quick decision on the automated check's schedule (weekly vs. daily) when convenient -- this has been flagged for a few weeks now.",
+      "The error-log monitoring connection should get a look since it's now been down two weeks running, even though it hasn't hidden any visible problem so far.",
+      "No action needed on the small backend housekeeping items -- they're routine and expected."
+    ],
+    "coverage": [
+      "10 destinations sampled live (en + hi), plus 3 more specifically chosen to verify the destination-page-design discovery (2 previously different page designs, now confirmed to be the same one)",
+      "21 core site sections (routes) probed for correct loading and reasonable speed",
+      "9 separate API requests probed (trip-planner/itinerary, weather, and the newsletter webhook), including deliberately malformed ones to confirm they fail safely",
+      "533 destination URLs published in the sitemap, all cross-checked for a working cover photo",
+      "22 state/territory-name web addresses specifically re-tested to confirm last week's fix is holding",
+      "Database-level checks across destinations, emergency contacts, 'people who help' cards, newsletter subscribers, recent schema changes, and the page-design source code itself",
+      "A direct, hands-on check of both interactive map styles used on the site, including clicking the map toggle and confirming no error messages appear in the browser console"
+    ],
+    "context": [
+      "This is the weekly automated health check for nakshiq.com, comparing this week's results against last week's (2026-10-05) to catch anything that broke, anything that got fixed, and anything new.",
+      "The check covers the full visitor-facing site plus a look behind the scenes at the database, security settings, and newsletter system.",
+      "Each week's report builds on the last one: anything found broken, or anything found to be bigger or smaller than previously understood, stays on a tracked list until it's resolved, so nothing quietly falls through the cracks between checks."
+    ],
+    "tomorrow": [
+      "Next week's check (2026-10-19, per the current weekly schedule) should broaden the live sample of destination pages checked for the Hindi-headline issue, to build full confidence that it really does affect all 533 destinations now rather than just the 3 checked this week.",
+      "Will also re-attempt the server-error-log check for the third week running, and re-confirm the state/territory-name fix continues to hold.",
+      "If engineering decides to prioritize the Hindi-headline fix given its now-confirmed full-catalog reach, next week's check can help verify it lands cleanly, the same way it verified the state/territory-name fix two weeks ago."
+    ],
+    "checks_confirmed_healthy": [
+      "Soft-404 handling for made-up destination names and garbage web addresses (0 slip-throughs found)",
+      "All core navigation sections loading correctly, both languages",
+      "The app installs and works offline as a mobile app (PWA) with all expected icons and shortcuts",
+      "Both interactive maps on the site (the simplified illustrated map on destination pages, now used everywhere, and the detailed zoomable map on Explore) working correctly on the pages where each is supposed to appear",
+      "No visible error messages or broken behavior observed on any of the 6 pages checked for console errors this run",
+      "The trip-planning tool and the live weather lookup both returned correct, real results when given properly-formed requests, and correctly rejected malformed ones without crashing",
+      "Visiting the site without specifying English or Hindi correctly sends visitors to the English version every time",
+      "Search-engine-facing basics (page titles, canonical links, language-alternate links, social preview images) all correctly in place",
+      "The site's sitemap loaded correctly in all 5 of its pieces, with steady growth and no broken or missing sections",
+      "The state/territory-name web-address fix from last week continues to hold, all 22 re-tested"
+    ]
+  },
+  "business_fix_timeline": {
+    "note": "Nothing closed this week that was open last week; one existing item's true scope was re-measured upward.",
+    "items": [
+      "No regression-matrix items newly fixed this week (last week's one fix -- state/territory-name web addresses -- continues to hold, re-confirmed).",
+      "The Hindi-headline issue (open since early July) had its understood scope corrected this week from ~70% to effectively 100% of the catalog -- this is a re-measurement, not new breakage, but it does change the calculus on prioritizing a fix."
+    ]
+  },
+  "business_tracked_minor_items": {
+    "note": "Smaller items being watched, none urgent, listed here only for continuity with prior weekly reports.",
+    "items": [
+      "A small, informal 'local helpers' contact list is present for 178 of 533 destinations; official emergency numbers are complete for all 533 regardless, so this remains a nice-to-have enrichment opportunity, not a safety gap.",
+      "A handful of internal database tables and functions (mostly admin-facing) don't yet have fine-grained access rules defined; a few more appeared this week alongside routine feature development, the expected pattern when new database objects are created before their access rules are fully written.",
+      "Two internal, non-visitor-facing automations -- a newsletter-delivery checker and the nightly 'where to stay' refresher -- each have an open question from a prior week not re-investigated this run, to keep this week's check efficient.",
+      "The underlying statement-timeout pattern on one database query continues to be watched; it has been rare and self-recovering, with the site falling back gracefully.",
+      "A new internal database table that supports an upcoming destination-data-correction feature (not yet public) continues to be built out in the background, alongside the routine access-control housekeeping noted above -- nothing for visitors to see or do yet."
+    ]
+  },
+  "business_detailed_measurements": {
+    "note": "A few of the actual numbers behind this week's green lights, for anyone who wants specifics.",
+    "items": [
+      "10/10 sampled destinations loaded correctly in both English and Hindi, with page-load times ranging from a quarter-second to about 2.3 seconds on two cold-cache pages.",
+      "76 working emergency phone numbers counted across the 10 sampled destinations (average about 7.6 per destination, every one above the 3-number safety minimum).",
+      "533 of 533 destination pages have a working cover photo -- zero missing.",
+      "25,057 total web pages currently published in the site's search-engine sitemap, up slightly from 25,032 last week.",
+      "21 core site sections checked; 19 loaded normally and the other 2 are intentionally-retired or placeholder web addresses, same as every prior week.",
+      "20 total newsletter subscribers (18 active), 62 total sends and 190 open/click events recorded to date -- engagement numbers both higher than a week ago.",
+      "All 533 destination pages confirmed (via the underlying site code, plus live spot-checks on 3 of them) to now use the same, newer page design -- up from the roughly 377 (about 70%) understood as of last week."
+    ]
+  },
+  "business_about_this_report": {
+    "note": "Housekeeping about how this report is produced.",
+    "items": [
+      "This report is generated automatically from the same underlying technical check that produces the Developer and QA reports -- it summarizes the same facts in plain language, it doesn't re-run or re-interpret anything.",
+      "A technical issue connecting to one of our monitoring tools (Vercel) meant the server error-log section of the usual weekly check couldn't run this week, for the second week running; everything else ran as normal.",
+      "This week's biggest finding (the destination-page design now covering 100% of the catalog) was discovered through this check's normal weekly process, not through a special investigation -- it's a good example of why a recurring check like this is valuable even when nothing appears to be 'broken'.",
+      "This check currently runs weekly, every Monday.",
+      "If something here looks off or you want more detail on any line, the Developer and QA versions of this same report carry the full technical detail behind each plain-language statement above."
+    ]
+  }
+}

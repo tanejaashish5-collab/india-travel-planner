@@ -193,7 +193,7 @@ function buildBusiness(b, f) {
 
   b.h2('Traffic-light snapshot');
   const tl = bs.traffic_lights && bs.traffic_lights.length
-    ? bs.traffic_lights.map(t => [t.area, t.status, t.why])
+    ? bs.traffic_lights.map(t => Array.isArray(t) ? [t[0], t[1], t[2]] : [t.area, t.status, t.why])
     : defaultTrafficLights(m);
   b.table(['Area', 'Status', 'Why'], tl);
 

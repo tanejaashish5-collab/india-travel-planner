@@ -1,4 +1,4 @@
-# Hero image audit — 2026-09-21
+# Hero image audit — 2026-10-12
 
 Base: `https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev`
 

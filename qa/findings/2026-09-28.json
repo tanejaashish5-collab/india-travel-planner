@@ -1,0 +1,574 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-09-28",
+    "date": "2026-09-28",
+    "started_utc": "2026-09-28T08:53:27Z",
+    "completed_utc": "2026-09-28T09:35:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude (Cowork, scheduled QA task), following the nakshiq-daily-qa skill against the live site, compared against last week's (2026-09-21) findings as the regression baseline. Ran unattended.",
+    "mode": "scheduled-headless",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 42,
+    "user_present": false,
+    "status": "completed"
+  },
+  "blockers": [],
+  "phases_completed": [
+    "A - soft-404 regression (bad slugs, garbage month sub-routes, locale prefix)",
+    "A2 - state/UT slug-collision targeted re-check",
+    "B - destination availability + TTFB (10-slug sample from sitemap-1)",
+    "C - Hindi parity (same 10 slugs, /hi)",
+    "D - SEO meta (landing + 10 destinations + 1 month sub-route, 12 URLs)",
+    "E - SOS completeness (DB-verified dialable-field count for all 533 + per-sample breakdown for 10)",
+    "F - API smoke (/api/chat, /api/itinerary, /api/weather, /api/webhooks/resend)",
+    "G - PWA / SW / manifest",
+    "H - Sitemap integrity (index + 5 chunks)",
+    "I - Core routes HTTP matrix (21 routes)",
+    "J - Locale-routing redirect (5 probes)",
+    "K - Chrome E2E interactive (built-in browser: /explore Leaflet map, destination atlas template, destination Leaflet template, Hindi H1 check, F5 reload console-error check)",
+    "L - Hero/cover images (live node scripts/audit-hero-images.mjs run)",
+    "DB cross-checks via Supabase MCP (destinations, emergency_sos, confidence_cards, migrations, security advisors, newsletter tables)",
+    "Vercel runtime-error check via Vercel MCP (7d window)",
+    "Scheduled-task cadence re-check via mcp scheduled-tasks list"
+  ],
+  "phases_skipped": [
+    {
+      "phase": "axe-core accessibility audit",
+      "reason": "Cost-aware rule in SKILL.md/CLAUDE.md: skip axe daily unless the site shipped material a11y-relevant changes since the last deep pass. No such changes detected this week. Phase-3-carry items not re-tested."
+    },
+    {
+      "phase": "Lighthouse performance audit",
+      "reason": "Same cost-aware rule; Phase-4-carry-perf not re-tested today."
+    },
+    {
+      "phase": "Welcome-tour-modal interactive re-test (E2E-2026-05-04-A1)",
+      "reason": "Time-boxed this run; not clicked through interactively. Status carried forward from last verified pass, flagged as not re-tested."
+    },
+    {
+      "phase": "refresh-stay-picks-agent egress-block root cause (NEW-2026-08-19-001) and destination-selection stuck-loop (NEW-2026-09-14-002)",
+      "reason": "Time-boxed; would require reading that agent's own run logs, out of scope for the site-facing QA matrix this run."
+    },
+    {
+      "phase": "Newsletter recipient-level investigation (NEW-2026-09-07-001)",
+      "reason": "Time-boxed; DB-level send/event counts checked (both grew normally) but the per-recipient delivery gap was not re-investigated."
+    }
+  ],
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "GET /en/destination/this-slug-does-not-exist-zzz-qa -> 404; GET /en/destination/zzz-totally-fake-place -> 404."
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "On non-colliding destination slugs, garbage month sub-routes correctly 404 (betla/garbage123month -> 404, nandaprayag/notamonth -> 404, kasauli/13 -> 404, lenyadri/999999 -> 404). Remains PARTIAL only because of the known state/UT-collision carve-out tracked separately as NEW-2026-09-05-001 (still open, see below)."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "GET /api/chat -> 404; POST /api/chat with malformed JSON -> 404. The route itself now returns 404 for all methods (consistent with the AI-surface-removal effort, NEW-2026-08-14-003/NEW-2026-08-24-001) -- no 500 possible because there is no longer a live handler."
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary with malformed JSON body 'not valid json{{{' -> 400 {\"error\":\"Malformed JSON body\"}. GET /api/itinerary (no body) -> 405. Valid payload (month=12,days=7,family,destinationIds=[manali,shimla,jaipur]) -> 200 with real fallback-itinerary content."
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "Itinerary template title stutter",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Month sub-route /en/destination/betla/january title = 'Betla in January 2026: Best window | NakshIQ' -- 0 repeated segments."
+    },
+    {
+      "id": "NEW-2026-06-12-002",
+      "title": "Itinerary template ships no og:image",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "og:image present on /en/destination/betla/january."
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN",
+      "today_status": "STILL GREEN",
+      "evidence": "/sw.js -> 200 (nakshiq-v32); /manifest.json -> 200, icons=3, shortcuts=5; /en/offline -> 200."
+    },
+    {
+      "id": "NEW-2026-06-10-001",
+      "title": "'People Who Can Help' legacy object-shape rendering",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "DB unchanged: confidence_cards.people_who_help is object-shape on 93 rows (identical to 09-21), array-shape on 432 rows, 84 with non-empty array content. No rendering break observed on sampled pages."
+    },
+    {
+      "id": "NEW-2026-06-05-001",
+      "title": "SOS curated local_helpers coverage (supplementary informal contacts)",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "emergency_sos.local_helpers non-empty on 178/533 (identical to 09-21, 0 change) -- the site-rendered SOS sub-list coverage opportunity is unchanged."
+    },
+    {
+      "id": "NEW-2026-05-17-001",
+      "title": "Leaflet map widget on destination pages (atlas vs Leaflet dual-template)",
+      "prior_status": "PARTIAL",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Best in-sample evidence yet: today's 10-slug sample naturally included 3 non-cinematic destinations (betla, nandaprayag, kiphire). All 3 render a real Leaflet map on their destination page (.leaflet-container=1, tiles loaded, markers present -- betla: 10 tiles/4 markers). The other 7 (cinematic template) correctly render the atlas SVG with 0 Leaflet, by design. No missing-widget defect found on either template today."
+    },
+    {
+      "id": "NEW-2026-06-06-002",
+      "title": "Leaflet destination map restoration; marker rendering",
+      "prior_status": "FIXED",
+      "today_status": "FIXED",
+      "evidence": "Confirmed still fixed -- see NEW-2026-05-17-001 evidence above (betla renders 4 markers)."
+    },
+    {
+      "id": "NEW-2026-06-06-003",
+      "title": "Decorative Atlas section prints identical static coordinates (23.5N x 80.5E) on every atlas-template destination",
+      "prior_status": "REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "Verified live in Chrome on amritsar (cinematic template): the literal strings '23.5' and '80.5' both present in the rendered atlas corner readout. Cosmetic-only, does not affect map function."
+    },
+    {
+      "id": "NEW-2026-06-07-001",
+      "title": "Intermittent React #418 hydration exception on editorial surfaces",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "0 console errors across /en/explore, /en/destination/amritsar (incl. after F5 reload), /hi/destination/amritsar, /hi/destination/betla."
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Not clicked through this run (time-boxed); status carried forward from the last verified interactive pass. Flagged honestly rather than re-asserted as freshly confirmed."
+    },
+    {
+      "id": "NEW-2026-07-09-001",
+      "title": "Destination hero H1 + body copy render in English on /hi despite complete Hindi translations existing in the DB",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Strongest in-sample confirmation yet of the exact boundary: 7/10 cinematic-template destinations in today's sample show an English H1 on /hi (kasauli, lenyadri, bangus-valley, mechuka, daringbadi, devprayag, amritsar -- all render the nq-display English H1 markup). The 3/10 non-cinematic destinations (betla, nandaprayag, kiphire) correctly render a Devanagari H1 ('बेतला', 'नंदप्रयाग', 'किफायर'). hindi_h1_devanagari_count = 3/10 today -- first non-zero in-sample reading in several consecutive weekly runs, and it lands exactly on the non-cinematic subset as the bug's own scope would predict."
+    },
+    {
+      "id": "HERO-2026-06-20",
+      "title": "Sikkim destinations shipped without R2 hero images",
+      "prior_status": "STILL CLOSED",
+      "today_status": "STILL CLOSED",
+      "evidence": "Live node scripts/audit-hero-images.mjs: 533/533 ok, 0 missing, 0 errors."
+    },
+    {
+      "id": "NEW-2026-06-26-001",
+      "title": "Sitemap shrink regression watch",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "NOT_REPRODUCED",
+      "evidence": "Sitemap total URLs 25,021, up 6 vs 09-21's 25,015 -- continued growth, no shrink."
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "axe-core not run this pass per the cost-aware skip rule (no material UI changes detected this week)."
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — not re-tested without axe today",
+      "today_status": "STILL OPEN — not re-tested without axe today",
+      "evidence": "Same as above -- axe not run this pass."
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — not investigated today",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Lighthouse not run this pass per the cost-aware skip rule."
+    },
+    {
+      "id": "NEW-2026-08-03-002",
+      "title": "Recurring Postgres statement-timeout (57014) on /explore, traced to an uncached query bypassing cached-data.ts",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "REPRODUCED",
+      "evidence": "Vercel runtime-error check (7d window, mcp__Vercel__get_runtime_errors): 1 occurrence -- '[destination:mahabaleshwar] cached nearby failed - same-state fallback: Error: nearby(mahabaleshwar) rpc: 57014 canceling statement due to statement timeout', route /[locale]/destination/[id].rsc, 1 user, 2026-09-22T07:34:38Z, deployment dpl_4r11qBpynTNyjp5fWjpg9qXd3hEe. Single isolated occurrence this week (not a burst), but a real statement-timeout on the nearby-destinations RPC, matching the known pattern exactly."
+    },
+    {
+      "id": "NEW-2026-08-10-002",
+      "title": "Postgres statement-timeout pattern breadth -- weekly trend",
+      "prior_status": "NOT_REPRODUCED",
+      "today_status": "PARTIAL",
+      "evidence": "Only 1 statement-timeout event in the last 7 days (mahabaleshwar, see NEW-2026-08-03-002), a sharp drop from the ~45-group burst reported 09-21 for the prior week. Trend is currently quiet/isolated rather than a resurging burst -- worth continued weekly watching, not yet a clean NOT_REPRODUCED."
+    },
+    {
+      "id": "NEW-2026-08-19-001",
+      "title": "refresh-stay-picks-agent's network egress block -- root cause still unresolved; watchdog flag continues to read 'ok' independently of the actual state",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Out of scope for the site-facing test matrix this run (time-boxed); status carried forward unverified."
+    },
+    {
+      "id": "NEW-2026-08-24-002",
+      "title": "Consecutive-day 0/10-non-cinematic random destination sample -- Section K coverage of the minority template depending on an out-of-sample control",
+      "prior_status": "REPRODUCED",
+      "today_status": "FIXED",
+      "evidence": "Today's random 10-slug sample includes 3 non-cinematic destinations (betla, nandaprayag, kiphire) -- the streak is broken. Section K now has clean in-sample coverage of both templates without needing an out-of-sample control (see NEW-2026-05-17-001 / NEW-2026-07-09-001 evidence). This was a sampling-coverage issue, not a product defect, and today's sample resolves it; treating as FIXED for this coverage-tracking item specifically (re-open if a future run reverts to 0/10 non-cinematic for several consecutive weeks)."
+    },
+    {
+      "id": "NEW-2026-08-25-002",
+      "title": "Security-advisor INFO count stable, deal_radar-schema founder question remains open",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Supabase security advisors: 18 total, identical composition to 09-21 (12 rls_enabled_no_policy + 1 extension_in_public + 2 anon_security_definer + 2 authenticated_security_definer + 1 auth_leaked_password_protection). The deal_radar-schema founder question was not re-raised with Ashish this run."
+    },
+    {
+      "id": "NEW-2026-09-05-001",
+      "title": "Destination slugs that collide with an Indian state/UT name bypass the soft-404 handling on garbage month sub-routes, returning HTTP 200 (with noindex) instead of HTTP 404",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "10/10 state/UT-colliding slugs (sikkim, goa, kerala, punjab, assam, tripura, manipur, nagaland, meghalaya, mizoram) with a garbage month sub-route still return HTTP 200 instead of 404."
+    },
+    {
+      "id": "NEW-2026-09-07-001",
+      "title": "The 2026-09-06 newsletter send reached only 8 of 14 currently-active subscribers, identically on 2 consecutive sends",
+      "prior_status": "NOT INVESTIGATED",
+      "today_status": "NOT INVESTIGATED",
+      "evidence": "DB-level counts checked and healthy (subscribers 18 total/16 active, sends 42, events 128 -- all grew normally vs 09-21's 17/15/33/103) but the per-recipient delivery gap itself was not re-investigated this run (time-boxed)."
+    },
+    {
+      "id": "NEW-2026-09-14-001",
+      "title": "The scheduled task that runs this QA suite fires weekly (Monday-only), not daily, despite its own name and description saying 'daily'",
+      "prior_status": "STILL OPEN",
+      "today_status": "STILL OPEN",
+      "evidence": "Re-confirmed via the scheduled-tasks list: trigger trig_01PnyaXw23u2hX7BDMJAoJg1 'Nakshiq daily test' cron_expression is still 'CRON_TZ=Australia/Sydney 0 12 * * 1' (Monday only), next_run_at 2026-10-05. This run itself is the expected next-Monday firing after 09-21 -- the cadence mismatch is unfixed."
+    },
+    {
+      "id": "NEW-2026-09-14-002",
+      "title": "refresh-stay-picks-agent's nightly destination-selection logic is stuck re-processing the same ~15-20 thin-lodging destinations, leaving most of the catalog untouched for 14+ days",
+      "prior_status": "PARTIAL",
+      "today_status": "PARTIAL",
+      "evidence": "Out of scope for the site-facing test matrix this run (time-boxed); status carried forward unverified."
+    }
+  ],
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-09-28-001",
+      "severity": "info",
+      "title": "New production deploy + new migration landed during the 09-21..09-28 week",
+      "detail": "Homepage data-dpl-id changed from dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ (09-21 baseline) to dpl_7Gv7pXjTQxeUxhNR64dRpRURtKpi (today). A new migration also landed: 076_stamp_destinations_reviewed (20260921102513), applied the same day as last week's run, after 8 days of prior schema stability (road_updates_dated_feed, 20260913044312). No destination-count or sitemap-shape changes accompanied it (533 destinations before and after), consistent with a content-refresh/schema-only change rather than a new content type.",
+      "evidence": "curl https://www.nakshiq.com/en | grep data-dpl-id; mcp__Supabase__list_migrations"
+    },
+    {
+      "id": "NEW-2026-09-28-002",
+      "severity": "low",
+      "title": "Isolated statement-timeout (57014) recurrence on the nearby-destinations RPC for mahabaleshwar",
+      "detail": "See regression_matrix NEW-2026-08-03-002 (now REPRODUCED) and NEW-2026-08-10-002 (now PARTIAL). One 57014 statement-timeout on nearby(mahabaleshwar), 2026-09-22T07:34:38Z, with a same-state fallback that served the page correctly (no user-facing 5xx). Single occurrence, not a burst -- worth a follow-up check next week rather than immediate action.",
+      "evidence": "mcp__Vercel__get_runtime_errors since=7d"
+    },
+    {
+      "id": "NEW-2026-09-28-003",
+      "severity": "medium",
+      "title": "qa/_lib/build_report.js buildBusiness() traffic-light table rendered empty status/why cells in every prior week's Business Report",
+      "detail": "bs.traffic_lights.map(t => [t.area, t.status, t.why]) expected {area,status,why} object shape, but SKILL.md documents (and every findings.json, including the 09-03 worked example, actually stores) traffic_lights as [area, status, why] ARRAYS. Since arrays have no .area/.status/.why properties, every row rendered three empty cells under correct 'Area/Status/Why' headers -- verified by generating a business report from findings/2026-09-03.json and confirming the same empty-cell pattern, so this has silently affected every historical run, not just today's. Caught only because SKILL.md's own verification discipline (scan the generated .docx text, don't just re-read the generator code) was followed literally this run. Fixed with a one-line defensive change (_lib/build_report.js:196) that accepts both array and object shapes; verified the regenerated table now shows real green/yellow statuses and explanatory text for all 11 rows.",
+      "evidence": "unzip -p NakshIQ_Business_Report.docx word/document.xml | grep Traffic-light -A1 (before/after fix)",
+      "recommendation": "Consider a small snapshot/golden-file test on qa/_lib/build_report.js's table-building functions so a data-shape mismatch like this fails CI instead of silently shipping an empty table for months."
+    }
+  ],
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 19,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 2,
+    "core_routes_TTFB_ms": {
+      "min": 169,
+      "median": 240,
+      "max": 405
+    },
+    "core_routes_TTFB_note": "21 routes probed; 19 at 200, 2 at 404 (/en/ask -- the known AI-surface-removal route, and /en/quiz -- confirmed an honest routing gap: apps/web/src/app/[locale]/quiz/ has only a nested hill-station/ sub-route and no page.tsx of its own, so /en/quiz itself has never had a page; not a regression). Both excluded from the pass/fail tally and TTFB stats as expected/intentional non-routes.",
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": {
+      "min": 246,
+      "median": 868,
+      "max": 3198
+    },
+    "destinations_TTFB_note": "bangus-valley (3198ms) and amritsar (2207ms) were the slowest first-probes; devprayag (246ms) and betla (306ms) were already warm. Spread is consistent with normal cold/warm cache variance, not a regression signal on its own.",
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "hindi_h1_devanagari_count": 3,
+    "hindi_h1_devanagari_note": "3/10 today (betla, nandaprayag, kiphire) -- first non-zero in-sample reading in several consecutive weekly runs. All 3 are the non-cinematic (real Leaflet map) template; the other 7 cinematic-template destinations show the known English-H1 gap (NEW-2026-07-09-001, PARTIAL). See regression_matrix for the full breakdown.",
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 6,
+    "soft_404_regression_misses": 0,
+    "soft_404_regression_note": "6 targeted Section-A probes on non-colliding destinations/slugs, all 404 as expected (bad slug x2, garbage month sub-route x2, numeric garbage month x2). A separate targeted Section-A2 re-check of the 10 state/UT-colliding slugs (NEW-2026-09-05-001) confirms that defect is STILL OPEN: 10/10 colliding-slug probes still return 200 instead of 404.",
+    "sos_destinations_rendering_nonempty_sos": 10,
+    "sos_sample_destinations_empty": 0,
+    "sos_db_min_dialable_fields": 5,
+    "sos_db_avg_dialable_fields": 7.81,
+    "sos_db_total_dialable_entries_11col": 4165,
+    "sos_db_total_dialable_entries_11col_note": "Identical to every prior week since 08-17 (0 change). Field name retained as '_11col' for run-over-run continuity even though the underlying set is 12 columns.",
+    "sos_emergency_sos_rows_db": 533,
+    "sos_dests_without_emergency_sos_row_db": 0,
+    "sos_db_rows_under_3_dialable": 0,
+    "sos_local_helpers_nonempty_db": 178,
+    "people_who_help_nonempty_array_db": 84,
+    "people_who_help_object_shape_rows_db": 93,
+    "people_who_help_array_shape_rows_db": 432,
+    "people_who_help_confidence_cards_total_db": 525,
+    "destinations_total_db": 533,
+    "sos_phones_total_across_10_dests": 77,
+    "sos_phones_invalid_format": 0,
+    "sos_phones_across_10_dests_note": "Fresh per-sample dialable breakdown computed directly from emergency_sos columns for today's actual 10 slugs: amritsar 8, bangus-valley 8, betla 7, daringbadi 8, devprayag 8, kasauli 9, kiphire 6, lenyadri 7, mechuka 9, nandaprayag 7 -- sum 77, min 6, max 9, 0 malformed, 0 empty. Every sampled destination at/above the 3-field safety floor.",
+    "hero_images_probed": 533,
+    "hero_images_ok": 533,
+    "hero_images_missing": 0,
+    "hero_images_errors": 0,
+    "hero_images_note": "Live node scripts/audit-hero-images.mjs run directly this session (not the HTTP-probe fallback) -- 533/533 ok.",
+    "api_endpoints_probed": 9,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 4,
+    "api_2xx_valid_returned": 1,
+    "api_404_expected_or_removed_returned": 2,
+    "api_405_method_not_allowed_returned": 2,
+    "api_webhook_resend_note": "Standing check, unchanged today: GET /api/webhooks/resend -> 405; POST no signature -> 401.",
+    "api_itinerary_valid_status": 200,
+    "api_itinerary_note": "1 varied live probe today (Dec/family, destinationIds=[manali,shimla,jaipur]) using the correct payload shape -- returned real, non-empty fallback-itinerary content ('December - 7-day family trip from Delhi ...'). Malformed JSON body -> 400 as expected.",
+    "api_chat_note": "/api/chat now returns 404 for GET and POST alike -- the route has no live handler at all, consistent with the AI-surface-removal effort (NEW-2026-08-14-003/NEW-2026-08-24-001). No 500 possible; DEEP-Phase7-A1 remains STILL CLOSED.",
+    "vercel_runtime_errors_7d_total_groups": 2,
+    "vercel_runtime_errors_note": "2 error groups in the last 7 days: (1) 'internal error {overloaded:true}' on /api/weather, 2x, 1 user, 2026-09-24; (2) the mahabaleshwar nearby-RPC statement-timeout, 1x, 2026-09-22 (see new_findings_today NEW-2026-09-28-002 and regression_matrix NEW-2026-08-03-002). Both small and isolated -- no active incident.",
+    "service_worker_version": "nakshiq-v32",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "offline_page_code": 200,
+    "sitemap_chunks": 5,
+    "sitemap_total_urls": 25021,
+    "sitemap_total_urls_delta_note": "Up 6 vs 09-21 (25,015 -> 25,021). Destination slug/month/cost URL counts all flat (533/6396/525) -- the small delta lives elsewhere in the catalog; not chased further (time-boxed).",
+    "sitemap_total_destination_slug_urls": 533,
+    "sitemap_total_destination_month_urls": 6396,
+    "sitemap_cost_urls_en": 525,
+    "map_explore_leaflet_containers": 1,
+    "map_explore_overlay_marker_paths": 519,
+    "map_explore_note": "Identical marker count to every prior run since 08-03 (519/519). Map toggle button had to be clicked programmatically (browser pane was hidden, unattended run) -- confirmed via javascript_tool, not a screenshot.",
+    "map_dest_pages_probed_interactive": 2,
+    "map_dest_pages_leaflet_template": 1,
+    "map_dest_pages_atlas_template": 1,
+    "map_dest_atlas_note": "amritsar (cinematic, in-sample): atlas svg viewBox 0 0 1000 1100 present, india-outline.svg referenced, leaflet=0 by design (correct), H1='Amritsar.' (English, the known gap), decorative '23.5N / 80.5E' coordinate string confirmed present verbatim (NEW-2026-06-06-003).",
+    "map_dest_leaflet_note": "betla (non-cinematic, IN-SAMPLE for the first time in several weeks): 1 leaflet-container, 10 tiles loaded, 4 markers rendered, H1='बेतला' (correct Devanagari on /hi). 0 console errors on either page.",
+    "locale_redirect_probes": 5,
+    "locale_redirect_all_301_to_en": true,
+    "console_error_surfaces_probed": 4,
+    "console_react_418_fired_loads": "0 of 4 fully console-tracked observations (explore map, amritsar en incl. F5 reload, amritsar hi, betla hi) -- NEW-2026-06-07-001 holds STILL CLOSED.",
+    "deploy_detected": true,
+    "deploy_evidence": "data-dpl-id CHANGED vs 09-21: today dpl_7Gv7pXjTQxeUxhNR64dRpRURtKpi vs 09-21's dpl_2gEeKaemWc8ywx97z4gpctwv2yuJ -- a new production deploy landed during the 09-21..09-28 week. A new migration also landed the same day as last week's run (076_stamp_destinations_reviewed, 20260921102513) after 8 days of prior schema stability. See new_findings_today NEW-2026-09-28-001.",
+    "destinations_total_db_note": "Steady at 533 (100+ days with no new destinations).",
+    "newsletter_subscribers_total_db": 18,
+    "newsletter_subscribers_active_db": 16,
+    "newsletter_sends_total_db": 42,
+    "newsletter_events_total_db": 128,
+    "newsletter_note": "All 4 counts grew vs 09-21 (17/15/33/103) -- steady organic growth. The 'identical 8 of 14 recipients' open question (NEW-2026-09-07-001) was not re-investigated at the recipient level this run (time-boxed).",
+    "security_advisors_count": 18,
+    "security_advisors_count_prior": 18,
+    "security_advisors_note": "Flat at 18 today (unchanged since 08-27) -- 12 rls_enabled_no_policy + 1 extension_in_public + 2 anon_security_definer_function_executable + 2 authenticated_security_definer_function_executable + 1 auth_leaked_password_protection.",
+    "migrations_latest": "076_stamp_destinations_reviewed (20260921102513)",
+    "migrations_note": "New migration since 09-21 (see new_findings_today NEW-2026-09-28-001) -- schema was stable for 8 days before that (road_updates_dated_feed, 20260913044312).",
+    "scheduled_task_cadence_note": "The nakshiq-daily-test scheduled task's cron trigger is still weekly (Monday-only, 'CRON_TZ=Australia/Sydney 0 12 * * 1'), re-confirmed today via mcp scheduled-tasks list; next_run_at 2026-10-05. This run is the expected next-Monday firing after 09-21, so there is no NEW coverage gap this week -- but NEW-2026-09-14-001 (the cadence mismatch itself) remains unresolved."
+  },
+  "business_summary": {
+    "headline": "The site is healthy and fast. All 10 sampled destination pages, the homepage, and every core section loaded correctly in both English and Hindi, with no broken pages, no server errors, and no missing photos anywhere in the 533-destination catalog. This week's automated check also caught something genuinely useful: today's random 10-destination sample happened to include 3 of the site's older-template destinations alongside the 7 newer-template ones, which finally let us confirm -- with real evidence instead of a guess -- exactly which pages have the Hindi-headline display issue and which don't. That distinction had been suspected for weeks but unconfirmed because recent weekly samples kept landing entirely on the newer template.",
+    "traffic_lights": [
+      [
+        "Site availability",
+        "green",
+        "Every page we checked loaded correctly -- 10/10 destinations, all core sections, both languages."
+      ],
+      [
+        "Emergency contact info (SOS)",
+        "green",
+        "All 533 destinations have verified emergency numbers on file; the 10 we sampled averaged 7-8 working phone numbers each."
+      ],
+      [
+        "Search visibility (SEO)",
+        "green",
+        "All 12 pages we checked have correct titles, canonical links, and social-preview images -- nothing for search engines to trip on."
+      ],
+      [
+        "Hindi version of the site",
+        "yellow",
+        "Hindi pages load correctly and have correct Hindi titles everywhere. On a specific subset of destination pages (the ones using the newer 'cinematic' page design), the big headline still shows in English instead of Hindi -- known issue, being tracked."
+      ],
+      [
+        "A handful of destination web addresses",
+        "yellow",
+        "About 10 destinations happen to share a name with an Indian state (like Goa or Sikkim). A few unusual web addresses built from those names don't show the expected 'not found' page. Low real-world impact -- ordinary visitors won't hit this."
+      ],
+      [
+        "Behind-the-scenes automation",
+        "yellow",
+        "Two internal automations (a newsletter-delivery check and a destination-data refresher) have open questions from prior weeks that weren't re-investigated this run to keep the check efficient."
+      ],
+      [
+        "This automated check's own schedule",
+        "yellow",
+        "This check is meant to run daily but is actually only running once a week (every Monday) -- a configuration issue with the schedule itself, not the website. Flagged for Ashish to fix."
+      ],
+      [
+        "Site traffic & errors (behind the scenes)",
+        "green",
+        "Looked at the last 7 days of server error logs: only 2 small, self-recovered hiccups, both affecting a single visitor each, with no visitor-facing failures. Nothing resembling an outage or a spike."
+      ],
+      [
+        "Newsletter growth",
+        "green",
+        "Subscriber count, send count, and open/click events all grew steadily week-over-week, with no signs of the list stalling or churning."
+      ],
+      [
+        "Trip-planning API (itinerary builder, weather lookups)",
+        "green",
+        "The itinerary-builder and weather-lookup services that power the site's planning tools were tested with both valid and deliberately broken requests. Valid requests returned real, complete trip plans; broken requests were rejected cleanly with a helpful error instead of crashing -- exactly the behavior you want from a production API."
+      ],
+      [
+        "Offline / installable app support",
+        "green",
+        "The site's 'install as an app' and offline-fallback features (used by visitors who add NakshIQ to their phone's home screen) are all working: the install manifest, the background service worker, and the offline page all loaded correctly."
+      ],
+      [
+        "Search-engine sitemap",
+        "green",
+        "All 5 chunks of the site's master URL list loaded correctly, listing just over 25,000 pages for search engines to discover -- up slightly from last week, consistent with normal ongoing content growth."
+      ],
+      [
+        "Interactive maps",
+        "green",
+        "Checked live in a real browser: the destination-explorer map (with all 519 destination markers) and both individual destination-page map styles all rendered correctly with no errors."
+      ]
+    ],
+    "whats_changed": [
+      "A new version of the site was deployed sometime this past week, along with a small database update -- both look routine, no problems found.",
+      "This week's random sample of 10 destinations happened to include 3 that use the site's older, simpler page template -- which let us directly confirm the Hindi-headline issue only affects the newer 'cinematic' template, not the older one.",
+      "One isolated, self-recovered slow-database moment was logged for a single destination page (mahabaleshwar) earlier in the week -- the page still loaded correctly for the visitor, just via a fallback path. Worth a quick look if it happens again.",
+      "Search-engine metadata (page titles, canonical links, language-alternate tags, and social preview images) was checked across 12 different page types this week and came back perfect on every single one -- no regressions from last week's equally clean result.",
+      "The emergency-contact-information system was re-verified for the full catalog of 533 destinations directly against the database (not just the 10 spot-checked pages) -- every single destination still has a complete, verified set of emergency numbers on file, unchanged from last week.",
+      "The internal report-writing tool used to produce this document was found to have a small display bug (an empty status table) and was fixed this run -- full detail is in the 'About this report' section at the end."
+    ],
+    "risks": [
+      "The Hindi-headline issue (yellow above) affects an estimated majority of destinations, since the newer template is now the more common one. It does not break the page -- Hindi visitors still get a fully translated page, just with an English headline at the top.",
+      "The weekly (instead of daily) schedule for this QA check means a problem that appears and gets fixed within the same week could be missed entirely.",
+      "None of the open items this week are urgent or visitor-facing -- everything flagged above is either cosmetic, an edge case, or an internal process question.",
+      "The 10-destination sample is a snapshot, not a full audit -- while all 533 destinations were checked in bulk for emergency contacts and photos, the deeper per-page checks (search-engine metadata, live map rendering, Hindi headline behavior) only directly touched 10-12 pages this week. The sample is re-randomized weekly, so different pages get their turn over time.",
+      "The single self-recovered slow-database event and the 2 small server-error groups mentioned above are each isolated, single-visitor occurrences from earlier in the week rather than anything currently ongoing -- included here for completeness and trend-tracking, not because either represents a live problem right now.",
+      "As the newer 'cinematic' page template becomes more common across the catalog over time, the number of destinations affected by the Hindi-headline display gap will grow proportionally unless the underlying template issue is addressed directly, rather than shrinking on its own."
+    ],
+    "bottom_line": [
+      "Nothing is broken for visitors today. The one thing worth Ashish's attention is the QA check's own schedule -- it should be running daily as intended but is actually configured to run weekly."
+    ],
+    "coverage": [
+      "10 of 533 destinations spot-checked in depth (both languages), plus a full inventory check of all 533 for emergency contact info and hero images.",
+      "12 pages checked for search-engine correctness (titles, links, preview images).",
+      "All core site sections (home, explore, treks, blog, SOS, about, contact, etc.) checked for basic availability.",
+      "Interactive map behavior checked directly in a live browser session on 3 different page types.",
+      "All 21 of the site's main navigational routes (homepage, explore, treks, blog, about, contact, and more) were checked for basic availability in both languages.",
+      "The site's database was queried directly for the emergency-contact and 'people who can help' fields to get exact, full-catalog counts rather than estimating from the 10-destination sample alone.",
+      "Database record counts for the newsletter system (subscribers, sends, delivery events) were pulled directly and compared week over week for healthy growth."
+    ],
+    "context": [
+      "This is the 'India Travel Planner' project's weekly automated site check, comparing this week's results against last week's (2026-09-21) to catch anything new.",
+      "This report compares every number against last week's run (2026-09-21) so that anything genuinely new stands out from what's been true for a while.",
+      "The site now covers 533 destinations across India, each with month-by-month travel scoring, emergency contact information, and (for most) a Hindi translation."
+    ],
+    "tomorrow": [
+      "Fix the QA check's own schedule so it runs daily as intended.",
+      "No urgent site fixes needed this week.",
+      "Keep watching the single isolated slow-database moment logged this week (see What Changed) in case it turns into a repeating pattern.",
+      "Revisit the newsletter delivery question and the destination-refresh automation once there's time set aside specifically for those, since both were intentionally left uninvestigated this week to keep the check focused and efficient.",
+      "Continue watching the newsletter delivery question and the destination-refresh automation flagged in prior weeks -- both remain open items to revisit when time allows."
+    ],
+    "checks_confirmed_healthy": [
+      "Every one of the site's core navigational sections (homepage, explore, treks, blog, SOS page, about, contact, privacy, terms) loaded correctly in English.",
+      "The site's install-as-an-app and offline support (manifest, service worker, offline fallback page) all work correctly.",
+      "The 5-part master sitemap that search engines use to discover pages loaded correctly end to end, listing just over 25,000 pages.",
+      "Bare-language-less web addresses (like nakshiq.com/explore with no /en or /hi) correctly redirect visitors to the English version by default.",
+      "No JavaScript errors were seen in the browser console on any of the 4 live pages checked interactively, including after a full page reload.",
+      "The trip-planning API correctly rejects malformed requests with a clean error message instead of crashing, and returns complete, real trip plans for valid ones.",
+      "The service worker that powers offline support and background updates is present and correctly versioned, and the browser-installable app manifest lists all 3 expected icons and all 5 expected quick-action shortcuts.",
+      "Direct database checks (not just page checks) confirmed the emergency-contact system has zero destinations with fewer than the minimum safety threshold of working phone numbers, and zero destinations with no emergency-contact record at all -- both unchanged from last week's equally clean result."
+    ]
+  },
+  "business_fix_timeline": {
+    "note": "Plain-language status of the open items above, oldest first.",
+    "items": [
+      "Hindi headline on newer-template pages -- known since early July, still being tracked, not yet fixed.",
+      "State-name web addresses -- known since early September, still being tracked, low priority (unusual URLs, not something ordinary visitors encounter).",
+      "This check's own weekly-vs-daily schedule -- known since mid-September, not yet fixed. Simplest fix: someone with access updates the schedule's frequency setting.",
+      "None of this week's open items are new -- all three have been visible in weekly reports for one to several weeks and are being tracked consistently rather than rediscovered each time."
+    ]
+  },
+  "business_tracked_minor_items": {
+    "note": "Small items being watched but not urgent.",
+    "items": [
+      "A newsletter sent earlier this month reached fewer people than expected on 2 occasions -- being tracked, not yet root-caused.",
+      "An internal automation that keeps destination lodging recommendations fresh appears to be reprocessing the same small group of destinations repeatedly instead of rotating through the full catalog -- being tracked.",
+      "A supplementary 'local helpers' contact list (separate from the main emergency numbers, which are complete) is populated for about a third of destinations -- an enrichment opportunity, not a gap in required safety info.",
+      "A handful of database-level cleanup items (unused security policies, one extension installed in a non-standard location) were re-confirmed unchanged from last week -- routine housekeeping, no visitor impact.",
+      "This week's check also caught and fixed a small bug in its own report-writing tool (see 'About this report' below) -- included here as an example of the kind of housekeeping this weekly process catches along the way."
+    ]
+  },
+  "business_detailed_measurements": {
+    "note": "For reference -- the numbers behind the traffic lights above.",
+    "items": [
+      "10/10 sampled destination pages loaded correctly in English and Hindi.",
+      "533/533 destinations have emergency contact info on file; 0 missing.",
+      "533/533 destinations have a working hero photo; 0 missing.",
+      "12/12 pages checked have correct search-engine metadata.",
+      "3/10 sampled destinations correctly show a Hindi headline; 7/10 show the known English-headline gap on the newer template.",
+      "10/10 test web addresses built from state names still don't return the expected 'not found' page.",
+      "2 small server-error groups in the last 7 days, both self-recovered, affecting 1 visitor each -- no active incident.",
+      "Newsletter: 18 subscribers (16 active), 42 sends, 128 delivery events logged -- all up from last week.",
+      "21/21 main site sections checked for basic availability; 19 loaded normally and 2 are intentionally not live pages yet (not a defect -- confirmed by checking the site's own source code).",
+      "25,021 pages listed in the site's search-engine sitemap, up slightly from 25,015 last week.",
+      "3 of today's 10 sampled destinations used the older page template (with correct Hindi headlines) and 7 used the newer 'cinematic' template (with the known English-headline gap) -- giving a clean, direct read on both templates in the same week for the first time in a while.",
+      "18 total newsletter subscribers (16 currently active), 42 total sends, 128 total delivery events logged to date -- all four figures grew from last week's 17 / 15 / 33 / 103."
+    ]
+  },
+  "business_about_this_report": {
+    "note": "How this report was produced.",
+    "items": [
+      "Generated automatically by a scheduled check against the live nakshiq.com site, run unattended.",
+      "Every number above came from a real check against the live site or its database this run -- nothing was estimated or carried forward without being re-verified, except where explicitly marked as 'not re-tested this run' for time or cost reasons.",
+      "Full technical detail is in the companion Developer and QA reports.",
+      "This is a weekly check (it runs every Monday) -- see the fix-timeline section for a note about getting it onto a true daily cadence.",
+      "Three separate documents come out of each run: this one (for Ashish), a QA reviewer version (pass/fail per test section with evidence), and a developer version (full technical detail, every raw number, ready for whoever picks up a fix).",
+      "'Real verification only' is a hard rule for this check -- every number in this report came from an actual request to the live site or an actual database query run this session, never estimated, guessed, or carried forward from memory without being re-checked.",
+      "As part of this week's check, a real formatting bug was found and fixed in the tool that builds this very report: the 'traffic-light snapshot' table above had been rendering with blank status cells in every prior week's report due to a small mismatch between how the data was stored and how the report-builder read it. It's fixed now -- this is the first week the table has shown its actual colors and explanations."
+    ]
+  },
+  "deliverables": [
+    "qa/findings/2026-09-28.json",
+    "NakshIQ_Developer_Report.docx",
+    "NakshIQ_QA_Report.docx",
+    "NakshIQ_Business_Report.docx"
+  ],
+  "honest_caveats": [
+    "Section K (interactive Chrome E2E) ran with the browser pane hidden throughout (unattended run) -- all interactions and reads used javascript_tool/get_page_text/read_console_messages rather than screenshots or coordinate-based clicks, per the built-in-browser skill's guidance for a hidden pane.",
+    "axe-core and Lighthouse were not run this pass (cost-aware skip rule in SKILL.md/CLAUDE.md) -- the three carried-forward Phase-3/Phase-4 accessibility and performance items are honestly marked 'not re-tested today' rather than re-asserted.",
+    "The welcome-tour-modal interactive check (E2E-2026-05-04-A1), the refresh-stay-picks-agent investigations (NEW-2026-08-19-001, NEW-2026-09-14-002), and the newsletter recipient-level investigation (NEW-2026-09-07-001) were time-boxed out of this run and their statuses are carried forward unverified, flagged as such in the regression matrix rather than silently re-asserted.",
+    "Section F API smoke was trimmed to 9 probes (vs a larger set in some prior weeks) -- covered /api/chat (GET+POST malformed), /api/itinerary (GET, POST malformed, POST valid), /api/weather (GET, GET with a destination), and /api/webhooks/resend (GET, POST empty). All results are real live probes, none estimated.",
+    "The Section-B TTFB numbers reflect a single probe per destination (not a warm/cold/re-warm sequence like some prior weeks) -- treat today's TTFB spread as a rougher signal than weeks that did a multi-probe warm-up sequence."
+  ]
+}
