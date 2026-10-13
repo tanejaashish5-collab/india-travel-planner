@@ -36,9 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-13"
+    "PdMu0_carousel": "2026-10-13",
+    "PdMu0": "2026-10-13",
+    "PdMu0_evening": "2026-10-13"
   },
-  "last_sync": "2026-10-12T22:16:13.705371+00:00",
+  "last_sync": "2026-10-13T20:23:11.380712+00:00",
   "posted_destinations": [
     {
       "destination_id": "ranthambore",
@@ -163,6 +165,10 @@
     {
       "destination_id": "warangal",
       "date": "2026-10-13"
+    },
+    {
+      "destination_id": "chittorgarh",
+      "date": "2026-10-13"
     }
   ],
   "posted_formats": {
@@ -190,7 +196,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v4_dw_local_historian_spotlight",
       "v4_dw_architecture_detail_deep_dive",
       "score_card",
       "festival_alert",
@@ -210,7 +215,8 @@
       "v2_score_card_pov",
       "data_carousel",
       "v2_tourist_trap_split",
-      "v3_tl_poll_reel"
+      "v3_tl_poll_reel",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -10820,6 +10826,17 @@
       "destination": "warangal",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-10-13"
+    },
+    {
+      "timestamp": "2026-10-13T20:23:57.948652+00:00",
+      "date": "2026-10-13",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "InRAx",
+      "destination": "chittorgarh",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "chittorgarh.mp4"
     }
   ],
   "theme_usage": {
@@ -11206,6 +11223,9 @@
       ],
       "vrindavan": [
         "2026-10-10"
+      ],
+      "chittorgarh": [
+        "2026-10-13"
       ]
     },
     "morning_formats": {
@@ -11257,7 +11277,8 @@
       "festival_alert": [
         "2026-05-31",
         "2026-06-07",
-        "2026-09-07"
+        "2026-09-07",
+        "2026-10-13"
       ],
       "v2_tourist_trap_split": [
         "2026-05-31",
@@ -11579,6 +11600,9 @@
       ],
       "vrindavan": [
         "2026-10-10"
+      ],
+      "chittorgarh": [
+        "2026-10-13"
       ]
     },
     "audience_tags": {
@@ -11715,11 +11739,17 @@
       ],
       "fort-trail-maharashtra": [
         "2026-10-08"
+      ],
+      "iconic-train-journeys": [
+        "2026-10-13"
       ]
     },
     "festivals": {
       "be940991-410a-4a77-9c71-e41c890a71a4": [
         "2026-09-07"
+      ],
+      "40eff7cb-9008-4fb2-8060-d7638b17880d": [
+        "2026-10-13"
       ]
     },
     "tourist_map_states": {
@@ -11828,7 +11858,8 @@
       "kolhapur": [
         "2026-10-08"
       ]
-    }
+    },
+    "collection_carousel_dests:iconic-train-journeys": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11842,8 +11873,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kausani",
-    "collection": "fort-trail-maharashtra"
+    "shared_best": "trichy",
+    "collection": "iconic-train-journeys"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-09",
