@@ -36,29 +36,10 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-11",
-    "PdMu0_evening": "2026-10-11",
-    "PdMu0_carousel": "2026-10-11",
-    "PdMu0_greeting": "2026-10-11"
+    "PdMu0_carousel": "2026-10-13"
   },
   "last_sync": "2026-10-12T22:16:13.705371+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hanle",
-      "date": "2026-09-27"
-    },
-    {
-      "destination_id": "ooty",
-      "date": "2026-09-27"
-    },
-    {
-      "destination_id": "auli",
-      "date": "2026-09-28"
-    },
-    {
-      "destination_id": "vagator",
-      "date": "2026-09-28"
-    },
     {
       "destination_id": "ranthambore",
       "date": "2026-09-29"
@@ -178,6 +159,10 @@
     {
       "destination_id": "darjeeling",
       "date": "2026-10-11"
+    },
+    {
+      "destination_id": "warangal",
+      "date": "2026-10-13"
     }
   ],
   "posted_formats": {
@@ -10790,6 +10775,51 @@
       "format": "v3_tl_poll_reel",
       "has_media": true,
       "media_id": "darjeeling.mp4"
+    },
+    {
+      "timestamp": "2026-10-13T07:36:33.056262+00:00",
+      "date": "2026-10-13",
+      "platform": "instagram",
+      "post_id": "r9Hhk",
+      "destination": "dussehra-2026",
+      "format": "scenario_longweekend",
+      "media_id": "OXumB"
+    },
+    {
+      "timestamp": "2026-10-13T07:37:03.873478+00:00",
+      "date": "2026-10-13",
+      "platform": "youtube",
+      "post_id": "JYpVM",
+      "destination": "dussehra-2026",
+      "format": "scenario_longweekend",
+      "media_id": "Bym4s"
+    },
+    {
+      "timestamp": "2026-10-13T14:36:57.883774+00:00",
+      "date": "2026-10-13",
+      "platform": "instagram",
+      "post_id": "r95Om",
+      "destination": "katra",
+      "format": "scenario_pilgrimage",
+      "media_id": "Nps2x"
+    },
+    {
+      "timestamp": "2026-10-13T14:37:50.348681+00:00",
+      "date": "2026-10-13",
+      "platform": "youtube",
+      "post_id": "pAXL1",
+      "destination": "katra",
+      "format": "scenario_pilgrimage",
+      "media_id": "rKfAC"
+    },
+    {
+      "timestamp": "2026-10-13T15:19:57.295628+00:00",
+      "date": "2026-10-13",
+      "platform": "facebook",
+      "post_id": "oTtoa",
+      "destination": "warangal",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-13"
     }
   ],
   "theme_usage": {
@@ -11608,11 +11638,6 @@
       ]
     },
     "collections": {
-      "birding-hotspots": [
-        "2026-05-19",
-        "2026-05-20",
-        "2026-07-14"
-      ],
       "best-winter": [
         "2026-05-20",
         "2026-05-21",
@@ -11868,7 +11893,15 @@
       "Hogenakkal Mela",
       "Srivari Brahmotsavam",
       "Vijayawada Dussehra (Durga Navaratri)",
-      "Bathukamma"
+      "Bathukamma",
+      "Bathukamma at Bhadrakali Lake",
+      "Kakatiya Utsavam",
+      "Durga Puja (Cuttack Silver Edition)",
+      "Navratri Garba",
+      "Ekta Diwas (Unity Day)",
+      "Rajgir Dance Festival",
+      "Bastar Dussehra",
+      "Diwali Beach Celebration"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
