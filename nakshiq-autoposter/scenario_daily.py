@@ -419,7 +419,7 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                 continue
             acct = accounts.get(plat)
             if not acct:
-                _log(f"{plat}: account not connected — skipping")
+                _no_account(plat, kind, dry)
                 continue
             for row in ready:              # a reel cost_gate holds steps aside for the next one
                 n = _post(ap, led, row, plat, acct, today, dry)
@@ -450,7 +450,7 @@ def publish(dry: bool = False, kind: str = "story") -> int:
         row = ready[0]
         acct = accounts.get(plat)
         if not acct:
-            _log(f"{plat}: account not connected — skipping")
+            _no_account(plat, kind, dry)
             continue
         published += _post(ap, led, row, plat, acct, today, dry)
     return 0
@@ -563,6 +563,15 @@ def _alert(msg: str) -> None:
                         f'with title "NakshIQ reel failed"'], timeout=10)
     except Exception:
         pass
+
+
+def _no_account(plat: str, kind: str, dry: bool) -> None:
+    """A reel was due and Outstand gave no account for its platform. 12-13 Oct 2026 the
+    Outstand subscription lapsed (402 on /v1/social-accounts): every slot logged
+    "account not connected" and exited 0, so nothing posted for 22 hours and nobody knew."""
+    msg = (f"{plat}: no connected Outstand account, {kind} reel NOT posted "
+           "(subscription lapsed or account disconnected? see ~/.claude/social-local.log)")
+    _log(msg) if dry else _alert(msg)
 
 
 def _settle_unconfirmed(ap, led: dict) -> None:
