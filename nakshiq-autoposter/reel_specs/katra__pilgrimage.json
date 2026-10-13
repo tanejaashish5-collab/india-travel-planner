@@ -10,8 +10,8 @@
  "method": "KEYFRAME-FIRST: refs, then a free Nano Banana still per beat, then Frames to Video on Veo 3.1 Lite from each still. Motion + sound prompts only.",
  "cast": "a son in his 30s and his mother in her 60s",
  "narrator": "the son",
- "setting_basis": "A morning at home, then the empty paved yatra track as it really looks (concrete walkway, steel railings, metal canopy shelters, scrubby Trikuta hills), a pony on the path and a blank yatra card in hand; no deity, sanctum, temple interior or crowd is shown, and the footage makes no distance, time or rule claim of its own.",
- "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "setting_basis": "A morning at home, then the yatra track as it really looks on an ordinary day (wide concrete walkway, steel railings, metal canopy shelters, low scrubby Trikuta hills, pilgrims walking in groups, ponies led by their registered handlers), and a blank yatra card; no deity, sanctum or temple interior is shown, and the footage makes no distance, time or rule claim of its own.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No one else close to the camera. No music, no speech, no voiceover, no text, captions, logos or watermark.",
  "refs": [
   {
    "name": "ref_son",
@@ -23,7 +23,11 @@
   },
   {
    "name": "ref_path",
-   "prompt": "The pilgrim track from Katra to the Vaishno Devi Bhawan in the Trikuta hills of Jammu, India, empty in soft morning light: a wide concrete-paved walkway with steel railings on the valley side, long stretches covered by a corrugated metal canopy on steel posts, lamp posts along the edge, dry scrubby hillsides with low broadleaf trees falling into haze; not a pine forest, not a narrow stone staircase. Photorealistic, no people, no shrine, no text."
+   "prompt": "The pilgrim track from Katra to the Vaishno Devi Bhawan in the Trikuta hills of Jammu, India, on an ordinary busy morning in soft light: a wide concrete-paved walkway climbing gently, steel railings on the valley side, long stretches under a corrugated metal canopy on steel posts, lamp posts along the edge, a small tea stall with a plain unlettered awning; groups of pilgrims in warm shawls and woollen caps walking up and down at their own pace, a few ponies led by their handlers; low dry scrub hills with broadleaf trees falling into haze. Not a deep gorge, no waterfalls, no snow peaks, not a pine forest, not a narrow stone staircase. Photorealistic, no shrine, no text, no signboards."
+  },
+  {
+   "name": "ref_handler",
+   "prompt": "Full-length photograph of a pony handler from the Jammu hills in his forties, lean, weathered face, short greying beard, a brown woollen cap, a worn grey jacket over a kurta, dark trousers and old sports shoes, a lead rope coiled in one hand, standing outdoors in soft morning light, three-quarter view, neutral expression, photorealistic, no text."
   }
  ],
  "keyframes": [
@@ -39,10 +43,10 @@
   {
    "name": "kf_s2",
    "refs": [
-    "ref_path"
+    "kf_s1"
    ],
-   "tone": "the climb he keeps imagining",
-   "prompt": "Wide shot of an empty stretch of the same paved pilgrim walkway in soft morning light: the walkway climbing gently under a corrugated metal canopy, steel railings on the valley side, the scrubby hillside falling away into haze, nobody on it."
+   "tone": "the slowing he had stopped noticing",
+   "prompt": "Wide shot inside the same house and the same morning light as the reference: the mother in the red shawl climbs a narrow indoor staircase slowly, one hand on the banister, pausing on a step; the son stands at the foot of the stairs watching her; both seen from behind, faces turned away."
   },
   {
    "name": "kf_s3",
@@ -57,10 +61,11 @@
    "refs": [
     "ref_son",
     "ref_mother",
+    "ref_handler",
     "ref_path"
    ],
    "tone": "calm, unhurried, looked after",
-   "prompt": "Medium shot from the side on the same empty railed walkway in soft morning light, just outside a stretch of metal canopy: the mother in the red shawl sits on a calm brown pony with a woven saddle cloth, the son in the navy fleece walks alongside holding the rein, scrubby hills behind."
+   "prompt": "Medium shot from the side on the same busy railed track in soft morning light, just outside a stretch of metal canopy: the mother in the red shawl sits on a calm brown pony with a woven saddle cloth; the pony handler in the brown woollen cap walks at the pony's head holding the lead rope; the son in the navy fleece walks beside his mother, one hand near the saddle. Farther up and down the track other pilgrims walk in small groups, small and softly out of focus; nobody else close to the camera."
   },
   {
    "name": "kf_s5",
@@ -77,7 +82,7 @@
     "ref_path"
    ],
    "tone": "quiet joy, together",
-   "prompt": "Wide shot from behind and above in soft morning light: the empty paved walkway with its steel railings and metal canopy winds up the scrubby hillside, the mother on the brown pony and the son walking beside her small in the frame."
+   "prompt": "Wide shot from behind and above in soft morning light: the paved track with its steel railings and metal canopy winds up the scrubby hillside, busy with pilgrims walking in small groups farther up the track; in the centre, the mother on the brown pony led by the handler in the brown woollen cap, the son walking beside her, all three small in the frame; the stretch of track between the camera and them is clear."
   }
  ],
  "shots": [
@@ -92,8 +97,8 @@
    "id": "s2",
    "mode": "frames",
    "start": "kf_s2",
-   "prompt": "Slow push-in along the empty covered walkway as it climbs the hill.",
-   "sound": "Wind through the trees, a distant bird call, quiet mountain morning tone."
+   "prompt": "The camera holds still. She climbs one step slowly with her hand on the banister and pauses; he stays at the foot of the stairs watching her.",
+   "sound": "A slow footstep on a stone stair, a bangle against the banister, quiet morning room tone, a pressure cooker far off."
   },
   {
    "id": "s3",
@@ -106,8 +111,9 @@
    "id": "s4",
    "mode": "frames",
    "start": "kf_s4",
-   "prompt": "The camera tracks slowly alongside them at walking pace.",
-   "sound": "A pony's bell jingling, hooves on the paved path, the son's footsteps, a light mountain breeze."
+   "prompt": "The camera tracks slowly alongside them at walking pace; the handler keeps leading the pony by the lead rope and the son keeps pace beside his mother.",
+   "sound": "A pony's bell jingling, hooves on the paved path, footsteps, the soft murmur of other pilgrims farther off.",
+   "crowd": true
   },
   {
    "id": "s5",
@@ -120,8 +126,9 @@
    "id": "s6",
    "mode": "frames",
    "start": "kf_s6",
-   "prompt": "The camera holds still as the two of them move slowly up the walkway, staying in frame.",
-   "sound": "A pony's bell faint in the distance, wind through the forest, birdsong."
+   "prompt": "The camera holds still as the three of them move slowly up the track among the other pilgrims, staying in frame.",
+   "sound": "Pony bells along the track, the soft murmur of pilgrims, wind through the trees.",
+   "crowd": true
   }
  ],
  "beats": [
@@ -185,8 +192,8 @@
  "caption_name": null,
  "shot_notes": [
   "Morning at the Katra base: a son in his 30s and his mother in her 60s stand at the start of the stone path, seen from behind.",
-  "Close on the son's hand holding two blank plastic yatra cards on a lanyard, nothing legible.",
-  "The mother sits on a calm pony on an empty, railed mountain path while the son walks alongside holding the rein, shot from the side.",
+  "The mother climbs the stairs at home slowly, hand on the banister, while the son watches from the foot of the stairs.",
+  "On the busy yatra track the mother rides a calm pony led by its handler while the son walks beside her, shot from the side.",
   "Their feet on wide stone steps with a metal handrail, morning light across the path.",
   "The two pause at a railing looking across forested hills, backs to camera.",
   "Wide shot of the empty winding path climbing the hillside in morning light, the two small figures on it."
@@ -212,6 +219,24 @@
     6
    ],
    "why": "beat ran past its 8 s clip (freeze rule); picture split onto a second set-up, saved voice reused, 0 ElevenLabs"
+  },
+  {
+   "date": "2026-10-14",
+   "shots": [
+    "s2",
+    "s4",
+    "s6"
+   ],
+   "keyframes": [
+    "kf_s2",
+    "kf_s4",
+    "kf_s6"
+   ],
+   "refs": [
+    "ref_path",
+    "ref_handler"
+   ],
+   "why": "founder after it posted: the son led the pony (a registered handler does) and the Vaishno Devi track was EMPTY (one of India's busiest routes); s2 also showed a waterfall gorge while its line is about Maa on the stairs at home. Voice unchanged, 0 ElevenLabs"
   }
  ]
 }

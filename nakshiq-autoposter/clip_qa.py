@@ -34,6 +34,11 @@ PY = VEO / ".venv-qa" / "bin" / "python"
 FPS = 3          # samples a second
 HOLD = 4         # a count must hold this many samples in a row (1.3 s) to count as real
 CONF = 0.35
+# A shot marked "crowd": true in its spec (founder 2026-10-14: the Vaishno Devi track was shown
+# EMPTY, which nobody who has been there believes) has passers-by in the background. Only people
+# at least this fraction of the tallest person in the frame count as the cast; the smaller,
+# farther crowd may come and go. The daily eyeball still looks at every crowd shot.
+FG_RATIO = 0.55
 
 _model = None
 
@@ -46,13 +51,19 @@ def _yolo():
     return _model
 
 
-def counts(clip: Path) -> list[int]:
+def counts(clip: Path, crowd: bool = False) -> list[int]:
     with tempfile.TemporaryDirectory() as td:
         subprocess.run(["ffmpeg", "-v", "error", "-i", str(clip), "-vf", f"fps={FPS},scale=540:-2",
                         f"{td}/f%03d.jpg"], check=True)
         frames = sorted(Path(td).glob("f*.jpg"))
         res = _yolo().predict([str(f) for f in frames], classes=[0], conf=CONF, verbose=False)
-        return [len(r.boxes) for r in res]
+        if not crowd:
+            return [len(r.boxes) for r in res]
+        out = []
+        for r in res:
+            h = [float(b[3] - b[1]) for b in r.boxes.xyxy.tolist()]
+            out.append(sum(x >= FG_RATIO * max(h) for x in h) if h else 0)
+        return out
 
 
 def stable_runs(seq: list[int]) -> list[tuple[int, int, int]]:
@@ -89,22 +100,23 @@ def verdict(seq: list[int], static: bool, cast: int | None) -> str:
     return ""
 
 
-def _shot_info(storyboard: str) -> dict[str, tuple[bool, int | None]]:
-    """shot id -> (camera holds still?, people in the cast). From the reel spec when it exists."""
+def _shot_info(storyboard: str) -> dict[str, tuple[bool, int | None, bool]]:
+    """shot id -> (camera holds still?, people in the cast, background crowd?). From the reel spec."""
     spec = HERE / "reel_specs" / f"{storyboard}.json"
     if not spec.exists():
         return {}
     d = json.loads(spec.read_text())
     cast = d.get("cast")
     n = len(cast) if isinstance(cast, list) else (len(cast) if isinstance(cast, dict) else None)
-    return {s["id"]: ("holds still" in (s.get("prompt") or "").lower(), n) for s in d.get("shots", [])}
+    return {s["id"]: ("holds still" in (s.get("prompt") or "").lower(), n, bool(s.get("crowd")))
+            for s in d.get("shots", [])}
 
 
 def check(storyboard: str) -> list[tuple[str, str, list[int]]]:
     out, info = [], _shot_info(storyboard)
     for clip in sorted(CLIPS.glob(f"{storyboard}__s[0-9].mp4")):
-        static, cast = info.get(clip.stem.rsplit("__", 1)[1], (False, None))
-        seq = counts(clip)
+        static, cast, crowd = info.get(clip.stem.rsplit("__", 1)[1], (False, None, False))
+        seq = counts(clip, crowd)
         out.append((clip.stem, verdict(seq, static, cast), seq))
     return out
 

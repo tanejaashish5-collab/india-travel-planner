@@ -107,6 +107,12 @@ _COMES_OR_GOES = re.compile(r"\b(steps? (in|out|through|inside)|walks? (in|into|
                             r"shut behind|(goes|moves|slips|walks) out of (frame|view|sight))\b", re.I)
 CAST_LOCK = ("Only the people already in the frame appear, the same number from start to end: "
              "nobody enters, leaves, appears twice or changes face. One continuous take, no dissolve.")
+# A place that is busy in real life must look busy (founder 2026-10-14: the Vaishno Devi track
+# shipped EMPTY, and a son leading the pony where a registered handler would). A shot marked
+# "crowd": true pins only the foreground people; clip_qa counts only them too.
+CROWD_LOCK = ("The people in the foreground stay the same people and the same number from start to end: "
+              "none of them leaves, appears twice or changes face. Other visitors stay farther away, "
+              "small and softly out of focus, going their own way. One continuous take, no dissolve.")
 
 
 # ─── spec ────────────────────────────────────────────────────────────────
@@ -131,12 +137,13 @@ def stills(spec: dict) -> dict:
 
 def veo_prompt(spec: dict, shot: dict) -> str:
     sound = f" Sound: {shot['sound']}" if shot.get("sound") else ""
+    lock = CROWD_LOCK if shot.get("crowd") else CAST_LOCK
     if shot["mode"] == "ingredients":
-        return f"{shot['prompt']}{sound} {CAST_LOCK} {spec['look']}"
+        return f"{shot['prompt']}{sound} {lock} {spec['look']}"
     # extend / frames: the source frames carry the look. Probe A4 (09-25) measured
     # the short prompt against the long one and could not tell them apart, and a
     # look paragraph is one more place for a prompt to contradict its own frames.
-    return f"{shot['prompt']}{sound} {CAST_LOCK} {spec.get('negatives') or NEGATIVES}"
+    return f"{shot['prompt']}{sound} {lock} {spec.get('negatives') or NEGATIVES}"
 
 
 def still_prompt(spec: dict, kf: dict) -> str:
