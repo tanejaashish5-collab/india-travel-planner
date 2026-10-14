@@ -37,11 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-14",
-    "PdMu0": "2026-10-13",
-    "PdMu0_evening": "2026-10-13",
+    "PdMu0": "2026-10-14",
+    "PdMu0_evening": "2026-10-14",
     "PdMu0_infographic": "2026-10-14"
   },
-  "last_sync": "2026-10-14T17:40:13.964041+00:00",
+  "last_sync": "2026-10-14T18:46:33.957133+00:00",
   "posted_destinations": [
     {
       "destination_id": "yusmarg",
@@ -170,6 +170,10 @@
     {
       "destination_id": "spiti-valley",
       "date": "2026-10-14"
+    },
+    {
+      "destination_id": "ozar",
+      "date": "2026-10-14"
     }
   ],
   "posted_formats": {
@@ -197,7 +201,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v4_dw_architecture_detail_deep_dive",
       "score_card",
       "festival_alert",
       "score_card",
@@ -217,7 +220,8 @@
       "data_carousel",
       "v2_tourist_trap_split",
       "v3_tl_poll_reel",
-      "festival_alert"
+      "festival_alert",
+      "v2_series_episode"
     ]
   },
   "post_log": [
@@ -10883,6 +10887,17 @@
       "destination": "nainital",
       "format": "scenario_kids",
       "media_id": "grqDa"
+    },
+    {
+      "timestamp": "2026-10-14T18:47:12.800502+00:00",
+      "date": "2026-10-14",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "EqQub",
+      "destination": "ozar",
+      "format": "v2_series_episode",
+      "has_media": true,
+      "media_id": "ozar.mp4"
     }
   ],
   "theme_usage": {
@@ -11272,6 +11287,9 @@
       ],
       "chittorgarh": [
         "2026-10-13"
+      ],
+      "ozar": [
+        "2026-10-14"
       ]
     },
     "morning_formats": {
@@ -11451,6 +11469,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_series_episode": [
+        "2026-10-14"
       ]
     },
     "reels": {
@@ -11653,6 +11674,9 @@
       ],
       "chittorgarh": [
         "2026-10-13"
+      ],
+      "ozar": [
+        "2026-10-14"
       ]
     },
     "audience_tags": {
@@ -11908,7 +11932,8 @@
       "kolhapur": [
         "2026-10-08"
       ]
-    }
+    },
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -11922,7 +11947,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "trichy",
+    "shared_best": "kausani",
     "collection": "iconic-train-journeys"
   },
   "manual_skip_dests": {},
