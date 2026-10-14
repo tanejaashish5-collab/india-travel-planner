@@ -112,12 +112,19 @@ def _shot_info(storyboard: str) -> dict[str, tuple[bool, int | None, bool]]:
             for s in d.get("shots", [])}
 
 
+def crowd_ids(storyboard: str) -> set[str]:
+    return {k for k, v in _shot_info(storyboard).items() if v[2]}
+
+
 def check(storyboard: str) -> list[tuple[str, str, list[int]]]:
     out, info = [], _shot_info(storyboard)
     for clip in sorted(CLIPS.glob(f"{storyboard}__s[0-9].mp4")):
         static, cast, crowd = info.get(clip.stem.rsplit("__", 1)[1], (False, None, False))
         seq = counts(clip, crowd)
-        out.append((clip.stem, verdict(seq, static, cast), seq))
+        # 2026-10-15: even counting only the larger figures, passers-by walking toward the camera
+        # change the count in a crowd shot (Katra s6, Srinagar s4: both clean on the eyeball). The
+        # count is printed, never a verdict; the daily eyeball (rules a-h) judges crowd shots.
+        out.append((clip.stem, "" if crowd else verdict(seq, static, cast), seq))
     return out
 
 
@@ -130,7 +137,9 @@ def main(argv: list[str]) -> int:
     bad = 0
     for sb in sbs:
         for stem, why, seq in check(sb):
-            print(f"{'FLAG' if why else 'ok  '} {stem}: {why or 'people steady'}  {''.join(map(str, seq))}")
+            note = why or ("crowd shot: count not judged, eyeball only" if stem.rsplit("__", 1)[1] in crowd_ids(sb)
+                           else "people steady")
+            print(f"{'FLAG' if why else 'ok  '} {stem}: {note}  {''.join(map(str, seq))}")
             bad += bool(why)
     return 1 if bad else 0
 
