@@ -36,16 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-13",
+    "PdMu0_carousel": "2026-10-14",
     "PdMu0": "2026-10-13",
     "PdMu0_evening": "2026-10-13"
   },
   "last_sync": "2026-10-13T20:23:11.380712+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ranthambore",
-      "date": "2026-09-29"
-    },
     {
       "destination_id": "yusmarg",
       "date": "2026-09-30"
@@ -169,6 +165,10 @@
     {
       "destination_id": "chittorgarh",
       "date": "2026-10-13"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "date": "2026-10-14"
     }
   ],
   "posted_formats": {
@@ -10837,6 +10837,33 @@
       "format": "festival_alert",
       "has_media": true,
       "media_id": "chittorgarh.mp4"
+    },
+    {
+      "timestamp": "2026-10-14T07:36:50.114781+00:00",
+      "date": "2026-10-14",
+      "platform": "instagram",
+      "post_id": "kRELL",
+      "destination": "dharamshala",
+      "format": "scenario_guide",
+      "media_id": "rKOwP"
+    },
+    {
+      "timestamp": "2026-10-14T07:37:28.963122+00:00",
+      "date": "2026-10-14",
+      "platform": "youtube",
+      "post_id": "In5jU",
+      "destination": "dharamshala",
+      "format": "scenario_guide",
+      "media_id": "3YKbB"
+    },
+    {
+      "timestamp": "2026-10-14T13:03:03.540290+00:00",
+      "date": "2026-10-14",
+      "platform": "facebook",
+      "post_id": "bFILS",
+      "destination": "spiti-valley",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-10-14"
     }
   ],
   "theme_usage": {
@@ -11858,8 +11885,7 @@
       "kolhapur": [
         "2026-10-08"
       ]
-    },
-    "collection_carousel_dests:iconic-train-journeys": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -11941,7 +11967,8 @@
       "arupadai-veedu",
       "astavinayak-yatra",
       "last-villages-of-india",
-      "weekend-from-kolkata"
+      "weekend-from-kolkata",
+      "autumn-destinations"
     ],
     "food": [
       "Keshloor Dhaba|jagdalpur",
