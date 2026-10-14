@@ -38,9 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-14",
     "PdMu0": "2026-10-13",
-    "PdMu0_evening": "2026-10-13"
+    "PdMu0_evening": "2026-10-13",
+    "PdMu0_infographic": "2026-10-14"
   },
-  "last_sync": "2026-10-13T20:23:11.380712+00:00",
+  "last_sync": "2026-10-14T17:40:13.964041+00:00",
   "posted_destinations": [
     {
       "destination_id": "yusmarg",
@@ -10864,6 +10865,24 @@
       "destination": "spiti-valley",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-10-14"
+    },
+    {
+      "timestamp": "2026-10-14T14:37:11.172073+00:00",
+      "date": "2026-10-14",
+      "platform": "instagram",
+      "post_id": "NM8Wd",
+      "destination": "kochi",
+      "format": "scenario_hidden_gem",
+      "media_id": "L168c"
+    },
+    {
+      "timestamp": "2026-10-14T14:37:56.164795+00:00",
+      "date": "2026-10-14",
+      "platform": "youtube",
+      "post_id": "KJ16u",
+      "destination": "nainital",
+      "format": "scenario_kids",
+      "media_id": "grqDa"
     }
   ],
   "theme_usage": {
@@ -11404,6 +11423,10 @@
         "2026-07-04",
         "2026-10-02"
       ],
+      "infographic": [
+        "2026-06-09",
+        "2026-10-14"
+      ],
       "v2_cost_vs_feeling": [
         "2026-06-10",
         "2026-10-07"
@@ -11888,9 +11911,9 @@
     }
   },
   "infographic": {
-    "last_topic_idx": 1,
-    "last_theme_idx": 1,
-    "last_posted": "2026-06-09"
+    "last_topic_idx": 2,
+    "last_theme_idx": 2,
+    "last_posted": "2026-10-14"
   },
   "tourist_map_states": {
     "HP": [

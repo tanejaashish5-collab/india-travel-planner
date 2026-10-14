@@ -27701,3 +27701,56 @@ Date range: 2026-04-15 → 2026-10-13
 2026-10-15 01:37:16  INFO          Uploading to R2 (timeout=300s)...
 2026-10-15 01:37:38  INFO          R2 PUT OK. Confirming...
 2026-10-15 01:37:40  INFO          Media ready: grqDa (48,716,934 bytes · nainital__kids__en.mp4)
+2026-10-14 17:39:22  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-14 17:39:22  INFO      ════════════════════════════════════════════════════════════
+2026-10-14 17:39:22  INFO      Nakshiq Autoposter · EVENING · 2026-10-14 · weekday=2
+2026-10-14 17:39:22  INFO      ════════════════════════════════════════════════════════════
+2026-10-14 17:39:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-14 17:40:13  INFO      Synced → 20 destinations · 100 traps · 3 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-14 17:40:13  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-14 17:40:15  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-14 17:40:15  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-14 17:40:15  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-14 17:40:33  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-14 17:40:33  INFO      [diversity] feed: 37 → 34 options · cooldown dropped 3 (carousel, pillar:scenario_guide, pillar:scenario_hidden_gem, pillar:scenario_kids, pillar:scenario_longweekend, pillar:scenario_pilgrimage, pillar:verdict seen <2d)
+2026-10-14 17:40:33  INFO      Evening format (balance→verification): infographic [17% vs target 20%] (0/15 never featured)
+2026-10-14 17:40:33  INFO      Formats — IG: infographic  ·  FB: infographic  ·  Story: blog_promo
+2026-10-14 17:40:33  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 54
+2026-10-14 17:40:33  INFO      Delegating evening slot → infographic visual pipeline
+2026-10-14 17:40:33  INFO      ════════════════════════════════════════════════════════════
+2026-10-14 17:40:33  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-10-14 · weekday=2
+2026-10-14 17:40:33  INFO      ════════════════════════════════════════════════════════════
+2026-10-14 17:40:35  INFO      Generated 5 slides: topic=hidden_gems, theme=datacard
+2026-10-14 17:40:35  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_01_cover.jpg (104,323 bytes, image/jpeg)
+2026-10-14 17:40:37  INFO          Uploading to R2 (timeout=120s)...
+2026-10-14 17:40:38  INFO          R2 PUT OK. Confirming...
+2026-10-14 17:40:39  INFO          Media ready: 3YQVX (104,323 bytes · infographic_infographic_hidden_gems_datacard_01_cover.jpg)
+2026-10-14 17:40:39  INFO        Uploaded: infographic_hidden_gems_datacard_01_cover.jpg (101 KB)
+2026-10-14 17:40:39  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_02_ambaji.jpg (266,258 bytes, image/jpeg)
+2026-10-14 17:40:41  INFO          Uploading to R2 (timeout=120s)...
+2026-10-14 17:40:42  INFO          R2 PUT OK. Confirming...
+2026-10-14 17:40:43  INFO          Media ready: k6yNr (266,258 bytes · infographic_infographic_hidden_gems_datacard_02_ambaji.jpg)
+2026-10-14 17:40:43  INFO        Uploaded: infographic_hidden_gems_datacard_02_ambaji.jpg (260 KB)
+2026-10-14 17:40:43  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_03_aritar.jpg (164,069 bytes, image/jpeg)
+2026-10-14 17:40:44  INFO          Uploading to R2 (timeout=120s)...
+2026-10-14 17:40:45  INFO          R2 PUT OK. Confirming...
+2026-10-14 17:40:47  INFO          Media ready: 1ZLqY (164,069 bytes · infographic_infographic_hidden_gems_datacard_03_aritar.jpg)
+2026-10-14 17:40:47  INFO        Uploaded: infographic_hidden_gems_datacard_03_aritar.jpg (160 KB)
+2026-10-14 17:40:47  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_04_astavinayak-circuit.jpg (76,354 bytes, image/jpeg)
+2026-10-14 17:40:47  INFO          Uploading to R2 (timeout=120s)...
+2026-10-14 17:40:48  INFO          R2 PUT OK. Confirming...
+2026-10-14 17:40:50  INFO          Media ready: obYuJ (76,354 bytes · infographic_infographic_hidden_gems_datacard_04_astavinayak-circuit.jpg)
+2026-10-14 17:40:50  INFO        Uploaded: infographic_hidden_gems_datacard_04_astavinayak-circuit.jpg (74 KB)
+2026-10-14 17:40:50  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_06_cta.jpg (51,868 bytes, image/jpeg)
+2026-10-14 17:40:50  INFO          Uploading to R2 (timeout=120s)...
+2026-10-14 17:40:51  INFO          R2 PUT OK. Confirming...
+2026-10-14 17:40:52  INFO          Media ready: pENf5 (51,868 bytes · infographic_infographic_hidden_gems_datacard_06_cta.jpg)
+2026-10-14 17:40:52  INFO        Uploaded: infographic_hidden_gems_datacard_06_cta.jpg (50 KB)
+2026-10-14 17:40:52  INFO      All slides uploaded: 5 media objects
+2026-10-14 17:40:54  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-14 17:40:54  INFO      [facebook/Nakshiq] Publishing infographic carousel: hidden_gems/datacard...
+2026-10-14 17:40:54  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-10-14 17:40:57  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-10-14 17:40:57  INFO      Infographic state updated: topic=hidden_gems, theme=datacard
+2026-10-14 17:40:57  INFO      State saved. Infographic run complete.
+2026-10-14 17:40:57  INFO      ════════════════════════════════════════════════════════════
