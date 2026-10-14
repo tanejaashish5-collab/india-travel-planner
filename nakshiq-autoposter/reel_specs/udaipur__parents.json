@@ -11,7 +11,7 @@
  "cast": "a son in his 30s and his parents in their 60s",
  "narrator": "the son",
  "setting_basis": "An evening at a family home, then an old lakeside city lane, a small heritage hotel lift and a flat stone ghat in Udaipur; Leh is only talked about and never shown, and the footage makes no altitude, health, price or hotel claim of its own.",
- "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No one else close to the camera. No music, no speech, no voiceover, no text, captions, logos or watermark.",
  "refs": [
   {
    "name": "ref_son",
@@ -23,7 +23,11 @@
   },
   {
    "name": "ref_lake",
-   "prompt": "An empty flat stone ghat beside a still lake in warm early evening light, pale old lime-washed houses with carved stone balconies along the water, a narrow flat lane leading away between them, photorealistic, no people, no text, no signage."
+   "prompt": "A flat stone ghat beside a still lake in Udaipur's old city in warm early evening light, pale old lime-washed houses with carved stone balconies along the water, a narrow flat lane leading away between them; local families sitting on the ghat steps and a few visitors strolling along the water's edge, as it really is on a November evening. Photorealistic, no text, no signage."
+  },
+  {
+   "name": "ref_leh",
+   "prompt": "A high-altitude road in Ladakh near Leh in November: a thin strip of tarmac winding across a bare brown valley, frost on the stones along the verge, snow-dusted mountains under a pale, cold sky, thin dry air, no vehicles and no people. Photorealistic, no text, no signage, no prayer flags."
   }
  ],
  "keyframes": [
@@ -55,12 +59,10 @@
   {
    "name": "kf_s4",
    "refs": [
-    "ref_son",
-    "ref_parents",
-    "ref_lake"
+    "ref_leh"
    ],
-   "tone": "slow, easy, nothing to climb",
-   "prompt": "Wide shot from behind in warm early evening light: the son and his parents walk slowly down an empty flat lane of pale old houses, the mother's arm through the son's, the father a step ahead with his hands behind his back."
+   "tone": "beautiful, and not for them this time",
+   "prompt": "Wide shot in thin, cold morning light: the empty high road winding across the bare Ladakh valley toward snow-dusted mountains, frost on the stones beside it, nobody on it."
   },
   {
    "name": "kf_s5",
@@ -79,7 +81,7 @@
     "ref_lake"
    ],
    "tone": "contentment at the end of the day",
-   "prompt": "Wide shot from behind at dusk: the son and his parents walk slowly along the empty flat stone ghat beside the still lake, small in the frame, the mother's arm through the son's, the pale old houses glowing across the water."
+   "prompt": "Wide shot from behind at dusk: the son and his parents walk slowly along the flat stone ghat beside the still lake, small in the frame, the mother's arm through the son's, the pale old houses glowing across the water; farther along the ghat, local families sit on the steps and a few visitors stroll, small and softly out of focus; the stretch of ghat between the camera and them is clear."
   }
  ],
  "shots": [
@@ -108,8 +110,8 @@
    "id": "s4",
    "mode": "frames",
    "start": "kf_s4",
-   "prompt": "The camera follows slowly behind them at walking pace down the lane.",
-   "sound": "Slow footsteps and sandals on flat stone, pigeons fluttering off a ledge, quiet outdoor evening tone."
+   "prompt": "Slow push-in along the empty road as a cold wind stirs the dust at its edge.",
+   "sound": "A thin cold wind, dust skittering over stones, a raven calling far off."
   },
   {
    "id": "s5",
@@ -122,8 +124,9 @@
    "id": "s6",
    "mode": "frames",
    "start": "kf_s6",
-   "prompt": "The camera holds still as the three of them walk slowly along the ghat, the light fading over the water.",
-   "sound": "Water lapping against the stone steps, evening birds, a light breeze off the lake."
+   "prompt": "The camera holds still as the three of them walk slowly along the ghat among the evening strollers, the light fading over the water.",
+   "sound": "Water lapping against the stone steps, the soft murmur of people on the ghat, evening birds.",
+   "crowd": true
   }
  ],
  "beats": [
@@ -188,7 +191,7 @@
  "shot_notes": [
   "A son in his 30s and his parents in their 60s sit at a home dining table in the evening, a laptop open, seen from behind.",
   "The mother's hands rest on the table beside the laptop while the son scrolls, faces out of frame.",
-  "Evening in Udaipur's old city: the three walk slowly down an empty flat lane of pale old houses, seen from behind.",
+  "High in Ladakh in November: the empty road across a frosted brown valley, the trip they are skipping.",
   "The father and mother step into a small heritage hotel lift with an old metal grille, the son holding the door, shot from the side.",
   "The parents stand at a stone balcony looking out over a still lake at dusk, backs to camera.",
   "Wide shot of the three walking along the empty lakeside path at dusk, small in the frame."
@@ -233,6 +236,22 @@
     "kf_s2"
    ],
    "why": "clip check: the mother sat behind the son AND a second maroon-sleeved arm with a bangle reached in from the front (one person too many). Still now shot from her side, exactly three hands, nothing else in frame. Voice unchanged, 0 ElevenLabs"
+  },
+  {
+   "date": "2026-10-14",
+   "shots": [
+    "s4",
+    "s6"
+   ],
+   "keyframes": [
+    "kf_s4",
+    "kf_s6"
+   ],
+   "refs": [
+    "ref_lake",
+    "ref_leh"
+   ],
+   "why": "clip check rule (h): s4 was a long, completely empty old-city street on a November evening while its line is about Leh needing three days to acclimatise (now the Ladakh road they skip, which really is empty); s6 ghat at dusk was empty except the family (now evening strollers, crowd shot). Voice unchanged, 0 ElevenLabs"
   }
  ]
 }
