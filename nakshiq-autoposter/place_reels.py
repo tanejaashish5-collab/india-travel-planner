@@ -69,8 +69,7 @@ PLACE_FORMATS = ("map_reveal", "two_months", "tiny_world")
 WEEK = ("map_reveal", "cast", "data_card", "two_months", "cast", "tiny_world", "wildcard")
 SHIFT = 2
 REPEAT_DAYS = 60                      # a place is not re-used by the same format inside this window
-MUSIC_FMT = {"map_reveal": "real_cost", "two_months": "quiet_month", "tiny_world": "quiet_month"}
-DUR = {"map_reveal": 15.0, "two_months": 15.0, "tiny_world": 15.0}
+DUR = {"map_reveal": 15.0, "two_months": 13.0, "tiny_world": 15.0}
 
 
 class Refuse(Exception):
@@ -274,47 +273,125 @@ def facts_map_reveal(slug: str, today: date) -> dict:
             "screen_text": [re.sub(r"</?em>", "", l) for l in lines] + [f"{MONTHS[best]} {best_score}/10"]}
 
 
-def facts_two_months(slug: str, today: date) -> dict:
-    sc, labels = scores(slug)
-    good, good_score = next_best(slug, today)
-    bad = sorted((m for m in range(1, 13) if sc[m - 1] <= 4 and min(abs(m - good) % 12, 12 - abs(m - good) % 12) >= 3),
-                 key=lambda m: (sc[m - 1], labels[m - 1] != "skip"))
-    if not bad:
-        raise Refuse("no month scores 4 or under, three or more months away")
-    a = commons(slug, good, "a")
-    if not a:
-        raise Refuse(f"no Commons photo from around {MONTHS[good]}")
-    b, bm = None, None
-    for m in bad[:3]:
-        b = commons(slug, m, "b")
-        if b:
-            bm = m
+# ─── two_months: two Veo clips side by side, each showing what that month's note says ──────
+# Founder 2026-10-15 on the photo version: "there is no reason why we are skipping"; the Chakrata
+# photos were a busy street labelled "quiet month" and a lovely landscape labelled "skip". So the
+# pictures now come FROM the reason: each month's destination_months.note is turned into the
+# Veo prompt (only what the note says), and the note itself is the line on screen.
+# (pattern in the note, what the still shows, how the clip moves, what it sounds like)
+CUES = [
+    (r"heavy monsoon|monsoon|heavy rain|downpour|rain", "heavy monsoon rain pouring down, low dark grey clouds, wet glistening ground and puddles",
+     "Heavy rain falls in sheets and low clouds drift across.", "steady heavy rain and distant thunder"),
+    (r"landslide|washed out|flash flood|flood", "a swollen muddy stream and loose mud on the road edge", "", ""),
+    (r"snow[- ]?(capped|clad|peaks?|line)|(peaks?|mountains?|range|summits?) (with|under|dusted with) snow|snow on (the )?(distant )?(peaks|mountains|range|summits)",
+     "snow only on the distant high peaks, the valley and town below dry", "Clouds drift past the snowy peaks far away.", "light wind and birdsong"),
+    (r"(?<!pre-)(?<!pre )(?<!no )(?<!before )(?<!without )\b(blizzard|heavy snow|snowfall|snowbound|snow)\b(?![- ]?(free|yet|capped|clad|peaks?|line))", "deep fresh snow covering the ground, roofs and trees", "Light snow drifts down.",
+     "soft wind and muffled stillness"),
+    (r"fog|mist|haze|smog", "thick drifting fog softening everything", "Fog rolls slowly across.", "a low quiet wind"),
+    (r"scorching|heatwave|extreme heat|hot\b|heat", "harsh white midday sun and shimmering heat haze", "Heat haze shimmers over the ground.",
+     "dry wind and cicadas"),
+    (r"clear sk|clear blue|clear view|clarity|crisp|sunny|sunshine|bright", "a clear deep-blue sky and crisp sharp light", "Soft clouds drift high and leaves stir in a light breeze.",
+     "light wind and birdsong"),
+    (r"fall colou?rs|autumn|golden", "trees in autumn gold, orange and red", "Autumn leaves stir in a light breeze.", "light wind in dry leaves"),
+    (r"bloom|blossom|wildflower|rhododendron|flowers", "trees and slopes in full bloom", "Blossoms sway gently in the breeze.", "birdsong and a light breeze"),
+    (r"lush|green|verdant", "lush green hills and fields", "Green slopes ripple in the breeze.", "birdsong and running water"),
+]
+CROWD_NOTE = re.compile(r"crowd|packed|peak|busy|rush|jam|queue|tourist rush|overcrowd", re.I)
+QUIET_NOTE = re.compile(r"quiet|few tourists|fewer tourists|peaceful|empty|deserted|serene|serenity", re.I)
+
+
+def month_note(slug: str, m: int) -> str:
+    return (((data().get("months") or {}).get(slug) or {}).get(str(m)) or {}).get("note") or ""
+
+
+def reason_line(note: str, limit: int = 78) -> str:
+    """The note's own words, as many sentences as fit, preferring the ones that SAY why (weather,
+    temperature, crowds, closures) over framing like "November is October's quieter sibling"."""
+    sents = [x.strip() for x in re.split(r"(?<=[.!?])\s+", note.strip()) if x.strip()]
+    why = re.compile("|".join(p for p, *_ in CUES) + r"|°C|landslide|closed|closure|crowd|quiet|few tourists|peak|"
+                     r"road|pass|cold|warm|humid|leech|slippery|flood|wash", re.I)
+    visual = re.compile("|".join(p for p, *_ in CUES), re.I)
+    # sentences a camera can show first, then other reasons; keep the note's own order within each
+    ranked = [x for x in sents if visual.search(x)] + [x for x in sents if why.search(x) and not visual.search(x)]
+    pick = ranked or sents
+    out = ""
+    for sent in pick:
+        cand = (out + " " + sent).strip()
+        if len(cand) > limit and out:
             break
-    if not b:
-        raise Refuse(f"no Commons photo from around {', '.join(MONTHS[m] for m in bad[:3])}")
-    crowd = (data().get("crowd") or {}).get(slug) or {}
+        out = cand
+    if len(out) <= limit + 25:
+        return out
+    cut = out[:limit]
+    return (cut.rsplit(",", 1)[0] if "," in cut else cut.rsplit(" ", 1)[0]).rstrip(" ,;:") + "."
 
-    def note(m: int) -> str:
-        bits = []
-        if m in (crowd.get("quiet_months") or []):
-            bits.append("Quiet month")
-        elif m in (crowd.get("peak_months") or []):
-            bits.append("Peak crowds")
-        h = hotel_for(slug, m)
-        if h:
-            bits.append(f"hotel {_inr(h)} a night")
-        return " · ".join(bits)
 
+def crowded(slug: str, m: int, note: str) -> bool:
+    if CROWD_NOTE.search(note) and not QUIET_NOTE.search(note):
+        return True
+    if QUIET_NOTE.search(note):
+        return False
+    return m in ((((data().get("crowd") or {}).get(slug)) or {}).get("peak_months") or [])
+
+
+def scene(slug: str, m: int) -> dict | None:
+    """What a month's clip must show, built only from that month's note. None when the note names
+    nothing a camera can see (then the month cannot be shown honestly)."""
+    note = month_note(slug, m)
+    looks, motion, sound = [], "", ""
+    for pat, look, mo, so in CUES:
+        if re.search(pat, note, re.I):
+            looks.append(look)
+            motion = motion or mo
+            sound = sound or so
+    if not looks:
+        return None
+    busy = crowded(slug, m, note)
+    looks.append("busy, with crowds of small distant figures" if busy else "almost empty, no one in sight")
+    return {"month": m, "note": note, "looks": looks[:4], "motion": motion or "Clouds drift slowly.",
+            "sound": sound or "light wind", "crowd": busy}
+
+
+def two_sb(slug: str) -> str:
+    return f"{slug}__two_months"
+
+
+def pick_two(slug: str, today: date) -> tuple[dict, dict]:
+    """(good scene, skip scene): the best of the next three months and the lowest-scoring month at
+    least three months away, both with a note a camera can show."""
+    sc, labels = scores(slug)
+    good, _ = next_best(slug, today)
+    a = scene(slug, good)
+    if not a:
+        raise Refuse(f"{MONTHS[good]}'s note names nothing a camera can show")
+    bad = sorted((m for m in range(1, 13) if sc[m - 1] <= 4 and min((m - good) % 12, (good - m) % 12) >= 3),
+                 key=lambda m: (sc[m - 1], labels[m - 1] != "skip"))
+    for m in bad:
+        b = scene(slug, m)
+        if b:
+            return a, b
+    raise Refuse("no skip month whose note a camera can show")
+
+
+def facts_two_months(slug: str, today: date) -> dict:
+    sb = two_sb(slug)
+    rows = {r.get("role"): r for r in _load(QUEUE, []) if r.get("storyboard") == sb}
+    clips = [CLIPS / f"{sb}__s{i}.mp4" for i in (1, 2)]
+    if not all(c.exists() for c in clips) or not {"s1", "s2"} <= set(rows):
+        raise Refuse("two_months clips not generated yet")
+    good, bad = int(rows["s1"]["month"]), int(rows["s2"]["month"])
+    # The reel says "go in <good>"; posted after that month has passed, it would point backwards.
+    if (good - today.month) % 12 > 3:
+        raise Refuse(f"{MONTHS[good]} is no longer in the next three months")
+    sc, labels = scores(slug)
     verdict = lambda m: (labels[m - 1] or ("go" if sc[m - 1] >= 8 else "skip" if sc[m - 1] <= 4 else "wait"))
-    cr = [a, b]
-    return {"slug": slug, "name": name(slug), "good": good, "bad": bm, "good_score": good_score,
-            "bad_score": sc[bm - 1], "good_verdict": verdict(good), "bad_verdict": verdict(bm),
-            "good_note": note(good), "bad_note": note(bm), "photos": (Path(a["file"]), Path(b["file"])),
-            "commons": cr,
-            "screen_text": [f"{MONTHS[good]} {good_score}/10 {note(good)}", f"{MONTHS[bm]} {sc[bm - 1]}/10 {note(bm)}"],
-            # cost_gate re-checks each stamped {category, season, value} against the live ledger
-            "cost_basis": [{"category": "hotel-mid", "season": hotel_season(slug, m)[1], "value": hotel_season(slug, m)[0]}
-                           for m in (good, bm) if hotel_season(slug, m)]}
+    ra, rb = reason_line(month_note(slug, good)), reason_line(month_note(slug, bad))
+    if not ra or not rb:
+        raise Refuse("a month has no note to give the reason")
+    return {"slug": slug, "name": name(slug), "good": good, "bad": bad, "good_score": sc[good - 1],
+            "bad_score": sc[bad - 1], "good_verdict": verdict(good), "bad_verdict": verdict(bad),
+            "good_note": ra, "bad_note": rb, "clips": clips,
+            "screen_text": [f"{MONTHS[good]} {sc[good - 1]}/10 {ra}", f"{MONTHS[bad]} {sc[bad - 1]}/10 {rb}"]}
 
 
 def tiny_sb(slug: str) -> str:
@@ -342,10 +419,20 @@ FACTS = {"map_reveal": facts_map_reveal, "two_months": facts_two_months, "tiny_w
 
 
 # ─── rendering ────────────────────────────────────────────────────────────
+GUIDE_THEMES = ("guide_theme_a.mp3", "guide_theme_d.mp3", "guide_theme_e.mp3", "guide_theme_e.mp3")  # E twice: founder pick 10-04
+
+
+def pick_music(fmt: str, slug: str) -> Path | None:
+    """A house theme with a steady beat (founder 2026-10-15: "I could not hear any music" on the
+    two_months cut, which had drawn a near-silent ambient track). Stable per place + format."""
+    import zlib
+    names = [n for n in GUIDE_THEMES if (HERE / "assets/music_nakshiq" / n).exists()]
+    return (HERE / "assets/music_nakshiq" / names[zlib.crc32(f"{slug}:{fmt}".encode()) % len(names)]) if names else None
+
+
 def _project(slug: str, fmt: str, dur: float) -> tuple[Path, str]:
     sys.path.insert(0, str(HERE))
-    import storyboard as SB
-    music = SB.pick_music(MUSIC_FMT[fmt], slug)
+    music = pick_music(fmt, slug)
     if not music:
         raise Refuse("no music bed on disk")
     w = WORK / f"{slug}__{fmt}"
@@ -409,14 +496,15 @@ def _html(fmt: str, f: dict, follow: str, music: str, w: Path) -> str:
             "TX": round(540 - (40 + px), 1), "TY": round(900 - (470 + py), 1),
             "FOLLOW": follow, "CREDIT": f.get("credit") or ""})
     if fmt == "two_months":
-        _photo(f["photos"][0], w / "assets" / "a.jpg")
-        _photo(f["photos"][1], w / "assets" / "b.jpg")
+        # 8 s Veo clips slowed to 10 s (setpts) so both play for the whole split screen; the skip
+        # month's own sound (rain, wind) is kept as an ambience bed under the music.
+        for i, c in enumerate(f["clips"], 1):
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(c), "-an", "-vf", "setpts=1.25*PTS,fps=30",
+                            "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", str(w / "assets" / f"v{i}.mp4")], check=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(f["clips"][1]), "-vn", "-af",
+                        "atempo=0.8,atrim=0:5.6,afade=t=in:d=0.6,afade=t=out:st=4.8:d=0.8,volume=0.9",
+                        "-c:a", "aac", "-b:a", "160k", str(w / "assets" / "amb.m4a")], check=True)
         cls = lambda v: v if v in ("go", "wait", "skip") else "wait"
-        authors = []
-        for c in f["commons"]:
-            a = (c.get("author") or "").strip()
-            if a and a not in authors:
-                authors.append(a)
         px = _name_px(f["name"])
         return _fill("two_months.html", {
             "NAME": f["name"], "SNAPSHOT": snap, "MUSIC": music, "DUR": dur, "NAME_PX": px,
@@ -427,7 +515,7 @@ def _html(fmt: str, f: dict, follow: str, music: str, w: Path) -> str:
             "B_MONTH": MONTHS[f["bad"]], "B_SCORE": f["bad_score"], "B_VERDICT": f["bad_verdict"].upper(),
             "B_CLASS": cls(f["bad_verdict"]), "B_NOTE": f["bad_note"],
             "END_LINE": f"Go in <em>{MONTHS[f['good']]}</em>.<br>Not in {MONTHS[f['bad']]}.",
-            "FOLLOW": follow, "CREDIT": "Photos: " + ", ".join(authors) + " · Wikimedia Commons" if authors else "Photos: Wikimedia Commons"})
+            "FOLLOW": follow, "CREDIT": "AI footage of the real place, made from our photo"})
     if fmt == "tiny_world":
         for i, c in enumerate(f["clips"], 1):
             shutil.copy(c, w / "assets" / f"bg{i}.mp4")
@@ -441,8 +529,8 @@ def _html(fmt: str, f: dict, follow: str, music: str, w: Path) -> str:
 def render(fmt: str, slug: str, out: Path, follow: str = "follow @nakshiq", today: date | None = None) -> dict:
     today = today or date.today()
     f = FACTS[fmt](slug, today)
-    if fmt == "tiny_world":
-        why = place_only_flags(tiny_sb(slug))
+    if fmt in ("tiny_world", "two_months"):
+        why = place_only_flags(tiny_sb(slug) if fmt == "tiny_world" else two_sb(slug))
         if why:
             raise Refuse(f"people in a place-only clip: {why}")
     w, music = _project(slug, fmt, DUR[fmt])
@@ -482,6 +570,8 @@ def candidates(fmt: str, today: date | None = None, limit: int | None = None) ->
         if fmt == "map_reveal" and not ((data().get("geo") or {}).get(slug) or {}).get("lat"):
             continue
         if fmt == "tiny_world" and not (CLIPS / f"{tiny_sb(slug)}__s2.mp4").exists():
+            continue
+        if fmt == "two_months" and not (CLIPS / f"{two_sb(slug)}__s2.mp4").exists():
             continue
         quiet = best in (((data().get("crowd") or {}).get(slug) or {}).get("quiet_months") or [])
         out.append(((best - today.month) % 12, not quiet, -sc, slug))
@@ -554,7 +644,8 @@ def caption(row: dict) -> tuple[str, str]:
         g, b = MONTHS[row["good"]], MONTHS[row["bad"]]
         cap = (f"{nm} in {g}: {row['good_score']}/10. In {b}: {row['bad_score']}/10. Same place, two very different trips.\n\n"
                f"Send this to whoever's planning it with you.\n\n{nm}, every month: {url}\n\n"
-               f"Scores and prices are NakshIQ's real data. Both photos are real, taken around the month they show.{credits}"
+               f"Scores and reasons are NakshIQ's real data. The footage is AI-generated from our photo of the real place, "
+               f"showing what each month's verdict describes."
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{nm}: {g} or {b}? | NakshIQ"
     if row["kind"] == "tiny_world":
@@ -590,14 +681,8 @@ SHOT2 = ("Slow sideways tracking move across the miniature diorama, shallow tilt
 def queue_tiny(slug: str) -> int:
     if _cowork_window():
         raise SystemExit("15:30-21:00 local: Cowork is generating off the task file; not touching the queue")
-    h = hero(slug)
-    if not h:
-        raise Refuse("no site hero photo to build the miniature from")
     sb = tiny_sb(slug)
-    photo = f"{sb}__photo.jpg"
-    CLIPS.mkdir(parents=True, exist_ok=True)
-    if not (CLIPS / photo).exists():
-        _photo(h, CLIPS / photo)
+    photo = _photo_ref(sb, slug)
     rows = _load(QUEUE, [])
     have = {r["clip"] for r in rows}
     base = {"slug": slug, "format": sb, "pipeline": "v3", "storyboard": sb, "take": 1}
@@ -621,30 +706,90 @@ def queue_tiny(slug: str) -> int:
     return len(new)
 
 
+def _photo_ref(sb: str, slug: str) -> str:
+    h = hero(slug)
+    if not h:
+        raise Refuse("no site hero photo to build from")
+    photo = f"{sb}__photo.jpg"
+    CLIPS.mkdir(parents=True, exist_ok=True)
+    if not (CLIPS / photo).exists():
+        _photo(h, CLIPS / photo)
+    return photo
+
+
+def queue_two(slug: str, today: date) -> int:
+    """Two stills of the real place (from its site photo) in the good month and the skip month,
+    exactly as each month's note describes, then one Veo clip from each (20 credits)."""
+    if _cowork_window():
+        raise SystemExit("15:30-21:00 local: Cowork is generating off the task file; not touching the queue")
+    a, b = pick_two(slug, today)
+    sb = two_sb(slug)
+    photo = _photo_ref(sb, slug)
+    g = (data().get("geo") or {}).get(slug) or {}
+    where = f"{name(slug)}, {g.get('state_name')}" if g.get("state_name") else name(slug)
+    def still(sc: dict) -> str:
+        return (f"Using this photograph of {where}, India, show exactly the same place in {MONTHS[sc['month']]}: "
+                + "; ".join(sc["looks"]) + ". Keep the same viewpoint and the same buildings, hills and landmarks. "
+                "Photorealistic, natural colour, vertical 9:16. No text, no signs, no watermark."
+                + ("" if sc["crowd"] else " No people."))
+    def shot(sc: dict) -> str:
+        return (f"The camera holds almost still with a very slow push-in. {sc['motion']} "
+                f"Ambient sound: {sc['sound']}." + ("" if sc["crowd"] else " No people.") + " No text.")
+    rows = _load(QUEUE, [])
+    have = {r["clip"] for r in rows}
+    base = {"slug": slug, "format": sb, "pipeline": "v3", "storyboard": sb, "take": 1}
+    want = [dict(base, clip=photo, kind="ref", role="photo", status="live", seconds=0, credits=0,
+                 prompt="Real photograph of the place (site hero), saved at " + str(CLIPS / photo))]
+    for i, sc in ((1, a), (2, b)):
+        want += [dict(base, clip=f"{sb}__kf{i}.jpg", kind="keyframe", role=f"kf{i}", status="pending", seconds=0,
+                      credits=0, prompt=still(sc), refs=[photo], month=sc["month"]),
+                 dict(base, clip=f"{sb}__s{i}.mp4", kind="shot", mode="frames", role=f"s{i}", status="pending",
+                      seconds=8, credits=10, prompt=shot(sc), start_frame=f"{sb}__kf{i}.jpg", end_frame=None,
+                      month=sc["month"], crowd=sc["crowd"])]
+    new = [r for r in want if r["clip"] not in have]
+    if new:
+        tmp = QUEUE.with_suffix(".tmp")
+        tmp.write_text(json.dumps(rows + new, indent=2, ensure_ascii=False))
+        tmp.replace(QUEUE)
+    return len(new)
+
+
 def prepare(today: date | None = None) -> int:
-    """Keep ONE tiny_world storyboard ready or in the queue ahead of its weekly slot (20 credits a
-    week). Runs from run-veo.sh after the ingest; a no-op while the rotation is off."""
+    """Keep ONE tiny_world and ONE two_months storyboard ready or queued ahead of their weekly
+    slots (20 credits each a week). Runs from run-veo.sh after the ingest; off with the rotation."""
     today = today or date.today()
     if not rotation_start():
         print("[place_reels] rotation off (no ROTATION_START): nothing to prepare")
         return 0
     led = _load(LEDGER, {})
-    used = {v.get("slug") for v in led.values() if v.get("kind") == "tiny_world"}
     rows = _load(QUEUE, [])
-    waiting = {r["slug"] for r in rows if r.get("storyboard", "").endswith("__tiny_world")
-               and r.get("status") in ("pending", "parked")}
-    ready = [s for s in candidates("tiny_world", today) if s not in used]
-    if waiting or ready:
-        print(f"[place_reels] tiny_world: {len(ready)} ready, {len(waiting)} in the queue — nothing to add")
-        return 0
-    import guide_reel as GR
-    for slug in candidates("map_reveal", today):   # any place with a good coming month
-        if slug in used or not GR.hero(slug):
+    for fmt, suffix, q in (("tiny_world", "__tiny_world", lambda s: queue_tiny(s)),
+                           ("two_months", "__two_months", lambda s: queue_two(s, today))):
+        used = {v.get("slug") for v in led.values() if v.get("kind") == fmt}
+        waiting = {r["slug"] for r in rows if r.get("storyboard", "").endswith(suffix) and r.get("status") in ("pending", "parked")}
+        ready = []
+        for s in candidates(fmt, today):
+            if s in used:
+                continue
+            try:
+                FACTS[fmt](s, today)
+                ready.append(s)
+            except Refuse:
+                pass
+        if waiting or ready:
+            print(f"[place_reels] {fmt}: {len(ready)} ready, {len(waiting)} in the queue — nothing to add")
             continue
-        n = queue_tiny(slug)
-        print(f"[place_reels] tiny_world: queued {n} row(s) for {slug}")
-        return 0
-    print("[place_reels] tiny_world: no place with a hero photo and a good coming month")
+        for slug in candidates("map_reveal", today):   # any place with a good coming month
+            if slug in used or not hero(slug):
+                continue
+            try:
+                n = q(slug)
+            except Refuse as e:
+                continue
+            print(f"[place_reels] {fmt}: queued {n} row(s) for {slug}")
+            break
+        else:
+            print(f"[place_reels] {fmt}: no place qualifies")
     return 0
 
 

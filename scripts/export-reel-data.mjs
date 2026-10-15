@@ -89,7 +89,7 @@ try {
   // first added to the snapshot by hand -- it MUST be here too, or the first
   // successful refresh would silently drop it and both formats would stop.
   const monthRows = (await client.query(`
-    select destination_id, month, score, verdict
+    select destination_id, month, score, verdict, note
     from destination_months where score is not null`)).rows;
 
   // Where each place is (map_reveal reel, 2026-10-15): the pin, the height, and
@@ -126,7 +126,7 @@ try {
     costs: byDest(costs.map(({ months_csv, ...r }) => ({ ...r, months: months_csv ? months_csv.split(',').map(Number) : [] }))),
     vs_pairs: pairs,
     months: monthRows.reduce((a, r) => {
-      (a[r.destination_id] ||= {})[String(r.month)] = { score: r.score, label: r.verdict || null };
+      (a[r.destination_id] ||= {})[String(r.month)] = { score: r.score, label: r.verdict || null, note: r.note || null };
       return a; }, {}),
     geo: Object.fromEntries(geo.map(({ id, ...r }) => [id, r])),
   };

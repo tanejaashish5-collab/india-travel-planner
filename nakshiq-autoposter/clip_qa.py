@@ -101,13 +101,17 @@ def verdict(seq: list[int], static: bool, cast: int | None) -> str:
 
 
 # People-free formats (place_reels.py, founder 2026-10-15): a cast of 0, so any lasting figure flags.
-PLACE_ONLY = ("__tiny_world", "__map_reveal")
+PLACE_ONLY = ("__tiny_world", "__map_reveal", "__two_months")
 
 
 def _shot_info(storyboard: str) -> dict[str, tuple[bool, int | None, bool]]:
     """shot id -> (camera holds still?, people in the cast, background crowd?). From the reel spec."""
     if storyboard.endswith(PLACE_ONLY):
-        return {c.stem.rsplit("__", 1)[1]: (False, 0, False) for c in CLIPS.glob(f"{storyboard}__s[0-9].mp4")}
+        # a two_months clip of a peak-crowd month is prompted WITH distant crowds: count not judged there
+        q = json.loads((VEO / "veo_queue.json").read_text()) if (VEO / "veo_queue.json").exists() else []
+        crowd = {r.get("role") for r in q if r.get("storyboard") == storyboard and r.get("crowd")}
+        return {c.stem.rsplit("__", 1)[1]: (False, 0, c.stem.rsplit("__", 1)[1] in crowd)
+                for c in CLIPS.glob(f"{storyboard}__s[0-9].mp4")}
     spec = HERE / "reel_specs" / f"{storyboard}.json"
     if not spec.exists():
         return {}
