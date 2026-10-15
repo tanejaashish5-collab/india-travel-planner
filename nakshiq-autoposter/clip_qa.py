@@ -100,8 +100,14 @@ def verdict(seq: list[int], static: bool, cast: int | None) -> str:
     return ""
 
 
+# People-free formats (place_reels.py, founder 2026-10-15): a cast of 0, so any lasting figure flags.
+PLACE_ONLY = ("__tiny_world", "__map_reveal")
+
+
 def _shot_info(storyboard: str) -> dict[str, tuple[bool, int | None, bool]]:
     """shot id -> (camera holds still?, people in the cast, background crowd?). From the reel spec."""
+    if storyboard.endswith(PLACE_ONLY):
+        return {c.stem.rsplit("__", 1)[1]: (False, 0, False) for c in CLIPS.glob(f"{storyboard}__s[0-9].mp4")}
     spec = HERE / "reel_specs" / f"{storyboard}.json"
     if not spec.exists():
         return {}

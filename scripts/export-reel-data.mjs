@@ -92,6 +92,16 @@ try {
     select destination_id, month, score, verdict
     from destination_months where score is not null`)).rows;
 
+  // Where each place is (map_reveal reel, 2026-10-15): the pin, the height, and
+  // the nearest rail and air links exactly as the destination page states them.
+  const geo = (await client.query(`
+    select d.id, d.name, d.state_id, s.name as state_name, d.elevation_m,
+           d.nearest_airport, d.nearest_railhead,
+           round(st_y(d.coords::geometry)::numeric, 4)::float as lat,
+           round(st_x(d.coords::geometry)::numeric, 4)::float as lng
+    from destinations d left join states s on s.id = d.state_id
+    where d.coords is not null`)).rows;
+
   await client.query("COMMIT");
 
   // /vs/ pairs: both files, both orders deduped, exactly as the site builds them.
@@ -118,12 +128,13 @@ try {
     months: monthRows.reduce((a, r) => {
       (a[r.destination_id] ||= {})[String(r.month)] = { score: r.score, label: r.verdict || null };
       return a; }, {}),
+    geo: Object.fromEntries(geo.map(({ id, ...r }) => [id, r])),
   };
   mkdirSync(dirname(OUT), { recursive: true });
   writeFileSync(OUT, JSON.stringify(doc));
   console.log(`[reel-data] treks ${treks.length} (${Object.keys(doc.treks).length} dests) · ` +
               `crowd ${crowd.length} · cost-days ${costs.length} (${Object.keys(doc.costs).length} dests) · ` +
-              `vs pairs ${pairs.length} · months ${Object.keys(doc.months).length} dests`);
+              `vs pairs ${pairs.length} · months ${Object.keys(doc.months).length} dests · geo ${geo.length}`);
   console.log(`[reel-data] ${OUT}`);
 } catch (e) {
   await client.query("ROLLBACK").catch(() => {});

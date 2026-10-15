@@ -287,6 +287,9 @@ def caption_for(row: dict) -> tuple[str, str]:
     caption reads as the same voice as the video. Disclosure is in the text:
     the people in these scenes are AI-generated, and saying so costs nothing
     and keeps the account out of the undisclosed-AI-people class."""
+    if row.get("kind") in ("map_reveal", "two_months", "tiny_world"):
+        import place_reels as PR
+        return PR.caption(row)
     if row.get("format") == "longweekend":
         import longweekend_reel as LW
         return LW.caption(row)
@@ -427,6 +430,32 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                 if n or row.get("status") != "review":
                     break
             continue
+        # FORMAT ROTATION (founder 2026-10-15: "every week we go through all these different
+        # format once"). place_reels.slot() names today's format; off until ROTATION_START exists.
+        # A place format renders on demand; if it cannot (refused, failed, first-of-format held
+        # for review), the day falls back to the cast round robin below, then the data card.
+        target = None
+        try:
+            import place_reels as PR
+            from zoneinfo import ZoneInfo
+            target = PR.slot(datetime.now(ZoneInfo("Asia/Kolkata")).date())
+        except Exception as e:  # noqa: BLE001
+            _log(f"{plat}: rotation unavailable ({str(e)[:120]}) — cast round robin")
+        if target and target != "cast":
+            acct = accounts.get(plat)
+            if not acct:
+                _no_account(plat, kind, dry)
+                continue
+            rot = (_data_card_row(plat, surf, led, dry) if target == "data_card"
+                   else PR.make_row(target, plat, surf, led, dry, log=_log))
+            if rot and target != "data_card":
+                _save_ledger(led)
+            if rot and rot.get("status") == "ready" and Path(rot["file"]).exists():
+                if _post(ap, led, rot, plat, acct, today, dry):
+                    published += 1
+                    continue
+            _log(f"{plat}: rotation slot {target} posted nothing"
+                 + (f" ({rot.get('held') or rot.get('status')})" if rot else "") + " — cast round robin")
         # ROUND ROBIN (founder 2026-10-01: "use all angles before repetition so
         # everyday there is new stuff"): the ready reel whose angle was published
         # longest ago goes first; an angle never used yet goes before any that has.
@@ -437,7 +466,7 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                 a = v.get("angle") or "month"
                 last[a] = max(last.get(a, ""), v.get("published_at") or "")
         ready = sorted((v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
-                        and v.get("kind") not in ("data_card", "guide")
+                        and v.get("kind") not in ("data_card", "guide", "map_reveal", "two_months", "tiny_world")
                         and Path(v["file"]).exists() and _cleared(v)),
                        key=lambda v: (last.get(v.get("angle") or "month", ""), not v.get("six_beat"), v["rendered_at"]))
         ready = [v for v in ready if _cost_ok(v, led)]

@@ -407,7 +407,7 @@ def _month_gap(a: int, b: int) -> int:
 
 
 def commons_photo(query: str, must: str, dest: Path, used: set, month: int, need_month: bool = True,
-                  max_gap: int = 1) -> dict | None:
+                  max_gap: int = 1, title_ok=None) -> dict | None:
     """A real photo whose TITLE names the place and whose capture month is within one
     month of the reel's (founder 10-04: an October Manali reel showed winter snow).
     `must` words may carry spelling variants as "hadimba/hidimba"."""
@@ -430,6 +430,8 @@ def commons_photo(query: str, must: str, dest: Path, used: set, month: int, need
         if not all(any(re.search(rf"\b{v}", norm) for v in w.split("/")) for w in words):
             continue
         if title in used or title in rejected or NOT_A_PLACE.search(re.sub(r"[_.()-]", " ", title)):
+            continue
+        if title_ok and not title_ok(title):
             continue
         ii = pg["imageinfo"][0]; m = ii.get("extmetadata", {})
         lic = (m.get("LicenseShortName") or {}).get("value", "")
@@ -526,8 +528,9 @@ def hero(slug: str) -> Path | None:
 
 
 def _cowork_window() -> bool:
+    """Cowork generates off the task file 15:30-21:00 local (moved from 10:00-13:00 on 2026-10-08)."""
     now = datetime.now()
-    return 10 <= now.hour < 13
+    return (15, 30) <= (now.hour, now.minute) < (21, 0)
 
 
 def queue(slug: str, month: int, sl: list[dict]) -> int:
