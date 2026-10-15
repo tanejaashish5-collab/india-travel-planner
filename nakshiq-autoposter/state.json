@@ -36,21 +36,13 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-14",
+    "PdMu0_carousel": "2026-10-15",
     "PdMu0": "2026-10-14",
     "PdMu0_evening": "2026-10-14",
     "PdMu0_infographic": "2026-10-14"
   },
   "last_sync": "2026-10-14T18:46:33.957133+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "yusmarg",
-      "date": "2026-09-30"
-    },
-    {
-      "destination_id": "parvati-valley",
-      "date": "2026-09-30"
-    },
     {
       "destination_id": "kurukshetra",
       "date": "2026-10-01"
@@ -174,6 +166,10 @@
     {
       "destination_id": "ozar",
       "date": "2026-10-14"
+    },
+    {
+      "destination_id": "kashid",
+      "date": "2026-10-15"
     }
   ],
   "posted_formats": {
@@ -10898,6 +10894,15 @@
       "format": "v2_series_episode",
       "has_media": true,
       "media_id": "ozar.mp4"
+    },
+    {
+      "timestamp": "2026-10-15T12:50:47.237868+00:00",
+      "date": "2026-10-15",
+      "platform": "facebook",
+      "post_id": "aCrrs",
+      "destination": "kashid",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-10-15"
     }
   ],
   "theme_usage": {
@@ -11449,6 +11454,10 @@
         "2026-06-10",
         "2026-10-07"
       ],
+      "v2_series_episode": [
+        "2026-06-10",
+        "2026-10-14"
+      ],
       "eateries_pick": [
         "2026-06-11",
         "2026-10-03"
@@ -11469,9 +11478,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v2_series_episode": [
-        "2026-10-14"
       ]
     },
     "reels": {
@@ -11736,11 +11742,6 @@
       ]
     },
     "collections": {
-      "best-winter": [
-        "2026-05-20",
-        "2026-05-21",
-        "2026-07-16"
-      ],
       "borders-worth-visiting": [
         "2026-05-20",
         "2026-09-24"
@@ -11887,11 +11888,6 @@
         "2026-09-29"
       ]
     },
-    "collection_carousel_dests:best-winter": {
-      "zanskar": [
-        "2026-07-16"
-      ]
-    },
     "collection_carousel_dests:dwadasa-jyotirlinga": {
       "bhimashankar": [
         "2026-07-28"
@@ -11932,8 +11928,7 @@
       "kolhapur": [
         "2026-10-08"
       ]
-    },
-    "articles": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12028,7 +12023,12 @@
       "Kanji Sweets|jaipur",
       "Mayur Hotel & Restaurant|lansdowne",
       "The Bonfire Eat Drink And Love|nubra-valley",
-      "White Mountain View Hotel & Restaurant|drass"
+      "White Mountain View Hotel & Restaurant|drass",
+      "Kasar Khanaval|kashid",
+      "Petals Restaurant|junagadh",
+      "The Pasand Restaurant at Patang Residency|saputara",
+      "Cafe Xtasi|puducherry",
+      "Hotel Latur Veg (Veera Plaza)|aurangabad"
     ]
   }
 }
