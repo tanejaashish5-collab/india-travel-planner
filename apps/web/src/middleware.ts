@@ -229,9 +229,12 @@ export default function middleware(request: NextRequest) {
   // duplicate-content drift and fix the 404s in one shot. Sub-region IDs
   // (kerala-backwaters, tn-coast etc) aren't in STATE_MAP so they fall through
   // to the existing /region/[id] route as before.
-  const regionStateMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/region\/([^/]+)\/?$/);
+  // Optional locale prefix added 2026-10-15: bare /region/<state> → intlMiddleware
+  // → locale-prefixed path was a 2-hop chain Google flags as "Redirect error".
+  const regionStateMatch = request.nextUrl.pathname.match(/^(?:\/(en|hi))?\/region\/([^/]+)\/?$/);
   if (regionStateMatch && STATE_MAP[regionStateMatch[2]]) {
-    const [, locale, stateId] = regionStateMatch;
+    const locale = regionStateMatch[1] ?? "en";
+    const stateId = regionStateMatch[2];
     return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
   }
 
@@ -239,9 +242,10 @@ export default function middleware(request: NextRequest) {
   // when the region→state route refactor moved /region/{slug} to /state/{slug}
   // and added /states (plural index). /regions never paired with a redirect
   // and now 404s — /states is the consolidated index.
-  const regionsIndexMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/regions\/?$/);
+  // Optional locale prefix added 2026-10-15: bare /regions → 2-hop → Redirect error.
+  const regionsIndexMatch = request.nextUrl.pathname.match(/^(?:\/(en|hi))?\/regions\/?$/);
   if (regionsIndexMatch) {
-    const [, locale] = regionsIndexMatch;
+    const locale = regionsIndexMatch[1] ?? "en";
     return NextResponse.redirect(new URL(`/${locale}/states`, request.url), 301);
   }
 
@@ -250,9 +254,10 @@ export default function middleware(request: NextRequest) {
   // (it's a regional cluster). The /india/northeast page is the existing
   // 8-state NE landing — closest semantic match. Caught from GSC's 2026-04-29
   // Not-found bucket where /hi/region/northeast/june was the residual 404.
-  const regionNortheastMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/region\/northeast(?:\/.*)?$/);
+  // Optional locale prefix added 2026-10-15: bare /region/northeast/* → 2-hop → Redirect error.
+  const regionNortheastMatch = request.nextUrl.pathname.match(/^(?:\/(en|hi))?\/region\/northeast(?:\/.*)?$/);
   if (regionNortheastMatch) {
-    const [, locale] = regionNortheastMatch;
+    const locale = regionNortheastMatch[1] ?? "en";
     return NextResponse.redirect(new URL(`/${locale}/india/northeast`, request.url), 301);
   }
 
@@ -261,18 +266,22 @@ export default function middleware(request: NextRequest) {
   // missing. Tourist Traps is the editorial home for the same content. Caught
   // 2026-05-06 GSC non-indexing audit (was 404'ing for ~4 GSC URL records and
   // had a broken link from /more).
-  const skipListMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/skip-list\/?$/);
+  // Optional locale prefix added 2026-10-15: bare /skip-list → 2-hop → Redirect error.
+  const skipListMatch = request.nextUrl.pathname.match(/^(?:\/(en|hi))?\/skip-list\/?$/);
   if (skipListMatch) {
-    const [, locale] = skipListMatch;
+    const locale = skipListMatch[1] ?? "en";
     return NextResponse.redirect(new URL(`/${locale}/tourist-traps`, request.url), 301);
   }
 
   // Trek dedupe 2026-05-27 — `hampta-pass-trek` was a duplicate of `hampta-pass`
   // (same trek, slug variant). Canonical retained: hampta-pass (longer description,
   // 4-day duration, shorter slug — better for "hampta pass" searches).
-  const hamptaMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/treks\/hampta-pass-trek\/?$/);
+  // Optional locale prefix: bare /treks/hampta-pass-trek → intlMiddleware → locale-prefixed
+  // path was a 2-hop chain Google flags as "Redirect error" (same pattern fixed for
+  // /destination/<state> by bareDestStateMatch). Single hop by handling bare paths here.
+  const hamptaMatch = request.nextUrl.pathname.match(/^(?:\/(en|hi))?\/treks\/hampta-pass-trek\/?$/);
   if (hamptaMatch) {
-    const [, locale] = hamptaMatch;
+    const locale = hamptaMatch[1] ?? "en";
     return NextResponse.redirect(new URL(`/${locale}/treks/hampta-pass`, request.url), 301);
   }
 
@@ -281,9 +290,10 @@ export default function middleware(request: NextRequest) {
   // the actual destinations are kasol + parvati-valley + manikaran (separate
   // rows). Google has the legacy URL indexed; redirect to the canonical
   // kasol-vs-manikaran pair so we don't lose the impressions.
-  const kasolMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/vs\/kasol-parvati-valley-vs-manikaran\/?$/);
+  // Optional locale: bare path → 2-hop → "Redirect error" (same fix as hamptaMatch above).
+  const kasolMatch = request.nextUrl.pathname.match(/^(?:\/(en|hi))?\/vs\/kasol-parvati-valley-vs-manikaran\/?$/);
   if (kasolMatch) {
-    const [, locale] = kasolMatch;
+    const locale = kasolMatch[1] ?? "en";
     return NextResponse.redirect(new URL(`/${locale}/vs/kasol-vs-manikaran`, request.url), 301);
   }
 
@@ -291,11 +301,14 @@ export default function middleware(request: NextRequest) {
   // never had a route (state/month combos render at /state/<state> only,
   // there's no /state/[id]/[month] route). Drop the month and redirect.
   // The bare /region/<state> case is already covered by the rule above.
+  // Optional locale prefix added 2026-10-15: bare /region/<state>/<month>
+  // was a 2-hop chain → Redirect error (same pattern as bareDestStateMatch).
   const regionMonthMatch = request.nextUrl.pathname.match(
-    /^\/(en|hi)\/region\/([^/]+)\/(january|february|march|april|may|june|july|august|september|october|november|december)\/?$/,
+    /^(?:\/(en|hi))?\/region\/([^/]+)\/(january|february|march|april|may|june|july|august|september|october|november|december)\/?$/,
   );
   if (regionMonthMatch && STATE_MAP[regionMonthMatch[2]]) {
-    const [, locale, stateSlug] = regionMonthMatch;
+    const locale = regionMonthMatch[1] ?? "en";
+    const stateSlug = regionMonthMatch[2];
     return NextResponse.redirect(
       new URL(`/${locale}/state/${stateSlug}`, request.url),
       301,
@@ -305,11 +318,13 @@ export default function middleware(request: NextRequest) {
   // GSC 404 cleanup 2026-05-25 — legacy /where-to-go/<state>-in-<month>
   // URLs (the current route is /where-to-go/<month> only). 301 to the
   // month-only page; state intent is preserved via the listings on that page.
+  // Optional locale prefix added 2026-10-15: bare path → 2-hop → Redirect error.
   const whereToGoMatch = request.nextUrl.pathname.match(
-    /^\/(en|hi)\/where-to-go\/[a-z-]+-in-(january|february|march|april|may|june|july|august|september|october|november|december)\/?$/,
+    /^(?:\/(en|hi))?\/where-to-go\/[a-z-]+-in-(january|february|march|april|may|june|july|august|september|october|november|december)\/?$/,
   );
   if (whereToGoMatch) {
-    const [, locale, month] = whereToGoMatch;
+    const locale = whereToGoMatch[1] ?? "en";
+    const month = whereToGoMatch[2];
     return NextResponse.redirect(
       new URL(`/${locale}/where-to-go/${month}`, request.url),
       301,
