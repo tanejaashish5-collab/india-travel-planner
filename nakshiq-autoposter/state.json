@@ -37,11 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-15",
-    "PdMu0": "2026-10-14",
-    "PdMu0_evening": "2026-10-14",
+    "PdMu0": "2026-10-15",
+    "PdMu0_evening": "2026-10-15",
     "PdMu0_infographic": "2026-10-14"
   },
-  "last_sync": "2026-10-14T18:46:33.957133+00:00",
+  "last_sync": "2026-10-15T17:31:43.645093+00:00",
   "posted_destinations": [
     {
       "destination_id": "kurukshetra",
@@ -170,6 +170,10 @@
     {
       "destination_id": "kashid",
       "date": "2026-10-15"
+    },
+    {
+      "destination_id": "mumbai",
+      "date": "2026-10-15"
     }
   ],
   "posted_formats": {
@@ -197,7 +201,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "festival_alert",
       "score_card",
       "score_card",
@@ -217,7 +220,8 @@
       "v2_tourist_trap_split",
       "v3_tl_poll_reel",
       "festival_alert",
-      "v2_series_episode"
+      "v2_series_episode",
+      "v2_arrival_intel_video"
     ]
   },
   "post_log": [
@@ -10903,6 +10907,35 @@
       "destination": "kashid",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-10-15"
+    },
+    {
+      "timestamp": "2026-10-15T14:37:22.662941+00:00",
+      "date": "2026-10-15",
+      "platform": "instagram",
+      "post_id": "SsAnZ",
+      "destination": "katra",
+      "format": "scenario_pilgrimage",
+      "media_id": "iQezZ"
+    },
+    {
+      "timestamp": "2026-10-15T14:38:11.072240+00:00",
+      "date": "2026-10-15",
+      "platform": "youtube",
+      "post_id": "GEncU",
+      "destination": "katra",
+      "format": "scenario_pilgrimage",
+      "media_id": "IBgEh"
+    },
+    {
+      "timestamp": "2026-10-15T17:32:22.465593+00:00",
+      "date": "2026-10-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "93FTx",
+      "destination": "mumbai",
+      "format": "v2_arrival_intel_video",
+      "has_media": true,
+      "media_id": "mumbai.mp4"
     }
   ],
   "theme_usage": {
@@ -10930,7 +10963,8 @@
       "mumbai": [
         "2026-05-20",
         "2026-05-26",
-        "2026-08-27"
+        "2026-08-27",
+        "2026-10-15"
       ],
       "pahalgam": [
         "2026-05-20",
@@ -10954,7 +10988,8 @@
       ],
       "kedarnath": [
         "2026-05-24",
-        "2026-10-09"
+        "2026-10-09",
+        "2026-10-15"
       ],
       "shimla": [
         "2026-05-24",
@@ -10964,7 +10999,8 @@
       "puri": [
         "2026-05-25",
         "2026-06-07",
-        "2026-10-01"
+        "2026-10-01",
+        "2026-10-15"
       ],
       "jibhi": [
         "2026-05-25",
@@ -11279,7 +11315,8 @@
       ],
       "sravasti": [
         "2026-10-07",
-        "2026-10-09"
+        "2026-10-09",
+        "2026-10-15"
       ],
       "kolhapur": [
         "2026-10-08"
@@ -11288,7 +11325,8 @@
         "2026-10-09"
       ],
       "vrindavan": [
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-15"
       ],
       "chittorgarh": [
         "2026-10-13"
@@ -11478,6 +11516,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v2_arrival_intel_video": [
+        "2026-10-15"
       ]
     },
     "reels": {
@@ -11499,7 +11540,8 @@
       ],
       "mumbai": [
         "2026-05-26",
-        "2026-08-27"
+        "2026-08-27",
+        "2026-10-15"
       ],
       "hampi": [
         "2026-05-28",
@@ -11817,6 +11859,9 @@
       ],
       "iconic-train-journeys": [
         "2026-10-13"
+      ],
+      "spiritual-circuit": [
+        "2026-10-15"
       ]
     },
     "festivals": {
@@ -11928,6 +11973,20 @@
       "kolhapur": [
         "2026-10-08"
       ]
+    },
+    "collection_carousel_dests:spiritual-circuit": {
+      "puri": [
+        "2026-10-15"
+      ],
+      "sravasti": [
+        "2026-10-15"
+      ],
+      "kedarnath": [
+        "2026-10-15"
+      ],
+      "vrindavan": [
+        "2026-10-15"
+      ]
     }
   },
   "infographic": {
@@ -11942,8 +12001,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kausani",
-    "collection": "iconic-train-journeys"
+    "shared_best": "kasauli",
+    "collection": "spiritual-circuit"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-09",

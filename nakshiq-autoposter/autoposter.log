@@ -27905,3 +27905,37 @@ Date range: 2026-04-15 → 2026-10-14
 2026-10-16 01:37:27  INFO          Uploading to R2 (timeout=300s)...
 2026-10-16 01:37:51  INFO          R2 PUT OK. Confirming...
 2026-10-16 01:37:54  INFO          Media ready: IBgEh (53,952,344 bytes · katra__pilgrimage__en.mp4)
+2026-10-15 17:30:41  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-15 17:30:41  INFO      ════════════════════════════════════════════════════════════
+2026-10-15 17:30:41  INFO      Nakshiq Autoposter · EVENING · 2026-10-15 · weekday=3
+2026-10-15 17:30:41  INFO      ════════════════════════════════════════════════════════════
+2026-10-15 17:30:41  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-15 17:31:43  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-15 17:31:43  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-15 17:31:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-15 17:31:44  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-15 17:31:44  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-15 17:31:44  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-15 17:32:01  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-15 17:32:01  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (carousel, pillar:discovery, pillar:scenario_guide, pillar:scenario_hidden_gem, pillar:scenario_kids, pillar:scenario_pilgrimage seen <2d)
+2026-10-15 17:32:01  INFO      Evening format (balance→verification): v2_arrival_intel_video [0% vs target 20%] (0/15 never featured)
+2026-10-15 17:32:01  INFO      Formats — IG: v2_arrival_intel_video  ·  FB: v2_arrival_intel_video  ·  Story: collection_spotlight
+2026-10-15 17:32:01  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 53
+2026-10-15 17:32:01  INFO      Fingerprint dedup snapshot — 46 dests in 7d · 77 (dest,fmt) pairs in 30d · 224 media in 60d
+2026-10-15 17:32:01  INFO      Collection locked: The Complete Spiritual Circuit (77/100 never featured)
+2026-10-15 17:32:03  INFO      Shared best destination locked: Kasauli
+2026-10-15 17:32:04  INFO      Carousel locked (collection_spotlight): puri, sravasti, kedarnath, vrindavan
+2026-10-15 17:32:04  INFO      [facebook/Nakshiq] Generating v2_arrival_intel_video post...
+2026-10-15 17:32:04  INFO      [csv_formats] endpoint-anchored: v2_arrival_intel_video → arrival (9 candidates)
+2026-10-15 17:32:04  INFO      [facebook/Nakshiq] Caption ready (589 chars, dest=mumbai)
+2026-10-15 17:32:05  INFO      [facebook/Nakshiq] CSV video format (v2_arrival_intel_video) — using dest Ken Burns clip as fallback
+2026-10-15 17:32:05  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mumbai.mp4?v=20260915
+2026-10-15 17:32:08  INFO          Brand-stamp applied: mumbai.mp4 (3,075,226 → 1,668,588 bytes)
+2026-10-15 17:32:08  INFO          Requesting upload URL for mumbai.mp4 (1,668,588 bytes, video/mp4)
+2026-10-15 17:32:09  INFO          Uploading to R2 (timeout=300s)...
+2026-10-15 17:32:10  INFO          R2 PUT OK. Confirming...
+2026-10-15 17:32:11  INFO          Media ready: 8igRa (1,668,588 bytes · mumbai.mp4)
+2026-10-15 17:32:11  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-15 17:32:22  INFO      [facebook/Nakshiq] ✅ Published · Outstand=93FTx · Platform=1416015556756676
+2026-10-15 17:32:22  INFO      State saved. Run complete.
+2026-10-15 17:32:22  INFO      ════════════════════════════════════════════════════════════
