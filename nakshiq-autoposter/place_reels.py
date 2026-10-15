@@ -29,8 +29,8 @@ EVERY NUMBER ON SCREEN comes from reel-data.json (scripts/export-reel-data.mjs).
 cannot fill a format honestly refuses, and publish() moves to the next candidate.
 
 ROTATION: off until ROTATION_START (a file next to this one holding a Monday, e.g. 2026-10-19)
-exists. Each week runs map_reveal, data_card, two_months, tiny_world, cast, cast, wildcard; the
-weekday order shifts by one each week so no format always gets the same day. The wildcard repeats
+exists. Each week runs map_reveal, cast, data_card, two_months, cast, tiny_world, wildcard; the
+weekday order shifts by two days each week so no format always gets the same day. The wildcard repeats
 last week's leader (format_reach.json, written by the weekly read-out), else map_reveal.
 """
 from __future__ import annotations
@@ -63,7 +63,11 @@ START_FILE = HERE / "ROTATION_START"
 MONTHS = ["", "January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
 PLACE_FORMATS = ("map_reveal", "two_months", "tiny_world")
-WEEK = ("map_reveal", "data_card", "two_months", "tiny_world", "cast", "cast", "wildcard")
+# Order matters: casts are apart, and the weekly shift is TWO days (a one-day shift made every Sunday
+# and the following Monday the same format). 2 is coprime with 7, so over 7 weeks every format
+# lands on every weekday.
+WEEK = ("map_reveal", "cast", "data_card", "two_months", "cast", "tiny_world", "wildcard")
+SHIFT = 2
 REPEAT_DAYS = 60                      # a place is not re-used by the same format inside this window
 MUSIC_FMT = {"map_reveal": "real_cost", "two_months": "quiet_month", "tiny_world": "quiet_month"}
 DUR = {"map_reveal": 15.0, "two_months": 15.0, "tiny_world": 15.0}
@@ -111,9 +115,22 @@ def slot(day: date) -> str | None:
     start = rotation_start()
     if not start or day < start:
         return None
+    f = _base(day, start)
+    if f != "wildcard":
+        return f
+    # The wildcard repeats last week's leader, but never the same format as the day before or the
+    # day after (the weekly shift puts consecutive weeks' wildcards side by side).
+    prev = slot(day - timedelta(days=1)) if day > start else None
+    nxt = _base(day + timedelta(days=1), start)
+    for c in (leader(), *PLACE_FORMATS, "data_card"):
+        if c not in (prev, nxt):
+            return c
+    return leader()
+
+
+def _base(day: date, start: date) -> str:
     week = (day - start).days // 7
-    f = WEEK[(day.weekday() - week) % 7]
-    return leader() if f == "wildcard" else f
+    return WEEK[(day.weekday() - SHIFT * week) % 7]
 
 
 # ─── shared facts ─────────────────────────────────────────────────────────
