@@ -333,7 +333,8 @@ def slides(pack: dict, month: int) -> list[dict]:
         c = pack["costs"][season]
         parts = []
         if c.get("hotel-mid"): parts.append(f"Mid hotel {_inr(c['hotel-mid']['typical_inr'])} a night")
-        if c.get("food-per-day"): parts.append(f"food {_inr(c['food-per-day']['typical_inr'])} a day")
+        # No food figure (founder 2026-10-16): what people eat is their choice, so a food-a-day number is a
+        # guess. Reels quote only fixed prices (room, taxi); food is shown as WHERE to eat, never what it costs.
         if c.get("transport-taxi-day"): parts.append(f"taxi {_inr(c['transport-taxi-day']['typical_inr'])} a day")
         if parts:
             add("cost", "cost", f"What {mon} really costs", parts[0], ", ".join(parts[1:]).capitalize(),
@@ -895,7 +896,7 @@ def cost_basis(pack: dict, month: int) -> list[dict]:
         return []
     c = pack["costs"][season]
     return [{"category": k, "season": season, "value": int(round(float(c[k]["typical_inr"])))}
-            for k in ("hotel-mid", "food-per-day", "transport-taxi-day") if c.get(k)]
+            for k in ("hotel-mid", "transport-taxi-day") if c.get(k)]
 
 
 HOLD = HERE / "HOLD_FOR_REVIEW"     # same kill switch as the story reels

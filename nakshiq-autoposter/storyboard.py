@@ -1363,10 +1363,10 @@ def _fmt_which_two(dest: dict, month: int, months: dict, dest_b: dict = None) ->
 
 
 def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
-    """What a day actually costs, in THIS season: a mid-range room + a day of
-    food + a day's taxi, straight from the cost table. Only where all three
-    exist for a season covering this month; never an estimate stitched from
-    two seasons."""
+    """What a stay actually costs, in THIS season: a mid-range room + a day's
+    taxi, straight from the cost table (no food figure since 2026-10-16). Only
+    where both exist for a season covering this month; never an estimate
+    stitched from two seasons."""
     _require(dest, ("name",), "real_cost")
     # destination_costs rows carry NO months (the array is empty in every row),
     # so "in September" cannot be read from the cost table. The season is chosen
@@ -1385,14 +1385,13 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         season = ("peak" if month in (crowd.get("peak_months") or [])
                   else "low" if month in (crowd.get("quiet_months") or []) else "shoulder")
     row = next((r for r in costs if r.get("season") == season
-                and all(r.get(k) for k in ("hotel_mid", "food_day", "taxi_day", "mid_day_pp"))), None)
+                and all(r.get(k) for k in ("hotel_mid", "taxi_day"))), None)
     if not row:
         raise StoryboardError(
             f"real_cost: {dest.get('id')} has no complete {season}-season cost day")
-    h, f, t = int(row["hotel_mid"]), int(row["food_day"]), int(row["taxi_day"])
-    # ONE cost source: the mid-range day is the site's own per-person figure (cost_day_tiers, migration 091):
-    # half a 3-star room + food + half a day cab + half an activity, for two travelling together.
-    day = int(round(int(row["mid_day_pp"]) / 100.0) * 100)
+    # Room and taxi only (founder 2026-10-16): food depends on what each person chooses to eat, so neither a
+    # food figure nor a day total that folds food in is quoted. Both numbers are ledger values cost_gate checks.
+    h, t = int(row["hotel_mid"]), int(row["taxi_day"])
     name, mon = dest["name"], _month_name(month)
     seas = "off" if season == "low" else season
     seas_hi = {"peak": "पीक", "low": "ऑफ़", "shoulder": "शोल्डर"}[season]
@@ -1419,7 +1418,7 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         says=(f"The first price we heard in {name} made him raise an eyebrow at me.",
               "The taxi driver's number was not much better. Everyone smiling, nobody budging.",
               "So we stood on the street with our bags, guessing what was fair.",
-              f"Then I checked NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees each.",
+              f"Then I checked NakshIQ. In {seas} season a mid-range room here is about {h:,} rupees a night, and a day's taxi about {t:,}.",
               "The next conversation with the driver was very short."),
         caps=("",
               "",
@@ -1429,17 +1428,17 @@ def _fmt_real_cost(dest: dict, month: int, months: dict) -> list:
         says_hi=(f"{name} में हमारा दिन बजट में निकला, बिना बहस के। कैसे, देखो।",
                  "रिसेप्शन पर पहला दाम सुना, और उसने मेरी तरफ़ देखा।",
                  "टैक्सी वाले का नंबर भी कुछ बेहतर नहीं था। सब मुस्कुरा रहे थे, कोई हिल नहीं रहा था।",
-                 f"फिर NakshIQ देखा। यहाँ {seas_hi} सीज़न में मिड-रेंज दिन लगभग {day:,} रुपये प्रति व्यक्ति।",
+                 f"फिर NakshIQ देखा। यहाँ {seas_hi} सीज़न में मिड-रेंज कमरा लगभग {h:,} रुपये रात, और दिन भर की टैक्सी लगभग {t:,} रुपये।",
                  "ड्राइवर से अगली बात बहुत छोटी रही।"),
         caps_hi=(f"Our day in {name} came in on budget, no arguing. Here is how.",
                  "The first price at the desk, and he looked at me.",
                  "The taxi driver's number was no better. Everyone smiling, nobody moving.",
-                 f"Then NakshIQ. A mid-range day here in {seas} season is about {day:,} rupees each.",
+                 f"Then NakshIQ. In {seas} season a mid-range room is about {h:,} rupees a night, a day's taxi about {t:,}.",
                  "The next conversation with the driver was very short."),
-        payoff_say="That is each of us, sharing a mid-range room and a taxi, from its NakshIQ cost page. Check it before you haggle.",
-        payoff_cap=f"room ₹{h:,} · food ₹{f:,} · taxi ₹{t:,}",
-        payoff_say_hi="कमरा, खाना और टैक्सी, सब NakshIQ के कॉस्ट पेज पर। बहस से पहले देख लो।",
-        payoff_cap_hi="Room, food and taxi, all on the NakshIQ cost page. Check before you haggle.")
+        payoff_say="A mid-range room and a day's taxi, straight from its NakshIQ cost page. Check it before you haggle.",
+        payoff_cap=f"room ₹{h:,} a night · taxi ₹{t:,} a day",
+        payoff_say_hi="कमरा और टैक्सी, दोनों NakshIQ के कॉस्ट पेज पर। बहस से पहले देख लो।",
+        payoff_cap_hi="Room and taxi, both on the NakshIQ cost page. Check before you haggle.")
 
 
 def _fmt_quiet_month(dest: dict, month: int, months: dict) -> list:
