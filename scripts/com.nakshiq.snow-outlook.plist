@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.snow-outlook</string>
+  <!-- Snow outlook: six global models + IMD bulletins, scored afterwards.
+       Local LaunchAgent via /bin/bash (IMD answers from this Mac; needs pdftotext).
+       Canberra times; IST = Canberra minus 5:30 under AEDT (minus 4:30 under AEST):
+       16:30 = 11:00 IST, 20:30 = 15:00 IST, 22:30 = 17:00 IST (retry slot).
+       Install: cp scripts/com.nakshiq.snow-outlook.plist ~/Library/LaunchAgents/ &&
+                launchctl load ~/Library/LaunchAgents/com.nakshiq.snow-outlook.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/snow-outlook-daily.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/.local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Hour</key><integer>20</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Hour</key><integer>22</integer><key>Minute</key><integer>30</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/snow-outlook.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/snow-outlook.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

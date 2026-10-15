@@ -21,6 +21,7 @@ import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
 import { PeakAlertHook } from "@/components/peak-alert-hook";
 import { getCachedNearbyDestinations } from "@/lib/cached-data";
+import { getSnowOutlooks } from "@/lib/snow-outlook";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
@@ -273,7 +274,7 @@ async function getDestination(id: string) {
     gems, trapAlts, festivals, localStays, travelerNotes,
     allDests, reviews, relatedArticles, relatedCollections, relatedRoutes,
     nearbyDests, emergencySos, pois, editorStayPicks, scenarios, tripReports,
-    questions, eateries,
+    questions, eateries, snow,
   ] = await Promise.all([
     supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
     supabase
@@ -329,10 +330,13 @@ async function getDestination(id: string) {
       .eq("is_active", true)
       .order("is_legendary", { ascending: false })
       .order("name", { ascending: true }),
+    // Snow outlook (migration 114): only places at 1,800 m+ are watched, so skip the query below that.
+    (data.elevation_m ?? 0) >= 1800 ? getSnowOutlooks({ point: id }) : Promise.resolve(null),
   ]);
 
   return {
     ...data,
+    snow_outlook: snow?.outlooks?.[0] ?? null,
     hidden_gems: gems.data ?? [],
     trap_alternatives: trapAlts.data ?? [],
     festivals: festivals.data ?? [],

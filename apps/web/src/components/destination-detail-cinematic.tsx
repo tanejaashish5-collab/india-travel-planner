@@ -21,6 +21,7 @@ import { useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { isReviewStale } from "@/lib/review-freshness";
 import { ClosureNotice } from "./closure-notice";
+import { SnowOutlookNotice } from "./snow-outlook-notice";
 import { destinationImage } from "@/lib/image-url";
 import { HeroMedia } from "./hero-media";
 import {
@@ -528,6 +529,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             </p>
             {/* Temporary closure or restriction, if one is in force. */}
             <ClosureNotice dest={dest} locale={locale} onPhoto className="mt-5 max-w-xl" />
+            {/* Snow forecast for this place's altitude, if the models and IMD point to one. */}
+            <SnowOutlookNotice outlook={dest.snow_outlook} locale={locale} onPhoto className="mt-3 max-w-xl" />
             {/* Read-time + skim-to-verdict — busy readers get a quiet
                 "skip to the verdict" anchor; commit readers see the
                 length up front. Plain anchor link → smooth-scroll

@@ -127,7 +127,9 @@ def _hex(c: str) -> str:
 def _branding_bar() -> list[str]:
     """Persistent NakshIQ branding bar at bottom."""
     return [
-        f"drawbox=x=0:y=h-140:w=iw:h=140:color={_hex(INK_DEEP)}@0.90:t=fill",
+        # `ih`, not `h`: inside drawbox, `h` is the BOX height, so "y=h-140" put this
+        # bar at the TOP of every frame (found 2026-10-16 rendering the snow reel).
+        f"drawbox=x=0:y=ih-140:w=iw:h=140:color={_hex(INK_DEEP)}@0.90:t=fill",
         _dt("NAKSHIQ", FONT_INSTRUMENT, 30, _hex(BONE), "40", "h-105", bw=0),
         _dt("Travel with IQ", FONT_CRIMSON, 24, _hex(SAFFRON), "40", "h-70", bw=0),
         _dt("nakshiq.com", FONT_INSTRUMENT, 22, _hex(BONE), "w-220", "h-90", bw=0),

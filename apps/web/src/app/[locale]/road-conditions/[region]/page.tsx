@@ -11,6 +11,11 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { ROAD_REGIONS, getRoadUpdates, getRoadReports, summarise, fmtDate, daysAgoISO, QUIET_DAYS } from "@/lib/road-updates";
+import { getSnowOutlooks } from "@/lib/snow-outlook";
+import { SnowOutlookSection } from "@/components/snow-outlook";
+
+// Regions where snow closes roads; the outlook is not shown for Rajasthan or Meghalaya.
+const SNOW_REGIONS = new Set(["himachal-pradesh", "ladakh", "jammu-kashmir", "uttarakhand", "sikkim", "arunachal-pradesh"]);
 
 export const revalidate = 3600;
 const SITE = "https://www.nakshiq.com";
@@ -40,7 +45,12 @@ export default async function RoadRegionPage({ params }: { params: Promise<{ loc
   const r = ROAD_REGIONS.find((x) => x.id === region);
   if (!r) notFound();
   const hi = locale === "hi";
-  const [updates, reports] = await Promise.all([getRoadUpdates({ region, days: 60 }), getRoadReports(region)]);
+  const snowRegion = SNOW_REGIONS.has(region);
+  const [updates, reports, snow] = await Promise.all([
+    getRoadUpdates({ region, days: 60 }),
+    getRoadReports(region),
+    snowRegion ? getSnowOutlooks({ region }) : Promise.resolve(null),
+  ]);
   const cutoff = daysAgoISO(30);
   const sum = summarise(updates.filter((u) => u.update_date >= cutoff));
   // Latest over the full 60 days, so a region quiet for 30+ days still shows its
@@ -83,6 +93,7 @@ export default async function RoadRegionPage({ params }: { params: Promise<{ loc
         </header>
 
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {snow && <SnowOutlookSection view={snow} record={null} locale={locale} regionName={hi ? r.hi : r.en} />}
           <section aria-labelledby="feed-h">
             <h2 id="feed-h" style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontWeight: 500, fontSize: "clamp(22px, 3vw, 30px)", color: "var(--bone)", margin: "0 0 12px" }}>
               {hi ? "पिछले 60 दिन" : "The last 60 days"}

@@ -155,6 +155,10 @@ nakshiq-autoposter/data/voice_audio/
 nakshiq-autoposter/data/voice_reels/
 nakshiq-autoposter/data/road_reels/
 nakshiq-autoposter/data/voice_queue.json
+# Snow outlook (2026-10-16): rendered reels, the posted ledger and daily fact packs are
+# local runtime state written by scripts/snow-outlook-daily.sh on this Mac.
+nakshiq-autoposter/data/snow_reels/
+nakshiq-autoposter/data/snow_alerts/
 
 # Partner-response cache for scripts/verify-experience-inventory.mjs (regenerable)
 .cache/

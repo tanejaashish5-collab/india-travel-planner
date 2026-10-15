@@ -10,6 +10,8 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { ROAD_REGIONS, getRoadUpdates, getRoadReports, summarise, fmtDate, daysAgoISO, QUIET_DAYS } from "@/lib/road-updates";
+import { getSnowOutlooks, getSnowTrackRecord } from "@/lib/snow-outlook";
+import { SnowOutlookSection } from "@/components/snow-outlook";
 
 // Was 86400. The dated feed is written daily by the road-updates routine, so
 // an hour is the longest a fresh entry should wait to appear.
@@ -34,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function RoadConditionsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const hi = locale === "hi";
-  const [updates, reports] = await Promise.all([getRoadUpdates({ days: 30 }), getRoadReports()]);
+  const [updates, reports, snow, snowRecord] = await Promise.all([getRoadUpdates({ days: 30 }), getRoadReports(), getSnowOutlooks(), getSnowTrackRecord()]);
   const sum = summarise(updates);
   const quietCutoff = daysAgoISO(QUIET_DAYS);
 
@@ -90,6 +92,9 @@ export default async function RoadConditionsPage({ params }: { params: Promise<{
         </header>
 
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {/* Forward look: the feed below logs what HAS happened; this is what the models and IMD say is coming. */}
+          <SnowOutlookSection view={snow} record={snowRecord} locale={locale} />
+
           {/* Region grid */}
           <section aria-label={hi ? "क्षेत्र" : "Regions"} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 1, background: "var(--hair)", border: "1px solid var(--hair)", marginBottom: 40 }}>
             {ROAD_REGIONS.map((r) => {
