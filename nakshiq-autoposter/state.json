@@ -41,7 +41,7 @@
     "PdMu0_evening": "2026-10-15",
     "PdMu0_infographic": "2026-10-14"
   },
-  "last_sync": "2026-10-15T17:31:43.645093+00:00",
+  "last_sync": "2026-10-15T18:27:08.094772+00:00",
   "posted_destinations": [
     {
       "destination_id": "kurukshetra",
@@ -11364,6 +11364,10 @@
         "2026-05-25",
         "2026-09-03"
       ],
+      "v2_arrival_intel_video": [
+        "2026-05-26",
+        "2026-10-15"
+      ],
       "v2_women_solo_brief_video": [
         "2026-05-27",
         "2026-10-06"
@@ -11516,9 +11520,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v2_arrival_intel_video": [
-        "2026-10-15"
       ]
     },
     "reels": {
@@ -11862,6 +11863,9 @@
       ],
       "spiritual-circuit": [
         "2026-10-15"
+      ],
+      "char-dham-circuit": [
+        "2026-10-15"
       ]
     },
     "festivals": {
@@ -11987,6 +11991,11 @@
       "vrindavan": [
         "2026-10-15"
       ]
+    },
+    "collection_carousel_dests:char-dham-circuit": {
+      "kedarnath": [
+        "2026-10-15"
+      ]
     }
   },
   "infographic": {
@@ -12001,8 +12010,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kasauli",
-    "collection": "spiritual-circuit"
+    "shared_best": "kausani",
+    "collection": "char-dham-circuit"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-09",
