@@ -648,11 +648,54 @@ def prepare(today: date | None = None) -> int:
     return 0
 
 
+# ─── weekly read-out ──────────────────────────────────────────────────────
+def readout(days: int = 7) -> dict:
+    """Median IG reach and YouTube views per format for posts published in the last `days`
+    (Outstand analytics via engagement_pull, the same source as the rest of the post log), plus
+    the all-time table since ROTATION_START. Writes format_reach.json; its "leader" (best median
+    IG reach among the place formats + data card, at least 2 posts) feeds the next wildcard."""
+    import os
+    import statistics as st
+    import engagement_pull as EP
+    key = os.environ.get("OUTSTAND_API_KEY")
+    if not key:
+        raise SystemExit("OUTSTAND_API_KEY missing (run via node --env-file=apps/web/.env.local)")
+    led = _load(LEDGER, {})
+    start = rotation_start()
+    since_all = (start.isoformat() if start else "2026-10-19")
+    since_week = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+    def fmt_of(v):
+        k = v.get("kind")
+        return k if k in PLACE_FORMATS + ("data_card",) else ("cast" if v.get("pipeline") == "v3" and k not in ("guide",) else None)
+    rows = [v for v in led.values() if v.get("status") in ("published", "unconfirmed") and v.get("post_id")
+            and (v.get("published_at") or "") >= since_all and fmt_of(v)]
+    table: dict = {}
+    for v in rows:
+        a = EP.fetch_analytics(key, v["post_id"]) or {}
+        acct = (a.get("metrics_by_account") or [{}])[0]
+        m = EP.normalize_metrics(acct.get("metrics") or {})
+        metric = "reach" if v.get("platform") == "instagram" else "views"
+        t = table.setdefault(fmt_of(v), {"instagram_reach": [], "youtube_views": [], "week_instagram_reach": [], "week_youtube_views": []})
+        val = int(m.get(metric) or 0)
+        t["instagram_reach" if metric == "reach" else "youtube_views"].append(val)
+        if (v.get("published_at") or "") >= since_week:
+            t["week_instagram_reach" if metric == "reach" else "week_youtube_views"].append(val)
+    out = {"generated_at": datetime.now(timezone.utc).isoformat(), "since": since_all,
+           "baseline": {"story_reels_ig_median_reach": 10.5, "old_data_reels_ig_median_reach": 102},
+           "formats": {f: {k: {"n": len(x), "median": (st.median(x) if x else None)} for k, x in t.items()}
+                       for f, t in table.items()}}
+    pool = {f: d["instagram_reach"]["median"] for f, d in out["formats"].items()
+            if f in PLACE_FORMATS + ("data_card",) and d["instagram_reach"]["n"] >= 2}
+    out["leader"] = max(pool, key=pool.get) if pool else None
+    REACH.write_text(json.dumps(out, indent=1))
+    return out
+
+
 # ─── CLI ──────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     sys.path.insert(0, str(HERE))
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=("render", "list", "prepare", "slots"))
+    ap.add_argument("cmd", choices=("render", "list", "prepare", "slots", "readout"))
     ap.add_argument("--fmt", choices=PLACE_FORMATS)
     ap.add_argument("--slug")
     ap.add_argument("--out")
@@ -663,6 +706,8 @@ if __name__ == "__main__":
         print("\n".join(candidates(a.fmt, limit=30)))
     elif a.cmd == "prepare":
         raise SystemExit(prepare())
+    elif a.cmd == "readout":
+        print(json.dumps(readout(), indent=1))
     elif a.cmd == "slots":
         if a.start:
             rotation_start = lambda: date.fromisoformat(a.start) - timedelta(days=date.fromisoformat(a.start).weekday())  # noqa: E731
