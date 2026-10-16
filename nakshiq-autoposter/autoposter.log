@@ -28057,120 +28057,17 @@ Date range: 2026-04-15 → 2026-10-15
 2026-10-16 12:38:20  INFO      [facebook/Nakshiq] ✅ carousel published (skip_list) · post_id=GEQuc
 2026-10-16 12:38:20  INFO      Carousel run complete (fmt=skip_list, posted=True).
 2026-10-16 12:38:20  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 17:01:07  INFO      Facebook-only slot — Instagram is excluded from this run.
-2026-10-16 17:01:07  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 17:01:07  INFO      Nakshiq Autoposter · EVENING · 2026-10-16 · weekday=4
-2026-10-16 17:01:07  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 17:01:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-10-16 17:01:42  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
-2026-10-16 17:01:42  INFO      brand_stamp: registered 443 destinations for overlay lookup
-2026-10-16 17:01:43  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
-2026-10-16 17:01:43  INFO      Active accounts: ['facebook/Nakshiq']
-2026-10-16 17:01:43  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
-2026-10-16 17:01:43  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-10-16 17:01:57  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
-2026-10-16 17:01:57  INFO      [diversity] feed: 40 → 31 options · cooldown dropped 9 (carousel, pillar:scenario_guide, pillar:scenario_pilgrimage, pillar:verification seen <2d)
-2026-10-16 17:01:57  INFO      Evening format (balance→verdict): v2_hindi_score_card [17% vs target 35%] (0/15 never featured)
-2026-10-16 17:01:57  INFO      Formats — IG: v2_hindi_score_card  ·  FB: v2_hindi_score_card  ·  Story: reality_check  ·  Audience: adventurers
-2026-10-16 17:01:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
-2026-10-16 17:01:57  INFO      Audience filter 'adventurers' → 5 destinations match.
-2026-10-16 17:01:57  INFO      Fingerprint dedup snapshot — 47 dests in 7d · 79 (dest,fmt) pairs in 30d · 223 media in 60d
-2026-10-16 17:01:58  INFO      Shared best destination locked: Trichy (Tiruchirappalli)
-2026-10-16 17:01:58  INFO      [facebook/Nakshiq] Generating v2_hindi_score_card post...
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: gurez-valley has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: leh has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: munnar has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: mathura has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: old-goa has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: coorg has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      v2_hindi_score_card: ooty has no current-month row — SKIPPING (won't render a stale October score/note)
-2026-10-16 17:01:58  INFO      [facebook/Nakshiq] Caption ready (559 chars, dest=kurukshetra)
-2026-10-16 17:02:01  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_hindi_score_card → uploading...
-2026-10-16 17:02:01  INFO          Requesting upload URL for v2_hindi_score_card-kurukshetra.png (1,570,300 bytes, image/png)
-2026-10-16 17:02:02  INFO          Uploading to R2 (timeout=120s)...
-2026-10-16 17:02:03  INFO          R2 PUT OK. Confirming...
-2026-10-16 17:02:04  INFO          Media ready: HNolZ (1,570,300 bytes · v2_hindi_score_card-kurukshetra.png)
-2026-10-16 17:02:04  INFO      [facebook/Nakshiq] Publishing feed post...
-2026-10-16 17:02:16  INFO      [facebook/Nakshiq] ✅ Published · Outstand=eK1me · Platform=1040562729145369_122126033090700092
-2026-10-16 17:02:16  INFO      State saved. Run complete.
-2026-10-16 17:02:16  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 18:11:11  INFO      Facebook-only slot — Instagram is excluded from this run.
-2026-10-16 18:11:11  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 18:11:11  INFO      Nakshiq Autoposter · EVENING · 2026-10-16 · weekday=4
-2026-10-16 18:11:11  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 18:11:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-10-16 18:11:59  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
-2026-10-16 18:11:59  INFO      brand_stamp: registered 443 destinations for overlay lookup
-2026-10-16 18:12:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
-2026-10-16 18:12:01  INFO      Active accounts: ['facebook/Nakshiq']
-2026-10-16 18:12:01  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
-2026-10-16 18:12:01  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-10-16 18:12:21  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
-2026-10-16 18:12:21  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:scenario_guide, pillar:scenario_pilgrimage, pillar:verification, score seen <2d)
-2026-10-16 18:12:21  INFO      Evening format (balance→anti_trap): tourist_trap [14% vs target 15%] (0/15 never featured)
-2026-10-16 18:12:21  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: reality_check  ·  Audience: adventurers
-2026-10-16 18:12:21  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 51
-2026-10-16 18:12:21  INFO      Audience filter 'adventurers' → 5 destinations match.
-2026-10-16 18:12:21  INFO      Fingerprint dedup snapshot — 48 dests in 7d · 80 (dest,fmt) pairs in 30d · 224 media in 60d
-2026-10-16 18:12:21  INFO      Tourist trap locked: skip Leh → go Hanle (51/51 never featured)
-2026-10-16 18:12:21  INFO      Shared best destination locked: Trichy (Tiruchirappalli)
-2026-10-16 18:12:21  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
-2026-10-16 18:12:21  INFO      State saved. Run complete.
-2026-10-16 18:12:21  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 21:13:56  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 21:13:56  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-10-16
-2026-10-16 21:13:56  INFO      ════════════════════════════════════════════════════════════
-2026-10-16 21:14:01  INFO      Synced 6 new posts (total: 1335)
-2026-10-16 21:14:01  INFO      ── Analytics Summary ──
-2026-10-16 21:14:01  INFO      Total posts tracked: 1335
-2026-10-16 21:14:01  INFO      Successfully published: 1260 | Failed: 65
-2026-10-16 21:14:01  INFO      
-2026-10-16 21:14:01  INFO      By content type:
-2026-10-16 21:14:01  INFO        feed_post: 648
-2026-10-16 21:14:01  INFO        yt_short: 536
-2026-10-16 21:14:01  INFO        reel: 103
-2026-10-16 21:14:01  INFO        tourist_map: 17
-2026-10-16 21:14:01  INFO        canva_visual: 14
-2026-10-16 21:14:01  INFO        infographic: 11
-2026-10-16 21:14:01  INFO        pomelli_visual: 6
-2026-10-16 21:14:01  INFO      
-2026-10-16 21:14:01  INFO      By format:
-2026-10-16 21:14:01  INFO        feed_post:unknown: 648
-2026-10-16 21:14:01  INFO        yt_short:did: 134
-2026-10-16 21:14:01  INFO        yt_short:this: 130
-2026-10-16 21:14:01  INFO        yt_short:nakshiq: 98
-2026-10-16 21:14:01  INFO        yt_short:listicle: 51
-2026-10-16 21:14:01  INFO        yt_short:mini: 47
-2026-10-16 21:14:01  INFO        yt_short:dont: 41
-2026-10-16 21:14:01  INFO        yt_short:before: 35
-2026-10-16 21:14:01  INFO        reel:studio: 32
-2026-10-16 21:14:01  INFO        reel:seasonal: 23
-2026-10-16 21:14:01  INFO        reel:destination: 21
-2026-10-16 21:14:01  INFO        tourist_map:unknown: 17
-2026-10-16 21:14:01  INFO        reel:map: 15
-2026-10-16 21:14:01  INFO        canva_visual:unknown: 14
-2026-10-16 21:14:01  INFO        infographic:unknown: 11
-2026-10-16 21:14:01  INFO        reel:score: 6
-2026-10-16 21:14:01  INFO        pomelli_visual:unknown: 6
-2026-10-16 21:14:01  INFO        reel:pomelli: 6
-2026-10-16 21:14:01  INFO      
-2026-10-16 21:14:01  INFO      By platform:
-2026-10-16 21:14:01  INFO        instagram: 650
-2026-10-16 21:14:01  INFO        youtube: 354
-2026-10-16 21:14:01  INFO        facebook: 321
-2026-10-16 21:14:01  INFO      
-2026-10-16 21:14:01  INFO      YT Short format distribution:
-2026-10-16 21:14:01  INFO        did: 134 (25%)
-2026-10-16 21:14:01  INFO        this: 130 (24%)
-2026-10-16 21:14:01  INFO        nakshiq: 98 (18%)
-2026-10-16 21:14:01  INFO        listicle: 51 (10%)
-2026-10-16 21:14:01  INFO        mini: 47 (9%)
-2026-10-16 21:14:01  INFO        dont: 41 (8%)
-2026-10-16 21:14:01  INFO        before: 35 (7%)
-2026-10-16 21:14:01  INFO      
-Date range: 2026-04-15 → 2026-10-16
-2026-10-16 21:14:01  INFO      ════════════════════════════════════════════════════════════
+2026-10-17 01:35:40  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-10-17 01:35:40  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-17 01:35:42  INFO          Requesting upload URL for udaipur__parents__hi.mp4 (56,319,218 bytes, video/mp4)
+2026-10-17 01:35:44  INFO          Uploading to R2 (timeout=300s)...
+2026-10-17 01:36:10  INFO          R2 PUT OK. Confirming...
+2026-10-17 01:36:12  INFO          Media ready: lSQ9P (56,319,218 bytes · udaipur__parents__hi.mp4)
+2026-10-17 01:36:13  INFO          Requesting upload URL for udaipur__parents__cover.jpg (301,692 bytes, image/jpeg)
+2026-10-17 01:36:14  INFO          Uploading to R2 (timeout=120s)...
+2026-10-17 01:36:16  INFO          R2 PUT OK. Confirming...
+2026-10-17 01:36:18  INFO          Media ready: r9Biz (301,692 bytes · udaipur__parents__cover.jpg)
+2026-10-17 01:37:32  INFO          Requesting upload URL for udaipur__parents__en.mp4 (48,412,426 bytes, video/mp4)
+2026-10-17 01:37:33  INFO          Uploading to R2 (timeout=300s)...
+2026-10-17 01:37:55  INFO          R2 PUT OK. Confirming...
+2026-10-17 01:37:58  INFO          Media ready: g4I8v (48,412,426 bytes · udaipur__parents__en.mp4)

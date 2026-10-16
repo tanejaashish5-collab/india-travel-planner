@@ -37,10 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-16",
-    "PdMu0": "2026-10-16",
-    "PdMu0_evening": "2026-10-16"
+    "PdMu0": "2026-10-15",
+    "PdMu0_evening": "2026-10-15"
   },
-  "last_sync": "2026-10-16T18:11:59.713303+00:00",
+  "last_sync": "2026-10-15T18:27:08.094772+00:00",
   "posted_destinations": [
     {
       "destination_id": "jodhpur",
@@ -157,10 +157,6 @@
     {
       "destination_id": "yuksom",
       "date": "2026-10-16"
-    },
-    {
-      "destination_id": "kurukshetra",
-      "date": "2026-10-16"
     }
   ],
   "posted_formats": {
@@ -188,6 +184,7 @@
       "festival_alert"
     ],
     "PdMu0": [
+      "festival_alert",
       "score_card",
       "score_card",
       "v2_local_knows",
@@ -207,8 +204,7 @@
       "v3_tl_poll_reel",
       "festival_alert",
       "v2_series_episode",
-      "v2_arrival_intel_video",
-      "v2_hindi_score_card"
+      "v2_arrival_intel_video"
     ]
   },
   "post_log": [
@@ -10950,17 +10946,6 @@
       "destination": "yuksom",
       "format": "carousel.skip_list",
       "media_id": "carousel_skip_list_2026-10-16"
-    },
-    {
-      "timestamp": "2026-10-16T17:02:16.862170+00:00",
-      "date": "2026-10-16",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "eK1me",
-      "destination": "kurukshetra",
-      "format": "v2_hindi_score_card",
-      "has_media": true,
-      "media_id": "v2_hindi_score_card-kurukshetra.png"
     }
   ],
   "theme_usage": {
@@ -11318,8 +11303,7 @@
         "2026-09-29"
       ],
       "kurukshetra": [
-        "2026-10-01",
-        "2026-10-16"
+        "2026-10-01"
       ],
       "mukteshwar": [
         "2026-10-01"
@@ -11410,11 +11394,6 @@
         "2026-05-30",
         "2026-06-05",
         "2026-10-04"
-      ],
-      "v2_hindi_score_card": [
-        "2026-05-30",
-        "2026-06-06",
-        "2026-10-16"
       ],
       "festival_alert": [
         "2026-05-31",
@@ -11732,8 +11711,7 @@
         "2026-09-30"
       ],
       "kurukshetra": [
-        "2026-10-01",
-        "2026-10-16"
+        "2026-10-01"
       ],
       "bengaluru": [
         "2026-10-03"
@@ -11810,8 +11788,7 @@
         "2026-08-28",
         "2026-09-04",
         "2026-10-02",
-        "2026-10-09",
-        "2026-10-16"
+        "2026-10-09"
       ]
     },
     "collections": {
@@ -12026,8 +12003,7 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    },
-    "tourist_trap_alts": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12041,7 +12017,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "trichy",
+    "shared_best": "kausani",
     "collection": "char-dham-circuit"
   },
   "manual_skip_dests": {},
