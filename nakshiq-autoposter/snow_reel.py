@@ -292,6 +292,64 @@ def caption(alerts: list[dict]) -> str:
     )
 
 
+# Accuracy gate (founder 2026-10-16: "need to make sure it is accurate, prediction as per
+# the sources"). The env flag alone is not enough: the outlook must first have a checked
+# record, and every place in the reel must have IMD agreeing as well as the models.
+MIN_RESOLVED = 5        # past "likely" calls scored against dated reports / IMD measurements
+MIN_CONFIRMED = 0.60    # share of those that a source confirmed
+
+
+def track_record() -> tuple[int, int]:
+    """(resolved, confirmed) over distinct snowfalls: a place's calls with overlapping or
+    touching windows count once, judged by the latest run (same rule as the website)."""
+    import requests
+    url = (os.environ.get("NEXT_PUBLIC_SUPABASE_URL") or "").strip()
+    key = (os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or "").strip()
+    rows = requests.get(f"{url}/rest/v1/snow_outlooks", params={
+        "select": "run_date,point_id,window_start,window_end,outcome", "confidence": "eq.likely", "limit": "5000"},
+        headers={"apikey": key, "Authorization": f"Bearer {key}"}, timeout=20).json()
+    by_point: dict[str, list] = {}
+    for r in rows:
+        by_point.setdefault(r["point_id"], []).append(r)
+    outcomes = []
+    for lst in by_point.values():
+        lst.sort(key=lambda r: (r["window_start"], r["run_date"]))
+        latest, end = None, ""
+        for r in lst:
+            nxt = (date.fromisoformat(end) + timedelta(days=1)).isoformat() if end else ""
+            if latest and r["window_start"] <= nxt:
+                end = max(end, r["window_end"])
+                if r["run_date"] >= latest["run_date"]:
+                    latest = r
+                continue
+            if latest:
+                outcomes.append(latest["outcome"])
+            latest, end = r, r["window_end"]
+        if latest:
+            outcomes.append(latest["outcome"])
+    resolved = sum(1 for o in outcomes if o in ("confirmed", "unconfirmed"))
+    return resolved, sum(1 for o in outcomes if o == "confirmed")
+
+
+def accuracy_gate(alerts: list[dict]) -> bool:
+    no_imd = [a["name"] for a in alerts if not a.get("imd_citable")]
+    if no_imd:
+        _log(f"ACCURACY GATE: IMD does not agree for {', '.join(no_imd)} (district + dates) — not posting")
+        return False
+    try:
+        resolved, confirmed = track_record()
+    except Exception as e:
+        _log(f"ACCURACY GATE: could not read the track record ({e}) — not posting")
+        return False
+    rate = confirmed / resolved if resolved else 0.0
+    if resolved < MIN_RESOLVED or rate < MIN_CONFIRMED:
+        _log(f"ACCURACY GATE: track record {confirmed}/{resolved} confirmed; needs >= {MIN_RESOLVED} checked calls "
+             f"and >= {MIN_CONFIRMED:.0%} confirmed — not posting")
+        return False
+    _log(f"accuracy gate passed: {confirmed}/{resolved} confirmed ({rate:.0%}), IMD agrees for every place")
+    return True
+
+
 def _publish_enabled() -> bool:
     if os.environ.get("NAKSHIQ_SNOW_REEL_ENABLED", "0") == "1":
         return True
@@ -366,7 +424,7 @@ def main() -> int:
     if not meta:
         return 1
     (OUT_DIR / f"snow_outlook_{pack['run_date']}.caption.txt").write_text(caption(alerts))
-    if args.publish and _publish_enabled():
+    if args.publish and _publish_enabled() and accuracy_gate(alerts):
         return 0 if publish(meta) else 1
     _log(f"HELD for review: {out}")
     return 0

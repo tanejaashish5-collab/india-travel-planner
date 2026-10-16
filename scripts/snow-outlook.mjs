@@ -251,6 +251,7 @@ async function verify() {
   const { data: runs } = await s.from("ops_reports").select("run_at, summary").eq("job", JOB).gte("run_at", addDays(minDay, -1));
 
   let confirmed = 0, unconfirmed = 0, still = 0;
+  const scored = new Map(); // "likely" calls resolved this run, one line per place, for the founder's scorecard
   for (const r of pending) {
     const p = pts[r.point_id] ?? { id: r.point_id, name: r.point_id };
     // Evidence must be ABOUT the window: a row dated before window_start reports earlier snow.
@@ -275,6 +276,9 @@ async function verify() {
     let patch = null;
     if (evidence) { patch = { outcome: "confirmed", outcome_note: evidence.note.slice(0, 300), outcome_source_url: evidence.url }; confirmed++; }
     else if (r.window_end < addDays(today, -3)) { patch = { outcome: "unconfirmed", outcome_note: "No dated report of snow here found in the road feed or IMD measurements. Not proof it stayed dry." }; unconfirmed++; }
+    if (patch && r.confidence === "likely") {
+      scored.set(r.point_id, `${p.name} (${windowText(r)}): ${patch.outcome === "confirmed" ? `CONFIRMED, ${patch.outcome_note}` : "no report found"}`);
+    }
     else still++;
     if (patch && !DRY) {
       const { error: e } = await s.from("snow_outlooks").update({ ...patch, outcome_at: new Date().toISOString() }).eq("id", r.id);
@@ -282,6 +286,8 @@ async function verify() {
     }
   }
   log(`verify: ${confirmed} confirmed, ${unconfirmed} unconfirmed, ${still} still waiting${DRY ? " (dry)" : ""}`);
+  // Machine-read by snow-outlook-daily.sh: the founder gets a scorecard whenever a "likely" call is checked.
+  if (scored.size) console.log(`SCORED=${[...scored.values()].join(" | ")}`);
   if (!DRY && (confirmed || unconfirmed)) await revalidate(["/en/road-conditions", "/hi/road-conditions"]);
 }
 

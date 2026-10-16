@@ -47,7 +47,15 @@ if [ $RC -ne 0 ]; then
   if [ "$(TZ=Asia/Kolkata date +%H)" -ge 16 ]; then notify "Snow outlook failed every run today. Click for the log."; fi
   exit 1
 fi
-$NODE scripts/snow-outlook.mjs verify >> "$LOG" 2>&1 || say "⚠️ verify failed" | tee -a "$LOG"
+VERIFY_OUT="$WORK/last-verify.out"
+$NODE scripts/snow-outlook.mjs verify > "$VERIFY_OUT" 2>&1 || say "⚠️ verify failed" | tee -a "$LOG"
+cat "$VERIFY_OUT" >> "$LOG"
+# Accuracy scorecard (founder 2026-10-16: prove the predictions against the sources before any reel posts).
+SCORED="$(grep -E '^SCORED=' "$VERIFY_OUT" | tail -1 | sed 's/^SCORED=//')"
+if [ -n "$SCORED" ]; then
+  RECORD="$(run_py -c "import snow_reel as s; r,c=s.track_record(); print(f'{c} of {r} confirmed')" 2>/dev/null | tail -1)"
+  notify "Snow calls checked against sources: $SCORED. Record so far: ${RECORD:-unknown}. Reels stay off until 5+ checked and 60%+ confirmed." "$LOG"
+fi
 
 # The run's LAST line says whether it called anything new (review 2026-10-16: a log-tail grep
 # could miss it when a widespread spell printed many revalidate lines).
