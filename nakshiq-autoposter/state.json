@@ -40,7 +40,7 @@
     "PdMu0": "2026-10-16",
     "PdMu0_evening": "2026-10-16"
   },
-  "last_sync": "2026-10-16T17:01:42.349636+00:00",
+  "last_sync": "2026-10-16T18:11:59.713303+00:00",
   "posted_destinations": [
     {
       "destination_id": "jodhpur",
@@ -11411,6 +11411,11 @@
         "2026-06-05",
         "2026-10-04"
       ],
+      "v2_hindi_score_card": [
+        "2026-05-30",
+        "2026-06-06",
+        "2026-10-16"
+      ],
       "festival_alert": [
         "2026-05-31",
         "2026-06-07",
@@ -11546,9 +11551,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v2_hindi_score_card": [
-        "2026-10-16"
       ]
     },
     "reels": {
@@ -12024,7 +12026,8 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    }
+    },
+    "tourist_trap_alts": {}
   },
   "infographic": {
     "last_topic_idx": 2,

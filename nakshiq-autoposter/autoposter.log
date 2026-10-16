@@ -28098,3 +28098,26 @@ Date range: 2026-04-15 → 2026-10-15
 2026-10-16 17:02:16  INFO      [facebook/Nakshiq] ✅ Published · Outstand=eK1me · Platform=1040562729145369_122126033090700092
 2026-10-16 17:02:16  INFO      State saved. Run complete.
 2026-10-16 17:02:16  INFO      ════════════════════════════════════════════════════════════
+2026-10-16 18:11:11  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-16 18:11:11  INFO      ════════════════════════════════════════════════════════════
+2026-10-16 18:11:11  INFO      Nakshiq Autoposter · EVENING · 2026-10-16 · weekday=4
+2026-10-16 18:11:11  INFO      ════════════════════════════════════════════════════════════
+2026-10-16 18:11:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-16 18:11:59  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-16 18:11:59  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-16 18:12:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-16 18:12:01  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-16 18:12:01  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-16 18:12:01  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-16 18:12:21  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-16 18:12:21  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:scenario_guide, pillar:scenario_pilgrimage, pillar:verification, score seen <2d)
+2026-10-16 18:12:21  INFO      Evening format (balance→anti_trap): tourist_trap [14% vs target 15%] (0/15 never featured)
+2026-10-16 18:12:21  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: reality_check  ·  Audience: adventurers
+2026-10-16 18:12:21  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 51
+2026-10-16 18:12:21  INFO      Audience filter 'adventurers' → 5 destinations match.
+2026-10-16 18:12:21  INFO      Fingerprint dedup snapshot — 48 dests in 7d · 80 (dest,fmt) pairs in 30d · 224 media in 60d
+2026-10-16 18:12:21  INFO      Tourist trap locked: skip Leh → go Hanle (51/51 never featured)
+2026-10-16 18:12:21  INFO      Shared best destination locked: Trichy (Tiruchirappalli)
+2026-10-16 18:12:21  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-10-16 18:12:21  INFO      State saved. Run complete.
+2026-10-16 18:12:21  INFO      ════════════════════════════════════════════════════════════
