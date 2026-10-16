@@ -36,33 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-15",
+    "PdMu0_carousel": "2026-10-16",
     "PdMu0": "2026-10-15",
-    "PdMu0_evening": "2026-10-15",
-    "PdMu0_infographic": "2026-10-14"
+    "PdMu0_evening": "2026-10-15"
   },
   "last_sync": "2026-10-15T18:27:08.094772+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kurukshetra",
-      "date": "2026-10-01"
-    },
-    {
-      "destination_id": "mukteshwar",
-      "date": "2026-10-01"
-    },
-    {
-      "destination_id": "chamba",
-      "date": "2026-10-01"
-    },
-    {
-      "destination_id": "nandi-hills",
-      "date": "2026-10-01"
-    },
-    {
-      "destination_id": "puri",
-      "date": "2026-10-01"
-    },
     {
       "destination_id": "jodhpur",
       "date": "2026-10-02"
@@ -174,6 +153,10 @@
     {
       "destination_id": "mumbai",
       "date": "2026-10-15"
+    },
+    {
+      "destination_id": "yuksom",
+      "date": "2026-10-16"
     }
   ],
   "posted_formats": {
@@ -10936,6 +10919,33 @@
       "format": "v2_arrival_intel_video",
       "has_media": true,
       "media_id": "mumbai.mp4"
+    },
+    {
+      "timestamp": "2026-10-16T07:37:22.186616+00:00",
+      "date": "2026-10-16",
+      "platform": "instagram",
+      "post_id": "SszbB",
+      "destination": "tirupati",
+      "format": "scenario_guide",
+      "media_id": "494Ph"
+    },
+    {
+      "timestamp": "2026-10-16T07:38:01.825539+00:00",
+      "date": "2026-10-16",
+      "platform": "youtube",
+      "post_id": "Eq340",
+      "destination": "tirupati",
+      "format": "scenario_guide",
+      "media_id": "XnX7F"
+    },
+    {
+      "timestamp": "2026-10-16T12:38:20.846856+00:00",
+      "date": "2026-10-16",
+      "platform": "facebook",
+      "post_id": "GEQuc",
+      "destination": "yuksom",
+      "format": "carousel.skip_list",
+      "media_id": "carousel_skip_list_2026-10-16"
     }
   ],
   "theme_usage": {
@@ -11642,9 +11652,6 @@
         "2026-07-16",
         "2026-08-08",
         "2026-08-22"
-      ],
-      "igatpuri": [
-        "2026-07-17"
       ],
       "kargil": [
         "2026-07-20"
