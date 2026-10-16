@@ -28057,3 +28057,44 @@ Date range: 2026-04-15 → 2026-10-15
 2026-10-16 12:38:20  INFO      [facebook/Nakshiq] ✅ carousel published (skip_list) · post_id=GEQuc
 2026-10-16 12:38:20  INFO      Carousel run complete (fmt=skip_list, posted=True).
 2026-10-16 12:38:20  INFO      ════════════════════════════════════════════════════════════
+2026-10-16 17:01:07  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-16 17:01:07  INFO      ════════════════════════════════════════════════════════════
+2026-10-16 17:01:07  INFO      Nakshiq Autoposter · EVENING · 2026-10-16 · weekday=4
+2026-10-16 17:01:07  INFO      ════════════════════════════════════════════════════════════
+2026-10-16 17:01:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-16 17:01:42  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-16 17:01:42  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-16 17:01:43  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-16 17:01:43  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-16 17:01:43  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-16 17:01:43  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-16 17:01:57  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-16 17:01:57  INFO      [diversity] feed: 40 → 31 options · cooldown dropped 9 (carousel, pillar:scenario_guide, pillar:scenario_pilgrimage, pillar:verification seen <2d)
+2026-10-16 17:01:57  INFO      Evening format (balance→verdict): v2_hindi_score_card [17% vs target 35%] (0/15 never featured)
+2026-10-16 17:01:57  INFO      Formats — IG: v2_hindi_score_card  ·  FB: v2_hindi_score_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-10-16 17:01:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
+2026-10-16 17:01:57  INFO      Audience filter 'adventurers' → 5 destinations match.
+2026-10-16 17:01:57  INFO      Fingerprint dedup snapshot — 47 dests in 7d · 79 (dest,fmt) pairs in 30d · 223 media in 60d
+2026-10-16 17:01:58  INFO      Shared best destination locked: Trichy (Tiruchirappalli)
+2026-10-16 17:01:58  INFO      [facebook/Nakshiq] Generating v2_hindi_score_card post...
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: gurez-valley has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: leh has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: munnar has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: mathura has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: old-goa has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: coorg has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      v2_hindi_score_card: ooty has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-16 17:01:58  INFO      [facebook/Nakshiq] Caption ready (559 chars, dest=kurukshetra)
+2026-10-16 17:02:01  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_hindi_score_card → uploading...
+2026-10-16 17:02:01  INFO          Requesting upload URL for v2_hindi_score_card-kurukshetra.png (1,570,300 bytes, image/png)
+2026-10-16 17:02:02  INFO          Uploading to R2 (timeout=120s)...
+2026-10-16 17:02:03  INFO          R2 PUT OK. Confirming...
+2026-10-16 17:02:04  INFO          Media ready: HNolZ (1,570,300 bytes · v2_hindi_score_card-kurukshetra.png)
+2026-10-16 17:02:04  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-10-16 17:02:16  INFO      [facebook/Nakshiq] ✅ Published · Outstand=eK1me · Platform=1040562729145369_122126033090700092
+2026-10-16 17:02:16  INFO      State saved. Run complete.
+2026-10-16 17:02:16  INFO      ════════════════════════════════════════════════════════════
