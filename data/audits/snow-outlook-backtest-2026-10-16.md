@@ -13,7 +13,8 @@ often would the same method call snow that nobody reported?
 - Six global models via Open-Meteo's archived runs (previous-runs API): ECMWF IFS, NOAA
   GFS, DWD ICON, Canada GEM, UK Met Office, Météo-France ARPEGE. All six had archived
   runs for the whole period.
-- Each watch point (destinations at 1,800 m+ in the snow states, plus 12 road passes)
+- Each watch point (destinations at 1,800 m+ in the snow states, plus 12 road passes; widened
+  to 1,500 m later the same day, 120 points, re-run: same 6/9 and the same 12 no-report flags)
   gets the forecast at its TRUE elevation. Precipitation at a 2 m temperature of 1°C or
   below counts as snow. A model votes for a day at 2 mm or more (about 2 cm of snow).
 - "Likely" = at least two-thirds of answering models vote; "possible" = at least half;

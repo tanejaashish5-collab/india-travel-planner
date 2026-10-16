@@ -1,4 +1,4 @@
--- APPLIED 2026-10-16 via Supabase MCP apply_migration (114_snow_outlooks, 114b_snow_outlooks_passes, 114c_snow_watch_exclude_summits, 114d_snow_watch_hindi_names).
+-- APPLIED 2026-10-16 via Supabase MCP apply_migration (114_snow_outlooks, 114b_snow_outlooks_passes, 114c_snow_watch_exclude_summits, 114d_snow_watch_hindi_names, 114e_snow_watch_from_1500m).
 -- 114: snow outlook — a multi-model, dated, self-scoring snow forecast for
 -- mountain destinations AND the road passes that close first.
 --
@@ -105,7 +105,8 @@ create policy "anon read snow outlooks" on public.snow_outlooks for select to an
 comment on table public.snow_outlooks is
   'Forward snow forecast per mountain destination or road pass, one row per daily run. Written only by scripts/snow-outlook.mjs. Outcome is scored from evidence after the window ends.';
 
--- Everything the engine forecasts for: destinations >= 1,800 m in the snow
+-- Everything the engine forecasts for: destinations >= 1,500 m (was 1,800 until 114e, which
+-- added Srinagar, Jibhi, Tirthan, Kasol, Almora, Gangtok and 16 more) in the snow
 -- states, plus the passes. Excluded: Kailash-Mansarovar (Tibet, outcomes cannot
 -- be verified) and five trekking SUMMITS whose stored elevation is the peak,
 -- where any precipitation is snow and nobody reports it, so an alert is noise
@@ -120,7 +121,7 @@ select d.id, d.name, 'destination'::text as kind, d.state_id as region_id, d.ele
        d.translations->'hi'->>'name' as name_hi
 from public.destinations d
 where d.coords is not null
-  and d.elevation_m >= 1800
+  and d.elevation_m >= 1500
   and d.state_id in ('himachal-pradesh', 'uttarakhand', 'ladakh', 'jammu-kashmir', 'sikkim', 'arunachal-pradesh', 'west-bengal')
   and d.id not in ('mansarovar-kailash', 'kinner-kailash', 'manimahesh-kailash', 'shrikhand-mahadev', 'adi-kailash', 'roopkund')
 union all

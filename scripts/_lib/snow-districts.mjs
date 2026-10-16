@@ -17,7 +17,8 @@ export const DISTRICT_ALIASES = {
   gyalshing: ["Gyalshing", "Geyzing", "West Sikkim"],
   ganderbal: ["Ganderbal"], baramulla: ["Baramulla"], budgam: ["Budgam"], bandipora: ["Bandipora"], kupwara: ["Kupwara"],
   anantnag: ["Anantnag"], shopian: ["Shopian"], poonch: ["Poonch"], kishtwar: ["Kishtwar"], udhampur: ["Udhampur"], ramban: ["Ramban"],
-  leh: ["Leh"], kargil: ["Kargil"],
+  leh: ["Leh"], kargil: ["Kargil"], srinagar: ["Srinagar"], doda: ["Doda"],
+  pauri: ["Pauri", "Pauri Garhwal"], champawat: ["Champawat"], "lower-subansiri": ["Lower Subansiri"],
   tawang: ["Tawang"], "west-kameng": ["West Kameng"], "dibang-valley": ["Dibang"], "shi-yomi": ["Shi Yomi", "Shi-Yomi"],
 };
 
@@ -29,6 +30,14 @@ export const POINT_DISTRICTS = {
   shimla: ["shimla"], kufri: ["shimla"], sarahan: ["shimla"], chail: ["solan"], kasauli: ["solan"],
   kalpa: ["kinnaur"], kinnaur: ["kinnaur"], sangla: ["kinnaur"], chitkul: ["kinnaur"], nako: ["kinnaur"],
   dalhousie: ["chamba"], "sach-pass": ["chamba"], mcleodganj: ["kangra"], "barot-valley": ["mandi"], "prashar-lake": ["mandi"],
+  // 1,500-1,800 m band, added 2026-10-16 (founder: "make sure you are tracking Kashmir…"):
+  // winter snow at Srinagar, Jibhi or Tirthan is news people forward.
+  kasol: ["kullu"], manikaran: ["kullu"], jibhi: ["kullu"], "tirthan-valley": ["kullu"], "great-himalayan-np": ["kullu"],
+  "bir-billing": ["kangra"], solan: ["solan"],
+  srinagar: ["srinagar"], achabal: ["anantnag"], kishtwar: ["kishtwar"], bhaderwah: ["doda"],
+  lansdowne: ["pauri"], almora: ["almora"], champawat: ["champawat"], pithoragarh: ["pithoragarh"],
+  gangtok: ["gangtok"], namchi: ["namchi"], yuksom: ["gyalshing"], rinchenpong: ["gyalshing"], aritar: ["pakyong"],
+  "ziro-valley": ["lower-subansiri"], dirang: ["west-kameng"],
   // Uttarakhand
   badrinath: ["chamoli"], "hemkund-sahib": ["chamoli"], "valley-of-flowers": ["chamoli"], auli: ["chamoli"], joshimath: ["chamoli"],
   kedarnath: ["rudraprayag"], tungnath: ["rudraprayag"], chopta: ["rudraprayag", "chamoli"],

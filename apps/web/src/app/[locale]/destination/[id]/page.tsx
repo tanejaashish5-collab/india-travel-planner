@@ -330,8 +330,8 @@ async function getDestination(id: string) {
       .eq("is_active", true)
       .order("is_legendary", { ascending: false })
       .order("name", { ascending: true }),
-    // Snow outlook (migration 114): only places at 1,800 m+ are watched, so skip the query below that.
-    (data.elevation_m ?? 0) >= 1800 ? getSnowOutlooks({ point: id }) : Promise.resolve(null),
+    // Snow outlook (migration 114): only places at 1,500 m+ are watched (114e), so skip the query below that.
+    (data.elevation_m ?? 0) >= 1500 ? getSnowOutlooks({ point: id }) : Promise.resolve(null),
   ]);
 
   return {
