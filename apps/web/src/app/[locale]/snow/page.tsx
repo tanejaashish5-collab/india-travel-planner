@@ -7,6 +7,8 @@ import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { SnowOutlookSection } from "@/components/snow-outlook";
+import { SnowHeroVideo } from "@/components/snow-hero-video";
+import { videoSrc } from "@/lib/video-url";
 import { localeAlternates, faqPageSchema } from "@/lib/seo-utils";
 import { ROAD_REGIONS, getRoadUpdates } from "@/lib/road-updates";
 import {
@@ -130,27 +132,37 @@ export default async function SnowPage({ params }: { params: Promise<{ locale: s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqLd }} />
       <Nav />
 
-      <main id="main-content" className="nq-grain" style={{ position: "relative", padding: "140px 24px 64px" }}>
-        <header style={{ maxWidth: 1100, margin: "0 auto 40px" }}>
-          <p className="nq-kicker" style={{ color: "var(--vermillion)", marginBottom: 20, letterSpacing: "0.22em" }}>
-            {hi ? "बर्फ़ रडार" : "SNOW WATCH"}
-            {view.lastRun && !view.stale ? ` · ${hi ? "आख़िरी जाँच" : "LAST CHECKED"} ${fmtSnowTime(view.lastRun.run_at, locale).toUpperCase()} IST` : ""}
-          </p>
-          <Title
-            as="h1"
-            className="nq-display"
-            style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(36px, 6vw, 76px)", lineHeight: 1.0, letterSpacing: "-0.022em", margin: 0, textWrap: "balance" }}
-          >
-            {hi ? "कहाँ बर्फ़ का अनुमान है, अगले चार दिन." : "Where snow is forecast, next four days."}
-          </Title>
-          <p style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(18px, 2vw, 24px)", lineHeight: 1.4, color: "var(--bone-dim)", marginTop: 24, maxWidth: 760 }}>
-            {hi
-              ? `${view.lastRun?.points ?? 122} जगहें और दर्रे, हर एक की अपनी ऊँचाई पर छह मौसम मॉडल, IMD बुलेटिन से मिलाकर। पूर्वानुमान, ख़बर नहीं।`
-              : `${view.lastRun?.points ?? 122} places and passes, six weather models at each one's own altitude, checked against IMD bulletins. A forecast, not a report.`}
-          </p>
-        </header>
+      <main id="main-content" className="nq-grain" style={{ position: "relative" }}>
+        {/* Landing view: snow footage behind the title. The clip is illustrative, and says so. */}
+        <section
+          style={{ position: "relative", minHeight: "min(84vh, 780px)", display: "flex", alignItems: "flex-end", padding: "140px 24px 56px", marginBottom: 40 }}
+        >
+          <SnowHeroVideo src={videoSrc("theme-snow")} poster="/snow-hero-poster.jpg" />
+          <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, var(--paper, #0a0a0a) 2%, rgba(8,12,20,0.78) 38%, rgba(8,12,20,0.5) 100%)" }} />
+          <header style={{ position: "relative", maxWidth: 1100, width: "100%", margin: "0 auto" }}>
+            <p className="nq-kicker" style={{ color: "#7dd3fc", marginBottom: 20, letterSpacing: "0.22em" }}>
+              {hi ? "बर्फ़ रडार" : "SNOW WATCH"}
+              {view.lastRun && !view.stale ? ` · ${hi ? "आख़िरी जाँच" : "LAST CHECKED"} ${fmtSnowTime(view.lastRun.run_at, locale).toUpperCase()} IST` : ""}
+            </p>
+            <Title
+              as="h1"
+              className="nq-display"
+              style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(40px, 7vw, 92px)", lineHeight: 1.0, letterSpacing: "-0.022em", margin: 0, textWrap: "balance" }}
+            >
+              {hi ? "कहाँ बर्फ़ का अनुमान है, अगले चार दिन." : "Where snow is forecast, next four days."}
+            </Title>
+            <p style={{ fontFamily: "var(--cinema-display)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(18px, 2vw, 24px)", lineHeight: 1.4, color: "rgba(245,240,230,0.82)", marginTop: 24, maxWidth: 760 }}>
+              {hi
+                ? `${view.lastRun?.points ?? 122} जगहें और दर्रे, हर एक की अपनी ऊँचाई पर छह मौसम मॉडल, IMD बुलेटिन से मिलाकर। पूर्वानुमान, ख़बर नहीं।`
+                : `${view.lastRun?.points ?? 122} places and passes, six weather models at each one's own altitude, checked against IMD bulletins. A forecast, not a report.`}
+            </p>
+            <p style={{ position: "absolute", right: 0, bottom: -36, margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 11, color: "rgba(245,240,230,0.55)" }}>
+              {hi ? "फ़ुटेज: AI से बना, केवल चित्रण के लिए" : "Footage: AI-generated, illustrative"}
+            </p>
+          </header>
+        </section>
 
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 24px 64px" }}>
           <SnowOutlookSection view={view} record={record} locale={locale} />
 
           {/* What has actually fallen: dated, sourced, from the road feed. */}
