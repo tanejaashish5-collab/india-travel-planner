@@ -93,7 +93,7 @@ export default async function RoadConditionsPage({ params }: { params: Promise<{
 
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           {/* Forward look: the feed below logs what HAS happened; this is what the models and IMD say is coming. */}
-          <SnowOutlookSection view={snow} record={snowRecord} locale={locale} />
+          <SnowOutlookSection view={snow} record={snowRecord} locale={locale} moreHref={`/${locale}/snow`} />
 
           {/* Region grid */}
           <section aria-label={hi ? "क्षेत्र" : "Regions"} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 1, background: "var(--hair)", border: "1px solid var(--hair)", marginBottom: 40 }}>

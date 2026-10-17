@@ -67,11 +67,14 @@ export function SnowOutlookSection({
   record,
   locale,
   regionName,
+  moreHref,
 }: {
   view: SnowOutlookView;
   record: SnowTrackRecord | null;
   locale: string;
   regionName?: string;
+  /** Link to the full /snow page (omit on that page). */
+  moreHref?: string;
 }) {
   const hi = locale === "hi";
   const { lastRun, stale, outlooks } = view;
@@ -118,6 +121,13 @@ export function SnowOutlookSection({
           ? "शुरू करने से पहले हमने 10 सितंबर से 16 अक्टूबर तक के मॉडलों के पुराने पूर्वानुमान दोबारा चलाए: दो दिन पहले उन्होंने दर्ज हुई 9 बर्फ़बारियों में से 6 पकड़ीं। पूर्वानुमान: Open-Meteo (ECMWF, NOAA, DWD, कनाडा, UK Met Office, Météo-France), CC BY 4.0। बुलेटिन: भारत मौसम विज्ञान विभाग।"
           : "Before launch we replayed the models' archived forecasts for 10 Sep to 16 Oct: two days ahead they called 6 of the 9 snowfalls that were reported. Forecasts: Open-Meteo (ECMWF, NOAA, DWD, Environment Canada, UK Met Office, Météo-France), CC BY 4.0. Bulletins: India Meteorological Department."}
       </p>
+      {moreHref && (
+        <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 13, margin: "12px 0 0" }}>
+          <Link href={moreHref} style={{ color: ICE_DIM, textDecoration: "underline", textUnderlineOffset: 2 }}>
+            {hi ? "पूरा बर्फ़ पेज: सभी जगहें, तरीका, सवाल-जवाब →" : "Full snow page: every place we watch, method, questions →"}
+          </Link>
+        </p>
+      )}
     </section>
   );
 }

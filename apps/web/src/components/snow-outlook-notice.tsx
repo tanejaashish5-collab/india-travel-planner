@@ -70,8 +70,8 @@ export function SnowOutlookNotice({
             {hi ? `अपडेट ${fmtSnowTime(runAt, locale)}। ` : `Updated ${fmtSnowTime(runAt, locale)} IST. `}
           </>
         )}
-        <Link href={`/${locale}/road-conditions`} className="underline underline-offset-2">
-          {hi ? "सड़कों का हाल और तरीका" : "Road conditions and method"}
+        <Link href={`/${locale}/snow`} className="underline underline-offset-2">
+          {hi ? "बर्फ़ का पूरा अनुमान और तरीका" : "Snow forecast and method"}
         </Link>
         {imd?.url && (
           <>

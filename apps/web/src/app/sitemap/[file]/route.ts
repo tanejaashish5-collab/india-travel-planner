@@ -164,7 +164,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const staticPages = [
       "", "explore", "states", "collections", "routes", "treks",
       ...(FEATURES.aiPlanner ? ["plan"] : []),
-      "camping", "permits", "road-conditions", "superlatives",
+      "camping", "permits", "road-conditions", "snow", "superlatives",
       "stays", "festivals", "luxury", "tourist-traps",
       "saved", "about", "methodology", "blog", "more",
       "risk-quiz", "quiz/hill-station",

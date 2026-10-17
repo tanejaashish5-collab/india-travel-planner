@@ -116,3 +116,15 @@ export async function getSnowTrackRecord(): Promise<SnowTrackRecord> {
   return { since: rows.reduce<string | null>((m, r) => (!m || r.run_date < m ? r.run_date : m), null), events: outcomes.length, confirmed, unconfirmed, pending };
 }
 
+
+/** Every place and pass the outlook watches (view snow_watch_points), for the /snow page. */
+export async function getSnowWatchList(): Promise<SnowPoint[]> {
+  const s = client();
+  if (!s) return [];
+  const { data } = await s
+    .from("snow_watch_points")
+    .select("id, name, name_hi, kind, region_id, elevation_m, road")
+    .order("elevation_m", { ascending: false })
+    .limit(500);
+  return (data ?? []) as SnowPoint[];
+}

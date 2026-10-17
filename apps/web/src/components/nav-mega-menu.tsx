@@ -370,6 +370,7 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
           <MenuItem href={`/${locale}/cost-index`} icon={BookIcon} label="Cost Index" desc="Season-tagged travel costs" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/permits`} icon={ShieldIcon} label={t("permits")} desc="Required passes & permits" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/road-conditions`} icon={RoadIcon} label={t("roads")} desc="Latest road status" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/snow`} icon={RoadIcon} label="Snow forecast" desc="Next 4 days, Himalayan places" onNavigate={onNavigate} />
         </div>
       </div>
       {/* Highlight card: AI planner when enabled, otherwise the live road feed */}
