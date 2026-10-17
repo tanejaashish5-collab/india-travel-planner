@@ -66,8 +66,16 @@ common, so the true false-alarm rate is lower than 12/25, by an amount we cannot
 ## What this means for what we publish
 
 - Say "likely", never "will". About half of "likely" calls in the test had no report.
-- The 15 Oct Sissu snow: Rohtang Pass was "likely" 2 days out (5 of 6 models); Sissu
-  itself only came in at 1 day out. The pass is the earlier warning.
+- The 15 Oct Sissu snow: Rohtang Pass was "likely" 3 days out (5 of 6 models). The Sissu
+  and Keylong points themselves never reached "possible" (at most 1 of 6): the models had
+  them at about 0°C, so they forecast rain. The event counts as caught only through the
+  passes. The pass is the warning. (Corrected 2026-10-17; the first version said Sissu came
+  in 1 day out, which the replay does not show.)
+- Towns (re-checked 2026-10-17): Srinagar and Manali got rain, not snow, on 13-15 Oct.
+  Every model said so (lowest temperature 9-11°C), and no report says otherwise. Gulmarg
+  town was 0 of 6 at every lead (4-6°C), but the papers reported "fresh snow in Gulmarg"
+  on 14 Oct. That snow was most likely on the upper slopes (Apharwat), which we do not
+  watch.
 - Amounts are rough. The 13 Oct run had Rohtang at 2-26 cm across the agreeing models.
 - After every window, `snow-outlook.mjs verify` scores the call from evidence; the
   running tally is public on /road-conditions.
