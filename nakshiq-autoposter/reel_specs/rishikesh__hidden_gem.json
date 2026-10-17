@@ -11,7 +11,7 @@
  "cast": "a man in his 30s travelling alone",
  "narrator": "him",
  "setting_basis": "All at dawn: a wide stone ghat on the Ganga at Rishikesh in blue dawn light, a pile of visitors' sandals at the top step, a white-sand riverbank with inflatable rafts pulled up, then a hilltop above the valley at first sunrise with the Ganga a pale thread far below and snow peaks on the far horizon. The aarti is shown only as two blurred raised phones and one small lamp flame, never a crowd. No temple, signboard or road sign is shown, and the footage makes no crowd, distance or step-count claim of its own; those are the script's.",
- "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No one else close to the camera. No music, no speech, no voiceover, no text, captions, logos or watermark.",
  "refs": [
   {
    "name": "ref_man",
@@ -23,11 +23,15 @@
   },
   {
    "name": "ref_riverbank",
-   "prompt": "A white-sand riverbank beside the Ganga near Rishikesh in soft blue dawn light: a row of plain red and yellow inflatable rafts pulled up on the sand with paddles resting across them, large smooth boulders at the water's edge, the green river running fast, forested hills beyond, no people, no lettering or logos on the rafts, photorealistic, no text."
+   "prompt": "A white-sand riverbank beside the Ganga near Rishikesh on a busy weekend morning in soft light: a row of plain red and yellow inflatable rafts pulled up on the sand with paddles across them, groups of day-trippers in red life jackets and white helmets crowding around them while rafting guides hand out paddles, more groups farther along the beach, large smooth boulders at the water's edge, the green river running fast, forested hills beyond; no lettering or logos on the rafts, photorealistic, no text."
   },
   {
    "name": "ref_hilltop",
    "prompt": "A hilltop above the Ganga valley in Uttarakhand at first sunrise: plain old stone steps ending at a low stone parapet wall, the Ganga a pale winding thread in the valley far below, layered blue hills, a line of snow peaks catching the first gold light on the far horizon, no buildings, no people, photorealistic, no text."
+  },
+  {
+   "name": "ref_aarti",
+   "prompt": "The evening Ganga aarti at a wide stone ghat in Rishikesh at dusk: the steps packed with pilgrims and tourists, many holding phones up to film, priests in saffron at the water's edge raising tall brass lamps with flames, small leaf-boat lamps with marigolds floating on the dark river, forested hills fading into the dusk. Photorealistic, no text, no signage."
   }
  ],
  "keyframes": [
@@ -51,11 +55,11 @@
   {
    "name": "kf_s3",
    "refs": [
-    "kf_s1",
-    "ref_man"
+    "ref_man",
+    "ref_aarti"
    ],
-   "tone": "the river, hidden",
-   "prompt": "Over-the-shoulder from just behind the man in the teal fleece at the same ghat in blue dawn light: two phones held high in the soft, out-of-focus near foreground block most of the river, their screens only a soft glow, only the blurred hands holding them visible; one small aarti lamp flame glows far off at the water's edge."
+   "tone": "the river, hidden behind a hundred screens",
+   "prompt": "Over-the-shoulder from just behind the man in the teal fleece standing in the packed crowd on the ghat at dusk: a dozen phones held high by the people in front of him, their screens only a soft glow, block most of the river; beyond them the flames of the aarti lamps glow at the water's edge; the crowd soft and out of focus, faces turned away from camera."
   },
   {
    "name": "kf_s4",
@@ -64,7 +68,7 @@
     "ref_riverbank"
    ],
    "tone": "had enough",
-   "prompt": "Wide shot in blue dawn light: a row of plain red and yellow inflatable rafts pulled up on the white-sand riverbank with paddles resting across them, and at the far end of the row the man in the teal fleece sits alone on a boulder, seen from behind, his black backpack on, shoulders slumped, the green river running past."
+   "prompt": "Wide shot in soft weekend-morning light: a row of plain red and yellow inflatable rafts on the white-sand riverbank, groups of day-trippers in red life jackets and white helmets crowding around them while rafting guides hand out paddles; at the far end of the row the man in the teal fleece sits alone on a boulder, seen from behind, his black backpack on, shoulders slumped, the green river running past. The groups small and softly out of focus; nobody else close to the camera."
   },
   {
    "name": "kf_s5",
@@ -104,15 +108,17 @@
    "id": "s3",
    "mode": "frames",
    "start": "kf_s3",
-   "prompt": "The camera holds still. The two raised phones stay exactly where they are while the small lamp flame flickers far beyond.",
-   "sound": "A brass temple bell ringing far off, the river rushing below, quiet dawn tone."
+   "prompt": "The camera holds still. He stays standing in the crowd the whole time while the phones in front of him sway a little and the aarti lamps circle beyond.",
+   "sound": "Temple bells ringing, the murmur of a big crowd, the river rushing below.",
+   "crowd": true
   },
   {
    "id": "s4",
    "mode": "frames",
    "start": "kf_s4",
-   "prompt": "The camera holds still. He stays seated on the boulder the whole time while the river runs fast past the rafts.",
-   "sound": "The Ganga rushing over rocks, a crow calling, quiet riverbank tone."
+   "prompt": "The camera holds still. He stays seated on the boulder the whole time while the rafting groups mill around the rafts behind him.",
+   "sound": "The Ganga rushing over rocks, the loud murmur of rafting groups farther along the beach.",
+   "crowd": true
   },
   {
    "id": "s5",
@@ -209,5 +215,23 @@
   "Blue pre-dawn light: the man climbs a long flight of plain stone steps up a hilltop, alone, seen from behind, a small backpack on, no one else on the steps.",
   "Sunrise, wide from behind: the man sits alone on a low stone wall at the hilltop, a river valley far below him with the Ganga a pale winding thread, layered hills beyond.",
   "Sunrise, very wide: a line of snow peaks on the far horizon catching the first light above layered blue hills, the man small and still in the near corner, seen from behind, nobody else in frame."
+ ],
+ "retakes": [
+  {
+   "date": "2026-10-17",
+   "shots": [
+    "s3",
+    "s4"
+   ],
+   "keyframes": [
+    "kf_s3",
+    "kf_s4"
+   ],
+   "refs": [
+    "ref_riverbank",
+    "ref_aarti"
+   ],
+   "why": "rule (h): the aarti showed two phones and an empty dawn ghat, the rafting bank was deserted, while the lines say peak season and day-trippers. Voice unchanged, 0 ElevenLabs"
+  }
  ]
 }

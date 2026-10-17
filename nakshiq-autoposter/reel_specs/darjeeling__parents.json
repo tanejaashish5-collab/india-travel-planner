@@ -11,7 +11,7 @@
  "cast": "a son in his 30s and his parents in their 60s",
  "narrator": "the son",
  "setting_basis": "An ordinary family living room on one evening lit by a single lamp, then a flat paved hill-town promenade above a misty valley in the same evening light; the footage shows no real hotel, landmark, Chowrasta or signage, and makes no claim beyond what the script says.",
- "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No other people. No music, no speech, no voiceover, no text, captions, logos or watermark.",
+ "look": "Soft natural light, natural colour, anamorphic 35mm lens, shallow depth of field, soft film grain, photorealistic, cinematic. Faces are never in close-up and no one looks at the camera. A phone screen is only a soft glow, never legible. No one else close to the camera. No music, no speech, no voiceover, no text, captions, logos or watermark.",
  "refs": [
   {
    "name": "ref_son",
@@ -31,7 +31,7 @@
   },
   {
    "name": "ref_promenade",
-   "prompt": "Darjeeling's Chowrasta, the flat open square and Mall promenade at the top of the hill town in the Eastern Himalaya, India, in warm low evening sun: grey stone paving, old black cast-iron lamp posts and railing, colonial-era two-storey buildings with corrugated tin roofs painted green and red, tall slim Himalayan cedar trees, and beyond the railing deep misty valleys, tea-garden slopes and layered blue Himalayan ridges with one faint snow peak far away. Not Europe: no Mediterranean pines, no cypresses, no terracotta villas. Photorealistic, no people, no text, no signage, no logos."
+   "prompt": "Darjeeling's Chowrasta, the flat open square and Mall promenade at the top of the hill town in the Eastern Himalaya, India, in warm low evening sun: grey stone paving, old black cast-iron lamp posts and railing, colonial-era two-storey buildings with corrugated tin roofs painted green and red, tall slim Himalayan cedar trees, and beyond the railing deep misty valleys, tea-garden slopes and layered blue Himalayan ridges with one faint snow peak far away. Not Europe: no Mediterranean pines, no cypresses, no terracotta villas. Families, couples and children stroll across the square, a few people sit on the benches by the railing, a pony handler leads a pony along the edge, as Chowrasta really is on a November evening. Photorealistic, no text, no signage, no logos."
   }
  ],
  "keyframes": [
@@ -90,7 +90,7 @@
     "ref_promenade"
    ],
    "tone": "easy, unhurried, a quiet win",
-   "prompt": "Wide shot from behind in warm low evening sun on the flat paved Chowrasta promenade of the reference: the father in the mustard cardigan walks in the centre of the frame, the mother in the maroon kameez beside him with a closed cream cloth bag on her shoulder and nothing sticking out of it, the son in the navy sweater a pace behind them; nobody holds a walking stick or anything else, their hands empty at their sides; tin-roofed colonial buildings on one side, misty Himalayan ridges beyond the iron railing, nobody else."
+   "prompt": "Wide shot from behind in warm low evening sun on the flat paved Chowrasta promenade of the reference: the father in the mustard cardigan walks in the centre of the frame, the mother in the maroon kameez beside him with a closed cream cloth bag on her shoulder and nothing sticking out of it, the son in the navy sweater a pace behind them; nobody holds a walking stick or anything else, their hands empty at their sides; tin-roofed colonial buildings on one side, misty Himalayan ridges beyond the iron railing; farther ahead and around them families and couples stroll the square and people sit on the benches, small and softly out of focus; nobody else close to the camera."
   }
  ],
  "shots": [
@@ -134,7 +134,8 @@
    "mode": "frames",
    "start": "kf_s6",
    "prompt": "The camera follows slowly behind them along the flat paving; all three keep walking at an easy pace and stay in frame the whole time, hands empty, the bag closed on her shoulder.",
-   "sound": "Footsteps on stone paving, wind moving through tall trees, a crow calling far off, quiet hill evening tone."
+   "sound": "Footsteps on stone paving, wind moving through tall trees, a crow calling far off, the soft murmur of evening strollers.",
+   "crowd": true
   }
  ],
  "beats": [
@@ -224,6 +225,19 @@
     "ref_promenade"
    ],
    "why": "s6 looked like Tuscany (umbrella pines, terracotta villas: the ref said only 'hill town') and the stick handle out of the bag read as the mother carrying a cane, against 'Papa's stick never left the bag'"
+  },
+  {
+   "date": "2026-10-17",
+   "shots": [
+    "s6"
+   ],
+   "keyframes": [
+    "kf_s6"
+   ],
+   "refs": [
+    "ref_promenade"
+   ],
+   "why": "rule (h): Chowrasta on a November evening was empty except the family. Now evening strollers (crowd shot). s1/s2 clip_qa flags were false (3 and 2 people steady). Voice unchanged, 0 ElevenLabs"
   }
  ]
 }

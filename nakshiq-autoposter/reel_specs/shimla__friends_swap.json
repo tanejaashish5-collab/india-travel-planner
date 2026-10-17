@@ -108,22 +108,22 @@
    "id": "s1",
    "mode": "frames",
    "start": "kf_s1",
-   "prompt": "The camera holds still. All four stay seated in place the whole time; the man in the rust-red sweater leans a little closer to the laptop.",
+   "prompt": "The camera holds still. All four stay seated in place the whole time and nobody else is in the room; the man in the rust-red sweater leans a little closer to the laptop.",
    "sound": "A ceiling fan turning, traffic far below the window, quiet afternoon room tone."
   },
   {
    "id": "s2",
    "mode": "frames",
    "start": "kf_s2",
-   "prompt": "The camera holds still. He holds the phone out a little further, and it stays in his right hand the whole time.",
+   "prompt": "The camera holds still. He holds the phone out a little further, and it stays in his right hand the whole time; only he and the woman beside him are in the frame from start to end.",
    "sound": "A ceiling fan turning, a car horn far below the window, quiet room tone."
   },
   {
    "id": "s3",
    "mode": "frames",
    "start": "kf_s3",
-   "prompt": "The camera holds still. She stays seated at the window the whole time as the sheer curtain moves softly in the breeze.",
-   "sound": "A ceiling fan turning, a pigeon cooing on the window ledge, quiet room tone."
+   "prompt": "The camera holds still. She stays seated at the window the whole time as the sheer curtain stirs gently; the three on the sofa stay seated behind her.",
+   "sound": "A ceiling fan turning, traffic far below the window, quiet room tone."
   },
   {
    "id": "s4",
@@ -143,7 +143,7 @@
    "id": "s6",
    "mode": "frames",
    "start": "kf_s6",
-   "prompt": "A slow push in as the wind moves the tops of the deodars. All four stay standing in place the whole time.",
+   "prompt": "The camera holds still as the wind moves the tops of the deodars. All four stay standing in place the whole time in one continuous take.",
    "sound": "Wind in the deodar trees, a crow calling across the ground, quiet hilltop tone."
   }
  ],
@@ -227,5 +227,18 @@
   "Late afternoon, wide from behind: the four friends walk slowly along the edge of a flat green cricket ground on a hilltop, tall pine forest all around it, nobody else on the ground.",
   "Late afternoon: one of the men stands alone on the grass just inside the boundary of the cricket ground, seen from behind, hands in his jacket pockets, looking out at the forest, the other three small and still at the boundary behind him.",
   "Very wide in late afternoon light: the whole cricket ground on its hilltop ringed by dark pine forest, the four friends small on the grass, no buildings, shops or other people in frame."
+ ],
+ "retakes": [
+  {
+   "date": "2026-10-17",
+   "shots": [
+    "s1",
+    "s2",
+    "s3",
+    "s6"
+   ],
+   "keyframes": [],
+   "why": "clip check: s1 a fifth person walked into the room of four; s2 a third face appeared behind his shoulder; s3 a pigeon flew into the room (the sound line asked for one) and the curtain billowed; s6 dissolved mid-clip and the man in red vanished. Stills fine, videos re-rolled. Voice unchanged, 0 ElevenLabs"
+  }
  ]
 }
