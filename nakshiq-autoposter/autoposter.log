@@ -28117,3 +28117,19 @@ Date range: 2026-04-15 → 2026-10-15
 2026-10-17 11:47:19  INFO      [facebook/Nakshiq] ✅ carousel published (best_month) · post_id=u0Uyg
 2026-10-17 11:47:19  INFO      Carousel run complete (fmt=best_month, posted=True).
 2026-10-17 11:47:19  INFO      ════════════════════════════════════════════════════════════
+2026-10-18 01:35:11  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-10-18 01:35:11  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-18 01:35:15  INFO          Requesting upload URL for nainital__kids__hi.mp4 (63,435,602 bytes, video/mp4)
+2026-10-18 01:35:17  INFO          Uploading to R2 (timeout=300s)...
+2026-10-18 01:35:44  INFO          R2 PUT OK. Confirming...
+2026-10-18 01:35:48  INFO          Media ready: xii6a (63,435,602 bytes · nainital__kids__hi.mp4)
+2026-10-18 01:35:48  INFO          Requesting upload URL for nainital__kids__cover.jpg (441,346 bytes, image/jpeg)
+2026-10-18 01:35:50  INFO          Uploading to R2 (timeout=120s)...
+2026-10-18 01:35:51  INFO          R2 PUT OK. Confirming...
+2026-10-18 01:35:53  INFO          Media ready: 366ZI (441,346 bytes · nainital__kids__cover.jpg)
+2026-10-18 01:36:08  WARNING   [instagram/nakshiq] Outstand warnings: ['Could not inspect video https://media.outstand.so/0XeFVbIRO5o8Z8lwNljn3LJiuLULfLa1/24685a20-276c-4f44-83c4-0f4d1c74f532/nainital__kids__hi.mp4: Container returned 500: Error proxying request to container: Container is taking too long to accept the connection; the application could be overwhelmed with load. It will be published as-is.']
+2026-10-18 01:36:56  INFO          Requesting upload URL for kochi__hidden_gem__en.mp4 (63,278,542 bytes, video/mp4)
+2026-10-18 01:36:58  INFO          Uploading to R2 (timeout=300s)...
+2026-10-18 01:37:26  INFO          R2 PUT OK. Confirming...
+2026-10-18 01:37:29  INFO          Media ready: yhhpa (63,278,542 bytes · kochi__hidden_gem__en.mp4)
+2026-10-18 01:37:45  WARNING   [youtube/@naksh-iq] Outstand warnings: ['Could not inspect video https://media.outstand.so/0XeFVbIRO5o8Z8lwNljn3LJiuLULfLa1/65bd9cd3-8d6f-480d-b8dc-1d9b6b584228/kochi__hidden_gem__en.mp4: Container returned 500: Error proxying request to container: Container is taking too long to accept the connection; the application could be overwhelmed with load. It will be published as-is.']
