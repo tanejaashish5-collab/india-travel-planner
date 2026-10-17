@@ -28189,3 +28189,26 @@ Date range: 2026-04-15 → 2026-10-15
 2026-10-17 16:00:14  INFO      [facebook/Nakshiq] ✅ Published · Outstand=lS7wR · Platform=1040562729145369_122126164940700092
 2026-10-17 16:00:14  INFO      State saved. Run complete.
 2026-10-17 16:00:14  INFO      ════════════════════════════════════════════════════════════
+2026-10-17 17:18:20  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-17 17:18:20  INFO      ════════════════════════════════════════════════════════════
+2026-10-17 17:18:20  INFO      Nakshiq Autoposter · EVENING · 2026-10-17 · weekday=5
+2026-10-17 17:18:20  INFO      ════════════════════════════════════════════════════════════
+2026-10-17 17:18:20  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-17 17:19:05  INFO      Synced → 20 destinations · 100 traps · 6 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-17 17:19:05  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-17 17:19:07  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-17 17:19:07  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-17 17:19:07  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-17 17:19:07  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-17 17:19:23  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-17 17:19:23  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_guide, pillar:scenario_hidden_gem, pillar:scenario_kids, pillar:scenario_parents, score seen <2d)
+2026-10-17 17:19:23  INFO      Evening format (balance→verdict): v2_weekend_escape_map [29% vs target 35%] (0/15 never featured)
+2026-10-17 17:19:23  INFO      Formats — IG: v2_weekend_escape_map  ·  FB: v2_weekend_escape_map  ·  Story: route_spotlight  ·  Audience: families
+2026-10-17 17:19:23  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-10-17 17:19:23  INFO      Audience filter 'families' → 15 destinations match.
+2026-10-17 17:19:23  INFO      Fingerprint dedup snapshot — 49 dests in 7d · 82 (dest,fmt) pairs in 30d · 224 media in 60d
+2026-10-17 17:19:23  INFO      Route locked: Bengal Cultural Trail
+2026-10-17 17:19:24  INFO      Shared best destination locked: Mukteshwar
+2026-10-17 17:19:24  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-10-17 17:19:24  INFO      State saved. Run complete.
+2026-10-17 17:19:24  INFO      ════════════════════════════════════════════════════════════
