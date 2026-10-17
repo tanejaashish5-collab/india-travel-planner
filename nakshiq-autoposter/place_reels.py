@@ -235,12 +235,59 @@ def commons(slug: str, month: int, tag: str) -> dict | None:
     nm = name(slug)
     state = ((data().get("geo") or {}).get(slug) or {}).get("state_name") or ""
     used: set = set()
-    ok = scenery_title(nm, state)
+    base = scenery_title(nm, state)
+    ok = lambda t: base(t) and not BUILDING.search(t)    # Manali map 10-17: a resort balcony with a guest on it
     for q in (nm, f"{nm} {state}".strip()):
         got = GR.commons_photo(q, nm, dest, used, month, need_month=True, max_gap=1, title_ok=ok)
         if got:
             return got
     return None
+
+
+def ref_photo(slug: str) -> dict | None:
+    """A real Wikimedia Commons scenery photo of the place (any month): what every AI place clip is
+    built from and what map_reveal shows when no in-season photo exists. NEVER the site hero: 675 of
+    705 site heroes are AI renders at the image generator's 1376x768, and Chakrata's was a fern
+    rainforest waterfall that is not Chakrata (founder held both formats 2026-10-16). Cached per slug;
+    a wrong pick is fixed by adding its title to guide_photo_reject.json and deleting the cache."""
+    import guide_reel as GR
+    dest = PHOTOS / slug / "ref.jpg"
+    meta = dest.with_suffix(".json")
+    if dest.exists() and meta.exists():
+        return _load(meta, None)
+    nm = name(slug)
+    state = ((data().get("geo") or {}).get(slug) or {}).get("state_name") or ""
+    base = scenery_title(nm, state)
+    # Pass 1 wants a landscape word in the title; pass 2 allows a bare place-name title ("Chakrata -
+    # panoramio"). Both refuse buildings and interiors: Manali's first pick was a resort's balcony.
+    wide = lambda t: base(t) and bool(LANDSCAPE.search(t)) and not BUILDING.search(t)
+    plain = lambda t: base(t) and not BUILDING.search(t)
+    for ok in (wide, plain):
+        for q in (nm, f"{nm} {state}".strip()):
+            got = GR.commons_photo(q, nm, dest, set(), date.today().month, need_month=False, max_gap=12, title_ok=ok)
+            if got:
+                return got
+    return None
+
+
+LANDSCAPE = re.compile(r"\b(view|views|valley|landscape|panorama|panoramic|mountains?|hills?|peaks?|range|lake|river|"
+                       r"forest|meadow|snow|sunset|sunrise|glacier|scenery|skyline|clouds?|beach|coast|backwaters?)\b", re.I)
+BUILDING = re.compile(r"\b(hotel|resort|guest ?house|homestay|cottage|lodge|room|restaurant|cafe|shop|store|office|school|"
+                      r"college|hospital|bank|interior|inside|museum|statue|idol|sign|signboard|board|map|car|bus|train|"
+                      r"bike|portrait|selfie|people|man|woman|boy|girl|family|wedding)\b", re.I)
+
+
+def ref_credit(sb: str) -> dict:
+    """The Commons record of the photo a storyboard's clips were made from. Clips with no record were
+    made from the AI site hero (before 2026-10-17) and must not post: fail closed."""
+    c = _load(CLIPS / f"{sb}__photo.json", None)
+    if not c or not c.get("title"):
+        raise Refuse("no record of a real photo behind these clips (made from the AI site hero?)")
+    return c
+
+
+def _ai_from(c: dict, what: str) -> str:
+    return f"{what} made from a photo of the real place: {c.get('author') or 'unknown'} ({c.get('licence')}), Wikimedia Commons"
 
 
 # ─── format facts ─────────────────────────────────────────────────────────
@@ -260,13 +307,10 @@ def facts_map_reveal(slug: str, today: date) -> dict:
             lines.append(f"<em>{d[1]} km</em> from the {what}: {d[0]}")
     if len(lines) < 2:
         raise Refuse("fewer than two location facts")
-    pic = hero(slug)
-    credit = ""
-    if not pic:
-        c = commons(slug, today.month, "map")
-        if not c:
-            raise Refuse("no photo of the place")
-        pic, credit = Path(c["file"]), f"Photo: {c.get('author') or 'Wikimedia Commons'} ({c.get('licence')})"
+    c = commons(slug, today.month, "map") or ref_photo(slug)    # never the site hero (AI renders)
+    if not c:
+        raise Refuse("no real photo of the place")
+    pic, credit = Path(c["file"]), f"Photo: {c.get('author') or 'Wikimedia Commons'} ({c.get('licence')})"
     return {"slug": slug, "name": name(slug), "state": g.get("state_name") or "", "lat": g["lat"], "lng": g["lng"],
             "facts": lines, "best": MONTHS[best], "best_score": best_score, "photo": pic, "credit": credit,
             "commons": [] if not credit else [c],
@@ -385,12 +429,14 @@ def facts_two_months(slug: str, today: date) -> dict:
         raise Refuse(f"{MONTHS[good]} is no longer in the next three months")
     sc, labels = scores(slug)
     verdict = lambda m: (labels[m - 1] or ("go" if sc[m - 1] >= 8 else "skip" if sc[m - 1] <= 4 else "wait"))
+    ref = ref_credit(sb)
     ra, rb = reason_line(month_note(slug, good)), reason_line(month_note(slug, bad))
     if not ra or not rb:
         raise Refuse("a month has no note to give the reason")
     return {"slug": slug, "name": name(slug), "good": good, "bad": bad, "good_score": sc[good - 1],
             "bad_score": sc[bad - 1], "good_verdict": verdict(good), "bad_verdict": verdict(bad),
-            "good_note": ra, "bad_note": rb, "clips": clips,
+            "good_note": ra, "bad_note": rb, "clips": clips, "commons": [ref],
+            "credit": _ai_from(ref, "AI footage"),
             "screen_text": [f"{MONTHS[good]} {sc[good - 1]}/10 {ra}", f"{MONTHS[bad]} {sc[bad - 1]}/10 {rb}"]}
 
 
@@ -402,6 +448,7 @@ def facts_tiny_world(slug: str, today: date) -> dict:
     clips = [CLIPS / f"{tiny_sb(slug)}__s{i}.mp4" for i in (1, 2)]
     if not all(c.exists() for c in clips):
         raise Refuse("tiny_world clips not generated yet")
+    ref = ref_credit(tiny_sb(slug))
     best, best_score = next_best(slug, today)
     g = (data().get("geo") or {}).get(slug) or {}
     lines = [f"Go in <em>{MONTHS[best]}</em>: {best_score}/10"]
@@ -410,8 +457,8 @@ def facts_tiny_world(slug: str, today: date) -> dict:
     d = _dist(g.get("nearest_railhead"))
     if d:
         lines.append(f"<em>{d[1]} km</em> from the nearest train")
-    return {"slug": slug, "name": name(slug), "facts": lines, "clips": clips,
-            "best": MONTHS[best], "best_score": best_score,
+    return {"slug": slug, "name": name(slug), "facts": lines, "clips": clips, "commons": [ref],
+            "credit": _ai_from(ref, "AI miniature"), "best": MONTHS[best], "best_score": best_score,
             "screen_text": [l.replace("<em>", "").replace("</em>", "") for l in lines]}
 
 
@@ -515,14 +562,15 @@ def _html(fmt: str, f: dict, follow: str, music: str, w: Path) -> str:
             "B_MONTH": MONTHS[f["bad"]], "B_SCORE": f["bad_score"], "B_VERDICT": f["bad_verdict"].upper(),
             "B_CLASS": cls(f["bad_verdict"]), "B_NOTE": f["bad_note"],
             "END_LINE": f"Go in <em>{MONTHS[f['good']]}</em>.<br>Not in {MONTHS[f['bad']]}.",
-            "FOLLOW": follow, "CREDIT": "AI footage of the real place, made from our photo"})
+            "FOLLOW": follow, "CREDIT": f["credit"]})
     if fmt == "tiny_world":
         for i, c in enumerate(f["clips"], 1):
             shutil.copy(c, w / "assets" / f"bg{i}.mp4")
         return _fill("tiny_world.html", {
             "NAME": f["name"], "SNAPSHOT": snap, "MUSIC": music, "DUR": dur, "V2_DUR": round(dur - 7.5, 2),
             "NAME_PX": _name_px(f["name"], 260), "SUB": "in miniature",
-            "FACTS": "\n".join(f"        <div>{x}</div>" for x in f["facts"]), "FOLLOW": follow})
+            "FACTS": "\n".join(f"        <div>{x}</div>" for x in f["facts"]), "FOLLOW": follow,
+            "CREDIT": f["credit"]})
     raise Refuse(f"unknown format {fmt}")
 
 
@@ -644,14 +692,14 @@ def caption(row: dict) -> tuple[str, str]:
         g, b = MONTHS[row["good"]], MONTHS[row["bad"]]
         cap = (f"{nm} in {g}: {row['good_score']}/10. In {b}: {row['bad_score']}/10. Same place, two very different trips.\n\n"
                f"Send this to whoever's planning it with you.\n\n{nm}, every month: {url}\n\n"
-               f"Scores and reasons are NakshIQ's real data. The footage is AI-generated from our photo of the real place, "
-               f"showing what each month's verdict describes."
+               f"Scores and reasons are NakshIQ's real data. The footage is AI-generated from a photo of the real place, "
+               f"showing what each month's verdict describes.{credits}"
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{nm}: {g} or {b}? | NakshIQ"
     if row["kind"] == "tiny_world":
         cap = (f"{nm}, in miniature. Go in {row['best']}: {row['best_score']}/10.\n\n"
                f"Send this to whoever you'd go with.\n\n{nm}, month by month: {url}\n\n"
-               f"The miniature is AI-generated from a photo of the real place. Scores are NakshIQ's real data."
+               f"The miniature is AI-generated from a photo of the real place. Scores are NakshIQ's real data.{credits}"
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{nm}, in miniature | NakshIQ"
     raise ValueError(row["kind"])
@@ -668,14 +716,18 @@ def _cowork_window() -> bool:
 KF = ("Turn this photograph into a handcrafted miniature diorama of exactly this place, seen from slightly above: "
       "the same layout, the same buildings, hills, trees and water, rebuilt at tiny scale with model trees, tiny "
       "painted buildings and textured paper hills, soft tilt-shift blur along the top and bottom edges, warm natural "
-      "light. Vertical 9:16. An empty miniature: no people, no figurines, no vehicles, no text, no signs.")
+      "light. Vertical 9:16. The diorama alone fills the frame, no workbench or tools around it. An empty miniature: "
+      "no people, no hands, no figurines, no vehicles, no text, no signs.")
 KF2 = ("A closer, lower view of one corner of this same miniature diorama: the tiny buildings and model trees in "
        "sharp focus, the rest falling into tilt-shift blur, same warm light. Vertical 9:16. No people, no figurines, "
        "no text, no signs.")
-SHOT = ("Slow push-in over the miniature diorama; tiny cotton-wool clouds drift and the model trees sway slightly, "
-        "the camera glides smoothly forward. Ambient sound: soft wind and distant birdsong. No people, no text.")
+# Chakrata 2026-10-16: "cotton-wool clouds drift" made Veo bring in a hand to move them. Only the light moves now.
+SHOT = ("Slow push-in over the miniature diorama; the model trees sway very slightly and soft light shifts across it, "
+        "the camera glides smoothly forward. Only the diorama is in frame. Ambient sound: soft wind and distant "
+        "birdsong. No people, no hands, no tools, no text.")
 SHOT2 = ("Slow sideways tracking move across the miniature diorama, shallow tilt-shift focus sliding over the tiny "
-         "buildings; warm light flickers softly. Ambient sound: gentle breeze and a faint river. No people, no text.")
+         "buildings; warm light flickers softly. Only the diorama is in frame. Ambient sound: gentle breeze and a faint "
+         "river. No people, no hands, no tools, no text.")
 
 
 def queue_tiny(slug: str) -> int:
@@ -688,7 +740,7 @@ def queue_tiny(slug: str) -> int:
     base = {"slug": slug, "format": sb, "pipeline": "v3", "storyboard": sb, "take": 1}
     want = [
         dict(base, clip=photo, kind="ref", role="photo", status="live", seconds=0, credits=0,
-             prompt="Real photograph of the place (site hero), saved at " + str(CLIPS / photo)),
+             prompt=_ref_prompt(sb, photo)),
         dict(base, clip=f"{sb}__kf1.jpg", kind="keyframe", role="kf1", status="pending", seconds=0, credits=0,
              prompt=KF, refs=[photo]),
         dict(base, clip=f"{sb}__kf2.jpg", kind="keyframe", role="kf2", status="pending", seconds=0, credits=0,
@@ -707,18 +759,43 @@ def queue_tiny(slug: str) -> int:
 
 
 def _photo_ref(sb: str, slug: str) -> str:
-    h = hero(slug)
-    if not h:
-        raise Refuse("no site hero photo to build from")
+    c = ref_photo(slug)
+    if not c:
+        raise Refuse("no real Commons photo of the place to build from")
     photo = f"{sb}__photo.jpg"
     CLIPS.mkdir(parents=True, exist_ok=True)
     if not (CLIPS / photo).exists():
-        _photo(h, CLIPS / photo)
+        _photo(Path(c["file"]), CLIPS / photo)
+    (CLIPS / f"{sb}__photo.json").write_text(json.dumps(c, ensure_ascii=False, indent=1))
     return photo
 
 
+def _ref_prompt(sb: str, photo: str) -> str:
+    c = _load(CLIPS / f"{sb}__photo.json", {}) or {}
+    return (f"Real photograph of the place (Wikimedia Commons: {c.get('title')}, {c.get('author')}, "
+            f"{c.get('licence')}), saved at {CLIPS / photo}")
+
+
+def retire(sb: str) -> int:
+    """Take a storyboard's clips and queue rows out of use (kept under clips/_retired/), so the same
+    place can be queued again. For clips made from the AI site hero before 2026-10-17."""
+    if _cowork_window():
+        raise SystemExit("15:30-21:00 local: Cowork is generating off the task file; not touching the queue")
+    rows = _load(QUEUE, [])
+    mine = [r for r in rows if r.get("storyboard") == sb]
+    old = CLIPS / "_retired" / datetime.now().strftime("%Y%m%d-%H%M")
+    old.mkdir(parents=True, exist_ok=True)
+    for f in CLIPS.glob(f"{sb}__*"):
+        shutil.move(str(f), old / f.name)
+    (old / f"{sb}.rows.json").write_text(json.dumps(mine, indent=2, ensure_ascii=False))
+    tmp = QUEUE.with_suffix(".tmp")
+    tmp.write_text(json.dumps([r for r in rows if r.get("storyboard") != sb], indent=2, ensure_ascii=False))
+    tmp.replace(QUEUE)
+    return len(mine)
+
+
 def queue_two(slug: str, today: date) -> int:
-    """Two stills of the real place (from its site photo) in the good month and the skip month,
+    """Two stills of the real place (from a real Commons photo) in the good month and the skip month,
     exactly as each month's note describes, then one Veo clip from each (20 credits)."""
     if _cowork_window():
         raise SystemExit("15:30-21:00 local: Cowork is generating off the task file; not touching the queue")
@@ -739,7 +816,7 @@ def queue_two(slug: str, today: date) -> int:
     have = {r["clip"] for r in rows}
     base = {"slug": slug, "format": sb, "pipeline": "v3", "storyboard": sb, "take": 1}
     want = [dict(base, clip=photo, kind="ref", role="photo", status="live", seconds=0, credits=0,
-                 prompt="Real photograph of the place (site hero), saved at " + str(CLIPS / photo))]
+                 prompt=_ref_prompt(sb, photo))]
     for i, sc in ((1, a), (2, b)):
         want += [dict(base, clip=f"{sb}__kf{i}.jpg", kind="keyframe", role=f"kf{i}", status="pending", seconds=0,
                       credits=0, prompt=still(sc), refs=[photo], month=sc["month"]),
@@ -766,6 +843,19 @@ def prepare(today: date | None = None) -> int:
     for fmt, suffix, q in (("tiny_world", "__tiny_world", lambda s: queue_tiny(s)),
                            ("two_months", "__two_months", lambda s: queue_two(s, today))):
         used = {v.get("slug") for v in led.values() if v.get("kind") == fmt}
+        # Clips made from the AI site hero (no Commons record beside them) are re-made for the SAME
+        # place from a real photo (founder 2026-10-16 "go"), instead of moving on to a new place.
+        hero_made = sorted({r["slug"] for r in rows if r.get("storyboard", "").endswith(suffix)
+                            and r.get("role") == "photo" and not (CLIPS / f"{r['storyboard']}__photo.json").exists()})
+        for slug in hero_made:
+            n = retire(slug + suffix)
+            try:
+                print(f"[place_reels] {fmt}: {slug} was made from the AI site hero; retired {n} row(s), "
+                      f"re-queued {q(slug)} from a real photo")
+            except Refuse as e:
+                print(f"[place_reels] {fmt}: {slug} was made from the AI site hero; retired {n} row(s), cannot re-queue: {e}")
+        if hero_made:
+            rows = _load(QUEUE, [])
         waiting = {r["slug"] for r in rows if r.get("storyboard", "").endswith(suffix) and r.get("status") in ("pending", "parked")}
         ready = []
         for s in candidates(fmt, today):
@@ -780,7 +870,7 @@ def prepare(today: date | None = None) -> int:
             print(f"[place_reels] {fmt}: {len(ready)} ready, {len(waiting)} in the queue — nothing to add")
             continue
         for slug in candidates("map_reveal", today):   # any place with a good coming month
-            if slug in used or not hero(slug):
+            if slug in used:
                 continue
             try:
                 n = q(slug)
