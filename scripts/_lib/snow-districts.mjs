@@ -26,7 +26,7 @@ export const POINT_DISTRICTS = {
   // Himachal Pradesh
   sissu: ["lahaul-spiti"], keylong: ["lahaul-spiti"], "lahaul-valley": ["lahaul-spiti"], chandratal: ["lahaul-spiti"],
   kaza: ["lahaul-spiti"], "spiti-valley": ["lahaul-spiti"], "kunzum-pass": ["lahaul-spiti"], "baralacha-la": ["lahaul-spiti"],
-  "shinku-la": ["lahaul-spiti"], "rohtang-pass": ["kullu", "lahaul-spiti"], manali: ["kullu"], "parvati-valley": ["kullu"],
+  "shinku-la": ["lahaul-spiti"], "rohtang-pass": ["kullu", "lahaul-spiti"], manali: ["kullu"], "solang-valley": ["kullu"], "parvati-valley": ["kullu"],
   shimla: ["shimla"], kufri: ["shimla"], sarahan: ["shimla"], chail: ["solan"], kasauli: ["solan"],
   kalpa: ["kinnaur"], kinnaur: ["kinnaur"], sangla: ["kinnaur"], chitkul: ["kinnaur"], nako: ["kinnaur"],
   dalhousie: ["chamba"], "sach-pass": ["chamba"], mcleodganj: ["kangra"], "barot-valley": ["mandi"], "prashar-lake": ["mandi"],
@@ -49,7 +49,7 @@ export const POINT_DISTRICTS = {
   lachen: ["mangan"], lachung: ["mangan"], "yumthang-valley": ["mangan"], "gurudongmar-lake": ["mangan"],
   "tsomgo-lake": ["gangtok"], "nathu-la": ["gangtok"], zuluk: ["pakyong"], ravangla: ["namchi"], pelling: ["gyalshing"],
   // Jammu & Kashmir
-  gulmarg: ["baramulla"], tosamaidan: ["budgam"], doodhpathri: ["budgam"], yusmarg: ["budgam"], sonamarg: ["ganderbal"],
+  gulmarg: ["baramulla"], apharwat: ["baramulla"], tosamaidan: ["budgam"], doodhpathri: ["budgam"], yusmarg: ["budgam"], sonamarg: ["ganderbal"],
   "zoji-la": ["ganderbal", "kargil"], "gurez-valley": ["bandipora"], "razdan-pass": ["bandipora"], "lolab-valley": ["kupwara"],
   "bangus-valley": ["kupwara"], pahalgam: ["anantnag"], kokernag: ["anantnag"], verinag: ["anantnag"],
   "sinthan-top": ["kishtwar", "anantnag"], "peer-ki-gali": ["shopian", "poonch"], patnitop: ["udhampur", "ramban"],

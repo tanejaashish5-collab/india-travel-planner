@@ -52,7 +52,9 @@ const KEYWORDS = {
   "razdan-pass": ["Razdan"], "peer-ki-gali": ["Peer Ki Gali", "Pir Ki Gali", "Mughal Road"], "chang-la": ["Chang La", "Changla"],
   "taglang-la": ["Taglang", "Tanglang"], "fotu-la": ["Fotu La", "Fotula"], "sela-pass": ["Sela"],
   "sissu": ["Sissu", "Atal Tunnel North"], "lahaul-valley": ["Lahaul"], "keylong": ["Keylong"], "chandratal": ["Chandratal", "Batal"],
-  "spiti-valley": ["Spiti"], "gulmarg": ["Gulmarg", "Affarwat", "Apharwat"], "badrinath": ["Badrinath"],
+  "spiti-valley": ["Spiti"], "gulmarg": ["Gulmarg"], "badrinath": ["Badrinath"],
+  // A higher point inherits a lower one's snow (Gulmarg town snow means snow at the gondola top), never the reverse.
+  "apharwat": ["Apharwat", "Affarwat", "Afarwat", "Kongdori", "Kongdoori", "Gulmarg"], "solang-valley": ["Solang"],
   "khardung-la": ["Khardung"], "nathu-la": ["Nathu La", "Nathula"], "tsomgo-lake": ["Tsomgo", "Changu"],
   "gurudongmar-lake": ["Gurudongmar"], "yumthang-valley": ["Yumthang"], "gurez-valley": ["Gurez"], "tawang": ["Tawang"],
 };
@@ -61,7 +63,7 @@ const KEYWORDS = {
 const IMD_STATIONS = {
   keylong: ["keylong", "lahaul-valley"], gondhla: ["sissu", "keylong", "lahaul-valley"], sissu: ["sissu"],
   udaipur: ["lahaul-valley"], kukumseri: ["lahaul-valley"], kalpa: ["kalpa", "kinnaur"], kaza: ["kaza", "spiti-valley"],
-  manali: ["manali"], shimla: ["shimla"], kufri: ["kufri"], dalhousie: ["dalhousie"], sangla: ["sangla"], chitkul: ["chitkul"],
+  manali: ["manali", "solang-valley"], shimla: ["shimla"], kufri: ["kufri"], dalhousie: ["dalhousie"], sangla: ["sangla"], chitkul: ["chitkul"],
 };
 const keywordsFor = (p) => [p.name, ...(KEYWORDS[p.id] ?? [])];
 
