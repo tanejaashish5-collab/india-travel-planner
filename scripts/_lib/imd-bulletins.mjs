@@ -66,7 +66,14 @@ export function issueDate(text, today = new Date().toISOString().slice(0, 10)) {
   const after = (re) => {
     const out = [];
     for (const m of head.matchAll(re)) {
-      const d = parseDateAt(head.slice(m.index + m[0].length, m.index + m[0].length + 30));
+      const start = m.index + m[0].length;
+      let d = parseDateAt(head.slice(start, start + 30));
+      // Dehradun prints the label, then other cells, then the date ("16th October, 2026 at 18:30"):
+      // look a little further for a date WRITTEN IN WORDS (numeric table cells stay out).
+      if (!d) {
+        const w = head.slice(start, start + 300).match(new RegExp(`\\b\\d{1,2}(?:st|nd|rd|th)?[-\\s,]+${MONTH_RE}[-,\\s]+20\\d{2}`, "i"));
+        if (w) d = parseDateAt(w[0]);
+      }
       if (d && d <= today) out.push(d);
     }
     return out.sort();

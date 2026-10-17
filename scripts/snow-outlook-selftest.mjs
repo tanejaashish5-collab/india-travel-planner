@@ -34,6 +34,8 @@ t("negation only near snow", snowSentences("Light snowfall likely over Lahaul-Sp
 
 // Issue date: explicit label beats weekday table; old letterhead date loses to the real one.
 t("issue: Srinagar letterhead", issueDate("Report Dated 29.10.2024 ... Dated: 15-10-2026 Time of issue", "2026-10-16"), "2026-10-15");
+t("issue: Dehradun date sits after other cells", issueDate("INDIA METEOROLOGICAL DEPARTMENT Date & Time of issue: 7 days District-Level Weather Forecast for Uttarakhand  16th October, 2026 at 18:30 Hours IST  17.10.2026 Very light snowfall", "2026-10-17"), "2026-10-16");
+t("issue: far-away date is not picked up as the issue date", issueDate("Date & Time of issue: " + "x ".repeat(200) + "16th October, 2026", "2026-10-17"), null);
 t("issue: weekday table does not make an old bulletin fresh", issueDate("Bulletin. Saturday 11-10-2026 Sunday 12-10-2026 Wednesday 15-10-2026", "2026-10-16"), "2026-10-11");
 t("issue: Gangtok header", issueDate("Weather Forecast Bulletin | Thursday, 15th October 2026 ... FRI, OCT 16, 2026", "2026-10-16"), "2026-10-15");
 
