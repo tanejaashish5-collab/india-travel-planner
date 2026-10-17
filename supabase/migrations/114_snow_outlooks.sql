@@ -56,14 +56,22 @@ insert into public.snow_watch_passes (id, name, region_id, elevation_m, lat, lng
   ('chang-la',      'Chang La',      'ladakh',           5360, 34.0470, 77.9305, 'Leh–Pangong',                                  'https://www.wikidata.org/wiki/Q866534'),
   ('taglang-la',    'Taglang La',    'ladakh',           5328, 33.5078, 77.7700, 'Manali–Leh (Pang–Upshi)',                      'https://www.wikidata.org/wiki/Q729667'),
   ('fotu-la',       'Fotu La',       'ladakh',           4108, 34.2892, 76.7015, 'Srinagar–Leh (Kargil–Lamayuru)',               'https://www.wikidata.org/wiki/Q2675874'),
-  ('sela-pass',     'Sela Pass',     'arunachal-pradesh',4170, 27.5048, 92.1047, 'Bomdila–Tawang',                               'https://www.wikidata.org/wiki/Q7447387')
+  ('sela-pass',     'Sela Pass',     'arunachal-pradesh',4170, 27.5048, 92.1047, 'Bomdila–Tawang',                               'https://www.wikidata.org/wiki/Q7447387'),
+  -- 114f (2026-10-17): not passes, but extra points with no destination row. Road left
+  -- empty so no page or caption says "on the ... road". Apharwat = Gulmarg Gondola Phase 2
+  -- top (3,980 m, Wikipedia Gulmarg_Gondola), coordinates of Apharwat Peak (Wikidata
+  -- Q16058155); the 4,390 m summit is not used (summits were false alarms). Backtest:
+  -- would have called the 14 Oct Gulmarg snow 3 days out. Solang: Wikidata Q12069422.
+  ('apharwat',      'Apharwat (Gulmarg gondola top)', 'jammu-kashmir', 3980, 33.9995, 74.3255, '', 'https://en.wikipedia.org/wiki/Gulmarg_Gondola'),
+  ('solang-valley', 'Solang Valley', 'himachal-pradesh', 2560, 32.3151, 77.1554, '', 'https://www.wikidata.org/wiki/Q12069422')
 on conflict (id) do update set name = excluded.name, region_id = excluded.region_id, elevation_m = excluded.elevation_m,
   lat = excluded.lat, lng = excluded.lng, road = excluded.road, source_url = excluded.source_url;
 
 update public.snow_watch_passes p set name_hi = v.hi from (values
   ('rohtang-pass','रोहतांग दर्रा'),('kunzum-pass','कुंज़ुम दर्रा'),('baralacha-la','बारालाचा ला'),('shinku-la','शिंकु ला'),
   ('sach-pass','साच दर्रा'),('zoji-la','ज़ोजी ला'),('razdan-pass','राज़दान टॉप'),('peer-ki-gali','पीर की गली'),
-  ('chang-la','चांग ला'),('taglang-la','तगलांग ला'),('fotu-la','फ़ोटू ला'),('sela-pass','सेला दर्रा')) as v(id, hi)
+  ('chang-la','चांग ला'),('taglang-la','तगलांग ला'),('fotu-la','फ़ोटू ला'),('sela-pass','सेला दर्रा'),
+  ('apharwat','अफरवट (गुलमर्ग गोंडोला टॉप)'),('solang-valley','सोलंग घाटी')) as v(id, hi)
 where p.id = v.id;
 
 create table if not exists public.snow_outlooks (
