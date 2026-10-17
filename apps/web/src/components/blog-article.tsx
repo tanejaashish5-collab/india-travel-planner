@@ -852,6 +852,8 @@ function parseContent(content: string): Array<{ heading?: string; id?: string; p
 
   for (const line of lines) {
     const trimmed = line.trim();
+    // A leading "# Title" line repeats the page's own <h1>; it printed as literal "# ..." text.
+    if (/^#\s+/.test(trimmed) && sections.length === 0 && !current.heading && current.paragraphs.length === 0) continue;
     if (trimmed.startsWith("## ")) {
       if (current.paragraphs.length > 0 || current.heading) {
         sections.push(current);
