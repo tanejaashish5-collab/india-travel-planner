@@ -36,9 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-17"
+    "PdMu0_carousel": "2026-10-17",
+    "PdMu0": "2026-10-17",
+    "PdMu0_evening": "2026-10-17"
   },
-  "last_sync": "2026-10-15T18:27:08.094772+00:00",
+  "last_sync": "2026-10-17T15:59:19.522260+00:00",
   "posted_destinations": [
     {
       "destination_id": "dhanaulti",
@@ -151,6 +153,26 @@
     {
       "destination_id": "sarahan",
       "date": "2026-10-17"
+    },
+    {
+      "destination_id": "kasauli",
+      "date": "2026-10-17"
+    },
+    {
+      "destination_id": "kausani",
+      "date": "2026-10-17"
+    },
+    {
+      "destination_id": "trichy",
+      "date": "2026-10-17"
+    },
+    {
+      "destination_id": "chamba",
+      "date": "2026-10-17"
+    },
+    {
+      "destination_id": "nandi-hills",
+      "date": "2026-10-17"
     }
   ],
   "posted_formats": {
@@ -178,7 +200,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "festival_alert",
       "score_card",
       "score_card",
       "v2_local_knows",
@@ -198,7 +219,8 @@
       "v3_tl_poll_reel",
       "festival_alert",
       "v2_series_episode",
-      "v2_arrival_intel_video"
+      "v2_arrival_intel_video",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -10978,6 +11000,35 @@
       "destination": "sarahan",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-10-17"
+    },
+    {
+      "timestamp": "2026-10-17T14:36:54.510727+00:00",
+      "date": "2026-10-17",
+      "platform": "instagram",
+      "post_id": "TZyN8",
+      "destination": "nainital",
+      "format": "scenario_kids",
+      "media_id": "xii6a"
+    },
+    {
+      "timestamp": "2026-10-17T14:37:53.025099+00:00",
+      "date": "2026-10-17",
+      "platform": "youtube",
+      "post_id": "Db4RI",
+      "destination": "kochi",
+      "format": "scenario_hidden_gem",
+      "media_id": "yhhpa"
+    },
+    {
+      "timestamp": "2026-10-17T16:00:14.140903+00:00",
+      "date": "2026-10-17",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "lS7wR",
+      "destination": "kasauli",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -11342,10 +11393,12 @@
         "2026-10-01"
       ],
       "chamba": [
-        "2026-10-01"
+        "2026-10-01",
+        "2026-10-17"
       ],
       "nandi-hills": [
-        "2026-10-01"
+        "2026-10-01",
+        "2026-10-17"
       ],
       "bengaluru": [
         "2026-10-03"
@@ -11376,6 +11429,15 @@
       ],
       "ozar": [
         "2026-10-14"
+      ],
+      "kasauli": [
+        "2026-10-17"
+      ],
+      "kausani": [
+        "2026-10-17"
+      ],
+      "trichy": [
+        "2026-10-17"
       ]
     },
     "morning_formats": {
@@ -11564,7 +11626,8 @@
         "2026-07-01",
         "2026-08-02",
         "2026-10-01",
-        "2026-10-09"
+        "2026-10-09",
+        "2026-10-17"
       ],
       "tourist_trap": [
         "2026-09-01"
@@ -11772,6 +11835,9 @@
       ],
       "ozar": [
         "2026-10-14"
+      ],
+      "kasauli": [
+        "2026-10-17"
       ]
     },
     "audience_tags": {
@@ -11808,7 +11874,8 @@
         "2026-09-05",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
       "adventurers": [
         "2026-05-29",
@@ -12043,7 +12110,8 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12057,11 +12125,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kausani",
+    "shared_best": "trichy",
     "collection": "char-dham-circuit"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-10-09",
+  "data_carousel_floor_last": "2026-10-17",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
