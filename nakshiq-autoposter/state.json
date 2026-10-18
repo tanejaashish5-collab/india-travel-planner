@@ -36,20 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-17",
+    "PdMu0_carousel": "2026-10-18",
     "PdMu0": "2026-10-17",
     "PdMu0_evening": "2026-10-17"
   },
   "last_sync": "2026-10-17T17:19:05.429656+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-10-03"
-    },
-    {
-      "destination_id": "bengaluru",
-      "date": "2026-10-03"
-    },
     {
       "destination_id": "almora",
       "date": "2026-10-04"
@@ -173,6 +165,10 @@
     {
       "destination_id": "nandi-hills",
       "date": "2026-10-17"
+    },
+    {
+      "destination_id": "jaipur",
+      "date": "2026-10-18"
     }
   ],
   "posted_formats": {
@@ -11029,6 +11025,33 @@
       "format": "data_carousel",
       "has_media": true,
       "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-10-18T07:37:05.987056+00:00",
+      "date": "2026-10-18",
+      "platform": "instagram",
+      "post_id": "GE3WD",
+      "destination": "araku-valley",
+      "format": "scenario_guide",
+      "media_id": "vrBKp"
+    },
+    {
+      "timestamp": "2026-10-18T07:37:42.149331+00:00",
+      "date": "2026-10-18",
+      "platform": "youtube",
+      "post_id": "vr1nB",
+      "destination": "araku-valley",
+      "format": "scenario_guide",
+      "media_id": "n23UX"
+    },
+    {
+      "timestamp": "2026-10-18T12:13:37.193636+00:00",
+      "date": "2026-10-18",
+      "platform": "facebook",
+      "post_id": "g4GNf",
+      "destination": "jaipur",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-10-18"
     }
   ],
   "theme_usage": {
@@ -12110,8 +12133,7 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 2,
