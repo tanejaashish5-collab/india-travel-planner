@@ -1,8 +1,8 @@
-# Cinematic readiness — 2026-10-11
+# Cinematic readiness — 2026-10-18
 
-Total: **533** dests · A=**348** · HS-B=**29** · B=**156** · C=**0**
+Total: **533** dests · A=**349** · HS-B=**29** · B=**155** · C=**0**
 
-Cinematic-eligible (A + HS-B): **377**
+Cinematic-eligible (A + HS-B): **378**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -11,7 +11,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Field | Dests blocked |
 |---|---:|
 | eats | 152 |
-| stays | 45 |
+| stays | 44 |
 | gems | 8 |
 
 ## By state (destinations below tier A only)
@@ -45,7 +45,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | puducherry | 0 | 0 | 2 | 0 | 2 |
 | rajasthan | 0 | 0 | 3 | 0 | 3 |
 | sikkim | 0 | 3 | 5 | 0 | 8 |
-| tamil-nadu | 0 | 0 | 12 | 0 | 12 |
+| tamil-nadu | 0 | 0 | 11 | 0 | 11 |
 | telangana | 0 | 0 | 11 | 0 | 11 |
 | tripura | 0 | 0 | 1 | 0 | 1 |
 | uttar-pradesh | 0 | 1 | 0 | 0 | 1 |
@@ -66,7 +66,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Aihole (aihole) | karnataka | eats:4/5 |
 | Alampur (alampur) | telangana | eats:4/5 · stays:2/3 |
 | Ambaji (ambaji) | gujarat | eats:4/5 |
-| Anamalai Tiger Reserve (Topslip) (anamalai) | tamil-nadu | stays:2/3 |
 | Ananthagiri Hills (ananthagiri-hills) | telangana | stays:2/3 |
 | Arambol (arambol) | goa | eats:3/5 |
 | Aritar (aritar) | sikkim | eats:2/5 |
@@ -252,4 +251,4 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Tsomgo Lake (tsomgo-lake) | sikkim | eats |
 | Umlingla (umlingla) | ladakh | eats |
 
-## Tier A destinations (magazine-ready): 348
+## Tier A destinations (magazine-ready): 349
