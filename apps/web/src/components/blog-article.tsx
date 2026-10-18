@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { FadeIn, ScrollReveal } from "./animated-hero";
+import { BlogHeroVideo } from "./blog-hero-video";
 import { ArticleCallout } from "./article-callout";
 import HowToDoIt from "./how-to-do-it";
 import { BlogArticleToC } from "./blog-article-toc";
@@ -207,6 +208,10 @@ export function BlogArticle({
             style={{ filter: "brightness(0.78) saturate(0.92)" }}
             priority
           />
+          {/* Posts about one destination play that destination's clip over the photo. */}
+          {destinations.length === 1 && destinations[0].id && (
+            <BlogHeroVideo id={destinations[0].id} className="object-cover w-full h-full" style={{ filter: "brightness(0.78) saturate(0.92)" }} />
+          )}
           {/* Bottom scrim for text legibility — decorative, no click capture */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent pointer-events-none" />
 
