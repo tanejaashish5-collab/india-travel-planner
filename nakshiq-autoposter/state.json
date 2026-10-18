@@ -37,10 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-18",
-    "PdMu0": "2026-10-17",
-    "PdMu0_evening": "2026-10-17"
+    "PdMu0": "2026-10-18",
+    "PdMu0_evening": "2026-10-18"
   },
-  "last_sync": "2026-10-17T17:19:05.429656+00:00",
+  "last_sync": "2026-10-18T16:13:53.160337+00:00",
   "posted_destinations": [
     {
       "destination_id": "almora",
@@ -169,6 +169,10 @@
     {
       "destination_id": "jaipur",
       "date": "2026-10-18"
+    },
+    {
+      "destination_id": "munsiyari",
+      "date": "2026-10-18"
     }
   ],
   "posted_formats": {
@@ -197,7 +201,6 @@
     ],
     "PdMu0": [
       "score_card",
-      "score_card",
       "v2_local_knows",
       "v2_budget_receipt",
       "v2_weekend_escape_map",
@@ -216,7 +219,8 @@
       "festival_alert",
       "v2_series_episode",
       "v2_arrival_intel_video",
-      "data_carousel"
+      "data_carousel",
+      "v2_weekend_escape_map"
     ]
   },
   "post_log": [
@@ -11052,6 +11056,35 @@
       "destination": "jaipur",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-10-18"
+    },
+    {
+      "timestamp": "2026-10-18T14:37:01.412037+00:00",
+      "date": "2026-10-18",
+      "platform": "instagram",
+      "post_id": "RV4Sf",
+      "destination": "srinagar",
+      "format": "scenario_eatery",
+      "media_id": "FztAa"
+    },
+    {
+      "timestamp": "2026-10-18T14:37:56.265667+00:00",
+      "date": "2026-10-18",
+      "platform": "youtube",
+      "post_id": "36vnf",
+      "destination": "srinagar",
+      "format": "scenario_eatery",
+      "media_id": "pAPuX"
+    },
+    {
+      "timestamp": "2026-10-18T16:14:31.791059+00:00",
+      "date": "2026-10-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "zdot4",
+      "destination": "munsiyari",
+      "format": "v2_weekend_escape_map",
+      "has_media": true,
+      "media_id": "munsiyari.mp4"
     }
   ],
   "theme_usage": {
@@ -11094,7 +11127,8 @@
         "2026-05-29",
         "2026-06-14",
         "2026-09-06",
-        "2026-09-24"
+        "2026-09-24",
+        "2026-10-18"
       ],
       "madurai": [
         "2026-05-23",
@@ -11613,7 +11647,8 @@
       ],
       "v2_weekend_escape_map": [
         "2026-06-03",
-        "2026-09-27"
+        "2026-09-27",
+        "2026-10-18"
       ],
       "v2_myth_bust_oneline": [
         "2026-06-06",
@@ -11861,6 +11896,9 @@
       ],
       "kasauli": [
         "2026-10-17"
+      ],
+      "munsiyari": [
+        "2026-10-18"
       ]
     },
     "audience_tags": {
@@ -12147,7 +12185,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "mukteshwar",
+    "shared_best": "munsiyari",
     "collection": "char-dham-circuit"
   },
   "manual_skip_dests": {},

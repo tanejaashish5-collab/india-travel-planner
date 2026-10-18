@@ -28345,3 +28345,47 @@ Date range: 2026-04-15 → 2026-10-17
 2026-10-19 01:37:06  INFO          Uploading to R2 (timeout=300s)...
 2026-10-19 01:37:29  INFO          R2 PUT OK. Confirming...
 2026-10-19 01:37:31  INFO          Media ready: pAPuX (52,577,621 bytes · srinagar__eatery__en.mp4)
+2026-10-18 16:13:06  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-18 16:13:06  INFO      ════════════════════════════════════════════════════════════
+2026-10-18 16:13:06  INFO      Nakshiq Autoposter · EVENING · 2026-10-18 · weekday=6
+2026-10-18 16:13:06  INFO      ════════════════════════════════════════════════════════════
+2026-10-18 16:13:06  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-18 16:13:53  INFO      Synced → 20 destinations · 100 traps · 5 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-18 16:13:53  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-18 16:13:54  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-18 16:13:54  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-18 16:13:54  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-18 16:13:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-18 16:14:11  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-18 16:14:11  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_eatery, pillar:scenario_guide, pillar:scenario_hidden_gem, pillar:scenario_kids seen <2d)
+2026-10-18 16:14:11  INFO      Evening format (balance→verdict): v2_weekend_escape_map [33% vs target 35%] (0/15 never featured)
+2026-10-18 16:14:11  INFO      Formats — IG: v2_weekend_escape_map  ·  FB: v2_weekend_escape_map  ·  Story: kids_intel
+2026-10-18 16:14:11  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-10-18 16:14:11  INFO      Fingerprint dedup snapshot — 49 dests in 7d · 84 (dest,fmt) pairs in 30d · 226 media in 60d
+2026-10-18 16:14:11  INFO      Kids destination locked: Puri
+2026-10-18 16:14:12  INFO      Shared best destination locked: Munsiyari
+2026-10-18 16:14:12  INFO      [facebook/Nakshiq] Generating v2_weekend_escape_map post...
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: gurez-valley has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: leh has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: munnar has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: mathura has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: old-goa has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: coorg has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  INFO      v2_weekend_escape_map: ooty has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-18 16:14:12  WARNING   v2_weekend_escape_map: no eligible dest at render time — falling back to safe format 'score_card'
+2026-10-18 16:14:12  INFO      [facebook/Nakshiq] Caption ready (600 chars, dest=munsiyari)
+2026-10-18 16:14:13  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-10-18 16:14:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/munsiyari.mp4?v=20260915
+2026-10-18 16:14:16  INFO          Brand-stamp applied: munsiyari.mp4 (4,592,394 → 2,146,004 bytes)
+2026-10-18 16:14:16  INFO          Requesting upload URL for munsiyari.mp4 (2,146,004 bytes, video/mp4)
+2026-10-18 16:14:18  INFO          Uploading to R2 (timeout=300s)...
+2026-10-18 16:14:19  INFO          R2 PUT OK. Confirming...
+2026-10-18 16:14:19  INFO          Media ready: vrnkv (2,146,004 bytes · munsiyari.mp4)
+2026-10-18 16:14:19  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-18 16:14:31  INFO      [facebook/Nakshiq] ✅ Published · Outstand=zdot4 · Platform=1668643708206896
+2026-10-18 16:14:31  INFO      State saved. Run complete.
+2026-10-18 16:14:31  INFO      ════════════════════════════════════════════════════════════
