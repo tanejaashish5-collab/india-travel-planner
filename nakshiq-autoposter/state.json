@@ -40,7 +40,7 @@
     "PdMu0": "2026-10-18",
     "PdMu0_evening": "2026-10-18"
   },
-  "last_sync": "2026-10-18T16:13:53.160337+00:00",
+  "last_sync": "2026-10-18T17:30:42.066106+00:00",
   "posted_destinations": [
     {
       "destination_id": "almora",
@@ -11697,6 +11697,11 @@
         "2026-06-01",
         "2026-09-04"
       ],
+      "munsiyari": [
+        "2026-05-23",
+        "2026-06-14",
+        "2026-10-18"
+      ],
       "madurai": [
         "2026-05-23",
         "2026-06-05",
@@ -11896,9 +11901,6 @@
       ],
       "kasauli": [
         "2026-10-17"
-      ],
-      "munsiyari": [
-        "2026-10-18"
       ]
     },
     "audience_tags": {
@@ -12171,7 +12173,8 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    }
+    },
+    "stays": {}
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12185,7 +12188,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "munsiyari",
+    "shared_best": "mukteshwar",
     "collection": "char-dham-circuit"
   },
   "manual_skip_dests": {},
