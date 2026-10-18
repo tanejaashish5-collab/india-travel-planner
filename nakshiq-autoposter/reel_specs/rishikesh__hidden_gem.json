@@ -116,7 +116,7 @@
    "id": "s4",
    "mode": "frames",
    "start": "kf_s4",
-   "prompt": "The camera holds still. He stays seated on the boulder the whole time while the rafting groups mill around the rafts behind him.",
+   "prompt": "The camera holds still. He stays seated on the boulder the whole time, his hands resting empty on his knees, while the rafting groups mill around the rafts behind him.",
    "sound": "The Ganga rushing over rocks, the loud murmur of rafting groups farther along the beach.",
    "crowd": true
   },
@@ -232,6 +232,14 @@
     "ref_aarti"
    ],
    "why": "rule (h): the aarti showed two phones and an empty dawn ghat, the rafting bank was deserted, while the lines say peak season and day-trippers. Voice unchanged, 0 ElevenLabs"
+  },
+  {
+   "date": "2026-10-18",
+   "shots": [
+    "s4"
+   ],
+   "keyframes": [],
+   "why": "clip check: a yellow paddle appeared from nowhere beside him at 3.7s and changed angle; the Hindi cut shows it. Hands now empty. Voice unchanged, 0 ElevenLabs"
   }
  ]
 }

@@ -108,7 +108,7 @@
    "id": "s1",
    "mode": "frames",
    "start": "kf_s1",
-   "prompt": "The camera holds still. All four stay seated in place the whole time and nobody else is in the room; the man in the rust-red sweater leans a little closer to the laptop.",
+   "prompt": "Slow push-in toward the low table. The same four friends are the only people in the room for the whole take and stay seated exactly where they are; one finger scrolls on the laptop.",
    "sound": "A ceiling fan turning, traffic far below the window, quiet afternoon room tone."
   },
   {
@@ -239,6 +239,14 @@
    ],
    "keyframes": [],
    "why": "clip check: s1 a fifth person walked into the room of four; s2 a third face appeared behind his shoulder; s3 a pigeon flew into the room (the sound line asked for one) and the curtain billowed; s6 dissolved mid-clip and the man in red vanished. Stills fine, videos re-rolled. Voice unchanged, 0 ElevenLabs"
+  },
+  {
+   "date": "2026-10-18",
+   "shots": [
+    "s1"
+   ],
+   "keyframes": [],
+   "why": "clip check: s1 again drew a fifth person, a second man in the rust-red sweater walking in to lean over the laptop. The old action named 'the man in the rust-red sweater', which Veo read as a newcomer; the action now names no one and the camera moves instead. Voice unchanged, 0 ElevenLabs"
   }
  ]
 }
