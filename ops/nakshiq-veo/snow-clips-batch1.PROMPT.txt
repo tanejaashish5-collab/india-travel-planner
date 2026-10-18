@@ -1,0 +1,35 @@
+NakshIQ /snow page, winter clips batch 1 (2026-10-18): 8 short loops for the snow landing page.
+Paste everything between the lines into a one-off Cowork task. Run it OUTSIDE the daily Veo window
+(see cowork-task.SKILL.md): the daily task uses the same Flow accounts then.
+
+---
+Goal: the NakshIQ snow page (nakshiq.com/snow) plays a rotation of looping winter clips behind its
+title. It already has 10 for Gulmarg, Auli, Kufri, Kedarnath, Khardung La, Dhanaulti, Patnitop, Tsomgo
+Lake, Badrinath and a frozen lake. These 8 fill the most-searched snow places it is missing.
+
+Method: exactly as in /Users/ashishtaneja/Automation/nakshiq-veo/cowork-task.SKILL.md (Veo 3.1 Lite,
+only the Google accounts that file allows, never enter a password, never solve a CAPTCHA, never buy
+credits, never run a NakshIQ script, never publish). One clip per prompt, 16:9, about 8 seconds.
+Save each clip into ~/Downloads/nakshiq-veo-inbox/ under EXACTLY the filename shown. Do not rename.
+
+Rules for every clip: real winter, deep fresh snow, clear cold light. A slow, steady camera move only
+(drone push-in, slow pan or slow dolly). No readable text or signs, no logos, no close-ups of faces,
+no crowds, no vehicles in focus. Landscape and architecture only, in the style of the existing clips.
+If the place cannot be made to look like itself, stop and report it instead of saving a generic one.
+
+Clips (filename | place | what to show):
+1 snow-manali-solang.mp4 | Solang Valley, near Manali, HP | wide snowy meadow, pine edges, Pir Panjal peaks, morning sun, slow drone push-in
+2 snow-rohtang-atal.mp4 | Rohtang side of the Lahaul road, HP | road cut through deep snow walls, switchbacks climbing to a snow pass, low sun
+3 snow-spiti-kaza.mp4 | Kaza and Key Monastery, Spiti, HP | whitewashed monastery on its hill, snow-covered barley terraces, frozen river, blue shadows
+4 snow-sonamarg.mp4 | Sonamarg, Kashmir | broad snowy valley, frozen Sindh river, snow-loaded firs, high peaks above
+5 snow-narkanda-shimla.mp4 | Narkanda ridge, near Shimla, HP | open snowy ridge with deodar forest, long view to the Himalayan line at sunrise
+6 snow-nathula-sikkim.mp4 | Nathu La road, Sikkim | snow-banked mountain road, prayer flags, frozen high lake, thin cold light
+7 snow-tawang-sela.mp4 | Sela Pass road, Arunachal | snow-covered pass with a half-frozen lake, prayer flags, clouds breaking
+8 snow-mussoorie-landour.mp4 | Landour, Mussoorie, Uttarakhand | old stone cottages and oak and deodar trees under snow, mist in the valley below
+
+When done: report which of the 8 saved, their exact filenames, and any you stopped on and why.
+---
+
+Afterwards (Claude, not Cowork): look at 3 frames of each clip, keep only those that really look like
+the place and show snow, upload the keepers to the video bucket under their `snow-*` stem, then add them
+to HERO_CLIPS in apps/web/src/app/[locale]/snow/page.tsx. Footage stays labelled AI-generated on the page.

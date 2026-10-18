@@ -32,6 +32,20 @@ const REGION_NAME: Record<string, { en: string; hi: string }> = {
   ...Object.fromEntries(ROAD_REGIONS.map((r) => [r.id, { en: r.en, hi: r.hi }])),
   "west-bengal": { en: "West Bengal (Darjeeling hills)", hi: "पश्चिम बंगाल (दार्जिलिंग की पहाड़ियाँ)" },
 };
+// Winter footage on R2, one clip per place people look up (frames checked 2026-10-18).
+// theme-snow stays first: the page poster is a frame of it.
+const HERO_CLIPS = [
+  { id: "theme-snow", en: "Himalayan winter lake", hi: "हिमालय की जमी झील" },
+  { id: "gulmarg", en: "Gulmarg", hi: "गुलमर्ग" },
+  { id: "auli", en: "Auli", hi: "औली" },
+  { id: "kufri", en: "Kufri", hi: "कुफरी" },
+  { id: "kedarnath", en: "Kedarnath", hi: "केदारनाथ" },
+  { id: "khardung-la", en: "Khardung La", hi: "खारदुंग ला" },
+  { id: "dhanaulti", en: "Dhanaulti", hi: "धनौल्टी" },
+  { id: "patnitop", en: "Patnitop", hi: "पटनीटॉप" },
+  { id: "tsomgo-lake", en: "Tsomgo Lake", hi: "सोमगो झील" },
+  { id: "badrinath", en: "Badrinath", hi: "बद्रीनाथ" },
+];
 // Places people actually search "will it snow in ..." for. Kept only if they are on the watch list.
 const FAQ_PLACES = ["manali", "gulmarg", "sonamarg", "spiti-valley", "kaza", "shimla", "kedarnath", "gangtok", "rohtang-pass", "lahaul-valley"];
 
@@ -137,7 +151,7 @@ export default async function SnowPage({ params }: { params: Promise<{ locale: s
         <section
           style={{ position: "relative", minHeight: "min(84vh, 780px)", display: "flex", alignItems: "flex-end", padding: "140px 24px 56px", marginBottom: 40 }}
         >
-          <SnowHeroVideo src={videoSrc("theme-snow")} poster="/snow-hero-poster.jpg" />
+          <SnowHeroVideo clips={HERO_CLIPS.map((c) => ({ src: videoSrc(c.id), label: hi ? c.hi : c.en }))} poster="/snow-hero-poster.jpg" />
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, var(--paper, #0a0a0a) 2%, rgba(8,12,20,0.78) 38%, rgba(8,12,20,0.5) 100%)" }} />
           <header style={{ position: "relative", maxWidth: 1100, width: "100%", margin: "0 auto" }}>
             <p className="nq-kicker" style={{ color: "#7dd3fc", marginBottom: 20, letterSpacing: "0.22em" }}>
