@@ -1,23 +1,43 @@
-NakshIQ /snow page, winter clips batch 1 (2026-10-18): 8 short loops for the snow landing page.
-Paste everything between the lines into a one-off Cowork task. Run it OUTSIDE the daily Veo window
-(see cowork-task.SKILL.md): the daily task uses the same Flow accounts then.
+NakshIQ /snow page, winter clips batch 1 (2026-10-18, revised 2026-10-19): 8 short loops for the snow landing page.
+Paste everything between the lines into a ONE-OFF Cowork task (not the daily task, not a new schedule).
+
+BEFORE YOU RUN IT
+- Cowork needs: the linked folder /Users/ashishtaneja/Automation/nakshiq-veo/ (read access is enough),
+  Desktop Commander (to reach ~/Downloads), and the browser tool for Flow (Comet with the Claude extension, as the daily task uses).
+- Start it after the Flow accounts refresh (about 15:09 Canberra) and only when the daily Veo task is NOT running
+  (it starts 15:30 Canberra). Never run both at once: they share the same accounts and the same inbox folder.
+- Cost: 8 clips x 10 credits = 80 credits on Veo 3.1 Lite.
 
 ---
-Goal: the NakshIQ snow page (nakshiq.com/snow) plays a rotation of looping winter clips behind its
-title. It already has 10 for Gulmarg, Auli, Kufri, Kedarnath, Khardung La, Dhanaulti, Patnitop, Tsomgo
-Lake, Badrinath and a frozen lake. These 8 fill the most-searched snow places it is missing.
+Goal: the NakshIQ snow page (nakshiq.com/snow) plays a rotation of looping winter clips behind its title. It already
+has 10 (Gulmarg, Auli, Kufri, Kedarnath, Khardung La, Dhanaulti, Patnitop, Tsomgo Lake, Badrinath, a frozen lake).
+These 8 fill the most-searched snow places it is missing.
 
-Method: exactly as in /Users/ashishtaneja/Automation/nakshiq-veo/cowork-task.SKILL.md (Veo 3.1 Lite,
-only the Google accounts that file allows, never enter a password, never solve a CAPTCHA, never buy
-credits, never run a NakshIQ script, never publish). One clip per prompt, 16:9, about 8 seconds.
-Save each clip into ~/Downloads/nakshiq-veo-inbox/ under EXACTLY the filename shown. Do not rename.
+METHOD: follow /Users/ashishtaneja/Automation/nakshiq-veo/cowork-task.SKILL.md for HOW to work in Flow: Veo 3.1 Lite,
+only the accounts listed in accounts.json, hover tile -> menu -> Download -> original size, the browser rules, never enter
+a password, never solve a CAPTCHA, never buy credits, never run a NakshIQ script, never publish anything.
 
-Rules for every clip: real winter, deep fresh snow, clear cold light. A slow, steady camera move only
-(drone push-in, slow pan or slow dolly). No readable text or signs, no logos, no close-ups of faces,
-no crowds, no vehicles in focus. Landscape and architecture only, in the style of the existing clips.
-If the place cannot be made to look like itself, stop and report it instead of saving a generic one.
+THIS TASK OVERRIDES THE SKILL ON THESE POINTS (the skill is written for the daily reels):
+1. IGNORE today-tasks.json completely. Do not read it, do not generate anything from it.
+2. IGNORE the 9:16 rule and the reference-still / keyframe / extend steps. These are plain text-to-video clips, 16:9,
+   about 8 seconds each, from the 8 prompts below, one clip per prompt.
+3. Save each clip into ~/Downloads/nakshiq-veo-inbox/ under EXACTLY the filename shown (snow-*.mp4), using Desktop Commander.
+4. That inbox folder may already hold other files from the daily run or reports. Do not move, rename, open or delete
+   anything that is not a snow-*.mp4 from this task. Where the skill says to leave ~/Downloads clean, that applies to
+   this task's own downloads only.
+5. Do the credit survey the skill describes (so you know what each account can spend), but report only on this task:
+   the 8 snow clips, never the daily credit report. Spend at most 80 credits. If the accounts cannot cover all 8, make as many
+   as fit in the order listed and say which were skipped.
+6. Verification: each file is 16:9, about 8 s, and plays. Skip the audio-stream check (these loops play muted).
+7. Write the report to ~/Downloads/nakshiq-veo-inbox/_report-snow-<YYYY-MM-DD>.md (Canberra date) and send one short
+   notification: which of the 8 saved, their exact filenames, any you stopped on and why.
 
-Clips (filename | place | what to show):
+RULES FOR EVERY CLIP: real winter, deep fresh snow, clear cold light. A slow, steady camera move only (drone push-in,
+slow pan or slow dolly). No readable text or signs, no logos, no close-ups of faces, no crowds, no vehicles in focus.
+Landscape and architecture only, in the style of the existing clips. If the place cannot be made to look like itself,
+stop on that clip and report it instead of saving a generic one.
+
+CLIPS (filename | place | what to show):
 1 snow-manali-solang.mp4 | Solang Valley, near Manali, HP | wide snowy meadow, pine edges, Pir Panjal peaks, morning sun, slow drone push-in
 2 snow-rohtang-atal.mp4 | Rohtang side of the Lahaul road, HP | road cut through deep snow walls, switchbacks climbing to a snow pass, low sun
 3 snow-spiti-kaza.mp4 | Kaza and Key Monastery, Spiti, HP | whitewashed monastery on its hill, snow-covered barley terraces, frozen river, blue shadows
@@ -26,10 +46,8 @@ Clips (filename | place | what to show):
 6 snow-nathula-sikkim.mp4 | Nathu La road, Sikkim | snow-banked mountain road, prayer flags, frozen high lake, thin cold light
 7 snow-tawang-sela.mp4 | Sela Pass road, Arunachal | snow-covered pass with a half-frozen lake, prayer flags, clouds breaking
 8 snow-mussoorie-landour.mp4 | Landour, Mussoorie, Uttarakhand | old stone cottages and oak and deodar trees under snow, mist in the valley below
-
-When done: report which of the 8 saved, their exact filenames, and any you stopped on and why.
 ---
 
-Afterwards (Claude, not Cowork): look at 3 frames of each clip, keep only those that really look like
-the place and show snow, upload the keepers to the video bucket under their `snow-*` stem, then add them
-to HERO_CLIPS in apps/web/src/app/[locale]/snow/page.tsx. Footage stays labelled AI-generated on the page.
+AFTERWARDS (Claude, not Cowork): look at 3 frames of each clip, keep only those that really look like the place and show
+snow, upload the keepers to the video bucket under their snow-* stem, then add them to HERO_CLIPS in
+apps/web/src/app/[locale]/snow/page.tsx. Footage stays labelled AI-generated on the page.
