@@ -46,6 +46,11 @@ SPECS = HERE / "reel_specs"
 LEDGER = Path.home() / "Automation" / "nakshiq-veo" / "data" / "reels.json"
 SURFACE = {"hi": "instagram", "en": "youtube"}
 HOLD = HERE / "HOLD_FOR_REVIEW"
+# HINDI ONLY (founder 2026-10-20: "publish the same reels on insta and youtube in hindi .. and skip
+# english on YT for now ... until i tell you to resume"). While this file exists no English cut is
+# made (half the ElevenLabs spend) and scenario_daily posts the Hindi cut to YouTube as well.
+# Delete the file to resume English for YouTube.
+HINDI_ONLY = HERE / "HINDI_ONLY"
 
 
 def qa(path: Path) -> str:
@@ -172,6 +177,8 @@ def render() -> int:
             print(f"[v3_daily] {s['id']}: stand-in still for {', '.join(stand)}")
         glitch = None   # computed once per storyboard, only when a cut is actually made
         for lang, platform in SURFACE.items():
+            if lang == "en" and HINDI_ONLY.exists():
+                continue
             key = f"{s['id']}__{lang}"
             if key in led:
                 # A stand-in cut whose real clip has since landed, and not yet posted:

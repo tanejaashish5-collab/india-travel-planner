@@ -673,6 +673,10 @@ def render(spec: dict, lang: str, out: Path, stand_in: dict | None = None,
     # Assigned, never setdefault: one process cuts HI then EN (v3_daily), and
     # setdefault let the English cut inherit "@nakshiq" (Manali, 2026-09-29).
     os.environ["NAKSHIQ_ENDCARD_CTA"] = "follow @naksh-iq" if lang == "en" else "follow @nakshiq"
+    if lang == "hi" and (Path(__file__).resolve().parent / "HINDI_ONLY").exists():
+        # The Hindi cut also goes to YouTube (founder 2026-10-20), where the handle is @naksh-iq:
+        # name the brand, which both platforms' search finds, not one platform's handle.
+        os.environ["NAKSHIQ_ENDCARD_CTA"] = "follow NakshIQ"
     if Y._append_endcard(out, tdp):
         mixed = tdp / "mixed.mp4"
         r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(out), "-i", str(full_wav),

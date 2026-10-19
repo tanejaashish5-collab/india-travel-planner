@@ -46,6 +46,10 @@ SURFACE = {
     "hi": {"platform": "instagram", "cta": "follow @nakshiq"},
     "en": {"platform": "youtube", "cta": "follow @naksh-iq"},
 }
+# Founder 2026-10-20: Hindi on both platforms, no English for YouTube until he says resume.
+# While this file exists, the YouTube story slot posts the Hindi cut (see _hindi_for_youtube)
+# and v3_daily makes no English cut. Delete the file to go back to English on YouTube.
+HINDI_ONLY = HERE / "HINDI_ONLY"
 # Keep this many cut-but-unpublished reels per language. One outage day at
 # Cowork (Mac asleep, credits gone) must not mean a day with nothing to post.
 BUFFER = 2
@@ -151,6 +155,8 @@ def render(dry: bool = False) -> int:
     used = {v["storyboard"] for v in led.values()}
     made = 0
     for lang, surf in SURFACE.items():
+        if lang == "en" and HINDI_ONLY.exists():
+            continue
         ready = [v for v in led.values() if v["lang"] == lang and v["status"] == "ready"
                  and v.get("kind") != "data_card"]
         need = BUFFER - len(ready)
@@ -344,7 +350,7 @@ def caption_for(row: dict) -> tuple[str, str]:
         cap = (f"{hook}\n\nये उसे भेजो जिसके साथ ट्रिप प्लान कर रहे हो।\n\n{_comment_cta('hi', row.get('platform', ''))}"
                f"{name} का पूरा हाल, महीने के हिसाब से: {url}\n\n"
                f"{disclose}\n\n#{tag} #indiatravel #NakshIQ")
-        return cap, f"{name} | NakshIQ"
+        return cap, (row.get("yt_title") or f"{name} | NakshIQ")[:100]
     cap = (f"{hook}\n\nSend this to whoever you're going with.\n\n{_comment_cta('en', row.get('platform', ''))}"
            f"Everything we know about {name}, month by month: {url}\n\n"
            f"{disclose}\n\n#{tag} #indiatravel #NakshIQ")
@@ -456,6 +462,21 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                     continue
             _log(f"{plat}: rotation slot {target} posted nothing"
                  + (f" ({rot.get('held') or rot.get('status')})" if rot else "") + " — cast round robin")
+        if plat == "youtube" and HINDI_ONLY.exists():
+            acct = accounts.get(plat)
+            if not acct:
+                _no_account(plat, kind, dry)
+                continue
+            key, row = _hindi_for_youtube(led, today)
+            if not row:
+                _log("youtube: HINDI_ONLY and no cleared Hindi reel left for YouTube — the GitHub slot keeps the day")
+                continue
+            led[key] = row
+            n = _post(ap, led, row, plat, acct, today, dry)
+            if not n and (dry or not row.get("failed_post_id")):
+                led.pop(key, None)             # not posted and nothing to record: offered again next slot
+            published += n
+            continue
         # ROUND ROBIN (founder 2026-10-01: "use all angles before repetition so
         # everyday there is new stuff"): the ready reel whose angle was published
         # longest ago goes first; an angle never used yet goes before any that has.
@@ -511,6 +532,46 @@ def _cleared(row: dict) -> bool:
     if why:
         _log(f"{row.get('platform')}: {row['storyboard']} ready but NOT cleared: {'; '.join(why)}")
     return not why
+
+
+def _hindi_for_youtube(led: dict, today: str) -> tuple[str, dict | None]:
+    """HINDI_ONLY (founder 2026-10-20): YouTube posts the same Hindi story reel as Instagram.
+    First choice is the Hindi reel Instagram published today, so both platforms carry the same
+    reel that night; else the oldest cleared Hindi reel not yet on YouTube. Reels Instagram
+    published before today are not replayed: YouTube already has most of them in English.
+    Returns (ledger key, a fresh YouTube row pointing at the Hindi file), or ("", None)."""
+    on_yt = {v.get("storyboard") for v in led.values() if v.get("platform") == "youtube"
+             and v.get("lang") == "hi" and v.get("status") in ("published", "unconfirmed")}
+    skip = ("data_card", "guide", "map_reveal", "two_months", "tiny_world")
+    cands = []
+    for k, v in led.items():
+        if not (k.endswith("__hi") and v.get("pipeline") == "v3" and v.get("kind") not in skip):
+            continue
+        sb = v.get("storyboard")
+        ig_today = v.get("status") in ("published", "unconfirmed") and (v.get("published_at") or "").startswith(today)
+        if sb in on_yt or not (ig_today or v.get("status") == "ready"):
+            continue
+        if not Path(v.get("file", "")).exists() or not _cleared(v):
+            continue
+        cands.append((not ig_today, v.get("rendered_at", ""), k, v))
+    if not cands:
+        return "", None
+    _, _, hk, hi = min(cands)
+    key = f"{hi['storyboard']}__hi_yt"
+    old = led.get(key) or {}
+    row = {f: x for f, x in hi.items() if f not in ("status", "post_id", "published_at", "confirm",
+                                                    "failed_post_id", "last_error", "failed_at", "platform")}
+    row.update(platform="youtube", status="ready", mirror_of=hk)
+    for f in ("failed_post_id", "last_error", "failed_at"):   # keep a rejected try's record
+        if f in old:
+            row[f] = old[f]
+    try:
+        import v3_daily
+        spec = json.loads((HERE / "reel_specs" / f"{hi['storyboard']}.json").read_text())
+        row["yt_title"] = v3_daily.yt_title(spec) or row.get("yt_title")
+    except Exception as e:  # noqa: BLE001 - a missing title falls back to "<Place> | NakshIQ"
+        _log(f"youtube: no yt_title for {hi['storyboard']} ({str(e)[:80]})")
+    return key, row
 
 
 def _cost_ok(row: dict, led: dict, caption: str = "") -> bool:
