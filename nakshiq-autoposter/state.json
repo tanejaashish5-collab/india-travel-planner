@@ -36,20 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-18",
+    "PdMu0_carousel": "2026-10-19",
     "PdMu0": "2026-10-18",
     "PdMu0_evening": "2026-10-18"
   },
   "last_sync": "2026-10-18T17:30:42.066106+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "almora",
-      "date": "2026-10-04"
-    },
-    {
-      "destination_id": "rudraprayag",
-      "date": "2026-10-04"
-    },
     {
       "destination_id": "prayagraj",
       "date": "2026-10-05"
@@ -173,6 +165,10 @@
     {
       "destination_id": "munsiyari",
       "date": "2026-10-18"
+    },
+    {
+      "destination_id": "ross-island",
+      "date": "2026-10-19"
     }
   ],
   "posted_formats": {
@@ -11085,6 +11081,33 @@
       "format": "v2_weekend_escape_map",
       "has_media": true,
       "media_id": "munsiyari.mp4"
+    },
+    {
+      "timestamp": "2026-10-19T14:37:51.146223+00:00",
+      "date": "2026-10-19",
+      "platform": "instagram",
+      "post_id": "n20bu",
+      "destination": "darjeeling",
+      "format": "scenario_parents",
+      "media_id": "BjUwj"
+    },
+    {
+      "timestamp": "2026-10-19T14:39:25.647242+00:00",
+      "date": "2026-10-19",
+      "platform": "youtube",
+      "post_id": "Fz6lR",
+      "destination": "darjeeling",
+      "format": "scenario_parents",
+      "media_id": "1u0q4"
+    },
+    {
+      "timestamp": "2026-10-19T14:53:04.326222+00:00",
+      "date": "2026-10-19",
+      "platform": "facebook",
+      "post_id": "SsgEB",
+      "destination": "ross-island",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-19"
     }
   ],
   "theme_usage": {
@@ -11817,9 +11840,6 @@
         "2026-08-08",
         "2026-08-22"
       ],
-      "kargil": [
-        "2026-07-20"
-      ],
       "keylong": [
         "2026-07-22",
         "2026-08-20"
@@ -12173,8 +12193,7 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    },
-    "stays": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12247,7 +12266,15 @@
       "Ekta Diwas (Unity Day)",
       "Rajgir Dance Festival",
       "Bastar Dussehra",
-      "Diwali Beach Celebration"
+      "Diwali Beach Celebration",
+      "Gandhi Jayanti Heritage Walk",
+      "Sharad Purnima Festival",
+      "Gandhi Jayanti Celebrations at Kirti Mandir",
+      "Navratri",
+      "Dussehra (Seemollanghan at Shami Tree)",
+      "Dhammachakra Pravartan Din",
+      "Vijayadashami (Sai Baba Punyatithi)",
+      "Hnahsin Kut (Cosmos Festival)"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
