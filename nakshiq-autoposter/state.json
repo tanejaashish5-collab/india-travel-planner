@@ -37,10 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-19",
-    "PdMu0": "2026-10-18",
-    "PdMu0_evening": "2026-10-18"
+    "PdMu0": "2026-10-19",
+    "PdMu0_evening": "2026-10-19"
   },
-  "last_sync": "2026-10-18T17:30:42.066106+00:00",
+  "last_sync": "2026-10-19T20:04:29.089063+00:00",
   "posted_destinations": [
     {
       "destination_id": "prayagraj",
@@ -169,6 +169,10 @@
     {
       "destination_id": "ross-island",
       "date": "2026-10-19"
+    },
+    {
+      "destination_id": "puri",
+      "date": "2026-10-19"
     }
   ],
   "posted_formats": {
@@ -196,7 +200,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "v2_local_knows",
       "v2_budget_receipt",
       "v2_weekend_escape_map",
@@ -216,7 +219,8 @@
       "v2_series_episode",
       "v2_arrival_intel_video",
       "data_carousel",
-      "v2_weekend_escape_map"
+      "v2_weekend_escape_map",
+      "v4_dw_walk_itinerary_day_by_day"
     ]
   },
   "post_log": [
@@ -11108,6 +11112,17 @@
       "destination": "ross-island",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-10-19"
+    },
+    {
+      "timestamp": "2026-10-19T20:05:45.555257+00:00",
+      "date": "2026-10-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "r97eF",
+      "destination": "puri",
+      "format": "v4_dw_walk_itinerary_day_by_day",
+      "has_media": true,
+      "media_id": "v4_dw_walk_itinerary_day_by_day-puri_01_cover.png"
     }
   ],
   "theme_usage": {
@@ -11173,7 +11188,8 @@
         "2026-05-25",
         "2026-06-07",
         "2026-10-01",
-        "2026-10-15"
+        "2026-10-15",
+        "2026-10-19"
       ],
       "jibhi": [
         "2026-05-25",
@@ -11712,6 +11728,9 @@
       ],
       "tourist_trap": [
         "2026-09-01"
+      ],
+      "v4_dw_walk_itinerary_day_by_day": [
+        "2026-10-19"
       ]
     },
     "reels": {
@@ -11921,6 +11940,9 @@
       ],
       "kasauli": [
         "2026-10-17"
+      ],
+      "puri": [
+        "2026-10-19"
       ]
     },
     "audience_tags": {
@@ -11938,7 +11960,8 @@
         "2026-08-17",
         "2026-08-24",
         "2026-08-31",
-        "2026-09-07"
+        "2026-09-07",
+        "2026-10-19"
       ],
       "families": [
         "2026-05-23",
@@ -12207,7 +12230,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "mukteshwar",
+    "shared_best": "puri",
     "collection": "char-dham-circuit"
   },
   "manual_skip_dests": {},

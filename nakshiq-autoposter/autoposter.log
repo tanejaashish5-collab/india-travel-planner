@@ -28534,3 +28534,63 @@ Date range: 2026-04-15 → 2026-10-18
 2026-10-19 14:53:04  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=SsgEB
 2026-10-19 14:53:04  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-10-19 14:53:04  INFO      ════════════════════════════════════════════════════════════
+2026-10-19 20:03:55  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-19 20:03:55  INFO      ════════════════════════════════════════════════════════════
+2026-10-19 20:03:55  INFO      Nakshiq Autoposter · EVENING · 2026-10-19 · weekday=0
+2026-10-19 20:03:55  INFO      ════════════════════════════════════════════════════════════
+2026-10-19 20:03:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-19 20:04:29  INFO      Synced → 20 destinations · 100 traps · 5 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-19 20:04:29  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-19 20:04:31  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-19 20:04:31  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-19 20:04:31  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-19 20:04:31  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-19 20:04:45  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-19 20:04:45  INFO      [diversity] feed: 37 → 34 options · cooldown dropped 3 (carousel, pillar:scenario_eatery, pillar:scenario_guide, pillar:scenario_parents, pillar:verdict seen <2d)
+2026-10-19 20:04:45  INFO      Evening format (balance→discovery): v4_dw_walk_itinerary_day_by_day [17% vs target 20%] (0/15 never featured)
+2026-10-19 20:04:45  INFO      Formats — IG: v4_dw_walk_itinerary_day_by_day  ·  FB: v4_dw_walk_itinerary_day_by_day  ·  Story: festival_alert  ·  Audience: backpackers
+2026-10-19 20:04:45  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-10-19 20:04:45  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-10-19 20:04:45  INFO      Fingerprint dedup snapshot — 49 dests in 7d · 86 (dest,fmt) pairs in 30d · 226 media in 60d
+2026-10-19 20:04:45  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-19 20:04:45  INFO      Festival locked: Sarnath Light & Sound Show Season (36/38 active festivals never featured)
+2026-10-19 20:04:45  INFO      Shared best destination locked: Puri
+2026-10-19 20:04:45  INFO      Carousel locked (v4_dw_walk_itinerary_day_by_day): puri
+2026-10-19 20:04:45  INFO      [facebook/Nakshiq] Generating v4_dw_walk_itinerary_day_by_day post...
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: gurez-valley has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: leh has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: munnar has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: mathura has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: old-goa has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: coorg has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      v4_dw_walk_itinerary_day_by_day: ooty has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-19 20:04:45  INFO      [facebook/Nakshiq] Caption ready (596 chars, dest=puri)
+2026-10-19 20:04:55  INFO      [facebook/Nakshiq] dynamic render: 5 slide(s) for v4_dw_walk_itinerary_day_by_day → uploading...
+2026-10-19 20:04:55  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-puri_01_cover.png (1,742,095 bytes, image/png)
+2026-10-19 20:04:56  INFO          Uploading to R2 (timeout=120s)...
+2026-10-19 20:04:57  INFO          R2 PUT OK. Confirming...
+2026-10-19 20:04:58  INFO          Media ready: 4QhlR (1,742,095 bytes · v4_dw_walk_itinerary_day_by_day-puri_01_cover.png)
+2026-10-19 20:04:58  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-puri_02.png (1,773,823 bytes, image/png)
+2026-10-19 20:05:01  INFO          Uploading to R2 (timeout=120s)...
+2026-10-19 20:05:01  INFO          R2 PUT OK. Confirming...
+2026-10-19 20:05:03  INFO          Media ready: 7fI0n (1,773,823 bytes · v4_dw_walk_itinerary_day_by_day-puri_02.png)
+2026-10-19 20:05:03  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-puri_03.png (1,795,359 bytes, image/png)
+2026-10-19 20:05:04  INFO          Uploading to R2 (timeout=120s)...
+2026-10-19 20:05:05  INFO          R2 PUT OK. Confirming...
+2026-10-19 20:05:06  INFO          Media ready: InS4Y (1,795,359 bytes · v4_dw_walk_itinerary_day_by_day-puri_03.png)
+2026-10-19 20:05:06  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-puri_04.png (1,799,982 bytes, image/png)
+2026-10-19 20:05:07  INFO          Uploading to R2 (timeout=120s)...
+2026-10-19 20:05:08  INFO          R2 PUT OK. Confirming...
+2026-10-19 20:05:09  INFO          Media ready: NMW1v (1,799,982 bytes · v4_dw_walk_itinerary_day_by_day-puri_04.png)
+2026-10-19 20:05:09  INFO          Requesting upload URL for v4_dw_walk_itinerary_day_by_day-puri_05_cta.png (51,774 bytes, image/png)
+2026-10-19 20:05:09  INFO          Uploading to R2 (timeout=120s)...
+2026-10-19 20:05:10  INFO          R2 PUT OK. Confirming...
+2026-10-19 20:05:11  INFO          Media ready: InS4D (51,774 bytes · v4_dw_walk_itinerary_day_by_day-puri_05_cta.png)
+2026-10-19 20:05:11  INFO      [facebook/Nakshiq] Publishing 5-slide carousel...
+2026-10-19 20:05:45  INFO      [facebook/Nakshiq] ✅ Published · Outstand=r97eF · Platform=1040562729145369_122126454086700092
+2026-10-19 20:05:45  INFO      State saved. Run complete.
+2026-10-19 20:05:45  INFO      ════════════════════════════════════════════════════════════
