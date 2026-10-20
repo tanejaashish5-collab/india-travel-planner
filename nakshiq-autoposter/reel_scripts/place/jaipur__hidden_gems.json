@@ -147,5 +147,13 @@
   "पाँच (5 min)",
   "ढाई (2.5 hrs)",
   "तेरह (13 storeys)"
- ]
+ ],
+ "cover": {
+  "style": "C",
+  "top": "clip:jaipur__hero.mp4@4",
+  "top_label": "EVERYONE",
+  "bottom": "photo:Jagat Shiromani Temple|shiromani",
+  "bottom_label": "NOBODY",
+  "hook": "Jaipur's|*skipped list*"
+ }
 }

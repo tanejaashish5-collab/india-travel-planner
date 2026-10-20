@@ -297,6 +297,74 @@ def render(script: Path, out: Path, music: str | None = None, today: date | None
             "credits": list(dict.fromkeys(a for a in authors if a))}
 
 
+# Cover style per series (founder 2026-10-20 compared three full sets and chose to mix them):
+# A bold hook for questions and lists, B verdict stamp for one-word verdicts, C everyone-vs-you for comparisons.
+SERIES_COVER = {"where_is_it": "A", "window": "A", "list_of_3": "A",
+                "real_cost": "B", "sos": "B", "skip": "B",
+                "swap": "C", "eat_here": "C", "hidden_gems": "C", "vs": "C"}
+SERIES_TAG = {"where_is_it": "Where is it", "window": "The window", "list_of_3": "Three places", "real_cost": "Real cost",
+              "sos": "SOS", "skip": "Skip list", "swap": "The swap", "eat_here": "Eat here", "hidden_gems": "Hidden gems",
+              "vs": "This or that"}
+
+
+def _cover_img(slug: str, ref: str, td: Path) -> Path:
+    """'place' (the map reel's real photo), 'photo:<query>|<must>', 'clip:<file>@<sec>' or a file path."""
+    if ref == "place":
+        return Path(_facts(slug, date.today())["photo"])
+    if ref.startswith("photo:"):
+        q, _, must = ref[6:].partition("|")
+        c = _extra_photo(slug, q, must or q)
+        if not c:
+            raise SystemExit(f"cover: no Commons photo for {q!r}")
+        return Path(c["file"])
+    if ref.startswith("clip:"):
+        name, _, at = ref[5:].partition("@")
+        out = td / f"frame_{name}.jpg"
+        _ff("-ss", at or "3", "-i", str(P.CLIPS / name), "-frames:v", "1", "-q:v", "2", str(out))
+        return out
+    return Path(ref).expanduser()
+
+
+def make_cover(script: Path) -> Path:
+    """Render the reel's cover from its script's "cover" block, in its series' style, and attach it to the
+    Instagram row if the reel is registered (YouTube picks its own frame; the hook is on frame 0 for it)."""
+    import re
+    import reel_cover as RC
+    s = json.loads(script.read_text())
+    c = s.get("cover") or {}
+    series = s.get("series") or "where_is_it"
+    style = c.get("style") or SERIES_COVER.get(series, "A")
+    words = lambda t: len(re.sub(r"[*|]", " ", t).split())
+    out = P.VEO / "reels" / f"{script.stem}__voiced__cover.jpg"
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        if style == "A":
+            if words(c["hook"]) > 8:
+                raise SystemExit(f"cover hook over 8 words: {c['hook']}")
+            RC.from_image(_cover_img(s["slug"], c["image"], td), c["hook"], out, hi=RC.VERMILLION_BRIGHT,
+                          tag=SERIES_TAG.get(series))
+        elif style == "B":
+            # founder 2026-10-20: "CLOSED" in its box was perfect; "ALMOST EMPTY" left the box half empty
+            # because long stamps shrink the type. One punchy word, at most 9 characters.
+            if len(c["stamp"]) > 9:
+                raise SystemExit(f"stamp over 9 characters (the type shrinks and the box looks empty): {c['stamp']}")
+            RC.stamp_cover(_cover_img(s["slug"], c["image"], td), c["line"], c["stamp"], out, tuple(c.get("focus") or (0.5, 0.5)))
+        else:
+            if words(c["hook"]) > 8:
+                raise SystemExit(f"cover hook over 8 words: {c['hook']}")
+            RC.split_cover(_cover_img(s["slug"], c["top"], td), c["top_label"], _cover_img(s["slug"], c["bottom"], td),
+                           c["bottom_label"], c["hook"], out)
+    raw = P.LEDGER.read_text()
+    led = json.loads(raw)
+    ind = next((i for i in (1, 2) if raw in (json.dumps(led, indent=i, ensure_ascii=False),
+                                             json.dumps(led, indent=i, ensure_ascii=False) + "\n")), 1)
+    key = f"{s['slug']}__{s['format']}_voiced__instagram"
+    if key in led and (led[key].get("status") not in ("published", "unconfirmed")):
+        led[key]["cover"] = str(out)
+        P.LEDGER.write_text(json.dumps(led, indent=ind, ensure_ascii=False) + ("\n" if raw.endswith("\n") else ""))
+    return out
+
+
 SURFACES = (("instagram", "hinglish"), ("youtube", "en"))   # founder 2026-10-20: IG Hinglish subs, YT English subs
 
 
@@ -368,7 +436,9 @@ def register(script: Path, today: date | None = None, hold: bool = False) -> lis
                     "caption_lead": s.get("caption_lead"), "screen_text": screen,
                     **({"yt_title": s.get("title") or (_strip((s["scenes"][0].get("hook") or "").replace("<br>", " ")) + " | NakshIQ")}
                        if s["scenes"][0].get("hook") else {}),
-                    "cost_basis": s.get("cost_basis") or [], "commons": commons}
+                    "cost_basis": s.get("cost_basis") or [], "commons": commons,
+                    **({"cover": str(P.VEO / "reels" / f"{script.stem}__voiced__cover.jpg")}
+                       if plat == "instagram" and (P.VEO / "reels" / f"{script.stem}__voiced__cover.jpg").exists() else {})}
         keys.append(key)
     led_p.write_text(json.dumps(led, indent=ind, ensure_ascii=False))
     return keys
@@ -376,7 +446,7 @@ def register(script: Path, today: date | None = None, hold: bool = False) -> lis
 
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["render", "register"])
+    ap.add_argument("cmd", choices=["render", "register", "cover"])
     ap.add_argument("script")
     ap.add_argument("--out")
     ap.add_argument("--music", default=None, help="override the script's / series' track")
@@ -384,6 +454,9 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--subs", default="none", help="none | hinglish | en (the script's subs block)")
     a = ap.parse_args(argv)
     sp = Path(a.script)
+    if a.cmd == "cover":
+        print(f"[place_voiced] cover {make_cover(sp)}")
+        return 0
     if a.cmd == "register":
         print("[place_voiced] registered " + ", ".join(register(sp, hold=a.hold)))
         return 0
