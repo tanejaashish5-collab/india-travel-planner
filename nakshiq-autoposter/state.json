@@ -37,11 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-20",
-    "PdMu0": "2026-10-19",
-    "PdMu0_evening": "2026-10-19",
+    "PdMu0": "2026-10-20",
+    "PdMu0_evening": "2026-10-20",
     "PdMu0_greeting": "2026-10-20"
   },
-  "last_sync": "2026-10-19T20:04:29.089063+00:00",
+  "last_sync": "2026-10-20T17:39:43.038671+00:00",
   "posted_destinations": [
     {
       "destination_id": "sarahan",
@@ -178,6 +178,10 @@
     {
       "destination_id": "dhanaulti",
       "date": "2026-10-20"
+    },
+    {
+      "destination_id": "mukteshwar",
+      "date": "2026-10-20"
     }
   ],
   "posted_formats": {
@@ -205,7 +209,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_local_knows",
       "v2_budget_receipt",
       "v2_weekend_escape_map",
       "v4_dw_heritage_reel_sensory_pov",
@@ -225,7 +228,8 @@
       "v2_arrival_intel_video",
       "data_carousel",
       "v2_weekend_escape_map",
-      "v4_dw_walk_itinerary_day_by_day"
+      "v4_dw_walk_itinerary_day_by_day",
+      "tourist_trap"
     ]
   },
   "post_log": [
@@ -11146,6 +11150,35 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-10-20"
+    },
+    {
+      "timestamp": "2026-10-20T14:37:17.169523+00:00",
+      "date": "2026-10-20",
+      "platform": "instagram",
+      "post_id": "Eqobl",
+      "destination": "chakrata",
+      "format": "scenario_map_reveal",
+      "media_id": "xiS4X"
+    },
+    {
+      "timestamp": "2026-10-20T14:38:20.010963+00:00",
+      "date": "2026-10-20",
+      "platform": "youtube",
+      "post_id": "oTjhe",
+      "destination": "chakrata",
+      "format": "scenario_map_reveal",
+      "media_id": "vrjeT"
+    },
+    {
+      "timestamp": "2026-10-20T17:40:27.076680+00:00",
+      "date": "2026-10-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "AtL8c",
+      "destination": "mukteshwar",
+      "format": "tourist_trap",
+      "has_media": true,
+      "media_id": "mukteshwar.mp4"
     }
   ],
   "theme_usage": {
@@ -11498,7 +11531,8 @@
         "2026-10-16"
       ],
       "mukteshwar": [
-        "2026-10-01"
+        "2026-10-01",
+        "2026-10-20"
       ],
       "chamba": [
         "2026-10-01",
@@ -11743,7 +11777,8 @@
         "2026-10-17"
       ],
       "tourist_trap": [
-        "2026-09-01"
+        "2026-09-01",
+        "2026-10-20"
       ]
     },
     "reels": {
@@ -11956,6 +11991,9 @@
       ],
       "puri": [
         "2026-10-19"
+      ],
+      "mukteshwar": [
+        "2026-10-20"
       ]
     },
     "audience_tags": {
@@ -12095,6 +12133,9 @@
       ],
       "char-dham-circuit": [
         "2026-10-15"
+      ],
+      "glamping-north-india": [
+        "2026-10-20"
       ]
     },
     "festivals": {
@@ -12211,7 +12252,9 @@
       "kedarnath": [
         "2026-10-15"
       ]
-    }
+    },
+    "tourist_trap_alts": {},
+    "collection_carousel_dests:glamping-north-india": {}
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12225,8 +12268,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "puri",
-    "collection": "char-dham-circuit"
+    "shared_best": "mukteshwar",
+    "collection": "glamping-north-india"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-17",

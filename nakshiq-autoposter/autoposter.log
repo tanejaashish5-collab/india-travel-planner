@@ -28711,3 +28711,37 @@ Date range: 2026-04-15 → 2026-10-19
 2026-10-21 01:37:26  INFO          Uploading to R2 (timeout=300s)...
 2026-10-21 01:37:52  INFO          R2 PUT OK. Confirming...
 2026-10-21 01:37:55  INFO          Media ready: vrjeT (61,288,812 bytes · chakrata__map_reveal__voiced__en.mp4)
+2026-10-20 17:38:57  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-20 17:38:57  INFO      ════════════════════════════════════════════════════════════
+2026-10-20 17:38:57  INFO      Nakshiq Autoposter · EVENING · 2026-10-20 · weekday=1
+2026-10-20 17:38:57  INFO      ════════════════════════════════════════════════════════════
+2026-10-20 17:38:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-20 17:39:43  INFO      Synced → 20 destinations · 100 traps · 4 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-20 17:39:43  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-20 17:39:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-20 17:39:44  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-20 17:39:44  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-20 17:39:44  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-20 17:39:59  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-20 17:39:59  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (carousel, pillar:discovery, pillar:greeting.dussehra, pillar:scenario_map_reveal, pillar:scenario_parents seen <2d)
+2026-10-20 17:39:59  INFO      Evening format (balance→anti_trap): tourist_trap [0% vs target 15%] (0/15 never featured)
+2026-10-20 17:39:59  INFO      Formats — IG: tourist_trap  ·  FB: tourist_trap  ·  Story: collection_spotlight
+2026-10-20 17:39:59  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-10-20 17:39:59  INFO      Fingerprint dedup snapshot — 48 dests in 7d · 88 (dest,fmt) pairs in 30d · 228 media in 60d
+2026-10-20 17:39:59  INFO      Collection locked: Glamping in North India — Luxury Under Canvas (76/100 never featured)
+2026-10-20 17:39:59  INFO      Tourist trap locked: skip Kaziranga → go Manas National Park (55/55 never featured)
+2026-10-20 17:40:00  INFO      Shared best destination locked: Mukteshwar
+2026-10-20 17:40:00  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-10-20 17:40:00  INFO      [facebook/Nakshiq] Generating tourist_trap post...
+2026-10-20 17:40:00  INFO      [facebook/Nakshiq] Caption ready (503 chars, dest=mukteshwar)
+2026-10-20 17:40:00  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-10-20 17:40:00  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mukteshwar.mp4?v=20260915
+2026-10-20 17:40:02  INFO          Brand-stamp applied: mukteshwar.mp4 (5,188,369 → 2,224,817 bytes)
+2026-10-20 17:40:02  INFO          Requesting upload URL for mukteshwar.mp4 (2,224,817 bytes, video/mp4)
+2026-10-20 17:40:04  INFO          Uploading to R2 (timeout=300s)...
+2026-10-20 17:40:05  INFO          R2 PUT OK. Confirming...
+2026-10-20 17:40:07  INFO          Media ready: EqIwY (2,224,817 bytes · mukteshwar.mp4)
+2026-10-20 17:40:07  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-20 17:40:27  INFO      [facebook/Nakshiq] ✅ Published · Outstand=AtL8c · Platform=1012209655248849
+2026-10-20 17:40:27  INFO      State saved. Run complete.
+2026-10-20 17:40:27  INFO      ════════════════════════════════════════════════════════════
