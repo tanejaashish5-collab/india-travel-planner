@@ -41,7 +41,7 @@
     "PdMu0_evening": "2026-10-20",
     "PdMu0_greeting": "2026-10-20"
   },
-  "last_sync": "2026-10-20T17:39:43.038671+00:00",
+  "last_sync": "2026-10-20T18:36:07.304432+00:00",
   "posted_destinations": [
     {
       "destination_id": "sarahan",
@@ -11528,7 +11528,8 @@
       ],
       "kurukshetra": [
         "2026-10-01",
-        "2026-10-16"
+        "2026-10-16",
+        "2026-10-20"
       ],
       "mukteshwar": [
         "2026-10-01",
@@ -12136,6 +12137,9 @@
       ],
       "glamping-north-india": [
         "2026-10-20"
+      ],
+      "sikh-heritage-trail": [
+        "2026-10-20"
       ]
     },
     "festivals": {
@@ -12253,8 +12257,12 @@
         "2026-10-15"
       ]
     },
-    "tourist_trap_alts": {},
-    "collection_carousel_dests:glamping-north-india": {}
+    "stays": {},
+    "collection_carousel_dests:sikh-heritage-trail": {
+      "kurukshetra": [
+        "2026-10-20"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12268,8 +12276,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "mukteshwar",
-    "collection": "glamping-north-india"
+    "shared_best": "dzukou-valley",
+    "collection": "sikh-heritage-trail"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-17",

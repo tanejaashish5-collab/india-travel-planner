@@ -28745,3 +28745,27 @@ Date range: 2026-04-15 → 2026-10-19
 2026-10-20 17:40:27  INFO      [facebook/Nakshiq] ✅ Published · Outstand=AtL8c · Platform=1012209655248849
 2026-10-20 17:40:27  INFO      State saved. Run complete.
 2026-10-20 17:40:27  INFO      ════════════════════════════════════════════════════════════
+2026-10-20 18:35:29  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-20 18:35:29  INFO      ════════════════════════════════════════════════════════════
+2026-10-20 18:35:29  INFO      Nakshiq Autoposter · EVENING · 2026-10-20 · weekday=1
+2026-10-20 18:35:29  INFO      ════════════════════════════════════════════════════════════
+2026-10-20 18:35:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-20 18:36:07  INFO      Synced → 20 destinations · 100 traps · 4 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-20 18:36:07  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-20 18:36:08  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-20 18:36:08  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-20 18:36:08  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-20 18:36:08  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-20 18:36:20  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-20 18:36:20  INFO      [diversity] feed: 37 → 21 options · cooldown dropped 16 (carousel, pillar:anti_trap, pillar:discovery, pillar:greeting.dussehra, pillar:scenario_map_reveal, pillar:scenario_parents seen <2d)
+2026-10-20 18:36:20  INFO      Evening format (balance→verification): stays_pick [12% vs target 20%] (0/15 never featured)
+2026-10-20 18:36:20  INFO      Formats — IG: stays_pick  ·  FB: stays_pick  ·  Story: collection_spotlight
+2026-10-20 18:36:20  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-10-20 18:36:20  INFO      Fingerprint dedup snapshot — 49 dests in 7d · 89 (dest,fmt) pairs in 30d · 229 media in 60d
+2026-10-20 18:36:20  INFO      Collection locked: The Sikh Heritage Trail — Gurdwaras, Battlefields, and History (75/100 never featured)
+2026-10-20 18:36:20  INFO      Stay locked: Hotel Vallabha Residency (100/100 never featured)
+2026-10-20 18:36:22  INFO      Shared best destination locked: Dzukou Valley
+2026-10-20 18:36:22  INFO      Carousel locked (collection_spotlight): kurukshetra
+2026-10-20 18:36:22  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-10-20 18:36:22  INFO      State saved. Run complete.
+2026-10-20 18:36:22  INFO      ════════════════════════════════════════════════════════════
