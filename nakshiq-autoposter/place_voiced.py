@@ -280,7 +280,7 @@ def register(script: Path, today: date | None = None) -> list[str]:
             raise SystemExit(f"{key} is already published")
         led[key] = {"storyboard": s["id"], "slug": slug, "format": s["format"], "kind": s["format"], "angle": s["format"],
                     "lang": "hi", "subs": sub, "platform": plat, "file": str(out), "six_beat": False, "pipeline": "place",
-                    "voiced": True, "ai_footage": sum(sc.get("bg", "").startswith("clip:") for sc in s["scenes"]),
+                    "voiced": True, "series": s.get("series") or "where_is_it", "ai_footage": sum(sc.get("bg", "").startswith("clip:") for sc in s["scenes"]),
                     "status": "ready", "queue_order": (led.get(key) or {}).get("queue_order") or order,
                     "rendered_at": datetime.fromtimestamp(out.stat().st_mtime, timezone.utc).isoformat(),
                     "name": f["name"], "best": f["best"], "best_score": f["best_score"],

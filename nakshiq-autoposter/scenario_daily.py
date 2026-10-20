@@ -446,8 +446,20 @@ def publish(dry: bool = False, kind: str = "story") -> int:
         # VOICED PLACE REEL FIRST (founder 2026-10-20: the Chakrata structure is "perfect ... all the
         # future reels for YouTube or Instagram should match this"; one strong reel a day). A ready
         # voiced reel posts before anything else; queue_order keeps both platforms on the same one.
+        # Series rules (founder 2026-10-20, "we can't be one trick pony"): never the same series two days
+        # running, and "where is it, really" (the map-reveal type) at most once in 7 days.
+        from datetime import timedelta as _td
+        posted_v = sorted(((v.get("published_at") or ""), v.get("series") or "where_is_it") for v in led.values()
+                          if v.get("voiced") and v.get("platform") == plat and v.get("status") in ("published", "unconfirmed"))
+        last_series = posted_v[-1][1] if posted_v else None
+        week_ago = (datetime.now(timezone.utc) - _td(days=6, hours=12)).isoformat()
+        map_recent = any(s == "where_is_it" and t >= week_ago for t, s in posted_v)
+
+        def _series_ok(v):
+            s = v.get("series") or "where_is_it"
+            return s != last_series and not (s == "where_is_it" and map_recent)
         voiced = sorted((v for v in led.values() if v.get("voiced") and v.get("platform") == plat
-                         and v.get("status") == "ready" and Path(v.get("file", "")).exists()),
+                         and v.get("status") == "ready" and Path(v.get("file", "")).exists() and _series_ok(v)),
                         key=lambda v: (v.get("queue_order") or 0, v.get("rendered_at") or ""))
         if voiced:
             acct = accounts.get(plat)
