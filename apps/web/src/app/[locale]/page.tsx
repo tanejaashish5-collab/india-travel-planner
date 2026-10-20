@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
+import { SnowToast } from "@/components/snow-toast";
 import { LandingCinema } from "@/components/landing-cinema";
 import type { DispatchHero } from "@/components/landing-cinema/act-1-dispatch";
 import type { SkipEntry } from "@/components/landing-cinema/act-2-skip";
@@ -407,6 +408,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           collections={collections}
         />
       </main>
+      <SnowToast locale={locale} />
       {/* Footer omitted on landing — ACT IX Coda absorbs the footer line. */}
     </>
   );
