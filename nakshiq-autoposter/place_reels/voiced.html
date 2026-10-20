@@ -33,6 +33,9 @@
       #end { position: absolute; left: 84px; right: 84px; top: 1100px; padding: 40px 44px; background: var(--accent); color: #1c1305; border-radius: 26px; opacity: 0; }
       #end .a { font-size: 46px; font-weight: 800; }
       #end .b { font-size: 76px; font-weight: 800; margin-top: 6px; }
+      .sub-line { position: absolute; left: 60px; right: 60px; top: 430px; text-align: center; font-size: 64px; font-weight: 800; line-height: 1.15;
+                  color: #fff; text-shadow: 0 0 6px rgba(0,0,0,.95), 0 4px 18px rgba(0,0,0,.85); -webkit-text-stroke: 2px rgba(0,0,0,.55); paint-order: stroke fill; }
+      .sub-line em { font-style: normal; color: var(--accent); }
       #credit { position: absolute; left: 44px; bottom: 60px; right: 44px; font-size: 24px; color: rgba(246,239,228,.6); }
     </style>
   </head>
@@ -51,6 +54,7 @@
       </div>
       <div id="q">{{HOOK}}</div>
       {{SCENES}}
+      {{SUBS}}
       <div id="end"><div class="a">Every place, every month</div><div class="b">nakshiq.com</div><div class="a" style="margin-top:10px;font-size:38px">{{FOLLOW}}</div></div>
       <div id="credit">{{CREDIT}}</div>
     </div>

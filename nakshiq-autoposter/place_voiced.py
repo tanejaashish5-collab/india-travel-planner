@@ -91,7 +91,24 @@ def _card(sc: dict, f: dict) -> str:
     return "".join(out)
 
 
-def render(script: Path, out: Path, music: str = MUSIC, today: date | None = None) -> dict:
+def _subs(chunks_per_line: list, bounds: list) -> tuple[list, list]:
+    """Burned-in subtitles (founder 2026-10-20: most viewers watch muted; "not in Hindi ... Hinglish,
+    do both"). Each line's chunks share that line's spoken time in proportion to their length (the
+    voice pauses at the commas where the chunks split). *word* marks a keyword shown in the accent."""
+    import re
+    els, anim = [], []
+    for li, (chunks, (b0, bd, _)) in enumerate(zip(chunks_per_line, bounds)):
+        t0, tot = LEAD + b0, sum(len(c) for c in chunks) or 1
+        for ci, c in enumerate(chunks):
+            d = round(bd * len(c) / tot, 2)
+            html = re.sub(r"\*([^*]+)\*", r"<em>\1</em>", c)
+            els.append(f'<div id="u{li}_{ci}" class="sub-line clip" data-start="{round(t0, 2)}" data-duration="{d}" data-track-index="5">{html}</div>')
+            anim.append(f'tl.fromTo("#u{li}_{ci}", {{opacity:0, scale:0.92}}, {{opacity:1, scale:1, duration:0.18, ease:"back.out(2)"}}, {round(t0, 2)});')
+            t0 += d
+    return els, anim
+
+
+def render(script: Path, out: Path, music: str = MUSIC, today: date | None = None, subs: str = "none") -> dict:
     import reel_v3 as R
     s = json.loads(script.read_text())
     slug, lines, scenes = s["slug"], s["vo"]["hi"], s["scenes"]
@@ -165,13 +182,22 @@ def render(script: Path, out: Path, music: str = MUSIC, today: date | None = Non
                           f'<div class="card" id="k{i}">{_card(sc, f)}</div></section>')
             anim.append(f'tl.fromTo("#k{i}", {{opacity:0, y:40}}, {{opacity:1, y:0, duration:0.5, ease:"power3.out"}}, {st + 0.15});')
             anim.append(f'tl.fromTo("#k{i} .facts div, #k{i} .row", {{opacity:0, x:-24}}, {{opacity:1, x:0, duration:0.35, stagger:0.55, ease:"power3.out"}}, {st + 0.5});')
+    sub_els = []
+    if subs != "none":
+        chunks = (s.get("subs") or {}).get(subs)
+        if not chunks or len(chunks) != len(lines):
+            raise SystemExit(f"{script.name}: no '{subs}' subtitles for all {len(lines)} lines")
+        sub_els, sub_anim = _subs(chunks, bounds)
+        anim += sub_anim
     px, py = P._project_xy(f["lat"], f["lng"])
     hook = scenes[0].get("hook") or f'Where is <em>{f["name"]}</em>, really?'
     rep = {"NAME": f["name"], "DUR": total, "MAP_END": ends[0], "MAP_PATH": P._map_path(), "PX": px, "PY": py,
            "TX": round(540 - (40 + px), 1), "TY": round(900 - (470 + py), 1), "HOOK": hook,
            "MEDIA": "\n      ".join(media), "SCENES": "\n      ".join(blocks), "ANIM": "\n      ".join(anim),
            "END_START": starts[-1], "END_DUR": round(total - starts[-1], 2),
-           "CREDIT": "Photos via Wikimedia Commons: " + ", ".join(dict.fromkeys(a for a in authors if a)),
+           # On screen just the source (founder 2026-10-20). CC BY / BY-SA still require the authors'
+           # names, so they go in the caption (credits), never dropped.
+           "CREDIT": "Photos: Wikimedia Commons", "SUBS": "\n      ".join(sub_els),
            "MUSIC": music, "FOLLOW": "follow NakshIQ"}
     html = TPL.read_text()
     for k, v in rep.items():
@@ -182,7 +208,8 @@ def render(script: Path, out: Path, music: str = MUSIC, today: date | None = Non
                        capture_output=True, text=True)
     if r.returncode != 0 or not out.exists():
         raise SystemExit("hyperframes render failed: " + (r.stderr or r.stdout)[-600:])
-    return {"file": str(out), "seconds": total, "starts": starts, "facts": f}
+    return {"file": str(out), "seconds": total, "starts": starts, "facts": f,
+            "credits": list(dict.fromkeys(a for a in authors if a))}
 
 
 def main(argv: list[str]) -> int:
@@ -191,11 +218,13 @@ def main(argv: list[str]) -> int:
     ap.add_argument("script")
     ap.add_argument("--out")
     ap.add_argument("--music", default=MUSIC)
+    ap.add_argument("--subs", default="none", help="none | hinglish | en (the script's subs block)")
     a = ap.parse_args(argv)
     sp = Path(a.script)
-    out = Path(a.out) if a.out else P.VEO / "reels" / f"{sp.stem}__voiced.mp4"
-    res = render(sp, out, a.music)
-    print(f"[place_voiced] {out} ({res['seconds']:.1f}s) scenes at {res['starts']}")
+    tag = "" if a.subs == "none" else f"__{a.subs}"
+    out = Path(a.out) if a.out else P.VEO / "reels" / f"{sp.stem}__voiced{tag}.mp4"
+    res = render(sp, out, a.music, subs=a.subs)
+    print(f"[place_voiced] {out} ({res['seconds']:.1f}s) scenes at {res['starts']}; caption credits: {', '.join(res['credits'])}")
     return 0
 
 
