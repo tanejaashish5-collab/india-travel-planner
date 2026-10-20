@@ -1,0 +1,175 @@
+{
+ "id": "kokernag__map_reveal",
+ "slug": "kokernag",
+ "format": "map_reveal",
+ "status": "draft",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 1 after the founder locked the Chakrata structure; facts from reel-fact-pack + reel-data.json",
+ "vo": {
+  "hi": [
+   "कश्मीर में सब पहलगाम और गुलमर्ग जाते हैं, पर दक्षिण कश्मीर में एक जगह है जहाँ नवंबर में बाग़ लगभग खाली मिलते हैं।",
+   "ये है कोकरनाग, श्रीनगर एयरपोर्ट से अस्सी किलोमीटर, जहाँ ज़मीन से ठंडे झरने फूटते हैं जो सर्दी में भी नहीं जमते।",
+   "और नवंबर में यहाँ पतझड़ की आख़िरी पत्तियाँ गिर रही होती हैं, झरने पूरे ज़ोर पर होते हैं, और बाग़ शांत रहते हैं।",
+   "पर जो कोई नहीं बताता, वो है झरनों की नहर के पार सरकारी ट्राउट फ़ार्म, जहाँ सुबह आप ख़ुद मछली चुनते हैं और बगल का सरकारी रेस्टोरेंट उसे सरसों के तेल में तल देता है।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि बारिश में बाग़ कीचड़ से भर जाते हैं और झरनों का पानी तक मटमैला हो जाता है।",
+   "और नवंबर ऑफ़ सीज़न है, तो अच्छा कमरा साढ़े छब्बीस सौ में मिल जाता है, जबकि मई जून में यही सवा चार हज़ार तक जाता है।",
+   "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जिसके साथ आप कश्मीर का प्लान बना रहे हैं।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map"
+  },
+  {
+   "bg": "photo",
+   "card": "place"
+  },
+  {
+   "kicker": "The next good window",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Last autumn leaves. Springs in full flow. Gardens nearly empty.",
+   "bg": "clip:kokernag__two_months__s1.mp4@2.9"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "The government <em>trout farm</em> past the spring canal",
+    "Pick your own fish in the morning",
+    "The restaurant next door fries it"
+   ],
+   "bg": "photo:Kokernag trout|kokernag"
+  },
+  {
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>4/10</em>",
+   "sub": "Muddy gardens. Even the spring water turns muddy.",
+   "bg": "clip:kokernag__two_months__s2.mp4"
+  },
+  {
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,650"
+    ],
+    [
+     "May and June",
+     "₹4,250"
+    ]
+   ],
+   "bg": "photo2"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "caption_lead": "Everyone in Kashmir heads for Pahalgam and Gulmarg. In November, Kokernag's gardens are nearly empty, its cold springs run at full force, and a good room is ₹2,650 a night (₹4,250 in May and June). Skip July and August, when even the spring water turns muddy.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2650
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 4250
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Kashmir mein sab *Pahalgam* aur *Gulmarg* jaate hain,",
+    "par dakshin Kashmir mein ek jagah hai",
+    "jahaan November mein baagh *lagbhag khaali* milte hain."
+   ],
+   [
+    "Ye hai *Kokernag*,",
+    "Srinagar airport se *80 km*,",
+    "jahaan zameen se thande jharne phoot-te hain",
+    "jo sardi mein bhi *nahi jamte*."
+   ],
+   [
+    "Aur *November* mein patjhad ki aakhri pattiyaan gir rahi hoti hain,",
+    "jharne poore zor par hote hain,",
+    "aur baagh *shaant* rehte hain."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "jharnon ki nahar ke paar *sarkari trout farm*,",
+    "jahaan subah aap *khud machhli chunte* hain",
+    "aur bagal ka restaurant use sarson ke tel mein tal deta hai."
+   ],
+   [
+    "Par *July August* mein mat jaaiye,",
+    "kyunki baarish mein baagh keechad se bhar jaate hain",
+    "aur jharnon ka paani tak *matmaila* ho jaata hai."
+   ],
+   [
+    "Aur November *off season* hai,",
+    "to achha kamra *₹2,650* mein mil jaata hai,",
+    "jabki May June mein yahi *₹4,250* tak jaata hai."
+   ],
+   [
+    "Har mahine ka poora haal *NakshIQ* par hai,",
+    "aur ye usse *bhejiye*",
+    "jiske saath aap Kashmir ka plan bana rahe hain."
+   ]
+  ],
+  "en": [
+   [
+    "In Kashmir, everyone goes to *Pahalgam* and *Gulmarg*,",
+    "but in south Kashmir there's a place",
+    "where November gardens are *nearly empty*."
+   ],
+   [
+    "This is *Kokernag*,",
+    "*80 km* from Srinagar airport,",
+    "where cold springs burst from the ground",
+    "and *never freeze*, even in winter."
+   ],
+   [
+    "In *November* the last autumn leaves are falling,",
+    "the springs run at full force,",
+    "and the gardens are *quiet*."
+   ],
+   [
+    "What nobody tells you:",
+    "past the spring canal there's a *government trout farm*,",
+    "where you *pick your own fish* in the morning",
+    "and the restaurant next door fries it in mustard oil."
+   ],
+   [
+    "But skip *July and August*,",
+    "because rain fills the gardens with mud",
+    "and even the spring water *turns muddy*."
+   ],
+   [
+    "November is *off season*,",
+    "so a good room is *₹2,650*,",
+    "while in May and June it goes up to *₹4,250*."
+   ],
+   [
+    "Every month's full picture is on *NakshIQ*,",
+    "so *send this* to whoever",
+    "you're planning Kashmir with."
+   ]
+  ]
+ },
+ "facts": [
+  "geo: 2,000 m; Srinagar Airport 80 km; Jammu Tawi 290 km",
+  "months.12/1 note: springs never freeze",
+  "months.11 (4=8/10): Last autumn leaves falling. Springs flowing strong. Gardens peaceful and nearly empty",
+  "crowd: quiet months 11,12,1,2",
+  "gem Bota Kol trout farm: past the spring discharge canal, Fisheries Department; eatery tip: pick a fish at the trout-farm counter (mornings), hand it to the JKTDC restaurant to fry in mustard oil",
+  "months.7 (2=4/10): Gardens muddy; months.8 (2=4/10): waterlogged, spring water muddy",
+  "costs hotel-mid low (incl 11) 2650, peak (5,6) 4250"
+ ],
+ "spoken_numbers": [
+  "अस्सी (80 km)",
+  "साढ़े छब्बीस सौ (2,650)",
+  "सवा चार हज़ार (4,250)"
+ ]
+}

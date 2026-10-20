@@ -1,0 +1,174 @@
+{
+ "id": "kullu__map_reveal",
+ "slug": "kullu",
+ "format": "map_reveal",
+ "status": "draft",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 1 after the founder locked the Chakrata structure; facts from reel-fact-pack + reel-data.json",
+ "vo": {
+  "hi": [
+   "मनाली जाते हुए सब कुल्लू से बस गुज़र जाते हैं, पर दशहरे के बाद नवंबर में यही घाटी सबसे शांत और सुनहरी होती है।",
+   "ये है कुल्लू, भुंतर एयरपोर्ट से सिर्फ़ दस किलोमीटर, ब्यास नदी के किनारे बसा एक समतल और आरामदेह शहर।",
+   "नवंबर में सेब का सीज़न ख़त्म हो रहा होता है, और बिजली महादेव की चढ़ाई से पूरी घाटी साफ़ दिखती है।",
+   "पर जो कोई नहीं बताता, वो है बजौरा का बशेश्वर महादेव, हाईवे से ज़रा सा हटकर सदियों पुराना पत्थर का शिव मंदिर, जहाँ लगभग कोई रुकता ही नहीं।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि ब्यास उफान पर होती है और मनाली हाईवे पर जगह जगह लैंडस्लाइड होते हैं।",
+   "और नवंबर ऑफ़ सीज़न है, तो अच्छा कमरा अट्ठाईस सौ में मिल जाता है, जबकि मई जून में यही साढ़े चार हज़ार तक जाता है।",
+   "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जो अगली बार कुल्लू से बस गुज़रने वाला है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map"
+  },
+  {
+   "bg": "photo",
+   "card": "place"
+  },
+  {
+   "kicker": "The next good window",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Post-Dussehra calm. Apple harvest ending. Clear views on the Bijli Mahadev trek.",
+   "bg": "photo:Kullu Beas river|kullu"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Basheshwar Mahadev</em>, Bajaura",
+    "A stone Shiva temple from the 8th-9th century",
+    "Just off the highway. Almost nobody stops."
+   ],
+   "bg": "photo:Basheshwar Mahadev Bajaura|bajaura/basheshwar"
+  },
+  {
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "The Beas floods. Landslides on the Manali highway.",
+   "bg": "clip:kullu__two_months__s2.mp4"
+  },
+  {
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,800"
+    ],
+    [
+     "May and June",
+     "₹4,500"
+    ]
+   ],
+   "bg": "photo2"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "caption_lead": "On the way to Manali, everyone drives straight through Kullu. After Dussehra it's at its calmest: the apple harvest ending, clear views on the Bijli Mahadev trek, and a good room for ₹2,800 a night (₹4,500 in May and June). Skip July and August, when the Beas floods.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2800
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 4500
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Manali jaate hue sab *Kullu* se bas guzar jaate hain,",
+    "par Dussehre ke baad *November* mein",
+    "yahi ghaati sabse *shaant aur sunehri* hoti hai."
+   ],
+   [
+    "Ye hai *Kullu*,",
+    "Bhuntar airport se sirf *10 km*,",
+    "Beas nadi ke kinaare basa",
+    "ek *samtal aur aaramdeh* shehar."
+   ],
+   [
+    "*November* mein seb ka season khatam ho raha hota hai,",
+    "aur *Bijli Mahadev* ki chadhai se",
+    "poori ghaati saaf dikhti hai."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "Bajaura ka *Basheshwar Mahadev*,",
+    "highway se zara sa hatkar *sadiyon purana* patthar ka Shiv mandir,",
+    "jahaan lagbhag koi *rukta hi nahi*."
+   ],
+   [
+    "Par *July August* mein mat jaaiye,",
+    "kyunki Beas *ufaan* par hoti hai",
+    "aur Manali highway par jagah jagah *landslide* hote hain."
+   ],
+   [
+    "Aur November *off season* hai,",
+    "to achha kamra *₹2,800* mein mil jaata hai,",
+    "jabki May June mein yahi *₹4,500* tak jaata hai."
+   ],
+   [
+    "Har mahine ka poora haal *NakshIQ* par hai,",
+    "aur ye usse *bhejiye*",
+    "jo agli baar Kullu se bas guzarne waala hai."
+   ]
+  ],
+  "en": [
+   [
+    "On the way to Manali, everyone just drives through *Kullu*,",
+    "but after Dussehra, in *November*,",
+    "this valley is at its *calmest and most golden*."
+   ],
+   [
+    "This is *Kullu*,",
+    "just *10 km* from Bhuntar airport,",
+    "on the banks of the Beas,",
+    "a *flat, easy* town."
+   ],
+   [
+    "In *November* the apple season is ending,",
+    "and from the *Bijli Mahadev* climb",
+    "you see the whole valley clearly."
+   ],
+   [
+    "What nobody tells you:",
+    "*Basheshwar Mahadev* at Bajaura,",
+    "a *centuries-old* stone Shiva temple just off the highway,",
+    "where almost *nobody stops*."
+   ],
+   [
+    "But skip *July and August*,",
+    "because the Beas *floods*",
+    "and the Manali highway has *landslides* all along it."
+   ],
+   [
+    "November is *off season*,",
+    "so a good room is *₹2,800*,",
+    "while in May and June it goes up to *₹4,500*."
+   ],
+   [
+    "Every month's full picture is on *NakshIQ*,",
+    "so *send this* to whoever",
+    "is about to drive straight through Kullu."
+   ]
+  ]
+ },
+ "facts": [
+  "geo: 1,220 m; Bhuntar airport 10 km",
+  "persona elderly: Kullu town flat, comfortable, low altitude",
+  "months.11 (4=8/10): Post-Dussehra calm. Apple harvest ending. Valley peaceful and golden. Bijli Mahadev trek with clear views",
+  "gem Basheshwar Mahadev, Bajaura: 400 m off the highway, 8th-9th century stone Shiva temple, ASI protected; travellers blow past, almost nobody stops",
+  "months.7 (1=2/10): Beas swells dangerously, landslides on Manali highway; months.8: multiple landslide zones",
+  "costs hotel-mid low (incl 11) 2800, peak 4500"
+ ],
+ "spoken_numbers": [
+  "दस (10 km)",
+  "अट्ठाईस सौ (2,800)",
+  "साढ़े चार हज़ार (4,500)"
+ ]
+}

@@ -1,0 +1,172 @@
+{
+ "id": "manali__map_reveal",
+ "slug": "manali",
+ "format": "map_reveal",
+ "status": "draft",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 1 after the founder locked the Chakrata structure; facts from reel-fact-pack + reel-data.json",
+ "vo": {
+  "hi": [
+   "मनाली का नाम सुनते ही भीड़ याद आती है, पर एक वक़्त ऐसा भी है जब यहाँ के दिन खुले और गलियाँ शांत होती हैं।",
+   "ये है मनाली, भुंतर एयरपोर्ट से पचास किलोमीटर ऊपर, ब्यास की घाटी के आख़िरी छोर पर।",
+   "और नवंबर में ओल्ड मनाली शांत होता है, पेड़ पतझड़ के रंगों में होते हैं, और अटल टनल से लाहौल का रास्ता अभी खुला रहता है।",
+   "पर जो कोई नहीं बताता, वो है नग्गर वाली सड़क पर जाना वॉटरफ़ॉल, जिसका मोड़ सब पार कर जाते हैं, और जहाँ मनाली भरा होने पर भी लगभग कोई नहीं होता।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि चंडीगढ़ वाले हाईवे पर लैंडस्लाइड का ख़तरा रहता है और सड़कें बिना बताए बंद हो जाती हैं।",
+   "और नवंबर ऑफ़ सीज़न है, तो अच्छा कमरा बाईस सौ में मिल जाता है, जबकि मई जून में यही साढ़े पैंतीस सौ तक जाता है।",
+   "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जो हर बार मनाली की भीड़ से परेशान होकर लौटता है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map"
+  },
+  {
+   "bg": "photo",
+   "card": "place"
+  },
+  {
+   "kicker": "The next good window",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Quiet old town. Autumn colours. The Atal Tunnel road to Lahaul still open.",
+   "bg": "photo:Old Manali|manali"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Jana Waterfall</em>, on the Naggar road",
+    "Everyone drives past the turn",
+    "Nearly empty even when Manali is packed"
+   ],
+   "bg": "photo:Jana waterfall|jana"
+  },
+  {
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Landslides on the highway. Roads close without warning.",
+   "bg": "clip:manali__two_months__s2.mp4"
+  },
+  {
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,200"
+    ],
+    [
+     "May and June",
+     "₹3,550"
+    ]
+   ],
+   "bg": "photo:Manali Beas river|manali"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "caption_lead": "Manali means crowds, except in November: a quiet old town, autumn colours, the Atal Tunnel road to Lahaul still open, and a good room for ₹2,200 a night (₹3,550 in May and June). Skip July and August, when highway landslides close roads without warning.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2200
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3550
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Manali* ka naam sunte hi *bheed* yaad aati hai,",
+    "par ek waqt aisa bhi hai",
+    "jab yahaan ke din khule aur galiyaan *shaant* hoti hain."
+   ],
+   [
+    "Ye hai *Manali*,",
+    "Bhuntar airport se *50 km* upar,",
+    "Beas ki ghaati ke aakhri chhor par."
+   ],
+   [
+    "Aur *November* mein Old Manali shaant hota hai,",
+    "ped patjhad ke rangon mein hote hain,",
+    "aur *Atal Tunnel* se Lahaul ka raasta abhi khula rehta hai."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "Naggar waali sadak par *Jana Waterfall*,",
+    "jiska mod sab *paar kar jaate* hain,",
+    "aur jahaan Manali bhara hone par bhi *lagbhag koi nahi* hota."
+   ],
+   [
+    "Par *July August* mein mat jaaiye,",
+    "kyunki Chandigarh waale highway par *landslide* ka khatra rehta hai",
+    "aur sadkein *bina bataaye band* ho jaati hain."
+   ],
+   [
+    "Aur November *off season* hai,",
+    "to achha kamra *₹2,200* mein mil jaata hai,",
+    "jabki May June mein yahi *₹3,550* tak jaata hai."
+   ],
+   [
+    "Har mahine ka poora haal *NakshIQ* par hai,",
+    "aur ye usse *bhejiye*",
+    "jo har baar Manali ki bheed se pareshaan hokar lautta hai."
+   ]
+  ],
+  "en": [
+   [
+    "*Manali* makes you think of *crowds*,",
+    "but there's a time of year",
+    "when the days are open and the lanes are *quiet*."
+   ],
+   [
+    "This is *Manali*,",
+    "*50 km* up from Bhuntar airport,",
+    "at the very end of the Beas valley."
+   ],
+   [
+    "In *November* Old Manali is quiet,",
+    "the trees are in autumn colour,",
+    "and the *Atal Tunnel* road to Lahaul is still open."
+   ],
+   [
+    "What nobody tells you:",
+    "*Jana Waterfall* on the Naggar road,",
+    "a turn everyone *drives past*,",
+    "and *nearly empty* even when Manali is packed."
+   ],
+   [
+    "But skip *July and August*,",
+    "because the Chandigarh highway has *landslide* risk",
+    "and roads *close without warning*."
+   ],
+   [
+    "November is *off season*,",
+    "so a good room is *₹2,200*,",
+    "while in May and June it goes up to *₹3,550*."
+   ],
+   [
+    "Every month's full picture is on *NakshIQ*,",
+    "so *send this* to whoever",
+    "always comes back tired of Manali's crowds."
+   ]
+  ]
+ },
+ "facts": [
+  "geo: 2,050 m; Bhuntar airport 50 km",
+  "crowd: packed long weekends; Sep-Nov sweet spot, thin crowds",
+  "months.11 (4=8/10): Quiet old town, beautiful fall colors. Atal Tunnel to Lahaul still open",
+  "gem Jana Waterfall: on the road to Naggar, everyone drives past the turn; almost empty even when Manali is packed",
+  "months.7 (1=2/10): landslide risk on Manali-Chandigarh highway; months.8: roads close without warning",
+  "costs hotel-mid low (incl 11) 2200, peak 3550"
+ ],
+ "spoken_numbers": [
+  "पचास (50 km)",
+  "बाईस सौ (2,200)",
+  "साढ़े पैंतीस सौ (3,550)"
+ ]
+}

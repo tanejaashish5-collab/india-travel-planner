@@ -1,0 +1,174 @@
+{
+ "id": "ranikhet__map_reveal",
+ "slug": "ranikhet",
+ "format": "map_reveal",
+ "status": "draft",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 1 after the founder locked the Chakrata structure; facts from reel-fact-pack + reel-data.json",
+ "vo": {
+  "hi": [
+   "नैनीताल की भीड़ से थक गए हैं, तो कुमाऊँ में एक आर्मी कैंटोनमेंट है जहाँ पीक सीज़न में भी सब कुछ सलीके से चलता है।",
+   "ये है रानीखेत, काठगोदाम स्टेशन से अस्सी किलोमीटर, चीड़ के जंगलों के बीच बसा एक शांत पहाड़ी शहर।",
+   "और नवंबर में हवा सूखी और ठंडी होती है, हिमालय बिल्कुल साफ़ दिखता है, और चीड़ के जंगल सुनहरे हो जाते हैं।",
+   "पर जो कोई नहीं बताता, वो है चौबटिया वाली सड़क से ज़रा हटकर झूला देवी का मंदिर, जिसकी दीवारें और छत पीतल की घंटियों से ढकी हैं, जो मन्नत पूरी होने पर लोग चढ़ाते हैं।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि काठगोदाम से आने वाली सड़कें जोखिम भरी होती हैं और हिमालय बिल्कुल नहीं दिखता।",
+   "और नवंबर ऑफ़ सीज़न है, तो अच्छा कमरा साढ़े चौबीस सौ में मिल जाता है, जबकि मई जून में यही साढ़े उनतालीस सौ तक जाता है।",
+   "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जो इस बार नैनीताल की जगह कुछ शांत ढूँढ रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map"
+  },
+  {
+   "bg": "photo",
+   "card": "place"
+  },
+  {
+   "kicker": "The next good window",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Dry, cool air. Crystal Himalayan views. Golden pine forests.",
+   "bg": "clip:ranikhet__two_months__s1.mp4"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Jhula Devi</em> temple, off the Chaubatia road",
+    "Walls and roof covered in brass bells",
+    "Offered when a prayer is answered"
+   ],
+   "bg": "photo:Ranikhet forest|ranikhet"
+  },
+  {
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Risky roads from Kathgodam. Zero Himalayan views.",
+   "bg": "clip:ranikhet__two_months__s2.mp4"
+  },
+  {
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,450"
+    ],
+    [
+     "May and June",
+     "₹3,950"
+    ]
+   ],
+   "bg": "photo:Ranikhet|ranikhet"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "caption_lead": "Tired of Nainital's crowds? Ranikhet is an army cantonment where even peak season stays orderly. In November the air is dry, the Himalaya is crystal clear, and a good room is ₹2,450 a night (₹3,950 in May and June). Skip July and August, when the roads from Kathgodam turn risky.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2450
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3950
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Nainital* ki bheed se thak gaye hain,",
+    "to Kumaon mein ek *army cantonment* hai",
+    "jahaan peak season mein bhi sab kuch *saleeke se* chalta hai."
+   ],
+   [
+    "Ye hai *Ranikhet*,",
+    "Kathgodam station se *80 km*,",
+    "cheed ke jungle ke beech basa",
+    "ek *shaant* pahaadi shehar."
+   ],
+   [
+    "Aur *November* mein hawa sookhi aur thandi hoti hai,",
+    "*Himalaya* bilkul saaf dikhta hai,",
+    "aur cheed ke jungle *sunehre* ho jaate hain."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "Chaubatia waali sadak se zara hatkar *Jhula Devi* ka mandir,",
+    "jiski deewarein aur chhat *peetal ki ghantiyon* se dhaki hain,",
+    "jo mannat poori hone par log chadhaate hain."
+   ],
+   [
+    "Par *July August* mein mat jaaiye,",
+    "kyunki Kathgodam se aane waali sadkein *jokhim bhari* hoti hain",
+    "aur Himalaya *bilkul nahi* dikhta."
+   ],
+   [
+    "Aur November *off season* hai,",
+    "to achha kamra *₹2,450* mein mil jaata hai,",
+    "jabki May June mein yahi *₹3,950* tak jaata hai."
+   ],
+   [
+    "Har mahine ka poora haal *NakshIQ* par hai,",
+    "aur ye usse *bhejiye*",
+    "jo is baar Nainital ki jagah kuch shaant dhoondh raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Tired of *Nainital's* crowds?",
+    "In Kumaon there's an *army cantonment*",
+    "where even peak season runs *orderly*."
+   ],
+   [
+    "This is *Ranikhet*,",
+    "*80 km* from Kathgodam station,",
+    "a *quiet* hill town",
+    "among pine forests."
+   ],
+   [
+    "In *November* the air is dry and cool,",
+    "the *Himalaya* is crystal clear,",
+    "and the pine forests turn *golden*."
+   ],
+   [
+    "What nobody tells you:",
+    "just off the Chaubatia road is *Jhula Devi* temple,",
+    "its walls and roof covered in *brass bells*,",
+    "offered when a prayer is answered."
+   ],
+   [
+    "But skip *July and August*,",
+    "because the roads from Kathgodam turn *risky*",
+    "and the Himalaya *disappears*."
+   ],
+   [
+    "November is *off season*,",
+    "so a good room is *₹2,450*,",
+    "while in May and June it goes up to *₹3,950*."
+   ],
+   [
+    "Every month's full picture is on *NakshIQ*,",
+    "so *send this* to whoever",
+    "wants somewhere quieter than Nainital this time."
+   ]
+  ]
+ },
+ "facts": [
+  "geo: 1,829 m; Kathgodam 80 km",
+  "crowd: army cantonment keeps it orderly; less chaotic than Nainital even in peak season",
+  "months.11 (4=8/10): Cool dry. Crystal Himalayan views. Pine forests golden. Army cantonment peaceful",
+  "gem Jhula Devi: Durga temple near Chaubatia, 1 km off the Chaubatia road, walled and roofed with brass bells donated by devotees whose prayers were answered",
+  "months.7 (1=2/10): landslides on approach; months.8: roads from Kathgodam risky, Himalayan views zero",
+  "costs hotel-mid low (incl 11) 2450, peak 3950"
+ ],
+ "spoken_numbers": [
+  "अस्सी (80 km)",
+  "साढ़े चौबीस सौ (2,450)",
+  "साढ़े उनतालीस सौ (3,950)"
+ ]
+}

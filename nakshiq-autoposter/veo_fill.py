@@ -35,7 +35,9 @@ import place_reels as P  # noqa: E402
 
 TARGET = 340      # 7 Flow accounts x 50 credits, less one clip of slack
 MAX_NEW = 16      # storyboards added per run (32 Veo clips): what one Cowork session has managed
-TWO_CAP = 6       # two_months storyboards waiting unposted (queued or made); about six weeks of slots
+TWO_CAP = 30      # two_months storyboards waiting unposted (queued or made). Was 6; raised 2026-10-20 when the
+                  # founder locked the voiced place reel, whose November and skip-month scenes ARE the two_months
+                  # clips: one pair per reel, one reel a day, so about a month of footage ahead.
 
 
 def pending_credits(rows: list[dict]) -> int:
@@ -51,7 +53,8 @@ def taken(rows: list[dict], led: dict, suffix: str) -> set[str]:
 
 
 def waiting_two(rows: list[dict], led: dict) -> int:
-    posted = {v.get("slug") for v in led.values() if isinstance(v, dict) and v.get("kind") == "two_months"
+    posted = {v.get("slug") for v in led.values() if isinstance(v, dict)
+              and (v.get("kind") == "two_months" or v.get("voiced"))
               and v.get("status") in ("published", "unconfirmed")}
     sbs = {r["storyboard"] for r in rows if str(r.get("storyboard", "")).endswith("__two_months")}
     return sum(1 for sb in sbs if sb.split("__")[0] not in posted)

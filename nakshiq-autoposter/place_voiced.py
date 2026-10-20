@@ -158,11 +158,15 @@ def render(script: Path, out: Path, music: str = MUSIC, today: date | None = Non
         st, du = starts[i], round(ends[i] - starts[i], 2)
         bg = sc.get("bg", "photo")
         if bg.startswith("clip:"):
-            clip = P.CLIPS / bg[5:]
-            slow = max(1.0, du / _dur(clip))
+            # "clip:<file>@<seconds>" starts the clip partway in, past a glitch the eyeball found
+            # (Kokernag s1 jump-cuts at 2.7 s, 2026-10-20).
+            name, _, off = bg[5:].partition("@")
+            clip, off = P.CLIPS / name, float(off or 0)
+            avail = _dur(clip) - off
+            slow = max(1.0, du / avail)
             if slow > MAX_SLOW:
-                raise SystemExit(f"scene {i + 1}: {clip.name} is {_dur(clip):.1f}s for a {du:.1f}s line (more than {MAX_SLOW}x slow)")
-            _ff("-i", str(clip), "-an", "-vf", f"setpts={slow:.4f}*PTS,fps=30,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
+                raise SystemExit(f"scene {i + 1}: {clip.name} gives {avail:.1f}s for a {du:.1f}s line (more than {MAX_SLOW}x slow)")
+            _ff("-ss", str(off), "-i", str(clip), "-an", "-vf", f"setpts={slow:.4f}*PTS,fps=30,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
                 "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", str(w / "assets" / f"c{i}.mp4"))
             media.append(f'<video id="bg{i}" class="clip bg" src="assets/c{i}.mp4" data-start="{st}" data-duration="{du}" '
                          f'data-media-start="0" data-track-index="0" muted playsinline></video>')
@@ -214,15 +218,91 @@ def render(script: Path, out: Path, music: str = MUSIC, today: date | None = Non
             "credits": list(dict.fromkeys(a for a in authors if a))}
 
 
+SURFACES = (("instagram", "hinglish"), ("youtube", "en"))   # founder 2026-10-20: IG Hinglish subs, YT English subs
+
+
+def _strip(html: str) -> str:
+    import re
+    return re.sub(r"<[^>]+>", "", html)
+
+
+def register(script: Path, today: date | None = None) -> list[str]:
+    """Add both cuts of a rendered script to the ledger as ready rows (the founder approved the locked
+    structure, so a script that renders and passes its checks posts without a review stop). Keys
+    <slug>__<fmt>_voiced__<platform>. queue_order keeps Instagram and YouTube on the same reel each day."""
+    from datetime import datetime, timezone
+    s = json.loads(script.read_text())
+    slug = s["slug"]
+    led_p = P.LEDGER
+    raw = led_p.read_text()
+    led = json.loads(raw)
+    ind = next((i for i in (1, 2) if raw in (json.dumps(led, indent=i, ensure_ascii=False),
+                                             json.dumps(led, indent=i, ensure_ascii=False) + "\n")), 1)
+    f = P.facts_map_reveal(slug, today or date.today())
+    recs = list(f.get("commons") or [])
+    for sc in s["scenes"]:
+        bg = sc.get("bg", "")
+        if bg.startswith("photo:"):
+            q, _, must = bg[6:].partition("|")
+            c = _extra_photo(slug, q, must or q)
+            if c:
+                recs.append(c)
+        elif bg.startswith("clip:"):
+            pj = P.CLIPS / (bg[5:].partition("@")[0].rsplit("__s", 1)[0] + "__photo.json")
+            if pj.exists():
+                recs.append(json.loads(pj.read_text()))
+    seen, commons = set(), []
+    for r in recs:
+        if r.get("title") and r["title"] not in seen:
+            seen.add(r["title"])
+            c = {k: r.get(k) for k in ("title", "author", "licence", "page", "share_alike")}
+            import re
+            m = re.search(r"flickr\.com/photos/([^/\s]+)", c.get("author") or "")
+            if m:                              # Commons "author" is sometimes a bare Flickr URL (Kullu, 2026-10-20)
+                c["author"] = f"{m.group(1)} (Flickr)"
+            commons.append(c)
+    screen = []
+    for sc in s["scenes"]:
+        for k in ("big", "line", "sub"):
+            if sc.get(k):
+                screen.append(_strip(sc[k]))
+        screen += [_strip(x) for x in sc.get("lines") or []]
+        screen += [f"{a} {b}" for a, b in sc.get("rows") or []]
+    screen += [_strip(x) for x in f["facts"]]
+    order = max([v.get("queue_order", 0) for v in led.values() if isinstance(v, dict) and v.get("voiced")] or [0]) + 1
+    keys = []
+    for plat, sub in SURFACES:
+        out = P.VEO / "reels" / f"{script.stem}__voiced__{sub}.mp4"
+        if not out.exists():
+            raise SystemExit(f"{out.name} not rendered: run render --subs {sub} first")
+        key = f"{slug}__{s['format']}_voiced__{plat}"
+        if (led.get(key) or {}).get("status") in ("published", "unconfirmed"):
+            raise SystemExit(f"{key} is already published")
+        led[key] = {"storyboard": s["id"], "slug": slug, "format": s["format"], "kind": s["format"], "angle": s["format"],
+                    "lang": "hi", "subs": sub, "platform": plat, "file": str(out), "six_beat": False, "pipeline": "place",
+                    "voiced": True, "ai_footage": sum(sc.get("bg", "").startswith("clip:") for sc in s["scenes"]),
+                    "status": "ready", "queue_order": (led.get(key) or {}).get("queue_order") or order,
+                    "rendered_at": datetime.fromtimestamp(out.stat().st_mtime, timezone.utc).isoformat(),
+                    "name": f["name"], "best": f["best"], "best_score": f["best_score"],
+                    "caption_lead": s.get("caption_lead"), "screen_text": screen,
+                    "cost_basis": s.get("cost_basis") or [], "commons": commons}
+        keys.append(key)
+    led_p.write_text(json.dumps(led, indent=ind, ensure_ascii=False))
+    return keys
+
+
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["render"])
+    ap.add_argument("cmd", choices=["render", "register"])
     ap.add_argument("script")
     ap.add_argument("--out")
     ap.add_argument("--music", default=MUSIC)
     ap.add_argument("--subs", default="none", help="none | hinglish | en (the script's subs block)")
     a = ap.parse_args(argv)
     sp = Path(a.script)
+    if a.cmd == "register":
+        print("[place_voiced] registered " + ", ".join(register(sp)))
+        return 0
     tag = "" if a.subs == "none" else f"__{a.subs}"
     out = Path(a.out) if a.out else P.VEO / "reels" / f"{sp.stem}__voiced{tag}.mp4"
     res = render(sp, out, a.music, subs=a.subs)

@@ -443,6 +443,26 @@ def publish(dry: bool = False, kind: str = "story") -> int:
                 if n or row.get("status") != "review":
                     break
             continue
+        # VOICED PLACE REEL FIRST (founder 2026-10-20: the Chakrata structure is "perfect ... all the
+        # future reels for YouTube or Instagram should match this"; one strong reel a day). A ready
+        # voiced reel posts before anything else; queue_order keeps both platforms on the same one.
+        voiced = sorted((v for v in led.values() if v.get("voiced") and v.get("platform") == plat
+                         and v.get("status") == "ready" and Path(v.get("file", "")).exists()),
+                        key=lambda v: (v.get("queue_order") or 0, v.get("rendered_at") or ""))
+        if voiced:
+            acct = accounts.get(plat)
+            if not acct:
+                _no_account(plat, kind, dry)
+                continue
+            posted = 0
+            for row in voiced:               # one cost_gate hold steps aside for the next reel
+                posted = _post(ap, led, row, plat, acct, today, dry)
+                if posted or dry:
+                    break
+            if posted:
+                published += 1
+                continue
+            _log(f"{plat}: voiced reels ready but none posted — falling back to the rotation")
         # FORMAT ROTATION (founder 2026-10-15: "every week we go through all these different
         # format once"). place_reels.slot() names today's format; off until ROTATION_START exists.
         # A place format renders on demand; if it cannot (refused, failed, first-of-format held

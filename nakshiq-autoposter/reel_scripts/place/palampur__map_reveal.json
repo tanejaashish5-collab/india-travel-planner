@@ -1,0 +1,174 @@
+{
+ "id": "palampur__map_reveal",
+ "slug": "palampur",
+ "format": "map_reveal",
+ "status": "draft",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 1 after the founder locked the Chakrata structure; facts from reel-fact-pack + reel-data.json",
+ "vo": {
+  "hi": [
+   "धर्मशाला की भीड़ के पास ही एक ऐसी जगह है, जहाँ चाय के बागानों के पीछे से बर्फ़ वाले पहाड़ झाँकते हैं।",
+   "ये है पालमपुर, गग्गल एयरपोर्ट से चालीस किलोमीटर, कांगड़ा घाटी का चाय वाला शहर, जहाँ भीड़ कम ही होती है।",
+   "और नवंबर में धौलाधार की बर्फ़ीली चोटियाँ बिल्कुल साफ़ दिखती हैं, बागान शांत रहते हैं, और पास के बीर में पैराग्लाइडिंग का सीज़न चल रहा होता है।",
+   "पर जो कोई नहीं बताता, लोग न्यूगल के किनारे फ़ोटो खींचकर लौट जाते हैं, जबकि बस थोड़ा आगे बुंदला की गहरी खाई और उस पर लंबा लोहे का पुल है, जहाँ तक लगभग कोई नहीं जाता।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि बारिश में पहाड़ी सड़कों पर लैंडस्लाइड होते हैं और धौलाधार बादलों में छिप जाता है।",
+   "और नवंबर ऑफ़ सीज़न है, तो अच्छा कमरा सवा दो हज़ार के आसपास मिल जाता है, जबकि मई जून में यही साढ़े तीन हज़ार से ऊपर जाता है।",
+   "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जिसके साथ आप पहाड़ों में एक शांत छुट्टी का प्लान बना रहे हैं।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map"
+  },
+  {
+   "bg": "photo:Palampur Himachal|palampur",
+   "card": "place"
+  },
+  {
+   "kicker": "The next good window",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Dhauladhar peaks crystal clear. Calm tea gardens. Bir paragliding season.",
+   "bg": "clip:palampur__two_months__s1.mp4"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Bundla chasm</em> and its long iron bridge",
+    "A short walk past the Neugal lawns",
+    "Almost nobody goes on"
+   ],
+   "bg": "photo"
+  },
+  {
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Landslides on hill roads. The Dhauladhar hides in cloud.",
+   "bg": "clip:palampur__two_months__s2.mp4"
+  },
+  {
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,250"
+    ],
+    [
+     "May and June",
+     "₹3,650"
+    ]
+   ],
+   "bg": "photo:Dhauladhar Palampur|palampur/dhauladhar"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "caption_lead": "Next to Dharamshala's crowds, Palampur's tea gardens sit under the snowy Dhauladhar. In November the peaks are crystal clear, Bir's paragliding season is on, and a good room is about ₹2,250 a night (₹3,650 in May and June). Skip July and August, when landslides hit the hill roads.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2250
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3650
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Dharamshala* ki bheed ke paas hi ek aisi jagah hai,",
+    "jahaan *chai ke baagaanon* ke peechhe se",
+    "*barf waale pahaad* jhaankte hain."
+   ],
+   [
+    "Ye hai *Palampur*,",
+    "Gaggal airport se *40 km*,",
+    "Kangra ghaati ka chai waala shehar,",
+    "jahaan *bheed kam* hi hoti hai."
+   ],
+   [
+    "Aur *November* mein *Dhauladhar* ki barfeeli chotiyaan bilkul saaf dikhti hain,",
+    "baagaan shaant rehte hain,",
+    "aur paas ke *Bir* mein paragliding ka season chal raha hota hai."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "log Neugal ke kinaare photo kheenchkar laut jaate hain,",
+    "jabki bas thoda aage *Bundla ki gehri khaai*",
+    "aur us par lamba lohe ka pul hai, jahaan tak *lagbhag koi nahi* jaata."
+   ],
+   [
+    "Par *July August* mein mat jaaiye,",
+    "kyunki baarish mein pahaadi sadkon par *landslide* hote hain",
+    "aur Dhauladhar *baadlon mein chhip* jaata hai."
+   ],
+   [
+    "Aur November *off season* hai,",
+    "to achha kamra *₹2,250* ke aaspaas mil jaata hai,",
+    "jabki May June mein yahi *₹3,650* se upar jaata hai."
+   ],
+   [
+    "Har mahine ka poora haal *NakshIQ* par hai,",
+    "aur ye usse *bhejiye*",
+    "jiske saath aap pahaadon mein ek shaant chhutti ka plan bana rahe hain."
+   ]
+  ],
+  "en": [
+   [
+    "Right next to *Dharamshala's* crowds there's a place",
+    "where *snowy peaks* look out",
+    "from behind the *tea gardens*."
+   ],
+   [
+    "This is *Palampur*,",
+    "*40 km* from Gaggal airport,",
+    "the tea town of the Kangra valley,",
+    "where it's *rarely crowded*."
+   ],
+   [
+    "In *November* the *Dhauladhar* peaks are crystal clear,",
+    "the tea gardens are calm,",
+    "and paragliding season is on at nearby *Bir*."
+   ],
+   [
+    "What nobody tells you:",
+    "people take photos by the Neugal and leave,",
+    "but a short walk on is the deep *Bundla chasm*",
+    "and its long iron bridge, where *almost nobody* goes."
+   ],
+   [
+    "But skip *July and August*,",
+    "because rain brings *landslides* on the hill roads",
+    "and the Dhauladhar *hides in cloud*."
+   ],
+   [
+    "November is *off season*,",
+    "so a good room is about *₹2,250*,",
+    "while in May and June it's over *₹3,650*."
+   ],
+   [
+    "Every month's full picture is on *NakshIQ*,",
+    "so *send this* to whoever",
+    "you're planning a quiet mountain break with."
+   ]
+  ]
+ },
+ "facts": [
+  "geo: 1,472 m; Gaggal airport 40 km",
+  "crowd: tea garden town, rarely crowded; weekends bring Dharamshala overflow",
+  "months.11 (4=8/10): Dhauladhar snow peaks crystal clear. Tea gardens calm. Bir paragliding season",
+  "gem Bundla chasm: tourists photograph the Neugal lawns and leave; the gorge bridge is a short walk away and almost no one continues; long iron bridge",
+  "months.7 (1=2/10): landslides on hill roads; months.8: Dhauladhar hidden in cloud",
+  "costs hotel-mid low (incl 11) 2250, peak 3650"
+ ],
+ "spoken_numbers": [
+  "चालीस (40 km)",
+  "सवा दो हज़ार (2,250)",
+  "साढ़े तीन हज़ार (3,650)"
+ ]
+}

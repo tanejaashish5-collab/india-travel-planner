@@ -688,7 +688,8 @@ def caption(row: dict) -> tuple[str, str]:
                                            f"and the next good month ({row['best']}, {row['best_score']}/10).")
         cap = (f"{lead}\n\nSend this to whoever's coming with you.\n\n"
                f"{nm}, month by month: {url}\n\nScores and distances are NakshIQ's real data."
-               + (" Two clips are AI footage made from a photo of the real place." if row.get("ai_footage") else "")
+               + ({1: " One clip is AI footage made from a photo of the real place."}.get(int(row.get("ai_footage") or 0),
+                  " Two clips are AI footage made from a photo of the real place." if row.get("ai_footage") else ""))
                + f"{credits}"
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"Where is {nm}, really? | NakshIQ"
