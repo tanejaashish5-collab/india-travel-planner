@@ -36,16 +36,13 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-19",
+    "PdMu0_carousel": "2026-10-20",
     "PdMu0": "2026-10-19",
-    "PdMu0_evening": "2026-10-19"
+    "PdMu0_evening": "2026-10-19",
+    "PdMu0_greeting": "2026-10-20"
   },
   "last_sync": "2026-10-19T20:04:29.089063+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "prayagraj",
-      "date": "2026-10-05"
-    },
     {
       "destination_id": "sarahan",
       "date": "2026-10-06"
@@ -173,6 +170,14 @@
     {
       "destination_id": "puri",
       "date": "2026-10-19"
+    },
+    {
+      "destination_id": "mysore",
+      "date": "2026-10-20"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-10-20"
     }
   ],
   "posted_formats": {
@@ -11123,6 +11128,24 @@
       "format": "v4_dw_walk_itinerary_day_by_day",
       "has_media": true,
       "media_id": "v4_dw_walk_itinerary_day_by_day-puri_01_cover.png"
+    },
+    {
+      "timestamp": "2026-10-20T12:53:58.861255+00:00",
+      "date": "2026-10-20",
+      "platform": "facebook",
+      "post_id": "DbyBb",
+      "destination": "mysore",
+      "format": "greeting.dussehra",
+      "media_id": "greeting_dussehra_2026-10-20"
+    },
+    {
+      "timestamp": "2026-10-20T12:55:33.370224+00:00",
+      "date": "2026-10-20",
+      "platform": "facebook",
+      "post_id": "r9zZh",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-10-20"
     }
   ],
   "theme_usage": {
@@ -11196,17 +11219,6 @@
         "2026-09-01",
         "2026-09-22",
         "2026-09-29"
-      ],
-      "leh": [
-        "2026-05-25",
-        "2026-05-27",
-        "2026-06-03",
-        "2026-06-17",
-        "2026-06-23",
-        "2026-06-26",
-        "2026-07-02",
-        "2026-07-17",
-        "2026-07-21"
       ],
       "hampi": [
         "2026-05-28",
@@ -11565,6 +11577,10 @@
         "2026-05-25",
         "2026-09-03"
       ],
+      "v4_dw_walk_itinerary_day_by_day": [
+        "2026-05-25",
+        "2026-10-19"
+      ],
       "v2_arrival_intel_video": [
         "2026-05-26",
         "2026-10-15"
@@ -11728,9 +11744,6 @@
       ],
       "tourist_trap": [
         "2026-09-01"
-      ],
-      "v4_dw_walk_itinerary_day_by_day": [
-        "2026-10-19"
       ]
     },
     "reels": {
@@ -12014,10 +12027,6 @@
         "2026-07-07",
         "2026-10-06"
       ],
-      "adrenaline-rush": [
-        "2026-05-26",
-        "2026-07-21"
-      ],
       "ayurveda-wellness": [
         "2026-05-27",
         "2026-07-23"
@@ -12116,20 +12125,6 @@
       ],
       "KL_cartographic_dark": [
         "2026-09-26"
-      ]
-    },
-    "collection_carousel_dests:adrenaline-rush": {
-      "pangong-lake": [
-        "2026-07-21"
-      ],
-      "leh": [
-        "2026-07-21"
-      ],
-      "kolad": [
-        "2026-07-21"
-      ],
-      "zanskar": [
-        "2026-07-21"
       ]
     },
     "collection_carousel_dests:best-motorcycle-routes": {
