@@ -629,6 +629,17 @@ def _cost_ok(row: dict, led: dict, caption: str = "") -> bool:
     return False
 
 
+def _has_ai_footage(row: dict) -> bool | None:
+    """YouTube's "altered or synthetic" flag (founder 2026-10-20 dropped the caption AI line; the upload setting
+    is YouTube's actual disclosure, and its policy page says the label won't limit reach). True for any cut with
+    Veo footage; None (flag not sent) for photo-only cuts."""
+    if row.get("pipeline") == "v3":
+        return True
+    if row.get("kind") in ("two_months", "tiny_world"):
+        return True
+    return True if int(row.get("ai_footage") or 0) > 0 else None
+
+
 def _post(ap, led: dict, row: dict, plat: str, acct: dict, today: str, dry: bool) -> int:
     """Upload, publish, confirm and log one reel. Returns 1 if it posted."""
     cap, title = caption_for(row)
@@ -649,7 +660,8 @@ def _post(ap, led: dict, row: dict, plat: str, acct: dict, today: str, dry: bool
         cover_url = (cm or {}).get("url")
         if not cover_url:
             _log(f"{plat}: cover upload failed, posting with Instagram's default frame")
-    res = ap.publish_reel(cap, acct, media, dry_run=False, yt_title=title, cover_url=cover_url)
+    res = ap.publish_reel(cap, acct, media, dry_run=False, yt_title=title, cover_url=cover_url,
+                          synthetic=_has_ai_footage(row) if plat == "youtube" else None)
     if not res:
         _log(f"{plat}: publish refused (cap reached or Outstand error) — stays ready")
         return 0

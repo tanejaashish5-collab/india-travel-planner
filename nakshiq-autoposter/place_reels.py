@@ -686,18 +686,12 @@ def caption(row: dict) -> tuple[str, str]:
         # A voiced reel carries its own opener, written with its script (founder 2026-10-20 sample).
         lead = row.get("caption_lead") or (f"Where is {nm}, really? How high, how far from the train and the airport, "
                                            f"and the next good month ({row['best']}, {row['best_score']}/10).")
-        # AI note: one short line at the very end (founder 2026-10-20 wanted it out of the way). It stays
-        # because YouTube requires disclosure of "AI-generated extra footage of a real place" and Meta of a
-        # realistic AI voiceover; checked 2026-10-20 on YouTube's policy page (support.google.com/youtube/answer/14328491).
-        n_ai = int(row.get("ai_footage") or 0)
-        ai = ("AI voice" + (f", {'one clip' if n_ai == 1 else f'{n_ai} clips'} AI-made from a real photo" if n_ai else "") + "."
-              if row.get("voiced") else
-              ({1: "One clip is AI footage made from a photo of the real place."}.get(n_ai,
-               f"{n_ai} clips are AI footage made from a photo of the real place." if n_ai else "")))
+        # No AI line in the caption (founder 2026-10-20). YouTube's disclosure is its upload setting, not caption
+        # text: scenario_daily._post sends containsSyntheticMedia=True when the reel has AI clips
+        # (support.google.com/youtube/answer/14328491: the label "won't limit a video's audience").
         cap = (f"{lead}\n\nSend this to whoever's coming with you.\n\n"
                f"{nm}, month by month: {url}\n\nScores, prices and distances are NakshIQ's real data."
                + f"{credits}"
-               + (f"\n{ai}" if ai else "")
                + f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"Where is {nm}, really? | NakshIQ"
     if row["kind"] == "two_months":

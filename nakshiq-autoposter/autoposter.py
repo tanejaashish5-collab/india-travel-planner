@@ -6896,8 +6896,9 @@ def publish_story(account: dict, media: dict, dry_run: bool = False) -> dict | N
 
 def publish_reel(caption: str, account: dict, video_media: dict,
                  dry_run: bool = False, yt_title: str | None = None,
-                 cover_url: str | None = None) -> dict | None:
-    """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
+                 cover_url: str | None = None, synthetic: bool | None = None) -> dict | None:
+    """Post an Instagram/Facebook Reel or YouTube Short (vertical video). `synthetic` sets YouTube's
+    altered-or-synthetic disclosure (upload-time only; None leaves it unsent)."""
     username = account.get("username", account["id"])
     platform = account["network"]
     # Founder pause, 2026-09-24: every reel path funnels through here, so one
@@ -6978,6 +6979,8 @@ def publish_reel(caption: str, account: dict, video_media: dict,
                 "title": yt_title,
                 "tags": ["india", "travel", "nakshiq", "shorts"],
             }
+            if synthetic is not None:   # Outstand docs, configurations/youtube: maps to status.containsSyntheticMedia
+                payload["youtube"]["containsSyntheticMedia"] = bool(synthetic)
         except Exception:
             pass  # If metadata extraction fails, post without overrides
 
