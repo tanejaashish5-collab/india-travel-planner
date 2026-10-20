@@ -683,9 +683,13 @@ def caption(row: dict) -> tuple[str, str]:
     tag = slug.replace("-", "")
     credits = GR.caption_credits(row.get("commons") or [])
     if row["kind"] == "map_reveal":
-        cap = (f"Where is {nm}, really? How high, how far from the train and the airport, and the next "
-               f"good month ({row['best']}, {row['best_score']}/10).\n\nSend this to whoever's coming with you.\n\n"
-               f"{nm}, month by month: {url}\n\nScores and distances are NakshIQ's real data.{credits}"
+        # A voiced reel carries its own opener, written with its script (founder 2026-10-20 sample).
+        lead = row.get("caption_lead") or (f"Where is {nm}, really? How high, how far from the train and the airport, "
+                                           f"and the next good month ({row['best']}, {row['best_score']}/10).")
+        cap = (f"{lead}\n\nSend this to whoever's coming with you.\n\n"
+               f"{nm}, month by month: {url}\n\nScores and distances are NakshIQ's real data."
+               + (" Two clips are AI footage made from a photo of the real place." if row.get("ai_footage") else "")
+               + f"{credits}"
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"Where is {nm}, really? | NakshIQ"
     if row["kind"] == "two_months":

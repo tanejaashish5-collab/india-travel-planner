@@ -122,6 +122,8 @@ def render(script: Path, out: Path, music: str = MUSIC, today: date | None = Non
     for fn in ("package.json", "hyperframes.json"):
         shutil.copy(P.PROJECT / fn, w / fn)
     shutil.copy(P.PROJECT / "gsap.min.js", w / "assets" / "gsap.min.js")
+    for fn in ("CrimsonPro-Italic.ttf", "InstrumentSans-Regular.ttf", "InstrumentSans-Bold.ttf"):   # brand end screen
+        shutil.copy(HERE / "assets" / "fonts" / fn, w / "assets" / fn)
 
     # 1 voice (paid once, then cached by exact text)
     with tempfile.TemporaryDirectory() as td:
