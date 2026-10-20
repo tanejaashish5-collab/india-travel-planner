@@ -1,0 +1,83 @@
+{
+ "id": "chakrata__map_reveal",
+ "slug": "chakrata",
+ "format": "map_reveal",
+ "status": "draft",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, from reel-data.json (geo, months 7/11, crowd, costs). Founder asked for 40 s, Hindi voice, more information.",
+ "vo": {
+  "hi": [
+   "उत्तराखंड में एक जगह है, जहाँ देहरादून वाले खुद वीकेंड पर घूमने जाते हैं, फिर भी वहाँ कभी भीड़ नहीं होती।",
+   "ये है चकराता, देहरादून स्टेशन से अठासी किलोमीटर दूर, देवदार और ओक के जंगलों के बीच बसा एक पुराना कैंटोनमेंट।",
+   "और इसका अच्छा वक़्त अभी आ रहा है, क्योंकि नवंबर में आसमान साफ़ रहता है और देवबन से हिमालय की पूरी रेंज दिखती है।",
+   "टाइगर फ़ॉल्स तक के रास्ते शांत मिलेंगे, बस गरम कपड़े साथ रखिए, क्योंकि रातें काफ़ी ठंडी होती हैं।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि बारिश में रास्ते फिसलन भरे हो जाते हैं और देवबन की सड़क तक बह जाती है।",
+   "और नवंबर ऑफ़ सीज़न है, तो अच्छा कमरा सवा दो हज़ार के आसपास मिल जाता है, जबकि मई जून में यही साढ़े तीन हज़ार से ऊपर जाता है।",
+   "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जिसके साथ आप पहाड़ों का प्लान बना रहे हैं।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map",
+   "hook": "Where is <em>Chakrata</em>, really?"
+  },
+  {
+   "bg": "photo",
+   "card": "place"
+  },
+  {
+   "bg": "clip:chakrata__two_months__s1.mp4",
+   "kicker": "The next good window",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Clear skies. The Himalaya from Deoban."
+  },
+  {
+   "bg": "photo:Tiger Falls Chakrata|tiger falls",
+   "kicker": "In November",
+   "lines": [
+    "Quiet trails to <em>Tiger Falls</em>",
+    "Few tourists",
+    "<em>3 to 15°C</em>: pack woollens"
+   ]
+  },
+  {
+   "bg": "clip:chakrata__two_months__s2.mp4",
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Slippery trails. The Deoban road washes out."
+  },
+  {
+   "bg": "photo:Chakrata Uttarakhand|chakrata wather",
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,250"
+    ],
+    [
+     "May and June",
+     "₹3,650"
+    ]
+   ]
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "facts": [
+  "crowd.note: Rarely crowded, Dehradun locals come on weekends but never packed",
+  "geo: 2,118 m; Dehradun railhead 88 km; Jolly Grant airport 98 km; Uttarakhand",
+  "months.1 note: Cantonment area quiet",
+  "months.4 note: forest trails through oak and deodar",
+  "months.11 (score 4 = 8/10, go): Cool 3-15°C. Clear skies, quiet trails. Deoban viewpoint sharp Himalayan panorama. Tiger Falls quieter flow. Few tourists",
+  "months.7 (score 1 = 2/10, skip): Tiger Falls trail dangerously slippery. Deoban road washed out. months.8 (1 = 2/10): Do not visit",
+  "costs: hotel_mid low season (months 1,2,3,8,9,11) 2250; peak (5,6) 3650"
+ ],
+ "spoken_numbers": [
+  "अठासी (88 km)",
+  "सवा दो हज़ार (2,250)",
+  "साढ़े तीन हज़ार (3,650)"
+ ]
+}

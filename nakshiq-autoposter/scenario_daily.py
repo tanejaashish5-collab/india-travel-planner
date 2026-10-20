@@ -50,6 +50,9 @@ SURFACE = {
 # While this file exists, the YouTube story slot posts the Hindi cut (see _hindi_for_youtube)
 # and v3_daily makes no English cut. Delete the file to go back to English on YouTube.
 HINDI_ONLY = HERE / "HINDI_ONLY"
+# Founder 2026-10-20: "we need better quality rather than quantity" -> one reel a day on IG/YT.
+# While this file exists the 13:05 IST guide reel does not post. Delete it to bring the guide back.
+GUIDE_PAUSED = HERE / "GUIDE_PAUSED"
 # Keep this many cut-but-unpublished reels per language. One outage day at
 # Cowork (Mac asleep, credits gone) must not mean a day with nothing to post.
 BUFFER = 2
@@ -402,6 +405,10 @@ def publish(dry: bool = False, kind: str = "story") -> int:
     accounts = {a.get("network"): a for a in ap.get_connected_accounts()}
     _settle_unconfirmed(ap, led)
     is_guide = kind == "guide"
+    if is_guide and GUIDE_PAUSED.exists():
+        # Founder 2026-10-20: "better quality rather than quantity" -> one strong reel a day.
+        _log("guide reel: PAUSED (GUIDE_PAUSED file) — one reel a day, the 20:05 IST story slot")
+        return 0
     if is_guide:
         # autoposter's own per-platform cap (default 1/day, Mac-local date) would
         # refuse the day's second reel; the guide is that second reel by design.
