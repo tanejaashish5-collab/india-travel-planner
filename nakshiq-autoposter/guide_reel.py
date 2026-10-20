@@ -944,8 +944,9 @@ def qa(path: Path, expect: float) -> str:
         return "file missing or under 0.5 MB"
     pr = lambda *a: subprocess.run(["ffprobe", "-v", "error", *a, str(path)], capture_output=True, text=True).stdout.strip()
     try:
-        dur = float(pr("-show_entries", "format=duration", "-of", "csv=p=0"))
-        frames = int(pr("-count_frames", "-select_streams", "v", "-show_entries", "stream=nb_read_frames", "-of", "csv=p=0"))
+        first = lambda out: re.split(r"[,\s]+", out)[0]   # a photo's ICC profile adds an empty side-data column ("1184,")
+        dur = float(first(pr("-show_entries", "format=duration", "-of", "csv=p=0")))
+        frames = int(first(pr("-count_frames", "-select_streams", "v", "-show_entries", "stream=nb_read_frames", "-of", "csv=p=0")))
     except ValueError:
         return "ffprobe could not read the cut"
     if not pr("-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0"):

@@ -55,5 +55,303 @@
   "endline": "Plan the long weekend",
   "tags": "#dussehra #longweekend #manali #shimla #mussoorie #nainital #agra #darjeeling #coorg #lonavala #indiatravel #NakshIQ",
   "_source": "Dussehra Tue 20 Oct 2026 per the DoPT gazetted list (globalholidayscalendar.com/countries/india/2026, esquireindia long-weekends 2026). Pairs from destinations.crowd_calendar + tourist_trap_alternatives, queried 2026-10-05. 10-05: Nainital + Mussoorie added after founder correction; notes fixed from Amar Ujala 3 Oct 2026, HT/Outlook Gandhi Jayanti 2026 coverage; mussoorie->chakrata swap added (Outlook Traveller route, 75-81 km)."
+ },
+ "dussehra-2026-recap": {
+  "title": "Dussehra long weekend",
+  "dates": "17 to 20 Oct",
+  "month": 10,
+  "post_on": "2026-10-22",
+  "recap_of": "dussehra-2026",
+  "said_on": "13 Oct",
+  "reports": [
+   {
+    "trap": "mussoorie",
+    "alt": "chakrata",
+    "photo": "g04.jpg",
+    "outlet": "Amar Ujala",
+    "date": "19 Oct",
+    "fact": "Jammed from morning to evening",
+    "headline": "मसूरी: लॉन्ग वीकेंड पर उमड़ी पर्यटकों की भीड़, शहर की ट्रैफिक व्यवस्था चरमराई, जाम से जूझते रहे सैलानी",
+    "headline_en": "Mussoorie: tourist crowd on the long weekend, city traffic collapses, visitors stuck in jams",
+    "url": "https://www.amarujala.com/dehradun/tourists-flock-to-in-mussoorie-over-long-weekend-city-traffic-system-collapses-2026-10-19"
+   },
+   {
+    "trap": "agra",
+    "alt": "orchha",
+    "photo": "g06.jpg",
+    "outlet": "Amar Ujala",
+    "date": "20 Oct",
+    "fact": "32,000+ at the Taj on Monday",
+    "headline": "यूपी: ताजमहल पर पर्यटकों का सैलाब, 32 हजार से ज्यादा पहुंचे; सुबह से लगीं लंबी कतारें",
+    "headline_en": "Flood of tourists at the Taj Mahal, over 32,000 arrive; long queues from the morning",
+    "url": "https://www.amarujala.com/uttar-pradesh/agra/over-32-000-tourists-visit-taj-mahal-during-dussehra-holidays-2026-10-20"
+   },
+   {
+    "trap": "coorg",
+    "alt": "sakleshpur",
+    "photo": "g08.jpg",
+    "outlet": "Samyukta Karnataka",
+    "date": "20 Oct",
+    "fact": "Homestays full from 17 Oct",
+    "headline": "ದಸರಾ ರಜೆ ಎಫೆಕ್ಟ್‌: ಮಲೆನಾಡಿನ ಹೋಂಸ್ಟೇಗಳಿಗೆ ಫುಲ್‌ ಡಿಮ್ಯಾಂಡ್‌, ರೂಮ್‌ ಸಿಗೋದು ಕಷ್ಟ!",
+    "headline_en": "Dasara holiday effect: full demand for Malnad homestays, rooms hard to find",
+    "url": "https://samyuktakarnataka.in/news/karnataka/high-demand-for-homestays-in-malenadu/"
+   },
+   {
+    "trap": "lonavala",
+    "alt": "igatpuri",
+    "photo": "g09.jpg",
+    "outlet": "Punenow",
+    "date": "16 Oct",
+    "fact": "Police said avoid non-essential travel",
+    "headline": "Expect Severe Traffic on Pune-Mumbai Expressway and Old Highway Till October 20: Police Issue Public Transport Advisory",
+    "headline_en": "",
+    "url": "https://www.punenow.com/expect-severe-traffic-on-pune-mumbai-expressway-and-old-highway-till-october-20-police-issue-public-transport-advisory/"
+   }
+  ],
+  "no_reports": [
+   "Shimla",
+   "Manali",
+   "Darjeeling",
+   "Nainital"
+  ],
+  "endline": "Plan the next long weekend",
+  "tags": "#dussehra #longweekend #mussoorie #agra #coorg #lonavala #indiatravel #NakshIQ",
+  "_source": "Reports collected 2026-10-21 (WebSearch + fetch of each article; dates and quotes checked on the page). No Dussehra-weekend jam reports found for Shimla, Manali, Darjeeling or Nainital, so they are left out. Photos = part 1's swap photos (already eyeballed).",
+  "hook_photos": [
+   [
+    "Mussoorie traffic jam",
+    "Mussoorie"
+   ],
+   [
+    "Mall Road Mussoorie crowd",
+    "Mussoorie"
+   ],
+   [
+    "Taj Mahal queue",
+    "Taj"
+   ],
+   [
+    "Taj Mahal crowd",
+    "Taj"
+   ]
+  ],
+  "next": "diwali-2026",
+  "next_photos": [
+   [
+    "Diwali diyas",
+    "diya"
+   ],
+   [
+    "Diwali lamps",
+    "Diwali"
+   ],
+   [
+    "Diwali lights",
+    "Diwali"
+   ],
+   [
+    "Diwali Jaipur",
+    "Diwali"
+   ]
+  ]
+ },
+ "diwali-2026": {
+  "title": "Diwali weekend",
+  "dates": "7 to 8 Nov",
+  "month": 11,
+  "post_on": "2026-11-04",
+  "pairs": [
+   [
+    "jaipur",
+    "bundi"
+   ],
+   [
+    "agra",
+    "orchha"
+   ],
+   [
+    "mussoorie",
+    "kanatal"
+   ],
+   [
+    "nainital",
+    "mukteshwar"
+   ],
+   [
+    "rishikesh",
+    "chopta"
+   ],
+   [
+    "darjeeling",
+    "kalimpong"
+   ],
+   [
+    "gangtok",
+    "ravangla"
+   ],
+   [
+    "coorg",
+    "sakleshpur"
+   ]
+  ],
+  "hook_photos": [
+   [
+    "traffic jam Mussoorie",
+    "traffic jam"
+   ],
+   [
+    "traffic jam Nainital",
+    "traffic jam"
+   ],
+   [
+    "Hawa Mahal crowd",
+    "crowd"
+   ],
+   [
+    "traffic jam India",
+    "traffic jam"
+   ]
+  ],
+  "endline": "Plan the Diwali weekend",
+  "tags": "#diwali #longweekend #jaipur #agra #mussoorie #nainital #rishikesh #darjeeling #gangtok #coorg #indiatravel #NakshIQ",
+  "_source": "Diwali Sun 8 Nov 2026: Amavasya with the Sun in sidereal Libra, new moon 9 Nov 12:32 IST, Amavasya covers the 8 Nov evening (pyswisseph, computed 2026-10-21; Adhika Masa year, so not recalled). Pairs: trap has 11 in crowd_calendar.peak_months or avoid_weekends=true, swap row with distance/drive where we have one, queried 2026-10-21. Jaipur note itself says 'Diwali weekend is lovely but packed'. Manali left out: its note calls Sep-Nov the quiet sweet spot.",
+  "photo_queries": {
+   "mukteshwar": [
+    [
+     "Mukteshwar Nainital",
+     "Nainital"
+    ],
+    [
+     "Mukteshwar Uttarakhand",
+     "Uttarakhand"
+    ],
+    [
+     "Mukteshwar Kumaon",
+     "Kumaon"
+    ]
+   ],
+   "lansdowne": [
+    [
+     "Lansdowne Uttarakhand",
+     "Uttarakhand"
+    ],
+    [
+     "Lansdowne Garhwal",
+     "Garhwal"
+    ],
+    [
+     "Lansdowne Pauri",
+     "Pauri"
+    ]
+   ],
+   "chitrakoot": [
+    [
+     "Chitrakoot Ramghat",
+     "Ramghat"
+    ],
+    [
+     "Chitrakoot Mandakini",
+     "Mandakini"
+    ],
+    [
+     "Kamadgiri Chitrakoot",
+     "Kamadgiri"
+    ]
+   ]
+  }
+ },
+ "guru-nanak-2026": {
+  "title": "Guru Nanak Jayanti long weekend",
+  "dates": "21 to 24 Nov",
+  "month": 11,
+  "post_on": "2026-11-17",
+  "pairs": [
+   [
+    "shimla",
+    "kasauli"
+   ],
+   [
+    "mussoorie",
+    "chakrata"
+   ],
+   [
+    "nainital",
+    "almora"
+   ],
+   [
+    "rishikesh",
+    "lansdowne"
+   ],
+   [
+    "agra",
+    "orchha"
+   ]
+  ],
+  "hook_photos": [
+   [
+    "traffic jam Shimla",
+    "traffic jam"
+   ],
+   [
+    "traffic jam Mussoorie",
+    "traffic jam"
+   ],
+   [
+    "traffic jam Nainital",
+    "traffic jam"
+   ],
+   [
+    "traffic jam India",
+    "traffic jam"
+   ]
+  ],
+  "endline": "Plan the long weekend",
+  "tags": "#gurunanakjayanti #gurpurab #longweekend #shimla #mussoorie #nainital #rishikesh #agra #indiatravel #NakshIQ",
+  "_source": "Guru Nanak Jayanti = Kartik Purnima: full moon 24 Nov 20:23 IST, Sun in sidereal Scorpio, Purnima at sunrise Tue 24 Nov (pyswisseph, 2026-10-21). Sat 21-Tue 24 with Mon 23 as the bridge day. Pairs from crowd_calendar (11 in peak_months or avoid_weekends) + tourist_trap_alternatives, queried 2026-10-21. Pushkar left out: Kartik Purnima is its own fair week and Ajmer is not a quiet swap. Jaipur dropped (its crowd line is about Diwali) and Amritsar dropped (our note calls the Golden Temple manageable, and Gurpurab is why people go). 10-21 eyeball: Dhanaulti (shrub close-up) and Chitrakoot (packed Ramghat aarti under 'go here instead') swapped for Chakrata and Orchha.",
+  "photo_queries": {
+   "mukteshwar": [
+    [
+     "Mukteshwar Nainital",
+     "Nainital"
+    ],
+    [
+     "Mukteshwar Uttarakhand",
+     "Uttarakhand"
+    ],
+    [
+     "Mukteshwar Kumaon",
+     "Kumaon"
+    ]
+   ],
+   "lansdowne": [
+    [
+     "Lansdowne Uttarakhand",
+     "Uttarakhand"
+    ],
+    [
+     "Lansdowne Garhwal",
+     "Garhwal"
+    ],
+    [
+     "Lansdowne Pauri",
+     "Pauri"
+    ]
+   ],
+   "chitrakoot": [
+    [
+     "Chitrakoot Ramghat",
+     "Ramghat"
+    ],
+    [
+     "Chitrakoot Mandakini",
+     "Mandakini"
+    ],
+    [
+     "Kamadgiri Chitrakoot",
+     "Kamadgiri"
+    ]
+   ]
+  }
  }
 }
