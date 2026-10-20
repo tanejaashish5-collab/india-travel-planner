@@ -12,7 +12,9 @@ export async function GET() {
   const view = await getSnowOutlooks();
   const likely = view.stale ? [] : view.outlooks.filter((o) => o.confidence === "likely");
   if (!likely.length) {
-    return NextResponse.json({ toast: null }, { headers: { "Cache-Control": "public, s-maxage=600, stale-while-revalidate=1800" } });
+    // Fresh run, nothing likely: the toast still points people at the snow page, quietly.
+    const quiet = !view.stale && view.lastRun ? { points: view.lastRun.points, run_at: view.lastRun.run_at } : null;
+    return NextResponse.json({ toast: null, quiet }, { headers: { "Cache-Control": "public, s-maxage=600, stale-while-revalidate=1800" } });
   }
   const names = likely.slice(0, 2).map((o) => ({ en: o.point?.name ?? o.point_id, hi: o.point?.name_hi ?? o.point?.name ?? o.point_id }));
   const toast = {

@@ -45,6 +45,15 @@ const HERO_CLIPS = [
   { id: "patnitop", en: "Patnitop", hi: "पटनीटॉप" },
   { id: "tsomgo-lake", en: "Tsomgo Lake", hi: "सोमगो झील" },
   { id: "badrinath", en: "Badrinath", hi: "बद्रीनाथ" },
+  // Batch 1 from Cowork, 2026-10-20 (ops/nakshiq-veo/snow-clips-batch1.PROMPT.txt); 3 frames each checked.
+  { id: "snow-manali-solang", en: "Solang Valley", hi: "सोलंग घाटी" },
+  { id: "snow-rohtang-atal", en: "Rohtang road", hi: "रोहतांग मार्ग" },
+  { id: "snow-spiti-kaza", en: "Spiti", hi: "स्पीति" },
+  { id: "snow-sonamarg", en: "Sonamarg", hi: "सोनमर्ग" },
+  { id: "snow-narkanda-shimla", en: "Narkanda", hi: "नारकंडा" },
+  { id: "snow-nathula-sikkim", en: "Nathu La road", hi: "नाथू ला मार्ग" },
+  { id: "snow-tawang-sela", en: "Sela Pass", hi: "सेला दर्रा" },
+  { id: "snow-mussoorie-landour", en: "Landour", hi: "लंढौर" },
 ];
 // Places people actually search "will it snow in ..." for. Kept only if they are on the watch list.
 const FAQ_PLACES = ["manali", "gulmarg", "sonamarg", "spiti-valley", "kaza", "shimla", "kedarnath", "gangtok", "rohtang-pass", "lahaul-valley"];
