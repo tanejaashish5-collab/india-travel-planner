@@ -342,7 +342,7 @@ def make_cover(script: Path) -> Path:
             if words(c["hook"]) > 8:
                 raise SystemExit(f"cover hook over 8 words: {c['hook']}")
             RC.from_image(_cover_img(s["slug"], c["image"], td), c["hook"], out, hi=RC.VERMILLION_BRIGHT,
-                          tag=SERIES_TAG.get(series))
+                          tag=c.get("tag") or SERIES_TAG.get(series))
         elif style == "B":
             # founder 2026-10-20: "CLOSED" in its box was perfect; "ALMOST EMPTY" left the box half empty
             # because long stamps shrink the type. One punchy word, at most 9 characters.

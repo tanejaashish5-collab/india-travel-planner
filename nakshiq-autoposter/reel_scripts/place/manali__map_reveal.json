@@ -18,7 +18,8 @@
  },
  "scenes": [
   {
-   "bg": "map"
+   "bg": "map",
+   "hook": "Manali's waterfall <em>everyone skips</em>"
   },
   {
    "bg": "photo",
@@ -171,8 +172,9 @@
  ],
  "cover": {
   "style": "A",
-  "image": "place",
-  "hook": "Where is Manali,|*really?*"
+  "image": "photo:Jana waterfall|jana",
+  "hook": "Manali's waterfall|*everyone skips*",
+  "tag": "Nobody tells you"
  },
  "music": "travel-slow-pop-840",
  "music_start": 0

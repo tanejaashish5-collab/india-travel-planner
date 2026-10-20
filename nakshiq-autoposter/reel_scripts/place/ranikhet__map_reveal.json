@@ -18,7 +18,8 @@
  },
  "scenes": [
   {
-   "bg": "map"
+   "bg": "map",
+   "hook": "A temple covered<br><em>in brass bells</em>"
   },
   {
    "bg": "photo",
@@ -38,7 +39,7 @@
     "Walls and roof covered in brass bells",
     "Offered when a prayer is answered"
    ],
-   "bg": "photo:Ranikhet forest|ranikhet"
+   "bg": "photo:Jhula Devi temple Ranikhet|jhula"
   },
   {
    "kicker": "Skip",
@@ -173,8 +174,9 @@
  ],
  "cover": {
   "style": "A",
-  "image": "place",
-  "hook": "Where is Ranikhet,|*really?*"
+  "image": "photo:Jhula Devi temple Ranikhet|jhula",
+  "hook": "A temple covered|*in brass bells*",
+  "tag": "Nobody tells you"
  },
  "music": "travel-pop-07-94",
  "music_start": 0

@@ -18,7 +18,8 @@
  },
  "scenes": [
   {
-   "bg": "map"
+   "bg": "map",
+   "hook": "Snow peaks<br><em>behind tea gardens?</em>"
   },
   {
    "bg": "photo:Palampur Himachal|palampur",
@@ -173,8 +174,9 @@
  ],
  "cover": {
   "style": "A",
-  "image": "place",
-  "hook": "Where is Palampur,|*really?*"
+  "image": "clip:palampur__hero.mp4@1",
+  "hook": "Snow peaks|*behind tea gardens?*",
+  "tag": "Nobody tells you"
  },
  "music": "uplifting-driving-ambition-682",
  "music_start": 0

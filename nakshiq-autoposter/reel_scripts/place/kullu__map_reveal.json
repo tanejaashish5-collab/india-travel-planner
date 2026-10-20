@@ -18,7 +18,8 @@
  },
  "scenes": [
   {
-   "bg": "map"
+   "bg": "map",
+   "hook": "Kullu's temple <em>nobody stops at</em>"
   },
   {
    "bg": "photo",
@@ -173,8 +174,9 @@
  ],
  "cover": {
   "style": "A",
-  "image": "place",
-  "hook": "Where is Kullu,|*really?*"
+  "image": "photo:Basheshwar Mahadev Bajaura|bajaura/basheshwar",
+  "hook": "Kullu's temple|*nobody stops at*",
+  "tag": "Nobody tells you"
  },
  "music": "travel-slow-pop-840",
  "music_start": 0

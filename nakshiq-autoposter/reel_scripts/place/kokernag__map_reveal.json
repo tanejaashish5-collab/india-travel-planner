@@ -18,7 +18,8 @@
  },
  "scenes": [
   {
-   "bg": "map"
+   "bg": "map",
+   "hook": "Kashmir's hidden <em>trout farm</em>"
   },
   {
    "bg": "photo",
@@ -174,8 +175,9 @@
  ],
  "cover": {
   "style": "A",
-  "image": "place",
-  "hook": "Where is Kokernag,|*really?*"
+  "image": "photo:Kokernag trout|kokernag",
+  "hook": "Kashmir's hidden|*trout farm*",
+  "tag": "Nobody tells you"
  },
  "music": "travel-feel-alive-3",
  "music_start": 2
