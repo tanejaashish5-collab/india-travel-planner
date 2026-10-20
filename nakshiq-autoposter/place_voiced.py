@@ -43,6 +43,8 @@ SERIES_MUSIC = {
     "real_cost": [("travel-night-sky-hip-hop-963", 12), ("travel-like-a-loop-machine-351", 0), ("hype-267", 0), ("hype-738", 0)],
     "sos": [("cinematic-the-journey-543", 20), ("cinematic-rising-sun-892", 0), ("cinematic-vastness-759", 0)],
     "swap": [("edm-471", 0), ("edm-371", 26), ("house-129", 35)],
+    "skip": [("cinematic-vastness-759", 0), ("cinematic-a-new-life-606", 29), ("cinematic-rising-sun-892", 27)],
+    "hidden_gems": [("travel-traveling-along-669", 2), ("uplifting-happy-times-1030", 0), ("uplifting-mountains-952", 0)],
     "eat_here": [("travel-just-keep-walking-339", 33), ("uplifting-mountains-952", 0), ("travel-traveling-along-669", 0)],
 }
 LEAD = 1.4                     # map + first beat of music before the first word
@@ -94,9 +96,12 @@ def _facts(slug: str, today: date) -> dict:
         return P.facts_map_reveal(slug, today)
     except P.Refuse:
         g = (P.data().get("geo") or {}).get(slug) or {}
-        best, best_score = P.next_best(slug, today)
+        try:
+            best, best_score = P.next_best(slug, today)
+        except P.Refuse:                       # a skip reel (Char Dham in winter) has no good month ahead
+            best, best_score = 0, None
         return {"slug": slug, "name": P.name(slug), "state": g.get("state_name") or "", "lat": g.get("lat") or 22,
-                "lng": g.get("lng") or 79, "facts": [], "best": P.MONTHS[best], "best_score": best_score,
+                "lng": g.get("lng") or 79, "facts": [], "best": P.MONTHS[best] if best else "", "best_score": best_score,
                 "photo": None, "commons": []}
 
 
@@ -232,7 +237,12 @@ def render(script: Path, out: Path, music: str | None = None, today: date | None
             c = _extra_photo(slug, q, must or q)
             if not c:
                 raise SystemExit(f"scene {i + 1}: no Commons photo for {q!r}")
-            P._photo(Path(c["file"]), w / "assets" / f"p{i}.jpg")
+            src_img = Path(c["file"])
+            if sc.get("crop"):                 # [x, y, w, h] as fractions: frame the subject above the card
+                x0, y0, cw, ch = sc["crop"]    # (Ukhimath's temple sat under the card, 2026-10-20)
+                src_img = w / "assets" / f"crop{i}.jpg"
+                _ff("-i", c["file"], "-vf", f"crop=iw*{cw}:ih*{ch}:iw*{x0}:ih*{y0}", "-q:v", "2", str(src_img))
+            P._photo(src_img, w / "assets" / f"p{i}.jpg")
             authors.append(c.get("author"))
             media.append(f'<img id="bg{i}" class="clip bg" src="assets/p{i}.jpg" alt="" data-start="{st}" data-duration="{du}" data-track-index="0" />')
             anim.append(f'tl.fromTo("#bg{i}", {{scale:1.04, transformOrigin:"50% 45%"}}, {{scale:1.16, duration:{du}, ease:"none"}}, {st});')

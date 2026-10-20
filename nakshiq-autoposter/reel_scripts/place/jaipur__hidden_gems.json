@@ -1,0 +1,151 @@
+{
+ "id": "jaipur__hidden_gems",
+ "slug": "jaipur",
+ "format": "hidden_gems",
+ "series": "hidden_gems",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 3; founder approved the text in chat 2026-10-20 (option B: dip below the ElevenLabs reserve once)",
+ "music": "travel-traveling-along-669",
+ "music_start": 2,
+ "vo": {
+  "hi": [
+   "जयपुर में सब आमेर फ़ोर्ट जाते हैं, पर उसके आसपास कुछ जगहें हैं जो लगभग कोई नहीं देखता।",
+   "आमेर से पाँच मिनट दूर पन्ना मीणा का कुंड है, जिसकी सीढ़ियाँ पहेली जैसी दिखती हैं, पर मेन रोड पर कोई बोर्ड नहीं, तो सब आगे निकल जाते हैं।",
+   "आमेर के कार पार्क से पैदल जगत शिरोमणि मंदिर है, जहाँ मान्यता है कि कृष्ण की मूर्ति वही है जिसे मीरा बाई पूजती थीं, पर कोई टूर यहाँ नहीं रुकता।",
+   "और ढाई घंटे दूर आभानेरी की चाँद बावड़ी, तेरह मंज़िल गहरी, जो बैटमैन की फ़िल्म में दिखी थी, फिर भी लगभग ख़ाली।",
+   "नवंबर सबसे अच्छा है, पर दिवाली का वीकेंड भरा रहता है, तो मंगलवार से गुरुवार जाइए।",
+   "इसे सेव कर लीजिए, अगली बार आमेर में काम आएगा।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:jaipur__hero.mp4",
+   "hook": "Near <em>Amber Fort</em>.<br>Nobody looks."
+  },
+  {
+   "kicker": "Hidden stepwell",
+   "lines": [
+    "<em>Panna Meena Ka Kund</em>",
+    "5 min from Amber Fort",
+    "No sign on the main road",
+    "95% of tourists drive past"
+   ],
+   "bg": "photo:Panna Meena ka Kund|panna"
+  },
+  {
+   "kicker": "No tour stops here",
+   "lines": [
+    "<em>Jagat Shiromani Temple</em>",
+    "Built 1599 to 1608",
+    "A walk from the Amer car park",
+    "Free entry"
+   ],
+   "bg": "photo:Jagat Shiromani Temple|shiromani"
+  },
+  {
+   "kicker": "Worth the drive",
+   "lines": [
+    "<em>Chand Baori</em>, Abhaneri",
+    "13 storeys, 3,500 steps",
+    "2.5 hrs from Jaipur",
+    "Seen in The Dark Knight Rises"
+   ],
+   "bg": "photo:Chand Baori|chand baori"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Diwali weekend is packed. Go Tuesday to Thursday.",
+   "bg": "photo:Amber Fort Jaipur|amer"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Jaipur mein sab *Amer Fort* jaate hain,",
+    "par uske aaspaas kuch jagah hain",
+    "jo lagbhag *koi nahi dekhta*."
+   ],
+   [
+    "Amer se *5 minute* door *Panna Meena ka Kund* hai,",
+    "jiski seedhiyan *paheli* jaisi dikhti hain,",
+    "par main road par *koi board nahi*,",
+    "to sab aage nikal jaate hain."
+   ],
+   [
+    "Amer ke car park se paidal *Jagat Shiromani Mandir* hai,",
+    "jahan maanyata hai ki Krishna ki murti wahi hai",
+    "jise *Meera Bai* poojti thin,",
+    "par *koi tour yahan nahi rukta*."
+   ],
+   [
+    "Aur *dhai ghante* door Abhaneri ki *Chand Baori*,",
+    "*13 manzil* gehri,",
+    "jo *Batman* ki film mein dikhi thi,",
+    "phir bhi lagbhag *khaali*."
+   ],
+   [
+    "*November* sabse achha hai,",
+    "par Diwali ka weekend bhara rehta hai,",
+    "to *Mangalvaar se Guruvaar* jaaiye."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "agli baar Amer mein kaam aayega."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone in Jaipur goes to *Amber Fort*,",
+    "but a few places around it",
+    "*almost nobody sees*."
+   ],
+   [
+    "*5 minutes* from Amber is *Panna Meena Ka Kund*,",
+    "with stairs like a *puzzle*,",
+    "but there's *no sign* on the main road,",
+    "so everyone drives past."
+   ],
+   [
+    "A walk from the Amer car park is *Jagat Shiromani Temple*,",
+    "where it's believed the Krishna idol",
+    "is the one *Meera Bai* worshipped,",
+    "but *no tour stops here*."
+   ],
+   [
+    "And *two and a half hours* away, *Chand Baori* in Abhaneri,",
+    "*13 storeys* deep,",
+    "seen in the *Batman* film,",
+    "yet almost *empty*."
+   ],
+   [
+    "*November* is best,",
+    "but Diwali weekend is packed,",
+    "so go *Tuesday to Thursday*."
+   ],
+   [
+    "*Save this*",
+    "for your next Amber trip."
+   ]
+  ]
+ },
+ "title": "What nobody shows you near Amber Fort | NakshIQ",
+ "caption_lead": "Everyone in Jaipur goes to Amber Fort. Five minutes away is Panna Meena Ka Kund, a stepwell with no sign on the main road, so 95% of tourists drive past. A walk from the Amer car park is Jagat Shiromani Temple (1599 to 1608), where it's believed the Krishna idol is the one Meera Bai worshipped; free entry, and no tour stops here. Two and a half hours away, Chand Baori in Abhaneri: 13 storeys and 3,500 steps, seen in The Dark Knight Rises. November is the best month; skip Diwali weekend and go Tuesday to Thursday.",
+ "cost_basis": [],
+ "facts": [
+  "gem Panna Meena Ka Kund: 1 km / 5min from Amber Fort; '95% of tourists drive past. No signage on main road'",
+  "gem Jagat Shiromani Temple: 1599-1608; 'Local tradition holds that the Krishna idol ... is the same one Meera Bai worshipped'; 4-minute walk from Amer Fort's main car park; 'no fort tour stops here'; Free entry",
+  "gem Chand Baori: 95 km, 2.5hr; 13 stories, 3500 steps; 'Featured in Batman Dark Knight Rises. Almost empty.'",
+  "months.11 5=10/10; crowd: 'Diwali weekend is lovely but packed', best_day Tue-Thu"
+ ],
+ "spoken_numbers": [
+  "पाँच (5 min)",
+  "ढाई (2.5 hrs)",
+  "तेरह (13 storeys)"
+ ]
+}

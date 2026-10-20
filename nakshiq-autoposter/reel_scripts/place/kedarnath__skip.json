@@ -1,0 +1,143 @@
+{
+ "id": "kedarnath__skip",
+ "slug": "kedarnath",
+ "format": "skip",
+ "series": "skip",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 3; founder approved the text in chat 2026-10-20 (option B: dip below the ElevenLabs reserve once)",
+ "music": "cinematic-vastness-759",
+ "music_start": 0,
+ "vo": {
+  "hi": [
+   "नवंबर में चार धाम का प्लान है? रुकिए, क्योंकि दिवाली के बाद चारों धाम के कपाट बंद हो जाते हैं।",
+   "केदारनाथ और यमुनोत्री भाई दूज पर बंद होते हैं, गंगोत्री और बद्रीनाथ भी उन्हीं दिनों में, और फिर छह महीने बर्फ़।",
+   "पर जो कोई नहीं बताता, वो ये कि सर्दियों में भगवान नीचे गाँवों में आ जाते हैं, और पूजा वहीं होती है।",
+   "केदारनाथ जी ऊखीमठ में, बद्रीनाथ जी पांडुकेश्वर में, गंगा माँ मुखबा में, और यमुना माँ खरसाली में।",
+   "और अगर ऊपर ही जाना है, तो दिवाली से पहले जाइए, और कपाट बंद होने की तारीख़ पक्की कर लीजिए।",
+   "ये उसे भेजिए जो नवंबर में चार धाम की सोच रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Kedarnath Temple|kedarnath",
+   "hook": "<em>Char Dham</em><br>in November?"
+  },
+  {
+   "kicker": "Closed for winter",
+   "big": "6 months",
+   "sub": "Kedarnath and Yamunotri close on Bhai Dooj. Gangotri and Badrinath around the same days.",
+   "bg": "photo:Kedarnath temple snow|kedarnath"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "line": "The deities come down",
+   "sub": "Winter worship continues in the villages below.",
+   "bg": "photo:Omkareshwar Temple Ukhimath|ukhimath",
+   "crop": [
+    0.54,
+    0.375,
+    0.264,
+    0.625
+   ]
+  },
+  {
+   "kicker": "Winter seats",
+   "lines": [
+    "Kedarnath: <em>Ukhimath</em>",
+    "Badrinath: <em>Pandukeshwar</em>",
+    "Gangotri: <em>Mukhba</em>",
+    "Yamunotri: <em>Kharsali</em>"
+   ],
+   "bg": "photo:Badrinath Temple|badrinath"
+  },
+  {
+   "kicker": "Going up?",
+   "big": "Before Diwali",
+   "sub": "Confirm the closing date first.",
+   "bg": "photo:Yamunotri temple|yamunotri"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "November mein *Char Dham* ka plan hai?",
+    "Rukiye, kyunki *Diwali ke baad*",
+    "chaaron dhaam ke *kapaat band* ho jaate hain."
+   ],
+   [
+    "*Kedarnath aur Yamunotri* Bhai Dooj par band hote hain,",
+    "Gangotri aur Badrinath bhi unhi dinon mein,",
+    "aur phir *6 mahine barf*."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "wo ye ki sardiyon mein *bhagwan neeche gaon* mein aa jaate hain,",
+    "aur *pooja wahin* hoti hai."
+   ],
+   [
+    "Kedarnath ji *Ukhimath* mein,",
+    "Badrinath ji *Pandukeshwar* mein,",
+    "Ganga Maa *Mukhba* mein,",
+    "aur Yamuna Maa *Kharsali* mein."
+   ],
+   [
+    "Aur agar upar hi jaana hai,",
+    "to *Diwali se pehle* jaaiye,",
+    "aur kapaat band hone ki *taareekh pakki* kar lijiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo November mein *Char Dham* ki soch raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Planning *Char Dham* in November?",
+    "Wait, because *after Diwali*",
+    "all four temples *close*."
+   ],
+   [
+    "*Kedarnath and Yamunotri* close on Bhai Dooj,",
+    "Gangotri and Badrinath around the same days,",
+    "and then *six months of snow*."
+   ],
+   [
+    "What nobody tells you:",
+    "in winter the *deities come down* to the villages,",
+    "and *worship continues* there."
+   ],
+   [
+    "Kedarnath at *Ukhimath*,",
+    "Badrinath at *Pandukeshwar*,",
+    "Ganga at *Mukhba*,",
+    "and Yamuna at *Kharsali*."
+   ],
+   [
+    "If you want the temples themselves,",
+    "go *before Diwali*,",
+    "and *confirm the closing date* first."
+   ],
+   [
+    "*Send this* to whoever",
+    "is thinking of *Char Dham* in November."
+   ]
+  ]
+ },
+ "title": "Char Dham in November? Watch this first | NakshIQ",
+ "caption_lead": "Planning Char Dham in November? After Diwali all four temples close for about six months of snow: Kedarnath and Yamunotri on Bhai Dooj, Gangotri and Badrinath around the same days. What nobody tells you: the deities come down for winter, and worship continues at Ukhimath (Kedarnath), Pandukeshwar (Badrinath), Mukhba (Gangotri) and Kharsali (Yamunotri). Going up to the temples? Go before Diwali and confirm the closing date first.",
+ "cost_basis": [],
+ "facts": [
+  "kedarnath months.11 1=2/10: 'Temple closes post-Diwali with Bhai Dooj ceremony ... check exact closure date'; months.12: 'Murti moved to Ukhimath'",
+  "yamunotri months.10: 'Temple closing ceremony (Yama Dwitiya)' (= Bhai Dooj); months.11: 'Idol shifted to Kharsali ... 6-month closure begins'; months.12 'Winter worship continues at Kharsali'",
+  "gangotri months.11: 'closes after Diwali-week ceremony ... Murti moved to Mukhba village for winter worship'",
+  "badrinath months.11: 'closed for winter after Diwali-week ceremony ... Murti moved to Pandukeshwar for winter worship'",
+  "no lunar dates spoken (feedback_test_for_adhika_masa_before_lunar_dates)"
+ ],
+ "spoken_numbers": [
+  "छह (6 months)"
+ ]
+}
