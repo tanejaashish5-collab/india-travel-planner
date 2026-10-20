@@ -1,0 +1,162 @@
+{
+ "id": "shimla__real_cost",
+ "slug": "shimla",
+ "format": "real_cost",
+ "series": "real_cost",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 2 (one series each); founder approved the text in chat 2026-10-20; facts re-checked against fact pack + emergency_sos before voicing",
+ "music": "travel-night-sky-hip-hop-963",
+ "music_start": 12,
+ "vo": {
+  "hi": [
+   "शिमला में एक अच्छा कमरा, नवंबर में उनतीस सौ का, और मई जून में सैंतालीस सौ का।",
+   "फ़र्क़ बस इतना है कि आप कब जाते हैं, क्योंकि मई जून में दाम चढ़ जाते हैं और मॉल रोड पर पैर रखने की जगह नहीं होती।",
+   "और नवंबर में वही मॉल रोड शांत होता है, और पुरानी इमारतों पर पतझड़ की धूप पड़ती है।",
+   "टैक्सी का किराया दोनों महीनों में एक जैसा रहता है, तो पूरी बचत कमरे पर होती है।",
+   "बस एक बात, वीकेंड पर मॉल रोड पर बहुत भीड़ होती है, तो हफ़्ते के बीच में जाइए।",
+   "ये उसे भेजिए जो हर बार मई में शिमला का प्लान बनाता है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Shimla skyline|shimla",
+   "hook": "Same <em>Shimla</em>.<br>Two prices.",
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,900"
+    ],
+    [
+     "May and June",
+     "₹4,700"
+    ]
+   ]
+  },
+  {
+   "kicker": "May and June",
+   "big": "Peak season",
+   "sub": "Mall Road overcrowded. Traffic jams on NH5.",
+   "bg": "photo:Shimla Mall Road|mall road"
+  },
+  {
+   "kicker": "November",
+   "big": "Quiet",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Mall Road peaceful. Autumn light on the colonial buildings.",
+   "bg": "photo:Viceregal Lodge Shimla|viceregal"
+  },
+  {
+   "kicker": "Taxi, per day",
+   "big": "₹1,800",
+   "sub": "The same in every season. The whole saving is on the room.",
+   "bg": "photo:Kalka Shimla railway|shimla"
+  },
+  {
+   "kicker": "One thing",
+   "big": "Go midweek",
+   "sub": "Mall Road on weekends is packed.",
+   "bg": "photo:The Ridge Shimla|ridge"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Shimla mein ek achha kamra,",
+    "November mein *₹2,900* ka,",
+    "aur May June mein *₹4,700* ka."
+   ],
+   [
+    "Farq bas itna hai ki aap *kab* jaate hain,",
+    "kyunki May June mein *daam chadh* jaate hain",
+    "aur Mall Road par *pair rakhne ki jagah* nahi hoti."
+   ],
+   [
+    "Aur *November* mein wahi Mall Road *shaant* hota hai,",
+    "aur purani imaaraton par",
+    "*patjhad ki dhoop* padti hai."
+   ],
+   [
+    "*Taxi* ka kiraya dono mahinon mein *ek jaisa* rehta hai,",
+    "to poori *bachat kamre* par hoti hai."
+   ],
+   [
+    "Bas ek baat,",
+    "*weekend* par Mall Road par bahut bheed hoti hai,",
+    "to *hafte ke beech* mein jaaiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo har baar *May mein* Shimla ka plan banata hai."
+   ]
+  ],
+  "en": [
+   [
+    "A good room in Shimla:",
+    "*₹2,900* in November,",
+    "and *₹4,700* in May and June."
+   ],
+   [
+    "The only difference is *when* you go,",
+    "because in May and June *prices climb*",
+    "and Mall Road has *no room to walk*."
+   ],
+   [
+    "In *November* the same Mall Road is *quiet*,",
+    "with *autumn light*",
+    "on the old buildings."
+   ],
+   [
+    "The *taxi* costs *the same* in both months,",
+    "so the whole *saving is on the room*."
+   ],
+   [
+    "One thing:",
+    "*weekends* on Mall Road are packed,",
+    "so go *midweek*."
+   ],
+   [
+    "*Send this* to whoever",
+    "always plans Shimla *for May*."
+   ]
+  ]
+ },
+ "caption_lead": "A good room in Shimla costs ₹2,900 a night in November and ₹4,700 in May and June. The taxi is ₹1,800 a day in both, so the whole saving is on the room. November is quiet, with autumn light on the colonial buildings; go midweek, because Mall Road on weekends is packed.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2900
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 4700
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "low",
+   "value": 1800
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "peak",
+   "value": 1800
+  }
+ ],
+ "facts": [
+  "costs hotel-mid low (incl 11) 2900, peak (5,6) 4700; transport-taxi-day 1800 in low, shoulder and peak",
+  "months.5 'Mall Road overcrowded ... Traffic jams on NH5'; months.6 'Mall Road elbow-to-elbow'",
+  "months.11 4=8/10 'Beautiful autumn light on colonial architecture. Mall Road peaceful.'",
+  "crowd: 'Mall Road on weekends is a nightmare ... Winter weekdays are magical' (weekdays only)",
+  "NOT used: months.5 says 'hotels 3x price'; the cost ledger says about 1.6x, and the ledger is what we quote"
+ ],
+ "spoken_numbers": [
+  "उनतीस सौ (2,900)",
+  "सैंतालीस सौ (4,700)"
+ ]
+}

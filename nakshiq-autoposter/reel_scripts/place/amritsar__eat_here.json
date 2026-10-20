@@ -1,0 +1,150 @@
+{
+ "id": "amritsar__eat_here",
+ "slug": "amritsar",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 2 (one series each); founder approved the text in chat 2026-10-20; facts re-checked against fact pack + emergency_sos before voicing",
+ "music": "travel-just-keep-walking-339",
+ "music_start": 33,
+ "vo": {
+  "hi": [
+   "अमृतसर में सब स्वर्ण मंदिर जाते हैं, पर खाने के मामले में यहाँ के लोग कुछ बातें कभी नहीं बताते।",
+   "रीजेंट सिनेमा के सामने सौ साल पुरानी लस्सी की दुकान है, पर वहाँ एक ही नाम की दो दुकानें हैं, और असली वाली दाईं तरफ़ है।",
+   "कुलचे के लिए मक़बूल रोड जाइए, जहाँ आटा सात बार मोड़ा जाता है, पर गाड़ी रेस कोर्स रोड पर खड़ी कीजिए, क्योंकि दोपहर में वो गली जाम रहती है।",
+   "और स्वर्ण मंदिर के पास वाले पुराने ढाबे पर मेन्यू मत देखिए, बस थाली मँगाइए, और एक बजे से पहले पहुँचिए, वरना लाइन गली तक जाती है।",
+   "नवंबर यहाँ का सबसे अच्छा महीना है, पर भीड़ भी इसी वक़्त होती है, तो वीकेंड छोड़कर मंगलवार से गुरुवार जाइए।",
+   "आपकी फ़ेवरेट अमृतसरी चीज़ कौन सी है? कमेंट में बताइए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:amritsar__tiny_world__s1.mp4",
+   "hook": "What <em>Amritsar</em> locals<br>never tell you"
+  },
+  {
+   "kicker": "Lassi, since 1921",
+   "lines": [
+    "<em>Gian Chand Lassi Wale</em>",
+    "Opposite Regent Cinema",
+    "Two shops, one name: the original is on the <em>right</em>"
+   ],
+   "bg": "photo:Amritsar lassi|lassi"
+  },
+  {
+   "kicker": "Kulcha",
+   "lines": [
+    "<em>All India Famous Amritsari Kulcha</em>",
+    "Maqbool Road",
+    "Dough folded seven times",
+    "Park on Race Course Road"
+   ],
+   "bg": "photo:Kulcha chole|kulcha"
+  },
+  {
+   "kicker": "The thali",
+   "lines": [
+    "<em>Kesar Da Dhaba</em>, since 1916",
+    "Skip the menu, order the thali",
+    "Before 1 pm or after 8 pm",
+    "Cash only"
+   ],
+   "bg": "photo:Kesar Da Dhaba|kesar"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Gurpurab lights at the Golden Temple. Go Tuesday to Thursday.",
+   "bg": "photo:Golden Temple night|golden temple"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Amritsar mein sab *Swarn Mandir* jaate hain,",
+    "par khaane ke maamle mein",
+    "yahan ke log kuch baatein *kabhi nahi batate*."
+   ],
+   [
+    "Regent Cinema ke saamne",
+    "*100 saal purani* lassi ki dukaan hai,",
+    "par wahan ek hi naam ki *do dukaanein* hain,",
+    "aur *asli waali daayin* taraf hai."
+   ],
+   [
+    "*Kulche* ke liye *Maqbool Road* jaaiye,",
+    "jahan aata *7 baar moda* jaata hai,",
+    "par gaadi *Race Course Road* par khadi kijiye,",
+    "kyunki dopahar mein wo gali *jaam* rehti hai."
+   ],
+   [
+    "Aur Swarn Mandir ke paas waale *purane dhaabe* par",
+    "menu mat dekhiye, bas *thaali* mangaaiye,",
+    "aur *1 baje se pehle* pahunchiye,",
+    "warna line gali tak jaati hai."
+   ],
+   [
+    "*November* yahan ka sabse achha mahina hai,",
+    "par *bheed* bhi isi waqt hoti hai,",
+    "to weekend chhodkar *Mangalvaar se Guruvaar* jaaiye."
+   ],
+   [
+    "Aapki *favourite Amritsari* cheez kaun si hai?",
+    "*Comment* mein bataiye."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone in Amritsar goes to the *Golden Temple*,",
+    "but about the food,",
+    "locals *never tell you* a few things."
+   ],
+   [
+    "Opposite Regent Cinema",
+    "is a *100-year-old* lassi shop,",
+    "but *two shops* share the name,",
+    "and the *original is on the right*."
+   ],
+   [
+    "For *kulcha* go to *Maqbool Road*,",
+    "where the dough is *folded seven times*,",
+    "but park on *Race Course Road*,",
+    "because that lane *jams* at lunch."
+   ],
+   [
+    "At the *old dhaba* near the Golden Temple,",
+    "skip the menu and order the *thali*,",
+    "and get there *before 1 pm*,",
+    "or the queue runs down the lane."
+   ],
+   [
+    "*November* is the best month here,",
+    "but also the *busiest*,",
+    "so skip weekends and go *Tuesday to Thursday*."
+   ],
+   [
+    "What's your *favourite Amritsari* thing?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "caption_lead": "What locals in Amritsar never tell you about the food. Gian Chand Lassi Wale, opposite Regent Cinema since 1921: two shops share the name, and the original is on the right as you face the cinema. All India Famous Amritsari Kulcha on Maqbool Road folds the dough seven times; park on Race Course Road and walk in. At Kesar Da Dhaba (since 1916), skip the menu and order the thali, before 1 pm or after 8 pm, cash only. November is the best month; go Tuesday to Thursday.",
+ "cost_basis": [],
+ "facts": [
+  "eatery Gian Chand Lassi Wale: opposite Regent Cinema; 'two adjacent shops with the same name, the original is the one on the right as you face Regent Cinema'; closes by 8pm (since 1921 per earlier fact pull)",
+  "eatery All India Famous Amritsari Kulcha, Maqbool Road: 'dough is folded seven times before stuffing'; 'Park on Race Course Road and walk in, Maqbool Road is single-lane chaos at lunch'",
+  "eatery Kesar Da Dhaba, Chowk Passian near Golden Temple, est 1916: 'Skip the menu, order the thali ... Cash only ... arrive before 1pm or after 8pm to dodge the queue down the lane'",
+  "months.11 5=10/10 'Gurpurab celebrations make Golden Temple magical with lights'; crowd: best Tue-Thu",
+  "no food prices anywhere (feedback_reels_no_food_cost_name_eateries)"
+ ],
+ "spoken_numbers": [
+  "सौ (100 years)",
+  "सात (seven times)",
+  "एक (1 pm)"
+ ]
+}

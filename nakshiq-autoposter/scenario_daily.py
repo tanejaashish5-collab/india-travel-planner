@@ -296,7 +296,7 @@ def caption_for(row: dict) -> tuple[str, str]:
     caption reads as the same voice as the video. Disclosure is in the text:
     the people in these scenes are AI-generated, and saying so costs nothing
     and keeps the account out of the undisclosed-AI-people class."""
-    if row.get("kind") in ("map_reveal", "two_months", "tiny_world"):
+    if row.get("voiced") or row.get("kind") in ("map_reveal", "two_months", "tiny_world"):
         import place_reels as PR
         return PR.caption(row)
     if row.get("format") == "longweekend":

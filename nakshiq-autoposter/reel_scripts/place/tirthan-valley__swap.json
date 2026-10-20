@@ -1,0 +1,144 @@
+{
+ "id": "tirthan-valley__swap",
+ "slug": "tirthan-valley",
+ "format": "swap",
+ "series": "swap",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 2 (one series each); founder approved the text in chat 2026-10-20; facts re-checked against fact pack + emergency_sos before voicing",
+ "music": "edm-471",
+ "music_drop": 31.5,
+ "music_drop_scene": 1,
+ "vo": {
+  "hi": [
+   "मनाली जा रहे हैं? रुकिए, एक बार ये देख लीजिए।",
+   "मनाली से करीब तीन घंटे पहले, कुल्लू ज़िले में ही, एक घाटी है, तीर्थन।",
+   "हमारी रिसर्च में ये वैसी है जैसा मनाली तीस साल पहले था, नदी में ट्राउट, कोई मॉल रोड नहीं, और नदी किनारे होमस्टे।",
+   "और पास ही चैहनी कोठी है, लकड़ी और पत्थर का एक पुराना किला, जो पीसा की मीनार की तरह थोड़ा झुका हुआ है।",
+   "दिसंबर में जलोड़ी पास बर्फ़ से बंद हो सकता है और जुलाई में नदी उफान पर होती है, तो नवंबर में जाइए, बस इंटरनेट की उम्मीद मत रखिए।",
+   "ये उसे भेजिए जिसने कहा था, चलो मनाली चलते हैं।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Manali traffic jam|manali",
+   "hook": "Going to <em>Manali</em>?<br>Wait."
+  },
+  {
+   "bg": "photo:Tirthan River Himachal|river",
+   "card": "place"
+  },
+  {
+   "kicker": "What Manali was 30 years ago",
+   "lines": [
+    "Trout in the river",
+    "No Mall Road",
+    "Riverside homestays",
+    "<em>85%</em> fewer visitors"
+   ],
+   "bg": "photo:Great Himalayan National Park|himalayan"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Chehni Kothi</em>",
+    "A 1,500-year-old tower fort",
+    "It leans, like a Himalayan Pisa",
+    "30 min drive + 1 hr hike"
+   ],
+   "bg": "photo:Chehni Kothi|chehni"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "December: Jalori Pass may close with snow. July: the river floods. Weak internet.",
+   "bg": "photo:Jalori pass|jalori"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Manali* ja rahe hain?",
+    "Rukiye, ek baar *ye dekh* lijiye."
+   ],
+   [
+    "Manali se kareeb *3 ghante* pehle,",
+    "Kullu zile mein hi,",
+    "ek ghaati hai, *Tirthan*."
+   ],
+   [
+    "Hamari research mein ye waisi hai",
+    "jaisa *Manali 30 saal pehle* tha,",
+    "nadi mein *trout*, koi *Mall Road nahi*,",
+    "aur nadi kinaare *homestay*."
+   ],
+   [
+    "Aur paas hi *Chehni Kothi* hai,",
+    "lakdi aur patthar ka ek *purana kila*,",
+    "jo *Pisa ki meenar* ki tarah",
+    "thoda jhuka hua hai."
+   ],
+   [
+    "December mein *Jalori Pass* barf se band ho sakta hai",
+    "aur July mein nadi *ufaan* par hoti hai,",
+    "to *November* mein jaaiye,",
+    "bas *internet* ki ummeed mat rakhiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jisne kaha tha,",
+    "*chalo Manali* chalte hain."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Manali*?",
+    "Wait, *see this* first."
+   ],
+   [
+    "About *3 hours* before Manali,",
+    "still in Kullu district,",
+    "there's a valley: *Tirthan*."
+   ],
+   [
+    "In our research it's",
+    "what *Manali was 30 years ago*:",
+    "*trout* in the river, *no Mall Road*,",
+    "and *riverside homestays*."
+   ],
+   [
+    "Close by is *Chehni Kothi*,",
+    "an *old wood-and-stone fort*",
+    "that leans a little,",
+    "like the *Tower of Pisa*."
+   ],
+   [
+    "In December *Jalori Pass* can close with snow,",
+    "and in July the river *floods*,",
+    "so go in *November*,",
+    "just don't expect *internet*."
+   ],
+   [
+    "*Send this* to whoever said,",
+    "*let's go to Manali*."
+   ]
+  ]
+ },
+ "caption_lead": "Going to Manali? About 3 hours before it, still in Kullu district, is the Tirthan valley: what Manali was 30 years ago, with trout streams, no Mall Road and riverside homestays (85% fewer visitors). Close by is Chehni Kothi, a 1,500-year-old wood-and-stone tower fort that leans. Go in November; Jalori Pass can close with December snow, and the river floods in July. Weak internet.",
+ "cost_basis": [],
+ "facts": [
+  "trap_swaps manali -> tirthan-valley: 120 km, 3 hours; 'What Manali was 30 years ago, trout streams, no mall road, riverside homestays'; 85% fewer visitors",
+  "geo: 1,600 m, Bhuntar airport 50 km (place card); Kullu District (Commons titles)",
+  "gem Chehni Kothi: 8 km, 30min drive + 1hr hike, 1500-year-old Kath-Kuni tower fort, 'Leaning like a Himalayan Tower of Pisa'",
+  "months.11 4=8/10 'Cold but clear, very few tourists'; months.12 'Jalori Pass may close with snow'; months.7 'Tirthan River floods dangerously'",
+  "persona nomad: weak internet"
+ ],
+ "spoken_numbers": [
+  "तीन (3 hours)",
+  "तीस (30 years)"
+ ]
+}

@@ -4,7 +4,16 @@ Founder, 2026-10-20, after the Chakrata sample: "this is perfect. Happy to final
 structure, the script style, the hooks, the pacing, everything ... all the future reels for YouTube or
 Instagram should match this." Reference script: `chakrata__map_reveal.json`. Renderer: `place_voiced.py`.
 
-## The seven scenes (one Hindi line each, each scene starts as its line starts)
+## What is locked and what is not (founder 2026-10-20, after batch 1 came out identical)
+
+"Lock this structure" meant the PRODUCTION: voice, pacing, cards, subtitles, end screen. It never meant the
+script. Every reel belongs to a series (`"series"` in the script: where_is_it, real_cost, sos, swap, eat_here,
+and the rest of the 11 in the playbook) and each series has its own opener, scene count, close and music.
+No two reels in a row share a series; where_is_it posts at most once a week (scenario_daily enforces both).
+A script may open on its own picture with a `"hook"` instead of the map (`"bg"` of scene 1 not `"map"`).
+Founder sees every new series' first render before it posts: `place_voiced.py register <script> --hold`.
+
+## The where_is_it series: seven scenes (one Hindi line each, each scene starts as its line starts)
 
 | # | Picture | Line does | Card |
 |---|---------|-----------|------|
@@ -31,12 +40,16 @@ Instagram should match this." Reference script: `chakrata__map_reveal.json`. Ren
 ## Production rules
 
 - **Voice:** ElevenLabs v3, house Hindi voice, one pass, played at 1.2x (about 200 wpm). Cached by exact text, so re-renders are free and any word change is billed again.
-- **Music:** travel-pop-07-94, ducked under the voice.
+- **Music:** chosen per series (`SERIES_MUSIC` in place_voiced.py: pop for where_is_it, light hip-hop for real_cost,
+  steady cinematic for sos, EDM with the drop on the reveal for swap, warm acoustic for eat_here), never a track a
+  voiced reel used in the last 7 days. Full 2-4 minute tracks, started past slow intros (`music_start`) or with a
+  measured drop landed on a scene (`music_drop` + `music_drop_scene`), ducked under the voice, faded on the end screen.
 - **Subtitles:** Hinglish for Instagram (`--subs hinglish`), English for YouTube (`--subs en`). Mark keywords with `*word*`.
 - **Brand:** Ink cards with a Vermillion Bright rule, accent #E55642. Never yellow.
 - **Credits:** on screen "Photos: Wikimedia Commons" only; authors go in the caption, because CC BY-SA requires them.
 - **Clip eyeball first:** tile at 1.5 fps.
   - A clip with a glitch is either started past it (`clip:<file>@<seconds>`) or replaced by a photo.
   - Wrong Commons picks (a person, a different place) go into `guide_photo_reject.json`.
-- **Caption:** the script's `caption_lead` (English, carries the room prices), plus the AI-footage line when clips are used.
+- **Caption:** the script's `caption_lead` (English, carries the room prices) and the photo credits. No AI line in the
+  caption (founder 2026-10-20); YouTube gets its own AI setting on upload when the reel has Veo clips.
 - **Length:** about 50 s. That's fine: the founder approved 50.9 s.

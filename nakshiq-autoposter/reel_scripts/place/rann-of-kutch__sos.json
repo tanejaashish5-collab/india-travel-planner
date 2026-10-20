@@ -1,0 +1,137 @@
+{
+ "id": "rann-of-kutch__sos",
+ "slug": "rann-of-kutch",
+ "format": "sos",
+ "series": "sos",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-20, batch 2 (one series each); founder approved the text in chat 2026-10-20; facts re-checked against fact pack + emergency_sos before voicing",
+ "music": "cinematic-the-journey-543",
+ "music_start": 20,
+ "vo": {
+  "hi": [
+   "रण उत्सव के लिए कच्छ जा रहे हैं? तो निकलने से पहले ये बातें जान लीजिए।",
+   "पहली, सफ़ेद रण के पास सबसे नज़दीकी एटीएम करीब अस्सी किलोमीटर दूर है, तो कैश भुज से ही लेकर चलिए।",
+   "दूसरी, सबसे नज़दीकी बड़ा अस्पताल भुज में है, करीब पचासी किलोमीटर दूर, तो बुज़ुर्गों की दवाइयाँ पूरी लेकर जाइए।",
+   "तीसरी, मई से सितंबर तक मत आइए, क्योंकि मई में पारा पैंतालीस पार जाता है और बारिश में पूरा रण पानी में डूब जाता है।",
+   "पर नवंबर में यही रण सबसे ख़ूबसूरत होता है, जब सफ़ेद नमक का मैदान लौट आता है और उत्सव शुरू होता है।",
+   "ये उसे भेजिए जो इस बार मम्मी पापा को रण दिखाने ले जा रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo",
+   "hook": "Going to the <em>Rann</em>?<br>Know this first."
+  },
+  {
+   "kicker": "1 · Cash",
+   "big": "80 km",
+   "line": "to the nearest ATM",
+   "sub": "Carry cash from Bhuj.",
+   "bg": "photo:Bhuj city|bhuj"
+  },
+  {
+   "kicker": "2 · Hospital",
+   "big": "85 km",
+   "line": "G.K. General Hospital, Bhuj",
+   "sub": "An ambulance takes about 90 minutes. Pack full medicines.",
+   "bg": "photo:Kutch desert|kutch"
+  },
+  {
+   "kicker": "3 · Skip",
+   "big": "May to September",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "May: 45°C and more. July: the Rann is under water.",
+   "bg": "photo:White Rann Dhordo|dhordo"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Rann Utsav begins. The white desert returns.",
+   "bg": "photo:Rann Utsav tent city|rann"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Rann Utsav* ke liye Kutch ja rahe hain?",
+    "To nikalne se pehle",
+    "ye baatein *jaan lijiye*."
+   ],
+   [
+    "Pehli, safed Rann ke paas",
+    "sabse nazdeeki *ATM* kareeb *80 km* door hai,",
+    "to *cash Bhuj se* hi lekar chaliye."
+   ],
+   [
+    "Doosri, sabse nazdeeki bada *aspataal*",
+    "Bhuj mein hai, kareeb *85 km* door,",
+    "to buzurgon ki *dawaiyan poori* lekar jaaiye."
+   ],
+   [
+    "Teesri, *May se September* tak mat aaiye,",
+    "kyunki May mein paara *45 paar* jaata hai",
+    "aur baarish mein poora Rann *paani mein doob* jaata hai."
+   ],
+   [
+    "Par *November* mein yahi Rann sabse *khoobsurat* hota hai,",
+    "jab *safed namak* ka maidaan laut aata hai",
+    "aur *utsav* shuru hota hai."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo is baar *mummy papa* ko",
+    "Rann dikhane le ja raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Going to Kutch for *Rann Utsav*?",
+    "Before you leave,",
+    "*know this*."
+   ],
+   [
+    "One: the nearest *ATM*",
+    "to the White Rann is about *80 km* away,",
+    "so carry *cash from Bhuj*."
+   ],
+   [
+    "Two: the nearest big *hospital*",
+    "is in Bhuj, about *85 km* away,",
+    "so pack your parents' *full medicines*."
+   ],
+   [
+    "Three: don't come *May to September*,",
+    "because May crosses *45°C*",
+    "and the monsoon puts the whole Rann *under water*."
+   ],
+   [
+    "But in *November* the Rann is at its *most beautiful*:",
+    "the *white salt* returns",
+    "and the *festival* begins."
+   ],
+   [
+    "*Send this* to whoever",
+    "is taking their *parents*",
+    "to the Rann this year."
+   ]
+  ]
+ },
+ "caption_lead": "Going to Kutch for Rann Utsav? Know this first. The nearest ATM to the White Rann is about 80 km away, so carry cash from Bhuj. The nearest big hospital is G.K. General in Bhuj, about 85 km away, and an ambulance takes about 90 minutes, so pack full medicines. Skip May to September (45°C and more in May, the Rann under water in July). November is when the white desert returns and the festival begins.",
+ "cost_basis": [],
+ "facts": [
+  "emergency_sos rann-of-kutch: nearest_atm_km 80; nearest_hospital G.K. General Hospital, Bhuj, 85 km, ER yes; avg_ambulance_response_min 90 (verified 2026-09-14, kachchh.nic.in)",
+  "months.4-9 score 1 = 2/10: 5 '45°C+ heat', 7 'Submerged under water'; crowd_calendar quiet months 5-9",
+  "months.11 5=10/10 'Rann Utsav begins, white desert returns'",
+  "persona elderly GO (flat salt walking)"
+ ],
+ "spoken_numbers": [
+  "अस्सी (80 km)",
+  "पचासी (85 km)",
+  "पैंतालीस (45°C)"
+ ]
+}

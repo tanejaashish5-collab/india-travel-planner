@@ -682,7 +682,7 @@ def caption(row: dict) -> tuple[str, str]:
     url = f"https://www.nakshiq.com/en/destination/{slug}"
     tag = slug.replace("-", "")
     credits = GR.caption_credits(row.get("commons") or [])
-    if row["kind"] == "map_reveal":
+    if row["kind"] == "map_reveal" or row.get("voiced"):     # every voiced series (swap, real_cost, sos ...) too
         # A voiced reel carries its own opener, written with its script (founder 2026-10-20 sample).
         lead = row.get("caption_lead") or (f"Where is {nm}, really? How high, how far from the train and the airport, "
                                            f"and the next good month ({row['best']}, {row['best_score']}/10).")
@@ -693,7 +693,7 @@ def caption(row: dict) -> tuple[str, str]:
                f"{nm}, month by month: {url}\n\nScores, prices and distances are NakshIQ's real data."
                + f"{credits}"
                + f"\n\n#{tag} #indiatravel #NakshIQ")
-        return cap, f"Where is {nm}, really? | NakshIQ"
+        return cap, row.get("yt_title") or f"Where is {nm}, really? | NakshIQ"
     if row["kind"] == "two_months":
         g, b = MONTHS[row["good"]], MONTHS[row["bad"]]
         cap = (f"{nm} in {g}: {row['good_score']}/10. In {b}: {row['bad_score']}/10. Same place, two very different trips.\n\n"
