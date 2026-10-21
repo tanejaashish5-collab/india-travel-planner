@@ -37,11 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-21",
-    "PdMu0": "2026-10-20",
-    "PdMu0_evening": "2026-10-20",
+    "PdMu0": "2026-10-21",
+    "PdMu0_evening": "2026-10-21",
     "PdMu0_greeting": "2026-10-20"
   },
-  "last_sync": "2026-10-20T18:36:07.304432+00:00",
+  "last_sync": "2026-10-21T17:45:08.161955+00:00",
   "posted_destinations": [
     {
       "destination_id": "madurai",
@@ -178,6 +178,10 @@
     {
       "destination_id": "pazhamudircholai",
       "date": "2026-10-21"
+    },
+    {
+      "destination_id": "kedarnath",
+      "date": "2026-10-21"
     }
   ],
   "posted_formats": {
@@ -205,7 +209,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_budget_receipt",
       "v2_weekend_escape_map",
       "v4_dw_heritage_reel_sensory_pov",
       "score_card",
@@ -225,7 +228,8 @@
       "data_carousel",
       "v2_weekend_escape_map",
       "v4_dw_walk_itinerary_day_by_day",
-      "tourist_trap"
+      "tourist_trap",
+      "weekend_escape"
     ]
   },
   "post_log": [
@@ -11184,6 +11188,35 @@
       "destination": "pazhamudircholai",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-10-21"
+    },
+    {
+      "timestamp": "2026-10-21T14:37:00.773965+00:00",
+      "date": "2026-10-21",
+      "platform": "instagram",
+      "post_id": "XlPzv",
+      "destination": "shimla",
+      "format": "scenario_real_cost",
+      "media_id": "VpqgY"
+    },
+    {
+      "timestamp": "2026-10-21T14:38:04.266922+00:00",
+      "date": "2026-10-21",
+      "platform": "youtube",
+      "post_id": "OeuZO",
+      "destination": "shimla",
+      "format": "scenario_real_cost",
+      "media_id": "zdn2z"
+    },
+    {
+      "timestamp": "2026-10-21T17:45:56.311718+00:00",
+      "date": "2026-10-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "zd1OI",
+      "destination": "kedarnath",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "kedarnath.mp4"
     }
   ],
   "theme_usage": {
@@ -11238,7 +11271,8 @@
       "kedarnath": [
         "2026-05-24",
         "2026-10-09",
-        "2026-10-15"
+        "2026-10-15",
+        "2026-10-21"
       ],
       "shimla": [
         "2026-05-24",
@@ -11640,7 +11674,8 @@
       "weekend_escape": [
         "2026-05-30",
         "2026-06-05",
-        "2026-10-04"
+        "2026-10-04",
+        "2026-10-21"
       ],
       "v2_hindi_score_card": [
         "2026-05-30",
@@ -12000,6 +12035,9 @@
       ],
       "mukteshwar": [
         "2026-10-20"
+      ],
+      "kedarnath": [
+        "2026-10-21"
       ]
     },
     "audience_tags": {
@@ -12266,7 +12304,8 @@
       "kurukshetra": [
         "2026-10-20"
       ]
-    }
+    },
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -12280,7 +12319,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "dzukou-valley",
+    "shared_best": "kedarnath",
     "collection": "sikh-heritage-trail"
   },
   "manual_skip_dests": {},
