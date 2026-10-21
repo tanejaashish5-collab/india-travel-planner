@@ -36,21 +36,13 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-20",
+    "PdMu0_carousel": "2026-10-21",
     "PdMu0": "2026-10-20",
     "PdMu0_evening": "2026-10-20",
     "PdMu0_greeting": "2026-10-20"
   },
   "last_sync": "2026-10-20T18:36:07.304432+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "sarahan",
-      "date": "2026-10-06"
-    },
-    {
-      "destination_id": "shantiniketan",
-      "date": "2026-10-06"
-    },
     {
       "destination_id": "madurai",
       "date": "2026-10-07"
@@ -182,6 +174,10 @@
     {
       "destination_id": "mukteshwar",
       "date": "2026-10-20"
+    },
+    {
+      "destination_id": "pazhamudircholai",
+      "date": "2026-10-21"
     }
   ],
   "posted_formats": {
@@ -11179,6 +11175,15 @@
       "format": "tourist_trap",
       "has_media": true,
       "media_id": "mukteshwar.mp4"
+    },
+    {
+      "timestamp": "2026-10-21T13:07:39.104328+00:00",
+      "date": "2026-10-21",
+      "platform": "facebook",
+      "post_id": "XlPCP",
+      "destination": "pazhamudircholai",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-21"
     }
   ],
   "theme_usage": {
@@ -12257,7 +12262,6 @@
         "2026-10-15"
       ]
     },
-    "stays": {},
     "collection_carousel_dests:sikh-heritage-trail": {
       "kurukshetra": [
         "2026-10-20"
@@ -12343,7 +12347,11 @@
       "Dussehra (Seemollanghan at Shami Tree)",
       "Dhammachakra Pravartan Din",
       "Vijayadashami (Sai Baba Punyatithi)",
-      "Hnahsin Kut (Cosmos Festival)"
+      "Hnahsin Kut (Cosmos Festival)",
+      "Skanda Sashti",
+      "Durga Puja",
+      "Navratri Pilgrimage at Vaishno Devi",
+      "Sharan Navaratri at Jogulamba Temple"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
