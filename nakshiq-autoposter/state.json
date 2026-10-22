@@ -37,10 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-22",
-    "PdMu0": "2026-10-21",
-    "PdMu0_evening": "2026-10-21"
+    "PdMu0": "2026-10-22",
+    "PdMu0_evening": "2026-10-22"
   },
-  "last_sync": "2026-10-21T18:47:30.076987+00:00",
+  "last_sync": "2026-10-22T17:39:58.024440+00:00",
   "posted_destinations": [
     {
       "destination_id": "bekal",
@@ -181,6 +181,10 @@
     {
       "destination_id": "sarahan",
       "date": "2026-10-22"
+    },
+    {
+      "destination_id": "sravasti",
+      "date": "2026-10-22"
     }
   ],
   "posted_formats": {
@@ -208,7 +212,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_weekend_escape_map",
       "v4_dw_heritage_reel_sensory_pov",
       "score_card",
       "data_carousel",
@@ -228,7 +231,8 @@
       "v2_weekend_escape_map",
       "v4_dw_walk_itinerary_day_by_day",
       "tourist_trap",
-      "weekend_escape"
+      "weekend_escape",
+      "emergency_intel"
     ]
   },
   "post_log": [
@@ -11225,6 +11229,35 @@
       "destination": "sarahan",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-10-22"
+    },
+    {
+      "timestamp": "2026-10-22T14:37:32.131516+00:00",
+      "date": "2026-10-22",
+      "platform": "instagram",
+      "post_id": "kRlRI",
+      "destination": "rann-of-kutch",
+      "format": "scenario_sos",
+      "media_id": "BjDxu"
+    },
+    {
+      "timestamp": "2026-10-22T14:38:22.257332+00:00",
+      "date": "2026-10-22",
+      "platform": "youtube",
+      "post_id": "vrWrt",
+      "destination": "rann-of-kutch",
+      "format": "scenario_sos",
+      "media_id": "4QHgn"
+    },
+    {
+      "timestamp": "2026-10-22T17:40:42.472192+00:00",
+      "date": "2026-10-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "g4zRb",
+      "destination": "sravasti",
+      "format": "emergency_intel",
+      "has_media": true,
+      "media_id": "sravasti.mp4"
     }
   ],
   "theme_usage": {
@@ -11268,7 +11301,8 @@
         "2026-06-14",
         "2026-09-06",
         "2026-09-24",
-        "2026-10-18"
+        "2026-10-18",
+        "2026-10-22"
       ],
       "madurai": [
         "2026-05-23",
@@ -11584,7 +11618,8 @@
       ],
       "chamba": [
         "2026-10-01",
-        "2026-10-17"
+        "2026-10-17",
+        "2026-10-22"
       ],
       "nandi-hills": [
         "2026-10-01",
@@ -11602,7 +11637,8 @@
       "sravasti": [
         "2026-10-07",
         "2026-10-09",
-        "2026-10-15"
+        "2026-10-15",
+        "2026-10-22"
       ],
       "kolhapur": [
         "2026-10-08"
@@ -11628,6 +11664,9 @@
       ],
       "trichy": [
         "2026-10-17"
+      ],
+      "sarahan": [
+        "2026-10-22"
       ]
     },
     "morning_formats": {
@@ -11828,6 +11867,9 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
+      ],
+      "emergency_intel": [
+        "2026-10-22"
       ]
     },
     "reels": {
@@ -12043,6 +12085,9 @@
       ],
       "mukteshwar": [
         "2026-10-20"
+      ],
+      "sravasti": [
+        "2026-10-22"
       ]
     },
     "audience_tags": {
@@ -12184,6 +12229,9 @@
       ],
       "sikh-heritage-trail": [
         "2026-10-20"
+      ],
+      "most-beautiful-villages": [
+        "2026-10-22"
       ]
     },
     "festivals": {
@@ -12305,6 +12353,22 @@
       "kurukshetra": [
         "2026-10-20"
       ]
+    },
+    "emergency": {
+      "champhai": [
+        "2026-10-22"
+      ]
+    },
+    "collection_carousel_dests:most-beautiful-villages": {
+      "munsiyari": [
+        "2026-10-22"
+      ],
+      "chamba": [
+        "2026-10-22"
+      ],
+      "sarahan": [
+        "2026-10-22"
+      ]
     }
   },
   "infographic": {
@@ -12319,8 +12383,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "dzukou-valley",
-    "collection": "sikh-heritage-trail"
+    "shared_best": "sravasti",
+    "collection": "most-beautiful-villages"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-17",

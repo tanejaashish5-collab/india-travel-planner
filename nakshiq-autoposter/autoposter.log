@@ -28998,3 +28998,37 @@ Date range: 2026-04-15 → 2026-10-21
 2026-10-23 01:37:34  INFO          Uploading to R2 (timeout=300s)...
 2026-10-23 01:38:03  INFO          R2 PUT OK. Confirming...
 2026-10-23 01:38:05  INFO          Media ready: 4QHgn (31,734,533 bytes · rann-of-kutch__sos__voiced__en.mp4)
+2026-10-22 17:39:16  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-22 17:39:16  INFO      ════════════════════════════════════════════════════════════
+2026-10-22 17:39:16  INFO      Nakshiq Autoposter · EVENING · 2026-10-22 · weekday=3
+2026-10-22 17:39:16  INFO      ════════════════════════════════════════════════════════════
+2026-10-22 17:39:16  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-22 17:39:58  INFO      Synced → 20 destinations · 100 traps · 3 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-22 17:39:58  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-22 17:39:59  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-22 17:39:59  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-22 17:39:59  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-22 17:39:59  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-22 17:40:13  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-22 17:40:13  INFO      [diversity] feed: 37 → 34 options · cooldown dropped 3 (carousel, pillar:scenario_real_cost, pillar:scenario_sos, pillar:verdict seen <2d)
+2026-10-22 17:40:13  INFO      Evening format (balance→verification): emergency_intel [14% vs target 20%] (0/15 never featured)
+2026-10-22 17:40:13  INFO      Formats — IG: emergency_intel  ·  FB: emergency_intel  ·  Story: collection_spotlight
+2026-10-22 17:40:13  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-10-22 17:40:13  INFO      Fingerprint dedup snapshot — 49 dests in 7d · 91 (dest,fmt) pairs in 30d · 228 media in 60d
+2026-10-22 17:40:13  INFO      Collection locked: Most Beautiful Villages in India (75/100 never featured)
+2026-10-22 17:40:13  INFO      SOS locked: Champhai (91/91 never featured)
+2026-10-22 17:40:15  INFO      Shared best destination locked: Sravasti
+2026-10-22 17:40:16  INFO      Carousel locked (collection_spotlight): munsiyari, chamba, sarahan
+2026-10-22 17:40:16  INFO      [facebook/Nakshiq] Generating emergency_intel post...
+2026-10-22 17:40:16  INFO      [facebook/Nakshiq] Caption ready (628 chars, dest=sravasti)
+2026-10-22 17:40:16  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-10-22 17:40:16  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sravasti.mp4?v=20260915
+2026-10-22 17:40:19  INFO          Brand-stamp applied: sravasti.mp4 (8,505,932 → 3,998,244 bytes)
+2026-10-22 17:40:19  INFO          Requesting upload URL for sravasti.mp4 (3,998,244 bytes, video/mp4)
+2026-10-22 17:40:20  INFO          Uploading to R2 (timeout=300s)...
+2026-10-22 17:40:22  INFO          R2 PUT OK. Confirming...
+2026-10-22 17:40:23  INFO          Media ready: n2ccx (3,998,244 bytes · sravasti.mp4)
+2026-10-22 17:40:23  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-22 17:40:42  INFO      [facebook/Nakshiq] ✅ Published · Outstand=g4zRb · Platform=1735151670907376
+2026-10-22 17:40:42  INFO      State saved. Run complete.
+2026-10-22 17:40:42  INFO      ════════════════════════════════════════════════════════════
