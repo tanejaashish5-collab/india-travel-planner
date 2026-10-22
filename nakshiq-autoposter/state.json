@@ -36,17 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-21",
+    "PdMu0_carousel": "2026-10-22",
     "PdMu0": "2026-10-21",
-    "PdMu0_evening": "2026-10-21",
-    "PdMu0_greeting": "2026-10-20"
+    "PdMu0_evening": "2026-10-21"
   },
   "last_sync": "2026-10-21T18:47:30.076987+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "madurai",
-      "date": "2026-10-07"
-    },
     {
       "destination_id": "bekal",
       "date": "2026-10-08"
@@ -182,6 +177,10 @@
     {
       "destination_id": "kedarnath",
       "date": "2026-10-21"
+    },
+    {
+      "destination_id": "sarahan",
+      "date": "2026-10-22"
     }
   ],
   "posted_formats": {
@@ -11217,6 +11216,15 @@
       "format": "weekend_escape",
       "has_media": true,
       "media_id": "kedarnath.mp4"
+    },
+    {
+      "timestamp": "2026-10-22T13:10:03.973468+00:00",
+      "date": "2026-10-22",
+      "platform": "facebook",
+      "post_id": "ZPVTU",
+      "destination": "sarahan",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-10-22"
     }
   ],
   "theme_usage": {
@@ -11938,10 +11946,6 @@
         "2026-07-21",
         "2026-08-19"
       ],
-      "tso-moriri": [
-        "2026-07-07",
-        "2026-07-23"
-      ],
       "zanskar": [
         "2026-07-12",
         "2026-07-29",
@@ -12109,10 +12113,6 @@
         "2026-05-20",
         "2026-07-07",
         "2026-10-06"
-      ],
-      "ayurveda-wellness": [
-        "2026-05-27",
-        "2026-07-23"
       ],
       "dwadasa-jyotirlinga": [
         "2026-05-28",
@@ -12305,8 +12305,7 @@
       "kurukshetra": [
         "2026-10-20"
       ]
-    },
-    "articles": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 2,
