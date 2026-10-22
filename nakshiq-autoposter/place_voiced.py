@@ -47,6 +47,9 @@ SERIES_MUSIC = {
     "skip": [("cinematic-vastness-759", 0), ("cinematic-a-new-life-606", 29), ("cinematic-rising-sun-892", 27)],
     "hidden_gems": [("travel-traveling-along-669", 2), ("uplifting-happy-times-1030", 0), ("uplifting-mountains-952", 0)],
     "eat_here": [("travel-just-keep-walking-339", 33), ("uplifting-mountains-952", 0), ("travel-traveling-along-669", 0)],
+    "list_of_3": [("travel-summer-fun-970", 0), ("travel-dance-with-me-1063", 0), ("uplifting-yeah-yeah-271", 0)],
+    "window": [("uplifting-reaching-out-187", 0), ("cinematic-drawing-the-sky-797", 0), ("travel-serene-view-839", 0)],
+    "vs": [("travel-the-duel-617", 0), ("travel-rock-the-game-820", 0), ("travel-funky-triplets-817", 0)],
 }
 LEAD = 1.4                     # map + first beat of music before the first word
 CUT_EARLY = 0.25               # a scene's picture lands just before its line

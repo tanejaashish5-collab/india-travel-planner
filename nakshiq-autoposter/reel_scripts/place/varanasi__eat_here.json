@@ -1,0 +1,171 @@
+{
+ "id": "varanasi__eat_here",
+ "slug": "varanasi",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "बनारस में सब घाट और आरती देखने आते हैं, पर खाने में असली फ़र्क़ इस बात से पड़ता है कि आप क्या और कब मँगाते हैं।",
+   "मणिकर्णिका घाट के पास कचौड़ी गली में एक लस्सी की दुकान सौ साल से चल रही है, बाहर की बेंच पर बैठिए, जहाँ से अर्थियाँ घाट की ओर जाती हैं, और कैश लेकर जाइए।",
+   "चाट के लिए लक्सा रोड जाइए, पर दोपहर में नहीं, क्योंकि दुकान दो बजे खुलती है, और टमाटर चाट के बाद यहाँ के लोग पालक पत्ता चाट मँगाते हैं।",
+   "और खाने के बाद लंका में पान, पर अगर आप तंबाकू नहीं खाते तो मीठा पान ही माँगिए, क्योंकि सादे और बनारसी पान में तेज़ चीज़ें पड़ती हैं।",
+   "नवंबर में देव दीपावली पर घाट दीयों से जगमगाते हैं, पर भीड़ भी साल में सबसे ज़्यादा होती है, तो कमरा हफ़्तों पहले बुक कर लीजिए।",
+   "ये उसे भेजिए जो इस बार देव दीपावली पर बनारस जा रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:varanasi__hero.mp4",
+   "hook": "In <em>Banaras</em>,<br>the order matters"
+  },
+  {
+   "kicker": "Lassi, since 1925",
+   "lines": [
+    "<em>Blue Lassi Shop</em>",
+    "Kachori Gali, near Manikarnika Ghat",
+    "Sit on the bench outside",
+    "Cash only"
+   ],
+   "bg": "photo:Blue Lassi Varanasi|lassi"
+  },
+  {
+   "kicker": "Chaat",
+   "lines": [
+    "<em>Deena Chaat Bhandar</em>",
+    "Luxa Road",
+    "Opens at 2 pm, not lunchtime",
+    "Tamatar chaat, then palak patta"
+   ],
+   "bg": "photo:Varanasi chaat|chaat"
+  },
+  {
+   "kicker": "Paan",
+   "lines": [
+    "<em>Keshav Tambul Bhandar</em>",
+    "Lanka, near Ravidas Gate",
+    "No tobacco? Ask for meetha",
+    "Saada and Banarasi are stronger"
+   ],
+   "bg": "photo:Varanasi paan|paan"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Dev Deepawali lights the ghats. The year's biggest crowds: book weeks ahead.",
+   "bg": "photo:Dev Deepawali Varanasi|deepawali"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Banaras mein sab *ghaat aur aarti* dekhne aate hain,",
+    "par khaane mein asli farq is baat se padta hai",
+    "ki aap *kya aur kab* mangaate hain."
+   ],
+   [
+    "Manikarnika Ghat ke paas *Kachori Gali* mein",
+    "ek lassi ki dukaan *100 saal* se chal rahi hai,",
+    "*baahar ki bench* par baithiye,",
+    "jahan se *arthiyan* ghaat ki or jaati hain,",
+    "aur *cash* lekar jaaiye."
+   ],
+   [
+    "*Chaat* ke liye *Luxa Road* jaaiye,",
+    "par dopahar mein nahi,",
+    "kyunki dukaan *2 baje* khulti hai,",
+    "aur *tamatar chaat* ke baad yahan ke log",
+    "*palak patta chaat* mangaate hain."
+   ],
+   [
+    "Aur khaane ke baad *Lanka* mein *paan*,",
+    "par agar aap tambaaku nahi khaate",
+    "to *meetha paan* hi maangiye,",
+    "kyunki saade aur Banarasi paan mein",
+    "*tez cheezein* padti hain."
+   ],
+   [
+    "November mein *Dev Deepawali* par",
+    "ghaat *diyon se jagmagaate* hain,",
+    "par *bheed* bhi saal mein sabse zyaada hoti hai,",
+    "to kamra *hafton pehle book* kar lijiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo is baar *Dev Deepawali* par",
+    "*Banaras* ja raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone comes to Banaras for the *ghats and the aarti*,",
+    "but with the food, what matters",
+    "is *what you order, and when*."
+   ],
+   [
+    "In *Kachori Gali* near Manikarnika Ghat,",
+    "a lassi shop has run for *100 years*;",
+    "sit on the *bench outside*,",
+    "where *funeral processions* pass to the ghat,",
+    "and bring *cash*."
+   ],
+   [
+    "For *chaat* go to *Luxa Road*,",
+    "but not at lunch,",
+    "because the shop opens at *2 pm*,",
+    "and after the *tamatar chaat*, locals order",
+    "the *palak patta chaat*."
+   ],
+   [
+    "After you eat, *paan* in *Lanka*,",
+    "but if you don't chew tobacco",
+    "ask for *meetha*,",
+    "because the saada and Banarasi paan",
+    "have *stronger fillings*."
+   ],
+   [
+    "In November, for *Dev Deepawali*,",
+    "the ghats *glow with oil lamps*,",
+    "but the *crowds* are the year's biggest,",
+    "so *book weeks ahead*."
+   ],
+   [
+    "*Send this* to whoever",
+    "is going to *Banaras*",
+    "for *Dev Deepawali* this year."
+   ]
+  ]
+ },
+ "title": "Banaras food: what locals order, and when | NakshIQ",
+ "caption_lead": "In Banaras, what you order and when matters. Blue Lassi Shop (since 1925) sits in Kachori Gali near Manikarnika Ghat: sit on the bench outside, and bring cash. Deena Chaat Bhandar on Luxa Road opens at 2 pm, not lunchtime; after the tamatar chaat, locals order the palak patta chaat. At Keshav Tambul Bhandar in Lanka, ask for meetha paan if you don't chew tobacco. In November, Dev Deepawali lights the ghats with oil lamps and brings the year's biggest crowds, so book weeks ahead.",
+ "cost_basis": [],
+ "facts": [
+  "eatery Blue Lassi Shop, Kachori Gali: 'near Manikarnika Ghat, founded in 1925'; insider_tip 'Sit on the wooden bench outside and watch the funeral processions pass towards Manikarnika ... the shop has run alongside it for a century. Cash only.'",
+  "eatery Deena Chaat Bhandar, Luxa Road: signature tamatar chaat; insider_tip 'Opens at 2pm, not lunchtime, built around evening temple foot traffic. The palak patta chaat ... is the second order locals make.'",
+  "eatery Keshav Tambul Bhandar, Lanka near Ravidas Gate: insider_tip 'Ask for meetha (sweet) if you don't chew tobacco, the saada and benarasi versions contain stronger fillings.'",
+  "months.11 score 5 = 10/10: 'Excellent. Dev Deepawali (Diwali on the ghats). 15-28C.'; festivals 'Dev Deepawali (Kartik Purnima), millions of oil lamps lit on the ghats'",
+  "crowd: 'Dev Deepawali (Nov) and Maha Shivaratri (Mar) are the most crowded'; months.11 who_should_avoid 'book weeks ahead or don't come'",
+  "no food prices anywhere (feedback_reels_no_food_cost_name_eateries); no Dev Deepawali date spoken (2026 has an adhika masa)",
+  "NOT used: Keshav Tambul 'serves the prime minister' (political, adds nothing); Pahalwan Lassi lookalike-shops tip (same trick as the approved Amritsar reel)"
+ ],
+ "spoken_numbers": [
+  "सौ (100 years)",
+  "दो (2 pm)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Dashashwamedh Ghat|dashashwamedh",
+  "top_label": "EVERYONE: THE GHATS",
+  "bottom": "photo:Blue Lassi Varanasi|lassi",
+  "bottom_label": "LOCALS: THE LANES",
+  "hook": "Banaras food:|*what do locals order?*"
+ },
+ "music": "uplifting-mountains-952",
+ "music_start": 0
+}

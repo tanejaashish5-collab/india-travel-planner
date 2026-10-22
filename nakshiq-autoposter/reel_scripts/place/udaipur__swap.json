@@ -1,0 +1,164 @@
+{
+ "id": "udaipur__swap",
+ "slug": "udaipur",
+ "format": "swap",
+ "series": "swap",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "नवंबर में उदयपुर जा रहे हैं? रुकिए, क्योंकि शादियों के सीज़न में वहाँ के हेरिटेज होटल पूरे भर जाते हैं।",
+   "उदयपुर से करीब साढ़े चार घंटे दूर, राजस्थान में ही, एक छोटा सा शहर है, बूंदी।",
+   "हमारी रिसर्च में बूंदी के पास वो बावड़ियाँ, दीवारों पर बनी पुरानी पेंटिंग और महल हैं जो उदयपुर में टूरिस्टों के आने से पहले थे, और तारागढ़ क़िले पर सूरज ढलते वक़्त अक्सर कोई और नहीं होता।",
+   "पर जो कोई नहीं बताता, वो ये कि झील किनारे सुख महल में रुडयार्ड किपलिंग रुके थे, और पास के किनारे से शाम को तारागढ़ की परछाईं पानी में दिखती है।",
+   "नवंबर में बूंदी का मौसम बढ़िया रहता है और बाज़ारों में रौनक होती है, बस हेरिटेज हवेलियाँ पहले से बुक कर लीजिए।",
+   "ये उसे भेजिए जो हर बार कहता है, इस बार उदयपुर चलेंगे।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:udaipur__hero.mp4",
+   "hook": "Udaipur, before<br>the <em>tourists</em> came"
+  },
+  {
+   "kicker": "The swap",
+   "lines": [
+    "<em>Bundi</em>, Rajasthan",
+    "4.5 hrs from Udaipur",
+    "280 km",
+    "A small, easy town"
+   ],
+   "bg": "photo:Bundi Garh Palace|garh"
+  },
+  {
+   "kicker": "What Udaipur had before the tourists",
+   "lines": [
+    "Stepwells",
+    "Painted palace walls",
+    "Taragarh Fort at sunset, nobody else",
+    "No zone-based tickets"
+   ],
+   "bg": "photo:Raniji ki Baori|baori"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Sukh Mahal</em>, on Jait Sagar",
+    "Kipling stayed here in 1887 to 88",
+    "and drafted parts of <em>Kim</em>",
+    "Taragarh reflected at sunset"
+   ],
+   "bg": "photo:Bundi Taragarh Fort|taragarh"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "12 to 28°C. Craft bazaars lively. Book heritage havelis early.",
+   "bg": "photo:Garh Palace Bundi Chitrashala|chitrashala"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "November mein *Udaipur* ja rahe hain?",
+    "Rukiye, kyunki *shaadiyon ke season* mein",
+    "wahan ke *heritage hotel* poore bhar jaate hain."
+   ],
+   [
+    "Udaipur se kareeb *saadhe 4 ghante* door,",
+    "Rajasthan mein hi,",
+    "ek chhota sa shehar hai, *Bundi*."
+   ],
+   [
+    "Hamari research mein Bundi ke paas wo *baavdiyan*,",
+    "deewaron par bani *purani painting* aur mahal hain",
+    "jo Udaipur mein *touriston ke aane se pehle* the,",
+    "aur *Taragarh kile* par suraj dhalte waqt",
+    "aksar *koi aur nahi* hota."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "wo ye ki jheel kinaare *Sukh Mahal* mein",
+    "*Rudyard Kipling* ruke the,",
+    "aur paas ke kinaare se shaam ko",
+    "Taragarh ki *parchhaai paani* mein dikhti hai."
+   ],
+   [
+    "*November* mein Bundi ka mausam badhiya rehta hai",
+    "aur *bazaaron mein raunak* hoti hai,",
+    "bas *heritage haveliyan* pehle se book kar lijiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo har baar kehta hai,",
+    "is baar *Udaipur chalenge*."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Udaipur* in November?",
+    "Wait, because in *wedding season*",
+    "its *heritage hotels* book out."
+   ],
+   [
+    "About *4.5 hours* from Udaipur,",
+    "still in Rajasthan,",
+    "there's a small town: *Bundi*."
+   ],
+   [
+    "In our research Bundi has the *stepwells*,",
+    "the *painted walls* and the palace",
+    "Udaipur had *before the tourists* came,",
+    "and at sunset on *Taragarh Fort*",
+    "there's often *nobody else*."
+   ],
+   [
+    "What nobody tells you:",
+    "*Rudyard Kipling* stayed",
+    "at *Sukh Mahal* by the lake,",
+    "and from the bank nearby, in the evening,",
+    "*Taragarh is reflected* in the water."
+   ],
+   [
+    "In *November* Bundi's weather is lovely",
+    "and the *bazaars are lively*,",
+    "just book the *heritage havelis* early."
+   ],
+   [
+    "*Send this* to whoever says,",
+    "every single time,",
+    "*let's do Udaipur* this year."
+   ]
+  ]
+ },
+ "title": "What Udaipur was before the tourists | NakshIQ",
+ "caption_lead": "Going to Udaipur in November? Wedding season books out its heritage hotels. About 4.5 hours away, still in Rajasthan, is Bundi: the stepwells, murals and palace Udaipur had before the tourists arrived, no zone-based tickets, and Taragarh Fort at sunset, often with nobody else there. Rudyard Kipling stayed at Sukh Mahal on Jait Sagar in 1887 to 88 and drafted parts of Kim there; from the cenotaphs on the bank, Taragarh is reflected in the lake at sunset. November is peak season in Bundi (12 to 28°C): book heritage havelis early.",
+ "cost_basis": [],
+ "facts": [
+  "udaipur crowd_calendar.note: 'Wedding season (Nov-Feb) books out heritage hotels.'",
+  "trap_swaps udaipur -> bundi: distance_km 280, drive_time '4.5 hours'; why_better 'Bundi has the stepwells, murals, and palace that Udaipur had before the tourists arrived. Taragarh Fort at sunset with zero other people'; alt_better_for '... no zone-based ticketing'",
+  "bundi geo: state Rajasthan; family_stress 'easy family base, small charming town'",
+  "bundi gem Sukh Mahal: 'across Jait Sagar ... where Rudyard Kipling stayed in 1887-88 and drafted parts of \"Kim\"'; 'Cross the cenotaph chhatris on the embankment for the sunset reflection of Taragarh on Jait Sagar'; 'almost empty even in peak season'",
+  "bundi months.11 score 5 = 10/10: 'Ideal 12-28°C. Peak season. Taragarh climb comfortable. Palace murals in warm light. Rajasthani craft bazaars lively. Book heritage havelis early.'",
+  "bundi best_for_segments: Chitrashala '17th-c Bundi school miniature paintings preserved on palace walls'",
+  "NOT used: room prices. cost_gate checks every rupee figure against the reel's own slug (udaipur), so Bundi's hotel-mid ₹3,350 would hold the reel; editorial_verdict 'rooms below ₹2,000' also contradicts the ledger"
+ ],
+ "spoken_numbers": [
+  "साढ़े चार (4.5 hours)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "clip:udaipur__hero.mp4",
+  "top_label": "UDAIPUR",
+  "bottom": "photo:Bundi Taragarh Fort|taragarh",
+  "bottom_label": "4.5 HRS AWAY",
+  "hook": "What Udaipur was|*before the tourists?*"
+ },
+ "music": "edm-371",
+ "music_start": 26
+}

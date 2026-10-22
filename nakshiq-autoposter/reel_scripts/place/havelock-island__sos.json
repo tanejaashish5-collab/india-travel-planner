@@ -1,0 +1,153 @@
+{
+ "id": "havelock-island__sos",
+ "slug": "havelock-island",
+ "format": "sos",
+ "series": "sos",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "हैवलॉक जा रहे हैं? तो टिकट बुक करने से पहले ये बातें जान लीजिए।",
+   "पहली, द्वीप पर गिने चुने एटीएम हैं और वीकेंड पर अक्सर उनमें कैश ख़त्म हो जाता है, तो नकद साथ लेकर चलिए।",
+   "दूसरी, यहाँ कोई बड़ा अस्पताल नहीं, बस एक छोटा हेल्थ सेंटर है और बच्चों का कोई डॉक्टर नहीं, तो गंभीर हालत में फ़ेरी से पोर्ट ब्लेयर जाना पड़ता है।",
+   "तीसरी, फ़ेरी में समंदर उछल सकता है तो उल्टी की दवा रखिए, और जून से अगस्त मत आइए, क्योंकि तब फ़ेरी बार बार रद्द होती हैं और डाइव शॉप बंद रहती हैं।",
+   "पर नवंबर में मौसम सूखा और गर्म है, पानी साफ़ है और डाइविंग पूरी चालू है, बस दिवाली वाला हफ़्ता जल्दी भर जाता है।",
+   "ये उसे भेजिए जो बच्चों को लेकर अंडमान जा रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:havelock-island__hero.mp4",
+   "hook": "Booking <em>Havelock</em>?<br>Know this first."
+  },
+  {
+   "kicker": "1 · Cash",
+   "big": "2 to 3 ATMs",
+   "line": "on the whole island",
+   "sub": "They often run dry on weekends. Carry cash.",
+   "bg": "photo:Havelock Island|havelock"
+  },
+  {
+   "kicker": "2 · Hospital",
+   "big": "No hospital",
+   "line": "A basic health centre, no paediatrician",
+   "sub": "Serious cases go by ferry to G.B. Pant Hospital, Port Blair.",
+   "bg": "photo:Port Blair harbour|port blair"
+  },
+  {
+   "kicker": "3 · Ferry",
+   "big": "June to August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Ferries cancel often, dive shops closed. Pack motion-sickness tablets for any crossing.",
+   "bg": "photo:Havelock Island jetty|havelock"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Dry and warm. Clear water, full dive season. Diwali week books out.",
+   "bg": "photo:Radhanagar Beach|radhanagar"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Havelock* ja rahe hain?",
+    "To ticket book karne se pehle",
+    "ye baatein *jaan lijiye*."
+   ],
+   [
+    "Pehli, dweep par *gine chune ATM* hain",
+    "aur weekend par aksar unmein *cash khatam* ho jaata hai,",
+    "to *nakad saath* lekar chaliye."
+   ],
+   [
+    "Doosri, yahan koi *bada aspataal nahi*,",
+    "bas ek chhota health centre hai",
+    "aur *bachchon ka koi doctor* nahi,",
+    "to gambhir haalat mein *ferry se Port Blair* jaana padta hai."
+   ],
+   [
+    "Teesri, ferry mein *samandar uchhal* sakta hai",
+    "to *ulti ki dawa* rakhiye,",
+    "aur *June se August* mat aaiye,",
+    "kyunki tab ferry *baar baar radd* hoti hain",
+    "aur dive shop band rehti hain."
+   ],
+   [
+    "Par *November* mein mausam *sookha aur garam* hai,",
+    "paani *saaf* hai aur diving poori chaalu hai,",
+    "bas *Diwali wala hafta* jaldi bhar jaata hai."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo *bachchon* ko lekar",
+    "*Andaman* ja raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Havelock*?",
+    "Before you book,",
+    "*know this*."
+   ],
+   [
+    "One: the island has only a *few ATMs*,",
+    "and on weekends they often *run out of cash*,",
+    "so *carry cash* with you."
+   ],
+   [
+    "Two: there's *no big hospital*,",
+    "just a small health centre",
+    "and *no children's doctor*,",
+    "so serious cases go *by ferry to Port Blair*."
+   ],
+   [
+    "Three: the *sea can get rough* on the ferry,",
+    "so carry *motion-sickness tablets*,",
+    "and don't come *June to August*,",
+    "because ferries *cancel again and again*",
+    "and dive shops close."
+   ],
+   [
+    "But *November* is *dry and warm*,",
+    "the water is *clear* and diving is fully open,",
+    "just know *Diwali week* fills up early."
+   ],
+   [
+    "*Send this* to whoever",
+    "is taking their *kids*",
+    "to the *Andamans*."
+   ]
+  ]
+ },
+ "title": "Going to Havelock? Know this first | NakshIQ",
+ "caption_lead": "Going to Havelock? Know this first. The island has only 2 to 3 ATMs and they often run dry on weekends, so carry cash. There is no hospital, just a basic health centre and no paediatrician; serious cases go by ferry to G.B. Pant Hospital in Port Blair. The ferry can be rough, so pack motion-sickness tablets, and skip June to August, when ferries cancel often and dive shops close. November is dry and warm with clear water and the full dive season; Diwali week books out.",
+ "cost_basis": [],
+ "facts": [
+  "why_special: 'Tourist infrastructure exists but limited, 2-3 ATMs that run dry on weekends'; kids.concerns: 'ATMs run dry on weekends, carry cash'",
+  "kids.concerns: 'No hospital, Community Health Centre only', 'No paediatric doctor on island'; emergency.nearest_hospital 'Primary Health Centre Havelock (Swaraj Dweep)', km 0; persona family: 'Havelock has 1 basic clinic; Port Blair GB Pant Hospital for serious issues'",
+  "persona elderly: 'Ferry travel can be rough (motion sickness meds advisable)'",
+  "reel-data months.6 1=2/10 'ferries cancelled often, dive shops closed'; 7 'Dive operators closed. Ferries cancel routinely'; 8 'dive shops still closed, ferries unreliable'",
+  "months.11 4=8/10: 'dive season is fully operational ... water clarity is excellent, and the weather is dry and warm'; reel-data months.11 'Diwali week books out'",
+  "kids.family_verdict: 'Go with kids 8-14 ... The biggest risk is the lack of pediatric care' (the close)",
+  "NOT used: ferry time to the Port Blair hospital (pack says 3.5h in persona, 1.5h in treks, 2hr in geo; they disagree, so no time is spoken or carded)"
+ ],
+ "spoken_numbers": [],
+ "cover": {
+  "style": "B",
+  "image": "photo:Radhanagar Beach|radhanagar",
+  "line": "Havelock's nearest big hospital",
+  "stamp": "BY FERRY",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "music": "cinematic-rising-sun-892",
+ "music_start": 0
+}

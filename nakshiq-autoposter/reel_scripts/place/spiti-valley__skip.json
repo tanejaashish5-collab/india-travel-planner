@@ -1,0 +1,163 @@
+{
+ "id": "spiti-valley__skip",
+ "slug": "spiti-valley",
+ "format": "skip",
+ "series": "skip",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "सर्दियों में स्पीति का प्लान है? रुकिए, क्योंकि नवंबर से मनाली वाला रास्ता कुंज़ुम पास पर बर्फ़ से बंद हो जाता है।",
+   "तो बचता है बस किन्नौर वाला रास्ता, जो सर्दी में बर्फ़ीला और जोखिम भरा होता है, और ज़्यादातर होमस्टे भी सर्दी में बंद हो जाते हैं।",
+   "दिसंबर में रात का पारा माइनस पंद्रह तक जाता है, और काज़ा में इलाज की सुविधा बहुत बेसिक है, तो बच्चों के साथ तो बिल्कुल मत जाइए।",
+   "पर जो कोई नहीं बताता, वो ये कि फ़रवरी में किब्बर से गाइड के साथ स्नो लेपर्ड देखने के ट्रिप होते हैं, पर सिर्फ़ उनके लिए जिन्हें कड़ी ठंड की आदत है।",
+   "बाक़ी सबके लिए, जून या सितंबर में जाइए, जब दोनों रास्ते खुले होते हैं, और सितंबर में खेतों में जौ सुनहरी हो जाती है।",
+   "ये उसे भेजिए जो दिसंबर में स्पीति जाने की ज़िद कर रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:spiti-valley__hero.mp4",
+   "hook": "<em>Spiti</em> this winter?<br>One road in."
+  },
+  {
+   "kicker": "Skip November to January",
+   "big": "Kinnaur road only",
+   "line": "NakshIQ score <em>4/10</em>, then <em>2/10</em>",
+   "sub": "Kunzum Pass snows shut. The other road is icy. Most homestays close.",
+   "bg": "photo:Kunzum Pass|kunzum"
+  },
+  {
+   "kicker": "December nights",
+   "big": "-15°C",
+   "sub": "Kaza's clinic is basic. Not with children.",
+   "bg": "photo:Kaza Spiti|kaza"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Snow leopard</em> season",
+    "February, from Kibber",
+    "Guided expeditions only",
+    "For hardened cold travellers"
+   ],
+   "bg": "photo:Kibber village|kibber"
+  },
+  {
+   "kicker": "Go in",
+   "big": "June or September",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Both roads open. September: the golden barley harvest.",
+   "bg": "photo:Key Monastery|key"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Sardiyon mein *Spiti* ka plan hai?",
+    "Rukiye, kyunki *November se*",
+    "Manali waala raasta *Kunzum Pass* par",
+    "*barf se band* ho jaata hai."
+   ],
+   [
+    "To bachta hai bas *Kinnaur waala raasta*,",
+    "jo sardi mein *barfeela aur jokhim bhara* hota hai,",
+    "aur zyaadatar *homestay bhi band* ho jaate hain."
+   ],
+   [
+    "December mein raat ka paara",
+    "*minus 15* tak jaata hai,",
+    "aur Kaza mein *ilaaj ki suvidha* bahut basic hai,",
+    "to *bachchon ke saath* to bilkul mat jaaiye."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "wo ye ki *February* mein *Kibber* se",
+    "guide ke saath *snow leopard* dekhne ke trip hote hain,",
+    "par sirf unke liye",
+    "jinhe *kadi thand ki aadat* hai."
+   ],
+   [
+    "Baaki sabke liye,",
+    "*June ya September* mein jaaiye,",
+    "jab *dono raaste khule* hote hain,",
+    "aur September mein kheton mein",
+    "*jau sunehri* ho jaati hai."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo December mein Spiti jaane ki",
+    "*zid* kar raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Planning *Spiti* this winter?",
+    "Wait, because *from November*",
+    "the Manali road *snows shut*",
+    "at *Kunzum Pass*."
+   ],
+   [
+    "That leaves only the *Kinnaur road*,",
+    "*icy and risky* in winter,",
+    "and most *homestays close* too."
+   ],
+   [
+    "December nights drop",
+    "to *minus 15*,",
+    "and *medical help* in Kaza is basic,",
+    "so definitely *not with children*."
+   ],
+   [
+    "What nobody tells you:",
+    "in *February*, from *Kibber*,",
+    "there are guided *snow leopard* trips,",
+    "but only for people",
+    "*used to hard cold*."
+   ],
+   [
+    "For everyone else,",
+    "go in *June or September*,",
+    "when *both roads are open*,",
+    "and in September",
+    "the barley turns *golden*."
+   ],
+   [
+    "*Send this* to whoever",
+    "is *insisting* on Spiti",
+    "in December."
+   ]
+  ]
+ },
+ "title": "Spiti this winter? Only one road gets you in | NakshIQ",
+ "caption_lead": "Planning Spiti this winter? From November the Manali side shuts with snow on Kunzum Pass, leaving only the icy Kinnaur road, and most homestays close for winter. December nights drop to -15°C and Kaza's clinic is basic, so not with children. The exception: guided snow leopard expeditions from Kibber, at their peak in February, for travellers used to hard cold. For everyone else, go in June or September, when both roads are open; September brings the golden barley harvest.",
+ "cost_basis": [],
+ "facts": [
+  "months.11 score 2 = 4/10: 'Manali side shut (Kunzum snow). Kinnaur road only, cold -5 to 8°C.'; fact pack skip_reason 'Kunzum Pass closed; only grueling Kinnaur approach viable in subzero cold'",
+  "months.12 and 1 score 1 = 2/10: 'Skip, Kunzum La snow-bound Nov-Apr cuts off Lahaul-Spiti loop; only Kinnaur-side approach via Tabo possible, and at 4x the road risk. Most homestays shut for winter. Better window: June-early October.'",
+  "months.12: 'Deep winter -15 to 0°C. Not for casual travel. Kinnaur route unreliable. Kaza services minimal.'; months.1 who_should_avoid 'Anyone who hasn't driven icy Himalayan roads'",
+  "months.11 who_should_avoid: 'People with medical conditions requiring hospital access, Kaza's clinic is basic'; 'Families with children, the cold, isolation, and road risk make it unsuitable'; emergency nearest_hospital 'Community Health Centre Kaza'",
+  "months.2 who_should_go: 'Snow leopard enthusiasts, February is peak tracking season from Kibber'; months.1: 'Snow leopard trackers with guided expeditions booked from Kibber'; 'Extreme cold-weather travellers'",
+  "months.6 score 5 = 10/10: 'Peak. Both routes open.'; months.9 score 5 = 10/10: 'Best month overall. Post-monsoon clarity, golden barley harvest.'; crowd: 'June and Sep are ideal, fewer people, passes open'",
+  "NOT used: Kalpa as a winter swap (trap_swaps spiti -> kalpa exists, but Kalpa's November is only 'wait' 3 = 6/10 and December 'skip'); winter room prices (homestays mostly shut, so a low-season price would mislead)"
+ ],
+ "spoken_numbers": [
+  "माइनस पंद्रह (-15°C)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Kunzum Pass|kunzum",
+  "line": "Spiti in December?",
+  "stamp": "SNOWBOUND",
+  "focus": [
+   0.5,
+   0.45
+  ]
+ },
+ "music": "cinematic-a-new-life-606",
+ "music_start": 29
+}

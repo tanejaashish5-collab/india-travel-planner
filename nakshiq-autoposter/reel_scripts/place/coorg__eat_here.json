@@ -1,0 +1,161 @@
+{
+ "id": "coorg__eat_here",
+ "slug": "coorg",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "कूर्ग में सब कॉफ़ी के बागान और झरने देखने आते हैं, पर यहाँ का असली खाना होमस्टे की रसोई में बनता है, होटल के मेन्यू में नहीं।",
+   "होमस्टे नहीं है, तो मडिकेरी में पोस्ट ऑफ़िस के सामने एक छोटी सी जगह है, जहाँ दीवारों पर पुरानी बंदूकें टंगी हैं, वहाँ पंदी करी, यानी कोडवा पोर्क करी, चावल के गोलों के साथ लीजिए, और एक बजे से पहले पहुँचिए।",
+   "और राजा सीट से थोड़ा नीचे एक परिवार अपने घर के पीछे आँगन में खाना खिलाता है, जो देखने में रेस्टोरेंट लगता ही नहीं, तो पहले फ़ोन कर लीजिए।",
+   "पर अंग्रेज़ों के ज़माने के पुराने होटल में अब पूरी पंदी करी नहीं मिलती, तो वहाँ पंदी घी रोस्ट माँगिए।",
+   "नवंबर में कॉफ़ी की तुड़ाई का मौसम है, पर वीकेंड पर बेंगलुरु की भीड़ आती है, तो हफ़्ते के बीच में जाइए।",
+   "ये उसे भेजिए जिसके साथ आप कूर्ग जा रहे हैं।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:coorg__hero.mp4",
+   "hook": "Coorg's best food<br>isn't on <em>a hotel menu</em>"
+  },
+  {
+   "kicker": "Pork curry, the Kodava way",
+   "lines": [
+    "<em>Coorg Cuisine</em>, since 2006",
+    "Opposite the Post Office, Madikeri",
+    "Pandi curry with kadambuttu",
+    "Before 1 pm; finish with bella coffee"
+   ],
+   "bg": "photo:Pandi curry|curry"
+  },
+  {
+   "kicker": "Doesn't look like a restaurant",
+   "lines": [
+    "<em>Tiger Tiger Ethnic Kodava Dining</em>",
+    "A family backyard below Raja Seat",
+    "A few tables: call ahead",
+    "Then Raja Seat for sunset"
+   ],
+   "bg": "photo:Raja Seat Madikeri|raja"
+  },
+  {
+   "kicker": "Order this instead",
+   "lines": [
+    "<em>East End Hotel</em>, Stuart Hill",
+    "British-era, Madikeri",
+    "No full pandi curry any more",
+    "Ask for the pandi ghee roast"
+   ],
+   "bg": "photo:Madikeri town|madikeri"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Coffee harvest season. Weekends fill with Bangalore traffic: go midweek.",
+   "bg": "photo:Coorg coffee plantation|coffee"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Coorg mein sab *coffee ke baagaan* aur jharne dekhne aate hain,",
+    "par yahan ka *asli khaana*",
+    "*homestay ki rasoi* mein banta hai, hotel ke menu mein nahi."
+   ],
+   [
+    "Homestay nahi hai, to Madikeri mein",
+    "*post office ke saamne* ek chhoti si jagah hai,",
+    "jahan deewaron par *purani bandookein* tangi hain,",
+    "wahan *pandi curry*, yaani Kodava pork curry, chawal ke golon ke saath lijiye,",
+    "aur *1 baje se pehle* pahunchiye."
+   ],
+   [
+    "Aur *Raja Seat* se thoda neeche",
+    "ek parivaar apne *ghar ke peeche aangan* mein khaana khilaata hai,",
+    "jo dekhne mein restaurant lagta hi nahi,",
+    "to pehle *phone* kar lijiye."
+   ],
+   [
+    "Par *angrezon ke zamaane* ke purane hotel mein",
+    "ab poori pandi curry nahi milti,",
+    "to wahan *pandi ghee roast* maangiye."
+   ],
+   [
+    "November mein *coffee ki tudaai* ka mausam hai,",
+    "par weekend par *Bengaluru ki bheed* aati hai,",
+    "to *hafte ke beech* mein jaaiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jiske saath aap *Coorg* ja rahe hain."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone comes to Coorg for *coffee estates* and waterfalls,",
+    "but the *real food* here",
+    "is cooked in *homestay kitchens*, not on hotel menus."
+   ],
+   [
+    "No homestay? In Madikeri,",
+    "*opposite the post office*, is a small place",
+    "with *old guns* on the walls:",
+    "order the *pandi curry*, Kodava pork curry, with rice dumplings,",
+    "and get there *before 1 pm*."
+   ],
+   [
+    "Just below *Raja Seat*,",
+    "a family serves food in their *own backyard*,",
+    "and it doesn't even look like a restaurant,",
+    "so *call ahead*."
+   ],
+   [
+    "But the old *British-era hotel*",
+    "no longer serves full pandi curry,",
+    "so ask for the *pandi ghee roast*."
+   ],
+   [
+    "November is *coffee harvest* season,",
+    "but weekends bring the *Bengaluru crowd*,",
+    "so go *midweek*."
+   ],
+   [
+    "*Send this* to whoever",
+    "you're going to *Coorg* with."
+   ]
+  ]
+ },
+ "title": "Coorg's best food isn't on a hotel menu | NakshIQ",
+ "caption_lead": "In Coorg the best food is cooked in homestay kitchens. In town, Coorg Cuisine, opposite the Post Office in Madikeri, has old guns on the walls: order pandi curry (Kodava pork curry) with kadambuttu, arrive before 1 pm, and finish with bella coffee. Tiger Tiger Ethnic Kodava Dining is a family's backyard just below Raja Seat, a few tables only, so call ahead. East End Hotel on Stuart Hill, from the British era, no longer serves full pandi curry; ask for the pandi ghee roast. November is coffee harvest season; go midweek.",
+ "cost_basis": [],
+ "facts": [
+  "food_scene note: 'Best food is at homestays, they cook traditional Kodava meals'",
+  "eatery Coorg Cuisine, 'College Road, opposite Post Office, Madikeri', est 2006: 'walls hung with antique guns'; 'Pandi curry with kadambuttu (rice dumplings) and the bella (jaggery) coffee after lunch are the reference order'; 'can have a 10-15 minute wait at lunch, go before 1pm'",
+  "food_scene cuisine: 'Pandi curry (pork)'",
+  "eatery Tiger Tiger Ethnic Kodava Dining, near Raja Seat: 'set up in the family's own backyard a short walk downstairs from Raja Seat, so unassuming it does not look like a restaurant'; 'just a few tables in a backyard, so call ahead'; 'Pair it with a Raja Seat sunset walk'",
+  "eatery East End Hotel, Stuart Hill: 'A long-standing Madikeri bar-and-restaurant from the British era'; 'They no longer carry full pandi curry, order the pandi ghee roast instead'",
+  "months.11 5=10/10; reel-data coorg months.11 'Coffee Arabica harvest'; crowd_calendar 'Weekends crowded with Bangalore traffic', avoid_weekends true, best_day Weekday",
+  "no food prices anywhere; eatery names on cards and caption only",
+  "NOT used: 'Madikeri's oldest dedicated Kodava restaurant' (kept off cards to avoid a superlative)"
+ ],
+ "spoken_numbers": [
+  "एक (1 pm)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Coorg coffee plantation|coffee",
+  "top_label": "EVERYONE COMES FOR THIS",
+  "bottom": "photo:Pandi curry|curry",
+  "bottom_label": "LOCALS EAT THIS",
+  "hook": "Where does Coorg|*actually eat?*"
+ },
+ "music": "travel-just-keep-walking-339",
+ "music_start": 33
+}

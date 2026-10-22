@@ -1,0 +1,169 @@
+{
+ "id": "agra__hidden_gems",
+ "slug": "agra",
+ "format": "hidden_gems",
+ "series": "hidden_gems",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "आगरा में सब ताज महल को एक ही तरफ़ से देखते हैं, पर यमुना के उस पार कुछ जगहें हैं जिन्हें टूर वाले छोड़ देते हैं।",
+   "पहली, चीनी का रौज़ा, एक मुग़ल मक़बरा जिसका पूरा अगला हिस्सा कभी नीली, हरी और नारंगी टाइलों से ढका था, पर न टिकट खिड़की है न ढंग का बोर्ड, तो टूर बसें यहाँ रुकती ही नहीं।",
+   "फिर कच्छपुरा गाँव, जहाँ कभी ताज बनाने वाले कारीगर रहते थे, और यहाँ गाँव के ही लोग पैदल घुमाते हैं, तो कमाई भी गाँव में ही रहती है।",
+   "और ये सैर ख़त्म होती है मेहताब बाग़ पर, जहाँ से शाम को ताज महल यमुना में झलकता है, भीड़ बहुत कम होती है, और फ़ोटो अंदर से भी बेहतर आती है।",
+   "नवंबर में ताज फ़ोटो में सबसे अच्छा दिखता है, पर वीकेंड पर भारी भीड़ होती है और शुक्रवार को ताज बंद रहता है, तो मंगलवार से गुरुवार जाइए।",
+   "इसे सेव कर लीजिए, या उसे भेजिए जो इस नवंबर आगरा जा रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:agra__hero.mp4",
+   "hook": "Behind the <em>Taj</em>.<br>Tours skip it."
+  },
+  {
+   "kicker": "No tour stops here",
+   "lines": [
+    "<em>Chini Ka Rauza</em>, 1635",
+    "A Mughal tomb once clad in glazed tiles",
+    "No ticket counter, free entry",
+    "Late afternoon light on the tiles"
+   ],
+   "bg": "photo:Chini Ka Rauza|chini"
+  },
+  {
+   "kicker": "Village walk",
+   "lines": [
+    "<em>Kachhpura</em>",
+    "Where the Taj's artisans lived",
+    "Villagers guide it: book a day ahead",
+    "Ends at the Taj's back view"
+   ],
+   "bg": "photo:Taj Mahal from across the Yamuna|yamuna"
+  },
+  {
+   "kicker": "Across the river",
+   "lines": [
+    "<em>Mehtab Bagh</em>",
+    "The Taj reflected in the Yamuna",
+    "A fraction of the crowd",
+    "Reflection depends on the water level"
+   ],
+   "bg": "photo:Mehtab Bagh Taj|mehtab"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Weekends are packed and the Taj is closed on Fridays. Go Tuesday to Thursday.",
+   "bg": "photo:Taj Mahal Agra India 2025|taj"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Agra mein sab *Taj Mahal* ko",
+    "*ek hi taraf* se dekhte hain,",
+    "par *Yamuna ke us paar* kuch jagah hain",
+    "jinhe *tour waale chhod* dete hain."
+   ],
+   [
+    "Pehli, *Chini ka Rauza*,",
+    "ek Mughal maqbara jiska poora agla hissa",
+    "kabhi *neeli, hari aur naarangi tiles* se dhaka tha,",
+    "par na *ticket khidki* hai na dhang ka board,",
+    "to *tour buses* yahan rukti hi nahi."
+   ],
+   [
+    "Phir *Kachhpura gaon*,",
+    "jahan kabhi *Taj banaane waale kaarigar* rehte the,",
+    "aur yahan *gaon ke hi log* paidal ghumaate hain,",
+    "to *kamaai bhi gaon* mein hi rehti hai."
+   ],
+   [
+    "Aur ye sair khatam hoti hai *Mehtab Bagh* par,",
+    "jahan se shaam ko Taj Mahal",
+    "*Yamuna mein jhalakta* hai,",
+    "*bheed bahut kam* hoti hai,",
+    "aur photo *andar se bhi behtar* aati hai."
+   ],
+   [
+    "*November* mein Taj photo mein sabse achha dikhta hai,",
+    "par weekend par *bhaari bheed* hoti hai",
+    "aur *Shukravaar ko Taj band* rehta hai,",
+    "to *Mangalvaar se Guruvaar* jaaiye."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "ya usse *bhejiye*",
+    "jo is November *Agra* ja raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone in Agra sees the *Taj*",
+    "from *one side*,",
+    "but *across the Yamuna* are places",
+    "the *tours skip*."
+   ],
+   [
+    "First, *Chini Ka Rauza*,",
+    "a Mughal tomb whose whole facade",
+    "was once clad in *blue, green and orange tiles*,",
+    "but there's *no ticket counter* and barely a sign,",
+    "so *tour buses never stop*."
+   ],
+   [
+    "Then *Kachhpura village*,",
+    "where the *artisans who built the Taj* once lived,",
+    "and *villagers themselves* walk you round,",
+    "so the *money stays in the village*."
+   ],
+   [
+    "The walk ends at *Mehtab Bagh*,",
+    "where in the evening",
+    "the *Taj is reflected* in the Yamuna,",
+    "with *far fewer people*,",
+    "and photos *better than inside*."
+   ],
+   [
+    "In *November* the Taj looks its best in photos,",
+    "but weekends are *packed*",
+    "and the Taj is *closed on Fridays*,",
+    "so go *Tuesday to Thursday*."
+   ],
+   [
+    "*Save this*,",
+    "or *send it* to whoever",
+    "is going to *Agra* this November."
+   ]
+  ]
+ },
+ "title": "Across the river from the Taj: what tours skip | NakshIQ",
+ "caption_lead": "Everyone sees the Taj from one side. Across the Yamuna: Chini Ka Rauza (1635), a Mughal tomb whose facade was once clad in glazed blue, green and orange tiles; free entry, no ticket counter and almost no signage, so coach tours skip it. The Kachhpura village walk, where the Taj's artisans once lived, is guided by villagers (book a day ahead) and ends at Mehtab Bagh, where the Taj is reflected in the Yamuna with a fraction of the crowd. November is the Taj at its photogenic best; weekends are packed and the Taj is closed on Fridays, so go Tuesday to Thursday.",
+ "cost_basis": [],
+ "facts": [
+  "gem Mehtab Bagh Taj Sunset: 'Everyone enters the Taj from the south gate. Mehtab Bagh across the river is a different experience.'; 'Taj Mahal reflected in the Yamuna at sunset from the opposite bank. Fraction of the crowd. Better photos than inside.'",
+  "gem Chini Ka Rauza: 'on the left bank of the Yamuna with no ticket counter, no audio guide, and almost no signage, coach tours skip it'; 'The 1635 tomb ... entire facade was clad in glazed Persian-style tilework (chini). Most of the orange, blue and green tiles have weathered off'; 'late afternoon when low sun catches surviving tiles'; 'Free entry, 6am-6pm daily'",
+  "gem Kachhpura Village Mughal Heritage Walk: 'starts on the unmonumental left bank ... never makes the standard Agra itinerary'; 'the village that once housed the artisans who built the Taj'; 'ending at Mehtab Bagh for the back view of the Taj'; 'The guides are villagers ... the income stays in the village'; 'book guide a day ahead'",
+  "persona photographer: 'Mehtab Bagh reflection shot (water level dependent)'",
+  "months.11 score 5 = 10/10: 'Excellent. Cool, clear, Taj at its photogenic best.'",
+  "crowd: 'Taj Mahal gets 70K+ visitors on weekends Oct-Feb ... Closed Fridays.'; best_day Tue-Thu; avoid_weekends true",
+  "NOT used: 'sunset' in the voice. The Agra trap_swaps pain point says 'Mehtab Bagh closes at 5pm'; a November sunset in Agra falls after 5 pm, so the voice says 'शाम को' (evening) rather than promising the sunset itself. Founder to confirm the gate time before voicing.",
+  "NOT used: Kachhpura walk fee (₹500-800) and Chini Ka Rauza auto fare; no other ticket or tour prices"
+ ],
+ "spoken_numbers": [],
+ "cover": {
+  "style": "C",
+  "top": "clip:agra__hero.mp4",
+  "top_label": "EVERYONE",
+  "bottom": "photo:Chini Ka Rauza|chini",
+  "bottom_label": "ACROSS THE RIVER",
+  "hook": "What's across|*the Yamuna?*"
+ },
+ "music": "uplifting-happy-times-1030",
+ "music_start": 0
+}

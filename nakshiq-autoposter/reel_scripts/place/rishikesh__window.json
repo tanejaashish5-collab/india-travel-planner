@@ -1,0 +1,144 @@
+{
+ "id": "rishikesh__window",
+ "slug": "rishikesh",
+ "format": "window",
+ "series": "window",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "ऋषिकेश जाना है तो सही वक़्त अभी है, क्योंकि नवंबर के बाद यही शहर बदल जाता है।",
+   "नवंबर में दिन ठंडे और साफ़ रहते हैं, राफ़्टिंग के लिए गंगा एकदम सही होती है, और अक्टूबर के मुक़ाबले भीड़ कम होती है।",
+   "योग का सीज़न भी ज़ोरों पर होता है, तो आश्रमों में क्लासें पूरी चल रही होती हैं, और शाम की गंगा आरती का माहौल देखने लायक होता है।",
+   "पर दिसंबर और जनवरी में सुबहें ठिठुरती हैं, जनवरी में गंगा का पानी बारह डिग्री तक होता है, और शहर रात को जल्दी सो जाता है।",
+   "राफ़्टिंग तब भी चलती है पर ठंडे पानी में, तो पूरा ऋषिकेश देखना है तो नवंबर में जाइए, और वीकेंड छोड़कर सोमवार से बुधवार।",
+   "ये उसे भेजिए जो कह रहा है, ऋषिकेश दिसंबर में चलेंगे।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Laxman Jhula Rishikesh|laxman",
+   "hook": "<em>Rishikesh</em> changes<br>after November"
+  },
+  {
+   "kicker": "Go now",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "10 to 24°C. Cool, clear, fewer crowds than October. Rafting perfect.",
+   "bg": "clip:rishikesh__hero.mp4"
+  },
+  {
+   "kicker": "Also in November",
+   "lines": [
+    "Yoga season at its peak",
+    "<em>Ganga Aarti</em> at its most atmospheric",
+    "Low humidity for outdoor practice"
+   ],
+   "bg": "photo:Triveni Ghat Rishikesh aarti|rishikesh"
+  },
+  {
+   "kicker": "December and January",
+   "big": "Wait",
+   "line": "NakshIQ score <em>6/10</em>",
+   "sub": "Cold mornings. The river is 12°C in January. The town sleeps early.",
+   "bg": "photo:Ganges Rishikesh|rishikesh"
+  },
+  {
+   "kicker": "One thing",
+   "big": "Mon to Wed",
+   "sub": "Rafting still runs in winter, in colder water. Weekends bring Delhi day-trippers.",
+   "bg": "photo:Rishikesh rafting Ganga|rishikesh"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Rishikesh* jaana hai to",
+    "*sahi waqt abhi* hai,",
+    "kyunki November ke baad yahi shehar *badal jaata* hai."
+   ],
+   [
+    "November mein din *thande aur saaf* rehte hain,",
+    "*rafting* ke liye Ganga ekdum sahi hoti hai,",
+    "aur October ke muqable *bheed kam* hoti hai."
+   ],
+   [
+    "*Yoga ka season* bhi zoron par hota hai,",
+    "to ashramon mein classes poori chal rahi hoti hain,",
+    "aur shaam ki *Ganga Aarti* ka maahaul dekhne laayak hota hai."
+   ],
+   [
+    "Par *December aur January* mein subahen *thithurti* hain,",
+    "January mein Ganga ka paani *12 degree* tak hota hai,",
+    "aur shehar raat ko *jaldi so* jaata hai."
+   ],
+   [
+    "Rafting tab bhi chalti hai par *thande paani* mein,",
+    "to *poora Rishikesh* dekhna hai to *November* mein jaaiye,",
+    "aur weekend chhodkar *Somvaar se Budhvaar*."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo keh raha hai,",
+    "Rishikesh *December mein* chalenge."
+   ]
+  ],
+  "en": [
+   [
+    "If you're going to *Rishikesh*,",
+    "the *right time is now*,",
+    "because after November the town *changes*."
+   ],
+   [
+    "November days are *cool and clear*,",
+    "the Ganga is *just right for rafting*,",
+    "and there are *fewer crowds* than in October."
+   ],
+   [
+    "*Yoga season* is in full swing too,",
+    "so ashram classes are running,",
+    "and the evening *Ganga Aarti* is worth seeing."
+   ],
+   [
+    "But in *December and January* mornings turn *cold*,",
+    "the Ganga drops to *12°C* in January,",
+    "and the town *goes to sleep early*."
+   ],
+   [
+    "Rafting still runs then, but in *cold water*,",
+    "so for the *full Rishikesh*, go in *November*,",
+    "and skip weekends: *Monday to Wednesday*."
+   ],
+   [
+    "*Send this* to whoever",
+    "keeps saying,",
+    "let's do Rishikesh *in December*."
+   ]
+  ]
+ },
+ "title": "Rishikesh in December? Go now instead | NakshIQ",
+ "caption_lead": "The window for Rishikesh is now. November is 10 to 24°C, cool and clear, with fewer crowds than October, perfect rafting and the yoga season in full swing. December and January are colder: cold mornings, a 12°C river in January, and a town that sleeps early. Rafting still runs, in colder water. Skip weekends, when Delhi day-trippers arrive, and go Monday to Wednesday.",
+ "cost_basis": [],
+ "facts": [
+  "reel-data months.11 5=10/10: 'Excellent 10-24°C. Cool, clear, fewer crowds. Rafting perfect. Yoga season peak. Ganga Aarti atmospheric.'; months.10 who_should_avoid: 'November offers 80% of the experience at 50% of the crowd' (fewer than October)",
+  "months.11 go_or_skip_verdict: 'low humidity ideal for outdoor practice'",
+  "months.12 3=6/10 wait: reel-data 'Cold mornings 6-18°C ... Rafting in cooler water'; who_should_avoid 'the town is asleep by 8:30 PM in December', 'First-time visitors wanting the \"full Rishikesh experience\", this is the quiet version'",
+  "months.1 3=6/10 wait: reel-data 'Cool 8-20°C. White-water rafting open on calm Ganga'; who_should_avoid '12°C Ganges in January', 'January evenings end by 9 PM'",
+  "crowd: 'Weekends bring Delhi day-trippers', best_day 'Mon-Wed', avoid_weekends true",
+  "NOT used: months.11 '80% of October's experience at 50% of the price' and 'Best value'; the ledger has October and November at the same peak hotel-mid 3250. NOT used: months.1 skip_reason 'inflated accommodation prices'; the ledger has January as low season (2450)"
+ ],
+ "spoken_numbers": [
+  "बारह (12°C)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Laxman Jhula Rishikesh|laxman",
+  "hook": "Rishikesh in December?|*Go now instead*"
+ },
+ "music": "uplifting-reaching-out-187",
+ "music_start": 0
+}

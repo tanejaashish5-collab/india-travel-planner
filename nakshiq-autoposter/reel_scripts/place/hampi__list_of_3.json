@@ -1,0 +1,160 @@
+{
+ "id": "hampi__list_of_3",
+ "slug": "hampi",
+ "format": "list_of_3",
+ "series": "list_of_3",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "हम्पी में ज़्यादातर लोग बाज़ार और विट्ठल मंदिर देखकर लौट जाते हैं, पर आसपास तीन जगहें हैं जो उनकी लिस्ट में नहीं होतीं।",
+   "पहली, पंद्रह किलोमीटर दूर दरोजी भालू अभयारण्य, जहाँ जीप सफ़ारी नहीं, बस एक वॉचटावर, और शाम को भालू चट्टानों पर रखा गुड़ खाने आते हैं।",
+   "दूसरी, नदी पार आनेगुंदी गाँव, जिसे रामायण की किष्किंधा माना जाता है, बाली और सुग्रीव का राज्य, और वहाँ आप गोल नाव में बैठकर पहुँचते हैं।",
+   "और तीसरी, उसी तरफ़ अंजनाद्रि पहाड़ी, जिसे हनुमान जी का जन्मस्थान माना जाता है, पाँच सौ पचहत्तर सीढ़ियाँ, और ऊपर से तुंगभद्रा और हम्पी के खंडहर दिखते हैं।",
+   "नवंबर में दिन सूखे और सुहाने रहते हैं, बस पानी ख़ुद लेकर जाइए, क्योंकि पहाड़ी पर कोई दुकान नहीं और अभयारण्य में भी कुछ नहीं मिलता।",
+   "इसे सेव कर लीजिए, या उसे भेजिए जो हम्पी का प्लान बस खंडहरों तक बना रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:hampi__hero.mp4",
+   "hook": "3 places near <em>Hampi</em><br>not on your list"
+  },
+  {
+   "kicker": "1 · Wildlife",
+   "lines": [
+    "<em>Daroji Sloth Bear Sanctuary</em>",
+    "15 km, 30 min from Hampi",
+    "One watchtower, no jeep safari",
+    "Bears come out 3.30 to 6 pm"
+   ],
+   "bg": "photo:Sloth bear|sloth bear"
+  },
+  {
+   "kicker": "2 · Across the river",
+   "lines": [
+    "<em>Anegundi</em>",
+    "Believed to be Kishkindha of the Ramayana",
+    "Coracle from Virupaksha ghat",
+    "Runs 6 am to 5.30 pm"
+   ],
+   "bg": "photo:Coracle Hampi|coracle"
+  },
+  {
+   "kicker": "3 · Sunrise climb",
+   "lines": [
+    "<em>Anjanadri Hill</em>",
+    "Believed birthplace of Hanuman",
+    "575 steps, 30 to 40 min",
+    "360° view over the Tungabhadra"
+   ],
+   "bg": "photo:Anjanadri Hill Hampi|anjan"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "17 to 29°C, dry. Carry water: no shop on the hill, nothing inside the sanctuary.",
+   "bg": "photo:Virupaksha Temple Hampi|virupaksha"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Hampi mein zyadatar log *bazaar* aur *Vitthal Mandir* dekhkar laut jaate hain,",
+    "par aaspaas *teen jagah* hain",
+    "jo unki *list mein nahi* hotin."
+   ],
+   [
+    "Pehli, *15 km* door *Daroji bhalu abhyaranya*,",
+    "jahan jeep safari nahi, bas ek *watchtower*,",
+    "aur shaam ko bhalu chattanon par rakha *gud khaane* aate hain."
+   ],
+   [
+    "Doosri, nadi paar *Anegundi* gaon,",
+    "jise Ramayan ki *Kishkindha* maana jaata hai,",
+    "Bali aur Sugreev ka raajya,",
+    "aur wahan aap *gol naav* mein baithkar pahunchte hain."
+   ],
+   [
+    "Aur teesri, usi taraf *Anjanadri pahadi*,",
+    "jise *Hanuman ji ka janmasthan* maana jaata hai,",
+    "*575 seedhiyan*,",
+    "aur upar se *Tungabhadra* aur Hampi ke khandhar dikhte hain."
+   ],
+   [
+    "*November* mein din *sookhe aur suhaane* rehte hain,",
+    "bas *paani khud* lekar jaaiye,",
+    "kyunki pahadi par *koi dukaan nahi*",
+    "aur abhyaranya mein bhi kuch nahi milta."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "ya usse *bhejiye*",
+    "jo Hampi ka plan bas *khandharon tak* bana raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Most people in Hampi see *Hampi Bazaar* and *Vittala Temple* and leave,",
+    "but there are *three places* nearby",
+    "that *aren't on their list*."
+   ],
+   [
+    "One: *15 km* away, *Daroji Sloth Bear Sanctuary*,",
+    "no jeep safari, just one *watchtower*,",
+    "and in the evening bears come to eat the *jaggery* left on the rocks."
+   ],
+   [
+    "Two: across the river, *Anegundi* village,",
+    "believed to be *Kishkindha* of the Ramayana,",
+    "the kingdom of Vali and Sugriva,",
+    "and you get there in a *round coracle boat*."
+   ],
+   [
+    "And three: on the same side, *Anjanadri Hill*,",
+    "believed to be *Hanuman's birthplace*,",
+    "*575 steps* up,",
+    "with the *Tungabhadra* and Hampi's ruins below."
+   ],
+   [
+    "*November* days are *dry and pleasant*,",
+    "just *carry your own water*,",
+    "because there's *no shop* on the hill",
+    "and nothing inside the sanctuary."
+   ],
+   [
+    "*Save this*,",
+    "or *send it* to whoever",
+    "is planning Hampi *only for the ruins*."
+   ]
+  ]
+ },
+ "title": "3 places near Hampi most people skip | NakshIQ",
+ "caption_lead": "Most people in Hampi see Hampi Bazaar and Vittala Temple and leave. Daroji Sloth Bear Sanctuary is 15 km away: one watchtower, no jeep safari, and bears come out between 3.30 and 6 pm for jaggery left on the rocks. Across the river by coracle is Anegundi, believed to be Kishkindha of the Ramayana. On the same side, Anjanadri Hill, believed to be Hanuman's birthplace: 575 steps to a view over the Tungabhadra. November is dry and pleasant; carry water, because there's no shop on the hill and nothing inside the sanctuary.",
+ "cost_basis": [],
+ "facts": [
+  "gem Anegundi why_unknown: 'Day-trippers from Hospet stick to Hampi Bazaar + Vittala Temple + Royal Centre and never cross the Tungabhadra'",
+  "gem Daroji Sloth Bear Sanctuary: 15 km, '30 min drive SE from Hampi via Kamalapur'; 'works on a watchtower-viewing model (no jeep safari)'; 'bears emerge 3.30-6pm to feed on jaggery placed daily on the boulders'; 'No food/water inside, carry your own'; why_unknown 'falls off most circuits'",
+  "gem Anegundi: 'identified in the Ramayana as Kishkindha, the Vanara kingdom of Vali and Sugriva'; '15 min via coracle ferry from Virupaksha ghat'; 'coracle from 6am to 5.30pm'",
+  "gem Anjeyanadri Hill: 'Local tradition identifies Anjeyanadri as the birthplace of Hanuman'; '575-step climb from the Anegundi side'; 'The climb takes 30-40 min'; '360° view over the Tungabhadra river loop, Matanga Hill, and the boulder-strewn Hampi ruins'; 'carry water, no shop after the base'. Voiced and carded as Anjanadri, the spelling people search",
+  "months.11 5=10/10; reel-data months.11 '17-29C, dry ... Heritage walks at year-best comfort'",
+  "NOT used: Hampi Utsav dates (reel-data says Nov 3-5 but the year is not stated); Daroji 'India's only' vs 'India's first' (the gem says both); entry fees"
+ ],
+ "spoken_numbers": [
+  "तीन (3 places)",
+  "पंद्रह (15 km)",
+  "पाँच सौ पचहत्तर (575 steps)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Anjanadri Hill Hampi|anjan",
+  "hook": "Been to Hampi?|*You missed these three*"
+ },
+ "music": "travel-summer-fun-970",
+ "music_start": 0
+}

@@ -1,0 +1,178 @@
+{
+ "id": "mussoorie__real_cost",
+ "slug": "mussoorie",
+ "format": "real_cost",
+ "series": "real_cost",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "मसूरी में एक अच्छा कमरा, नवंबर में बाईस सौ का, और मई जून में साढ़े पैंतीस सौ का।",
+   "फ़र्क़ सिर्फ़ महीने का है, क्योंकि मई में मॉल रोड पर कंधे से कंधा टकराता है और ऊपर आने वाला ट्रैफ़िक घंटों रेंगता है।",
+   "जबकि नवंबर में आसमान ज़्यादा साफ़ रहता है और सैलानी कम होते हैं, तो लंढौर और चार दुकान आप आराम से घूम सकते हैं।",
+   "टैक्सी का किराया दोनों महीनों में एक जैसा है, तो पूरी बचत कमरे पर होती है।",
+   "बस ध्यान रखिए, सुबह शाम ठंड होती है और दोपहर तक बादल घिर आते हैं, और वीकेंड पर दिल्ली की भीड़ आती है, तो हफ़्ते के बीच में जाइए।",
+   "ये उसे भेजिए जो हर साल गर्मी की छुट्टियों में मसूरी जाने की ज़िद करता है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:mussoorie__hero.mp4",
+   "hook": "One <em>Mussoorie</em> room,<br>two prices.",
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹2,200"
+    ],
+    [
+     "May and June",
+     "₹3,550"
+    ]
+   ]
+  },
+  {
+   "kicker": "May and June",
+   "big": "Wall to wall",
+   "sub": "Mall Road packed. Traffic stacks for hours.",
+   "bg": "photo:Mall Road Mussoorie|mall road"
+  },
+  {
+   "kicker": "November",
+   "big": "Quieter",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Clearer skies, fewer tourists. Landour and Char Dukan without the crowd.",
+   "bg": "photo:Landour Mussoorie|landour"
+  },
+  {
+   "kicker": "Taxi, per day",
+   "big": "₹2,600",
+   "sub": "The same in every season. The whole saving is on the room.",
+   "bg": "photo:Camel's Back Road Mussoorie|camel"
+  },
+  {
+   "kicker": "One thing",
+   "big": "Go midweek",
+   "sub": "Cold mornings, clouds by afternoon. Weekends bring Delhi traffic.",
+   "bg": "photo:Gun Hill Mussoorie|gun hill"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Mussoorie mein ek achha kamra,",
+    "November mein *₹2,200* ka,",
+    "aur May June mein *₹3,550* ka."
+   ],
+   [
+    "Farq sirf *mahine* ka hai,",
+    "kyunki May mein Mall Road par *kandhe se kandha* takraata hai",
+    "aur upar aane wala *traffic ghanton* rengta hai."
+   ],
+   [
+    "Jabki *November* mein aasmaan zyada *saaf* rehta hai",
+    "aur sailaani *kam* hote hain,",
+    "to *Landour* aur Char Dukan aap aaram se ghoom sakte hain."
+   ],
+   [
+    "*Taxi* ka kiraya dono mahinon mein *ek jaisa* hai,",
+    "to poori *bachat kamre* par hoti hai."
+   ],
+   [
+    "Bas dhyaan rakhiye, subah shaam *thand* hoti hai",
+    "aur dopahar tak *baadal* ghir aate hain,",
+    "aur *weekend* par Dilli ki bheed aati hai,",
+    "to *hafte ke beech* mein jaaiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo har saal *garmi ki chhuttiyon* mein",
+    "Mussoorie jaane ki *zid* karta hai."
+   ]
+  ],
+  "en": [
+   [
+    "A good room in Mussoorie:",
+    "*₹2,200* in November,",
+    "and *₹3,550* in May and June."
+   ],
+   [
+    "The only difference is the *month*,",
+    "because in May Mall Road is *shoulder to shoulder*",
+    "and the *traffic* up the hill crawls *for hours*."
+   ],
+   [
+    "In *November* the skies are *clearer*",
+    "and there are *fewer tourists*,",
+    "so you can walk *Landour* and Char Dukan at your own pace."
+   ],
+   [
+    "The *taxi* costs *the same* in both months,",
+    "so the whole *saving is on the room*."
+   ],
+   [
+    "Just remember: mornings and evenings are *cold*",
+    "and *clouds* roll in by afternoon,",
+    "and *weekends* bring the Delhi crowd,",
+    "so go *midweek*."
+   ],
+   [
+    "*Send this* to whoever",
+    "insists on Mussoorie",
+    "every *summer holiday*."
+   ]
+  ]
+ },
+ "title": "Same Mussoorie room, ₹1,350 apart | NakshIQ",
+ "caption_lead": "A good room in Mussoorie costs ₹2,200 a night in November and ₹3,550 in May and June. The taxi is ₹2,600 a day in every season, so the whole saving is on the room. November has clearer skies and fewer tourists, with cold mornings and afternoon clouds; weekends bring Delhi traffic, so go midweek.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2200
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3550
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "low",
+   "value": 2600
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "peak",
+   "value": 2600
+  }
+ ],
+ "facts": [
+  "costs hotel-mid low (months 1,2,3,8,9,11) typical_inr 2200; peak (5,6) 3550; transport-taxi-day 2600 in low, shoulder and peak (fact pack + reel-data costs agree)",
+  "reel-data months.5 2=4/10: 'Tourist-trap month: Mall Road wall-to-wall, hotel rates double, traffic stacks for hours'",
+  "months.11 4=8/10 go_or_skip_verdict: 'clearer skies and fewer tourists ... expect cool mornings (5°C) and afternoon clouds rolling in by 2pm'; who_should_go: 'Landour pilgrims wanting Char Dukan and the bakeries without any competition'; who_should_avoid families: 'biting cold evenings'",
+  "crowd_calendar: 'busy most weekends with Delhi-NCR traffic', avoid_weekends true; peak Apr-May '(summer holidays)'",
+  "NOT used: months.5 'hotel rates double' and trap pain point 'same room ₹2,500 in Aug is ₹12,000 in Jun'; the ledger says about 1.6x, and the ledger is what we quote",
+  "NOT used: 'quiet' or 'empty' for November; crowd_calendar lists Oct-Nov as peak crowd months, so the voice says only 'fewer tourists' (the month row) and sends people midweek"
+ ],
+ "spoken_numbers": [
+  "बाईस सौ (2,200)",
+  "साढ़े पैंतीस सौ (3,550)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Landour Mussoorie|landour",
+  "line": "Your Mussoorie room, booked in May",
+  "stamp": "+₹1,350",
+  "focus": [
+   0.4,
+   0.5
+  ]
+ },
+ "music": "travel-like-a-loop-machine-351",
+ "music_start": 0
+}

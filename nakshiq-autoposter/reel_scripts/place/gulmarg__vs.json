@@ -1,0 +1,163 @@
+{
+ "id": "gulmarg__vs",
+ "slug": "gulmarg",
+ "format": "vs",
+ "series": "vs",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft (new series ये या वो: Gulmarg vs Pahalgam); founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "कश्मीर की सर्दी में गुलमर्ग जाएँ या पहलगाम? जवाब इस पर टिका है कि आप किस महीने जा रहे हैं।",
+   "नवंबर में दोनों बीच के मौसम में होते हैं, क्योंकि गुलमर्ग में स्की ढलानें अभी खुली नहीं होतीं और पहलगाम में होटल सर्दी के लिए बंद होने लगते हैं।",
+   "तो दिसंबर में गुलमर्ग चुनिए, क्योंकि स्की सीज़न शुरू हो जाता है और गोंडोला ऊपर तक स्कीइंग के लिए खुल जाता है, जबकि पहलगाम में ज़्यादातर होटल बंद रहते हैं।",
+   "दिसंबर में गुलमर्ग में एक अच्छा कमरा करीब साढ़े चौवालीस सौ का है, पर क्रिसमस और नए साल वाला हफ़्ता सबसे महँगा होता है, तो उससे पहले जाइए।",
+   "और पहलगाम में घूमने को ज़्यादा है, बेताब घाटी, आरू घाटी, लिद्दर के किनारे सैर, पर उसका असली मौसम अक्टूबर है, जब चिनार सुनहरे और लाल हो जाते हैं।",
+   "ये उसे भेजिए जो इस सर्दी कश्मीर का प्लान बना रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Gulmarg snow|gulmarg",
+   "hook": "<em>Gulmarg</em> or Pahalgam?<br>It depends on the month."
+  },
+  {
+   "kicker": "November: both in between",
+   "lines": [
+    "<em>Gulmarg</em> 6/10: ski slopes not open yet",
+    "Golf course closed for the season",
+    "<em>Pahalgam</em> 6/10: hotels closing for winter",
+    "Last autumn colours fading"
+   ],
+   "bg": "photo:Pahalgam autumn|pahalgam"
+  },
+  {
+   "kicker": "December",
+   "big": "Gulmarg",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Ski season opens; Gondola Phase 2 opens for skiing. Pahalgam in December: 4/10, most hotels closed.",
+   "bg": "photo:Gulmarg gondola cable car|gondola"
+  },
+  {
+   "kicker": "A good room in Gulmarg, December",
+   "big": "₹4,450",
+   "sub": "Christmas to New Year is the most expensive week. Go before it.",
+   "bg": "photo:Gulmarg ski|gulmarg"
+  },
+  {
+   "kicker": "Pahalgam's month",
+   "big": "October",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Chinars blaze gold and red. Betaab Valley, Aru Valley, Lidder River walks.",
+   "bg": "photo:Betaab Valley|betaab"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Kashmir ki sardi mein",
+    "*Gulmarg* jaayein ya *Pahalgam*?",
+    "Jawaab is par tika hai",
+    "ki aap *kis mahine* ja rahe hain."
+   ],
+   [
+    "*November* mein dono beech ke mausam mein hote hain,",
+    "kyunki Gulmarg mein *ski dhalaanein* abhi khuli nahi hotin",
+    "aur Pahalgam mein *hotel* sardi ke liye *band* hone lagte hain."
+   ],
+   [
+    "To *December* mein *Gulmarg* chuniye,",
+    "kyunki *ski season* shuru ho jaata hai",
+    "aur gondola upar tak skiing ke liye khul jaata hai,",
+    "jabki Pahalgam mein zyadatar hotel *band* rehte hain."
+   ],
+   [
+    "December mein Gulmarg mein ek achha kamra",
+    "kareeb *₹4,450* ka hai,",
+    "par *Christmas aur naye saal* waala hafta sabse mehenga hota hai,",
+    "to *usse pehle* jaaiye."
+   ],
+   [
+    "Aur *Pahalgam* mein ghoomne ko zyada hai,",
+    "Betaab ghaati, Aru ghaati, Lidder ke kinaare sair,",
+    "par uska asli mausam *October* hai,",
+    "jab *chinar sunehre aur laal* ho jaate hain."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo is sardi *Kashmir ka plan* bana raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Winter in Kashmir:",
+    "*Gulmarg* or *Pahalgam*?",
+    "The answer depends on",
+    "*which month* you go."
+   ],
+   [
+    "In *November* both are in between,",
+    "because Gulmarg's *ski slopes* aren't open yet",
+    "and Pahalgam's *hotels* start *closing* for winter."
+   ],
+   [
+    "So in *December* pick *Gulmarg*,",
+    "because *ski season* begins",
+    "and the gondola opens all the way up for skiing,",
+    "while most of Pahalgam's hotels stay *closed*."
+   ],
+   [
+    "In December a good room in Gulmarg",
+    "is about *₹4,450*,",
+    "but the *Christmas to New Year* week is the most expensive,",
+    "so go *before it*."
+   ],
+   [
+    "And *Pahalgam* has more to do:",
+    "Betaab Valley, Aru Valley, walks by the Lidder,",
+    "but its real season is *October*,",
+    "when the *chinars turn gold and red*."
+   ],
+   [
+    "*Send this* to whoever",
+    "is planning *Kashmir* this winter."
+   ]
+  ]
+ },
+ "title": "Gulmarg or Pahalgam this winter? | NakshIQ",
+ "caption_lead": "Gulmarg or Pahalgam? It depends on the month. In November both are in between: Gulmarg's ski slopes aren't open yet and Pahalgam's hotels start closing for winter. In December pick Gulmarg: ski season opens and Gondola Phase 2 opens for skiing, while most Pahalgam hotels are closed. A good room in Gulmarg in December is about ₹4,450 a night; Christmas to New Year is the most expensive week, so go before it. Pahalgam has more to do (Betaab Valley, Aru Valley, Lidder walks), but its month is October, when the chinars turn gold and red.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "shoulder",
+   "value": 4450
+  }
+ ],
+ "facts": [
+  "gulmarg months.11 3=6/10 'wait': 'Ski season hasn't begun yet, so slopes are closed'; reel-data gulmarg months.11 'Golf course closes. Pre-ski season lull.'",
+  "reel-data pahalgam months.11 3=6/10 'wait': 'Last autumn colors fading. First snow on peaks. Hotels closing for winter.'",
+  "gulmarg months.12 5=10/10 'Gulmarg's ski season is opening'; reel-data gulmarg months.12 'Ski season opens ... Gondola Phase 2 opens for skiing'",
+  "reel-data pahalgam months.12 2=4/10 'skip': 'Most hotels closed. Lidder freezing.'",
+  "costs gulmarg hotel-mid shoulder (incl month 12) typical 4450",
+  "gulmarg crowd_calendar: 'Christmas-New Year is the most expensive week'",
+  "gulmarg trap_swaps -> pahalgam: 'Betaab Valley, Lidder River walks, Aru Valley, more varied experiences than Gulmarg's gondola-only offer'",
+  "reel-data pahalgam months.10 5=10/10 'Best month ... Chinar trees blaze gold and red. Betaab Valley autumn colors'",
+  "NOT used: gulmarg months 1 to 3 (DB score 1 with verdict 'go', inconsistent); Doodhpathri (reel-data months.11 skip, months.12 closed, so no fair December comparison); trap_swaps' 140 km / 4 hours (not needed)"
+ ],
+ "spoken_numbers": [
+  "साढ़े चौवालीस सौ (4,450)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Gulmarg gondola cable car|gondola",
+  "top_label": "GULMARG",
+  "bottom": "photo:Betaab Valley|betaab",
+  "bottom_label": "PAHALGAM",
+  "hook": "Gulmarg or Pahalgam|*this winter?*"
+ },
+ "music": "travel-the-duel-617",
+ "music_start": 0
+}

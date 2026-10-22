@@ -1,0 +1,158 @@
+{
+ "id": "ooty__swap",
+ "slug": "ooty",
+ "format": "swap",
+ "series": "swap",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "नवंबर में ऊटी जा रहे हैं? रुकिए, क्योंकि पीक वीकेंड पर घाट की सड़कों पर जाम लगता है और हर व्यूपॉइंट भरा होता है।",
+   "जबकि ऊटी से करीब एक घंटे की दूरी पर, उन्हीं नीलगिरि पहाड़ियों में कोटागिरी है, जहाँ वही नज़ारे लगभग बिना भीड़ के मिलते हैं।",
+   "और ये ऊटी से पुराना है, क्योंकि जिस अंग्रेज़ ने ऊटी में पहला घर बनाया, उसने उससे पहले अपना बंगला यहीं बनाया था, जो अब एक म्यूज़ियम है।",
+   "पास ही कोडनाड व्यूपॉइंट है, जहाँ से बहुत नीचे दो नदियाँ मिलती दिखती हैं, और नवंबर में यहाँ का नज़ारा साल में सबसे साफ़ होता है।",
+   "बस ये ऊटी जितना सजा धजा नहीं है, ज़रूरत की चीज़ें मिल जाती हैं, पर उससे ज़्यादा की उम्मीद मत रखिए।",
+   "ये उसे भेजिए जो इस बार भी ऊटी के जाम में फँसने वाला है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Ooty Lake|ooty",
+   "hook": "Same Nilgiris.<br><em>Without the jam.</em>"
+  },
+  {
+   "bg": "photo:Kotagiri|kotagiri",
+   "card": "place"
+  },
+  {
+   "kicker": "Older than Ooty",
+   "lines": [
+    "<em>John Sullivan's bungalow</em>, 1819",
+    "3 years before Ooty's Stone House",
+    "Kannerimukku, 10 min from town",
+    "Now a museum, closed Mondays"
+   ],
+   "bg": "photo:Sullivan Memorial Kotagiri|sullivan"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Kodanad View Point</em>",
+    "Two rivers meet 1,500 m below",
+    "Go 7 to 10 am, before the mist",
+    "November: the clearest view of the year"
+   ],
+   "bg": "photo:Kodanad view point|kodanad"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Kotagiri is basic but has the essentials. Ooty's rates climb through November.",
+   "bg": "photo:Catherine Falls Kotagiri|catherine"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "November mein *Ooty* ja rahe hain?",
+    "Rukiye, kyunki peak weekend par",
+    "ghaat ki sadkon par *jaam* lagta hai",
+    "aur har viewpoint *bhara* hota hai."
+   ],
+   [
+    "Jabki Ooty se kareeb *1 ghante* ki doori par,",
+    "unhi Nilgiri pahadiyon mein *Kotagiri* hai,",
+    "jahan wahi nazaare lagbhag *bina bheed* ke milte hain."
+   ],
+   [
+    "Aur ye *Ooty se purana* hai,",
+    "kyunki jis angrez ne Ooty mein pehla ghar banaya,",
+    "usne usse pehle apna *bungalow yahin* banaya tha,",
+    "jo ab ek *museum* hai."
+   ],
+   [
+    "Paas hi *Kodanad viewpoint* hai,",
+    "jahan se bahut neeche *do nadiyan milti* dikhti hain,",
+    "aur November mein yahan ka nazaara",
+    "saal mein *sabse saaf* hota hai."
+   ],
+   [
+    "Bas ye Ooty jitna *saja dhaja nahi* hai,",
+    "*zaroorat ki cheezein* mil jaati hain,",
+    "par usse zyada ki *ummeed mat* rakhiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo is baar bhi",
+    "*Ooty ke jaam* mein phansne waala hai."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Ooty* in November?",
+    "Wait, because on a peak weekend",
+    "the ghat roads *jam*",
+    "and every viewpoint is *packed*."
+   ],
+   [
+    "About *an hour* from Ooty,",
+    "in the same Nilgiri hills, is *Kotagiri*,",
+    "with the same views and *almost no crowd*."
+   ],
+   [
+    "And it's *older than Ooty*,",
+    "because the Englishman who built Ooty's first house",
+    "built his *bungalow here* before that,",
+    "and it's now a *museum*."
+   ],
+   [
+    "Close by is *Kodanad viewpoint*,",
+    "where far below you see *two rivers meet*,",
+    "and in November the view here",
+    "is the *clearest of the year*."
+   ],
+   [
+    "Just know it's *not as polished* as Ooty:",
+    "you'll find *the essentials*,",
+    "but *don't expect* more than that."
+   ],
+   [
+    "*Send this* to whoever",
+    "is about to get stuck",
+    "in *Ooty traffic* again."
+   ]
+  ]
+ },
+ "title": "Same Nilgiris, without the Ooty jam | NakshIQ",
+ "caption_lead": "On a peak weekend Ooty's ghat roads jam and every viewpoint is packed. About an hour away, in the same Nilgiri hills, Kotagiri has the same landscape with almost no crowd. It's older than Ooty too: John Sullivan built his bungalow at Kannerimukku in 1819, three years before Ooty's Stone House, and it's now a museum. Kodanad View Point looks down on two rivers meeting 1,500 m below, clearest in November. Kotagiri is basic but has the essentials.",
+ "cost_basis": [],
+ "facts": [
+  "ooty hidden_gems Kotagiri: 30 km, '1hr from Ooty'; 'The OLDEST Nilgiri hill station ... Ooty's landscape with zero crowds'",
+  "ooty months.11 5 (peak month in crowd_calendar peak_months); reel-data ooty months.11 'Rates climb 25 percent through month'",
+  "kotagiri hidden_gems John Sullivan Heritage Bungalow, Kannerimukku: 2 km / 10 min; 'built his first Nilgiris residence at Kannerimukku (Kotagiri) in 1819, three years before the Stone House at Ooty'; 'restored 2007 ... as a heritage museum'; closed Monday",
+  "ooty hidden_gems Stone House: 'Ooty's first European building, completed 1822 by John Sullivan'",
+  "kotagiri hidden_gems Kodanad View Point: 'confluence of the Bhavani river and the Moyar river 1,500m below'; 'Best at 7-10am before mist closes in'",
+  "reel-data kotagiri months.11 5=10/10 'Kodanad sightlines at year-best'",
+  "geo kotagiri 1,793 m, Coimbatore airport 80 km, Mettupalayam station 30 km (place card)",
+  "NOT used: Kotagiri is not cheaper (hotel-mid Nov 3,800 vs Ooty 3,700), so no price claim; Catherine Falls flow in November not stated, so only on the scene picture",
+  "dropped 2026-10-22: the pack's '50,000 vs 50' visitor counts (unverifiable); kept 'traffic jams on ghat roads, packed viewpoints' and 'same landscape with near-zero crowds' (trap_swaps ooty->kotagiri)"
+ ],
+ "spoken_numbers": [
+  "एक (about 1 hour)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Ooty Lake|ooty",
+  "top_label": "OOTY ON A WEEKEND",
+  "bottom": "photo:Kotagiri|kotagiri",
+  "bottom_label": "1 HR AWAY",
+  "hook": "Same Nilgiris.|*Why is this empty?*"
+ },
+ "music": "edm-371",
+ "music_start": 26
+}

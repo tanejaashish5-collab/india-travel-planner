@@ -1,0 +1,160 @@
+{
+ "id": "alleppey__hidden_gems",
+ "slug": "alleppey",
+ "format": "hidden_gems",
+ "series": "hidden_gems",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-22, batch 4 draft; founder approved the text in chat 2026-10-22 (\"all approved\")",
+ "vo": {
+  "hi": [
+   "अलेप्पी में सब हाउसबोट लेते हैं, पर उसी पानी के आसपास कुछ जगहें हैं जहाँ लगभग कोई नहीं रुकता।",
+   "करीब पैंतालीस मिनट दूर कुट्टनाड है, जहाँ धान के खेत समुद्र तल से नीचे हैं, और आप डोंगी में बैठकर पानी भरे खेतों के बीच से गुज़रते हैं।",
+   "रास्ते में करुमाडी गाँव में नहर किनारे करुमाडी कुट्टन बैठे हैं, नौवीं दसवीं सदी के बुद्ध, जिनका आधा हिस्सा टूटा हुआ है, पर ज़्यादातर नावें यहाँ रुकती ही नहीं।",
+   "और चंपकुलम में धान के खेतों के बीच सेंट मैरी चर्च है, जिसकी नींव परंपरा के मुताबिक़ पाँचवीं सदी में पड़ी, फिर भी रेस वाले दिन के अलावा यहाँ गिने चुने लोग आते हैं।",
+   "नवंबर में जाइए, क्योंकि नहरें शांत रहती हैं और मौसम आरामदायक होता है, जबकि क्रिसमस के आसपास भीड़ बढ़ जाती है।",
+   "ये उसे भेजिए जिसने अलेप्पी का हाउसबोट बुक कर लिया है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:alleppey__hero.mp4",
+   "hook": "Fields <em>below the sea</em>.<br>Nobody stops."
+  },
+  {
+   "kicker": "Below sea level",
+   "lines": [
+    "<em>Kuttanad farms</em>",
+    "45 min from Alleppey",
+    "Rice paddies 1 to 2 m below sea level",
+    "Canoe through the flooded fields"
+   ],
+   "bg": "photo:Kuttanad paddy fields|kuttanad"
+  },
+  {
+   "kicker": "Most boats don't stop",
+   "lines": [
+    "<em>Karumady Kuttan</em>",
+    "A 9th to 10th century granite Buddha",
+    "15 min by auto from town",
+    "No sign on the main road, free entry"
+   ],
+   "bg": "photo:Karumadi Kuttan|karumadi"
+  },
+  {
+   "kicker": "Fewer than 50 visitors a day",
+   "lines": [
+    "<em>St Mary's Forane Church</em>, Champakulam",
+    "Founded AD 427, by tradition",
+    "Inside Kuttanad's rice fields",
+    "Open 7 am to 7 pm, modest dress"
+   ],
+   "bg": "photo:St. Mary's Forane Church Champakulam|champakulam"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Calm canals, 23 to 31°C. Crowds build near Christmas.",
+   "bg": "photo:Alappuzha backwaters|alappuzha"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Alleppey mein sab *houseboat* lete hain,",
+    "par usi paani ke aaspaas kuch jagah hain",
+    "jahan lagbhag *koi nahi rukta*."
+   ],
+   [
+    "Kareeb *45 minute* door *Kuttanad* hai,",
+    "jahan dhaan ke khet *samudra tal se neeche* hain,",
+    "aur aap *dongi* mein baithkar",
+    "paani bhare kheton ke beech se guzarte hain."
+   ],
+   [
+    "Raaste mein Karumady gaon mein nahar kinaare",
+    "*Karumady Kuttan* baithe hain,",
+    "*9vi 10vi sadi ke Buddha*, jinka aadha hissa toota hua hai,",
+    "par zyadatar naavein yahan *rukti hi nahi*."
+   ],
+   [
+    "Aur *Champakulam* mein dhaan ke kheton ke beech",
+    "*St Mary's church* hai,",
+    "jiski neenv parampara ke mutaabik *5vi sadi* mein padi,",
+    "phir bhi race waale din ke alaava yahan *gine chune log* aate hain."
+   ],
+   [
+    "*November* mein jaaiye,",
+    "kyunki nahrein *shaant* rehti hain aur mausam aaramdaayak hota hai,",
+    "jabki *Christmas* ke aaspaas bheed badh jaati hai."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jisne Alleppey ka *houseboat book* kar liya hai."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone in Alleppey takes a *houseboat*,",
+    "but around that same water are a few places",
+    "where *almost nobody stops*."
+   ],
+   [
+    "About *45 minutes* away is *Kuttanad*,",
+    "where the rice fields sit *below sea level*,",
+    "and you *canoe*",
+    "between the flooded fields."
+   ],
+   [
+    "On the way, by a canal in Karumady village,",
+    "sits *Karumady Kuttan*,",
+    "a *9th to 10th century Buddha* with half of it broken away,",
+    "but most boats *don't even stop*."
+   ],
+   [
+    "And in *Champakulam*, among the rice fields,",
+    "is *St Mary's Church*,",
+    "founded in the *5th century* by tradition,",
+    "yet outside race day only *a handful of people* come."
+   ],
+   [
+    "Go in *November*,",
+    "because the canals are *calm* and the weather is comfortable,",
+    "while crowds build around *Christmas*."
+   ],
+   [
+    "*Send this* to whoever",
+    "just *booked an Alleppey houseboat*."
+   ]
+  ]
+ },
+ "title": "What Alleppey houseboats sail past | NakshIQ",
+ "caption_lead": "Everyone in Alleppey takes a houseboat. About 45 minutes away, the Kuttanad rice fields sit 1 to 2 m below sea level, and you can canoe through them. On the way is Karumady Kuttan, a 9th to 10th century granite Buddha by the Karumady canal; most boats don't stop, there's no sign on the main road, and entry is free. In Champakulam, St Mary's Forane Church was founded in AD 427 by Syrian Christian tradition, and outside race day it sees fewer than 50 visitors a day. Go in November; crowds build near Christmas.",
+ "cost_basis": [],
+ "facts": [
+  "gem Kuttanad Below-Sea-Level Farms: 20 km, '45min from Alleppey'; 'Everyone takes the houseboat. Nobody goes to the actual farms.'; 'Rice paddies 1-2m below sea level. UN-FAO heritage site. Canoe through flooded fields.'",
+  "gem Karumady Kuttan: 5 km, '15 min by autorickshaw'; 'Granite seated Buddha statue dating to the 9th-10th century AD'; 'The left half of the statue is missing'; 'on the route to Kuttanad but most boats don't stop'; 'no signage on the main road, no entry fee'",
+  "gem St. Mary's Forane Church, Champakulam: 'Founded AD 427 according to Syrian Christian tradition' (5th century); 'sits inside Kuttanad's rice fields; off-race-day it sees fewer than 50 visitors per day'; 'Open 7am-7pm daily; modest dress required'",
+  "months.11 5=10/10 'backwater season peaks with calm canals, 23-31°C is comfortable'; months.12 'expect crowds and premium prices near Christmas'",
+  "NOT used: the pack's 'oldest Christian church in Kerala' (contested, and its San Thome comparison is wrong); months.11 'pre-Christmas rates beat December-January prices significantly' (the ledger has November and December at the same hotel-mid 2,300, so no price claim)"
+ ],
+ "spoken_numbers": [
+  "पैंतालीस (45 min)",
+  "नौवीं दसवीं (9th to 10th century)",
+  "पाँचवीं (5th century)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "clip:alleppey__hero.mp4@4",
+  "top_label": "EVERYONE",
+  "bottom": "photo:Karumadi Kuttan|karumadi",
+  "bottom_label": "MOST BOATS SKIP",
+  "hook": "Why do houseboats|*sail past this?*"
+ },
+ "music": "travel-traveling-along-669",
+ "music_start": 2
+}
