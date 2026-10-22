@@ -165,8 +165,37 @@ def _subs(chunks_per_line: list, bounds: list) -> tuple[list, list]:
     return els, anim
 
 
+def _closer_kind(line: str) -> str:
+    """The kind of a reel's last line (founder 2026-10-22: every reel ended "send this to someone")."""
+    for kind, mark in (("send", "भेजिए"), ("comment", "कमेंट"), ("tag", "टैग"), ("save", "सेव"), ("part2", "अगले")):
+        if mark in line:
+            return kind
+    return " ".join(line.split()[:2])
+
+
+def _check_closer(script: Path, s: dict) -> None:
+    """A new script's closing line must differ in kind from the two reels queued before it. Runs before the
+    voice is paid for; a script already in the ledger (a re-cut) is never refused."""
+    led = json.loads(P.LEDGER.read_text())
+    mine = f"{s['slug']}__{s['format']}_voiced__"
+    if any(k.startswith(mine) for k in led):
+        return
+    prev = sorted({(v.get("queue_order") or 0, f"{v['slug']}__{v['format'].removesuffix('_voiced')}")
+                   for v in led.values() if isinstance(v, dict) and v.get("voiced") and v.get("slug")})[-2:]
+    kinds = []
+    for _, stem in prev:
+        p = script.parent / f"{stem}.json"
+        if p.exists():
+            kinds.append(_closer_kind(json.loads(p.read_text())["vo"]["hi"][-1]))
+    k = _closer_kind(s["vo"]["hi"][-1])
+    if k in kinds:
+        raise SystemExit(f"{script.name}: closing line is a '{k}' ending, like the reel queued before it; "
+                         f"rotate it (STYLE.md, Closing line)")
+
+
 def render(script: Path, out: Path, music: str | None = None, today: date | None = None, subs: str = "none") -> dict:
     import reel_v3 as R
+    _check_closer(script, json.loads(script.read_text()))
     music = music or pick_music(script)
     s = json.loads(script.read_text())
     slug, lines, scenes = s["slug"], s["vo"]["hi"], s["scenes"]

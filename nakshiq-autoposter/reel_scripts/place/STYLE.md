@@ -25,6 +25,18 @@ Founder sees every new series' first render before it posts: `place_voiced.py re
 | 6 | Another photo | Room price: the coming month vs peak, from `destination_costs` hotel-mid | A good room, per night: two rows |
 | 7 | Full Ink end screen (Naksh.iq, Travel with IQ, nakshiq.com, Follow NakshIQ) | "हर महीने का पूरा हाल NakshIQ पर है, और ये उसे भेजिए जो …" (a specific person) | end screen |
 
+## Closing line: rotate it (founder 2026-10-22)
+
+"For every reel, we have the same way of ending it: send this to someone ... we need some variations for the last line."
+19 of the first 24 reels ended on "ये उसे भेजिए ...". Pick a different kind from the two reels queued before it
+(`register` refuses a repeat; the kind is read from the line's first words):
+- **Comment question:** "आपकी फ़ेवरेट अमृतसरी चीज़ कौन सी है? कमेंट में बताइए।"
+- **Pick one:** "आप कौन सा चुनेंगे, गुलमर्ग या पहलगाम? कमेंट में लिखिए।"
+- **Save for the moment it's needed:** "इसे सेव कर लीजिए, अगली बार आमेर में काम आएगा।"
+- **Tag a person:** "उस दोस्त को टैग कीजिए जो हर बार ... "
+- **Part two:** "अगले हिस्से में ..." (a real follow-up reel must exist or be scripted)
+- **Send to a specific person:** "ये उसे भेजिए जो ..." (at most one reel in three)
+
 ## Script rules
 
 - **Language:** everyday spoken Devanagari, talking to the viewer as आप. Write NakshIQ in Latin letters.
