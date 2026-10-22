@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -460,6 +461,11 @@ def main(argv: list[str]) -> int:
     if a.cmd == "register":
         print("[place_voiced] registered " + ", ".join(register(sp, hold=a.hold)))
         return 0
+    # 2026-10-22: a bare `python3 place_voiced.py render` (no apps/web env) hashed the voice with a different
+    # ELEVEN_MODEL, missed every cached voice and paid ElevenLabs 4,071 chars to re-voice 5 approved reels.
+    if "ELEVEN_MODEL" not in os.environ:
+        raise SystemExit("run through node --env-file=../apps/web/.env.local (see the module doc): without it the "
+                         "voice settings differ, the cached voices are missed and ElevenLabs is paid again")
     tag = "" if a.subs == "none" else f"__{a.subs}"
     out = Path(a.out) if a.out else P.VEO / "reels" / f"{sp.stem}__voiced{tag}.mp4"
     res = render(sp, out, a.music, subs=a.subs)
