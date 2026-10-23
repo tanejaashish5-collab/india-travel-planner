@@ -29141,3 +29141,57 @@ Date range: 2026-04-15 → 2026-10-22
 2026-10-24 01:37:19  INFO          Uploading to R2 (timeout=300s)...
 2026-10-24 01:37:39  INFO          R2 PUT OK. Confirming...
 2026-10-24 01:37:42  INFO          Media ready: bFxsl (43,103,940 bytes · amritsar__eat_here__voiced__en.mp4)
+2026-10-23 18:29:09  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-23 18:29:09  INFO      ════════════════════════════════════════════════════════════
+2026-10-23 18:29:09  INFO      Nakshiq Autoposter · EVENING · 2026-10-23 · weekday=4
+2026-10-23 18:29:09  INFO      ════════════════════════════════════════════════════════════
+2026-10-23 18:29:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-23 18:29:59  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-23 18:29:59  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-23 18:30:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-23 18:30:01  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-23 18:30:01  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+39 more)
+2026-10-23 18:30:01  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-23 18:30:29  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-23 18:30:29  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:scenario_eat_here, pillar:scenario_sos, pillar:verification seen <2d)
+2026-10-23 18:30:29  INFO      Evening format (balance→verification): infographic [14% vs target 20%] (0/15 never featured)
+2026-10-23 18:30:29  INFO      Formats — IG: infographic  ·  FB: infographic  ·  Story: reality_check  ·  Audience: adventurers
+2026-10-23 18:30:29  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-10-23 18:30:29  INFO      Delegating evening slot → infographic visual pipeline
+2026-10-23 18:30:29  INFO      ════════════════════════════════════════════════════════════
+2026-10-23 18:30:29  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-10-23 · weekday=4
+2026-10-23 18:30:29  INFO      ════════════════════════════════════════════════════════════
+2026-10-23 18:30:32  INFO      Generated 5 slides: topic=camping, theme=noir
+2026-10-23 18:30:32  INFO          Requesting upload URL for infographic_infographic_camping_noir_01_cover.jpg (88,002 bytes, image/jpeg)
+2026-10-23 18:30:33  INFO          Uploading to R2 (timeout=120s)...
+2026-10-23 18:30:35  INFO          R2 PUT OK. Confirming...
+2026-10-23 18:30:36  INFO          Media ready: KJbcq (88,002 bytes · infographic_infographic_camping_noir_01_cover.jpg)
+2026-10-23 18:30:36  INFO        Uploaded: infographic_camping_noir_01_cover.jpg (85 KB)
+2026-10-23 18:30:36  INFO          Requesting upload URL for infographic_infographic_camping_noir_02_ahobilam.jpg (240,832 bytes, image/jpeg)
+2026-10-23 18:30:37  INFO          Uploading to R2 (timeout=120s)...
+2026-10-23 18:30:39  INFO          R2 PUT OK. Confirming...
+2026-10-23 18:30:41  INFO          Media ready: dXUSG (240,832 bytes · infographic_infographic_camping_noir_02_ahobilam.jpg)
+2026-10-23 18:30:41  INFO        Uploaded: infographic_camping_noir_02_ahobilam.jpg (235 KB)
+2026-10-23 18:30:41  INFO          Requesting upload URL for infographic_infographic_camping_noir_03_bhitarkanika.jpg (306,395 bytes, image/jpeg)
+2026-10-23 18:30:42  INFO          Uploading to R2 (timeout=120s)...
+2026-10-23 18:30:43  INFO          R2 PUT OK. Confirming...
+2026-10-23 18:30:45  INFO          Media ready: vrs3F (306,395 bytes · infographic_infographic_camping_noir_03_bhitarkanika.jpg)
+2026-10-23 18:30:45  INFO        Uploaded: infographic_camping_noir_03_bhitarkanika.jpg (299 KB)
+2026-10-23 18:30:45  INFO          Requesting upload URL for infographic_infographic_camping_noir_04_binsar.jpg (200,724 bytes, image/jpeg)
+2026-10-23 18:30:45  INFO          Uploading to R2 (timeout=120s)...
+2026-10-23 18:30:47  INFO          R2 PUT OK. Confirming...
+2026-10-23 18:30:48  INFO          Media ready: iyLHf (200,724 bytes · infographic_infographic_camping_noir_04_binsar.jpg)
+2026-10-23 18:30:48  INFO        Uploaded: infographic_camping_noir_04_binsar.jpg (196 KB)
+2026-10-23 18:30:48  INFO          Requesting upload URL for infographic_infographic_camping_noir_06_cta.jpg (52,331 bytes, image/jpeg)
+2026-10-23 18:30:49  INFO          Uploading to R2 (timeout=120s)...
+2026-10-23 18:30:51  INFO          R2 PUT OK. Confirming...
+2026-10-23 18:30:52  INFO          Media ready: 93TL8 (52,331 bytes · infographic_infographic_camping_noir_06_cta.jpg)
+2026-10-23 18:30:52  INFO        Uploaded: infographic_camping_noir_06_cta.jpg (51 KB)
+2026-10-23 18:30:52  INFO      All slides uploaded: 5 media objects
+2026-10-23 18:30:54  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-23 18:30:54  INFO      [facebook/Nakshiq] Publishing infographic carousel: camping/noir...
+2026-10-23 18:30:54  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-10-23 18:30:58  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-10-23 18:30:58  INFO      Infographic state updated: topic=camping, theme=noir
+2026-10-23 18:30:58  INFO      State saved. Infographic run complete.
+2026-10-23 18:30:58  INFO      ════════════════════════════════════════════════════════════

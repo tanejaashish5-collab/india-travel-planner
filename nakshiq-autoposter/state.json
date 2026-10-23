@@ -38,9 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-23",
     "PdMu0": "2026-10-22",
-    "PdMu0_evening": "2026-10-22"
+    "PdMu0_evening": "2026-10-22",
+    "PdMu0_infographic": "2026-10-23"
   },
-  "last_sync": "2026-10-22T17:39:58.024440+00:00",
+  "last_sync": "2026-10-23T18:29:59.871625+00:00",
   "posted_destinations": [
     {
       "destination_id": "hyderabad",
@@ -11263,6 +11264,24 @@
       "destination": "amaravati",
       "format": "carousel.cost",
       "media_id": "carousel_cost_2026-10-23"
+    },
+    {
+      "timestamp": "2026-10-23T14:37:16.765265+00:00",
+      "date": "2026-10-23",
+      "platform": "instagram",
+      "post_id": "aCH4I",
+      "destination": "amritsar",
+      "format": "scenario_eat_here",
+      "media_id": "Fzior"
+    },
+    {
+      "timestamp": "2026-10-23T14:38:00.680438+00:00",
+      "date": "2026-10-23",
+      "platform": "youtube",
+      "post_id": "93eFu",
+      "destination": "amritsar",
+      "format": "scenario_eat_here",
+      "media_id": "bFxsl"
     }
   ],
   "theme_usage": {
@@ -11844,7 +11863,8 @@
       ],
       "infographic": [
         "2026-06-09",
-        "2026-10-14"
+        "2026-10-14",
+        "2026-10-23"
       ],
       "v2_cost_vs_feeling": [
         "2026-06-10",
@@ -12378,9 +12398,9 @@
     }
   },
   "infographic": {
-    "last_topic_idx": 2,
-    "last_theme_idx": 2,
-    "last_posted": "2026-10-14"
+    "last_topic_idx": 3,
+    "last_theme_idx": 3,
+    "last_posted": "2026-10-23"
   },
   "tourist_map_states": {
     "HP": [
