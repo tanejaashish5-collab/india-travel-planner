@@ -36,33 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-23",
-    "PdMu0": "2026-10-22",
-    "PdMu0_evening": "2026-10-22",
+    "PdMu0_carousel": "2026-10-24",
     "PdMu0_infographic": "2026-10-23"
   },
   "last_sync": "2026-10-23T18:29:59.871625+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hyderabad",
-      "date": "2026-10-09"
-    },
-    {
-      "destination_id": "tungnath",
-      "date": "2026-10-09"
-    },
-    {
-      "destination_id": "dzukou-valley",
-      "date": "2026-10-09"
-    },
-    {
-      "destination_id": "kedarnath",
-      "date": "2026-10-09"
-    },
-    {
-      "destination_id": "sravasti",
-      "date": "2026-10-09"
-    },
     {
       "destination_id": "kolhapur",
       "date": "2026-10-10"
@@ -182,6 +160,10 @@
     {
       "destination_id": "amaravati",
       "date": "2026-10-23"
+    },
+    {
+      "destination_id": "hyderabad",
+      "date": "2026-10-24"
     }
   ],
   "posted_formats": {
@@ -11282,6 +11264,15 @@
       "destination": "amritsar",
       "format": "scenario_eat_here",
       "media_id": "bFxsl"
+    },
+    {
+      "timestamp": "2026-10-24T12:11:18.071754+00:00",
+      "date": "2026-10-24",
+      "platform": "facebook",
+      "post_id": "r9gsP",
+      "destination": "hyderabad",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-10-24"
     }
   ],
   "theme_usage": {
