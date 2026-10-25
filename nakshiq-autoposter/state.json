@@ -37,10 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-25",
-    "PdMu0": "2026-10-24",
-    "PdMu0_evening": "2026-10-24"
+    "PdMu0": "2026-10-25",
+    "PdMu0_evening": "2026-10-25"
   },
-  "last_sync": "2026-10-24T17:34:37.454360+00:00",
+  "last_sync": "2026-10-25T16:50:46.942383+00:00",
   "posted_destinations": [
     {
       "destination_id": "vadodara",
@@ -165,6 +165,18 @@
     {
       "destination_id": "chakrata",
       "date": "2026-10-25"
+    },
+    {
+      "destination_id": "kolhapur",
+      "date": "2026-10-25"
+    },
+    {
+      "destination_id": "dzukou-valley",
+      "date": "2026-10-25"
+    },
+    {
+      "destination_id": "tungnath",
+      "date": "2026-10-25"
     }
   ],
   "posted_formats": {
@@ -192,7 +204,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "data_carousel",
       "v2_myth_bust_oneline",
       "eateries_pick",
@@ -212,7 +223,8 @@
       "tourist_trap",
       "weekend_escape",
       "emergency_intel",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -11312,6 +11324,35 @@
       "destination": "chakrata",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-10-25"
+    },
+    {
+      "timestamp": "2026-10-25T14:37:54.339658+00:00",
+      "date": "2026-10-25",
+      "platform": "instagram",
+      "post_id": "93Bz7",
+      "destination": "kedarnath",
+      "format": "scenario_skip",
+      "media_id": "JYAdO"
+    },
+    {
+      "timestamp": "2026-10-25T14:38:37.837283+00:00",
+      "date": "2026-10-25",
+      "platform": "youtube",
+      "post_id": "POA5A",
+      "destination": "kedarnath",
+      "format": "scenario_skip",
+      "media_id": "IncCP"
+    },
+    {
+      "timestamp": "2026-10-25T16:51:37.900097+00:00",
+      "date": "2026-10-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "vrfWC",
+      "destination": "kolhapur",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -11425,7 +11466,8 @@
       ],
       "tungnath": [
         "2026-06-02",
-        "2026-10-09"
+        "2026-10-09",
+        "2026-10-25"
       ],
       "keylong": [
         "2026-06-03",
@@ -11681,10 +11723,12 @@
         "2026-10-22"
       ],
       "kolhapur": [
-        "2026-10-08"
+        "2026-10-08",
+        "2026-10-25"
       ],
       "dzukou-valley": [
-        "2026-10-09"
+        "2026-10-09",
+        "2026-10-25"
       ],
       "vrindavan": [
         "2026-10-10",
@@ -11908,7 +11952,8 @@
         "2026-08-02",
         "2026-10-01",
         "2026-10-09",
-        "2026-10-17"
+        "2026-10-17",
+        "2026-10-25"
       ],
       "tourist_trap": [
         "2026-09-01",
@@ -12127,6 +12172,9 @@
       ],
       "nandi-hills": [
         "2026-10-24"
+      ],
+      "kolhapur": [
+        "2026-10-25"
       ]
     },
     "audience_tags": {
@@ -12423,11 +12471,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "trichy",
+    "shared_best": "kolhapur",
     "collection": "most-beautiful-villages"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-10-17",
+  "data_carousel_floor_last": "2026-10-25",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
