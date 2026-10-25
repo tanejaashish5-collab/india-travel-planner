@@ -1,4 +1,4 @@
-# Cinematic readiness — 2026-10-18
+# Cinematic readiness — 2026-10-25
 
 Total: **533** dests · A=**349** · HS-B=**29** · B=**155** · C=**0**
 
@@ -11,7 +11,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Field | Dests blocked |
 |---|---:|
 | eats | 152 |
-| stays | 44 |
+| stays | 43 |
 | gems | 8 |
 
 ## By state (destinations below tier A only)
@@ -171,7 +171,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Phodong (phodong) | sikkim | eats:0/5 |
 | Pithoragarh (pithoragarh) | uttarakhand | stays:2/3 |
 | Pochampally (pochampally) | telangana | eats:4/5 |
-| Point Calimere Wildlife Sanctuary (point-calimere) | tamil-nadu | eats:4/5 · stays:2/3 |
+| Point Calimere Wildlife Sanctuary (point-calimere) | tamil-nadu | eats:4/5 |
 | Spice Plantations (Ponda) (ponda-spice) | goa | eats:3/5 |
 | Ponmudi (ponmudi) | kerala | eats:3/5 |
 | Poovar (poovar) | kerala | eats:4/5 |
