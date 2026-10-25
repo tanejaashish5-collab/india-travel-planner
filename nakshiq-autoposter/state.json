@@ -36,21 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-24",
-    "PdMu0_infographic": "2026-10-23",
+    "PdMu0_carousel": "2026-10-25",
     "PdMu0": "2026-10-24",
     "PdMu0_evening": "2026-10-24"
   },
   "last_sync": "2026-10-24T17:34:37.454360+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kolhapur",
-      "date": "2026-10-10"
-    },
-    {
-      "destination_id": "vrindavan",
-      "date": "2026-10-10"
-    },
     {
       "destination_id": "vadodara",
       "date": "2026-10-11"
@@ -170,6 +161,10 @@
     {
       "destination_id": "nandi-hills",
       "date": "2026-10-24"
+    },
+    {
+      "destination_id": "chakrata",
+      "date": "2026-10-25"
     }
   ],
   "posted_formats": {
@@ -11308,6 +11303,15 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "nandi-hills.mp4"
+    },
+    {
+      "timestamp": "2026-10-25T12:45:11.209457+00:00",
+      "date": "2026-10-25",
+      "platform": "facebook",
+      "post_id": "lS4GY",
+      "destination": "chakrata",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-10-25"
     }
   ],
   "theme_usage": {
@@ -11422,21 +11426,6 @@
       "tungnath": [
         "2026-06-02",
         "2026-10-09"
-      ],
-      "pangong-lake": [
-        "2026-06-02",
-        "2026-06-06",
-        "2026-06-07",
-        "2026-06-08",
-        "2026-06-10",
-        "2026-06-11",
-        "2026-06-15",
-        "2026-06-16",
-        "2026-06-17",
-        "2026-06-30",
-        "2026-07-10",
-        "2026-07-21",
-        "2026-07-26"
       ],
       "keylong": [
         "2026-06-03",
@@ -11961,13 +11950,6 @@
         "2026-05-28",
         "2026-08-04"
       ],
-      "pangong-lake": [
-        "2026-06-02",
-        "2026-06-06",
-        "2026-06-07",
-        "2026-07-10",
-        "2026-07-26"
-      ],
       "nubra-valley": [
         "2026-06-02",
         "2026-06-06",
@@ -12427,8 +12409,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 3,
