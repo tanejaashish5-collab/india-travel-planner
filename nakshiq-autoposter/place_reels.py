@@ -907,7 +907,11 @@ def readout(days: int = 7) -> dict:
     since_week = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
     def fmt_of(v):
         k = v.get("kind")
-        return k if k in PLACE_FORMATS + ("data_card",) else ("cast" if v.get("pipeline") == "v3" and k not in ("guide",) else None)
+        if k in PLACE_FORMATS + ("data_card",):
+            return k
+        if v.get("pipeline") == "place":     # voiced 50 s place reels (real_cost, sos, eat_here...) since 10-21
+            return "voiced_place"
+        return "cast" if v.get("pipeline") == "v3" and k not in ("guide",) else None
     rows = [v for v in led.values() if v.get("status") in ("published", "unconfirmed") and v.get("post_id")
             and (v.get("published_at") or "") >= since_all and fmt_of(v)]
     table: dict = {}
