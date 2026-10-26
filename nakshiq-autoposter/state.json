@@ -37,23 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-25",
-    "PdMu0": "2026-10-25",
-    "PdMu0_evening": "2026-10-25"
+    "PdMu0": "2026-10-26",
+    "PdMu0_evening": "2026-10-26"
   },
-  "last_sync": "2026-10-25T17:46:15.426964+00:00",
+  "last_sync": "2026-10-26T17:01:43.894077+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "vadodara",
-      "date": "2026-10-11"
-    },
-    {
-      "destination_id": "khajuraho",
-      "date": "2026-10-11"
-    },
-    {
-      "destination_id": "darjeeling",
-      "date": "2026-10-11"
-    },
     {
       "destination_id": "warangal",
       "date": "2026-10-13"
@@ -177,6 +165,10 @@
     {
       "destination_id": "tungnath",
       "date": "2026-10-25"
+    },
+    {
+      "destination_id": "dzukou-valley",
+      "date": "2026-10-26"
     }
   ],
   "posted_formats": {
@@ -204,7 +196,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "data_carousel",
       "v2_myth_bust_oneline",
       "eateries_pick",
       "weekend_escape",
@@ -224,7 +215,8 @@
       "weekend_escape",
       "emergency_intel",
       "score_card",
-      "data_carousel"
+      "data_carousel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -11353,6 +11345,35 @@
       "format": "data_carousel",
       "has_media": true,
       "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-10-26T14:37:20.796321+00:00",
+      "date": "2026-10-26",
+      "platform": "instagram",
+      "post_id": "bFaCt",
+      "destination": "jaipur",
+      "format": "scenario_hidden_gems",
+      "media_id": "r9T6G"
+    },
+    {
+      "timestamp": "2026-10-26T14:39:09.544493+00:00",
+      "date": "2026-10-26",
+      "platform": "youtube",
+      "post_id": "eKXKh",
+      "destination": "udaipur",
+      "format": "scenario_swap",
+      "media_id": "bFBda"
+    },
+    {
+      "timestamp": "2026-10-26T17:02:21.355032+00:00",
+      "date": "2026-10-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ZPF9A",
+      "destination": "dzukou-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "dzukou-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -11728,7 +11749,8 @@
       ],
       "dzukou-valley": [
         "2026-10-09",
-        "2026-10-25"
+        "2026-10-25",
+        "2026-10-26"
       ],
       "vrindavan": [
         "2026-10-10",
@@ -11895,7 +11917,8 @@
         "2026-09-22",
         "2026-09-23",
         "2026-09-30",
-        "2026-10-24"
+        "2026-10-24",
+        "2026-10-26"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -12175,6 +12198,9 @@
       ],
       "kolhapur": [
         "2026-10-25"
+      ],
+      "dzukou-valley": [
+        "2026-10-26"
       ]
     },
     "audience_tags": {
@@ -12193,7 +12219,8 @@
         "2026-08-24",
         "2026-08-31",
         "2026-09-07",
-        "2026-10-19"
+        "2026-10-19",
+        "2026-10-26"
       ],
       "families": [
         "2026-05-23",
@@ -12471,7 +12498,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kausani",
+    "shared_best": "trichy",
     "collection": "most-beautiful-villages"
   },
   "manual_skip_dests": {},

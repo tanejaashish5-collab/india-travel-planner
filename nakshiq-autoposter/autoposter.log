@@ -29618,3 +29618,39 @@ Date range: 2026-04-15 → 2026-10-25
 2026-10-27 01:38:20  INFO          Uploading to R2 (timeout=300s)...
 2026-10-27 01:38:49  INFO          R2 PUT OK. Confirming...
 2026-10-27 01:38:52  INFO          Media ready: bFBda (57,017,001 bytes · udaipur__swap__voiced__en.mp4)
+2026-10-26 17:00:57  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-26 17:00:57  INFO      ════════════════════════════════════════════════════════════
+2026-10-26 17:00:57  INFO      Nakshiq Autoposter · EVENING · 2026-10-26 · weekday=0
+2026-10-26 17:00:57  INFO      ════════════════════════════════════════════════════════════
+2026-10-26 17:00:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-26 17:01:43  INFO      Synced → 20 destinations · 100 traps · 4 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-26 17:01:43  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-26 17:01:45  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-26 17:01:45  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-26 17:01:45  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+40 more)
+2026-10-26 17:01:45  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-26 17:01:57  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-26 17:01:57  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_hidden_gems, pillar:scenario_skip, pillar:scenario_swap seen <2d)
+2026-10-26 17:01:57  INFO      Evening format (balance→verification): confidence_intel [17% vs target 30%] (0/15 never featured)
+2026-10-26 17:01:57  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: festival_alert  ·  Audience: backpackers
+2026-10-26 17:01:57  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 49
+2026-10-26 17:01:57  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-10-26 17:01:57  INFO      Fingerprint dedup snapshot — 44 dests in 7d · 92 (dest,fmt) pairs in 30d · 222 media in 60d
+2026-10-26 17:01:57  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+40 more)
+2026-10-26 17:01:57  INFO      Festival locked: Deepotsav (35/37 active festivals never featured)
+2026-10-26 17:01:59  INFO      Shared best destination locked: Trichy (Tiruchirappalli)
+2026-10-26 17:01:59  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-10-26 17:01:59  INFO      confidence_intel for Trichy (Tiruchirappalli): only 0 card rows — SKIPPING
+2026-10-26 17:01:59  WARNING   [facebook/Nakshiq] confidence_intel: trichy inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'dzukou-valley' as score_card to keep the slot live.
+2026-10-26 17:01:59  INFO      [facebook/Nakshiq] Caption ready (576 chars, dest=dzukou-valley)
+2026-10-26 17:01:59  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-10-26 17:01:59  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/dzukou-valley.mp4?v=20260915
+2026-10-26 17:02:03  INFO          Brand-stamp applied: dzukou-valley.mp4 (10,854,003 → 5,636,212 bytes)
+2026-10-26 17:02:03  INFO          Requesting upload URL for dzukou-valley.mp4 (5,636,212 bytes, video/mp4)
+2026-10-26 17:02:04  INFO          Uploading to R2 (timeout=300s)...
+2026-10-26 17:02:06  INFO          R2 PUT OK. Confirming...
+2026-10-26 17:02:08  INFO          Media ready: CWyHG (5,636,212 bytes · dzukou-valley.mp4)
+2026-10-26 17:02:08  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-10-26 17:02:21  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ZPF9A · Platform=1642769850842465
+2026-10-26 17:02:21  INFO      State saved. Run complete.
+2026-10-26 17:02:21  INFO      ════════════════════════════════════════════════════════════
