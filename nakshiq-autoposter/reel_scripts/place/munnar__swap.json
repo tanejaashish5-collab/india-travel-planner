@@ -1,0 +1,166 @@
+{
+ "id": "munnar__swap",
+ "slug": "munnar",
+ "format": "swap",
+ "series": "swap",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "नवंबर में मुन्नार जा रहे हैं? रुकिए, क्योंकि सीज़न शुरू हो चुका है और यहाँ हर व्यूपॉइंट पर टूर बसें और सेल्फ़ी लेती भीड़ मिलती है।",
+   "जबकि केरल में ही वागमोन है, जहाँ वही धुंध वाली पहाड़ियाँ और ठंडी हवा है, साथ में चीड़ के जंगल और घास के मैदान, जो हफ़्ते के दिनों में लगभग आपके अपने होते हैं।",
+   "और नवंबर में यहाँ मौसम सूखा और सुहाना रहता है, तो पैराग्लाइडिंग अपने पूरे ज़ोर पर होती है।",
+   "बस ये मुन्नार जितना तैयार नहीं है, सुविधाएँ अभी बुनियादी हैं, तो बच्चों के साथ मुन्नार ही आसान रहेगा, पर सुकून वागमोन में है।",
+   "और अगर मुन्नार ही जाना है, तो दिसंबर से पहले जाइए, क्योंकि दिसंबर में ग्यारह से तीन बजे तक शहर में जाम लगता है और एराविकुलम के स्लॉट मुश्किल से मिलते हैं।",
+   "इसे सेव कर लीजिए, अगली बार केरल की पहाड़ियों का प्लान बनाएँ तो काम आएगा।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Munnar misty tea valley|munnar",
+   "hook": "Same misty hills.<br><em>Without the tour buses.</em>"
+  },
+  {
+   "kicker": "The swap",
+   "lines": [
+    "<em>Vagamon</em>, Kerala",
+    "1,100 m",
+    "Pine forests and meadows",
+    "Kottayam station 65 km, Kochi airport 115 km"
+   ],
+   "bg": "photo:Vagamon meadows|vagamon"
+  },
+  {
+   "kicker": "Vagamon in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "14 to 24°C, dry. Paragliding at peak tempo. Meadows quiet on weekdays.",
+   "bg": "clip:vagamon__hero.mp4"
+  },
+  {
+   "kicker": "The honest catch",
+   "lines": [
+    "Vagamon: basic but growing",
+    "Munnar: fully developed",
+    "With kids? Munnar is easier",
+    "Vagamon is better for peace"
+   ],
+   "bg": "photo:Vagamon pine forest|pine"
+  },
+  {
+   "kicker": "Munnar anyway? Go before",
+   "big": "December",
+   "sub": "Town gridlock 11 am to 3 pm. Eravikulam slots tight. Christmas to New Year rates 2.5 to 3x.",
+   "bg": "photo:Munnar tea estate|munnar"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "November mein *Munnar* ja rahe hain?",
+    "Rukiye, kyunki *season* shuru ho chuka hai",
+    "aur yahan har viewpoint par",
+    "*tour buses* aur *selfie leti bheed* milti hai."
+   ],
+   [
+    "Jabki Kerala mein hi *Vagamon* hai,",
+    "jahan wahi *dhundh waali pahadiyan* aur thandi hawa hai,",
+    "saath mein *cheed ke jungle* aur *ghaas ke maidaan*,",
+    "jo hafte ke dinon mein",
+    "lagbhag *aapke apne* hote hain."
+   ],
+   [
+    "Aur November mein yahan mausam",
+    "*sookha aur suhaana* rehta hai,",
+    "to *paragliding* apne poore zor par hoti hai."
+   ],
+   [
+    "Bas ye Munnar jitna *taiyaar nahi* hai,",
+    "suvidhayein abhi *buniyaadi* hain,",
+    "to *bachchon ke saath* Munnar hi aasaan rahega,",
+    "par *sukoon* Vagamon mein hai."
+   ],
+   [
+    "Aur agar Munnar hi jaana hai,",
+    "to *December se pehle* jaaiye,",
+    "kyunki December mein *11 se 3 baje* tak",
+    "shehar mein *jaam* lagta hai",
+    "aur *Eravikulam* ke slot mushkil se milte hain."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "agli baar *Kerala ki pahadiyon* ka plan banayein",
+    "to kaam aayega."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Munnar* in November?",
+    "Wait, because the *season* has begun",
+    "and every viewpoint has",
+    "*tour buses* and *selfie crowds*."
+   ],
+   [
+    "Yet in Kerala itself there's *Vagamon*,",
+    "with the same *misty hills* and cool air,",
+    "plus *pine forests* and *meadows*",
+    "that on weekdays",
+    "are almost *all yours*."
+   ],
+   [
+    "And in November the weather here",
+    "is *dry and pleasant*,",
+    "so *paragliding* is in full swing."
+   ],
+   [
+    "Just know it's *not as developed* as Munnar:",
+    "facilities are still *basic*,",
+    "so *with kids* Munnar is easier,",
+    "but the *peace* is in Vagamon."
+   ],
+   [
+    "And if it has to be Munnar,",
+    "go *before December*,",
+    "because in December, from *11 to 3*,",
+    "the town is *gridlocked*",
+    "and *Eravikulam* slots are hard to get."
+   ],
+   [
+    "*Save this*",
+    "for the next time you plan",
+    "the *Kerala hills*."
+   ]
+  ]
+ },
+ "title": "Munnar's misty hills, without the tour buses | NakshIQ",
+ "caption_lead": "In November Munnar's viewpoints fill with tour buses and selfie crowds. Vagamon, also in Kerala, has the same misty hills and cool air, plus pine forests and meadows that are almost yours on weekdays, and November there is dry, with paragliding in full swing. It is basic but growing, so with kids Munnar is easier. If it has to be Munnar, go before December, when the town jams from 11 am to 3 pm and Eravikulam slots get tight.",
+ "cost_basis": [],
+ "facts": [
+  "munnar trap_swaps -> vagamon why_better: 'Munnar is stunning but overrun with tour buses and selfie crowds at every viewpoint. Vagamon offers the same misty-hills-cool-air experience with pine forests, paragliding, and meadows you can have to yourself on weekdays.'",
+  "munnar months.11 5=10/10: 'book accommodation early as crowds arrive'; crowd_calendar peak_months include 11",
+  "reel-data vagamon geo: Kerala, 1,100 m, Kottayam Railway Station 65 km, Cochin International 115 km",
+  "reel-data vagamon months.11 5=10/10: 'High season builds. 14-24C, dry. Paragliding at peak operational tempo.'",
+  "munnar trap_swaps -> vagamon infrastructure_difference 'Munnar fully developed. Vagamon basic but growing.'; family_difference 'Munnar is easier for families (more facilities). Vagamon is better for peace.'",
+  "reel-data munnar months.12: 'Christmas-NY rates 2.5-3x. Munnar town gridlock 11am-3pm. Eravikulam slots tight.'",
+  "dropped: trap_swaps crowd_difference 'Munnar sees 20,000+ visitors/day in peak. Vagamon sees 500.' (nobody measured Vagamon's daily visitors; same failure as Ooty 50,000 vs 50)",
+  "NOT used: no price claim. Vagamon is not cheaper (hotel-mid November 4,250 vs Munnar 4,200), and a Vagamon rupee figure would fail cost_gate (slug munnar). No Munnar to Vagamon distance in the data, so none spoken. Both months.11 notes say 'hotel rates climb 25 percent': not used"
+ ],
+ "spoken_numbers": [
+  "ग्यारह (11 am)",
+  "तीन (3 pm)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Munnar misty tea valley|munnar",
+  "top_label": "MUNNAR",
+  "bottom": "photo:Vagamon meadows|vagamon",
+  "bottom_label": "VAGAMON, KERALA",
+  "hook": "Munnar's hills|*without the tour buses?*"
+ },
+ "music": "edm-471",
+ "music_start": 0
+}

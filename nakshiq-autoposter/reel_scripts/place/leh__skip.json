@@ -1,0 +1,166 @@
+{
+ "id": "leh__skip",
+ "slug": "leh",
+ "format": "skip",
+ "series": "skip",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "सर्दियों में लेह का प्लान है? रुकिए, क्योंकि इस मौसम में सड़कें बंद रहती हैं, और पहुँचने के लिए बस फ़्लाइट बचती है, जो अक्सर कैंसल होती है।",
+   "और पहुँचकर भी ज़्यादातर गेस्टहाउस और टूर बंद मिलते हैं, जबकि जनवरी में रातें माइनस बीस तक जाती हैं।",
+   "ऊपर से इतनी ऊँचाई की ठंडी सूखी हवा फेफड़ों पर भारी पड़ती है, तो साँस की तकलीफ़ हो या साथ में बच्चे हों, तो बिल्कुल मत जाइए।",
+   "पर जो कोई नहीं बताता, वो ये कि दिसंबर में फ़्लाइट कैंसल हुई तो आप कई दिन एक बंद शहर में फँस सकते हैं, इसलिए सर्दी में बस वही जाएँ जिनकी चादर ट्रेक की बुकिंग पक्की है।",
+   "बाक़ी सबके लिए जून या सितंबर में जाइए, जब दोनों रास्ते खुले होते हैं और भीड़ कम होती है।",
+   "उस दोस्त को टैग कीजिए जो हर सर्दी कहता है, इस बार लेह चलेंगे।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:leh__hero.mp4",
+   "hook": "<em>Leh</em> this winter?<br>You could get stuck."
+  },
+  {
+   "kicker": "Skip November to January",
+   "big": "-20°C",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "January nights. Roads closed, flights only. Most guesthouses and tours shut.",
+   "bg": "photo:Winter scene in Leh|winter"
+  },
+  {
+   "kicker": "At 3,524 m",
+   "lines": [
+    "Cold, dry air is <em>hard on the lungs</em>",
+    "Not with breathing problems",
+    "Not with children"
+   ],
+   "bg": "photo:Leh Palace Ladakh|palace"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Stranded for days</em>",
+    "when December flights cancel",
+    "Winter is for Chadar trekkers",
+    "with confirmed bookings and gear"
+   ],
+   "bg": "photo:Chadar trek|chadar"
+  },
+  {
+   "kicker": "Go in",
+   "big": "June or September",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Both roads open, fewer people. Rest 2 days on arrival to acclimatise.",
+   "bg": "photo:Shanti Stupa Leh|stupa"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Sardiyon mein *Leh* ka plan hai?",
+    "Rukiye, kyunki is mausam mein *sadkein band* rehti hain,",
+    "aur pahunchne ke liye bas *flight* bachti hai,",
+    "jo aksar *cancel* hoti hai."
+   ],
+   [
+    "Aur pahunchkar bhi zyaadatar",
+    "*guesthouse aur tour band* milte hain,",
+    "jabki January mein raatein",
+    "*minus 20* tak jaati hain."
+   ],
+   [
+    "Upar se itni oonchai ki *thandi sookhi hawa*",
+    "*phephdon* par bhaari padti hai,",
+    "to *saans ki takleef* ho ya saath mein *bachche* hon,",
+    "to bilkul mat jaaiye."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "wo ye ki December mein flight cancel hui",
+    "to aap *kai din* ek band shehar mein *phans* sakte hain,",
+    "isliye sardi mein bas wahi jaayein",
+    "jinki *Chadar trek* ki booking pakki hai."
+   ],
+   [
+    "Baaki sabke liye",
+    "*June ya September* mein jaaiye,",
+    "jab *dono raaste khule* hote hain",
+    "aur bheed kam hoti hai."
+   ],
+   [
+    "Us dost ko *tag* kijiye",
+    "jo har sardi kehta hai,",
+    "is baar *Leh chalenge*."
+   ]
+  ],
+  "en": [
+   [
+    "Planning *Leh* this winter?",
+    "Wait, because this season the *roads are closed*,",
+    "and the only way in is a *flight*,",
+    "which often gets *cancelled*."
+   ],
+   [
+    "And once there,",
+    "most *guesthouses and tours are shut*,",
+    "while January nights",
+    "drop to *minus 20*."
+   ],
+   [
+    "On top of that, the *cold, dry air* at this altitude",
+    "is *hard on the lungs*,",
+    "so with *breathing problems* or *children*,",
+    "don't go at all."
+   ],
+   [
+    "What nobody tells you:",
+    "if a December flight is cancelled",
+    "you can be *stuck for days* in a shut town,",
+    "so in winter only go",
+    "with a confirmed *Chadar trek* booking."
+   ],
+   [
+    "Everyone else,",
+    "go in *June or September*,",
+    "when *both roads are open*",
+    "and there are fewer people."
+   ],
+   [
+    "*Tag* the friend",
+    "who says every winter,",
+    "*let's do Leh* this time."
+   ]
+  ]
+ },
+ "title": "Leh this winter? You could be stuck for days | NakshIQ",
+ "caption_lead": "Planning Leh this winter? From November to January the roads are closed and flights, the only way in, are often cancelled. Most guesthouses and tours shut, and January nights drop to -20°C. Cold, dry air at 3,524 m is hard on the lungs, so not with breathing problems or children. A cancelled December flight can strand you for days in a shut town; winter is for Chadar trekkers with confirmed bookings and gear. Everyone else: June or September, when both roads are open and there are fewer people.",
+ "cost_basis": [],
+ "facts": [
+  "months.11 score 1 = 2/10: 'Roads closed for winter. Flights only, often cancelled. -10°C nights. Most guesthouses and tours shut.'; skip_reason 'Road closures and flight cancellations leave November access to Leh unreliable and difficult'",
+  "months.12 score 1 = 2/10: 'Deep winter, -15 to -25°C nights. Flights only. Town hibernates.'; skip_reason 'Flights cancel regularly in deep winter, stranding you for days with a shuttered town'",
+  "months.1 score 1 = 2/10: 'Frozen. -20C nights. Flights only. Most things shut. Chadar Trek season.'; who_should_go 'Chadar Trek participants with confirmed bookings and proper cold-weather gear'",
+  "months.11 who_should_avoid: 'People with respiratory issues, cold, dry air at altitude is harsh on lungs'; 'Families, there is nothing for children to do here in November'; months.12 'Children under any circumstances, the cold is dangerous'",
+  "geo leh elevation_m 3524 (card); why_special 'You MUST spend 2 days here doing almost nothing before going higher'",
+  "months.6 score 5 = 10/10 'Both roads open'; months.9 score 5 = 10/10 'BEST. Post-monsoon clarity. Roads still open. Fewer crowds.'; crowd.note 'June and Sep are perfect, open roads, fewer people'",
+  "NOT used: 'airlines cancel ~25% of winter slots' (unmeasured, and names an airline that no longer exists); 'highways shut Nov-May' (the Srinagar road's winter closing date varies by year, so the voice says only 'this season the roads are closed', per the month notes); Snow Leopard Trek (Rs 80,000+, sighting not guaranteed) and any winter-trek detail beyond the Chadar booking line; winter room prices (most guesthouses shut, a low-season price would mislead)"
+ ],
+ "spoken_numbers": [
+  "माइनस बीस (-20°C)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Leh Airport Ladakh|airport",
+  "line": "Leh this winter?",
+  "stamp": "STRANDED",
+  "focus": [
+   0.55,
+   0.55
+  ]
+ },
+ "music": "cinematic-vastness-759",
+ "music_start": 0
+}

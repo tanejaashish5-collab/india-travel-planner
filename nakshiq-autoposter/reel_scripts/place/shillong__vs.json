@@ -1,0 +1,184 @@
+{
+ "id": "shillong__vs",
+ "slug": "shillong",
+ "format": "vs",
+ "series": "vs",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "मेघालय में रुकें कहाँ, शिलॉन्ग या चेरापूंजी? नवंबर में दोनों का मौसम एकदम सही है, तो फ़ैसला इस पर है कि आप ट्रेक करेंगे या नहीं।",
+   "पहली बार नॉर्थ ईस्ट आ रहे हैं, या साथ में बच्चे और बुज़ुर्ग हैं, तो शिलॉन्ग चुनिए, क्योंकि यहाँ कैफ़े, लाइव म्यूज़िक और शहर की सुविधाएँ हैं, और चेरापूंजी एक दिन में घूम आइए।",
+   "यहाँ एक अच्छा कमरा करीब साढ़े पैंतीस सौ का है, पर चेरी ब्लॉसम फ़ेस्टिवल के दिनों में भीड़ बहुत होती है, तो पहले से बुक कीजिए।",
+   "पर अगर रूट ब्रिज तक ट्रेक करना है, तो चेरापूंजी चुनिए, क्योंकि नवंबर में ये ट्रेक सबसे आसान होते हैं और झरने अब भी पूरे ज़ोर से गिरते हैं।",
+   "बस वहाँ खाने के ठिकाने कम हैं, कमरे शिलॉन्ग से महँगे हैं और सुबह आठ डिग्री तक ठंड होती है, तो गरम कपड़े और कुछ खाने को साथ रखिए।",
+   "आप कौन सा चुनेंगे, शिलॉन्ग या चेरापूंजी? कमेंट में लिखिए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Shillong city|shillong",
+   "hook": "<em>Shillong</em> or Cherrapunji?<br>One question decides it"
+  },
+  {
+   "kicker": "Pick Shillong if",
+   "lines": [
+    "First time in the Northeast",
+    "Kids or older parents along",
+    "Cafes, live music, city comforts",
+    "Cherrapunji as a day trip"
+   ],
+   "bg": "photo:Ward's Lake Shillong|ward"
+  },
+  {
+   "kicker": "A good room in Shillong, November",
+   "big": "₹3,550",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "The Cherry Blossom Festival draws big crowds: book ahead.",
+   "bg": "photo:Shillong cherry blossom|cherry"
+  },
+  {
+   "kicker": "Pick Cherrapunji if",
+   "lines": [
+    "You want the <em>root bridge</em> treks",
+    "November: treks at their easiest",
+    "Waterfalls still flowing; score <em>10/10</em>",
+    "Double Decker: about 3,500 steps"
+   ],
+   "bg": "photo:Double decker living root bridge|root"
+  },
+  {
+   "kicker": "Before you book Cherrapunji",
+   "lines": [
+    "Few places to eat: carry snacks",
+    "Rooms cost more than Shillong",
+    "Mornings around 8°C: pack layers"
+   ],
+   "bg": "photo:Seven Sisters Falls Cherrapunji|seven"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Meghalaya mein rukein kahan,",
+    "*Shillong* ya *Cherrapunji*?",
+    "November mein dono ka mausam *ekdam sahi* hai,",
+    "to faisla is par hai",
+    "ki aap *trek* karenge ya nahi."
+   ],
+   [
+    "*Pehli baar* North East aa rahe hain,",
+    "ya saath mein *bachche aur buzurg* hain,",
+    "to *Shillong* chuniye,",
+    "kyunki yahan *cafe, live music*",
+    "aur shehar ki suvidhayein hain,",
+    "aur Cherrapunji *ek din* mein ghoom aaiye."
+   ],
+   [
+    "Yahan ek achha kamra",
+    "kareeb *₹3,550* ka hai,",
+    "par *Cherry Blossom Festival* ke dinon mein",
+    "*bheed* bahut hoti hai,",
+    "to *pehle se book* kijiye."
+   ],
+   [
+    "Par agar *root bridge* tak trek karna hai,",
+    "to *Cherrapunji* chuniye,",
+    "kyunki November mein ye trek *sabse aasaan* hote hain",
+    "aur *jharne* ab bhi poore zor se girte hain."
+   ],
+   [
+    "Bas wahan *khaane ke thikaane* kam hain,",
+    "kamre Shillong se *mehenge* hain",
+    "aur subah *8 degree* tak thand hoti hai,",
+    "to *garam kapde* aur kuch khaane ko saath rakhiye."
+   ],
+   [
+    "Aap *kaun sa* chunenge,",
+    "*Shillong* ya *Cherrapunji*?",
+    "*Comment* mein likhiye."
+   ]
+  ],
+  "en": [
+   [
+    "Where to stay in Meghalaya:",
+    "*Shillong* or *Cherrapunji*?",
+    "In November both have *perfect weather*,",
+    "so it comes down to",
+    "whether you'll *trek* or not."
+   ],
+   [
+    "*First time* in the Northeast,",
+    "or travelling with *kids and elders*?",
+    "Then pick *Shillong*,",
+    "because it has *cafes, live music*",
+    "and city comforts,",
+    "and you can see Cherrapunji *in a day*."
+   ],
+   [
+    "A good room here",
+    "is about *₹3,550*,",
+    "but during the *Cherry Blossom Festival*",
+    "the *crowds* are big,",
+    "so *book ahead*."
+   ],
+   [
+    "But if you want to trek to the *root bridges*,",
+    "pick *Cherrapunji*,",
+    "because in November the treks are at their *easiest*",
+    "and the *waterfalls* still run full."
+   ],
+   [
+    "Just know: there are *few places to eat*,",
+    "rooms cost *more* than Shillong,",
+    "and mornings drop to *8°C*,",
+    "so carry *warm layers* and some food."
+   ],
+   [
+    "*Which one* would you pick,",
+    "*Shillong* or *Cherrapunji*?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "Shillong or Cherrapunji: where to stay? | NakshIQ",
+ "caption_lead": "Shillong or Cherrapunji as your Meghalaya base? Both score 10/10 in November, so it comes down to whether you'll trek. First time in the Northeast, or travelling with kids or older parents: pick Shillong for cafes, live music and city comforts, see Cherrapunji in a day, and book ahead (a good room is about ₹3,550 a night, and the Cherry Blossom Festival draws big crowds). Want the root bridge treks? Pick Cherrapunji, where November treks are at their easiest and the waterfalls still run, but places to eat are few, rooms cost more than Shillong and mornings drop to 8°C.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3550
+  }
+ ],
+ "facts": [
+  "shillong months.11 score 5 = 10/10 'go': 'cherry blossoms peak, weather stays clear and cool'; reel-data shillong months.11 'Cherry Blossom Festival! 8-20°C. Clear weather.'",
+  "cherrapunji months.11 score 5 = 10/10 'go': 'root-bridge treks are at their easiest, waterfalls still flow powerfully, and skies are clearest, but pack layers as 8°C mornings demand them'; reel-data cherrapunji months.11 'Root bridge treks optimal.'",
+  "shillong best_for_segments 'first-time Northeast travelers': 'Shillong is the easiest Northeast entry'; persona family 'Excellent for families ... Cherrapunjee day trip'; persona elderly 'Very suitable ... Avoid strenuous treks (Nongriat Double Decker)'; family_stress 'low, well-developed capital city'",
+  "shillong why_special: 'a thriving cafe scene ... India's best indie music festivals'; best_for_segments 'live music + indie culture travelers' (superlatives NOT used)",
+  "costs shillong hotel-mid peak (months 10-4, incl 11) typical 3550",
+  "shillong crowd_calendar.note: 'Cherry Blossom Festival in November draws big crowds.'; news check 2026-10-27: festival held mid-November in 2024 and 2025 (14-15 Nov 2025)",
+  "cherrapunji months.11 who_should_go 'Root-bridge trek specialists and fit hikers'; why_special 'double-decker root bridge (3,500 steps)'",
+  "cherrapunji food_scene.note: 'Limited dining options. Carry snacks for treks.'",
+  "costs cherrapunji hotel-mid peak 5450 vs shillong 3550 (and hotel-budget 3050 vs 1650): 'rooms cost more than Shillong'; Cherrapunji's rupee figure NOT shown (cost_gate checks the reel slug shillong only)",
+  "NOT used: shillong trap_swaps editorial_verdict ('rock-cafe scene is one operator ...') and the '95% fewer visitors' Mawphlang claim (unmeasurable); cherrapunji 'lost the wettest-place title in 1985' and 'Mawsynram ... more accessible root-bridge network at Nongriat' (Nongriat is by Sohra, contradicts geography); persona 'Living Root Bridge (50km away at Nongriat)' (wrong distance); Nohkalikai 335 m vs 340 m (DB disagrees with itself); 'India's tallest plunge waterfall' (superlative); months.11 'book accommodation by early month' (reel posts 20 Nov)"
+ ],
+ "spoken_numbers": [
+  "साढ़े पैंतीस सौ (3,550)",
+  "आठ (8°C)",
+  "एक दिन (see it in a day)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Shillong city|shillong",
+  "top_label": "SHILLONG",
+  "bottom": "photo:Double decker living root bridge|root",
+  "bottom_label": "CHERRAPUNJI",
+  "hook": "Meghalaya base:|*Shillong or Cherrapunji?*"
+ },
+ "music": "travel-rock-the-game-820",
+ "music_start": 0
+}

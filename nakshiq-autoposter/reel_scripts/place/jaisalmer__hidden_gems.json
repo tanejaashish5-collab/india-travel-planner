@@ -1,0 +1,171 @@
+{
+ "id": "jaisalmer__hidden_gems",
+ "slug": "jaisalmer",
+ "format": "hidden_gems",
+ "series": "hidden_gems",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "जैसलमेर में सब किला और सैम के टीले देखते हैं, पर आसपास कुछ जगहें हैं जहाँ ज़्यादातर लोग पहुँचते ही नहीं।",
+   "करीब एक घंटे दूर खाभा फ़ोर्ट है, एक वीरान बस्ती, जो कुलधरा से बेहतर बची हुई है, फिर भी भीड़ कुलधरा में होती है और खाभा अक्सर ख़ाली मिलता है।",
+   "फिर खुड़ी गाँव, जहाँ मिट्टी और फूस के घर हैं और टीले गाँव के किनारे से ही शुरू हो जाते हैं, जबकि ज़्यादातर टूरिस्ट सैम पर ही रुक जाते हैं।",
+   "और सैम की उल्टी दिशा में आकल फ़ॉसिल पार्क है, जहाँ अठारह करोड़ साल पुराने पेड़ों के तने पत्थर बनकर ज़मीन पर पड़े हैं, पर ज़्यादातर टूर इसे शामिल ही नहीं करते।",
+   "नवंबर में रातें ठंडी और साफ़, दिन गर्म रहते हैं, और अच्छा कमरा करीब सत्रह सौ पचास का मिल जाता है, बस मंगलवार से गुरुवार के बीच जाइए।",
+   "इसे सेव कर लीजिए, जैसलमेर में किले और सैम के बाद काम आएगा।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Jaisalmer Fort bastions|jaisalmer",
+   "hook": "A forest in the <em>desert</em>,<br>turned to stone"
+  },
+  {
+   "kicker": "Ghost settlement",
+   "lines": [
+    "<em>Khaba Fort</em>",
+    "About 1 hr from Jaisalmer",
+    "Better preserved than Kuldhara",
+    "Small museum inside"
+   ],
+   "bg": "photo:Khaba fort Jaisalmer|fort"
+  },
+  {
+   "kicker": "A real desert village",
+   "lines": [
+    "<em>Khuri</em>",
+    "1.5 hrs from Jaisalmer",
+    "Mud-and-thatch houses",
+    "Dunes from the village edge"
+   ],
+   "bg": "photo:Khuri desert|khuri"
+  },
+  {
+   "kicker": "Everyone heads west to Sam",
+   "lines": [
+    "<em>Akal Wood Fossil Park</em> is the other way",
+    "17 km southeast of Jaisalmer",
+    "180-million-year-old petrified trunks",
+    "A National Geological Monument"
+   ],
+   "bg": "photo:Thar desert west of Jaisalmer|thar"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "10 to 28°C. Cold clear nights, warm days. Go Tuesday to Thursday.",
+   "bg": "photo:Panorama of Jaisalmer|panorama"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Jaisalmer mein sab *kila* aur *Sam ke teele* dekhte hain,",
+    "par aaspaas kuch jagah hain",
+    "jahan zyaadatar log *pahunchte hi nahi*."
+   ],
+   [
+    "Kareeb *1 ghante* door *Khaba Fort* hai,",
+    "ek *veeraan basti*,",
+    "jo Kuldhara se *behtar bachi* hui hai,",
+    "phir bhi bheed Kuldhara mein hoti hai",
+    "aur Khaba aksar *khaali* milta hai."
+   ],
+   [
+    "Phir *Khuri gaon*,",
+    "jahan *mitti aur phoos* ke ghar hain",
+    "aur teele *gaon ke kinaare* se hi shuru ho jaate hain,",
+    "jabki zyaadatar tourist Sam par hi ruk jaate hain."
+   ],
+   [
+    "Aur Sam ki ulti disha mein *Akal Fossil Park* hai,",
+    "jahan *18 crore saal* purane",
+    "pedon ke tane *patthar bankar* zameen par pade hain,",
+    "par zyaadatar *tour ise shaamil hi nahi* karte."
+   ],
+   [
+    "*November* mein raatein thandi aur saaf, din garam rehte hain,",
+    "aur achha kamra kareeb *₹1,750* ka mil jaata hai,",
+    "bas *Mangalvaar se Guruvaar* ke beech jaaiye."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "Jaisalmer mein *kile aur Sam ke baad* kaam aayega."
+   ]
+  ],
+  "en": [
+   [
+    "In Jaisalmer everyone sees the *fort* and the *Sam dunes*,",
+    "but there are places nearby",
+    "most people *never reach*."
+   ],
+   [
+    "About *an hour* away is *Khaba Fort*,",
+    "a *deserted settlement*",
+    "*better preserved* than Kuldhara,",
+    "yet the crowd goes to Kuldhara",
+    "and Khaba is often *empty*."
+   ],
+   [
+    "Then *Khuri village*,",
+    "with *mud-and-thatch* houses",
+    "and dunes starting *right at the village edge*,",
+    "while most tourists stop at Sam."
+   ],
+   [
+    "And the other way from Sam is *Akal Fossil Park*,",
+    "where *180-million-year-old*",
+    "tree trunks lie *turned to stone*,",
+    "but most *tours skip it*."
+   ],
+   [
+    "*November* has cold clear nights and warm days,",
+    "and a good room is about *₹1,750*,",
+    "just go *Tuesday to Thursday*."
+   ],
+   [
+    "*Save this*",
+    "for after the *fort and Sam*."
+   ]
+  ]
+ },
+ "title": "A forest turned to stone near Jaisalmer | NakshIQ",
+ "caption_lead": "Everyone in Jaisalmer sees the fort and the Sam dunes. About an hour out is Khaba Fort, a deserted settlement better preserved than Kuldhara, with a small museum, and often empty. Khuri is a real desert village of mud-and-thatch houses, with dunes from its edge. In the other direction from Sam, 17 km southeast, Akal Wood Fossil Park holds 180-million-year-old petrified tree trunks, and most tours skip it. November: cold clear nights, warm days, a good room about ₹1,750 a night; go Tuesday to Thursday.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 1750
+  }
+ ],
+ "facts": [
+  "jaisalmer crowd_calendar.note: 'Winter is prime tourist season, fort and Sam dunes very busy'; best_day 'Tue-Thu', avoid_weekends true",
+  "gem Khaba Fort (Ghost Settlement): 35 km, '1hr from Jaisalmer'; 'Kuldhara ghost village gets tourists. Khaba ... is empty'; 'Crumbling fort settlement with better preservation than Kuldhara. Museum inside.' Voiced 'often empty' (not 'zero visitors': tours do sell Kuldhara + Khaba combos)",
+  "gem Khuri Desert Village: 50 km, '1.5hr from Jaisalmer'; 'Sam gets all the tourists'; 'Actual Rajasthani desert village with mud-and-thatch houses. Dunes start from the village edge.'",
+  "gem Akal Wood Fossil Park: 'Sam Sand Dunes pulls every desert tourist west; Akal sits in the opposite direction ... almost no operator includes it'; 'National Geological Monument 17 km southeast of Jaisalmer where 180-million-year-old Jurassic tree trunks lie petrified'. Cross-checked: Incredible India + Wikipedia (GSI monument since 1972, ~180 Ma, 21 ha, 17 to 18 km)",
+  "months.11 score 5 = 10/10: 'Excellent 10-28°C. Peak season starts. Desert camping perfect, cold clear nights, warm days.'",
+  "destination_costs jaisalmer hotel-mid peak (months 11,12,1,2) typical_inr 1750 = सत्रह सौ पचास",
+  "NOT used: Akal 'only National Geo-Heritage site in the Thar' and 'largest fossil log 7 m' (not voiced; the first is unverifiable); Khaba '10km beyond Kuldhara' (web sources put it 15 to 25 km); Khuri 'No tourist machinery' (Khuri has many desert camps today); Akal entry fees",
+  "PICTURE NOTE: Wikimedia Commons has no photo of Akal Wood Fossil Park, so scene 4 shows the Sam dunes under a card that opens 'Everyone heads west to Sam' (the picture is Sam, not Akal)"
+ ],
+ "spoken_numbers": [
+  "एक (about 1 hr)",
+  "अठारह करोड़ (180 million years)",
+  "सत्रह सौ पचास (₹1,750 hotel-mid, November)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Jaisalmer Fort bastions|jaisalmer",
+  "top_label": "THE FORT",
+  "bottom": "photo:Khaba fort Jaisalmer|fort",
+  "bottom_label": "KHABA FORT",
+  "hook": "Everyone sees one fort.|*Who sees this?*"
+ },
+ "music": "travel-traveling-along-669",
+ "music_start": 2
+}

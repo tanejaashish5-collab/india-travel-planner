@@ -1,0 +1,138 @@
+{
+ "id": "darjeeling__window",
+ "slug": "darjeeling",
+ "format": "window",
+ "series": "window",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "दार्जिलिंग जाना है तो सही वक़्त अभी है, क्योंकि नवंबर के बाद वो पहाड़ छुपने लगता है जिसे देखने आप वहाँ जाते हैं।",
+   "नवंबर में आसमान साफ़ रहता है, सुबह कंचनजंगा खुलकर दिखती है, और सिंगालीला रिज का ट्रेक इसी वक़्त सबसे अच्छा होता है।",
+   "पर दिसंबर में अक्सर धुंध पहाड़ों को ढक लेती है, दुकानें जल्दी बंद होती हैं, और भारी ऊनी कपड़ों के बिना काम नहीं चलता।",
+   "और जनवरी में ज़्यादातर दिन सुबह का कोहरा कंचनजंगा को छुपा देता है, वहाँ सेंट्रल हीटिंग नहीं होती, और चाय के बागान सोए रहते हैं।",
+   "बस एक बात, नवंबर सीज़न का महीना है तो टॉय ट्रेन और टाइगर हिल पर भीड़ रहती है, इसलिए वीकेंड छोड़कर सोमवार से गुरुवार के बीच जाइए।",
+   "इसे सेव कर लीजिए, दार्जिलिंग का प्लान बनाते वक़्त काम आएगा।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Kanchenjunga from Darjeeling|kanchenjunga",
+   "hook": "<em>Darjeeling</em>'s mountain<br>hides after November"
+  },
+  {
+   "kicker": "Go now",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "5 to 15°C. Clear skies, great visibility. Singalila Ridge trek at its best.",
+   "bg": "photo"
+  },
+  {
+   "kicker": "December",
+   "big": "Wait",
+   "line": "NakshIQ score <em>6/10</em>",
+   "sub": "Frequent fog hides the mountains. Shops close early. Carry heavy woollens.",
+   "bg": "photo:Darjeeling mist|mist"
+  },
+  {
+   "kicker": "January",
+   "big": "Skip",
+   "line": "NakshIQ score <em>4/10</em>",
+   "sub": "Morning fog hides Kanchenjunga most days. No central heating. Tea estates dormant.",
+   "bg": "photo:Happy Valley Tea Estate|happy valley"
+  },
+  {
+   "kicker": "One thing",
+   "big": "Mon to Thu",
+   "sub": "November is peak season: the toy train and Tiger Hill sunrise get packed.",
+   "bg": "photo:Darjeeling toy train steam|steam"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Darjeeling* jaana hai to *sahi waqt abhi* hai,",
+    "kyunki November ke baad woh *pahaad chhupne* lagta hai",
+    "jise dekhne aap wahan jaate hain."
+   ],
+   [
+    "November mein *aasmaan saaf* rehta hai,",
+    "subah *Kanchenjunga* khulkar dikhti hai,",
+    "aur *Singalila Ridge* ka trek isi waqt sabse achha hota hai."
+   ],
+   [
+    "Par *December* mein aksar *dhundh* pahaadon ko dhak leti hai,",
+    "dukaanen *jaldi band* hoti hain,",
+    "aur *bhaari oonee kapdon* ke bina kaam nahi chalta."
+   ],
+   [
+    "Aur *January* mein zyaadatar din subah ka *kohra* Kanchenjunga ko chhupa deta hai,",
+    "wahan *central heating* nahi hoti,",
+    "aur *chai ke baagaan* soye rehte hain."
+   ],
+   [
+    "Bas ek baat, November season ka mahina hai",
+    "to *toy train* aur *Tiger Hill* par bheed rehti hai,",
+    "isliye weekend chhodkar *Somvaar se Guruvaar* ke beech jaaiye."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "*Darjeeling* ka plan banaate waqt kaam aayega."
+   ]
+  ],
+  "en": [
+   [
+    "If you're going to *Darjeeling*, the *right time is now*,",
+    "because after November the *mountain starts hiding*,",
+    "the one you go there to see."
+   ],
+   [
+    "In November the *skies stay clear*,",
+    "*Kanchenjunga* shows itself in the morning,",
+    "and the *Singalila Ridge* trek is at its best."
+   ],
+   [
+    "But in *December* *fog* often covers the peaks,",
+    "shops *close early*,",
+    "and you can't do without *heavy woollens*."
+   ],
+   [
+    "And in *January* morning *fog* hides Kanchenjunga most days,",
+    "there's *no central heating*,",
+    "and the *tea gardens* lie dormant."
+   ],
+   [
+    "One thing: November is peak season,",
+    "so the *toy train* and *Tiger Hill* get crowded,",
+    "so skip weekends and go *Monday to Thursday*."
+   ],
+   [
+    "*Save this*,",
+    "it'll help when you plan *Darjeeling*."
+   ]
+  ]
+ },
+ "title": "Darjeeling in December? Go now instead | NakshIQ",
+ "caption_lead": "The window for Darjeeling is now. November is 5 to 15°C with clear skies, Kanchenjunga in view on clear mornings and the Singalila Ridge trek at its best. December often brings fog over the mountains, early shop closures and a need for heavy woollens; in January morning fog hides Kanchenjunga most days, there's no central heating and the tea estates are dormant. November is peak season, so the toy train and Tiger Hill sunrise get packed: go Monday to Thursday.",
+ "cost_basis": [],
+ "facts": [
+  "reel-data months.11 score 5 = 10/10 go: 'Excellent 5-15°C. Clear skies continue. ... Singalila Ridge trek at its best. ... great visibility'; months.11 go_or_skip 'clear skies ideal for Kanchenjunga views'; treks Sandakphu/Singalila best_months include 11",
+  "months.12 score 3 = 6/10 wait: skip_reason 'Frequent fog obscures the mountain views'; who_should_avoid 'early shop closures'; reel-data 'Carry heavy woolens'",
+  "months.1 score 2 = 4/10 skip: skip_reason 'Morning fog obscures Kanchenjunga views on most days'; who_should_avoid 'Darjeeling has no central heating', 'estates are dormant with no processing to observe'",
+  "crowd_calendar peak_months include 11; note 'Toy train and Tiger Hill sunrise get packed in peak season'; best_day 'Mon-Thu', avoid_weekends true; months.11 go_or_skip 'expect crowds'",
+  "NOT used: reel-data months.11 'Few crowds' (crowd calendar lists November as peak and go_or_skip says 'expect crowds'); months.11 'Autumn flush tea season' (who_should_avoid for the same month says estates are shutting down for winter); months.11 'prices drop' (ledger has November at the same peak hotel-mid 3900 as October); photographer '~40% of mornings' (an unmeasured-looking ratio)",
+  "PICTURE NOTE: darjeeling__hero.mp4 not used; it shows a single cone-shaped peak that does not look like Kanchenjunga"
+ ],
+ "spoken_numbers": [],
+ "cover": {
+  "style": "A",
+  "image": "photo:Kanchenjunga from Darjeeling|kanchenjunga",
+  "hook": "Why go to Darjeeling|*before December?*"
+ },
+ "music": "cinematic-drawing-the-sky-797",
+ "music_start": 0
+}

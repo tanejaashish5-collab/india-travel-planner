@@ -1,0 +1,181 @@
+{
+ "id": "nainital__real_cost",
+ "slug": "nainital",
+ "format": "real_cost",
+ "series": "real_cost",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "नैनीताल में वही अच्छा कमरा, नवंबर में साढ़े चौंतीस सौ का, और मई जून में साढ़े पचपन सौ का।",
+   "मई जून में दाम इसलिए चढ़ते हैं क्योंकि दिल्ली और लखनऊ से लोग गर्मी से बचने यहीं आते हैं, नाव के लिए लंबी लाइन लगती है और सुबह सुबह पार्किंग भर जाती है।",
+   "जबकि नवंबर में झील के किनारे भीड़ नहीं होती, और नैना देवी मंदिर में आराम से दर्शन हो जाते हैं।",
+   "पर सच ये भी है कि नवंबर में नैनीताल सर्दी से पहले शांत हो जाता है, दिन ठंडे और धूसर होते हैं, तो पहली बार या बच्चों के साथ जा रहे हैं तो ये महीना आपके लिए नहीं।",
+   "टैक्सी का किराया हर सीज़न में एक जैसा रहता है, तो पूरी बचत कमरे पर होती है, और वीकेंड छोड़कर मंगल से गुरुवार जाइए।",
+   "आप नैनीताल किस महीने जाते हैं? कमेंट में बताइए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:nainital__hero.mp4",
+   "hook": "Same <em>Nainital</em> room.<br>₹2,100 apart.",
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "November",
+     "₹3,450"
+    ],
+    [
+     "May and June",
+     "₹5,550"
+    ]
+   ]
+  },
+  {
+   "kicker": "May and June",
+   "big": "Peak season",
+   "sub": "Summer escape from Delhi and Lucknow. Long boat queues, parking full by morning.",
+   "bg": "photo:Nainital market|nainital"
+  },
+  {
+   "kicker": "November",
+   "big": "No crowds",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "Unhurried darshan at Naina Devi.",
+   "bg": "photo:Naina Devi Temple Nainital|naina devi"
+  },
+  {
+   "kicker": "But know this",
+   "big": "Grey and cold",
+   "sub": "8 to 12°C days, 2 to 4°C nights by month-end. Not for first-timers or families with kids.",
+   "bg": "photo:Snow View Nainital|snow view"
+  },
+  {
+   "kicker": "Taxi, per day",
+   "big": "₹2,350",
+   "sub": "The same in every season. Skip weekends: go Tuesday to Thursday.",
+   "bg": "photo:Naini Lake boats|naini"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Nainital mein wahi achha kamra,",
+    "November mein *₹3,450* ka,",
+    "aur May June mein *₹5,550* ka."
+   ],
+   [
+    "May June mein daam isliye chadhte hain",
+    "kyunki *Delhi aur Lucknow* se log garmi se bachne yahin aate hain,",
+    "naav ke liye *lambi line* lagti hai",
+    "aur subah subah *parking bhar* jaati hai."
+   ],
+   [
+    "Jabki *November* mein jheel ke kinaare *bheed nahi* hoti,",
+    "aur *Naina Devi* mandir mein aaraam se darshan ho jaate hain."
+   ],
+   [
+    "Par sach ye bhi hai ki November mein Nainital",
+    "sardi se pehle shaant ho jaata hai,",
+    "din *thande aur dhoosar* hote hain,",
+    "to *pehli baar* ya *bachchon ke saath* ja rahe hain",
+    "to ye mahina aapke liye nahi."
+   ],
+   [
+    "*Taxi* ka kiraya har season mein *ek jaisa* rehta hai,",
+    "to poori *bachat kamre* par hoti hai,",
+    "aur weekend chhodkar *Mangal se Guruvaar* jaaiye."
+   ],
+   [
+    "Aap Nainital *kis mahine* jaate hain?",
+    "*Comment* mein bataaiye."
+   ]
+  ],
+  "en": [
+   [
+    "The same good room in Nainital:",
+    "*₹3,450* in November,",
+    "and *₹5,550* in May and June."
+   ],
+   [
+    "Prices climb in May and June",
+    "because people from *Delhi and Lucknow* escape the heat here,",
+    "there are *long queues* for the boats",
+    "and *parking fills* by early morning."
+   ],
+   [
+    "In *November*, though, the lakeside has *no crowds*,",
+    "and darshan at *Naina Devi* is unhurried."
+   ],
+   [
+    "But the truth is, in November Nainital",
+    "goes quiet before winter,",
+    "the days are *cold and grey*,",
+    "so if it's your *first visit* or you're going *with kids*,",
+    "this month isn't for you."
+   ],
+   [
+    "The *taxi* costs *the same* in every season,",
+    "so the whole *saving is on the room*,",
+    "and skip weekends: go *Tuesday to Thursday*."
+   ],
+   [
+    "Which *month* do you go to Nainital?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "Same Nainital room, ₹2,100 apart | NakshIQ",
+ "caption_lead": "A good room in Nainital costs ₹3,450 a night in November and ₹5,550 in May and June, when the summer escape from Delhi and Lucknow brings long boat queues and car parks full by morning. The taxi is ₹2,350 a day in every season, so the whole saving is on the room. Know this: November is quiet, cold and grey (8 to 12°C days), so it suits a calm trip, not a first visit or a family one. Skip weekends; go Tuesday to Thursday.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 3450
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 5550
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "low",
+   "value": 2350
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "peak",
+   "value": 2350
+  }
+ ],
+ "facts": [
+  "costs hotel-mid low (months 1,2,3,8,9,11) typical_inr 3450; peak (months 5,6) 5550; difference 2,100 (hook/cover only, not spoken)",
+  "costs transport-taxi-day typical_inr 2350 in low, shoulder and peak",
+  "crowd_calendar.note: 'Apr-Jun is summer-escape peak from Delhi/Lucknow'; reel-data months.5 note: '60-90 min boat queues ... parking full by 9am' (spoken as 'long queues', 'parking full by early morning')",
+  "months.11 score 4 = 8/10, go: 'Go if you want Nainital without crowds'; who_should_go 'Temple visitors wanting unhurried darshan at Naina Devi'; crowd_calendar moderate_months includes 11",
+  "reel-data months.11 note: 'November is Nainital going to sleep. Temperatures drop sharply: 8-12°C days, 2-4°C nights by month-end'; go_or_skip 'quieter, closing-season mood as locals prepare for winter'; who_should_avoid 'Families with kids', 'First-time visitors', 'everything is grey-brown'",
+  "crowd_calendar best_day 'Tue-Thu', avoid_weekends true",
+  "NOT used: months.5 'hotel rates triple' (ledger says about 1.6x, ledger is what we quote); months.5 who_should_avoid 'Mall Road at 100,000 visitors per weekend' (nobody measured it); Lower Mall Road closure (not this reel's point)"
+ ],
+ "spoken_numbers": [
+  "साढ़े चौंतीस सौ (3,450)",
+  "साढ़े पचपन सौ (5,550)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Naini Lake boats|naini",
+  "line": "Same Nainital room, booked in May",
+  "stamp": "+₹2,100",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "music": "hype-267",
+ "music_start": 0
+}

@@ -1,0 +1,164 @@
+{
+ "id": "jodhpur__eat_here",
+ "slug": "jodhpur",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "जोधपुर में सब मेहरानगढ़ क़िला देखने आते हैं, पर घंटाघर के आसपास की पुरानी दुकानों पर फ़र्क़ इस बात से पड़ता है कि आप खाते कैसे हैं।",
+   "सरदार मार्केट में घंटाघर वाली तरफ़ एक छोटी सी दुकान पर मक्खनिया लस्सी लीजिए, और उसे स्ट्रॉ से नहीं, चम्मच से खाइए, क्योंकि ऊपर हाथ से मलाई डलती है।",
+   "फिर नई सड़क पर ड्राई फ़्रूट वाला समोसा हरी चटनी से नहीं, इमली की चटनी से खाइए, क्योंकि उसी का खट्टापन भराई का स्वाद खोलता है।",
+   "और उसी सड़क पर जोधपुर की अपनी मावा कचौड़ी दुकान में बैठकर गरम ही खाइए, क्योंकि डिब्बे में पैक करवाई तो कुछ घंटों में उसका खस्तापन चला जाता है।",
+   "नवंबर में मौसम ठंडा और साफ़ है, पर ये पीक सीज़न है, तो हेरिटेज होटल पहले बुक कीजिए और हो सके तो मंगल से गुरुवार के बीच जाइए।",
+   "उस दोस्त को टैग कीजिए जो जोधपुर से मावा कचौड़ी का डिब्बा पैक करवाकर लाता है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Mehrangarh Fort|mehrangarh",
+   "hook": "Jodhpur food:<br>you're eating it <em>wrong</em>"
+  },
+  {
+   "kicker": "Makhaniya lassi",
+   "lines": [
+    "<em>Shri Mishrilal Hotel</em>, since 1927",
+    "Sardar Market, Clock Tower side",
+    "Malai finished by hand",
+    "Spoon, not a straw"
+   ],
+   "bg": "photo:Sardar Market Jodhpur|sardar"
+  },
+  {
+   "kicker": "Samosa",
+   "lines": [
+    "<em>Shahi Samosa</em>, since 1984",
+    "Nai Sarak, near the Clock Tower",
+    "Dry fruits in the potato filling",
+    "Tamarind chutney, not the green. Cash only"
+   ],
+   "bg": "photo:Samosa|samosa"
+  },
+  {
+   "kicker": "Mawa kachori",
+   "lines": [
+    "<em>Janta Sweet Home</em>, since 1980",
+    "Nai Sarak, Old City",
+    "Khoya, almonds, pistachios, cardamom",
+    "Eat it hot, in the shop"
+   ],
+   "bg": "photo:Jodhpur blue city|blue"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "12 to 28°C, cool and clear. Peak season: book heritage hotels early. Best days Tue to Thu.",
+   "bg": "photo:Umaid Bhawan Palace|umaid"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Jodhpur mein sab *Mehrangarh kila* dekhne aate hain,",
+    "par *Ghantaghar* ke aaspaas ki purani dukaanon par",
+    "farq is baat se padta hai",
+    "ki aap *khaate kaise* hain."
+   ],
+   [
+    "*Sardar Market* mein Ghantaghar waali taraf",
+    "ek chhoti si dukaan par *makhaniya lassi* lijiye,",
+    "aur use *straw se nahi*, *chammach se* khaaiye,",
+    "kyunki upar haath se *malaai* dalti hai."
+   ],
+   [
+    "Phir *Nai Sadak* par *dry fruit waala samosa*",
+    "hari chutney se nahi,",
+    "*imli ki chutney* se khaaiye,",
+    "kyunki usi ka *khattapan* bharaai ka swaad kholta hai."
+   ],
+   [
+    "Aur usi sadak par Jodhpur ki apni *maawa kachori*",
+    "*dukaan mein baithkar garam* hi khaaiye,",
+    "kyunki *dibbe mein pack* karwaai",
+    "to kuch ghanton mein uska *khastapan* chala jaata hai."
+   ],
+   [
+    "November mein mausam *thanda aur saaf* hai,",
+    "par ye *peak season* hai,",
+    "to *heritage hotel* pehle book kijiye",
+    "aur ho sake to *Mangal se Guruvaar* ke beech jaaiye."
+   ],
+   [
+    "Us dost ko *tag* kijiye",
+    "jo Jodhpur se *maawa kachori ka dibba*",
+    "pack karwaakar laata hai."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone comes to Jodhpur for *Mehrangarh Fort*,",
+    "but at the old shops around the *Clock Tower*,",
+    "what matters",
+    "is *how you eat it*."
+   ],
+   [
+    "In *Sardar Market*, on the Clock Tower side,",
+    "order *makhaniya lassi* at a tiny shop,",
+    "and eat it with a *spoon*, *not a straw*,",
+    "because the *malai* goes on by hand."
+   ],
+   [
+    "Then on *Nai Sarak*, eat the *dry-fruit samosa*",
+    "not with the green chutney",
+    "but the *tamarind* one,",
+    "because its *tang* is what opens up the filling."
+   ],
+   [
+    "And on the same street, eat Jodhpur's own *mawa kachori*",
+    "*hot, in the shop*,",
+    "because *packed in a box*",
+    "it loses its *flake* within hours."
+   ],
+   [
+    "November is *cool and clear*,",
+    "but it's *peak season*,",
+    "so book *heritage hotels* early,",
+    "and if you can, go *Tuesday to Thursday*."
+   ],
+   [
+    "*Tag the friend*",
+    "who brings home",
+    "a *box of mawa kachori* from Jodhpur."
+   ]
+  ]
+ },
+ "title": "Jodhpur food: are you eating it wrong? | NakshIQ",
+ "caption_lead": "In Jodhpur, how you eat it matters. At Shri Mishrilal Hotel in Sardar Market (Clock Tower side), eat the makhaniya lassi with a spoon, not a straw. At Shahi Samosa on Nai Sarak, skip the green chutney for the tamarind one and bring cash; at Janta Sweet Home on the same street, eat the mawa kachori hot in the shop, because a packed box loses its flake within hours. November is cool, clear peak season: book heritage hotels early and go Tuesday to Thursday.",
+ "cost_basis": [],
+ "facts": [
+  "eatery Shri Mishrilal Hotel, Sardar Market, Clock Tower, est 1927: signature makhaniya lassi; insider_tip 'The shop is on the Ghantaghar (Clock Tower) side of Sardar Market ... Makhaniya lassi is finished with malai by hand; eat with a spoon, not a straw.'",
+  "eatery Shahi Samosa, 'Nai Sarak, near Clock Tower', est 1984: 'adding dry fruits to the mashed-potato filling'; insider_tip 'Cash only ... Eat with their tamarind chutney from the side counter, not the green chutney, the tangier tamarind is what cuts the dry-fruit filling.'",
+  "eatery Janta Sweet Home, 'Nai Sarak, Old City', est 1980: 'mawa kachori (a Jodhpur invention: kachori shell stuffed with khoya, almonds, pistachios, cardamom)'; insider_tip 'Mawa kachori must be eaten in-store, hot, packed boxes lose the flake within hours.'",
+  "reel-data jodhpur months.11 5=10/10: 'Excellent 12-28°C. Cool, clear, peak tourist season ... Book heritage hotels early.'",
+  "reel-data jodhpur crowd: best_day 'Tue-Thu', avoid_weekends true; note 'Mehrangarh Fort and blue city busy in winter tourist season'",
+  "no food prices anywhere (Shahi Samosa's per-piece price in the pack NOT used); eatery names on cards and caption only, never in the voice; the dish 'shahi samosa' is voiced as 'dry-fruit samosa' because it is also the shop's name",
+  "NOT used: Mishrilal 'easy to miss because the signboard is in Hindi' (meaningless to a Hindi audience); Indique 'the only Jodhpur rooftop with line-of-sight to ...' (superlative); Risala 'third-largest private residence in the world' (unneeded claim); Gypsy and Risala (no how-to-eat tip that fits the series)"
+ ],
+ "spoken_numbers": [],
+ "cover": {
+  "style": "C",
+  "top": "photo:Mehrangarh Fort|mehrangarh",
+  "top_label": "EVERYONE: THE FORT",
+  "bottom": "photo:Samosa|samosa",
+  "bottom_label": "WHICH CHUTNEY?",
+  "hook": "Jodhpur food:|*are you eating it wrong?*"
+ },
+ "music": "travel-just-keep-walking-339",
+ "music_start": 33
+}

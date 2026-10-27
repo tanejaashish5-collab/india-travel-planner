@@ -1,0 +1,167 @@
+{
+ "id": "mysore__list_of_3",
+ "slug": "mysore",
+ "format": "list_of_3",
+ "series": "list_of_3",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "मैसूर से ज़्यादातर लोग श्रीरंगपटना, बृंदावन और चामुंडी हिल्स देखकर लौट आते हैं, पर करीब एक घंटे दूर तीन जगहें हैं जो उनकी लिस्ट में नहीं होतीं।",
+   "पहली, सोमनाथपुर का होयसल दौर का केशव मंदिर, जो यूनेस्को की लिस्ट में है, और जिसकी दीवारों पर हाथियों, घुड़सवारों और देवताओं की नक्काशी चलती है।",
+   "दूसरी, मेलुकोटे, पहाड़ी पर बसा वैष्णव मंदिरों का पुराना कस्बा, जहाँ चेलुवनारायण स्वामी मंदिर है और प्रसाद में पुलियोगरे मिलता है।",
+   "तीसरी, तलकाडु, गंग राजाओं की पुरानी राजधानी, जो कावेरी की रेत में दब गई, मान्यता है रानी अलमेलम्मा के श्राप से, और अब रेत से निकाले गए शिव मंदिर दिखते हैं।",
+   "नवंबर में मौसम सूखा और सुहाना रहता है, अच्छा कमरा करीब सवा तीन हज़ार का है, बस क्रिसमस का हफ़्ता बीच महीने से भरने लगता है।",
+   "ये उसे भेजिए जो मैसूर जाकर बस पैलेस देखकर लौट आता है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:mysore__hero.mp4",
+   "hook": "A town near <em>Mysore</em><br>buried in sand"
+  },
+  {
+   "kicker": "1 · Hoysala temple",
+   "lines": [
+    "<em>Somnathpur Keshava Temple</em>",
+    "35 km, 1 hr from Mysore",
+    "Built 1268, UNESCO-listed 2023",
+    "Six bands of carved friezes"
+   ],
+   "bg": "photo:Somnathpur Temple|somnathpur"
+  },
+  {
+   "kicker": "2 · Hilltop temple town",
+   "lines": [
+    "<em>Melukote</em>",
+    "50 km, 1 hr from Mysore",
+    "Cheluvanarayana Swamy Temple",
+    "Known for puliyogare prasadam"
+   ],
+   "bg": "photo:Melukote Narasimhaswamy Temple|narasimhaswamy"
+  },
+  {
+   "kicker": "3 · Buried in sand",
+   "lines": [
+    "<em>Talakadu</em>",
+    "45 km, 1 hr 15 min from Mysore",
+    "Old Ganga capital under Cauvery sand",
+    "Five Shiva temples dug out"
+   ],
+   "bg": "photo:Talakad temple|talakad"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "17 to 28°C, dry. Christmas week books out from mid-month.",
+   "bg": "photo:Mysore Palace|palace"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Mysore se zyaadatar log *Srirangapatna, Brindavan* aur *Chamundi Hills* dekhkar laut aate hain,",
+    "par kareeb *1 ghante* door *teen jagah* hain",
+    "jo unki list mein nahi hotin."
+   ],
+   [
+    "Pehli, *Somnathpur* ka Hoysala daur ka *Keshava Mandir*,",
+    "jo *UNESCO* ki list mein hai,",
+    "aur jiski deewaron par haathiyon, ghudsawaaron aur devtaon ki *nakkashi* chalti hai."
+   ],
+   [
+    "Doosri, *Melukote*,",
+    "pahadi par basa *Vaishnav mandiron* ka purana kasba,",
+    "jahan *Cheluvanarayana Swamy Mandir* hai",
+    "aur prasad mein *puliyogare* milta hai."
+   ],
+   [
+    "Teesri, *Talakadu*,",
+    "Ganga raajaon ki purani raajdhaani,",
+    "jo *Kaveri ki ret* mein dab gayi,",
+    "maanyata hai rani *Alamelamma ke shraap* se,",
+    "aur ab ret se nikaale gaye *Shiv mandir* dikhte hain."
+   ],
+   [
+    "*November* mein mausam *sookha aur suhaana* rehta hai,",
+    "achha kamra kareeb *₹3,250* ka hai,",
+    "bas *Christmas ka hafta* beech mahine se bharne lagta hai."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo Mysore jaakar",
+    "bas *palace dekhkar* laut aata hai."
+   ]
+  ],
+  "en": [
+   [
+    "Most people see *Srirangapatna, Brindavan* and *Chamundi Hills* from Mysore and head back,",
+    "but about *an hour* away are *three places*",
+    "that aren't on their list."
+   ],
+   [
+    "One: *Somnathpur's Keshava Temple*, from the Hoysala era,",
+    "on the *UNESCO* list,",
+    "with walls covered in carved bands of elephants, horsemen and gods."
+   ],
+   [
+    "Two: *Melukote*,",
+    "an old hilltop town of *Vaishnava temples*,",
+    "home to the *Cheluvanarayana Swamy Temple*,",
+    "where the prasadam is *puliyogare*."
+   ],
+   [
+    "Three: *Talakadu*,",
+    "an old capital of the Ganga kings",
+    "*buried under Cauvery sand*,",
+    "by legend through *Alamelamma's curse*,",
+    "where *Shiva temples* dug out of the sand now stand."
+   ],
+   [
+    "*November* is *dry and pleasant*,",
+    "a good room is about *₹3,250*,",
+    "but *Christmas week* fills up from mid-month."
+   ],
+   [
+    "*Send this* to whoever",
+    "goes to Mysore",
+    "and only sees the *palace*."
+   ]
+  ]
+ },
+ "title": "The town near Mysore buried in sand | NakshIQ",
+ "caption_lead": "Most day-trippers from Mysore do Srirangapatna, Brindavan and Chamundi Hills and skip these three, each about an hour away. Somnathpur's Keshava Temple (1268) is a Hoysala star-plan temple on the UNESCO list since 2023. Melukote is an old hilltop Vaishnava temple town with the Cheluvanarayana Swamy Temple. Talakadu, an old Ganga capital, lies under Cauvery sand, by legend through Alamelamma's curse, with five Shiva temples partly dug out. November is dry and pleasant; a good room is about ₹3,250 a night, and Christmas week books out from mid-month.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3250
+  }
+ ],
+ "facts": [
+  "gem Somnathpur Keshava Temple: 35 km, '1 hr drive SE'; why_unknown 'third Hoysala temple in the UNESCO 2023 inscription ... Most Mysore day-trippers do Srirangapatna + Brindavan + Chamundi and skip Somnathpur entirely'; why_go 'A 1268 CE Hoysala star-plan temple'; 'Triple-shrine (trikuta) layout with three star-shaped sanctums'; 'The outer wall has 6 horizontal bands of friezes, elephants, horsemen, mythological scenes, Hindu deities'",
+  "gem Melukote: 50 km, '1hr from Mysore'; 'Ancient hilltop Vaishnavite temple town. Cheluvanarayana Swamy Temple.'; 'Known for Puliyogare (tamarind rice) prasadam'; 'Tiny temple town. No commercial tourism.'",
+  "gem Talakadu: 45 km, '1 hr 15 min'; 'medieval Ganga + Chola + Hoysala capital that lies almost entirely buried under Cauvery river sand dunes'; 'Local legend attributes the burial to the curse of Alamelamma'; '5 ancient Shiva temples (Pancha Pati Panchalinga) survive partially excavated'; 'Most Mysore visitors don't make the 45km journey'",
+  "months.11 score 5 = 10/10: reel-data 'High season builds. 17-28C, dry ... Christmas-week books out from mid-month.'",
+  "destination_costs mysore hotel-mid peak (months 10,11,12,1,2,3,7,8,9) typical_inr 3250 = सवा तीन हज़ार",
+  "NOT used: Somnathpur '~80% fewer visitors' (unmeasured) and 'LAST major Hoysala temple before the dynasty fell to Malik Kafur's 1311 Madurai raid' (wrong: the 1311 raid hit Dwarasamudra and the dynasty lasted to 1343); Alamelamma as 'Wodeyar queen' (she was the Vijayanagara viceroy's wife, per Talakadu sources; voiced only as 'rani Alamelamma'); Panchalinga Darshana 'last in 2021, next 2033' (it is not on a fixed 12-year cycle: 2006 and 2009 were three years apart); ASI fees; 'India's cleanest city' (not needed)",
+  "PICTURE NOTE: the Melukote photo's Commons title is 'NarasimhaSwamy Temple.JPG' (found by the query 'Melukote Narasimhaswamy Temple'); it shows the hilltop Yoga Narasimha temple, so the card names the town, not that temple"
+ ],
+ "spoken_numbers": [
+  "एक (about 1 hr)",
+  "तीन (3 places)",
+  "सवा तीन हज़ार (₹3,250 hotel-mid, November)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Talakad temple|talakad",
+  "hook": "A town buried in sand|*near Mysore?*"
+ },
+ "music": "travel-dance-with-me-1063",
+ "music_start": 0
+}

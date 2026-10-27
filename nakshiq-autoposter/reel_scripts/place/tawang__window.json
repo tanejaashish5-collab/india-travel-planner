@@ -1,0 +1,168 @@
+{
+ "id": "tawang__window",
+ "slug": "tawang",
+ "format": "window",
+ "series": "window",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "तवांग जाना है तो अभी जाइए, क्योंकि दिसंबर से यहाँ कड़ाके की सर्दी उतर आती है और सफ़र का भरोसा नहीं रहता।",
+   "नवंबर में दिन ठंडे पर एकदम साफ़ रहते हैं, सुनहरी धूप में तवांग मठ देखने लायक होता है, और सेला पास खुला रहता है, बस ठंड बहुत होती है।",
+   "मठ में सुबह की प्रार्थना ज़रूर देखिए, पर पीछे की तरफ़ खड़े होइए और फ़्लैश मत चलाइए, क्योंकि अंदर कहीं भी फ़्लैश की इजाज़त नहीं है।",
+   "पर दिसंबर और जनवरी में पारा शून्य से नीचे चला जाता है, सेला पास पर बर्फ़ पड़ती है, सड़कों का भरोसा नहीं रहता, और बुमला पास और माधुरी झील के ट्रिप हाथ से निकल जाते हैं।",
+   "तो नवंबर में जाइए, एक अच्छा कमरा करीब चौंतीस सौ का है, बस इनर लाइन परमिट पहले बनवाइए, और ऊँचाई की आदत के लिए रास्ते में बोमडिला में एक रात रुकिए।",
+   "ये उसे भेजिए जो कह रहा है, तवांग दिसंबर में बर्फ़ देखने चलेंगे।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Tawang Monastery exterior|tawang",
+   "hook": "<em>Tawang</em> has<br>a deadline"
+  },
+  {
+   "kicker": "Go now",
+   "big": "November",
+   "line": "NakshIQ score <em>8/10</em>",
+   "sub": "0 to 10°C. Crisp, clear days. Tawang Monastery in golden light. Sela Pass open but cold.",
+   "bg": "photo:Tawang Monastery view|tawang"
+  },
+  {
+   "kicker": "At the monastery",
+   "lines": [
+    "Morning prayers",
+    "Stand near the back",
+    "No flash, anywhere inside"
+   ],
+   "bg": "photo:Tawang Monastery|tawang"
+  },
+  {
+   "kicker": "December and January",
+   "big": "Skip",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "-4 to 4°C in December, -8 to 2°C in January. Snow on Sela Pass, roads unreliable. Bumla Pass and Madhuri Lake trips off.",
+   "bg": "photo:Sela Pass snow|sela"
+  },
+  {
+   "kicker": "A good room in Tawang, November",
+   "big": "₹3,400",
+   "sub": "Inner Line Permit first. A night in Bomdila on the way up, to acclimatise.",
+   "bg": "photo:Bomdila|bomdila"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Tawang* jaana hai to *abhi* jaaiye,",
+    "kyunki *December* se yahan kadaake ki sardi utar aati hai",
+    "aur *safar ka bharosa* nahi rehta."
+   ],
+   [
+    "November mein din *thande par ekdam saaf* rehte hain,",
+    "*sunehri dhoop* mein *Tawang Math* dekhne laayak hota hai,",
+    "aur *Sela Pass* khula rehta hai,",
+    "bas *thand bahut* hoti hai."
+   ],
+   [
+    "Math mein *subah ki prarthana* zaroor dekhiye,",
+    "par *peeche ki taraf* khade hoiye",
+    "aur *flash mat* chalaaiye,",
+    "kyunki andar kahin bhi flash ki *ijaazat nahi* hai."
+   ],
+   [
+    "Par *December aur January* mein",
+    "paara *shoonya se neeche* chala jaata hai,",
+    "Sela Pass par *barf* padti hai,",
+    "sadkon ka *bharosa nahi* rehta,",
+    "aur *Bumla Pass* aur *Madhuri Jheel* ke trip haath se nikal jaate hain."
+   ],
+   [
+    "To *November* mein jaaiye,",
+    "ek achha kamra kareeb *₹3,400* ka hai,",
+    "bas *Inner Line Permit* pehle banwaaiye,",
+    "aur oonchaai ki aadat ke liye",
+    "raaste mein *Bomdila* mein ek raat rukiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo keh raha hai,",
+    "Tawang *December mein barf* dekhne chalenge."
+   ]
+  ],
+  "en": [
+   [
+    "If you want *Tawang*, go *now*,",
+    "because from *December* hard winter sets in",
+    "and the *journey* gets unreliable."
+   ],
+   [
+    "November days are *cold but crystal clear*,",
+    "*Tawang Monastery* glows in *golden light*,",
+    "and *Sela Pass* is open,",
+    "it's just *very cold*."
+   ],
+   [
+    "Don't miss the *morning prayers* at the monastery,",
+    "but stand *near the back*",
+    "and use *no flash*,",
+    "because flash isn't *allowed* anywhere inside."
+   ],
+   [
+    "But in *December and January*",
+    "it drops *below zero*,",
+    "*snow* falls on Sela Pass,",
+    "the roads get *unreliable*,",
+    "and *Bumla Pass* and *Madhuri Lake* trips are off."
+   ],
+   [
+    "So go in *November*:",
+    "a good room is about *₹3,400*,",
+    "just get your *Inner Line Permit* first,",
+    "and to adjust to the altitude,",
+    "spend a night in *Bomdila* on the way."
+   ],
+   [
+    "*Send this* to whoever",
+    "keeps saying,",
+    "let's do Tawang *in December for the snow*."
+   ]
+  ]
+ },
+ "title": "Tawang has a deadline: go before December | NakshIQ",
+ "caption_lead": "The window for Tawang is now. November is 0 to 10°C with crisp, clear days, the monastery in golden light and Sela Pass open but cold; at morning prayers, stand near the back and never use flash. December and January drop below zero, with snow on Sela Pass, unreliable roads, and Bumla Pass and Madhuri Lake trips off. A good room in November is about ₹3,400 a night: get your Inner Line Permit first and spend a night in Bomdila on the way up to acclimatise.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3400
+  }
+ ],
+ "facts": [
+  "reel-data tawang months.11 4=8/10 'go': 'Late autumn 0-10°C. Crisp clear days. Tawang Monastery in golden light. Sela Pass open but cold. Beautiful window.'",
+  "tawang persona photographer: 'Tawang Monastery morning prayers (no flash, position near the back) ... Monastery interiors: permission required for tripods, flash prohibited everywhere.'",
+  "reel-data tawang months.12 1=2/10 'skip': 'Winter setting in -4 to 4°C. Snow likely on Sela Pass. Road access becoming unreliable.'; months.1 1=2/10 'Extreme cold -8 to 2°C. Heavy snow.'",
+  "tawang months.12 and months.1 go_or_skip_verdict: 'Bumla Pass + Madhuri Lake day-trips are off the table'",
+  "news check 2026-10-27: snow-packed roads stranded tourists on the Old Sela route at the first snow of November 2025 (ThePrint/Tribune, Army rescue) and made roads near Sela and Jaswantgarh impassable in Feb 2025 (All India Radio, Arunachal Observer): supports 'roads unreliable' and November's 'open but cold' caveat",
+  "costs tawang hotel-mid peak (months 3,4,5,10,11) typical 3400",
+  "tawang why_special: 'Inner Line Permit mandatory for all visitors'; persona family: 'strict acclimatization (Bomdila overnight before Tawang is non-negotiable)'",
+  "dropped (contradicts current fact): every 'Sela Pass is the only road in' and 'closed for days, stranded at -15°C' line (months 12/1/2, persona elderly). The Sela Tunnel opened 9 March 2024 for all-weather access (Wikipedia, Outlook Traveller, ETV Bharat). The DB notes need a correction through the approval queue",
+  "dropped: crowd_calendar 'Remote enough that crowds are never a problem'. Arunachal24 reported a heavy Sela Pass traffic jam from record tourist footfall in October 2026",
+  "NOT used: 'second-largest monastery in the world' (superlative); months.11 'falling end-of-season rates' (the ledger has November at the peak rate, same as October); November temperatures '-2°C mornings' and 'expect 0°C days' (the DB disagrees with itself); used reel-data's 0 to 10°C on the card instead; 'AP tourism advises against attempts Dec-Mar' (an attribution I could not check)"
+ ],
+ "spoken_numbers": [
+  "शून्य (below zero)",
+  "चौंतीस सौ (3,400)",
+  "एक रात (a night in Bomdila)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Tawang Monastery exterior|tawang",
+  "hook": "Tawang has a deadline.|*Do you know it?*"
+ },
+ "music": "travel-serene-view-839",
+ "music_start": 0
+}

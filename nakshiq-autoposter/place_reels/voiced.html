@@ -21,7 +21,8 @@
       #mapwrap { position: absolute; left: 40px; top: 470px; width: 1000px; height: 1100px; }
       #mapwrap svg { width: 1000px; height: 1100px; overflow: visible; }
       #mapwrap path { fill: rgba(246,239,228,.07) !important; stroke: rgba(246,239,228,.85) !important; stroke-width: 1.6 !important; }
-      #q { position: absolute; left: 80px; right: 80px; top: 210px; font-size: 78px; font-weight: 800; line-height: 1.08; }
+      /* bottom-anchored: a 2-line hook sits where it always did (top 210px); a 3rd line grows upward, not into the subtitle at 430px (Kasol 10-27) */
+      #q { position: absolute; left: 80px; right: 80px; bottom: 1542px; font-size: 78px; font-weight: 800; line-height: 1.08; }
       #q em, .card em { font-style: normal; color: var(--accent); }
       .card { position: absolute; left: 50px; right: 50px; bottom: 230px; padding: 46px 44px 50px; background: rgba(14,14,12,.88); border: 2px solid rgba(245,241,232,.14); border-radius: 30px; }   /* option B, the Ink card */
       .card .kick::after { content: ""; display: block; width: 110px; height: 4px; background: var(--accent); margin-top: 16px; }

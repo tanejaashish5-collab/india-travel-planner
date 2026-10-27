@@ -1,0 +1,175 @@
+{
+ "id": "gokarna__sos",
+ "slug": "gokarna",
+ "format": "sos",
+ "series": "sos",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "गोकर्ण जा रहे हैं? तो बीच से बीच पैदल निकलने से पहले ये बातें जान लीजिए।",
+   "पहली, गोकर्ण में इलाज की सुविधा बुनियादी है, और ज़िले का बड़ा सरकारी अस्पताल क़रीब अट्ठावन किलोमीटर दूर है, तो फ़र्स्ट एड और अपनी दवाइयाँ साथ रखिए।",
+   "दूसरी, हाफ़ मून और पैराडाइज़ बीच तक चट्टानों वाले रास्ते से पैदल ही पहुँचते हैं, तो छोटे बच्चों और बुज़ुर्गों के साथ ये रास्ता मत लीजिए।",
+   "तीसरी, अँधेरा होने के बाद ओम और कुडले बीच पर ही रहिए, क्योंकि हाफ़ मून और उत्तर की खाड़ियाँ रात को सुनसान हो जाती हैं।",
+   "और जून से अगस्त मत आइए, क्योंकि तब बीच बंद रहते हैं और चट्टानों वाला रास्ता ख़तरनाक हो जाता है।",
+   "पर नवंबर में मौसम सूखा है और सारे बीच खुले हैं, बस वीकेंड पर बेंगलुरु से भीड़ आती है, तो हफ़्ते के बीच में जाइए।",
+   "ये उसे भेजिए जो गोकर्ण में बीच ट्रेक का प्लान बना रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Kudle Beach|kudle",
+   "hook": "Hurt in <em>Gokarna</em>?<br>Know this first."
+  },
+  {
+   "kicker": "1 · Hospital",
+   "big": "~58 km",
+   "line": "to the district government hospital",
+   "sub": "Medical facilities in Gokarna are basic. Carry first aid and your own medicines.",
+   "bg": "photo:Gokarna town|gokarna"
+  },
+  {
+   "kicker": "2 · Cliff trail",
+   "big": "On foot only",
+   "line": "Half Moon and Paradise: about 30 min each way",
+   "sub": "Not for small kids. Elderly: skip the beaches that need a hike down.",
+   "bg": "photo:Half Moon Beach Gokarna|half moon"
+  },
+  {
+   "kicker": "3 · After dark",
+   "big": "Om and Kudle",
+   "sub": "Half Moon and the far-north coves get sparse after dark.",
+   "bg": "photo:Gokarna sunset|gokarna"
+  },
+  {
+   "kicker": "Skip",
+   "big": "June to August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Beaches closed, shacks shut, cliff trails dangerous.",
+   "bg": "photo:Gokarna main beach|gokarna"
+  },
+  {
+   "kicker": "Go in",
+   "big": "November",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Dry, every beach open, beach trek at its best. Weekends bring Bangalore day-trippers to Kudle.",
+   "bg": "photo:Paradise Beach Gokarna|paradise"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Gokarna* ja rahe hain?",
+    "To beach se beach *paidal* nikalne se pehle",
+    "ye baatein *jaan lijiye*."
+   ],
+   [
+    "Pehli, Gokarna mein *ilaaj ki suvidha* buniyaadi hai,",
+    "aur zile ka bada sarkaari aspataal",
+    "qareeb *58 kilometre* door hai,",
+    "to *first aid* aur apni dawaiyan saath rakhiye."
+   ],
+   [
+    "Doosri, *Half Moon* aur *Paradise* beach tak",
+    "chattaanon waale raaste se *paidal hi* pahunchte hain,",
+    "to *chhote bachchon* aur buzurgon ke saath",
+    "ye raasta mat lijiye."
+   ],
+   [
+    "Teesri, *andhera* hone ke baad",
+    "*Om aur Kudle* beach par hi rahiye,",
+    "kyunki Half Moon aur uttar ki khaadiyan",
+    "raat ko *sunsaan* ho jaati hain."
+   ],
+   [
+    "Aur *June se August* mat aaiye,",
+    "kyunki tab *beach band* rehte hain",
+    "aur chattaanon waala raasta *khatarnaak* ho jaata hai."
+   ],
+   [
+    "Par *November* mein mausam *sookha* hai",
+    "aur saare beach khule hain,",
+    "bas weekend par *Bengaluru* se bheed aati hai,",
+    "to *hafte ke beech* mein jaaiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo Gokarna mein",
+    "*beach trek* ka plan bana raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Gokarna*?",
+    "Before you set off *on foot* from beach to beach,",
+    "*know this*."
+   ],
+   [
+    "One: *medical care* in Gokarna is basic,",
+    "and the district's big government hospital",
+    "is about *58 km* away,",
+    "so carry *first aid* and your own medicines."
+   ],
+   [
+    "Two: you reach *Half Moon* and *Paradise*",
+    "only *on foot*, by a rocky cliff path,",
+    "so don't take it with *small kids* or elderly family."
+   ],
+   [
+    "Three: *after dark*,",
+    "stay on *Om and Kudle* beaches,",
+    "because Half Moon and the coves to the north",
+    "go *deserted* at night."
+   ],
+   [
+    "And don't come *June to August*,",
+    "because the *beaches close*",
+    "and the cliff path turns *dangerous*."
+   ],
+   [
+    "But *November* is *dry*",
+    "and every beach is open,",
+    "just know weekends bring crowds from *Bengaluru*,",
+    "so go *midweek*."
+   ],
+   [
+    "*Send this* to whoever",
+    "is planning the",
+    "Gokarna *beach trek*."
+   ]
+  ]
+ },
+ "title": "Gokarna's big hospital is 58 km away | NakshIQ",
+ "caption_lead": "Going to Gokarna? Know this first. Medical facilities in town are basic, and the district government hospital is about 58 km north, so carry first aid and your own medicines. Half Moon and Paradise beaches are reached only on foot by a cliff path, about 30 minutes each way: not for small kids or elderly travellers. After dark, stay on Om and Kudle; Half Moon and the far-north coves get sparse. Skip June to August, when beaches close and the cliff trails turn dangerous. November is dry with every beach open; weekends bring Bangalore day-trippers, so go midweek.",
+ "cost_basis": [],
+ "facts": [
+  "emergency.nearest_hospital: 'Karwar Institute of Medical Sciences (KIMS), Karwar, only district govt hospital published on uttarakannada.nic.in (~58 km north). Closer Govt Hospital Kumta exists but not on .nic.in directory.', km 58, nameable false (so the hospital is not named, and the voice says 'the district's big government hospital', not 'the nearest hospital', because a closer Kumta hospital exists)",
+  "kids.concerns: 'Basic medical facilities', 'Cliff trek between beaches not for small kids'",
+  "why_special: 'Half Moon and the next cliff-accessed beach require a 30-minute trek each way'; best_for_segments 'Gokarna-Kudle-Om-Half Moon-Paradise'; persona elderly: 'beaches require hiking down, skip'",
+  "solo_female_note: 'Om + Kudle are safer than the far-north Half Moon and its adjacent cove stretch after dark'; months.12 solo_female_override_note 'Half Moon + far-north coves get sparse and risky'",
+  "reel-data months.6/7/8 score 1 = 2/10 skip: 'Beaches closed, shacks shut, cliff trails dangerous' / 'cliff-trail dangerous'",
+  "months.11 score 5 = 10/10: go_or_skip 'all beaches are accessible, weather is dry and warm ... the beach trek is at its best'; reel-data 'rainfall under 60mm'",
+  "crowd_calendar: 'Weekends bring Bangalore day-trippers to Kudle', best_day 'Weekday', avoid_weekends true",
+  "NOT used: months.11 'Hotel rates climb 20 percent' (ledger has October and November at the same peak 3100); why_special 'best beaches of India's west coast' and 'zero commercialisation ... no touts' (superlative, and trap_swaps says Om and Kudle are increasingly crowded with party tourists); kids 'Remote beaches have no facilities' (months.12 says Half Moon and Paradise have shacks); temperatures (reel-data 23-31C vs go_or_skip 25-28°C disagree)",
+  "PICTURE NOTE: gokarna__hero.mp4 not used; from 0.8 s it shows a glowing 'ॐ' symbol over the bay (text/symbol on screen, not a real view)"
+ ],
+ "spoken_numbers": [
+  "अट्ठावन (58 km)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Gokarna sunset|gokarna",
+  "line": "Hurt on a Gokarna beach?",
+  "stamp": "58 KM",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "music": "cinematic-the-journey-543",
+ "music_start": 20
+}

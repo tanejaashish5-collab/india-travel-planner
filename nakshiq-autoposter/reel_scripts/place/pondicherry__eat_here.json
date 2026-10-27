@@ -1,0 +1,158 @@
+{
+ "id": "pondicherry__eat_here",
+ "slug": "pondicherry",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "पॉन्डिचेरी में सब फ़्रेंच क्वार्टर की पीली दीवारें देखने आते हैं, पर यहाँ खाने में असली फ़र्क़ इस बात से पड़ता है कि आप कब पहुँचते हैं।",
+   "सुबह सबसे पहले एक फ़्रेंच बेकरी जाइए, क्योंकि वहाँ के क्रोसाँ और मैकरॉन दिन चढ़ते ही ख़त्म होने लगते हैं।",
+   "फिर व्हाइट टाउन के एक पुराने फ़्रांको तमिल घर के आँगन में क्रेप्स का नाश्ता कीजिए, पर सीज़न में इंतज़ार करना पड़ता है और ये शाम तक बंद हो जाता है।",
+   "और जब क्रोसाँ से मन भर जाए, तो मिशन स्ट्रीट पर शुद्ध शाकाहारी डोसा और फ़िल्टर कॉफ़ी लीजिए, क्योंकि फ़्रेंच कैफ़े के बीच ये भरोसेमंद दक्षिण भारतीय खाना है।",
+   "बस नवंबर में छाता साथ रखिए, क्योंकि ये उत्तर पूर्वी मानसून का महीना है और अच्छी ख़ासी बारिश होती है।",
+   "उस दोस्त को टैग कीजिए जो पॉन्डिचेरी जाकर भी बस क्रोसाँ खाता है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:pondicherry__hero.mp4",
+   "hook": "In <em>Pondy</em>,<br>eat by the clock"
+  },
+  {
+   "kicker": "Go first thing",
+   "lines": [
+    "<em>Baker Street</em>",
+    "Rue Bussy",
+    "Croissants and macarons",
+    "Buy them fresh, before they sell out"
+   ],
+   "bg": "photo:Croissant|croissant"
+  },
+  {
+   "kicker": "French breakfast",
+   "lines": [
+    "<em>Cafe des Arts</em>",
+    "Rue Suffren, White Town",
+    "Crepes in a Franco-Tamil house courtyard",
+    "Wait in season; shuts by evening"
+   ],
+   "bg": "photo:Pondicherry heritage building|pondicherry"
+  },
+  {
+   "kicker": "Enough croissants?",
+   "lines": [
+    "<em>Surguru</em>",
+    "Mission Street",
+    "Pure veg",
+    "Dosa and filter coffee"
+   ],
+   "bg": "photo:Masala dosa|dosa"
+  },
+  {
+   "kicker": "November",
+   "big": "Carry an umbrella",
+   "sub": "Northeast monsoon month: 300 to 400 mm of rain. Cyclone watch holds.",
+   "bg": "photo:Promenade Beach Pondicherry|promenade"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Pondicherry mein sab French Quarter ki *peeli deewaaren* dekhne aate hain,",
+    "par yahan khaane mein asli farq is baat se padta hai",
+    "ki aap *kab pahunchte* hain."
+   ],
+   [
+    "*Subah sabse pehle* ek French bakery jaaiye,",
+    "kyunki wahan ke *croissant aur macaron*",
+    "din chadhte hi *khatam* hone lagte hain."
+   ],
+   [
+    "Phir *White Town* ke ek purane Franco Tamil ghar ke *aangan* mein",
+    "*crepes* ka naashta kijiye,",
+    "par season mein intezaar karna padta hai",
+    "aur ye *shaam tak band* ho jaata hai."
+   ],
+   [
+    "Aur jab croissant se *man bhar* jaaye,",
+    "to *Mission Street* par shuddh shaakaahaari",
+    "*dosa aur filter coffee* lijiye,",
+    "kyunki French cafe ke beech",
+    "ye bharosemand South Indian khaana hai."
+   ],
+   [
+    "Bas November mein *chhaata* saath rakhiye,",
+    "kyunki ye *north east monsoon* ka mahina hai",
+    "aur achhi khaasi *baarish* hoti hai."
+   ],
+   [
+    "Us dost ko *tag* kijiye",
+    "jo Pondicherry jaakar bhi",
+    "bas *croissant* khaata hai."
+   ]
+  ],
+  "en": [
+   [
+    "Everyone comes to Pondicherry for the French Quarter's *yellow walls*,",
+    "but with the food, what matters",
+    "is *when you get there*."
+   ],
+   [
+    "Go to a French bakery *first thing*,",
+    "because the *croissants and macarons*",
+    "start *selling out* as the day goes on."
+   ],
+   [
+    "Then have *crepes* for breakfast",
+    "in the *courtyard* of an old Franco-Tamil house in *White Town*,",
+    "but expect a wait in season,",
+    "and it *shuts by evening*."
+   ],
+   [
+    "And when you've *had enough* croissants,",
+    "go to *Mission Street* for pure-veg",
+    "*dosa and filter coffee*,",
+    "the reliable South Indian meal",
+    "among the French cafes."
+   ],
+   [
+    "Just carry an *umbrella* in November,",
+    "because it's the *northeast monsoon* month",
+    "and it *rains* a fair bit."
+   ],
+   [
+    "*Tag* the friend",
+    "who goes all the way to Pondicherry",
+    "and only eats *croissants*."
+   ]
+  ]
+ },
+ "title": "Pondicherry food: what sells out first | NakshIQ",
+ "caption_lead": "In Pondicherry, timing is half the meal. Go to Baker Street on Rue Bussy first thing, before the croissants and macarons sell out. Cafe des Arts on Rue Suffren serves crepes in the courtyard of an old Franco-Tamil house; expect a wait in season, and it shuts by evening. When you've had enough croissants, Surguru on Mission Street does pure-veg dosa and filter coffee. November is the northeast monsoon month, so carry an umbrella.",
+ "cost_basis": [],
+ "facts": [
+  "eatery Baker Street, Rue Bussy: must_try croissant, macarons; insider_tip 'Buy croissants and macarons fresh in the morning before they sell out'",
+  "eatery Cafe des Arts, Rue Suffren, White Town: 'Opened 2009 in an old Franco-Tamil house ... courtyard'; insider_tip 'Come for breakfast or mid-morning ... only opens roughly 9am-6pm, closed some weekdays. The crepes and the courtyard seating are the draw ... expect a wait in season'",
+  "eatery Surguru, Mission Street: vegetarian 'pure-veg'; 'the reliable Indian-food counterpoint to White Town's French and continental cafes'; insider_tip 'When you have had enough croissants and French breakfasts ... a proper South Indian dosa-and-filter-coffee meal'",
+  "why_special 'mustard-yellow buildings' (opener); reel-data months.10 'NE monsoon arrives'; months.11 '22-29C, 300-400mm rain ... Cyclone watch holds'; crowd_calendar off 'northeast monsoon Oct-Nov risk'",
+  "no food prices anywhere; no business names in the voice",
+  "NOT used: months.11 go_or_skip 'without monsoon disruption' and '4/5 rating' (the same month's note gives 300-400mm rain and cyclone watch, and the score field is 5), so no score card on the November scene; Cafe des Arts 'most photographed cafe' and Baker Street '#1 on TripAdvisor' / 'since 1788' (unverifiable rank and lineage claims); Coromandel Cafe (no Commons photo of a garden cafe that would not be a different business)"
+ ],
+ "spoken_numbers": [],
+ "cover": {
+  "style": "C",
+  "top": "clip:pondicherry__hero.mp4@2",
+  "top_label": "EVERYONE: THE YELLOW WALLS",
+  "bottom": "photo:Croissant|croissant",
+  "bottom_label": "GO EARLY FOR THESE",
+  "hook": "Pondy food:|*what sells out first?*"
+ },
+ "music": "travel-just-keep-walking-339",
+ "music_start": 33
+}

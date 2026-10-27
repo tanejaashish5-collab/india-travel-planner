@@ -1,0 +1,163 @@
+{
+ "id": "kasol__swap",
+ "slug": "kasol",
+ "format": "swap",
+ "series": "swap",
+ "status": "approved",
+ "month": 11,
+ "origin": "Claude, 2026-10-27, batch 5 draft",
+ "vo": {
+  "hi": [
+   "कसोल का प्लान है? रुकिए, क्योंकि अगर आपको हिमाचल की शांत वादी चाहिए, पार्टी और नशे वाला माहौल नहीं, तो कसोल वो जगह नहीं है।",
+   "कसोल से करीब चार घंटे दूर बारोट वैली है, जहाँ न पार्टी वाली भीड़ है, न नशे का माहौल।",
+   "यहाँ उहल नदी और देवदार के जंगल हैं, सरकारी ट्राउट हैचरी है, और परिवार के साथ भी आराम से जा सकते हैं, क्योंकि ये कसोल से ज़्यादा सुरक्षित है।",
+   "पर जो कोई नहीं बताता, वो ये कि यहाँ अंग्रेज़ों के ज़माने के बिजली प्रोजेक्ट की पुरानी रेल पटरी और सुरंगें हैं, जिन पर आज लोग पैदल घूमने आते हैं।",
+   "बस नवंबर में ठंड बढ़ जाती है, बारोट में सुबह पाला पड़ता है और कसोल का खीरगंगा ट्रेक बंद होने लगता है, तो अप्रैल या अक्टूबर में जाइए, हफ़्ते के बीच में।",
+   "आपकी हिमाचल की सबसे शांत वादी कौन सी है? कमेंट में बताइए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:kasol__hero.mp4@1.4",
+   "hook": "Quiet Himachal,<br><em>minus the Kasol scene</em>"
+  },
+  {
+   "kicker": "The swap",
+   "lines": [
+    "<em>Barot Valley</em>, Himachal",
+    "4 hrs from Kasol",
+    "150 km",
+    "No party crowd, no drug scene"
+   ],
+   "bg": "photo:Barot Mandi|barot"
+  },
+  {
+   "kicker": "Why Barot",
+   "lines": [
+    "<em>Uhl river</em>, deodar forest",
+    "Government trout hatchery",
+    "Licensed trout angling",
+    "Safer than Kasol for families"
+   ],
+   "bg": "photo:Uhl River at Barot|uhl"
+  },
+  {
+   "kicker": "What nobody tells you",
+   "lines": [
+    "<em>Shanan hydel project</em>, 1932",
+    "Old haulage rail track up the cliff",
+    "Colonial-era tunnels",
+    "Walked by visitors today"
+   ],
+   "bg": "photo:Joginder Nagar|joginder"
+  },
+  {
+   "kicker": "Go in",
+   "big": "April or October",
+   "line": "Barot: NakshIQ score <em>10/10</em>",
+   "sub": "November: frosty mornings in Barot, Kheerganga closing near Kasol. Go midweek. Barot has no ATM: carry cash.",
+   "bg": "photo:Kheerganga|kheer"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Kasol* ka plan hai?",
+    "Rukiye, kyunki agar aapko Himachal ki *shaant vaadi* chahiye,",
+    "*party aur nashe* waala maahaul nahi,",
+    "to Kasol wo jagah nahi hai."
+   ],
+   [
+    "Kasol se kareeb *4 ghante* door",
+    "*Barot Valley* hai,",
+    "jahan na party waali bheed hai, na *nashe ka maahaul*."
+   ],
+   [
+    "Yahan *Uhl nadi* aur devdaar ke jungle hain,",
+    "sarkaari *trout hatchery* hai,",
+    "aur parivaar ke saath bhi aaraam se ja sakte hain,",
+    "kyunki ye Kasol se *zyaada surakshit* hai."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "wo ye ki yahan angrezon ke zamaane ke *bijli project* ki",
+    "purani *rail patri aur surangein* hain,",
+    "jin par aaj log *paidal ghoomne* aate hain."
+   ],
+   [
+    "Bas *November* mein thand badh jaati hai,",
+    "Barot mein subah *paala* padta hai",
+    "aur Kasol ka *Kheerganga trek* band hone lagta hai,",
+    "to *April ya October* mein jaaiye, hafte ke beech mein."
+   ],
+   [
+    "Aapki Himachal ki *sabse shaant vaadi* kaun si hai?",
+    "*Comment* mein bataiye."
+   ]
+  ],
+  "en": [
+   [
+    "Planning *Kasol*?",
+    "Wait, because if you want a *quiet Himachal valley*,",
+    "not the *party and drug* scene,",
+    "Kasol isn't the place."
+   ],
+   [
+    "About *4 hours* from Kasol",
+    "is *Barot Valley*,",
+    "with no party crowd and *no drug scene*."
+   ],
+   [
+    "It has the *Uhl river* and deodar forest,",
+    "a government *trout hatchery*,",
+    "and it's easy with family,",
+    "because it's *safer than Kasol*."
+   ],
+   [
+    "What nobody tells you:",
+    "there's an old *rail track and tunnels*",
+    "from a *colonial-era power project*,",
+    "and people come to *walk them* today."
+   ],
+   [
+    "Just know *November* turns cold:",
+    "*frosty mornings* in Barot,",
+    "and Kasol's *Kheerganga trek* starts closing,",
+    "so go in *April or October*, midweek."
+   ],
+   [
+    "What's *your* quietest Himachal valley?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "Quiet Himachal without the Kasol scene | NakshIQ",
+ "caption_lead": "Want a quiet Himachal valley, not Kasol's party and drug scene? About 4 hours away is Barot Valley on the Uhl river: deodar forest, a government trout hatchery, and safer than Kasol for families. Its old haulage rail track and tunnels from the Shanan hydel project (commissioned 1932) are walked by visitors today. November brings frosty mornings in Barot and Kheerganga closing near Kasol, so go in April or October, midweek. Barot has no ATM: carry cash.",
+ "cost_basis": [],
+ "facts": [
+  "trap_swaps kasol -> barot-valley: distance_km 150, drive_time '4 hours'; why_better 'off-grid Himachal without the Kasol chaos'; crowd_difference 'Zero party crowd, zero drug scene'; family_difference 'Safer than Kasol for families, fishing and nature walks'; alt_better_for 'trout fishing, hydel project tunnels, deodar forest'",
+  "kasol trap_swaps vibe_difference 'Family-safe nature retreat vs backpacker party zone' (tirthan row) and 'Hidden valley with trout fishing vs drug-tourism hotspot' (barot row); persona_blocks.family 'Cannabis-visible culture'",
+  "barot-valley best_for_segments: 'Government trout hatchery + licensed angling on Uhl river'; why_special 'Barot sits on the Uhl river ... No ATM, no medical, no tourist infrastructure'; family_stress 'easy family base, peaceful valley'",
+  "barot-valley months.4 who_should_go 'Heritage walkers exploring the colonial rail track and tunnel system'; months.3 'the rail-track walk'; months.10 'Rail-track walkers wanting the year's best conditions'",
+  "barot-valley gem Shanan Power House: 'commissioned in November 1932'; 'the 7.3-km steep haulage trolley system between Winch Camp (Jogindernagar) and Barot, used to ferry men and materials up the 3000-ft cliff face'",
+  "kasol months.11 score 3 = wait: 'Cool 2-14°C. Kheerganga closing for winter'; barot-valley months.11 score 3 = wait: 'Mornings frosty'",
+  "kasol months.4 and 10 score 5 (10: 'Few crowds midweek'); barot-valley months.4 score 5 = 10/10 'Quiet, uncrowded', months.10 score 5 = 10/10 'Few tourists mid-week'; crowd best_day 'Mon-Thu'. May skipped: weekend crowds in both (kasol 5 'Weekend backpacker rush', barot 5 'Weekend crowds from Mandi')",
+  "NOT used: Shanan 'first hydropower plant commissioned in Asia' (best_for_segments) and 'first to supply electricity over a 110-km transmission line' (gem) contradict each other and common knowledge (Darjeeling 1897, Shivanasamudra 1902); haulage trolley 'still operational and rideable on advance request' (unverified, not voiced); room prices (cost_gate checks the reel's own slug, kasol, and Kasol's November is a wait); Rajgundha '30 houses' (uncounted)"
+ ],
+ "spoken_numbers": [
+  "चार (4 hours)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "clip:kasol__hero.mp4",
+  "top_label": "KASOL",
+  "bottom": "photo:Barot Mandi|barot",
+  "bottom_label": "4 HRS AWAY",
+  "hook": "Himachal without|*the Kasol scene?*"
+ },
+ "music": "house-129",
+ "music_start": 35
+}
