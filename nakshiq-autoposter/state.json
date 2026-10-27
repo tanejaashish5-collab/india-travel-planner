@@ -36,11 +36,10 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-25",
-    "PdMu0": "2026-10-26",
-    "PdMu0_evening": "2026-10-26"
+    "PdMu0": "2026-10-27",
+    "PdMu0_evening": "2026-10-27"
   },
-  "last_sync": "2026-10-26T17:01:43.894077+00:00",
+  "last_sync": "2026-10-27T16:13:13.699323+00:00",
   "posted_destinations": [
     {
       "destination_id": "warangal",
@@ -169,6 +168,10 @@
     {
       "destination_id": "dzukou-valley",
       "date": "2026-10-26"
+    },
+    {
+      "destination_id": "manali",
+      "date": "2026-10-27"
     }
   ],
   "posted_formats": {
@@ -196,7 +199,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_myth_bust_oneline",
       "eateries_pick",
       "weekend_escape",
       "v2_women_solo_brief_video",
@@ -216,7 +218,8 @@
       "emergency_intel",
       "score_card",
       "data_carousel",
-      "score_card"
+      "score_card",
+      "v2_ugc_spotlight"
     ]
   },
   "post_log": [
@@ -11374,6 +11377,35 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "dzukou-valley.mp4"
+    },
+    {
+      "timestamp": "2026-10-27T14:37:27.812942+00:00",
+      "date": "2026-10-27",
+      "platform": "instagram",
+      "post_id": "3Rhy1",
+      "destination": "kullu",
+      "format": "scenario_map_reveal",
+      "media_id": "r9pcJ"
+    },
+    {
+      "timestamp": "2026-10-27T14:38:45.995998+00:00",
+      "date": "2026-10-27",
+      "platform": "youtube",
+      "post_id": "IleOD",
+      "destination": "kullu",
+      "format": "scenario_map_reveal",
+      "media_id": "jUzMQ"
+    },
+    {
+      "timestamp": "2026-10-27T16:13:48.360243+00:00",
+      "date": "2026-10-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "lJQJO",
+      "destination": "manali",
+      "format": "v2_ugc_spotlight",
+      "has_media": true,
+      "media_id": "v2_ugc_spotlight-manali.png"
     }
   ],
   "theme_usage": {
@@ -11773,6 +11805,9 @@
       ],
       "sarahan": [
         "2026-10-22"
+      ],
+      "manali": [
+        "2026-10-27"
       ]
     },
     "morning_formats": {
@@ -11981,6 +12016,9 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
+      ],
+      "v2_ugc_spotlight": [
+        "2026-10-27"
       ]
     },
     "reels": {
@@ -12201,6 +12239,9 @@
       ],
       "dzukou-valley": [
         "2026-10-26"
+      ],
+      "manali": [
+        "2026-10-27"
       ]
     },
     "audience_tags": {
@@ -12274,10 +12315,6 @@
         "2026-07-07",
         "2026-10-06"
       ],
-      "dwadasa-jyotirlinga": [
-        "2026-05-28",
-        "2026-07-28"
-      ],
       "budget-under-1000": [
         "2026-06-02",
         "2026-07-30"
@@ -12347,6 +12384,9 @@
       ],
       "most-beautiful-villages": [
         "2026-10-22"
+      ],
+      "arupadai-veedu": [
+        "2026-10-27"
       ]
     },
     "festivals": {
@@ -12407,11 +12447,6 @@
     "collection_carousel_dests:photography-spots": {
       "kalpa": [
         "2026-09-29"
-      ]
-    },
-    "collection_carousel_dests:dwadasa-jyotirlinga": {
-      "bhimashankar": [
-        "2026-07-28"
       ]
     },
     "collection_carousel_dests:rivers-and-lakes": {
@@ -12484,7 +12519,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "collection_carousel_dests:arupadai-veedu": {}
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -12498,8 +12534,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "trichy",
-    "collection": "most-beautiful-villages"
+    "shared_best": "kausani",
+    "collection": "arupadai-veedu"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-25",

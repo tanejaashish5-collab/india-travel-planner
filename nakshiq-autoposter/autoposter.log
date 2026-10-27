@@ -29722,3 +29722,36 @@ Date range: 2026-04-15 → 2026-10-26
 2026-10-28 01:37:39  INFO          Uploading to R2 (timeout=300s)...
 2026-10-28 01:38:24  INFO          R2 PUT OK. Confirming...
 2026-10-28 01:38:27  INFO          Media ready: jUzMQ (47,563,663 bytes · kullu__map_reveal__voiced__en.mp4)
+2026-10-27 16:12:18  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-27 16:12:18  INFO      ════════════════════════════════════════════════════════════
+2026-10-27 16:12:18  INFO      Nakshiq Autoposter · EVENING · 2026-10-27 · weekday=1
+2026-10-27 16:12:18  INFO      ════════════════════════════════════════════════════════════
+2026-10-27 16:12:18  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-27 16:13:13  INFO      Synced → 20 destinations · 100 traps · 3 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-27 16:13:13  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-27 16:13:14  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-27 16:13:14  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-27 16:13:14  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+40 more)
+2026-10-27 16:13:14  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-27 16:13:31  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-27 16:13:31  INFO      Evening format (balance→discovery): v2_ugc_spotlight [0% vs target 15%] (0/15 never featured)
+2026-10-27 16:13:31  INFO      Formats — IG: v2_ugc_spotlight  ·  FB: v2_ugc_spotlight  ·  Story: collection_spotlight
+2026-10-27 16:13:31  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
+2026-10-27 16:13:31  INFO      Fingerprint dedup snapshot — 46 dests in 7d · 91 (dest,fmt) pairs in 30d · 222 media in 60d
+2026-10-27 16:13:31  INFO      Collection locked: Arupadai Veedu: Six Abodes of Murugan (75/100 never featured)
+2026-10-27 16:13:32  INFO      Shared best destination locked: Kausani
+2026-10-27 16:13:32  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-10-27 16:13:32  INFO      [facebook/Nakshiq] Generating v2_ugc_spotlight post...
+2026-10-27 16:13:32  INFO      v2_ugc_spotlight: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-27 16:13:32  INFO      v2_ugc_spotlight: gurez-valley has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-27 16:13:32  INFO      v2_ugc_spotlight: achabal has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-27 16:13:32  INFO      [facebook/Nakshiq] Caption ready (569 chars, dest=manali)
+2026-10-27 16:13:33  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_ugc_spotlight → uploading...
+2026-10-27 16:13:33  INFO          Requesting upload URL for v2_ugc_spotlight-manali.png (1,762,217 bytes, image/png)
+2026-10-27 16:13:35  INFO          Uploading to R2 (timeout=120s)...
+2026-10-27 16:13:37  INFO          R2 PUT OK. Confirming...
+2026-10-27 16:13:38  INFO          Media ready: iyCzi (1,762,217 bytes · v2_ugc_spotlight-manali.png)
+2026-10-27 16:13:38  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-10-27 16:13:48  INFO      [facebook/Nakshiq] ✅ Published · Outstand=lJQJO · Platform=1040562729145369_122127311570700092
+2026-10-27 16:13:48  INFO      State saved. Run complete.
+2026-10-27 16:13:48  INFO      ════════════════════════════════════════════════════════════
