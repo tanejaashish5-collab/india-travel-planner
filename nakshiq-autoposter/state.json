@@ -39,7 +39,7 @@
     "PdMu0": "2026-10-27",
     "PdMu0_evening": "2026-10-27"
   },
-  "last_sync": "2026-10-27T16:13:13.699323+00:00",
+  "last_sync": "2026-10-27T19:39:01.990395+00:00",
   "posted_destinations": [
     {
       "destination_id": "warangal",
@@ -11603,6 +11603,10 @@
         "2026-08-07",
         "2026-08-21"
       ],
+      "manali": [
+        "2026-06-22",
+        "2026-10-27"
+      ],
       "hogenakkal": [
         "2026-07-01",
         "2026-07-13",
@@ -11805,9 +11809,6 @@
       ],
       "sarahan": [
         "2026-10-22"
-      ],
-      "manali": [
-        "2026-10-27"
       ]
     },
     "morning_formats": {
@@ -11825,6 +11826,10 @@
         "2026-05-23",
         "2026-06-16",
         "2026-09-26"
+      ],
+      "v2_ugc_spotlight": [
+        "2026-05-24",
+        "2026-10-27"
       ],
       "v4_dw_heritage_reel_sensory_pov": [
         "2026-05-24",
@@ -12016,9 +12021,6 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
-      ],
-      "v2_ugc_spotlight": [
-        "2026-10-27"
       ]
     },
     "reels": {
@@ -12327,6 +12329,10 @@
         "2026-06-04",
         "2026-08-11"
       ],
+      "arupadai-veedu": [
+        "2026-06-10",
+        "2026-10-27"
+      ],
       "photography-spots": [
         "2026-06-17",
         "2026-09-29"
@@ -12385,7 +12391,7 @@
       "most-beautiful-villages": [
         "2026-10-22"
       ],
-      "arupadai-veedu": [
+      "christian-heritage-trail": [
         "2026-10-27"
       ]
     },
@@ -12520,7 +12526,7 @@
         "2026-10-22"
       ]
     },
-    "collection_carousel_dests:arupadai-veedu": {}
+    "collection_carousel_dests:christian-heritage-trail": {}
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -12534,8 +12540,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kausani",
-    "collection": "arupadai-veedu"
+    "shared_best": "trichy",
+    "collection": "christian-heritage-trail"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-25",

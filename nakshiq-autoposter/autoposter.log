@@ -29755,3 +29755,26 @@ Date range: 2026-04-15 → 2026-10-26
 2026-10-27 16:13:48  INFO      [facebook/Nakshiq] ✅ Published · Outstand=lJQJO · Platform=1040562729145369_122127311570700092
 2026-10-27 16:13:48  INFO      State saved. Run complete.
 2026-10-27 16:13:48  INFO      ════════════════════════════════════════════════════════════
+2026-10-27 19:38:08  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-27 19:38:08  INFO      ════════════════════════════════════════════════════════════
+2026-10-27 19:38:08  INFO      Nakshiq Autoposter · EVENING · 2026-10-27 · weekday=1
+2026-10-27 19:38:08  INFO      ════════════════════════════════════════════════════════════
+2026-10-27 19:38:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-27 19:39:01  INFO      Synced → 20 destinations · 100 traps · 3 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-27 19:39:01  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-27 19:39:03  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-27 19:39:03  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-27 19:39:03  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+40 more)
+2026-10-27 19:39:03  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-27 19:39:21  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-27 19:39:21  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (pillar:discovery, pillar:scenario_hidden_gems, pillar:scenario_map_reveal, pillar:scenario_swap, score seen <2d)
+2026-10-27 19:39:21  INFO      Evening format (balance→verification): confidence_intel [14% vs target 30%] (0/15 never featured)
+2026-10-27 19:39:21  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-10-27 19:39:21  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 51
+2026-10-27 19:39:21  INFO      Fingerprint dedup snapshot — 47 dests in 7d · 92 (dest,fmt) pairs in 30d · 223 media in 60d
+2026-10-27 19:39:21  INFO      Collection locked: Christian Heritage Trail — From St. Thomas to the Portuguese Basilicas (74/100 never featured)
+2026-10-27 19:39:22  INFO      Shared best destination locked: Trichy (Tiruchirappalli)
+2026-10-27 19:39:22  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-10-27 19:39:22  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-10-27 19:39:22  INFO      State saved. Run complete.
+2026-10-27 19:39:22  INFO      ════════════════════════════════════════════════════════════
