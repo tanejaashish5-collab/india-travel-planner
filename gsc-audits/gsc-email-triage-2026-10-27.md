@@ -1,12 +1,17 @@
 # GSC Email Triage — 2026-10-27
 
-Run date: 2026-10-27 ~10:33 UTC (morning run)
+Run date: 2026-10-27 ~10:33 UTC (morning run) and ~22:36 UTC (evening run)
 Prior triage: `gsc-email-triage-2026-10-26.md` (2026-10-26, morning run — clean)
 
 ---
 
 ## Emails seen
 
+**Morning run (~10:33 UTC):**
+- `from:sc-noreply@google.com newer_than:2d` → **0 results**
+- `from:ops@nakshiq.com subject:GSC newer_than:2d` → **0 results**
+
+**Evening run (~22:36 UTC):**
 - `from:sc-noreply@google.com newer_than:2d` → **0 results**
 - `from:ops@nakshiq.com subject:GSC newer_than:2d` → **0 results**
 
@@ -14,7 +19,7 @@ Prior triage: `gsc-email-triage-2026-10-26.md` (2026-10-26, morning run — clea
 
 ## Result
 
-No new Search Console emails. No action taken, no code changes, no commit beyond this report.
+No new Search Console emails in either run. No action taken, no code changes.
 
 ---
 
