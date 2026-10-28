@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
   });
   const html = `<!doctype html><html><body style="font-family:ui-sans-serif,system-ui,sans-serif;color:#171717;max-width:640px;margin:0 auto;padding:24px">
 <h1 style="font-size:20px;margin:0 0 6px">${items.length} page fix${items.length > 1 ? "es" : ""} waiting for your OK</h1>
-<p style="color:#525252;margin:0 0 20px">The weekly review found these pages saying something that is no longer true. Check the green text, then press the button. Nothing changes until you do.</p>
+<p style="color:#525252;margin:0 0 20px">The weekly review found these pages saying something that may no longer be true. Fixes that two automatic checks confirmed against their sources are already live; these are the ones the checks could not settle. Check the green text, then press the button. Nothing changes until you do.</p>
 ${items
   .map(
     (i) => `<h2 style="font-size:16px;margin:24px 0 8px">${esc(i.name)} <span style="font-weight:400;color:#737373;font-size:12px">found ${esc(i.since)}</span></h2>
