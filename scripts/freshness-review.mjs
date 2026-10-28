@@ -21,8 +21,12 @@
  * Rows with an open item are held out of the picks for ESCALATION_HOLD_DAYS.
  * Why (2026-10-04): corrections were report-only, so the same 6 wrong facts were
  * found on 09-26 and 10-03 and stayed live, and their unstamped rows were
- * re-picked every week (409 of 533 pages sat at 90-180 days). Auto-apply was
+ * re-picked every week (409 of 533 pages sat at 90-180 days). Blind auto-apply was
  * rejected: on 10-03 the reviewer's replacement text was fully right in 1 of 5.
+ * Since 2026-10-29 (founder: "check twice and then approve") the wrapper runs
+ * scripts/corrections-autoverify.mjs on the queue: two independent verifier
+ * sessions + a machine quote check apply or reject what they agree on; only the
+ * rest reaches the email. (On 10-29 the double check found errors in 9 of 10.)
  *
  * Usage:
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs pick --n 41 --out <batch.json> [--min-age-days 84]

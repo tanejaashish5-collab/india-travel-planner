@@ -11,8 +11,10 @@
 # rows older than 84 days, so it switches itself off once the backlog is gone
 # (409 of 533 pages were 90-180 days old that day).
 #
-# CORRECTIONS go to an approval queue (destination_corrections, migration 077)
-# and are emailed with one-click Approve links via /api/admin/corrections/notify.
+# CORRECTIONS go to an approval queue (destination_corrections, migration 077).
+# Since 2026-10-29 scripts/corrections-autoverify.mjs decides them first (two
+# independent verifier sessions + quote check); only the ones it cannot settle
+# are emailed with one-click Approve links via /api/admin/corrections/notify.
 # Nothing a review proposes reaches a page without the founder's click.
 #
 # WHY LOCAL, VIA /bin/bash — same reasons as sos-backlog-weekly.sh: the cloud
@@ -118,7 +120,23 @@ fi
 # Append the authoritative outcome (what the wrapper actually stamped) to the note.
 { echo; echo "## Wrapper outcome"; echo; echo '```'; cat "$WORK/apply-$TODAY.log"; echo '```'; } >> "$NOTE"
 
-bash scripts/audit-commit-guard.sh -m "audit(freshness): weekly review $TODAY — $RESULT_LINE" "$NOTE" \
+# AUTO-APPROVE (founder 2026-10-29: "make it autonomous ... check twice and then
+# approve if all looked good"). Every queued fix gets two independent verifier
+# sessions plus a machine quote check; it is applied only if both approve and
+# every quote is found on its source, rejected if both reject, else left for the
+# approval email below. Pinned to the run's start commit like the validator.
+AUTO_NOTE="data/audits/corrections-auto-$TODAY.md"
+PINNED_AV="scripts/.corrections-autoverify.pinned-$$.mjs"
+if git show "$START_SHA:scripts/corrections-autoverify.mjs" > "$PINNED_AV" 2>/dev/null; then
+  $NODE "$PINNED_AV" --out "$AUTO_NOTE" > "$WORK/autoverify-$TODAY.log" 2>&1
+  say "auto-verify: $(grep -o '^RESULT .*' "$WORK/autoverify-$TODAY.log" | tail -1)"
+else
+  say "auto-verify script missing at $START_SHA; every fix goes to the approval email"
+fi
+rm -f "$PINNED_AV"
+
+COMMIT_PATHS=("$NOTE"); [ -f "$AUTO_NOTE" ] && COMMIT_PATHS+=("$AUTO_NOTE")
+bash scripts/audit-commit-guard.sh -m "audit(freshness): weekly review $TODAY — $RESULT_LINE" "${COMMIT_PATHS[@]}" \
   || { say "❌ commit guard failed"; notify "Freshness review stamped pages but could not commit its note."; }
 
 # Exception-only: a quiet week never pages him.
