@@ -37,18 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-27",
-    "PdMu0_evening": "2026-10-27"
+    "PdMu0_evening": "2026-10-27",
+    "PdMu0_carousel": "2026-10-28"
   },
   "last_sync": "2026-10-27T19:39:01.990395+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "warangal",
-      "date": "2026-10-13"
-    },
-    {
-      "destination_id": "chittorgarh",
-      "date": "2026-10-13"
-    },
     {
       "destination_id": "spiti-valley",
       "date": "2026-10-14"
@@ -172,6 +165,10 @@
     {
       "destination_id": "manali",
       "date": "2026-10-27"
+    },
+    {
+      "destination_id": "jodhpur",
+      "date": "2026-10-28"
     }
   ],
   "posted_formats": {
@@ -11406,6 +11403,15 @@
       "format": "v2_ugc_spotlight",
       "has_media": true,
       "media_id": "v2_ugc_spotlight-manali.png"
+    },
+    {
+      "timestamp": "2026-10-28T14:16:32.882867+00:00",
+      "date": "2026-10-28",
+      "platform": "facebook",
+      "post_id": "MWEj8",
+      "destination": "jodhpur",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-28"
     }
   ],
   "theme_usage": {
@@ -12525,8 +12531,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "collection_carousel_dests:christian-heritage-trail": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -12560,14 +12565,6 @@
   },
   "carousel_seen": {
     "festival": [
-      "Mongmong Festival",
-      "Mitthe Shah Dargah Urs Fair",
-      "Ladakh Festival",
-      "Ganesh Chaturthi at Trinetra Ganesh Temple",
-      "Nubra Valley Festival",
-      "Nako Lake Festival",
-      "Champawat Nanda Devi Fair",
-      "Mata Murti Ka Mela",
       "Marwar Festival",
       "Kullu Dussehra",
       "Paragliding World Cup",
@@ -12575,43 +12572,7 @@
       "Lansdowne Autumn Festival",
       "Bhimakali Dussehra",
       "Chamba Dussehra",
-      "Hanle Stargazing Festival",
-      "Prayagraj Rasa Leela",
-      "Chitrakoot Deepotsav",
-      "Kishtwar Saffron Festival",
-      "Wildlife Week",
-      "Gangotri Diwali (Temple Closing)",
-      "Tihar (Deepawali)",
-      "Nainital Autumn Festival",
-      "Kinnaur Dussehra (Fulaich)",
-      "Navratri at Mahalaxmi Temple",
-      "Mysore Dasara",
-      "Mysore Dasara Exhibition",
-      "Cauvery Sankriti (Tula Sankramana)",
-      "Hogenakkal Mela",
-      "Srivari Brahmotsavam",
-      "Vijayawada Dussehra (Durga Navaratri)",
-      "Bathukamma",
-      "Bathukamma at Bhadrakali Lake",
-      "Kakatiya Utsavam",
-      "Durga Puja (Cuttack Silver Edition)",
-      "Navratri Garba",
-      "Ekta Diwas (Unity Day)",
-      "Rajgir Dance Festival",
-      "Bastar Dussehra",
-      "Diwali Beach Celebration",
-      "Gandhi Jayanti Heritage Walk",
-      "Sharad Purnima Festival",
-      "Gandhi Jayanti Celebrations at Kirti Mandir",
-      "Navratri",
-      "Dussehra (Seemollanghan at Shami Tree)",
-      "Dhammachakra Pravartan Din",
-      "Vijayadashami (Sai Baba Punyatithi)",
-      "Hnahsin Kut (Cosmos Festival)",
-      "Skanda Sashti",
-      "Durga Puja",
-      "Navratri Pilgrimage at Vaishno Devi",
-      "Sharan Navaratri at Jogulamba Temple"
+      "Hanle Stargazing Festival"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
