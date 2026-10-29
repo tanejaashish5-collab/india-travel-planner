@@ -29968,3 +29968,43 @@ Date range: 2026-04-15 → 2026-10-28
 2026-10-30 01:37:53  INFO          Uploading to R2 (timeout=300s)...
 2026-10-30 01:38:52  INFO          R2 PUT OK. Confirming...
 2026-10-30 01:38:55  INFO          Media ready: 7fDhK (50,568,282 bytes · spiti-valley__skip__voiced__en.mp4)
+2026-10-29 19:45:15  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-29 19:45:15  INFO      ════════════════════════════════════════════════════════════
+2026-10-29 19:45:15  INFO      Nakshiq Autoposter · EVENING · 2026-10-29 · weekday=3
+2026-10-29 19:45:15  INFO      ════════════════════════════════════════════════════════════
+2026-10-29 19:45:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-29 19:45:54  INFO      Synced → 20 destinations · 100 traps · 2 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-29 19:45:54  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-29 19:45:55  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-29 19:45:55  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-29 19:45:55  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+40 more)
+2026-10-29 19:45:55  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-29 19:46:08  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-29 19:46:08  INFO      Evening format (balance→anti_trap): v2_local_knows [0% vs target 15%] (0/15 never featured)
+2026-10-29 19:46:08  INFO      Formats — IG: v2_local_knows  ·  FB: v2_local_knows  ·  Story: collection_spotlight
+2026-10-29 19:46:08  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 51
+2026-10-29 19:46:08  INFO      Fingerprint dedup snapshot — 47 dests in 7d · 90 (dest,fmt) pairs in 30d · 221 media in 60d
+2026-10-29 19:46:08  INFO      Collection locked: Best on ₹5,000/Day — The Sweet Spot (74/100 never featured)
+2026-10-29 19:46:09  INFO      Shared best destination locked: Kausani
+2026-10-29 19:46:09  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-10-29 19:46:09  INFO      [facebook/Nakshiq] Generating v2_local_knows post...
+2026-10-29 19:46:09  INFO      v2_local_knows: kasol has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: gurez-valley has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: leh has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: mussoorie has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: coorg has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: ooty has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: hampi has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: gangtok has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: chopta has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      v2_local_knows: anandpur-sahib has no current-month row — SKIPPING (won't render a stale October score/note)
+2026-10-29 19:46:09  INFO      [facebook/Nakshiq] Caption ready (661 chars, dest=madurai)
+2026-10-29 19:46:12  INFO      [facebook/Nakshiq] dynamic render: 1 slide(s) for v2_local_knows → uploading...
+2026-10-29 19:46:12  INFO          Requesting upload URL for v2_local_knows-madurai.png (1,837,500 bytes, image/png)
+2026-10-29 19:46:13  INFO          Uploading to R2 (timeout=120s)...
+2026-10-29 19:46:14  INFO          R2 PUT OK. Confirming...
+2026-10-29 19:46:16  INFO          Media ready: dXGwH (1,837,500 bytes · v2_local_knows-madurai.png)
+2026-10-29 19:46:16  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-10-29 19:46:25  INFO      [facebook/Nakshiq] ✅ Published · Outstand=AfdjU · Platform=1040562729145369_122127540020700092
+2026-10-29 19:46:25  INFO      State saved. Run complete.
+2026-10-29 19:46:25  INFO      ════════════════════════════════════════════════════════════

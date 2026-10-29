@@ -36,20 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-27",
-    "PdMu0_evening": "2026-10-27",
-    "PdMu0_carousel": "2026-10-28"
+    "PdMu0_carousel": "2026-10-29",
+    "PdMu0": "2026-10-29",
+    "PdMu0_evening": "2026-10-29"
   },
-  "last_sync": "2026-10-27T19:39:01.990395+00:00",
+  "last_sync": "2026-10-29T19:45:54.176771+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "spiti-valley",
-      "date": "2026-10-14"
-    },
-    {
-      "destination_id": "ozar",
-      "date": "2026-10-14"
-    },
     {
       "destination_id": "kashid",
       "date": "2026-10-15"
@@ -169,6 +161,10 @@
     {
       "destination_id": "jodhpur",
       "date": "2026-10-28"
+    },
+    {
+      "destination_id": "madurai",
+      "date": "2026-10-29"
     }
   ],
   "posted_formats": {
@@ -196,7 +192,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "eateries_pick",
       "weekend_escape",
       "v2_women_solo_brief_video",
       "v2_cost_vs_feeling",
@@ -216,7 +211,8 @@
       "score_card",
       "data_carousel",
       "score_card",
-      "v2_ugc_spotlight"
+      "v2_ugc_spotlight",
+      "v2_local_knows"
     ]
   },
   "post_log": [
@@ -11412,6 +11408,62 @@
       "destination": "jodhpur",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-10-28"
+    },
+    {
+      "timestamp": "2026-10-28T14:37:14.559705+00:00",
+      "date": "2026-10-28",
+      "platform": "instagram",
+      "post_id": "WdtYp",
+      "destination": "udaipur",
+      "format": "scenario_swap",
+      "media_id": "g4TLO"
+    },
+    {
+      "timestamp": "2026-10-28T14:39:06.307522+00:00",
+      "date": "2026-10-28",
+      "platform": "youtube",
+      "post_id": "Z0WhP",
+      "destination": "jaipur",
+      "format": "scenario_hidden_gems",
+      "media_id": "4QZpV"
+    },
+    {
+      "timestamp": "2026-10-29T14:35:03.724081+00:00",
+      "date": "2026-10-29",
+      "platform": "facebook",
+      "post_id": "giBEM",
+      "destination": "umlingla",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-10-29"
+    },
+    {
+      "timestamp": "2026-10-29T14:37:50.499989+00:00",
+      "date": "2026-10-29",
+      "platform": "instagram",
+      "post_id": "HabjZ",
+      "destination": "agra",
+      "format": "scenario_hidden_gems",
+      "media_id": "n2PMP"
+    },
+    {
+      "timestamp": "2026-10-29T14:39:19.507472+00:00",
+      "date": "2026-10-29",
+      "platform": "youtube",
+      "post_id": "CzPDr",
+      "destination": "spiti-valley",
+      "format": "scenario_skip",
+      "media_id": "7fDhK"
+    },
+    {
+      "timestamp": "2026-10-29T19:46:25.602235+00:00",
+      "date": "2026-10-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "AfdjU",
+      "destination": "madurai",
+      "format": "v2_local_knows",
+      "has_media": true,
+      "media_id": "v2_local_knows-madurai.png"
     }
   ],
   "theme_usage": {
@@ -11462,7 +11514,8 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04",
-        "2026-10-07"
+        "2026-10-07",
+        "2026-10-29"
       ],
       "kedarnath": [
         "2026-05-24",
@@ -11974,7 +12027,8 @@
         "2026-06-02",
         "2026-06-16",
         "2026-06-21",
-        "2026-09-24"
+        "2026-09-24",
+        "2026-10-29"
       ],
       "v2_weekend_escape_map": [
         "2026-06-03",
@@ -12044,7 +12098,8 @@
         "2026-05-23",
         "2026-06-05",
         "2026-08-04",
-        "2026-10-07"
+        "2026-10-07",
+        "2026-10-29"
       ],
       "kedarnath": [
         "2026-05-24",
@@ -12103,11 +12158,6 @@
         "2026-07-08",
         "2026-07-24",
         "2026-09-26"
-      ],
-      "hogenakkal": [
-        "2026-07-01",
-        "2026-07-13",
-        "2026-07-30"
       ],
       "jog-falls": [
         "2026-07-02",
@@ -12323,10 +12373,6 @@
         "2026-07-07",
         "2026-10-06"
       ],
-      "budget-under-1000": [
-        "2026-06-02",
-        "2026-07-30"
-      ],
       "best-motorcycle-routes": [
         "2026-06-03",
         "2026-08-04"
@@ -12399,6 +12445,9 @@
       ],
       "christian-heritage-trail": [
         "2026-10-27"
+      ],
+      "budget-under-5000": [
+        "2026-10-29"
       ]
     },
     "festivals": {
@@ -12531,7 +12580,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "collection_carousel_dests:budget-under-5000": {}
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -12545,8 +12595,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "trichy",
-    "collection": "christian-heritage-trail"
+    "shared_best": "kausani",
+    "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-10-25",
