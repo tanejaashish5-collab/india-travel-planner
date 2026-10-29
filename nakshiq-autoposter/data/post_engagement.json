@@ -716,13 +716,13 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 0.7874015748031495,
+      "average_engagement_rate": 0.7352941176470588,
       "total_comments": 0,
       "total_impressions": 0,
       "total_likes": 1,
-      "total_reach": 127,
+      "total_reach": 136,
       "total_shares": 0,
-      "total_views": 134
+      "total_views": 145
     },
     "destination": "kullu",
     "format": "scenario_map_reveal",
@@ -731,16 +731,16 @@
       "engagement_total": 0,
       "impressions": 0,
       "likes": 1,
-      "reach": 127,
+      "reach": 136,
       "saves": 0,
       "shares": 0,
-      "views": 134
+      "views": 145
     },
     "network": "instagram",
     "platform_post_id": "18106763483354599",
     "post_id": "3Rhy1",
     "published_at": "2026-10-27T14:37:20.911Z",
-    "pulled_at": "2026-10-28T00:38:09.172757+00:00",
+    "pulled_at": "2026-10-29T01:05:24.006203+00:00",
     "utm_content": "scenario_map_reveal"
   },
   "3UHfi": {
@@ -3220,7 +3220,7 @@
     "platform_post_id": "18471532879138044",
     "post_id": "93Bz7",
     "published_at": "2026-10-25T14:37:50.794Z",
-    "pulled_at": "2026-10-28T00:37:57.908863+00:00",
+    "pulled_at": "2026-10-29T01:05:13.166219+00:00",
     "utm_content": "scenario_skip"
   },
   "93eFu": {
@@ -3233,7 +3233,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 20
+      "total_views": 21
     },
     "destination": "amritsar",
     "format": "scenario_eat_here",
@@ -3245,13 +3245,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 20
+      "views": 21
     },
     "network": "youtube",
     "platform_post_id": "wR5t6AAs8fE",
     "post_id": "93eFu",
     "published_at": "2026-10-23T14:37:55.494Z",
-    "pulled_at": "2026-10-28T00:37:43.336130+00:00",
+    "pulled_at": "2026-10-29T01:04:59.603241+00:00",
     "utm_content": "scenario_eat_here"
   },
   "9FArQ": {
@@ -6116,7 +6116,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 1
+      "total_views": 5
     },
     "destination": "kullu",
     "format": "scenario_map_reveal",
@@ -6128,13 +6128,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 1
+      "views": 5
     },
     "network": "youtube",
     "platform_post_id": "TQau_rW9Veo",
     "post_id": "IleOD",
     "published_at": "2026-10-27T14:38:43.471Z",
-    "pulled_at": "2026-10-28T00:38:11.225896+00:00",
+    "pulled_at": "2026-10-29T01:05:25.704208+00:00",
     "utm_content": "scenario_map_reveal"
   },
   "In5jU": {
@@ -6196,7 +6196,7 @@
     "platform_post_id": "edYf34vrv4Y",
     "post_id": "Indcj",
     "published_at": "2026-10-24T14:37:32.617Z",
-    "pulled_at": "2026-10-28T00:37:53.043280+00:00",
+    "pulled_at": "2026-10-29T01:05:08.426032+00:00",
     "utm_content": "scenario_swap"
   },
   "IniG9": {
@@ -7718,6 +7718,37 @@
     "pulled_at": "2026-07-31T22:19:41.158116+00:00",
     "utm_content": "deeg-yt_short-20260725"
   },
+  "MWEj8": {
+    "account": "Nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 0,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 0
+    },
+    "destination": "jodhpur",
+    "format": "carousel.festival",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 0,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 0
+    },
+    "network": "facebook",
+    "platform_post_id": "1040562729145369_122127408062700092",
+    "post_id": "MWEj8",
+    "published_at": "2026-10-28T14:16:55.771Z",
+    "pulled_at": "2026-10-29T01:05:29.431173+00:00",
+    "utm_content": "jodhpur-carousel_festival-20261028"
+  },
   "MZ3bu": {
     "account": "Nakshiq",
     "account_count": 1,
@@ -8025,7 +8056,7 @@
     "platform_post_id": "18212412973323214",
     "post_id": "NM5XZ",
     "published_at": "2026-10-24T14:36:39.087Z",
-    "pulled_at": "2026-10-28T00:37:51.052321+00:00",
+    "pulled_at": "2026-10-29T01:05:06.733696+00:00",
     "utm_content": "scenario_swap"
   },
   "NM8Wd": {
@@ -8782,7 +8813,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 14
+      "total_views": 15
     },
     "destination": "kedarnath",
     "format": "scenario_skip",
@@ -8794,13 +8825,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 14
+      "views": 15
     },
     "network": "youtube",
     "platform_post_id": "-pOTwf6J1kA",
     "post_id": "POA5A",
     "published_at": "2026-10-25T14:38:33.107Z",
-    "pulled_at": "2026-10-28T00:37:59.788515+00:00",
+    "pulled_at": "2026-10-29T01:05:14.767647+00:00",
     "utm_content": "scenario_skip"
   },
   "PhG30": {
@@ -10849,6 +10880,37 @@
     "pulled_at": "2026-06-23T22:42:40.638468+00:00",
     "utm_content": "great-himalayan-np-yt_short-20260617"
   },
+  "WdtYp": {
+    "account": "nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0.9803921568627451,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 1,
+      "total_reach": 102,
+      "total_shares": 0,
+      "total_views": 104
+    },
+    "destination": "udaipur",
+    "format": "scenario_swap",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 1,
+      "reach": 102,
+      "saves": 0,
+      "shares": 0,
+      "views": 104
+    },
+    "network": "instagram",
+    "platform_post_id": "18137404825638376",
+    "post_id": "WdtYp",
+    "published_at": "2026-10-28T14:37:06.137Z",
+    "pulled_at": "2026-10-29T01:05:32.326221+00:00",
+    "utm_content": "scenario_swap"
+  },
   "WqJtM": {
     "account": "nakshiq",
     "account_count": 1,
@@ -11531,6 +11593,37 @@
     "pulled_at": "2026-06-05T22:39:30.592935+00:00",
     "utm_content": "yamunotri-v2_hindi_score_card-20260530"
   },
+  "Z0WhP": {
+    "account": "@naksh-iq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 0,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 2
+    },
+    "destination": "jaipur",
+    "format": "scenario_hidden_gems",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 0,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 2
+    },
+    "network": "youtube",
+    "platform_post_id": "PtVdxl2IlTQ",
+    "post_id": "Z0WhP",
+    "published_at": "2026-10-28T14:39:04.152Z",
+    "pulled_at": "2026-10-29T01:05:34.008113+00:00",
+    "utm_content": "scenario_hidden_gems"
+  },
   "Z1Ygu": {
     "account": "nakshiq",
     "account_count": 1,
@@ -11683,7 +11776,7 @@
     "platform_post_id": "1040562729145369_122126760308700092",
     "post_id": "ZPVTU",
     "published_at": "2026-10-22T13:10:51.498Z",
-    "pulled_at": "2026-10-28T00:37:29.000934+00:00",
+    "pulled_at": "2026-10-29T01:04:45.438723+00:00",
     "utm_content": "sarahan-carousel_persona-20261022"
   },
   "ZjgOu": {
@@ -11900,7 +11993,7 @@
     "platform_post_id": "18088405379701039",
     "post_id": "aCH4I",
     "published_at": "2026-10-23T14:37:07.935Z",
-    "pulled_at": "2026-10-28T00:37:41.500078+00:00",
+    "pulled_at": "2026-10-29T01:04:57.983840+00:00",
     "utm_content": "scenario_eat_here"
   },
   "aCrrs": {
@@ -12396,7 +12489,7 @@
     "platform_post_id": "18130630927831940",
     "post_id": "bFaCt",
     "published_at": "2026-10-26T14:37:12.553Z",
-    "pulled_at": "2026-10-28T00:38:04.669207+00:00",
+    "pulled_at": "2026-10-29T01:05:19.262815+00:00",
     "utm_content": "scenario_hidden_gems"
   },
   "bGn9E": {
@@ -13388,7 +13481,7 @@
     "platform_post_id": "vaJEGw8i_u0",
     "post_id": "eKXKh",
     "published_at": "2026-10-26T14:39:07.546Z",
-    "pulled_at": "2026-10-28T00:38:06.600250+00:00",
+    "pulled_at": "2026-10-29T01:05:21.002215+00:00",
     "utm_content": "scenario_swap"
   },
   "eNhfr": {
@@ -15310,7 +15403,7 @@
     "platform_post_id": "1040562729145369_122126870054700092",
     "post_id": "iygHH",
     "published_at": "2026-10-23T12:49:04.064Z",
-    "pulled_at": "2026-10-28T00:37:39.201158+00:00",
+    "pulled_at": "2026-10-29T01:04:55.116266+00:00",
     "utm_content": "amaravati-carousel_cost-20261023"
   },
   "j35vW": {
@@ -15899,7 +15992,7 @@
     "platform_post_id": "17925749214425086",
     "post_id": "kRlRI",
     "published_at": "2026-10-22T14:37:30.822Z",
-    "pulled_at": "2026-10-28T00:37:32.436853+00:00",
+    "pulled_at": "2026-10-29T01:04:50.764251+00:00",
     "utm_content": "scenario_sos"
   },
   "kYUnc": {
@@ -16116,7 +16209,7 @@
     "platform_post_id": "1040562729145369_122127311570700092",
     "post_id": "lJQJO",
     "published_at": "2026-10-27T16:13:47.018Z",
-    "pulled_at": "2026-10-28T00:38:14.294741+00:00",
+    "pulled_at": "2026-10-29T01:05:27.280923+00:00",
     "utm_content": "manali-v2_ugc_spotlight-20261027"
   },
   "lMjhK": {
@@ -16271,7 +16364,7 @@
     "platform_post_id": "1040562729145369_122127087932700092",
     "post_id": "lS4GY",
     "published_at": "2026-10-25T12:45:27.393Z",
-    "pulled_at": "2026-10-28T00:37:55.122543+00:00",
+    "pulled_at": "2026-10-29T01:05:10.519537+00:00",
     "utm_content": "chakrata-carousel_window-20261025"
   },
   "lS7wR": {
@@ -16488,7 +16581,7 @@
     "platform_post_id": "1040562729145369_122126898254700092",
     "post_id": "mI7zn",
     "published_at": "2026-10-23T18:31:15.012Z",
-    "pulled_at": "2026-10-28T00:37:45.490495+00:00",
+    "pulled_at": "2026-10-29T01:05:01.207293+00:00",
     "utm_content": null
   },
   "mJbhd": {
@@ -18317,7 +18410,7 @@
     "platform_post_id": "1040562729145369_122126976338700092",
     "post_id": "r9gsP",
     "published_at": "2026-10-24T12:11:37.930Z",
-    "pulled_at": "2026-10-28T00:37:47.817960+00:00",
+    "pulled_at": "2026-10-29T01:05:02.813100+00:00",
     "utm_content": "hyderabad-carousel_route-20261024"
   },
   "r9zZh": {
@@ -19774,7 +19867,7 @@
     "platform_post_id": "h_4bL4TQIik",
     "post_id": "vrWrt",
     "published_at": "2026-10-22T14:38:19.452Z",
-    "pulled_at": "2026-10-28T00:37:34.498624+00:00",
+    "pulled_at": "2026-10-29T01:04:52.814450+00:00",
     "utm_content": "scenario_sos"
   },
   "vrfWC": {
@@ -19805,7 +19898,7 @@
     "platform_post_id": "1040562729145369_122127106034700092",
     "post_id": "vrfWC",
     "published_at": "2026-10-25T16:51:33.908Z",
-    "pulled_at": "2026-10-28T00:38:02.076226+00:00",
+    "pulled_at": "2026-10-29T01:05:16.712946+00:00",
     "utm_content": "kolhapur-data_carousel-20261025"
   },
   "x4EYf": {
