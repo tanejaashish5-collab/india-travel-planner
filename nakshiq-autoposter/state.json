@@ -37,10 +37,10 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-30",
-    "PdMu0": "2026-10-29",
-    "PdMu0_evening": "2026-10-29"
+    "PdMu0": "2026-10-30",
+    "PdMu0_evening": "2026-10-30"
   },
-  "last_sync": "2026-10-29T19:45:54.176771+00:00",
+  "last_sync": "2026-10-30T19:32:25.029030+00:00",
   "posted_destinations": [
     {
       "destination_id": "yuksom",
@@ -161,6 +161,10 @@
     {
       "destination_id": "prayagraj",
       "date": "2026-10-30"
+    },
+    {
+      "destination_id": "chamba",
+      "date": "2026-10-30"
     }
   ],
   "posted_formats": {
@@ -188,7 +192,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "weekend_escape",
       "v2_women_solo_brief_video",
       "v2_cost_vs_feeling",
       "v2_score_card_pov",
@@ -208,7 +211,8 @@
       "data_carousel",
       "score_card",
       "v2_ugc_spotlight",
-      "v2_local_knows"
+      "v2_local_knows",
+      "score_card"
     ]
   },
   "post_log": [
@@ -11469,6 +11473,35 @@
       "destination": "prayagraj",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-10-30"
+    },
+    {
+      "timestamp": "2026-10-30T14:37:11.251148+00:00",
+      "date": "2026-10-30",
+      "platform": "instagram",
+      "post_id": "XKjbU",
+      "destination": "spiti-valley",
+      "format": "scenario_skip",
+      "media_id": "HN9If"
+    },
+    {
+      "timestamp": "2026-10-30T14:37:57.976034+00:00",
+      "date": "2026-10-30",
+      "platform": "youtube",
+      "post_id": "jwR7Z",
+      "destination": "agra",
+      "format": "scenario_hidden_gems",
+      "media_id": "zdNYV"
+    },
+    {
+      "timestamp": "2026-10-30T19:33:17.354437+00:00",
+      "date": "2026-10-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ijkK0",
+      "destination": "chamba",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "chamba.mp4"
     }
   ],
   "theme_usage": {
@@ -11821,7 +11854,8 @@
       "chamba": [
         "2026-10-01",
         "2026-10-17",
-        "2026-10-22"
+        "2026-10-22",
+        "2026-10-30"
       ],
       "nandi-hills": [
         "2026-10-01",
@@ -12022,7 +12056,8 @@
         "2026-09-23",
         "2026-09-30",
         "2026-10-24",
-        "2026-10-26"
+        "2026-10-26",
+        "2026-10-30"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -12305,6 +12340,9 @@
       ],
       "manali": [
         "2026-10-27"
+      ],
+      "chamba": [
+        "2026-10-30"
       ]
     },
     "audience_tags": {
@@ -12365,7 +12403,8 @@
         "2026-09-04",
         "2026-10-02",
         "2026-10-09",
-        "2026-10-16"
+        "2026-10-16",
+        "2026-10-30"
       ]
     },
     "collections": {
@@ -12600,7 +12639,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kausani",
+    "shared_best": "trichy",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},
