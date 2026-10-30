@@ -36,20 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-29",
+    "PdMu0_carousel": "2026-10-30",
     "PdMu0": "2026-10-29",
     "PdMu0_evening": "2026-10-29"
   },
   "last_sync": "2026-10-29T19:45:54.176771+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kashid",
-      "date": "2026-10-15"
-    },
-    {
-      "destination_id": "mumbai",
-      "date": "2026-10-15"
-    },
     {
       "destination_id": "yuksom",
       "date": "2026-10-16"
@@ -165,6 +157,10 @@
     {
       "destination_id": "madurai",
       "date": "2026-10-29"
+    },
+    {
+      "destination_id": "prayagraj",
+      "date": "2026-10-30"
     }
   ],
   "posted_formats": {
@@ -11464,6 +11460,15 @@
       "format": "v2_local_knows",
       "has_media": true,
       "media_id": "v2_local_knows-madurai.png"
+    },
+    {
+      "timestamp": "2026-10-30T14:26:29.429133+00:00",
+      "date": "2026-10-30",
+      "platform": "facebook",
+      "post_id": "zO8Ue",
+      "destination": "prayagraj",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-10-30"
     }
   ],
   "theme_usage": {
@@ -12385,6 +12390,10 @@
         "2026-06-10",
         "2026-10-27"
       ],
+      "budget-under-5000": [
+        "2026-06-16",
+        "2026-10-29"
+      ],
       "photography-spots": [
         "2026-06-17",
         "2026-09-29"
@@ -12445,9 +12454,6 @@
       ],
       "christian-heritage-trail": [
         "2026-10-27"
-      ],
-      "budget-under-5000": [
-        "2026-10-29"
       ]
     },
     "festivals": {
@@ -12580,8 +12586,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "collection_carousel_dests:budget-under-5000": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -12622,7 +12627,15 @@
       "Lansdowne Autumn Festival",
       "Bhimakali Dussehra",
       "Chamba Dussehra",
-      "Hanle Stargazing Festival"
+      "Hanle Stargazing Festival",
+      "Prayagraj Rasa Leela",
+      "Chitrakoot Deepotsav",
+      "Kishtwar Saffron Festival",
+      "Wildlife Week",
+      "Gangotri Diwali (Temple Closing)",
+      "Tihar (Deepawali)",
+      "Nainital Autumn Festival",
+      "Kinnaur Dussehra (Fulaich)"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
