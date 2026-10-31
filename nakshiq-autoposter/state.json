@@ -38,9 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-30",
     "PdMu0": "2026-10-31",
-    "PdMu0_evening": "2026-10-31"
+    "PdMu0_evening": "2026-10-31",
+    "PdMu0_infographic": "2026-10-31"
   },
-  "last_sync": "2026-10-31T15:57:44.487010+00:00",
+  "last_sync": "2026-10-31T18:43:25.774948+00:00",
   "posted_destinations": [
     {
       "destination_id": "sarahan",
@@ -12111,6 +12112,10 @@
         "2026-07-04",
         "2026-10-02"
       ],
+      "v2_cost_index_handwritten": [
+        "2026-06-08",
+        "2026-10-31"
+      ],
       "emergency_intel": [
         "2026-06-09",
         "2026-10-22"
@@ -12118,7 +12123,8 @@
       "infographic": [
         "2026-06-09",
         "2026-10-14",
-        "2026-10-23"
+        "2026-10-23",
+        "2026-10-31"
       ],
       "v2_cost_vs_feeling": [
         "2026-06-10",
@@ -12151,9 +12157,6 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
-      ],
-      "v2_cost_index_handwritten": [
-        "2026-10-31"
       ]
     },
     "reels": {
@@ -12660,13 +12663,12 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
-    "last_topic_idx": 3,
-    "last_theme_idx": 3,
-    "last_posted": "2026-10-23"
+    "last_topic_idx": 0,
+    "last_theme_idx": 0,
+    "last_posted": "2026-10-31"
   },
   "tourist_map_states": {
     "HP": [

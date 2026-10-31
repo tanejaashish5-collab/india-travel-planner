@@ -30276,3 +30276,57 @@ Date range: 2026-04-15 → 2026-10-30
 2026-10-31 15:58:15  INFO      [facebook/Nakshiq] ✅ Published · Outstand=8nSJK · Platform=1040562729145369_122127747758700092
 2026-10-31 15:58:15  INFO      State saved. Run complete.
 2026-10-31 15:58:15  INFO      ════════════════════════════════════════════════════════════
+2026-10-31 18:42:33  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-10-31 18:42:33  INFO      ════════════════════════════════════════════════════════════
+2026-10-31 18:42:33  INFO      Nakshiq Autoposter · EVENING · 2026-10-31 · weekday=5
+2026-10-31 18:42:33  INFO      ════════════════════════════════════════════════════════════
+2026-10-31 18:42:33  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-10-31 18:43:25  INFO      Synced → 20 destinations · 100 traps · 6 articles · 61 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 89 camping · 50 gems · total catalog=533
+2026-10-31 18:43:25  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-10-31 18:43:27  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-31 18:43:27  INFO      Active accounts: ['facebook/Nakshiq']
+2026-10-31 18:43:27  INFO      Festivals filtered (past/post-window): Marwar Festival, Kullu Dussehra, Paragliding World Cup, Meera Mahotsav, Lansdowne Autumn Festival, Bhimakali Dussehra, Chamba Dussehra, Hanle Stargazing Festival (+40 more)
+2026-10-31 18:43:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-10-31 18:43:43  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-10-31 18:43:43  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:scenario_eat_here, pillar:scenario_hidden_gems, pillar:scenario_skip, pillar:verification, score seen <2d)
+2026-10-31 18:43:43  INFO      Evening format (balance→verification): infographic [14% vs target 30%] (0/15 never featured)
+2026-10-31 18:43:43  INFO      Formats — IG: infographic  ·  FB: infographic  ·  Story: route_spotlight  ·  Audience: families
+2026-10-31 18:43:43  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 50
+2026-10-31 18:43:43  INFO      Delegating evening slot → infographic visual pipeline
+2026-10-31 18:43:43  INFO      ════════════════════════════════════════════════════════════
+2026-10-31 18:43:43  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-10-31 · weekday=5
+2026-10-31 18:43:43  INFO      ════════════════════════════════════════════════════════════
+2026-10-31 18:43:46  INFO      Generated 5 slides: topic=treks, theme=magazine
+2026-10-31 18:43:46  INFO          Requesting upload URL for infographic_infographic_treks_magazine_01_cover.jpg (96,528 bytes, image/jpeg)
+2026-10-31 18:43:48  INFO          Uploading to R2 (timeout=120s)...
+2026-10-31 18:43:49  INFO          R2 PUT OK. Confirming...
+2026-10-31 18:43:50  INFO          Media ready: 4QmUX (96,528 bytes · infographic_infographic_treks_magazine_01_cover.jpg)
+2026-10-31 18:43:50  INFO        Uploaded: infographic_treks_magazine_01_cover.jpg (94 KB)
+2026-10-31 18:43:50  INFO          Requesting upload URL for infographic_infographic_treks_magazine_02_ahobilam.jpg (241,791 bytes, image/jpeg)
+2026-10-31 18:43:52  INFO          Uploading to R2 (timeout=120s)...
+2026-10-31 18:43:53  INFO          R2 PUT OK. Confirming...
+2026-10-31 18:43:54  INFO          Media ready: 7fTXE (241,791 bytes · infographic_infographic_treks_magazine_02_ahobilam.jpg)
+2026-10-31 18:43:54  INFO        Uploaded: infographic_treks_magazine_02_ahobilam.jpg (236 KB)
+2026-10-31 18:43:54  INFO          Requesting upload URL for infographic_infographic_treks_magazine_03_belum-caves.jpg (260,134 bytes, image/jpeg)
+2026-10-31 18:43:54  INFO          Uploading to R2 (timeout=120s)...
+2026-10-31 18:43:56  INFO          R2 PUT OK. Confirming...
+2026-10-31 18:43:57  INFO          Media ready: In0J8 (260,134 bytes · infographic_infographic_treks_magazine_03_belum-caves.jpg)
+2026-10-31 18:43:57  INFO        Uploaded: infographic_treks_magazine_03_belum-caves.jpg (254 KB)
+2026-10-31 18:43:57  INFO          Requesting upload URL for infographic_infographic_treks_magazine_04_bhadrachalam.jpg (166,978 bytes, image/jpeg)
+2026-10-31 18:43:59  INFO          Uploading to R2 (timeout=120s)...
+2026-10-31 18:44:00  INFO          R2 PUT OK. Confirming...
+2026-10-31 18:44:01  INFO          Media ready: NMsPb (166,978 bytes · infographic_infographic_treks_magazine_04_bhadrachalam.jpg)
+2026-10-31 18:44:01  INFO        Uploaded: infographic_treks_magazine_04_bhadrachalam.jpg (163 KB)
+2026-10-31 18:44:01  INFO          Requesting upload URL for infographic_infographic_treks_magazine_06_cta.jpg (51,358 bytes, image/jpeg)
+2026-10-31 18:44:02  INFO          Uploading to R2 (timeout=120s)...
+2026-10-31 18:44:02  INFO          R2 PUT OK. Confirming...
+2026-10-31 18:44:04  INFO          Media ready: 8BPJe (51,358 bytes · infographic_infographic_treks_magazine_06_cta.jpg)
+2026-10-31 18:44:04  INFO        Uploaded: infographic_treks_magazine_06_cta.jpg (50 KB)
+2026-10-31 18:44:04  INFO      All slides uploaded: 5 media objects
+2026-10-31 18:44:05  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-10-31 18:44:05  INFO      [facebook/Nakshiq] Publishing infographic carousel: treks/magazine...
+2026-10-31 18:44:05  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-10-31 18:44:09  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-10-31 18:44:09  INFO      Infographic state updated: topic=treks, theme=magazine
+2026-10-31 18:44:09  INFO      State saved. Infographic run complete.
+2026-10-31 18:44:09  INFO      ════════════════════════════════════════════════════════════
