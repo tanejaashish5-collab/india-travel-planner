@@ -37,15 +37,11 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0_carousel": "2026-10-30",
-    "PdMu0": "2026-10-30",
-    "PdMu0_evening": "2026-10-30"
+    "PdMu0": "2026-10-31",
+    "PdMu0_evening": "2026-10-31"
   },
-  "last_sync": "2026-10-30T19:32:25.029030+00:00",
+  "last_sync": "2026-10-31T15:57:44.487010+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "yuksom",
-      "date": "2026-10-16"
-    },
     {
       "destination_id": "sarahan",
       "date": "2026-10-17"
@@ -165,6 +161,10 @@
     {
       "destination_id": "chamba",
       "date": "2026-10-30"
+    },
+    {
+      "destination_id": "kurukshetra",
+      "date": "2026-10-31"
     }
   ],
   "posted_formats": {
@@ -192,7 +192,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_women_solo_brief_video",
       "v2_cost_vs_feeling",
       "v2_score_card_pov",
       "data_carousel",
@@ -212,7 +211,8 @@
       "score_card",
       "v2_ugc_spotlight",
       "v2_local_knows",
-      "score_card"
+      "score_card",
+      "v2_cost_index_handwritten"
     ]
   },
   "post_log": [
@@ -11502,6 +11502,35 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "chamba.mp4"
+    },
+    {
+      "timestamp": "2026-10-31T14:36:42.350651+00:00",
+      "date": "2026-10-31",
+      "platform": "instagram",
+      "post_id": "B2sl8",
+      "destination": "varanasi",
+      "format": "scenario_eat_here",
+      "media_id": "kRBEs"
+    },
+    {
+      "timestamp": "2026-10-31T14:37:27.930618+00:00",
+      "date": "2026-10-31",
+      "platform": "youtube",
+      "post_id": "kHawN",
+      "destination": "varanasi",
+      "format": "scenario_eat_here",
+      "media_id": "eKqoP"
+    },
+    {
+      "timestamp": "2026-10-31T15:58:15.702734+00:00",
+      "date": "2026-10-31",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "8nSJK",
+      "destination": "kurukshetra",
+      "format": "v2_cost_index_handwritten",
+      "has_media": true,
+      "media_id": "v2_cost_index_handwritten-kurukshetra.png"
     }
   ],
   "theme_usage": {
@@ -11845,7 +11874,8 @@
       "kurukshetra": [
         "2026-10-01",
         "2026-10-16",
-        "2026-10-20"
+        "2026-10-20",
+        "2026-10-31"
       ],
       "mukteshwar": [
         "2026-10-01",
@@ -12121,6 +12151,9 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
+      ],
+      "v2_cost_index_handwritten": [
+        "2026-10-31"
       ]
     },
     "reels": {
@@ -12294,7 +12327,8 @@
       ],
       "kurukshetra": [
         "2026-10-01",
-        "2026-10-16"
+        "2026-10-16",
+        "2026-10-31"
       ],
       "bengaluru": [
         "2026-10-03"
@@ -12383,7 +12417,8 @@
         "2026-10-03",
         "2026-10-10",
         "2026-10-17",
-        "2026-10-24"
+        "2026-10-24",
+        "2026-10-31"
       ],
       "adventurers": [
         "2026-05-29",
@@ -12625,7 +12660,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -12639,7 +12675,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "trichy",
+    "shared_best": "kurukshetra",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},
