@@ -36,37 +36,13 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-10-30",
     "PdMu0": "2026-10-31",
     "PdMu0_evening": "2026-10-31",
-    "PdMu0_infographic": "2026-10-31"
+    "PdMu0_infographic": "2026-10-31",
+    "PdMu0_carousel": "2026-11-01"
   },
   "last_sync": "2026-10-31T18:43:25.774948+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "sarahan",
-      "date": "2026-10-17"
-    },
-    {
-      "destination_id": "kasauli",
-      "date": "2026-10-17"
-    },
-    {
-      "destination_id": "kausani",
-      "date": "2026-10-17"
-    },
-    {
-      "destination_id": "trichy",
-      "date": "2026-10-17"
-    },
-    {
-      "destination_id": "chamba",
-      "date": "2026-10-17"
-    },
-    {
-      "destination_id": "nandi-hills",
-      "date": "2026-10-17"
-    },
     {
       "destination_id": "jaipur",
       "date": "2026-10-18"
@@ -166,6 +142,10 @@
     {
       "destination_id": "kurukshetra",
       "date": "2026-10-31"
+    },
+    {
+      "destination_id": "chakrata",
+      "date": "2026-11-01"
     }
   ],
   "posted_formats": {
@@ -11532,6 +11512,15 @@
       "format": "v2_cost_index_handwritten",
       "has_media": true,
       "media_id": "v2_cost_index_handwritten-kurukshetra.png"
+    },
+    {
+      "timestamp": "2026-11-01T14:28:41.880641+00:00",
+      "date": "2026-11-01",
+      "platform": "facebook",
+      "post_id": "cGPCX",
+      "destination": "chakrata",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-11-01"
     }
   ],
   "theme_usage": {
