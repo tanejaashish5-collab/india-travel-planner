@@ -1,4 +1,4 @@
-# Cinematic readiness — 2026-10-25
+# Cinematic readiness — 2026-11-01
 
 Total: **533** dests · A=**349** · HS-B=**29** · B=**155** · C=**0**
 
