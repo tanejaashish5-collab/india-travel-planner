@@ -38,10 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-10-31",
     "PdMu0_evening": "2026-10-31",
-    "PdMu0_infographic": "2026-10-31",
+    "PdMu0_infographic": "2026-11-01",
     "PdMu0_carousel": "2026-11-01"
   },
-  "last_sync": "2026-10-31T18:43:25.774948+00:00",
+  "last_sync": "2026-11-01T19:03:27.406971+00:00",
   "posted_destinations": [
     {
       "destination_id": "jaipur",
@@ -11521,6 +11521,24 @@
       "destination": "chakrata",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-11-01"
+    },
+    {
+      "timestamp": "2026-11-01T14:37:05.419948+00:00",
+      "date": "2026-11-01",
+      "platform": "instagram",
+      "post_id": "K3oYq",
+      "destination": "mussoorie",
+      "format": "scenario_real_cost",
+      "media_id": "TZDwN"
+    },
+    {
+      "timestamp": "2026-11-01T14:38:03.238407+00:00",
+      "date": "2026-11-01",
+      "platform": "youtube",
+      "post_id": "Lp07t",
+      "destination": "mussoorie",
+      "format": "scenario_real_cost",
+      "media_id": "iygmQ"
     }
   ],
   "theme_usage": {
@@ -12113,7 +12131,8 @@
         "2026-06-09",
         "2026-10-14",
         "2026-10-23",
-        "2026-10-31"
+        "2026-10-31",
+        "2026-11-01"
       ],
       "v2_cost_vs_feeling": [
         "2026-06-10",
@@ -12655,9 +12674,9 @@
     }
   },
   "infographic": {
-    "last_topic_idx": 0,
-    "last_theme_idx": 0,
-    "last_posted": "2026-10-31"
+    "last_topic_idx": 1,
+    "last_theme_idx": 1,
+    "last_posted": "2026-11-01"
   },
   "tourist_map_states": {
     "HP": [
