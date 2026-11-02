@@ -36,21 +36,13 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-10-31",
-    "PdMu0_evening": "2026-10-31",
     "PdMu0_infographic": "2026-11-01",
-    "PdMu0_carousel": "2026-11-01"
+    "PdMu0_carousel": "2026-11-01",
+    "PdMu0": "2026-11-02",
+    "PdMu0_evening": "2026-11-02"
   },
-  "last_sync": "2026-11-01T19:03:27.406971+00:00",
+  "last_sync": "2026-11-02T16:31:32.762521+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "jaipur",
-      "date": "2026-10-18"
-    },
-    {
-      "destination_id": "munsiyari",
-      "date": "2026-10-18"
-    },
     {
       "destination_id": "ross-island",
       "date": "2026-10-19"
@@ -146,6 +138,26 @@
     {
       "destination_id": "chakrata",
       "date": "2026-11-01"
+    },
+    {
+      "destination_id": "mandrem",
+      "date": "2026-11-02"
+    },
+    {
+      "destination_id": "modhera",
+      "date": "2026-11-02"
+    },
+    {
+      "destination_id": "pondicherry",
+      "date": "2026-11-02"
+    },
+    {
+      "destination_id": "kuttanad",
+      "date": "2026-11-02"
+    },
+    {
+      "destination_id": "devprayag",
+      "date": "2026-11-02"
     }
   ],
   "posted_formats": {
@@ -173,7 +185,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_cost_vs_feeling",
       "v2_score_card_pov",
       "data_carousel",
       "v2_tourist_trap_split",
@@ -193,7 +204,8 @@
       "v2_ugc_spotlight",
       "v2_local_knows",
       "score_card",
-      "v2_cost_index_handwritten"
+      "v2_cost_index_handwritten",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -11539,6 +11551,35 @@
       "destination": "mussoorie",
       "format": "scenario_real_cost",
       "media_id": "iygmQ"
+    },
+    {
+      "timestamp": "2026-11-02T14:36:43.406778+00:00",
+      "date": "2026-11-02",
+      "platform": "instagram",
+      "post_id": "v4sla",
+      "destination": "havelock-island",
+      "format": "scenario_sos",
+      "media_id": "GEbXR"
+    },
+    {
+      "timestamp": "2026-11-02T14:37:19.997299+00:00",
+      "date": "2026-11-02",
+      "platform": "youtube",
+      "post_id": "XK5SW",
+      "destination": "havelock-island",
+      "format": "scenario_sos",
+      "media_id": "KJBb6"
+    },
+    {
+      "timestamp": "2026-11-02T16:32:45.425280+00:00",
+      "date": "2026-11-02",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "nS1vU",
+      "destination": "mandrem",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -11945,6 +11986,21 @@
       ],
       "sarahan": [
         "2026-10-22"
+      ],
+      "mandrem": [
+        "2026-11-02"
+      ],
+      "modhera": [
+        "2026-11-02"
+      ],
+      "pondicherry": [
+        "2026-11-02"
+      ],
+      "kuttanad": [
+        "2026-11-02"
+      ],
+      "devprayag": [
+        "2026-11-02"
       ]
     },
     "morning_formats": {
@@ -12160,7 +12216,8 @@
         "2026-10-01",
         "2026-10-09",
         "2026-10-17",
-        "2026-10-25"
+        "2026-10-25",
+        "2026-11-02"
       ],
       "tourist_trap": [
         "2026-09-01",
@@ -12388,6 +12445,9 @@
       ],
       "chamba": [
         "2026-10-30"
+      ],
+      "mandrem": [
+        "2026-11-02"
       ]
     },
     "audience_tags": {
@@ -12407,7 +12467,8 @@
         "2026-08-31",
         "2026-09-07",
         "2026-10-19",
-        "2026-10-26"
+        "2026-10-26",
+        "2026-11-02"
       ],
       "families": [
         "2026-05-23",
@@ -12685,11 +12746,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "kurukshetra",
+    "shared_best": "mandrem",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-10-25",
+  "data_carousel_floor_last": "2026-11-02",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
