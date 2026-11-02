@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.sos-changed-triage</string>
+  <!-- Monday triage of emergency numbers that vanished from their source. Fires after
+       the 00:00 UTC sos-auto-reverify cron and before the 01:30 UTC SOS email:
+       11:10 Canberra is 00:10 UTC in summer time (80 min to run) and 01:10 UTC in
+       winter (20 min, so a slow winter run may still reach the email, which is safe).
+       No flagged row means no session and no tokens.
+       Install: cp scripts/com.nakshiq.sos-changed-triage.plist ~/Library/LaunchAgents/ &&
+                launchctl load ~/Library/LaunchAgents/com.nakshiq.sos-changed-triage.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/sos-changed-triage.sh</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/Users/ashishtaneja/.local/bin:/Users/ashishtaneja/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>11</integer><key>Minute</key><integer>10</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/sos-changed.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/sos-changed.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

@@ -33,6 +33,8 @@
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs apply --batch <batch.json> --entries <entries.json>            # validate only
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs apply --batch <batch.json> --entries <entries.json> --commit   # stamp
  *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs recount [--commit]   # after settling open items by hand
+ *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs open --out <batch.json> [--ids a,b --why "..."]   # open items for the settle session
+ *   node --env-file=apps/web/.env.local scripts/freshness-review.mjs settle --batch <batch.json> --entries <entries.json> [--commit]
  *
  * entries.json:
  *   { "reviews": [ { "id": "spiti-valley", "verdict": "confirmed" | "needs_correction",
@@ -178,8 +180,35 @@ if (cmd === "recount") {
   process.exit(0);
 }
 
-if (cmd !== "apply") {
-  console.error("usage: freshness-review.mjs pick|apply|recount …");
+// open — the items no queue holds (a weak source, a page that would not open) for
+// the settle session (.claude/commands/freshness-settle.md). Until 2026-11-02 these
+// were "research by hand" and no job picked them up: Rann of Kutch, Eravikulam and
+// Araku sat 13 to 17 days while the watchdog emailed about them.
+if (cmd === "open") {
+  const out = arg("out");
+  if (!out) { console.error("open needs --out"); process.exit(1); }
+  const open = await openItems();
+  const items = arg("ids")
+    ? arg("ids").split(",").map((id) => ({ id, why: arg("why") ?? "named by hand" }))
+    : [...open].filter(([, e]) => e.why !== "correction awaiting approval").map(([id, e]) => ({ id, why: e.why, at: e.at }));
+  let destinations = [], rejected = [];
+  if (items.length) {
+    const ids = items.map((i) => i.id);
+    const { data, error } = await supabase.from("destinations").select(TIME_SENSITIVE).in("id", ids);
+    if (error) { console.error(`FATAL: ${error.message}`); process.exit(1); }
+    destinations = data;
+    const since = new Date(Date.now() - ESCALATION_HOLD_DAYS * 86400000).toISOString();
+    const { data: rej } = await supabase.from("destination_corrections").select("destination_id, changes, result")
+      .in("destination_id", ids).eq("status", "rejected").gte("created_at", since);
+    rejected = rej ?? [];
+  }
+  writeFileSync(out, JSON.stringify({ picked_at: new Date().toISOString(), items, destinations, rejected }, null, 2));
+  console.log(`RESULT open=${items.length}`);
+  process.exit(0);
+}
+
+if (cmd !== "apply" && cmd !== "settle") {
+  console.error("usage: freshness-review.mjs pick|apply|recount|open|settle …");
   process.exit(1);
 }
 
@@ -252,8 +281,8 @@ const QUEUE_FIELDS = {
 const firstUrl = (s) => (typeof s === "string" ? s.match(/https?:\/\/[^\s,)]+/)?.[0] ?? null : null);
 const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 
-/** null when the correction can go to the approval queue, else why a human must research it. */
-async function queueGate(r, row) {
+/** null when the correction is well formed, else why it cannot be queued at all. */
+function shapeGate(r, row) {
   if (!row) return "destination not in batch";
   const cs = r.corrections ?? [];
   if (!cs.length) return "no field-level correction given";
@@ -263,13 +292,93 @@ async function queueGate(r, row) {
     if (!QUEUE_FIELDS[c.field](c.proposed)) return `${c.field}: proposed value has the wrong shape (${JSON.stringify(c.proposed).slice(0, 60)})`;
     if (same(c.proposed, row[c.field]) && c.field !== "notice_text") return `${c.field}: proposed value equals the current one`;
     if (!same(c.current, row[c.field])) return `${c.field}: reviewer's "current" does not match the page`;
+    if (!firstUrl(c.source)) return `${c.field}: source has no URL`;
+  }
+  return null;
+}
+
+/** null when every source is official or named news and opens, else why not. */
+async function sourceGate(r) {
+  for (const c of r.corrections ?? []) {
     const u = firstUrl(c.source);
-    if (!u) return `${c.field}: source has no URL`;
     const host = new URL(u).hostname.replace(/^www\./, "");
     if (!isAuthoritative(host)) return `${c.field}: source ${host} is not official or named news`;
     if (!(await reachable(u))) return `${c.field}: source ${u} would not open`;
   }
   return null;
+}
+
+/** null when the correction can go to the approval queue, else why a human must research it. */
+async function queueGate(r, row) {
+  return shapeGate(r, row) ?? (await sourceGate(r));
+}
+
+/** null when a "the page is right" verdict meets the bar for stamping, else why not. */
+async function confirmGate(r) {
+  const sources = [...new Set((r.sources ?? []).filter((s) => /^https?:\/\//.test(s)))];
+  const hosts = new Set(sources.map((s) => new URL(s).hostname.replace(/^www\./, "")));
+  hosts.delete("nakshiq.com");
+  if (hosts.size < 2) return "needs 2+ independent source hosts (nakshiq.com does not count)";
+  if (![...hosts].some(isAuthoritative)) return "needs 1+ official (.gov.in/.nic.in) or named news source — wikipedia/aggregators/travel blogs alone don't count";
+  for (const s of sources) if (await reachable(s)) return null;
+  return "no source URL could be opened";
+}
+
+function toChanges(r, row) {
+  const changes = r.corrections.map((c) => ({ field: c.field, expected: row[c.field] ?? null, value: c.proposed, source: c.source }));
+  // A notice goes up with the link it rests on, so the page can show its source.
+  const notice = r.corrections.find((c) => c.field === "notice_text" && c.proposed !== null);
+  if (notice) changes.push({ field: "notice_source_url", expected: row.notice_source_url ?? null, value: firstUrl(notice.source), source: notice.source });
+  return changes;
+}
+
+// settle — turn the session's verdicts on open items into something a job can finish.
+// Writes only what apply can write: a stamp, or a row in the approval queue. A fix
+// with a good source is then decided by corrections-autoverify (2 independent checks
+// + quote check). A fix whose source is weak or will not open is marked founder_only:
+// no automatic approval, it goes to his email with an Approve button instead of
+// sitting as "research by hand".
+if (cmd === "settle") {
+  const rowsById = new Map(batch.destinations.map((d) => [d.id, d]));
+  const counts = { stamped: 0, queued: 0, founder_only: 0, left: 0 };
+  const stampIds = [], inserts = [];
+  const { data: pendingRows } = await supabase.from("destination_corrections").select("destination_id").eq("status", "pending");
+  const pendingIds = new Set((pendingRows ?? []).map((p) => p.destination_id));
+  const wasRejected = (r) => (batch.rejected ?? []).some((x) => x.destination_id === r.id &&
+    (r.corrections ?? []).some((c) => (x.changes ?? []).some((o) => o.field === c.field && same(o.value, c.proposed))));
+  const left = (id, why) => { counts.left++; console.log(`left      ${id}: ${why}`); };
+  for (const r of reviews) {
+    if (!allowed.has(r.id)) { left(r.id, "not an open item"); continue; }
+    if (r.verdict === "confirmed") {
+      const why = await confirmGate(r);
+      if (why) { left(r.id, why); continue; }
+      stampIds.push(r.id);
+      console.log(`stamp     ${r.id}: the flagged claim did not hold up`);
+    } else if (r.verdict === "needs_correction") {
+      if (pendingIds.has(r.id)) { left(r.id, "a correction is already waiting"); continue; }
+      if (wasRejected(r)) { left(r.id, "the same fix was already rejected"); continue; }
+      const row = rowsById.get(r.id);
+      const bad = shapeGate(r, row);
+      if (bad) { left(r.id, bad); continue; }
+      const weak = await sourceGate(r);
+      const changes = toChanges(r, row).map((c) => (weak ? { ...c, founder_only: true } : c));
+      inserts.push({ destination_id: r.id, changes, notes: [weak && `Sent to you because ${weak}.`, r.notes].filter(Boolean).join(" ") || null });
+      counts[weak ? "founder_only" : "queued"]++;
+      console.log(`${weak ? "for email" : "queue    "} ${r.id}: ${changes.map((c) => c.field).join(", ")}${weak ? ` (${weak})` : ""}`);
+    } else left(r.id, r.notes ?? "session could not settle it");
+  }
+  if (COMMIT && stampIds.length) {
+    const { data, error } = await supabase.rpc("stamp_destinations_reviewed", { p_ids: stampIds });
+    if (error) { console.error(`FATAL: stamp failed: ${error.message}`); process.exit(1); }
+    counts.stamped = data ?? 0;
+  } else counts.stamped = stampIds.length;
+  if (COMMIT && inserts.length) {
+    const { error } = await supabase.from("destination_corrections").insert(inserts);
+    if (error) { console.error(`FATAL: queue insert failed: ${error.message}`); process.exit(1); }
+  }
+  if (COMMIT) await supabase.from("ops_reports").insert({ job: "freshness-settle", ok: true, alerts_count: counts.left, summary: { ...counts, total: batch.items?.length ?? reviews.length } });
+  console.log(`RESULT stamped=${counts.stamped} queued=${counts.queued} founder_only=${counts.founder_only} left=${counts.left} ${COMMIT ? "written" : "dry-run (add --commit)"}`);
+  process.exit(0);
 }
 
 const rowsById = new Map(batch.destinations.map((d) => [d.id, d]));
@@ -286,27 +395,13 @@ for (const r of reviews) {
     const why = await queueGate(r, rowsById.get(r.id));
     if (why) { escalated.push({ id: r.id, fields: (r.corrections ?? []).map((c) => c.field), why }); continue; }
     const row = rowsById.get(r.id);
-    const changes = r.corrections.map((c) => ({ field: c.field, expected: row[c.field] ?? null, value: c.proposed, source: c.source }));
-    // A notice goes up with the link it rests on, so the page can show its source.
-    const notice = r.corrections.find((c) => c.field === "notice_text" && c.proposed !== null);
-    if (notice) changes.push({ field: "notice_source_url", expected: row.notice_source_url ?? null, value: firstUrl(notice.source), source: notice.source });
-    toQueue.push({ destination_id: r.id, changes, notes: r.notes ?? null });
+    toQueue.push({ destination_id: r.id, changes: toChanges(r, row), notes: r.notes ?? null });
     continue;
   }
   if (r.verdict !== "confirmed") { dropped.push({ id: r.id, why: `unknown verdict ${r.verdict}` }); continue; }
 
-  const sources = [...new Set((r.sources ?? []).filter((s) => /^https?:\/\//.test(s)))];
-  const hosts = new Set(sources.map((s) => new URL(s).hostname.replace(/^www\./, "")));
-  hosts.delete("nakshiq.com");
-  if (hosts.size < 2) { dropped.push({ id: r.id, why: "needs 2+ independent source hosts (nakshiq.com does not count)" }); continue; }
-  if (![...hosts].some(isAuthoritative)) {
-    dropped.push({ id: r.id, why: "needs 1+ official (.gov.in/.nic.in) or named news source — wikipedia/aggregators/travel blogs alone don't count" });
-    continue;
-  }
-
-  let ok = false;
-  for (const s of sources) if (await reachable(s)) { ok = true; break; }
-  if (!ok) { dropped.push({ id: r.id, why: "no source URL could be opened" }); continue; }
+  const notConfirmed = await confirmGate(r);
+  if (notConfirmed) { dropped.push({ id: r.id, why: notConfirmed }); continue; }
   stamp.push(r.id);
 }
 

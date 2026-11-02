@@ -15,7 +15,10 @@
 # Since 2026-10-29 scripts/corrections-autoverify.mjs decides them first (two
 # independent verifier sessions + quote check); only the ones it cannot settle
 # are emailed with one-click Approve links via /api/admin/corrections/notify.
-# Nothing a review proposes reaches a page without the founder's click.
+# OPEN ITEMS (2026-11-02): what the queue refuses (weak source, page would not
+# open) gets a settle session after the stamp, procedure in
+# .claude/commands/freshness-settle.md, so it no longer waits for someone to do
+# "research by hand". Only the pinned settle command writes; see that step below.
 #
 # WHY LOCAL, VIA /bin/bash — same reasons as sos-backlog-weekly.sh: the cloud
 # routine sandbox blocks outbound web (it cannot open .gov.in / .nic.in), cron
@@ -120,6 +123,43 @@ fi
 # Append the authoritative outcome (what the wrapper actually stamped) to the note.
 { echo; echo "## Wrapper outcome"; echo; echo '```'; cat "$WORK/apply-$TODAY.log"; echo '```'; } >> "$NOTE"
 
+# SETTLE OPEN ITEMS (founder 2026-11-02). A separate session re-researches anything
+# still flagged, from scratch, because earlier flags were often the reviewer's own
+# error. It writes a verdict file only; the settle command pinned to the run's start
+# commit decides what becomes a queue row or a stamp, before auto-verify runs on it.
+OPEN_BATCH="$WORK/open-$TODAY.json"
+OPEN_ENTRIES="$WORK/open-entries-$TODAY.json"
+PINNED_FR="scripts/.freshness-review.pinned-open-$$.mjs"
+if git show "$START_SHA:scripts/freshness-review.mjs" > "$PINNED_FR" 2>/dev/null; then
+  OPEN_COUNT="$($NODE "$PINNED_FR" open --out "$OPEN_BATCH" 2>>"$WORK/settle-$TODAY.log" | sed -nE 's/^RESULT open=([0-9]+)$/\1/p')"
+  say "open items: ${OPEN_COUNT:-unknown}"
+  if [ "${OPEN_COUNT:-0}" -gt 0 ] 2>/dev/null; then
+    OPEN_SHA="$(shasum -a 256 "$OPEN_BATCH" | cut -d' ' -f1)"
+    rm -f "$OPEN_ENTRIES"
+    OPEN_PROMPT="Settle the NakshIQ freshness review's open items for $TODAY. Read .claude/commands/freshness-settle.md first and follow it exactly. Work in this repo.
+
+BATCH=$OPEN_BATCH  (do not modify it)
+ENTRIES=$OPEN_ENTRIES  (write your verdicts here)
+
+You are running LOCALLY, so WebSearch, WebFetch and curl reach .gov.in and .nic.in. You CANNOT write to the database and must not try. Do not commit."
+    claude -p "$OPEN_PROMPT" --model sonnet \
+      --allowedTools "Read,Glob,Grep,Bash,Write,WebSearch,WebFetch,Task" \
+      --permission-mode acceptEdits --add-dir "$WORK" --max-turns 120 \
+      >> "$WORK/settle-$TODAY.log" 2>&1
+    say "settle session exit=$?"
+    if [ "$(shasum -a 256 "$OPEN_BATCH" | cut -d' ' -f1)" != "$OPEN_SHA" ]; then
+      say "❌ open batch changed during the session — refusing to settle"
+    elif [ ! -f "$OPEN_ENTRIES" ]; then
+      say "❌ settle session wrote no verdicts; items stay open for the watchdog"
+    else
+      $NODE "$PINNED_FR" settle --batch "$OPEN_BATCH" --entries "$OPEN_ENTRIES" --commit >> "$WORK/settle-$TODAY.log" 2>&1
+      say "settle: $(grep -o '^RESULT .*' "$WORK/settle-$TODAY.log" | tail -1)"
+      { echo; echo "## Open items settled"; echo; echo '```'; grep -E '^(stamp|queue|for email|left|RESULT) ' "$WORK/settle-$TODAY.log"; echo '```'; } >> "$NOTE"
+    fi
+  fi
+fi
+rm -f "$PINNED_FR"
+
 # AUTO-APPROVE (founder 2026-10-29: "make it autonomous ... check twice and then
 # approve if all looked good"). Every queued fix gets two independent verifier
 # sessions plus a machine quote check; it is applied only if both approve and
@@ -135,14 +175,19 @@ else
 fi
 rm -f "$PINNED_AV"
 
+# alerts_count is what the watchdog emails about, so it must count what is still
+# open after settling, not what this run found.
+OPEN_LEFT="$($NODE scripts/freshness-review.mjs recount --commit 2>/dev/null | sed -nE 's/^RESULT open=([0-9]+).*/\1/p')"
+say "still open after settling: ${OPEN_LEFT:-unknown}"
+
 COMMIT_PATHS=("$NOTE"); [ -f "$AUTO_NOTE" ] && COMMIT_PATHS+=("$AUTO_NOTE")
 bash scripts/audit-commit-guard.sh -m "audit(freshness): weekly review $TODAY — $RESULT_LINE" "${COMMIT_PATHS[@]}" \
   || { say "❌ commit guard failed"; notify "Freshness review stamped pages but could not commit its note."; }
 
 # Exception-only: a quiet week never pages him.
 # Queued corrections → one email with an Approve button per fix (sent by the
-# deployment, which holds the Resend key). Escalations (wrong shape, weak
-# source) → desktop note now, and the watchdog emails if they stay open 3 days.
+# deployment, which holds the Resend key). Anything the settle step could not
+# finish → desktop note now, and the watchdog emails if it stays open 3 days.
 # Called after EVERY run, not only when this run queued something: fixes queued
 # by hand or left unanswered get re-sent twice a week until decided. The endpoint
 # sends nothing when the queue is empty.
@@ -153,10 +198,9 @@ else
   say "❌ approval email failed"
   notify "Freshness review: the approval email for queued page fixes failed. Click for the note." "$REPO_ROOT/$NOTE"
 fi
-ESC="$(printf '%s' "$RESULT_LINE" | sed -nE 's/.*escalated=([0-9]+).*/\1/p')"
-if [ -n "${ESC:-}" ] && [ "$ESC" -gt 0 ] 2>/dev/null; then
-  say "escalating: $ESC destination(s) may be wrong but need research by hand"
-  notify "Freshness review: $ESC page(s) may state something no longer true and need a manual check. Click for the note." "$REPO_ROOT/$NOTE"
+if [ -n "${OPEN_LEFT:-}" ] && [ "$OPEN_LEFT" -gt 0 ] 2>/dev/null; then
+  say "escalating: $OPEN_LEFT destination(s) the settle step could not finish"
+  notify "Freshness review: $OPEN_LEFT page(s) may state something no longer true and the automatic check could not settle them. Click for the note." "$REPO_ROOT/$NOTE"
 fi
 
 printf '%s %s' "$TODAY" "$RESULT_LINE" > "$MARKER"

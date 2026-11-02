@@ -31,7 +31,7 @@
  * pdftotext).
  *
  * Usage (scripts/freshness-review-weekly.sh runs it after the stamp step):
- *   node --env-file=apps/web/.env.local scripts/corrections-autoverify.mjs [--dry] [--out data/audits/corrections-auto-<date>.md]
+ *   node --env-file=apps/web/.env.local scripts/corrections-autoverify.mjs [--dry] [--only <id>] [--out data/audits/corrections-auto-<date>.md]
  */
 import { createClient } from "@supabase/supabase-js";
 import { createHmac } from "node:crypto";
@@ -43,6 +43,7 @@ import { join } from "node:path";
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
 const OUT = args.includes("--out") ? args[args.indexOf("--out") + 1] : null;
+const ONLY = args.includes("--only") ? args[args.indexOf("--only") + 1] : null; // one correction id, for a test run
 const SITE = "https://www.nakshiq.com";
 const NOTICE_DAYS = 21;
 const RAW_DIR = mkdtempSync(join(tmpdir(), "autoverify-"));
@@ -148,13 +149,20 @@ async function decide(id, action) {
 
 const { data: pending, error } = await s.from("destination_corrections")
   .select("id, destination_id, changes, created_at").eq("status", "pending").order("created_at");
+const pendingRows = (pending ?? []).filter((row) => !ONLY || row.id === ONLY);
 if (error) { console.error(`FATAL: ${error.message}`); process.exit(1); }
 const now = new Date();
 const log = [];
 const decisions = [];
 const toVerify = [];
 
-for (const row of pending ?? []) {
+for (const row of pendingRows) {
+  // scripts/freshness-review.mjs settle: the source is weak or would not open, so
+  // this one is his call whatever a verifier says.
+  if (row.changes.some((c) => c.founder_only)) {
+    decisions.push({ row, action: "hold", why: "source is not official or named news, or would not open" });
+    continue;
+  }
   const notice = row.changes.find((c) => c.field === "notice_text" && c.value);
   const end = notice ? windowEnd(notice.value, now) : null;
   if (notice && end && end.getTime() + 86400000 < now.getTime()) {
