@@ -47,19 +47,36 @@ one of `local_stays` / `web_search` / `manual` (CHECK constraint). `name`,
    answer for that destination, **write no row for it** rather than inventing one.
    Four weak picks are worse than two real ones.
 
-5. **Write** with an upsert on `(destination_id, slot)`, stamping
-   `refreshed_at = now()` and `source = 'web_search'`.
+5. **Write only what improves the page.** Upsert a slot on
+   `(destination_id, slot)`, with `source = 'web_search'`, when the slot has no row
+   or tonight's confidence is strictly higher than the existing row's. Otherwise
+   keep the existing row's content.
+
+   **Then stamp every destination you researched:** set `refreshed_at = now()` on
+   ALL its rows, kept ones included, unless research itself failed. `refreshed_at`
+   means "last checked", not "last changed". Stamping only written rows meant a
+   destination with nothing better to find stayed stalest and kept coming back:
+   theur, siddhatek and lunglei each ran 10 of the 14 nights to 2026-11-01, and 11
+   of that night's 20 had run before in those 14 nights. Do not add an exclusion
+   list for lodging-free places; this stamp already sends them to the back.
 
 6. **Verify the rendered pages** for the destinations you touched:
    `node scripts/verify-touched-pages.mjs --dest <slugs>`. Cached greens prove
    nothing — use `--revalidate` or check the AGE column.
 
 7. **Log to `ops_reports`** as job `refresh-stay-picks-agent` with
-   `{ok, fail, pending, total}` and — this is the part the old cron got wrong —
-   set the row's `ok` column to **false** if every destination failed. The
-   watchdog only alerts on `ok: false`; a total wipeout reported as `ok: true` is
-   filed as `needs_review`, which never wakes anyone. Include per-destination
+   `{ok, fail, pending, total, wrote, kept}` and — this is the part the old cron
+   got wrong — set the row's `ok` column to **false** if every destination failed.
+   The watchdog only alerts on `ok: false`; a total wipeout reported as `ok: true`
+   is filed as `needs_review`, which never wakes anyone. Include per-destination
    failure reasons in `summary.fail_reasons`.
+
+   Count each destination once. `ok` = research completed; of those, `wrote` = at
+   least one slot written, `kept` = existing picks were as good or better, with the
+   reason in `summary.kept_reasons`. `fail` = research could not be completed
+   (tools blocked, searches errored, nothing retrievable). **"Kept" is not a
+   failure.** The watchdog raises a silent-failure alarm when `fail` reaches 50% of
+   `total`, and on 2026-11-01 14 healthy "kept" results set it off.
 
 ## Cadence
 
