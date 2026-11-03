@@ -1066,8 +1066,11 @@ def daily() -> int:
             tmp = QUEUE.with_suffix(".tmp"); tmp.write_text(json.dumps(keep, ensure_ascii=False, indent=1)); tmp.replace(QUEUE)
             print(f"[guide] {len(q) - len(keep)} still(s) no longer needed, off the queue")
     # 2. keep BUFFER guides in the pipeline for the target month
-    open_ = {sb for sb in queued if not any(v.get("storyboard") == sb and v.get("status") in ("published", "unconfirmed")
-                                             for v in led.values())}
+    # Only THIS month's unposted guides fill the buffer: October guides left over while guides were
+    # paused (10-20 to 11-03) had blocked every November guide from being queued.
+    open_ = {sb for sb in queued if sb.endswith(f"__guide_m{month:02d}")
+             and not any(v.get("storyboard") == sb and v.get("status") in ("published", "unconfirmed")
+                         for v in led.values())}
     want = BUFFER - len(open_)
     for slug in rot.get(str(month), []):
         if want <= 0:

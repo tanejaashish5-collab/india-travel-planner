@@ -53,6 +53,9 @@ HINDI_ONLY = HERE / "HINDI_ONLY"
 # Founder 2026-10-20: "we need better quality rather than quantity" -> one reel a day on IG/YT.
 # While this file exists the 13:05 IST guide reel does not post. Delete it to bring the guide back.
 GUIDE_PAUSED = HERE / "GUIDE_PAUSED"
+# Founder 2026-11-03 "resume YT guides": the guide reel posts on YouTube only (English guides were
+# YouTube's best format: median 105 views vs ~10 for the rest); Instagram keeps one reel a day.
+GUIDE_YT_ONLY = HERE / "GUIDE_YT_ONLY"
 # Keep this many cut-but-unpublished reels per language. One outage day at
 # Cowork (Mac asleep, credits gone) must not mean a day with nothing to post.
 BUFFER = 2
@@ -415,6 +418,9 @@ def publish(dry: bool = False, kind: str = "story") -> int:
     mine = (lambda v: v.get("kind") == "guide") if is_guide else (lambda v: v.get("kind") != "guide")
     for lang, surf in SURFACE.items():
         plat = surf["platform"]
+        if is_guide and GUIDE_YT_ONLY.exists() and plat != "youtube":
+            _log(f"{plat}: guide reels go to YouTube only (GUIDE_YT_ONLY)")
+            continue
         if any(mine(v) and v.get("platform") == plat and v.get("status") in ("published", "unconfirmed")
                and (v.get("published_at") or "").startswith(today) for v in led.values()):
             _log(f"{plat}: already published a {kind} reel today")
