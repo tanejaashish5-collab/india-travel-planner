@@ -416,11 +416,33 @@ def publish(dry: bool = False, kind: str = "story") -> int:
         os.environ["NAKSHIQ_IG_DAILY_CAP"] = "2"
         os.environ["NAKSHIQ_YT_DAILY_CAP"] = "2"
     mine = (lambda v: v.get("kind") == "guide") if is_guide else (lambda v: v.get("kind") != "guide")
-    for lang, surf in SURFACE.items():
+    surfaces = list(SURFACE.items())
+    if is_guide:
+        # Founder 2026-11-03: dated long-weekend posts (Diwali, Guru Nanak...) go "on Instagram Facebook
+        # YouTube everywhere". Facebook otherwise gets no reels (its own carousel strategy, 09-22), so the
+        # Facebook account is fetched here only, and only a long-weekend row ever gets a Facebook twin.
+        for k, v in list(led.items()):
+            fk = k.rsplit("__", 1)[0] + "__facebook"
+            if (v.get("format") == "longweekend" and v.get("platform") == "instagram"
+                    and v.get("status") == "ready" and fk not in led):
+                led[fk] = {x: y for x, y in v.items() if x not in ("cover",)} | {"platform": "facebook"}
+                if not dry:
+                    _save_ledger(led)
+        if any(v.get("platform") == "facebook" and v.get("status") == "ready" for v in led.values()):
+            prev = os.environ.get("NAKSHIQ_FB_ENABLED")
+            os.environ["NAKSHIQ_FB_ENABLED"] = "1"
+            try:
+                fb = [a for a in ap.get_connected_accounts() if a.get("network") == "facebook"]
+            finally:
+                os.environ.pop("NAKSHIQ_FB_ENABLED") if prev is None else os.environ.update(NAKSHIQ_FB_ENABLED=prev)
+            if fb:
+                accounts["facebook"] = fb[0]
+            surfaces.append(("fb", {"platform": "facebook"}))
+    for lang, surf in surfaces:
         plat = surf["platform"]
-        if is_guide and GUIDE_YT_ONLY.exists() and plat != "youtube":
-            _log(f"{plat}: guide reels go to YouTube only (GUIDE_YT_ONLY)")
-            continue
+        # GUIDE_YT_ONLY (11-03): destination guides post on YouTube only; dated long-weekend posts still go
+        # everywhere (the filter below keeps only those off YouTube).
+        dated_only = is_guide and plat != "youtube" and (GUIDE_YT_ONLY.exists() or plat == "facebook")
         if any(mine(v) and v.get("platform") == plat and v.get("status") in ("published", "unconfirmed")
                and (v.get("published_at") or "").startswith(today) for v in led.values()):
             _log(f"{plat}: already published a {kind} reel today")
@@ -432,10 +454,11 @@ def publish(dry: bool = False, kind: str = "story") -> int:
             ist = datetime.now(ZoneInfo("Asia/Kolkata")).date().isoformat()
             ready = sorted((v for v in led.values() if v.get("kind") == "guide" and v.get("platform") == plat
                             and v["status"] == "ready" and Path(v["file"]).exists()
-                            and (v.get("post_on") or "") <= ist),
+                            and (v.get("post_on") or "") <= ist
+                            and (not dated_only or v.get("format") == "longweekend")),
                            key=lambda v: (v.get("post_on") != ist, v["rendered_at"]))
             if not ready:
-                _log(f"{plat}: no guide reel ready")
+                _log(f"{plat}: no guide reel ready" + (" (only long-weekend posts go here)" if dated_only else ""))
                 continue
             acct = accounts.get(plat)
             if not acct:
