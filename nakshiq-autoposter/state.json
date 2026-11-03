@@ -36,21 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_infographic": "2026-11-01",
-    "PdMu0_carousel": "2026-11-02",
+    "PdMu0_carousel": "2026-11-03",
     "PdMu0": "2026-11-02",
     "PdMu0_evening": "2026-11-02"
   },
   "last_sync": "2026-11-02T22:56:39.969914+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "ross-island",
-      "date": "2026-10-19"
-    },
-    {
-      "destination_id": "puri",
-      "date": "2026-10-19"
-    },
     {
       "destination_id": "mysore",
       "date": "2026-10-20"
@@ -162,6 +153,10 @@
     {
       "destination_id": "varanasi",
       "date": "2026-11-02"
+    },
+    {
+      "destination_id": "marari",
+      "date": "2026-11-03"
     }
   ],
   "posted_formats": {
@@ -11593,6 +11588,33 @@
       "destination": "varanasi",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-11-02"
+    },
+    {
+      "timestamp": "2026-11-03T14:38:19.323434+00:00",
+      "date": "2026-11-03",
+      "platform": "instagram",
+      "post_id": "NCYKd",
+      "destination": "kokernag",
+      "format": "scenario_map_reveal",
+      "media_id": "B2KLb"
+    },
+    {
+      "timestamp": "2026-11-03T14:40:26.705825+00:00",
+      "date": "2026-11-03",
+      "platform": "youtube",
+      "post_id": "FPVkD",
+      "destination": "kokernag",
+      "format": "scenario_map_reveal",
+      "media_id": "ijlLw"
+    },
+    {
+      "timestamp": "2026-11-03T15:33:34.302013+00:00",
+      "date": "2026-11-03",
+      "platform": "facebook",
+      "post_id": "Z0NN3",
+      "destination": "marari",
+      "format": "carousel.skip_list",
+      "media_id": "carousel_skip_list_2026-11-03"
     }
   ],
   "theme_usage": {
@@ -11669,10 +11691,6 @@
         "2026-09-01",
         "2026-09-22",
         "2026-09-29"
-      ],
-      "hampi": [
-        "2026-05-28",
-        "2026-08-04"
       ],
       "ooty": [
         "2026-05-29",
@@ -12270,10 +12288,6 @@
         "2026-08-27",
         "2026-10-15"
       ],
-      "hampi": [
-        "2026-05-28",
-        "2026-08-04"
-      ],
       "nubra-valley": [
         "2026-06-02",
         "2026-06-06",
@@ -12538,10 +12552,6 @@
         "2026-07-07",
         "2026-10-06"
       ],
-      "best-motorcycle-routes": [
-        "2026-06-03",
-        "2026-08-04"
-      ],
       "after-dark-experiences": [
         "2026-06-04",
         "2026-08-11"
@@ -12625,9 +12635,6 @@
       ]
     },
     "tourist_map_states": {
-      "TG": [
-        "2026-08-04"
-      ],
       "MZ": [
         "2026-08-06"
       ],
@@ -12636,19 +12643,11 @@
       ]
     },
     "tourist_map_combos": {
-      "TG_editorial_dark": [
-        "2026-08-04"
-      ],
       "MZ_cartographic_dark": [
         "2026-08-06"
       ],
       "KL_cartographic_dark": [
         "2026-09-26"
-      ]
-    },
-    "collection_carousel_dests:best-motorcycle-routes": {
-      "zanskar": [
-        "2026-08-04"
       ]
     },
     "emergency": {
@@ -12746,8 +12745,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "stays": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
