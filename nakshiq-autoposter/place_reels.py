@@ -66,7 +66,8 @@ PLACE_FORMATS = ("map_reveal", "two_months", "tiny_world")
 # Order matters: casts are apart, and the weekly shift is TWO days (a one-day shift made every Sunday
 # and the following Monday the same format). 2 is coprime with 7, so over 7 weeks every format
 # lands on every weekday.
-WEEK = ("map_reveal", "cast", "data_card", "two_months", "cast", "tiny_world", "wildcard")
+# tiny_world dropped 2026-11-03 (founder: "the other one is useless"); its slot is a second wildcard.
+WEEK = ("map_reveal", "cast", "data_card", "two_months", "cast", "wildcard", "wildcard")
 SHIFT = 2
 REPEAT_DAYS = 60                      # a place is not re-used by the same format inside this window
 DUR = {"map_reveal": 15.0, "two_months": 13.0, "tiny_world": 15.0}
@@ -846,8 +847,7 @@ def prepare(today: date | None = None) -> int:
         return 0
     led = _load(LEDGER, {})
     rows = _load(QUEUE, [])
-    for fmt, suffix, q in (("tiny_world", "__tiny_world", lambda s: queue_tiny(s)),
-                           ("two_months", "__two_months", lambda s: queue_two(s, today))):
+    for fmt, suffix, q in (("two_months", "__two_months", lambda s: queue_two(s, today)),):   # tiny_world dropped 11-03
         used = {v.get("slug") for v in led.values() if v.get("kind") == fmt}
         # Clips made from the AI site hero (no Commons record beside them) are re-made for the SAME
         # place from a real photo (founder 2026-10-16 "go"), instead of moving on to a new place.

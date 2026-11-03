@@ -87,7 +87,7 @@ def main(argv: list[str]) -> int:
     # that refuses (no usable Commons photo) is skipped and the next one takes its turn.
     busy_two, busy_tiny = taken(rows, led, "__two_months"), taken(rows, led, "__tiny_world")
     order = ([("two_months", s) for s in pool if s not in busy_two][:two_room * 3]
-             + [("tiny_world", s) for s in pool if s not in busy_tiny])
+             )   # tiny_world dropped 2026-11-03 (founder): no new miniatures
     if a.dry:
         print(f"[veo_fill] DRY wants {want} storyboard(s) (two_months room {two_room}); first in line: {order[:want + 4]}")
         return 0
