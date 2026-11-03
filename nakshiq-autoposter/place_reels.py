@@ -288,7 +288,8 @@ def ref_credit(sb: str) -> dict:
 
 
 def _ai_from(c: dict, what: str) -> str:
-    return f"{what} made from a photo of the real place: {c.get('author') or 'unknown'} ({c.get('licence')}), Wikimedia Commons"
+    # No "AI" wording in captions or on screen (founder 2026-11-03); YouTube's upload flag carries the disclosure.
+    return f"Made from a photo of the real place: {c.get('author') or 'unknown'} ({c.get('licence')}), Wikimedia Commons"
 
 
 # ─── format facts ─────────────────────────────────────────────────────────
@@ -699,14 +700,13 @@ def caption(row: dict) -> tuple[str, str]:
         g, b = MONTHS[row["good"]], MONTHS[row["bad"]]
         cap = (f"{nm} in {g}: {row['good_score']}/10. In {b}: {row['bad_score']}/10. Same place, two very different trips.\n\n"
                f"Send this to whoever's planning it with you.\n\n{nm}, every month: {url}\n\n"
-               f"Scores and reasons are NakshIQ's real data. The footage is AI-generated from a photo of the real place, "
-               f"showing what each month's verdict describes.{credits}"
+               f"Scores and reasons are NakshIQ's real data, made from a photo of the real place.{credits}"
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{nm}: {g} or {b}? | NakshIQ"
     if row["kind"] == "tiny_world":
         cap = (f"{nm}, in miniature. Go in {row['best']}: {row['best_score']}/10.\n\n"
                f"Send this to whoever you'd go with.\n\n{nm}, month by month: {url}\n\n"
-               f"The miniature is AI-generated from a photo of the real place. Scores are NakshIQ's real data.{credits}"
+               f"Made from a photo of the real place. Scores are NakshIQ's real data.{credits}"
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{nm}, in miniature | NakshIQ"
     raise ValueError(row["kind"])

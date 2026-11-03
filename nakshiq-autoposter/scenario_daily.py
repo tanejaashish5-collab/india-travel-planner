@@ -314,13 +314,11 @@ def caption_for(row: dict) -> tuple[str, str]:
                                ("skip", "who should skip it"), ("cost", f"what {mon} really costs"),
                                ("kids", "how it works with kids")) if k in kinds]
         said = (", ".join(said[:-1]) + " and " + said[-1]) if len(said) > 1 else "".join(said)
-        ai = (row.get("sources") or {}).get("ai", 1)
         opener = GR.hook_line(row["slug"], int(row.get("month") or 0), name, mon)
         cap = (f"{opener}\n\nInside: {said}.\n\n"
                f"Save this for the trip. Send it to whoever's coming with you.\n\n"
                f"Full {name} guide, month by month: {url}\n\n"
                f"Every fact on screen is NakshIQ's real data. "
-               + ("Some images are AI-generated, and say so on screen." if ai else "")
                + f"{photo_credits}"
                f"\n\n#{tag} #indiatravel #{mon.lower()}travel #NakshIQ")
         return cap, f"{name} in {mon}: the whole guide in {int(round(row.get('seconds') or 45))} seconds | NakshIQ"
@@ -332,7 +330,7 @@ def caption_for(row: dict) -> tuple[str, str]:
                f"same hotel costs in and out of season.\n\n"
                f"Send this to whoever's planning the trip with you.\n\n{_comment_cta('en', row.get('platform', ''))}"
                f"{name}, month by month: {url}\n\n"
-               f"Background footage is AI-generated. Scores and prices are NakshIQ's real data."
+               f"Scores and prices are NakshIQ's real data."
                f"\n\n#{tag} #indiatravel #NakshIQ")
         return cap, f"{name} in {best}: {sc}/10 | NakshIQ"
     name = _dest_name(row["slug"])
@@ -345,7 +343,7 @@ def caption_for(row: dict) -> tuple[str, str]:
     hook = row.get("caption_hook") or hook
     url = f"https://www.nakshiq.com/en/destination/{row['slug']}"
     tag = row["slug"].replace("-", "")
-    disclose = "Dramatised scene, AI-generated footage. The facts are NakshIQ's real data."
+    disclose = "The facts are NakshIQ's real data."   # no AI wording in captions (founder 2026-11-03)
     # Sends (DM shares) are Instagram's top signal for reaching non-followers
     # (Mosseri; growth plan 2026-09-29), and these reels are about deciding a
     # trip WITH someone, so the second line asks for exactly that.

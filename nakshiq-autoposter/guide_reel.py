@@ -708,7 +708,7 @@ def credit_line(p: Path, kind: str) -> str:
         m = json.loads(p.with_suffix(".json").read_text())
         return _short(f"Photo: {m.get('author') or 'unknown'}, {m.get('licence')}, Wikimedia Commons", 80)
     if kind == "ai":
-        return "AI-generated image · facts are NakshIQ data"
+        return "Facts are NakshIQ data"   # no AI wording on screen (founder 2026-11-03)
     return "Facts are NakshIQ data"
 
 
