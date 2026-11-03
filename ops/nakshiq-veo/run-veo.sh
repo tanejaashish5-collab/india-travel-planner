@@ -28,7 +28,7 @@ bash intake.sh --named || say "WARN intake failed"
 #     notification nobody reads unless the founder pastes it into a chat. The
 #     task now also writes _report-<date>.md into the inbox; file it and echo it
 #     here so the per-shot failure reasons ("Audio generation failed" etc.) are
-#     in this log, next to the render, where the 14:50 check-in reads them.
+#     in this log, next to the render, where the check-in reads them.
 mkdir -p data/cowork-reports
 for rep in "$HOME"/Downloads/nakshiq-veo-inbox/_report-*.md; do
   [ -f "$rep" ] || continue
@@ -96,8 +96,32 @@ AGE=$(python3 -c "import json,datetime as d;g=json.load(open('data/reel-data.jso
       {stdio:"inherit",cwd:"nakshiq-autoposter",env:process.env}).status ?? 1);' ) \
   || say "WARN guide daily failed"
 
+# 1c. PLACE FORMATS (founder 2026-10-15: fewer AI people, rotate formats weekly). Keeps one
+#     tiny_world storyboard (2 free stills + 2 Veo shots) queued ahead of its weekly slot, so
+#     the export below hands it to the next Cowork run. A no-op until ROTATION_START exists.
+( cd "$HOME/Desktop/India Travel Planner/nakshiq-autoposter" && python3 place_reels.py prepare ) \
+  || say "WARN place_reels prepare failed"
+
+# 1c2. FILL THE DAY (founder 2026-10-17: using all ~350 free Veo credits every day is P1, "at least we
+#      have the clips"). Whatever the steps above left unused goes to people-free place storyboards
+#      (tiny_world, plus a few time-bound two_months), building a corpus that needs no ElevenLabs.
+( cd "$HOME/Desktop/India Travel Planner/nakshiq-autoposter" && python3 veo_fill.py ) \
+  || say "WARN veo_fill failed"
+
 PENDING=$(python3 -c "import json,os;p='veo_queue.json';print(sum(1 for r in (json.load(open(p)) if os.path.exists(p) else []) if r.get('status')=='pending'))" 2>/dev/null || echo 0)
 say "pending clips: $PENDING"
+
+# 1d. LOW-WORK ALARM (founder 2026-10-17: "we wasted our credits" - the day's Cowork run had only
+#     4 free stills while 350 Veo credits sat unused, and nothing said so the evening before).
+#     Under 340 video credits queued = a short run (founder 2026-11-03: "Veo needs to use 350 credits
+#     everyday without fail"; was 120, so a 0-of-350 night on 11-03 passed as fine): notify now,
+#     while there is still an evening to fix it.
+VCRED=$(python3 -c "import json,os;p='veo_queue.json';print(sum(int(r.get('credits') or 0) for r in (json.load(open(p)) if os.path.exists(p) else []) if r.get('status')=='pending'))" 2>/dev/null || echo 0)
+say "video credits queued for the next Cowork run: $VCRED of 350"
+if [ "$VCRED" -lt 340 ]; then
+  say "WARN LOW WORK: only $VCRED of 350 Veo credits queued for the next run - new scripts or retakes needed"
+  osascript -e "display notification \"Only $VCRED of 350 Veo credits queued for tomorrow. Ask Claude for scripts or retakes tonight.\" with title \"NakshIQ Veo: low work\"" >/dev/null 2>&1 || true
+fi
 if [ "$PENDING" -eq 0 ]; then
   say "nothing pending — exiting clean"
   say "=== veo-daily end (exit=0) ==="

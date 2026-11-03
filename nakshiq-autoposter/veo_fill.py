@@ -34,10 +34,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import place_reels as P  # noqa: E402
 
 TARGET = 340      # 7 Flow accounts x 50 credits, less one clip of slack
-MAX_NEW = 16      # storyboards added per run (32 Veo clips): what one Cowork session has managed
-TWO_CAP = 30      # two_months storyboards waiting unposted (queued or made). Was 6; raised 2026-10-20 when the
+MAX_NEW = 17      # storyboards added per run (34 Veo clips = 340 credits); was 16 (320), short of the target
+TWO_CAP = 120     # two_months storyboards waiting unposted (queued or made). Was 6; raised 2026-10-20 when the
                   # founder locked the voiced place reel, whose November and skip-month scenes ARE the two_months
                   # clips: one pair per reel, one reel a day, so about a month of footage ahead.
+                  # Raised to 120 on 2026-11-03 (founder: "Veo needs to use 350 credits everyday without fail").
+                  # With tiny_world dropped, two_months is the only filler, so a cap of 30 starved the run to 0.
+                  # A storyboard's good month is one of the next three, so stock older than that refuses at render.
 
 
 def pending_credits(rows: list[dict]) -> int:
@@ -86,8 +89,9 @@ def main(argv: list[str]) -> int:
     # Candidates in order: the few time-bound two_months first, then evergreen tiny_world. A place
     # that refuses (no usable Commons photo) is skipped and the next one takes its turn.
     busy_two, busy_tiny = taken(rows, led, "__two_months"), taken(rows, led, "__tiny_world")
-    order = ([("two_months", s) for s in pool if s not in busy_two][:two_room * 3]
-             )   # tiny_world dropped 2026-11-03 (founder): no new miniatures
+    # Walk the WHOLE pool: on 11-03 the first 12 places all refused (December's notes name nothing a
+    # camera can show) and the run queued 0 of 340. tiny_world dropped 2026-11-03 (founder).
+    order = [("two_months", s) for s in pool if s not in busy_two]
     if a.dry:
         print(f"[veo_fill] DRY wants {want} storyboard(s) (two_months room {two_room}); first in line: {order[:want + 4]}")
         return 0

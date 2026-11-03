@@ -407,8 +407,15 @@ def pick_two(slug: str, today: date) -> tuple[dict, dict]:
     least three months away, both with a note a camera can show."""
     sc, labels = scores(slug)
     good, _ = next_best(slug, today)
-    a = scene(slug, good)
-    if not a:
+    # The best month first; if its note names nothing a camera can show, another 8+ month of the same
+    # window (2026-11-03: 272 of 382 places refused on December alone and the Veo run fell to 0 of 350).
+    window = [(today.month - 1 + k) % 12 + 1 for k in (1, 2, 3)]
+    for g in [good] + sorted((m for m in window if m != good and sc[m - 1] >= 8), key=lambda m: -sc[m - 1]):
+        a = scene(slug, g)
+        if a:
+            good = g
+            break
+    else:
         raise Refuse(f"{MONTHS[good]}'s note names nothing a camera can show")
     bad = sorted((m for m in range(1, 13) if sc[m - 1] <= 4 and min((m - good) % 12, (good - m) % 12) >= 3),
                  key=lambda m: (sc[m - 1], labels[m - 1] != "skip"))
