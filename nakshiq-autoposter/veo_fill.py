@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """veo_fill.py: spend the day's free Veo credits on people-free place clips, every run.
 
-    python3 veo_fill.py                 # top the queue up to 340 video credits
+    python3 veo_fill.py                 # top the queue up to 350 video credits
     python3 veo_fill.py --dry           # say what it would queue, change nothing
     python3 veo_fill.py --target 200 --max-new 8
 
@@ -33,7 +33,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import place_reels as P  # noqa: E402
 
-TARGET = 340      # 7 Flow accounts x 50 credits, less one clip of slack
+TARGET = 350      # 7 Flow accounts x 50 credits. Was 340: 30 credits carried over + 15 storyboards x 20 stopped at 330 (11-04)
 MAX_NEW = 17      # storyboards added per run (34 Veo clips = 340 credits); was 16 (320), short of the target
 TWO_CAP = 120     # two_months storyboards waiting unposted (queued or made). Was 6; raised 2026-10-20 when the
                   # founder locked the voiced place reel, whose November and skip-month scenes ARE the two_months
