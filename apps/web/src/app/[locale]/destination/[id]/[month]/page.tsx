@@ -16,6 +16,7 @@ import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 import { VillagePage } from "@/components/village-page";
 import { getVillage } from "@/lib/villages";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 2592000; // 30d (was 7d, cut ISR-write bill 2026-07-25) — month-segment URL is rollover-safe; prewarm cron warms next month + /api/admin/revalidate flushes edits. Was 24h.
 export const dynamicParams = true;
@@ -386,14 +387,7 @@ export async function generateMetadata({
   return {
     title: finalTitle,
     description: finalDescription,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: `https://www.nakshiq.com/en/destination/${id}/${month}`,
-        hi: `https://www.nakshiq.com/hi/destination/${id}/${month}`,
-        "x-default": `https://www.nakshiq.com/en/destination/${id}/${month}`,
-      },
-    },
+    ...localeAlternates(locale, `/destination/${id}/${month}`),
     openGraph: {
       title: finalOgTitle,
       description: finalDescription,

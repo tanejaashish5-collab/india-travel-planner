@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isHiNoindexedPath } from "./hi-noindex";
 
 const BASE = "https://www.nakshiq.com";
 
@@ -30,7 +31,8 @@ export function localeAlternates(locale: string, path: string): Pick<Metadata, "
       canonical: `${BASE}/${locale}${p}`,
       languages: {
         en: `${BASE}/en${p}`,
-        hi: `${BASE}/hi${p}`,
+        // No hreflang to a /hi twin we have asked Google not to index.
+        ...(isHiNoindexedPath(p) ? {} : { hi: `${BASE}/hi${p}` }),
         // x-default points search engines at the language-agnostic version
         // when the user's locale doesn't match en or hi. Convention is to
         // point this at the default (English) variant.

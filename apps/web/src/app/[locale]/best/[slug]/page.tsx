@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DEFAULT_OG_IMAGE } from "@/lib/seo-utils";
+import { DEFAULT_OG_IMAGE, localeAlternates } from "@/lib/seo-utils";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -177,14 +177,7 @@ export async function generateMetadata({
   return {
     title,
     description: description.slice(0, 160),
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: `${BASE}/en/best/${slug}`,
-        hi: `${BASE}/hi/best/${slug}`,
-        "x-default": `${BASE}/en/best/${slug}`,
-      },
-    },
+    ...localeAlternates(locale, `/best/${slug}`),
     openGraph: {
       title,
       description,

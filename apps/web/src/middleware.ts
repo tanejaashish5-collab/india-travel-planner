@@ -2,6 +2,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 import { STATE_MAP } from "./lib/seo-maps";
+import { isHiNoindexedPath } from "./lib/hi-noindex";
 import knownSlugsData from "../data/known-destination-slugs.json";
 import knownVillagesData from "../data/known-village-slugs.json";
 
@@ -341,23 +342,14 @@ export default function middleware(request: NextRequest) {
     }
   }
 
-  // Hindi-duplicate consolidation 2026-06-03 — these /hi page types render
-  // ENGLISH content (no Hindi translation), so Google was correctly folding
-  // them into their /en twins. The GSC coverage export flagged ~150 of them
-  // under "Duplicate, Google chose different canonical than user" while we kept
-  // declaring /hi self-canonical — a conflicting signal. Resolve it: noindex
-  // the English /hi duplicates so /en is the single indexed version; `follow`
-  // keeps link equity flowing through. Pages stay reachable for users.
-  // Each prefix was verified to serve English on /hi (title + H1) before
-  // inclusion. Translated /hi types are DELIBERATELY excluded: `vs` (dest-vs-
-  // dest, Hindi) and `destination/*` (Hindi). festivals is scoped to the
-  // /state listing pages only; individual /festivals/[slug] pages are left
-  // alone in case they carry Hindi editorial.
+  // Hindi-duplicate consolidation (2026-06-03, widened 2026-11-05): these /hi
+  // page types carry a mostly English body, so /en is the single indexed version.
+  // `follow` keeps link equity flowing and the pages stay reachable for users.
+  // The list and its evidence live in lib/hi-noindex.ts.
   if (
     response.status === 200 &&
-    /^\/hi\/(?:where-to-go|state|with-kids|india-vs|the-window|guide|arrival|skip-list|blog|festivals\/state)(?:\/|$)/.test(
-      request.nextUrl.pathname,
-    )
+    request.nextUrl.pathname.startsWith("/hi/") &&
+    isHiNoindexedPath(request.nextUrl.pathname.slice(4))
   ) {
     response.headers.set("X-Robots-Tag", "noindex, follow");
   }

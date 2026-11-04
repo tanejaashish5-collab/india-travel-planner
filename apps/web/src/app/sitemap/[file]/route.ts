@@ -6,6 +6,7 @@ import { allBestSlugs } from "@/lib/best-pages";
 import { allVillagePaths } from "@/lib/village-slugs";
 import { getCachedDestinationsIndex, getCachedItinerarySlugs } from "@/lib/cached-data";
 import { FEATURES } from "@/lib/features";
+import { isHiNoindexedPath } from "@/lib/hi-noindex";
 
 // Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
 // generateSitemaps() convention because its auto-generated /sitemap.xml
@@ -56,27 +57,11 @@ type Entry = {
   lastModified?: string | null;
 };
 
-// Mirror of middleware.ts (lines 305-312) noindex rule: these /hi path
-// families render ENGLISH content and are served X-Robots-Tag: noindex,follow.
-// A sitemap should list only canonical, indexable URLs — submitting the
-// noindex'd /hi duplicates permanently refills GSC's "Excluded by noindex" +
-// duplicate-canonical buckets and wastes crawl budget. So we emit only the /en
-// variant for these families. KEEP IN SYNC with the middleware regex.
-// (Translated /hi families — destination, vs, festivals/<slug>, best, explore,
-// treks, cost, etc. — are NOT here and keep both locales.)
-const HI_NOINDEX_PREFIXES = [
-  "where-to-go", "state", "with-kids", "india-vs", "the-window",
-  "guide", "arrival", "skip-list", "blog", "festivals/state",
-];
-
-function isHiNoindexed(path: string): boolean {
-  return HI_NOINDEX_PREFIXES.some((p) => path === p || path.startsWith(`${p}/`));
-}
-
 function entry(path: string, lastModified?: string | null): Entry[] {
   return LOCALES.flatMap((locale) => {
-    // Skip the /hi variant of noindex'd English-duplicate families.
-    if (locale === "hi" && isHiNoindexed(path)) return [];
+    // A sitemap lists only indexable URLs, so noindexed /hi twins stay out
+    // (they would refill GSC's "Excluded by noindex" bucket and waste crawl).
+    if (locale === "hi" && isHiNoindexedPath(path)) return [];
     return [{
       url: `${BASE}/${locale}${path ? `/${path}` : ""}`,
       lastModified,
@@ -321,10 +306,9 @@ async function buildChunk(id: string): Promise<Entry[]> {
     const supabase = getSupabase();
     if (!supabase) return [];
 
-    const [trapResult, destIds, regionResult] = await Promise.all([
+    const [trapResult, destIds] = await Promise.all([
       supabase.from("tourist_trap_alternatives").select("trap_destination_id, alternative_destination_id").order("rank"),
       getDestinationIds(),
-      supabase.from("regions").select("id").order("id"),
     ]);
 
     const { VS_PAIRS } = await import("@/lib/vs-pairs");
@@ -354,9 +338,10 @@ async function buildChunk(id: string): Promise<Entry[]> {
       entry(`with-kids/${dId}`),
     );
 
-    const regionMonthEntries = (regionResult.data ?? []).flatMap((r: any) =>
-      MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`)),
-    );
+    // NOTE: `region/<id>/<month>` URLs are deliberately NOT listed (removed
+    // 2026-11-05). 27 of 45 region ids 301 to /state/<slug> and lose the month,
+    // which made 648 of the 1,080 URLs redirects, and the whole family earned 2
+    // clicks in 28 days. The pages and redirects stay for inbound links.
 
     // Per-festival pages — 331 rows × 2 locales ≈ 662 URLs. Collision-aware
     // slugs (11 duplicates carry a -{destination_id} suffix).
@@ -378,7 +363,7 @@ async function buildChunk(id: string): Promise<Entry[]> {
       entry(`luxury/${r.id}`),
     );
 
-    return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries, ...festivalEntries, ...luxuryEntries];
+    return [...vsEntries, ...skipEntries, ...kidsEntries, ...festivalEntries, ...luxuryEntries];
   }
 
   if (id === "5") {
