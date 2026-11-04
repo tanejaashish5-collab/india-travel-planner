@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nakshiq.hi-noindex-check</string>
+  <!-- Read of the 2026-11-05 Hindi noindex cleanup. Thursdays, once the previous
+       Mon-Sun is final in Search Console, plus 16 and 17 Dec for the 6-week read.
+       The final read boots this job out. Install:
+         cp scripts/com.nakshiq.hi-noindex-check.plist ~/Library/LaunchAgents/
+         launchctl load ~/Library/LaunchAgents/com.nakshiq.hi-noindex-check.plist -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/ashishtaneja/Desktop/India Travel Planner/scripts/hi-noindex-check.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>10</integer><key>Minute</key><integer>40</integer></dict>
+    <dict><key>Month</key><integer>12</integer><key>Day</key><integer>16</integer><key>Hour</key><integer>10</integer><key>Minute</key><integer>40</integer></dict>
+    <dict><key>Month</key><integer>12</integer><key>Day</key><integer>17</integer><key>Hour</key><integer>10</integer><key>Minute</key><integer>40</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/ashishtaneja/.claude/hi-noindex-check.log</string>
+  <key>StandardErrorPath</key><string>/Users/ashishtaneja/.claude/hi-noindex-check.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
