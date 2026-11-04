@@ -36,24 +36,10 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-11-03",
-    "PdMu0": "2026-11-02",
-    "PdMu0_evening": "2026-11-02"
+    "PdMu0_carousel": "2026-11-04"
   },
   "last_sync": "2026-11-02T22:56:39.969914+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "mysore",
-      "date": "2026-10-20"
-    },
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-10-20"
-    },
-    {
-      "destination_id": "mukteshwar",
-      "date": "2026-10-20"
-    },
     {
       "destination_id": "pazhamudircholai",
       "date": "2026-10-21"
@@ -157,6 +143,10 @@
     {
       "destination_id": "marari",
       "date": "2026-11-03"
+    },
+    {
+      "destination_id": "kumarakom",
+      "date": "2026-11-04"
     }
   ],
   "posted_formats": {
@@ -11615,6 +11605,60 @@
       "destination": "marari",
       "format": "carousel.skip_list",
       "media_id": "carousel_skip_list_2026-11-03"
+    },
+    {
+      "timestamp": "2026-11-04T07:36:41.906850+00:00",
+      "date": "2026-11-04",
+      "platform": "instagram",
+      "post_id": "K3eCb",
+      "destination": "diwali-2026",
+      "format": "scenario_longweekend",
+      "media_id": "1EZX6"
+    },
+    {
+      "timestamp": "2026-11-04T07:37:12.822219+00:00",
+      "date": "2026-11-04",
+      "platform": "youtube",
+      "post_id": "jwBEx",
+      "destination": "diwali-2026",
+      "format": "scenario_longweekend",
+      "media_id": "MWAiq"
+    },
+    {
+      "timestamp": "2026-11-04T07:37:54.306851+00:00",
+      "date": "2026-11-04",
+      "platform": "facebook",
+      "post_id": "PvZUZ",
+      "destination": "diwali-2026",
+      "format": "scenario_longweekend",
+      "media_id": "yUkpT"
+    },
+    {
+      "timestamp": "2026-11-04T14:37:02.255869+00:00",
+      "date": "2026-11-04",
+      "platform": "instagram",
+      "post_id": "MWaoH",
+      "destination": "hampi",
+      "format": "scenario_list_of_3",
+      "media_id": "p7Aio"
+    },
+    {
+      "timestamp": "2026-11-04T14:37:47.474639+00:00",
+      "date": "2026-11-04",
+      "platform": "youtube",
+      "post_id": "gitWm",
+      "destination": "hampi",
+      "format": "scenario_list_of_3",
+      "media_id": "2swZa"
+    },
+    {
+      "timestamp": "2026-11-04T15:40:11.244709+00:00",
+      "date": "2026-11-04",
+      "platform": "facebook",
+      "post_id": "rQged",
+      "destination": "kumarakom",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-11-04"
     }
   ],
   "theme_usage": {
@@ -12238,10 +12282,6 @@
         "2026-06-11",
         "2026-10-11"
       ],
-      "reel_map": [
-        "2026-06-13",
-        "2026-08-05"
-      ],
       "data_carousel": [
         "2026-07-01",
         "2026-08-02",
@@ -12658,16 +12698,6 @@
     "eateries": {
       "6928f615-bad2-4b7e-93d8-56483deb33f1": [
         "2026-10-03"
-      ]
-    },
-    "reel_map_campaigns": {
-      "may_master_the_sikkim_logistics": [
-        "2026-08-05"
-      ]
-    },
-    "reel_map_formats": {
-      "score_pulse": [
-        "2026-08-05"
       ]
     },
     "collection_carousel_dests:photography-spots": {
