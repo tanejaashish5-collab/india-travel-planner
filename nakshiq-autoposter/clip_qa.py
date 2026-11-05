@@ -101,7 +101,7 @@ def verdict(seq: list[int], static: bool, cast: int | None) -> str:
 
 
 # People-free formats (place_reels.py, founder 2026-10-15): a cast of 0, so any lasting figure flags.
-PLACE_ONLY = ("__tiny_world", "__map_reveal", "__two_months")
+PLACE_ONLY = ("__tiny_world", "__map_reveal", "__two_months", "__opener")
 
 
 def _shot_info(storyboard: str) -> dict[str, tuple[bool, int | None, bool]]:

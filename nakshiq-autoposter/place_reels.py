@@ -845,6 +845,60 @@ def queue_two(slug: str, today: date) -> int:
     return len(new)
 
 
+def opener_sb(slug: str) -> str:
+    return f"{slug}__opener"
+
+
+def queue_opener(slug: str, today: date, dry: bool = False) -> int:
+    """One 8 s Veo clip of the real place, from a free still that recreates a real Commons photo in
+    9:16 (10 credits). Founder 2026-11-05 picked these to use the daily Veo credits once two_months
+    runs out: AI openers with no reference kept showing the wrong place (Darjeeling, Gokarna, Shillong,
+    Munnar, Jodhpur, Tawang, Jaisalmer), so every place gets a real-looking opener ready for its reel."""
+    if not dry and _cowork_window():
+        raise SystemExit("15:30-21:00 local: Cowork is generating off the task file; not touching the queue")
+    sb = opener_sb(slug)
+    if dry:
+        if not ref_photo(slug):
+            raise Refuse("no real Commons photo of the place to build from")
+        photo = f"{sb}__photo.jpg"
+    else:
+        photo = _photo_ref(sb, slug)
+    g = (data().get("geo") or {}).get(slug) or {}
+    where = f"{name(slug)}, {g.get('state_name')}" if g.get("state_name") else name(slug)
+    # Crowds from the coming good month (a busy place stays busy); motion and light from the photo itself,
+    # never the month: a December "fog rolls in" over a sunny photo of boatmen made a clip that lies.
+    try:
+        m, _ = next_best(slug, today)
+    except Refuse:
+        m = today.month
+    sc = scene(slug, m)
+    busy = sc["crowd"] if sc else crowded(slug, m, month_note(slug, m))
+    people = (" It is a busy place: keep it busy, with crowds of small distant figures, and no close-up people." if busy
+              else " Keep any people as small and distant as in the photograph; add no close-up people.")
+    still = (f"Recreate this photograph of {where}, India, as a vertical 9:16 frame: exactly the same place, "
+             "viewpoint, season, light, buildings, hills and landmarks, extending the frame above and below "
+             "naturally. Photorealistic, natural colour." + people + " No text, no signs, no watermark.")
+    shot = ("The camera holds almost still with a very slow push-in. Only the natural movement of what is in "
+            "the picture: water ripples, clouds drift, leaves stir, mist or smoke moves"
+            + (", distant figures go about their day." if busy else ". No one walks into the frame.")
+            + " The light and season stay exactly as in the first frame. Ambient sound of the place. No text.")
+    rows = [] if dry else _load(QUEUE, [])
+    have = {r["clip"] for r in rows}
+    base = {"slug": slug, "format": sb, "pipeline": "v3", "storyboard": sb, "take": 1}
+    want = [dict(base, clip=photo, kind="ref", role="photo", status="live", seconds=0, credits=0,
+                 prompt=_ref_prompt(sb, photo)),
+            dict(base, clip=f"{sb}__kf1.jpg", kind="keyframe", role="kf1", status="pending", seconds=0,
+                 credits=0, prompt=still, refs=[photo]),
+            dict(base, clip=f"{sb}__s1.mp4", kind="shot", mode="frames", role="s1", status="pending",
+                 seconds=8, credits=10, prompt=shot, start_frame=f"{sb}__kf1.jpg", end_frame=None, crowd=busy)]
+    new = [r for r in want if r["clip"] not in have]
+    if new and not dry:
+        tmp = QUEUE.with_suffix(".tmp")
+        tmp.write_text(json.dumps(rows + new, indent=2, ensure_ascii=False))
+        tmp.replace(QUEUE)
+    return len(new)
+
+
 def prepare(today: date | None = None) -> int:
     """Keep ONE tiny_world and ONE two_months storyboard ready or queued ahead of their weekly
     slots (20 credits each a week). Runs from run-veo.sh after the ingest; off with the rotation."""

@@ -14,6 +14,8 @@ The place formats need neither, so the spare credits go to them and build a corp
               Evergreen, so it makes up most of the corpus.
   two_months  the good month and the skip month of the same real place, 20 credits. Tied to the
               coming months, so at most TWO_CAP wait unposted at a time (one posts a week).
+  opener      (2026-11-05) one 8 s clip of a place from a real Commons photo, 10 credits: the opener
+              for that place's voiced reel. Evergreen; fills whatever two_months leaves.
 Work already queued (retakes, cast reels, the rotation's own prepare) counts toward the target
 and goes first: these rows are appended at the end of the queue.
 
@@ -34,7 +36,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import place_reels as P  # noqa: E402
 
 TARGET = 350      # 7 Flow accounts x 50 credits. Was 340: 30 credits carried over + 15 storyboards x 20 stopped at 330 (11-04)
-MAX_NEW = 17      # storyboards added per run (34 Veo clips = 340 credits); was 16 (320), short of the target
+MAX_NEW = 35      # Veo clips added per run (350 credits): 7 accounts x 5 clips. Was 17 two_months storyboards
 TWO_CAP = 120     # two_months storyboards waiting unposted (queued or made). Was 6; raised 2026-10-20 when the
                   # founder locked the voiced place reel, whose November and skip-month scenes ARE the two_months
                   # clips: one pair per reel, one reel a day, so about a month of footage ahead.
@@ -84,30 +86,34 @@ def main(argv: list[str]) -> int:
     if have >= a.target:
         return 0
     pool = P.candidates("map_reveal", today)          # places with a good coming month, soonest first
-    want = min((a.target - have) // 20, a.max_new)
+    budget = min(a.target - have, a.max_new * 10)      # credits to add this run
     two_room = max(0, TWO_CAP - waiting_two(rows, led))
-    # Candidates in order: the few time-bound two_months first, then evergreen tiny_world. A place
-    # that refuses (no usable Commons photo) is skipped and the next one takes its turn.
-    busy_two, busy_tiny = taken(rows, led, "__two_months"), taken(rows, led, "__tiny_world")
-    # Walk the WHOLE pool: on 11-03 the first 12 places all refused (December's notes name nothing a
-    # camera can show) and the run queued 0 of 340. tiny_world dropped 2026-11-03 (founder).
-    order = [("two_months", s) for s in pool if s not in busy_two]
+    # Candidates in order: the time-bound two_months (20 credits) first, then one real-photo opener per
+    # place (10 credits; founder 2026-11-05), the pool's places first and then every other place. Openers
+    # also take the last 10 credits a run of 20s cannot (11-05 stopped at 340). tiny_world dropped 11-03.
+    # A place that refuses (no usable Commons photo, no filmable note) is skipped; the next takes its turn.
+    busy_two, busy_open = taken(rows, led, "__two_months"), taken(rows, led, "__opener")
+    rest = [s for s in sorted((P.data().get("months") or {})) if s not in set(pool)]
+    order = ([("two_months", s) for s in pool if s not in busy_two]
+             + [("opener", s) for s in pool + rest if s not in busy_open])
+    cost = {"two_months": 20, "opener": 10}
     if a.dry:
-        print(f"[veo_fill] DRY wants {want} storyboard(s) (two_months room {two_room}); first in line: {order[:want + 4]}")
+        print(f"[veo_fill] DRY wants {budget} credits (two_months room {two_room}); first in line: {order[:12]}")
         return 0
     added, two_added, refused = 0, 0, []
     for fmt, slug in order:
-        if added >= want:
+        if budget < 10:
             break
-        if fmt == "two_months" and two_added >= two_room:
+        if cost[fmt] > budget or (fmt == "two_months" and two_added >= two_room):
             continue
         try:
-            n = P.queue_two(slug, today) if fmt == "two_months" else P.queue_tiny(slug)
+            n = P.queue_two(slug, today) if fmt == "two_months" else P.queue_opener(slug, today)
         except P.Refuse as e:
             refused.append(f"{fmt}:{slug} ({e})")
             continue
         if n:
             added += 1
+            budget -= cost[fmt]
             two_added += fmt == "two_months"
             print(f"[veo_fill] {fmt}: queued {n} row(s) for {slug}")
     rows = P._load(P.QUEUE, [])
