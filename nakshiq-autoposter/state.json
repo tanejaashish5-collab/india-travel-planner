@@ -36,18 +36,10 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-11-04"
+    "PdMu0_carousel": "2026-11-05"
   },
   "last_sync": "2026-11-02T22:56:39.969914+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pazhamudircholai",
-      "date": "2026-10-21"
-    },
-    {
-      "destination_id": "kedarnath",
-      "date": "2026-10-21"
-    },
     {
       "destination_id": "sarahan",
       "date": "2026-10-22"
@@ -147,6 +139,10 @@
     {
       "destination_id": "kumarakom",
       "date": "2026-11-04"
+    },
+    {
+      "destination_id": "varanasi",
+      "date": "2026-11-05"
     }
   ],
   "posted_formats": {
@@ -11659,6 +11655,42 @@
       "destination": "kumarakom",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-11-04"
+    },
+    {
+      "timestamp": "2026-11-05T07:35:57.113939+00:00",
+      "date": "2026-11-05",
+      "platform": "youtube",
+      "post_id": "kHS1B",
+      "destination": "ahmedabad",
+      "format": "scenario_guide",
+      "media_id": "nSJrW"
+    },
+    {
+      "timestamp": "2026-11-05T14:37:17.062679+00:00",
+      "date": "2026-11-05",
+      "platform": "instagram",
+      "post_id": "K3nBO",
+      "destination": "gulmarg",
+      "format": "scenario_vs",
+      "media_id": "3RDE8"
+    },
+    {
+      "timestamp": "2026-11-05T14:38:05.085772+00:00",
+      "date": "2026-11-05",
+      "platform": "youtube",
+      "post_id": "o155g",
+      "destination": "gulmarg",
+      "format": "scenario_vs",
+      "media_id": "e9jLc"
+    },
+    {
+      "timestamp": "2026-11-05T15:47:43.782373+00:00",
+      "date": "2026-11-05",
+      "platform": "facebook",
+      "post_id": "nSBw2",
+      "destination": "varanasi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-11-05"
     }
   ],
   "theme_usage": {
@@ -12675,17 +12707,11 @@
       ]
     },
     "tourist_map_states": {
-      "MZ": [
-        "2026-08-06"
-      ],
       "KL": [
         "2026-09-26"
       ]
     },
     "tourist_map_combos": {
-      "MZ_cartographic_dark": [
-        "2026-08-06"
-      ],
       "KL_cartographic_dark": [
         "2026-09-26"
       ]
@@ -12824,7 +12850,15 @@
       "Gangotri Diwali (Temple Closing)",
       "Tihar (Deepawali)",
       "Nainital Autumn Festival",
-      "Kinnaur Dussehra (Fulaich)"
+      "Kinnaur Dussehra (Fulaich)",
+      "Dev Deepawali",
+      "Pushkar Camel Fair",
+      "Deepotsav",
+      "Bundi Utsav",
+      "Matsya Festival",
+      "Lucknow Festival",
+      "Chandigarh Carnival",
+      "Rudraprayag Kartik Purnima Mela"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
