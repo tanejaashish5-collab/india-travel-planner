@@ -36,9 +36,10 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-11-05"
+    "PdMu0_carousel": "2026-11-05",
+    "PdMu0_reel_map": "2026-11-05"
   },
-  "last_sync": "2026-11-02T22:56:39.969914+00:00",
+  "last_sync": "2026-11-05T21:13:32.259308+00:00",
   "posted_destinations": [
     {
       "destination_id": "sarahan",
@@ -11691,6 +11692,15 @@
       "destination": "varanasi",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-11-05"
+    },
+    {
+      "timestamp": "2026-11-05T21:14:47.877948+00:00",
+      "date": "2026-11-05",
+      "platform": "facebook",
+      "post_id": "AfAXk",
+      "destination": null,
+      "format": "reel_map.state_heatmap",
+      "media_id": "reel_pomelli_rajasthan_hidden_palace_costs.mp4"
     }
   ],
   "theme_usage": {
@@ -12314,6 +12324,11 @@
         "2026-06-11",
         "2026-10-11"
       ],
+      "reel_map": [
+        "2026-06-13",
+        "2026-08-05",
+        "2026-11-05"
+      ],
       "data_carousel": [
         "2026-07-01",
         "2026-08-02",
@@ -12800,6 +12815,16 @@
       ],
       "sarahan": [
         "2026-10-22"
+      ]
+    },
+    "reel_map_campaigns": {
+      "rajasthan_hidden_palace_costs": [
+        "2026-11-05"
+      ]
+    },
+    "reel_map_formats": {
+      "state_heatmap": [
+        "2026-11-05"
       ]
     }
   },
