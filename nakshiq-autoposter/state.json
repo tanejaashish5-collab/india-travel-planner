@@ -41,7 +41,7 @@
     "PdMu0": "2026-11-06",
     "PdMu0_evening": "2026-11-06"
   },
-  "last_sync": "2026-11-06T16:17:08.681310+00:00",
+  "last_sync": "2026-11-06T20:36:15.010466+00:00",
   "posted_destinations": [
     {
       "destination_id": "amaravati",
@@ -12213,6 +12213,10 @@
         "2026-05-28",
         "2026-09-05"
       ],
+      "v2_route_animated_map": [
+        "2026-05-29",
+        "2026-11-06"
+      ],
       "weekend_escape": [
         "2026-05-30",
         "2026-06-05",
@@ -12380,9 +12384,6 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
-      ],
-      "v2_route_animated_map": [
-        "2026-11-06"
       ]
     },
     "reels": {
@@ -12886,7 +12887,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "murudeshwar",
+    "shared_best": "chennai",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},
