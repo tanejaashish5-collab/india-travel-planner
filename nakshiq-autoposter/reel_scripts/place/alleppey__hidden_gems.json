@@ -151,10 +151,13 @@
   "style": "C",
   "top": "clip:alleppey__hero.mp4@4",
   "top_label": "EVERYONE",
-  "bottom": "photo:Karumadi Kuttan|karumadi",
-  "bottom_label": "MOST BOATS SKIP",
-  "hook": "Why do houseboats|*sail past this?*"
+  "bottom": "photo:Kuttanad paddy fields|kuttanad",
+  "bottom_label": "BELOW SEA LEVEL",
+  "hook": "Rice fields|*below the sea?*"
  },
  "music": "travel-traveling-along-669",
- "music_start": 2
+ "music_start": 2,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

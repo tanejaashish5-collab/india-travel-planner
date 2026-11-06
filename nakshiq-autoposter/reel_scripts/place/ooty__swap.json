@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "photo:Ooty Lake|ooty",
-   "hook": "Same Nilgiris.<br><em>Without the jam.</em>"
+   "hook": "Near Ooty, two rivers<br>meet <em>1,500 m below</em>"
   },
   {
    "bg": "photo:Kotagiri|kotagiri",
@@ -128,7 +128,7 @@
    ]
   ]
  },
- "title": "Same Nilgiris, without the Ooty jam | NakshIQ",
+ "title": "Near Ooty, two rivers meet 1,500 m below | NakshIQ",
  "caption_lead": "On a peak weekend Ooty's ghat roads jam and every viewpoint is packed. About an hour away, in the same Nilgiri hills, Kotagiri has the same landscape with almost no crowd. It's older than Ooty too: John Sullivan built his bungalow at Kannerimukku in 1819, three years before Ooty's Stone House, and it's now a museum. Kodanad View Point looks down on two rivers meeting 1,500 m below, clearest in November. Kotagiri is basic but has the essentials.",
  "cost_basis": [],
  "facts": [
@@ -151,8 +151,11 @@
   "top_label": "OOTY",
   "bottom": "photo:Kotagiri|kotagiri",
   "bottom_label": "1 HR AWAY",
-  "hook": "Same Nilgiris.|*Why is this empty?*"
+  "hook": "Skip Ooty's jam:|*two rivers, 1,500 m below*"
  },
  "music": "edm-371",
- "music_start": 26
+ "music_start": 26,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

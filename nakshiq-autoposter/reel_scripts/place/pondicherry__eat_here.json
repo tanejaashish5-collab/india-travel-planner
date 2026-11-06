@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "clip:pondicherry__hero.mp4",
-   "hook": "In <em>Pondy</em>,<br>eat by the clock"
+   "hook": "Pondy's <em>croissants</em><br>sell out early"
   },
   {
    "kicker": "Go first thing",
@@ -154,5 +154,8 @@
   "hook": "Pondy food:|*what sells out first?*"
  },
  "music": "travel-just-keep-walking-339",
- "music_start": 33
+ "music_start": 33,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

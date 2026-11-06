@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "photo:Mehrangarh Fort|mehrangarh",
-   "hook": "Jodhpur food:<br>you're eating it <em>wrong</em>"
+   "hook": "Jodhpur's <em>lassi</em>:<br>eat it with a spoon"
   },
   {
    "kicker": "Makhaniya lassi",
@@ -138,7 +138,7 @@
    ]
   ]
  },
- "title": "Jodhpur food: are you eating it wrong? | NakshIQ",
+ "title": "Jodhpur's lassi you eat with a spoon | NakshIQ",
  "caption_lead": "In Jodhpur, how you eat it matters. At Shri Mishrilal Hotel in Sardar Market (Clock Tower side), eat the makhaniya lassi with a spoon, not a straw. At Shahi Samosa on Nai Sarak, skip the green chutney for the tamarind one and bring cash; at Janta Sweet Home on the same street, eat the mawa kachori hot in the shop, because a packed box loses its flake within hours. November is cool, clear peak season: book heritage hotels early and go Tuesday to Thursday.",
  "cost_basis": [],
  "facts": [
@@ -155,10 +155,13 @@
   "style": "C",
   "top": "photo:Mehrangarh Fort|mehrangarh",
   "top_label": "EVERYONE: THE FORT",
-  "bottom": "photo:Samosa|samosa",
-  "bottom_label": "WHICH CHUTNEY?",
-  "hook": "Jodhpur food:|*are you eating it wrong?*"
+  "bottom": "photo:Lassi|lassi",
+  "bottom_label": "SPOON, NOT A STRAW",
+  "hook": "A lassi you eat|*with a spoon?*"
  },
  "music": "travel-just-keep-walking-339",
- "music_start": 33
+ "music_start": 33,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

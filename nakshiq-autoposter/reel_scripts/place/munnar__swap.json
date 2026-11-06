@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "photo:Munnar misty tea valley|munnar",
-   "hook": "Same misty hills.<br><em>Without the tour buses.</em>"
+   "hook": "Kerala's <em>pine forest</em>,<br>minus the tour buses"
   },
   {
    "kicker": "The swap",
@@ -136,7 +136,7 @@
    ]
   ]
  },
- "title": "Munnar's misty hills, without the tour buses | NakshIQ",
+ "title": "Kerala's pine forest, without Munnar's tour buses | NakshIQ",
  "caption_lead": "In November Munnar's viewpoints fill with tour buses and selfie crowds. Vagamon, also in Kerala, has the same misty hills and cool air, plus pine forests and meadows that are almost yours on weekdays, and November there is dry, with paragliding in full swing. It is basic but growing, so with kids Munnar is easier. If it has to be Munnar, go before December, when the town jams from 11 am to 3 pm and Eravikulam slots get tight.",
  "cost_basis": [],
  "facts": [
@@ -159,8 +159,11 @@
   "top_label": "MUNNAR",
   "bottom": "photo:Vagamon meadows|vagamon",
   "bottom_label": "VAGAMON, KERALA",
-  "hook": "Munnar's hills|*without the tour buses?*"
+  "hook": "Kerala's pine forest,|*without the tour buses*"
  },
  "music": "edm-471",
- "music_start": 0
+ "music_start": 0,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

@@ -163,9 +163,12 @@
   "top": "photo:Jaisalmer Fort bastions|jaisalmer",
   "top_label": "THE FORT",
   "bottom": "photo:Khaba fort Jaisalmer|fort",
-  "bottom_label": "KHABA FORT",
-  "hook": "Everyone sees one fort.|*Who sees this?*"
+  "bottom_label": "GHOST SETTLEMENT",
+  "hook": "A deserted fort town|*an hour from Jaisalmer*"
  },
  "music": "travel-traveling-along-669",
- "music_start": 2
+ "music_start": 2,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

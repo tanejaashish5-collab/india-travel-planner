@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "photo:Kanchenjunga from Darjeeling|kanchenjunga",
-   "hook": "<em>Darjeeling</em>'s mountain<br>hides after November"
+   "hook": "After November, fog<br>hides <em>Kanchenjunga</em>"
   },
   {
    "kicker": "Go now",
@@ -116,7 +116,7 @@
    ]
   ]
  },
- "title": "Darjeeling in December? Go now instead | NakshIQ",
+ "title": "After November, fog hides Kanchenjunga | NakshIQ",
  "caption_lead": "The window for Darjeeling is now. November is 5 to 15°C with clear skies, Kanchenjunga in view on clear mornings and the Singalila Ridge trek at its best. December often brings fog over the mountains, early shop closures and a need for heavy woollens; in January morning fog hides Kanchenjunga most days, there's no central heating and the tea estates are dormant. November is peak season, so the toy train and Tiger Hill sunrise get packed: go Monday to Thursday.",
  "cost_basis": [],
  "facts": [
@@ -131,8 +131,11 @@
  "cover": {
   "style": "A",
   "image": "photo:Kanchenjunga from Darjeeling|kanchenjunga",
-  "hook": "Why go to Darjeeling|*before December?*"
+  "hook": "After November, fog|*hides Kanchenjunga*"
  },
  "music": "cinematic-drawing-the-sky-797",
- "music_start": 0
+ "music_start": 0,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

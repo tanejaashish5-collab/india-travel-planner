@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "photo:Tawang Monastery exterior|tawang",
-   "hook": "<em>Tawang</em> has<br>a deadline"
+   "hook": "<em>Madhuri Lake</em> trips<br>stop in December"
   },
   {
    "kicker": "Go now",
@@ -132,7 +132,7 @@
    ]
   ]
  },
- "title": "Tawang has a deadline: go before December | NakshIQ",
+ "title": "Tawang's Madhuri Lake trips stop in December | NakshIQ",
  "caption_lead": "The window for Tawang is now. November is 0 to 10°C with crisp, clear days, the monastery in golden light and Sela Pass open but cold; at morning prayers, stand near the back and never use flash. December and January drop below zero, with snow on Sela Pass, unreliable roads, and Bumla Pass and Madhuri Lake trips off. A good room in November is about ₹3,400 a night: get your Inner Line Permit first and spend a night in Bomdila on the way up to acclimatise.",
  "cost_basis": [
   {
@@ -161,8 +161,11 @@
  "cover": {
   "style": "A",
   "image": "photo:Tawang Monastery exterior|tawang",
-  "hook": "Tawang has a deadline.|*Do you know it?*"
+  "hook": "Madhuri Lake trips|*stop in December*"
  },
  "music": "travel-serene-view-839",
- "music_start": 0
+ "music_start": 0,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }

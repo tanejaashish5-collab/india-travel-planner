@@ -19,7 +19,7 @@
  "scenes": [
   {
    "bg": "photo:Shillong city|shillong",
-   "hook": "<em>Shillong</em> or Cherrapunji?<br>One question decides it"
+   "hook": "<em>3,500 steps</em> decide<br>your Meghalaya base"
   },
   {
    "kicker": "Pick Shillong if",
@@ -145,7 +145,7 @@
    ]
   ]
  },
- "title": "Shillong or Cherrapunji: where to stay? | NakshIQ",
+ "title": "Shillong or Cherrapunji? 3,500 steps decide it | NakshIQ",
  "caption_lead": "Shillong or Cherrapunji as your Meghalaya base? Both score 10/10 in November, so it comes down to whether you'll trek. First time in the Northeast, or travelling with kids or older parents: pick Shillong for cafes, live music and city comforts, see Cherrapunji in a day, and book ahead (a good room is about ₹3,550 a night, and the Cherry Blossom Festival draws big crowds). Want the root bridge treks? Pick Cherrapunji, where November treks are at their easiest and the waterfalls still run, but places to eat are few, rooms cost more than Shillong and mornings drop to 8°C.",
  "cost_basis": [
   {
@@ -177,8 +177,11 @@
   "top_label": "SHILLONG",
   "bottom": "photo:Double decker living root bridge|root",
   "bottom_label": "CHERRAPUNJI",
-  "hook": "Meghalaya base:|*Shillong or Cherrapunji?*"
+  "hook": "3,500 steps decide|*your Meghalaya base*"
  },
  "music": "travel-rock-the-game-820",
- "music_start": 0
+ "music_start": 0,
+ "revisions": [
+  "2026-11-07: hook/cover rewritten to name the reel's most concrete fact (Kokernag 'trout farm' 1,038 reach vs generic hooks ~110); founder said yes"
+ ]
 }
