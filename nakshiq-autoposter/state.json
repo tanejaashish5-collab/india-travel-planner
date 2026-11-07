@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-06",
-    "PdMu0_evening": "2026-11-06",
+    "PdMu0": "2026-11-07",
+    "PdMu0_evening": "2026-11-07",
     "PdMu0_carousel": "2026-11-07"
   },
-  "last_sync": "2026-11-06T20:36:15.010466+00:00",
+  "last_sync": "2026-11-07T18:55:43.329776+00:00",
   "posted_destinations": [
     {
       "destination_id": "hyderabad",
@@ -141,6 +141,10 @@
     {
       "destination_id": "dudhwa-national-park",
       "date": "2026-11-07"
+    },
+    {
+      "destination_id": "mathura",
+      "date": "2026-11-07"
     }
   ],
   "posted_formats": {
@@ -168,7 +172,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "data_carousel",
       "v2_tourist_trap_split",
       "v3_tl_poll_reel",
       "festival_alert",
@@ -188,7 +191,8 @@
       "score_card",
       "v2_cost_index_handwritten",
       "data_carousel",
-      "v2_route_animated_map"
+      "v2_route_animated_map",
+      "v2_myth_bust_oneline"
     ]
   },
   "post_log": [
@@ -11754,6 +11758,35 @@
       "destination": "dudhwa-national-park",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-11-07"
+    },
+    {
+      "timestamp": "2026-11-07T14:38:13.301593+00:00",
+      "date": "2026-11-07",
+      "platform": "instagram",
+      "post_id": "HbaXN",
+      "destination": "ooty",
+      "format": "scenario_swap",
+      "media_id": "4y6Bh"
+    },
+    {
+      "timestamp": "2026-11-07T14:38:49.752319+00:00",
+      "date": "2026-11-07",
+      "platform": "youtube",
+      "post_id": "pW72G",
+      "destination": "ooty",
+      "format": "scenario_swap",
+      "media_id": "7miPe"
+    },
+    {
+      "timestamp": "2026-11-07T18:56:36.597825+00:00",
+      "date": "2026-11-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "gBBw2",
+      "destination": "mathura",
+      "format": "v2_myth_bust_oneline",
+      "has_media": true,
+      "media_id": "mathura.mp4"
     }
   ],
   "theme_usage": {
@@ -12175,6 +12208,9 @@
       ],
       "murudeshwar": [
         "2026-11-06"
+      ],
+      "mathura": [
+        "2026-11-07"
       ]
     },
     "morning_formats": {
@@ -12351,7 +12387,8 @@
         "2026-06-06",
         "2026-06-17",
         "2026-07-04",
-        "2026-10-02"
+        "2026-10-02",
+        "2026-11-07"
       ],
       "v2_cost_index_handwritten": [
         "2026-06-08",
@@ -12626,6 +12663,9 @@
       ],
       "murudeshwar": [
         "2026-11-06"
+      ],
+      "mathura": [
+        "2026-11-07"
       ]
     },
     "audience_tags": {
@@ -12668,7 +12708,8 @@
         "2026-10-10",
         "2026-10-17",
         "2026-10-24",
-        "2026-10-31"
+        "2026-10-31",
+        "2026-11-07"
       ],
       "adventurers": [
         "2026-05-29",
@@ -12890,7 +12931,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -12904,7 +12946,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "chennai",
+    "shared_best": "corbett-national-park",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},

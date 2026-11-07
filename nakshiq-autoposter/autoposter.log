@@ -31294,3 +31294,47 @@ Date range: 2026-04-15 → 2026-11-05
 2026-11-08 01:38:15  INFO          Uploading to R2 (timeout=300s)...
 2026-11-08 01:38:36  INFO          R2 PUT OK. Confirming...
 2026-11-08 01:38:38  INFO          Media ready: 7miPe (38,632,433 bytes · ooty__swap__voiced__en.mp4)
+2026-11-07 18:54:44  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-07 18:54:44  INFO      ════════════════════════════════════════════════════════════
+2026-11-07 18:54:44  INFO      Nakshiq Autoposter · EVENING · 2026-11-07 · weekday=5
+2026-11-07 18:54:44  INFO      ════════════════════════════════════════════════════════════
+2026-11-07 18:54:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-07 18:55:43  INFO      Synced → 20 destinations · 100 traps · 6 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-07 18:55:43  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-07 18:55:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-07 18:55:44  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-07 18:55:45  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-07 18:56:05  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-07 18:56:05  INFO      [diversity] feed: 40 → 28 options · cooldown dropped 12 (carousel, pillar:discovery, pillar:scenario_guide, pillar:scenario_swap, pillar:scenario_window seen <2d)
+2026-11-07 18:56:05  INFO      Evening format (balance→anti_trap): v2_myth_bust_oneline [0% vs target 15%] (0/15 never featured)
+2026-11-07 18:56:05  INFO      Formats — IG: v2_myth_bust_oneline  ·  FB: v2_myth_bust_oneline  ·  Story: route_spotlight  ·  Audience: families
+2026-11-07 18:56:05  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 41
+2026-11-07 18:56:05  INFO      Audience filter 'families' → 19 destinations match.
+2026-11-07 18:56:05  INFO      Fingerprint dedup snapshot — 36 dests in 7d · 89 (dest,fmt) pairs in 30d · 213 media in 60d
+2026-11-07 18:56:05  INFO      Route locked: Coastal Karnataka Road Trip
+2026-11-07 18:56:09  INFO      Shared best destination locked: Jim Corbett National Park
+2026-11-07 18:56:09  INFO      [facebook/Nakshiq] Generating v2_myth_bust_oneline post...
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: kasol has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: gurez-valley has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: leh has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: coorg has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: gangtok has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: chopta has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: pahalgam has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: anandpur-sahib has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: shimla has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: achabal has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: old-goa has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      v2_myth_bust_oneline: munnar has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-07 18:56:09  INFO      [facebook/Nakshiq] Caption ready (503 chars, dest=mathura)
+2026-11-07 18:56:09  INFO      [facebook/Nakshiq] CSV video format (v2_myth_bust_oneline) — using dest Ken Burns clip as fallback
+2026-11-07 18:56:09  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mathura.mp4?v=20260915
+2026-11-07 18:56:12  INFO          Brand-stamp applied: mathura.mp4 (6,915,738 → 3,864,959 bytes)
+2026-11-07 18:56:12  INFO          Requesting upload URL for mathura.mp4 (3,864,959 bytes, video/mp4)
+2026-11-07 18:56:14  INFO          Uploading to R2 (timeout=300s)...
+2026-11-07 18:56:15  INFO          R2 PUT OK. Confirming...
+2026-11-07 18:56:17  INFO          Media ready: MWxcX (3,864,959 bytes · mathura.mp4)
+2026-11-07 18:56:17  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-07 18:56:36  INFO      [facebook/Nakshiq] ✅ Published · Outstand=gBBw2 · Platform=2363486347787236
+2026-11-07 18:56:36  INFO      State saved. Run complete.
+2026-11-07 18:56:36  INFO      ════════════════════════════════════════════════════════════
