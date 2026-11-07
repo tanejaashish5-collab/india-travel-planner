@@ -36,17 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0_carousel": "2026-11-05",
-    "PdMu0_reel_map": "2026-11-05",
     "PdMu0": "2026-11-06",
-    "PdMu0_evening": "2026-11-06"
+    "PdMu0_evening": "2026-11-06",
+    "PdMu0_carousel": "2026-11-07"
   },
   "last_sync": "2026-11-06T20:36:15.010466+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "amaravati",
-      "date": "2026-10-23"
-    },
     {
       "destination_id": "hyderabad",
       "date": "2026-10-24"
@@ -142,6 +137,10 @@
     {
       "destination_id": "murudeshwar",
       "date": "2026-11-06"
+    },
+    {
+      "destination_id": "dudhwa-national-park",
+      "date": "2026-11-07"
     }
   ],
   "posted_formats": {
@@ -11737,6 +11736,24 @@
       "format": "v2_route_animated_map",
       "has_media": true,
       "media_id": "murudeshwar.mp4"
+    },
+    {
+      "timestamp": "2026-11-07T07:35:58.122304+00:00",
+      "date": "2026-11-07",
+      "platform": "youtube",
+      "post_id": "AmtiJ",
+      "destination": "vadodara",
+      "format": "scenario_guide",
+      "media_id": "7mrux"
+    },
+    {
+      "timestamp": "2026-11-07T14:16:41.724528+00:00",
+      "date": "2026-11-07",
+      "platform": "facebook",
+      "post_id": "Kk3Cw",
+      "destination": "dudhwa-national-park",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-11-07"
     }
   ],
   "theme_usage": {
@@ -12930,7 +12947,15 @@
       "Matsya Festival",
       "Lucknow Festival",
       "Chandigarh Carnival",
-      "Rudraprayag Kartik Purnima Mela"
+      "Rudraprayag Kartik Purnima Mela",
+      "Dudhwa Tharu Cultural Festival",
+      "Manikaran Guru Nanak Birthday",
+      "Darjeeling Tea & Tourism Festival",
+      "Sarnath Light & Sound Show Season",
+      "Sangai Festival",
+      "Wangala (100 Drums Festival)",
+      "Nongkrem Dance",
+      "Cherry Blossom Festival"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
