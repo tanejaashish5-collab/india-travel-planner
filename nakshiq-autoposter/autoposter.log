@@ -31391,3 +31391,10 @@ Date range: 2026-04-15 → 2026-11-05
 2026-11-07 21:56:25  INFO      
 Date range: 2026-04-15 → 2026-11-07
 2026-11-07 21:56:25  INFO      ════════════════════════════════════════════════════════════
+2026-11-08 18:35:22  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-08 18:35:22  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-08 18:35:24  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-08 18:35:49  INFO          Requesting upload URL for kutch__guide_m11.mp4 (19,205,768 bytes, video/mp4)
+2026-11-08 18:35:51  INFO          Uploading to R2 (timeout=300s)...
+2026-11-08 18:36:04  INFO          R2 PUT OK. Confirming...
+2026-11-08 18:36:06  INFO          Media ready: uq4MF (19,205,768 bytes · kutch__guide_m11.mp4)
