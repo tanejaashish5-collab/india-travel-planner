@@ -71,8 +71,33 @@ for n in z.namelist():
   } catch (e) { console.log(`[named] could not unpack ${f}: ${String(e).slice(0, 90)}`); }
 }
 
+// FIRST FRAME MUST BE ITS OWN START STILL (2026-11-08). Cowork's 11-07 run saved three videos made
+// from the WRONG start frame under correct names: namdapha's opener was Rajahmundry's ghat, and
+// rajahmundry + pushkar s1 were both Patna's skip-month scene. The name check passes; the picture is
+// another place. A frames-mode take opens on its start still: across 176 good takes the first frame
+// differed from it by 1.5-12.8 (mean grey-level gap on a 36x64 thumbnail, 0-255); the three swaps
+// were 87-92. Above MAX_FRAME_DIFF the take is refused: the file goes to _wrong_frame/, the row goes
+// back to pending, and the next export asks for it again. If the gap cannot be measured, the take is
+// kept with a warning (the clip check still looks at every clip before a reel posts).
+const MAX_FRAME_DIFF = Number(process.env.VEO_MAX_FRAME_DIFF || 30);
+const WRONG = join(HERE, "_wrong_frame");
+function thumb(p, video) {
+  return execFileSync("ffmpeg", ["-loglevel", "error", ...(video ? ["-ss", "0.05"] : []), "-i", p,
+    "-frames:v", "1", "-vf", "scale=36:64,format=gray", "-f", "rawvideo", "-"], { maxBuffer: 1 << 20 });
+}
+function frameDiff(video, still) {
+  try {
+    const a = thumb(video, true), b = thumb(still, false);
+    if (!a.length || a.length !== b.length) return null;
+    let s = 0;
+    for (let i = 0; i < a.length; i++) s += Math.abs(a[i] - b[i]);
+    return s / a.length;
+  } catch { return null; }
+}
+
 const q = JSON.parse(readFileSync(QUEUE, "utf-8"));
 const byClip = new Map(q.map((r) => [r.clip, r]));
+const wrongFrame = [];
 const files = readdirSync(INBOX).filter((f) => /\.(mp4|jpe?g|png)$/i.test(f));
 
 if (!files.length) { console.log(`[named] no .mp4 in ${INBOX}`); process.exit(0); }
@@ -88,6 +113,24 @@ for (const f of files) {
   // would be moved, uploaded and marked live. Leave anything touched in the
   // last SETTLE_S seconds for the next run.
   if (Date.now() - st.mtimeMs < SETTLE_S * 1000) { settling.push(f); continue; }
+  if (/\.mp4$/i.test(f) && row.start_frame && row.start_frame !== "None") {
+    const sf = [join(OUT, row.start_frame), join(INBOX, row.start_frame)].find((p) => existsSync(p));
+    const d = sf ? frameDiff(join(INBOX, f), sf) : null;
+    if (d === null) {
+      console.log(`[named] WARN ${f}: could not compare its first frame with ${row.start_frame}; taking it`);
+    } else if (d > MAX_FRAME_DIFF) {
+      console.log(`[named] ${DRY ? "would REFUSE" : "REFUSED"} ${f}: its first frame is not ${row.start_frame} ` +
+                  `(gap ${d.toFixed(1)}, limit ${MAX_FRAME_DIFF}) — made from the wrong start frame`);
+      if (!DRY) {
+        mkdirSync(WRONG, { recursive: true });
+        const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, "");
+        renameSync(join(INBOX, f), join(WRONG, f.replace(/\.mp4$/i, `__${stamp}.mp4`)));
+        row.status = "pending";
+      }
+      wrongFrame.push(f);
+      continue;
+    }
+  }
   console.log(`[named] ${DRY ? "would take" : "take"} ${f}  (${row.role}, ${row.seconds}s)`);
   if (!DRY) {
     try { renameSync(join(INBOX, f), join(OUT, f)); }
@@ -103,6 +146,7 @@ if (unknown.length) {
   console.log("[named] expected form: <slug>__<format>__b<N>.mp4");
 }
 if (empty.length) console.log(`[named] ${empty.length} file(s) under 10KB, left alone: ${empty.slice(0,5).join(", ")}`);
+if (wrongFrame.length) console.log(`[named] ${wrongFrame.length} video(s) refused (wrong start frame), re-queued as pending: ${wrongFrame.join(", ")}`);
 
 if (settling.length) console.log(`[named] ${settling.length} file(s) still settling (<${SETTLE_S}s old), left for the next run: ${settling.slice(0,5).join(", ")}`);
 if (DRY) { console.log("\n[named] --dry: nothing written"); process.exit(0); }
