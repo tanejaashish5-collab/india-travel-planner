@@ -1,8 +1,8 @@
-# Cinematic readiness — 2026-11-01
+# Cinematic readiness — 2026-11-08
 
-Total: **533** dests · A=**349** · HS-B=**29** · B=**155** · C=**0**
+Total: **533** dests · A=**363** · HS-B=**29** · B=**141** · C=**0**
 
-Cinematic-eligible (A + HS-B): **378**
+Cinematic-eligible (A + HS-B): **392**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -11,24 +11,22 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Field | Dests blocked |
 |---|---:|
 | eats | 152 |
-| stays | 43 |
+| stays | 27 |
 | gems | 8 |
 
 ## By state (destinations below tier A only)
 
 | State | A | HS-B | B | C | Total |
 |---|---:|---:|---:|---:|---:|
-| andaman-nicobar | 0 | 0 | 1 | 0 | 1 |
-| andhra-pradesh | 0 | 5 | 7 | 0 | 12 |
+| andhra-pradesh | 0 | 5 | 6 | 0 | 11 |
 | arunachal-pradesh | 0 | 4 | 0 | 0 | 4 |
 | assam | 0 | 2 | 0 | 0 | 2 |
 | bihar | 0 | 1 | 0 | 0 | 1 |
 | chhattisgarh | 0 | 0 | 4 | 0 | 4 |
-| daman-diu | 0 | 0 | 1 | 0 | 1 |
 | goa | 0 | 0 | 9 | 0 | 9 |
-| gujarat | 0 | 0 | 16 | 0 | 16 |
+| gujarat | 0 | 0 | 14 | 0 | 14 |
 | haryana | 0 | 1 | 0 | 0 | 1 |
-| himachal-pradesh | 0 | 0 | 3 | 0 | 3 |
+| himachal-pradesh | 0 | 0 | 2 | 0 | 2 |
 | jammu-kashmir | 0 | 3 | 3 | 0 | 6 |
 | jharkhand | 0 | 0 | 1 | 0 | 1 |
 | karnataka | 0 | 0 | 10 | 0 | 10 |
@@ -42,14 +40,14 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | mizoram | 0 | 1 | 0 | 0 | 1 |
 | nagaland | 0 | 1 | 1 | 0 | 2 |
 | odisha | 0 | 0 | 15 | 0 | 15 |
-| puducherry | 0 | 0 | 2 | 0 | 2 |
-| rajasthan | 0 | 0 | 3 | 0 | 3 |
+| puducherry | 0 | 0 | 1 | 0 | 1 |
+| rajasthan | 0 | 0 | 1 | 0 | 1 |
 | sikkim | 0 | 3 | 5 | 0 | 8 |
-| tamil-nadu | 0 | 0 | 11 | 0 | 11 |
-| telangana | 0 | 0 | 11 | 0 | 11 |
+| tamil-nadu | 0 | 0 | 10 | 0 | 10 |
+| telangana | 0 | 0 | 9 | 0 | 9 |
 | tripura | 0 | 0 | 1 | 0 | 1 |
 | uttar-pradesh | 0 | 1 | 0 | 0 | 1 |
-| uttarakhand | 0 | 0 | 8 | 0 | 8 |
+| uttarakhand | 0 | 0 | 6 | 0 | 6 |
 | west-bengal | 0 | 0 | 1 | 0 | 1 |
 
 ## Tier C destinations (must backfill)
@@ -62,11 +60,9 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dest | State | Thin |
 |---|---|---|
 | Adi Kailash (adi-kailash) | uttarakhand | gems:2/3 |
-| Adilabad (adilabad) | telangana | stays:1/3 |
 | Aihole (aihole) | karnataka | eats:4/5 |
 | Alampur (alampur) | telangana | eats:4/5 · stays:2/3 |
 | Ambaji (ambaji) | gujarat | eats:4/5 |
-| Ananthagiri Hills (ananthagiri-hills) | telangana | stays:2/3 |
 | Arambol (arambol) | goa | eats:3/5 |
 | Aritar (aritar) | sikkim | eats:2/5 |
 | Athirapally Falls (athirapally) | kerala | eats:4/5 |
@@ -83,7 +79,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bhimashankar (bhimashankar) | maharashtra | eats:3/5 |
 | Bhimbetka Rock Shelters (bhimbetka) | madhya-pradesh | eats:3/5 |
 | Bhitarkanika (bhitarkanika) | odisha | eats:3/5 |
-| Bhongir (bhongir) | telangana | stays:1/3 |
+| Bhongir (bhongir) | telangana | stays:2/3 |
 | Bhoramdeo (bhoramdeo) | chhattisgarh | gems:2/3 · eats:3/5 |
 | Borra Caves (borra-caves) | andhra-pradesh | eats:3/5 |
 | Chail (chail) | himachal-pradesh | stays:2/3 |
@@ -93,7 +89,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Chitrakote Falls (chitrakote-falls) | chhattisgarh | eats:1/5 |
 | Chorao & Divar Islands (chorao-divar) | goa | eats:4/5 |
 | Dakor (dakor) | gujarat | eats:3/5 |
-| Daman (daman) | daman-diu | stays:2/3 |
 | Dandeli (dandeli) | karnataka | eats:4/5 |
 | Daringbadi (daringbadi) | odisha | eats:4/5 |
 | Darjeeling (darjeeling) | west-bengal | stays:2/3 |
@@ -105,7 +100,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dhauli (dhauli) | odisha | eats:2/5 |
 | Dholavira (dholavira) | gujarat | eats:3/5 |
 | Buddhist Diamond Triangle (diamond-triangle) | odisha | eats:3/5 |
-| Dwarka (dwarka) | gujarat | stays:2/3 |
 | Eravikulam National Park (eravikulam) | kerala | eats:3/5 |
 | Fort Aguada & Candolim (fort-aguada) | goa | eats:4/5 |
 | Gahirmatha (gahirmatha) | odisha | eats:2/5 |
@@ -124,25 +118,20 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Karla & Bhaja Caves (karla-bhaja-caves) | maharashtra | eats:4/5 |
 | Karnaprayag (karnaprayag) | uttarakhand | gems:2/3 |
 | Kashid (kashid) | maharashtra | eats:4/5 |
-| Kedarnath (kedarnath) | uttarakhand | stays:2/3 |
 | Khandala (khandala) | maharashtra | eats:4/5 |
 | Kiphire (kiphire) | nagaland | eats:0/5 |
 | Kishtwar (kishtwar) | jammu-kashmir | stays:2/3 |
 | Kolad (kolad) | maharashtra | eats:3/5 |
 | Kolanupaka (kolanupaka) | telangana | eats:3/5 · stays:2/3 |
-| Kotagiri (kotagiri) | tamil-nadu | stays:2/3 |
 | Kuttanad (kuttanad) | kerala | eats:4/5 |
 | Laknavaram (laknavaram) | telangana | eats:4/5 |
 | Lenyadri (lenyadri) | maharashtra | eats:3/5 |
 | Lepakshi (lepakshi) | andhra-pradesh | eats:3/5 |
-| Little Andaman (little-andaman) | andaman-nicobar | stays:2/3 |
 | Lonar Crater (lonar-crater) | maharashtra | eats:3/5 · stays:2/3 |
 | Lothal (lothal) | gujarat | eats:1/5 |
-| Machilipatnam (machilipatnam) | andhra-pradesh | stays:1/3 |
 | Mahad (Raigad — Ashtavinayak) (mahad-raigad) | maharashtra | eats:3/5 |
 | Mandrem (mandrem) | goa | eats:3/5 |
 | Mandu (mandu) | madhya-pradesh | eats:3/5 |
-| Mandvi (mandvi) | gujarat | stays:2/3 |
 | Mangan (mangan) | sikkim | gems:2/3 |
 | Margao (margao) | goa | eats:4/5 |
 | Marine National Park (marine-national-park) | gujarat | eats:2/5 |
@@ -153,13 +142,12 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Morgaon (morgaon) | maharashtra | eats:2/5 |
 | Nagarhole National Park (nagarhole) | karnataka | eats:3/5 |
 | Nagarjuna Konda (nagarjuna-konda) | telangana | stays:2/3 |
-| Nalsarovar Bird Sanctuary (nalsarovar) | gujarat | eats:2/5 · stays:1/3 |
+| Nalsarovar Bird Sanctuary (nalsarovar) | gujarat | eats:2/5 |
 | Nandaprayag (nandaprayag) | uttarakhand | gems:2/3 |
 | Nandi Hills (nandi-hills) | karnataka | eats:4/5 |
-| Neemrana (neemrana) | rajasthan | stays:2/3 |
 | Nelliyampathy (nelliyampathy) | kerala | eats:3/5 |
 | Nrusinghanath & Harishankar (nrusinghanath-harishankar) | odisha | eats:3/5 |
-| Old Goa (old-goa) | goa | eats:3/5 · stays:1/3 |
+| Old Goa (old-goa) | goa | eats:3/5 |
 | Omkareshwar (omkareshwar) | madhya-pradesh | eats:4/5 |
 | Orchha (orchha) | madhya-pradesh | eats:4/5 |
 | Ozar (ozar) | maharashtra | eats:2/5 · stays:2/3 |
@@ -175,7 +163,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Spice Plantations (Ponda) (ponda-spice) | goa | eats:3/5 |
 | Ponmudi (ponmudi) | kerala | eats:3/5 |
 | Poovar (poovar) | kerala | eats:4/5 |
-| Puducherry (Pondicherry) (puducherry) | puducherry | stays:2/3 |
 | Raghurajpur (raghurajpur) | odisha | eats:2/5 |
 | Raigad Fort (raigad-fort) | maharashtra | eats:3/5 |
 | Ramappa Temple (ramappa-temple) | telangana | eats:4/5 · stays:2/3 |
@@ -187,9 +174,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Sabarimala (sabarimala) | kerala | eats:3/5 |
 | Sanchi (sanchi) | madhya-pradesh | eats:3/5 |
 | Saputara (saputara) | gujarat | eats:4/5 |
-| Sariska Tiger Reserve (sariska) | rajasthan | stays:2/3 |
 | Satkosia (satkosia) | odisha | eats:3/5 |
-| Shimla (shimla) | himachal-pradesh | stays:2/3 |
 | Shravanabelagola (shravanabelagola) | karnataka | eats:4/5 |
 | Shrikhand Mahadev (shrikhand-mahadev) | himachal-pradesh | gems:1/3 |
 | Siddhatek (siddhatek) | maharashtra | eats:2/5 |
@@ -214,7 +199,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Vedanthangal Bird Sanctuary (vedanthangal) | tamil-nadu | eats:3/5 · stays:2/3 |
 | Velavadar (velavadar) | gujarat | eats:3/5 |
 | Verinag (verinag) | jammu-kashmir | stays:2/3 |
-| Yamunotri (yamunotri) | uttarakhand | stays:2/3 |
 | Yusmarg (yusmarg) | jammu-kashmir | stays:2/3 |
 
 ## Tier HS-B destinations (cinematic-eligible with scarcity panels)
@@ -251,4 +235,4 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Tsomgo Lake (tsomgo-lake) | sikkim | eats |
 | Umlingla (umlingla) | ladakh | eats |
 
-## Tier A destinations (magazine-ready): 349
+## Tier A destinations (magazine-ready): 363
