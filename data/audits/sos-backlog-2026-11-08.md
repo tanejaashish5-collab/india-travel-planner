@@ -1,84 +1,68 @@
-# SOS backlog run: 12 numbers sourced
+# SOS backlog run: 3 sourced, 15 unconfirmed
 
 **Date:** 2026-11-08
-**Trigger:** scheduled sos-backlog run (local environment — egress to .gov.in/.nic.in available)
-**Outcome:** 12 numbers confirmed and written to `source_map`; 8 rows touched; 11 number-row pairs written.
+**Trigger:** scheduled sos-backlog run (local — first run with fetch access since the 2026-09-06 egress-blocked run)
+**Outcome:** 3 numbers sourced, `source_map` updated on 3 rows.
+Status counts at start: 173 `needs_source`, 27 `source_unreachable`, 0 `number_changed`, 0 `number_changed`.
 
-## Backlog at start of run
+## Numbers sourced
 
-| Status | Count |
-|---|---|
-| `needs_source` | 173 rows |
-| `source_unreachable` | 27 rows |
-| Distinct numbers needing source | 185 |
-
-Known dead ends excluded from search (researched twice previously, no official page publishes the number):
-- `03803-222253` District Hospital Roing
-- `04545-240581` Government Hospital Palani
-- `04172-232538` Govt HQ Hospital Walajah
-
-## Discovery
-
-Split the 185 numbers into 3 batches for 3 parallel Sonnet discovery agents:
-
-- **Agent 1** — South India + Kerala (22 numbers): Tamil Nadu disaster mgmt sites, Kerala Police PS pages, Lakshadweep
-- **Agent 2** — Northeast + Sikkim (30 numbers): Arunachal Pradesh, Mizoram, Assam, Nagaland, Manipur, Sikkim NIC sites
-- **Agent 3** — Odisha + Karnataka + Gujarat + Telangana (32 numbers)
-
-Agents were instructed to find pages that print the number and return `{number, found, url, quote, tried}`. Each URL a sub-agent returned was independently re-fetched and re-matched using `extractPageTokens` + `numberMatchesPage` from `apps/web/src/lib/sos-verify.ts` before being written.
-
-## Personal verification results
-
-71 candidate (number, url) pairs tried across all 3 batches. 18 agent-found candidates personally re-fetched and checked.
-
-**12 confirmed:**
-
-| Number | Destination | Source URL | Quote |
+| Number | URL | Field | Quote |
 |---|---|---|---|
-| 9436238317 | mechuka | shiyomi.nic.in/police/ | "Shri. Gonthombu Dajangju \| SP \| 9436238317" |
-| 9402278747 | mechuka | shiyomi.nic.in/police/ | "Shri. Ege Ette \| Dy SP \| 9402278747" |
-| 03595263734 | ravangla | namchi.nic.in/contact-directory-2/ | "Ms. Anupa Tamling, SCS \| District Collector \| 03595-263734" |
-| 9832080790 | ravangla | namchi.nic.in/contact-directory-2/ | "Mr. Saran Das Kalikotey \| SDM Ravangla \| 9832080790" |
-| 7547965002 | zuluk | pakyongdistrict.nic.in/helpline/ | "Sr. Superintendent of Police \| Tenzing Loden Lepcha \| 7547965002" |
-| 9474774456 | zuluk | pakyongdistrict.nic.in/helpline/ | "District Collector/DM \| Tashi Chophel \| 9474774456" |
-| 02882553404 | marine-national-park | jamnagar.nic.in/helpline/ | "Disaster Control Room \| 1077, 0288-2553404" |
-| 028331077 | dwarka | devbhumidwarka.nic.in/helpline/ | "02833-1077 \| District Emergency Response Center" |
-| 08262230403 | chikmagalur | chikkamagaluru.nic.in/helpline/ | "S.P Office – 08262 230403" |
-| 04024745243 | ramappa-temple | mulugu.telangana.gov.in/helpline/ | "Blood Bank: 040-24745243" |
-| 08546274001 | alampur | gadwal.telangana.gov.in/helpline/ | "District Call Centre- 08546 274001" |
-| 08542241165 | pillalamarri | mahabubnagar.telangana.gov.in/helpline/ | "District Call Centre- 08542-241165" |
+| `07727-222102` | https://balodabazar.gov.in/en/helpline/ | rescue_contact | "Police Control Room, Balodabazar: 07727-222102" |
+| `1800-425-1939` | https://adilabad.telangana.gov.in/helpline/ | rescue_contact | "Control Room Collectorate : 1800-425-1939" |
+| `03783-222252` | http://arunpol.nic.in/districts/westsiang.html | rescue_contact | "Police Control Room (03783) 222252" |
 
-Insert script re-fetched all 12 URLs independently and confirmed every number before writing. All 12 passed. `sos-source-map-insert.mjs` output: `SOURCED 12 numbers across 8 rows (11 number-row pairs)`.
+Note: `arunpol.nic.in` has an expired TLS cert; HTTP (port 80) was used and confirmed reachable by Node fetch.
 
-**6 agent-found candidates not confirmed (pages loaded but matching failed):**
+## Source_unreachable rows now reachable (auto-verifier handles Monday)
 
-| Number | URL | Reason |
-|---|---|---|
-| 04175232260 | tiruvannamalai.nic.in/disaster-management/ | Page prints "01374 &#8211; 232260" (HTML en-dash entity between STD and local part); `extractPageTokens` treats `&#8211;` as non-joining gap |
-| 04652231077 | kanniyakumari.nic.in/helpline/ | Printed as "04652-1077 , 231077" — `1077` joins with `04652` to make `046521077` (9 digits); `231077` (6 digits) cannot be corroborated without phone label before it |
-| 04368227704 | karaikal.gov.in/contact-disaster-management/ | Printed as "04368-228801/227704" — slash-separated pair; `227704` follows `228801` with `/` gap, not labeled as phone |
-| 02811077 | rajkot.nic.in/helpline/ | 8-digit STD-prefixed 1077; page shows "+91 281 1077" producing token "2811077" (7 digits, without leading 0); exact match fails |
-| 02781077 | bhavnagar.nic.in/helpline/ | Same: "+91 278 1077" → "2781077"; does not match "02781077" |
-| 026721077 | panchmahals.nic.in/helpline/ | Same: "+91 2672 1077" → "26721077"; does not match "026721077" |
+The following 8 hosts were previously unreachable (`source_unreachable`) but responded HTTP 200 today:
+`westkameng.nic.in`, `tourism.andamannicobar.gov.in`, `ratnagiri.gov.in`, `lakshadweep.gov.in`,
+`gyalshing.nic.in`, `roing.nic.in`, `pakyongdistrict.nic.in`, `idukki.nic.in`.
+These already have recorded `source_map` entries pointing to the right URLs; Monday's cron will re-confirm them without any insertion needed.
 
-Note: `028331077` (Devbhumi Dwarka) succeeded because that page printed "02833-1077" with a regular ASCII hyphen, allowing the token join to produce the exact 9-digit string.
+## Numbers found on official pages but failed script match (token-join edge cases)
 
-**Systematic failures not reaching confirmation step:**
+Two numbers were confirmed by eye on official `.gov.in`/`.nic.in` pages but rejected by `sos-source-map-insert.mjs`:
 
-- **Odisha NIC subdomains** (jajpur, puri, bargarh, koraput, angul, kendrapara, cuttack, ganjam): DNS NXDOMAIN from outside India — 19 numbers cannot be sourced remotely
-- **assam.gov.in**: ECONNRESET (consistent with geofencing pattern noted in MEMORY.md) — 4 Kaziranga numbers unreachable
-- **birbhumpolice.wb.gov.in**: connection reset — 2 Shantiniketan numbers
-- **puripolice.nic.in**: connection reset
-- **chamba.nic.in**: connection reset — Manimahesh-Kailash numbers (source_url is chambaonline.in, not official)
-- Manimahesh-Kailash source_url (chambaonline.in) is not an acceptable source (.gov.in/.nic.in required); official chamba.nic.in pages were tried but timed out
-- Arunachal Pradesh NIC (arunpol.nic.in): expired TLS certificate
-- Kerala Police PS pages for Sabarimala, Silent Valley, Munnar, Wayanad, Athirappilly: pages loaded but specific numbers not in content (PS contact pages list control room numbers, not the ones stored in DB)
-- Mizoram/Nagaland/Manipur/Mangan/Tawang/Bishnupur pages: loaded, numbers not present
+- **`02781077`** (Bhavnagar District Helpline): printed as "+91 278 1077" on `bhavnagar.nic.in/en/disaster-management/`.
+  `extractPageTokens` joins "278" + "1077" into "2781077" (7 digits). `numberMatchesPage` applies the
+  7-digit-tail branch only for numbers ≥10 digits; "02781077" is 8 digits so the function returns false
+  before the tail check. Need a URL that prints "0278-1077" with hyphen and without the +91 prefix.
 
-## Numbers still unconfirmed
+- **`07653222214`** (Bandhavgarh Field Director): printed as "07653 – 222214" on
+  `forest.mponline.gov.in/eBrochure/eBrochureDetailsV2.aspx?parkid=1`. The gap between the two digit
+  runs is " – " (en-dash, U+2013), which does not match the gap regex `/^[\s\-().]{0,3}$/`
+  (only ASCII hyphen is allowed). "222214" is a 6-digit token gated behind a phone-label label check;
+  the 20-char prefix at that point is "No. 07653 – " which ends in " – " not a phone keyword.
+  Need a URL that prints "07653-222214" with an ASCII hyphen.
 
-185 distinct numbers at start − 12 newly sourced = 173 unconfirmed.
-3 known dead ends remain excluded.
-Structural blockers for the remaining 170: ~20 require Odisha NIC subdomains (DNS NXDOMAIN from Australia); ~15 on Assam/Manipur/Arunachal sites that timeout or reset from outside India; ~6 on pages that DO show the number but in a format `extractPageTokens` cannot parse (en-dash entity, slash-separated pair, or +91-prefixed 1077 helplines).
+## Numbers not confirmed (investigated but no reachable official source)
 
-No stored number was found to be wrong on a live page. No escalation required.
+| Number | Reason |
+|---|---|
+| `1800-267-1975` (MTDC Maharashtra) | MTDC site (mtdc.co.in) is JS-rendered; phone not in server HTML or WP API; maharashtra.gov.in zero bytes |
+| `1554` (Indian Coast Guard) | PIB page contains "1554" only as part of a Facebook page ID |
+| `01374-222126` (Uttarkashi) | uttarkashi.nic.in page loads but shows 222722, not 222126 |
+| `01792-223836` (Solan) | No .gov.in/nic.in page found with this number |
+| `06752-224554` (Puri police) | puripolice.nic.in geo-fenced from AU (HTTP 000) |
+| `06742-391983` (Capital Hospital Bhubaneswar) | pgimerch.odisha.gov.in HTTP 000 (geo-fenced) |
+| `03592-276955` (North Sikkim) | northsikkim.nic.in geo-fenced from AU (HTTP 000) |
+| `03892-334327` (Aizawl PCR) | police.mizoram.gov.in 403/134 bytes (blocked); fireservice.mizoram.gov.in 403 |
+| `03762-300124` (Jorhat) | jorhat.assam.gov.in geo-fenced from AU (HTTP 000) |
+| `03775-274424` (Majuli) | majuli.assam.gov.in geo-fenced from AU (HTTP 000) |
+| `7462220105` / `9251466311` / `7728980366` (Ranthambore/Sariska forest) | forest.rajasthan.gov.in geo-fenced from AU (HTTP 000) |
+
+Known dead ends (excluded, researched twice previously): `03803-222253` (District Hospital Roing),
+`04545-240581` (Government Hospital Palani), `04172-232538` (Govt HQ Hospital Walajah).
+
+## Nothing to escalate
+
+No stored number was found to be wrong on a live official page. `number_changed` count remains 0.
+
+## Write path
+
+`node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --env-file=apps/web/.env.local scripts/sos-source-map-insert.mjs /Users/ashishtaneja/.claude/sos-backlog/entries-2026-11-08.json`
+
+Result: SOURCED 3 numbers across 3 rows (3 number-row pairs).
