@@ -38,18 +38,11 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-07",
     "PdMu0_evening": "2026-11-07",
-    "PdMu0_carousel": "2026-11-07"
+    "PdMu0_carousel": "2026-11-08",
+    "PdMu0_greeting": "2026-11-08"
   },
   "last_sync": "2026-11-07T18:55:43.329776+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hyderabad",
-      "date": "2026-10-24"
-    },
-    {
-      "destination_id": "nandi-hills",
-      "date": "2026-10-24"
-    },
     {
       "destination_id": "chakrata",
       "date": "2026-10-25"
@@ -145,6 +138,14 @@
     {
       "destination_id": "mathura",
       "date": "2026-11-07"
+    },
+    {
+      "destination_id": "gangotri",
+      "date": "2026-11-08"
+    },
+    {
+      "destination_id": "corbett-national-park",
+      "date": "2026-11-08"
     }
   ],
   "posted_formats": {
@@ -11787,6 +11788,33 @@
       "format": "v2_myth_bust_oneline",
       "has_media": true,
       "media_id": "mathura.mp4"
+    },
+    {
+      "timestamp": "2026-11-08T07:36:20.546443+00:00",
+      "date": "2026-11-08",
+      "platform": "youtube",
+      "post_id": "i2JED",
+      "destination": "kutch",
+      "format": "scenario_guide",
+      "media_id": "uq4MF"
+    },
+    {
+      "timestamp": "2026-11-08T14:29:06.622969+00:00",
+      "date": "2026-11-08",
+      "platform": "facebook",
+      "post_id": "buWWW",
+      "destination": "gangotri",
+      "format": "greeting.diwali",
+      "media_id": "greeting_diwali_2026-11-08"
+    },
+    {
+      "timestamp": "2026-11-08T14:30:47.253932+00:00",
+      "date": "2026-11-08",
+      "platform": "facebook",
+      "post_id": "IKjjT",
+      "destination": "corbett-national-park",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-11-08"
     }
   ],
   "theme_usage": {
@@ -11839,6 +11867,13 @@
         "2026-08-04",
         "2026-10-07",
         "2026-10-29"
+      ],
+      "mathura": [
+        "2026-05-24",
+        "2026-05-25",
+        "2026-05-26",
+        "2026-06-11",
+        "2026-11-07"
       ],
       "kedarnath": [
         "2026-05-24",
@@ -12208,9 +12243,6 @@
       ],
       "murudeshwar": [
         "2026-11-06"
-      ],
-      "mathura": [
-        "2026-11-07"
       ]
     },
     "morning_formats": {
@@ -12458,6 +12490,11 @@
         "2026-10-07",
         "2026-10-29"
       ],
+      "mathura": [
+        "2026-05-24",
+        "2026-06-11",
+        "2026-11-07"
+      ],
       "kedarnath": [
         "2026-05-24",
         "2026-10-21"
@@ -12663,9 +12700,6 @@
       ],
       "murudeshwar": [
         "2026-11-06"
-      ],
-      "mathura": [
-        "2026-11-07"
       ]
     },
     "audience_tags": {
@@ -12931,8 +12965,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
