@@ -36,12 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-07",
-    "PdMu0_evening": "2026-11-07",
+    "PdMu0": "2026-11-08",
+    "PdMu0_evening": "2026-11-08",
     "PdMu0_carousel": "2026-11-08",
     "PdMu0_greeting": "2026-11-08"
   },
-  "last_sync": "2026-11-07T18:55:43.329776+00:00",
+  "last_sync": "2026-11-08T18:56:39.520313+00:00",
   "posted_destinations": [
     {
       "destination_id": "chakrata",
@@ -146,6 +146,10 @@
     {
       "destination_id": "corbett-national-park",
       "date": "2026-11-08"
+    },
+    {
+      "destination_id": "chennai",
+      "date": "2026-11-08"
     }
   ],
   "posted_formats": {
@@ -173,7 +177,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_tourist_trap_split",
       "v3_tl_poll_reel",
       "festival_alert",
       "v2_series_episode",
@@ -193,7 +196,8 @@
       "v2_cost_index_handwritten",
       "data_carousel",
       "v2_route_animated_map",
-      "v2_myth_bust_oneline"
+      "v2_myth_bust_oneline",
+      "v2_score_card_pov"
     ]
   },
   "post_log": [
@@ -11815,6 +11819,35 @@
       "destination": "corbett-national-park",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-11-08"
+    },
+    {
+      "timestamp": "2026-11-08T14:37:10.034855+00:00",
+      "date": "2026-11-08",
+      "platform": "instagram",
+      "post_id": "5TMFo",
+      "destination": "alleppey",
+      "format": "scenario_hidden_gems",
+      "media_id": "LpmPq"
+    },
+    {
+      "timestamp": "2026-11-08T14:38:04.130624+00:00",
+      "date": "2026-11-08",
+      "platform": "youtube",
+      "post_id": "G70tX",
+      "destination": "alleppey",
+      "format": "scenario_hidden_gems",
+      "media_id": "bZgmZ"
+    },
+    {
+      "timestamp": "2026-11-08T18:57:29.533124+00:00",
+      "date": "2026-11-08",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "js5kj",
+      "destination": "chennai",
+      "format": "v2_score_card_pov",
+      "has_media": true,
+      "media_id": "chennai.mp4"
     }
   ],
   "theme_usage": {
@@ -12243,6 +12276,9 @@
       ],
       "murudeshwar": [
         "2026-11-06"
+      ],
+      "chennai": [
+        "2026-11-08"
       ]
     },
     "morning_formats": {
@@ -12401,7 +12437,8 @@
       ],
       "v2_score_card_pov": [
         "2026-06-02",
-        "2026-10-08"
+        "2026-10-08",
+        "2026-11-08"
       ],
       "v2_local_knows": [
         "2026-06-02",
@@ -12700,6 +12737,9 @@
       ],
       "murudeshwar": [
         "2026-11-06"
+      ],
+      "chennai": [
+        "2026-11-08"
       ]
     },
     "audience_tags": {
@@ -12979,7 +13019,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "corbett-national-park",
+    "shared_best": "chennai",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},
