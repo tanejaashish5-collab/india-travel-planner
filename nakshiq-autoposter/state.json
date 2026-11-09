@@ -36,12 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-08",
-    "PdMu0_evening": "2026-11-08",
+    "PdMu0": "2026-11-09",
+    "PdMu0_evening": "2026-11-09",
     "PdMu0_carousel": "2026-11-09",
     "PdMu0_greeting": "2026-11-08"
   },
-  "last_sync": "2026-11-08T18:56:39.520313+00:00",
+  "last_sync": "2026-11-09T23:34:20.860938+00:00",
   "posted_destinations": [
     {
       "destination_id": "dzukou-valley",
@@ -138,6 +138,10 @@
     {
       "destination_id": "dhanaulti",
       "date": "2026-11-09"
+    },
+    {
+      "destination_id": "ravangla",
+      "date": "2026-11-09"
     }
   ],
   "posted_formats": {
@@ -165,7 +169,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v3_tl_poll_reel",
       "festival_alert",
       "v2_series_episode",
       "v2_arrival_intel_video",
@@ -185,7 +188,8 @@
       "data_carousel",
       "v2_route_animated_map",
       "v2_myth_bust_oneline",
-      "v2_score_card_pov"
+      "v2_score_card_pov",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -11872,6 +11876,17 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-11-09"
+    },
+    {
+      "timestamp": "2026-11-09T23:35:11.268045+00:00",
+      "date": "2026-11-09",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xnk5H",
+      "destination": "ravangla",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "ravangla.mp4"
     }
   ],
   "theme_usage": {
@@ -12305,6 +12320,9 @@
       ],
       "murudeshwar": [
         "2026-11-06"
+      ],
+      "ravangla": [
+        "2026-11-09"
       ]
     },
     "morning_formats": {
@@ -12379,7 +12397,8 @@
         "2026-05-31",
         "2026-06-07",
         "2026-09-07",
-        "2026-10-13"
+        "2026-10-13",
+        "2026-11-09"
       ],
       "v2_tourist_trap_split": [
         "2026-05-31",
@@ -12762,6 +12781,9 @@
       ],
       "murudeshwar": [
         "2026-11-06"
+      ],
+      "ravangla": [
+        "2026-11-09"
       ]
     },
     "audience_tags": {
@@ -12782,7 +12804,8 @@
         "2026-09-07",
         "2026-10-19",
         "2026-10-26",
-        "2026-11-02"
+        "2026-11-02",
+        "2026-11-09"
       ],
       "families": [
         "2026-05-23",
@@ -12920,6 +12943,9 @@
       ],
       "40eff7cb-9008-4fb2-8060-d7638b17880d": [
         "2026-10-13"
+      ],
+      "1580db86-a5fa-4d19-b210-76e1d341b4f9": [
+        "2026-11-09"
       ]
     },
     "tourist_map_states": {
@@ -13041,7 +13067,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "chennai",
+    "shared_best": "haridwar",
     "collection": "budget-under-5000"
   },
   "manual_skip_dests": {},

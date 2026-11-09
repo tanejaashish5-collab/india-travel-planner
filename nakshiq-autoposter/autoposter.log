@@ -31633,3 +31633,34 @@ Date range: 2026-04-15 → 2026-11-08
 2026-11-09 17:45:54  INFO      [facebook/Nakshiq] ✅ carousel published (comparison) · post_id=Pgnmt
 2026-11-09 17:45:54  INFO      Carousel run complete (fmt=comparison, posted=True).
 2026-11-09 17:45:54  INFO      ════════════════════════════════════════════════════════════
+2026-11-09 23:33:30  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-09 23:33:30  INFO      ════════════════════════════════════════════════════════════
+2026-11-09 23:33:30  INFO      Nakshiq Autoposter · EVENING · 2026-11-09 · weekday=0
+2026-11-09 23:33:30  INFO      ════════════════════════════════════════════════════════════
+2026-11-09 23:33:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-09 23:34:20  INFO      Synced → 20 destinations · 100 traps · 5 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-09 23:34:20  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-09 23:34:22  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-09 23:34:22  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-09 23:34:22  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-09 23:34:39  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-09 23:34:39  INFO      Evening format (balance→verdict): festival_alert [25% vs target 35%] (0/15 never featured)
+2026-11-09 23:34:39  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: festival_alert  ·  Audience: backpackers
+2026-11-09 23:34:39  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 44
+2026-11-09 23:34:39  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-11-09 23:34:39  INFO      Fingerprint dedup snapshot — 40 dests in 7d · 91 (dest,fmt) pairs in 30d · 219 media in 60d
+2026-11-09 23:34:39  INFO      Festival locked: Mahakala Dance (Ralang Monastery) (75/77 active festivals never featured)
+2026-11-09 23:34:42  INFO      Shared best destination locked: Haridwar
+2026-11-09 23:34:42  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-11-09 23:34:42  INFO      [facebook/Nakshiq] Caption ready (446 chars, dest=ravangla)
+2026-11-09 23:34:43  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-09 23:34:43  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/ravangla.mp4?v=20260915
+2026-11-09 23:34:46  INFO          Brand-stamp applied: ravangla.mp4 (7,839,173 → 3,955,821 bytes)
+2026-11-09 23:34:46  INFO          Requesting upload URL for ravangla.mp4 (3,955,821 bytes, video/mp4)
+2026-11-09 23:34:48  INFO          Uploading to R2 (timeout=300s)...
+2026-11-09 23:34:49  INFO          R2 PUT OK. Confirming...
+2026-11-09 23:34:51  INFO          Media ready: RNvk4 (3,955,821 bytes · ravangla.mp4)
+2026-11-09 23:34:51  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-09 23:35:11  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xnk5H · Platform=1776312013598865
+2026-11-09 23:35:11  INFO      State saved. Run complete.
+2026-11-09 23:35:11  INFO      ════════════════════════════════════════════════════════════
