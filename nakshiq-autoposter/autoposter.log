@@ -31570,3 +31570,10 @@ Date range: 2026-04-15 → 2026-11-07
 2026-11-08 22:09:44  INFO      
 Date range: 2026-04-15 → 2026-11-08
 2026-11-08 22:09:44  INFO      ════════════════════════════════════════════════════════════
+2026-11-09 18:35:20  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-09 18:35:20  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-09 18:35:22  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-09 18:35:34  INFO          Requesting upload URL for vijayawada__guide_m11.mp4 (28,133,106 bytes, video/mp4)
+2026-11-09 18:35:37  INFO          Uploading to R2 (timeout=300s)...
+2026-11-09 18:35:53  INFO          R2 PUT OK. Confirming...
+2026-11-09 18:35:56  INFO          Media ready: mXwGY (28,133,106 bytes · vijayawada__guide_m11.mp4)
