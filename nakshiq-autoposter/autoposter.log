@@ -31829,3 +31829,59 @@ requests.exceptions.ConnectionError: ('Connection aborted.', OSError(65, 'No rou
 2026-11-10 15:48:52  INFO      [facebook/Nakshiq] ✅ carousel published (persona) · post_id=utiYR
 2026-11-10 15:48:52  INFO      Carousel run complete (fmt=persona, posted=True).
 2026-11-10 15:48:52  INFO      ════════════════════════════════════════════════════════════
+2026-11-10 20:56:45  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-10 20:56:45  INFO      ════════════════════════════════════════════════════════════
+2026-11-10 20:56:45  INFO      Nakshiq Autoposter · EVENING · 2026-11-10 · weekday=1
+2026-11-10 20:56:45  INFO      ════════════════════════════════════════════════════════════
+2026-11-10 20:56:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-10 20:57:21  INFO      Synced → 20 destinations · 100 traps · 5 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-10 20:57:21  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-10 20:57:23  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-10 20:57:23  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-10 20:57:23  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-10 20:57:36  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-10 20:57:36  INFO      [diversity] feed: 37 → 34 options · cooldown dropped 3 (carousel, pillar:scenario_eat_here, pillar:scenario_guide, pillar:scenario_map_reveal, pillar:verdict seen <2d)
+2026-11-10 20:57:36  INFO      Evening format (weekly carousel floor): data_carousel
+2026-11-10 20:57:36  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-11-10 20:57:36  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 47
+2026-11-10 20:57:36  INFO      Fingerprint dedup snapshot — 43 dests in 7d · 91 (dest,fmt) pairs in 30d · 222 media in 60d
+2026-11-10 20:57:36  INFO      Collection locked: The Haveli Trail of Rajasthan (75/100 never featured)
+2026-11-10 20:57:38  INFO      Shared best destination locked: Silent Valley National Park
+2026-11-10 20:57:38  INFO      Carousel locked (data_carousel): lonar-crater, deeg, haridwar, dungarpur, silent-valley
+2026-11-10 20:57:38  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-11-10 20:57:38  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-11-10 20:57:38  INFO      [facebook/Nakshiq] Caption ready (666 chars, dest=lonar-crater)
+2026-11-10 20:57:38  INFO      [facebook/Nakshiq] Rendering branded carousel (data_carousel, 5 dests)...
+2026-11-10 20:57:38  INFO      [facebook/Nakshiq] Rendered 7 branded slides · uploading to Outstand...
+2026-11-10 20:57:38  INFO          Requesting upload URL for data_carousel_01_title.jpg (55,398 bytes, image/jpeg)
+2026-11-10 20:57:39  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:40  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:57:42  INFO          Media ready: NCKEu (55,398 bytes · data_carousel_01_title.jpg)
+2026-11-10 20:57:42  INFO          Requesting upload URL for data_carousel_02_lonar-crater.jpg (312,824 bytes, image/jpeg)
+2026-11-10 20:57:43  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:44  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:57:46  INFO          Media ready: 8n1QQ (312,824 bytes · data_carousel_02_lonar-crater.jpg)
+2026-11-10 20:57:46  INFO          Requesting upload URL for data_carousel_03_deeg.jpg (238,620 bytes, image/jpeg)
+2026-11-10 20:57:47  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:47  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:57:48  INFO          Media ready: IlGy2 (238,620 bytes · data_carousel_03_deeg.jpg)
+2026-11-10 20:57:48  INFO          Requesting upload URL for data_carousel_04_haridwar.jpg (269,085 bytes, image/jpeg)
+2026-11-10 20:57:49  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:50  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:57:51  INFO          Media ready: v4alQ (269,085 bytes · data_carousel_04_haridwar.jpg)
+2026-11-10 20:57:51  INFO          Requesting upload URL for data_carousel_05_dungarpur.jpg (284,871 bytes, image/jpeg)
+2026-11-10 20:57:53  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:54  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:57:54  INFO          Media ready: QhzYD (284,871 bytes · data_carousel_05_dungarpur.jpg)
+2026-11-10 20:57:54  INFO          Requesting upload URL for data_carousel_06_silent-valley.jpg (353,733 bytes, image/jpeg)
+2026-11-10 20:57:55  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:56  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:57:57  INFO          Media ready: lJAUH (353,733 bytes · data_carousel_06_silent-valley.jpg)
+2026-11-10 20:57:57  INFO          Requesting upload URL for data_carousel_07_cta.jpg (33,456 bytes, image/jpeg)
+2026-11-10 20:57:57  INFO          Uploading to R2 (timeout=120s)...
+2026-11-10 20:57:58  INFO          R2 PUT OK. Confirming...
+2026-11-10 20:58:00  INFO          Media ready: e9M2w (33,456 bytes · data_carousel_07_cta.jpg)
+2026-11-10 20:58:00  INFO      [facebook/Nakshiq] Publishing 7-slide carousel...
+2026-11-10 20:58:21  INFO      [facebook/Nakshiq] ✅ Published · Outstand=LMmyS · Platform=1040562729145369_122128805402700092
+2026-11-10 20:58:21  INFO      State saved. Run complete.
+2026-11-10 20:58:21  INFO      ════════════════════════════════════════════════════════════
