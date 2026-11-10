@@ -863,25 +863,7 @@ def queue_opener(slug: str, today: date, dry: bool = False) -> int:
         photo = f"{sb}__photo.jpg"
     else:
         photo = _photo_ref(sb, slug)
-    g = (data().get("geo") or {}).get(slug) or {}
-    where = f"{name(slug)}, {g.get('state_name')}" if g.get("state_name") else name(slug)
-    # Crowds from the coming good month (a busy place stays busy); motion and light from the photo itself,
-    # never the month: a December "fog rolls in" over a sunny photo of boatmen made a clip that lies.
-    try:
-        m, _ = next_best(slug, today)
-    except Refuse:
-        m = today.month
-    sc = scene(slug, m)
-    busy = sc["crowd"] if sc else crowded(slug, m, month_note(slug, m))
-    people = (" It is a busy place: keep it busy, with crowds of small distant figures, and no close-up people." if busy
-              else " Keep any people as small and distant as in the photograph; add no close-up people.")
-    still = (f"Recreate this photograph of {where}, India, as a vertical 9:16 frame: exactly the same place, "
-             "viewpoint, season, light, buildings, hills and landmarks, extending the frame above and below "
-             "naturally. Photorealistic, natural colour." + people + " No text, no signs, no watermark.")
-    shot = ("The camera holds almost still with a very slow push-in. Only the natural movement of what is in "
-            "the picture: water ripples, clouds drift, leaves stir, mist or smoke moves"
-            + (", distant figures go about their day." if busy else ". No one walks into the frame.")
-            + " The light and season stay exactly as in the first frame. Ambient sound of the place. No text.")
+    still, shot, busy = opener_prompts(slug, today)
     rows = [] if dry else _load(QUEUE, [])
     have = {r["clip"] for r in rows}
     base = {"slug": slug, "format": sb, "pipeline": "v3", "storyboard": sb, "take": 1}
@@ -897,6 +879,40 @@ def queue_opener(slug: str, today: date, dry: bool = False) -> int:
         tmp.write_text(json.dumps(rows + new, indent=2, ensure_ascii=False))
         tmp.replace(QUEUE)
     return len(new)
+
+
+def opener_prompts(slug: str, today: date) -> tuple[str, str, bool]:
+    """The opener's still prompt, video prompt and crowd flag. Read-only, so requeue_clip.py can refresh
+    an old row with the current wording.
+
+    CROP, NEVER EXTEND (2026-11-10). The still used to say "extending the frame above and below
+    naturally": a landscape Commons photo fills under half of a 9:16 frame, so Flow invented the rest,
+    and the busy line told it to fill that with crowds. 6 of the first 20 stills added things the photo
+    lacks; Alwar's forested sanctuary hillside grew a palace and a bus-filled square, and Alampur's
+    close-up of a niche sculpture became a crowded temple courtyard."""
+    g = (data().get("geo") or {}).get(slug) or {}
+    where = f"{name(slug)}, {g.get('state_name')}" if g.get("state_name") else name(slug)
+    # Crowds from the coming good month (a busy place stays busy); motion and light from the photo itself,
+    # never the month: a December "fog rolls in" over a sunny photo of boatmen made a clip that lies.
+    try:
+        m, _ = next_best(slug, today)
+    except Refuse:
+        m = today.month
+    sc = scene(slug, m)
+    busy = sc["crowd"] if sc else crowded(slug, m, month_note(slug, m))
+    people = (" Where the photograph shows people in a public place, keep it busy with crowds of small distant "
+              "figures; add no close-up people." if busy
+              else " Keep any people as small and distant as in the photograph; add no close-up people.")
+    still = (f"Recreate this photograph of {where}, India, as a vertical 9:16 frame by cropping in on its "
+             "strongest part: exactly the same place, viewpoint, season and light. Keep only what the photograph "
+             "shows. Do not extend the scene and add nothing it does not contain: no new buildings, streets, "
+             "vehicles, crowds or landmarks. Photorealistic, natural colour." + people
+             + " No text, no signs, no watermark.")
+    shot = ("The camera holds almost still with a very slow push-in. Only the natural movement of what is in "
+            "the picture: water ripples, clouds drift, leaves stir, mist or smoke moves"
+            + (", any distant figures in it go about their day." if busy else ". No one walks into the frame.")
+            + " The light and season stay exactly as in the first frame. Ambient sound of the place. No text.")
+    return still, shot, busy
 
 
 def prepare(today: date | None = None) -> int:
