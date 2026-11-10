@@ -31672,3 +31672,119 @@ Date range: 2026-04-15 → 2026-11-08
 2026-11-10 19:05:37  INFO          R2 PUT OK. Confirming...
 2026-11-10 19:05:39  INFO          Media ready: jwWcr (20,445,265 bytes · dwarka__guide_m11.mp4)
 2026-11-10 10:34:33  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-11-11 01:35:07  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-11 01:35:07  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-11 01:35:22  INFO          Requesting upload URL for palampur__map_reveal__voiced__hinglish.mp4 (92,788,741 bytes, video/mp4)
+2026-11-11 01:35:24  INFO          Uploading to R2 (timeout=300s)...
+2026-11-11 01:36:07  INFO          R2 PUT OK. Confirming...
+2026-11-11 01:36:09  INFO          Media ready: XK1pI (92,788,741 bytes · palampur__map_reveal__voiced__hinglish.mp4)
+2026-11-11 01:36:10  INFO          Requesting upload URL for palampur__map_reveal__voiced__cover.jpg (365,156 bytes, image/jpeg)
+2026-11-11 01:36:11  INFO          Uploading to R2 (timeout=120s)...
+2026-11-11 01:36:15  INFO          R2 PUT OK. Confirming...
+2026-11-11 01:36:17  INFO          Media ready: bZKyP (365,156 bytes · palampur__map_reveal__voiced__cover.jpg)
+2026-11-11 01:37:48  INFO          Requesting upload URL for palampur__map_reveal__voiced__en.mp4 (93,477,778 bytes, video/mp4)
+2026-11-11 01:37:50  INFO          Uploading to R2 (timeout=300s)...
+2026-11-11 01:39:06  WARNING       Media upload exception: ('Connection aborted.', OSError(65, 'No route to host'))
+2026-11-11 01:39:06  WARNING       Traceback: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+OSError: [Errno 65] No route to host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', OSError(65, 'No route to host'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ashishtaneja/Desktop/India Travel Planner/nakshiq-autoposter/autoposter.py", line 6144, in upload_media_bytes
+    put = requests.put(r1["data"]["upload_url"], data=data,
+                       headers={"Content-Type": content_type},
+                       timeout=upload_timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/api.py", line 151, in put
+    return request("put", url, data=data, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/adapters.py", line 711, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', OSError(65, 'No route to host'))
+
+2026-11-11 01:39:13  INFO          Requesting upload URL for ranikhet__map_reveal__voiced__en.mp4 (58,214,149 bytes, video/mp4)
+2026-11-11 01:39:15  INFO          Uploading to R2 (timeout=300s)...
+2026-11-11 01:39:47  INFO          R2 PUT OK. Confirming...
+2026-11-11 01:39:49  INFO          Media ready: HaIrB (58,214,149 bytes · ranikhet__map_reveal__voiced__en.mp4)
