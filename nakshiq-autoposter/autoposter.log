@@ -31664,3 +31664,10 @@ Date range: 2026-04-15 → 2026-11-08
 2026-11-09 23:35:11  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xnk5H · Platform=1776312013598865
 2026-11-09 23:35:11  INFO      State saved. Run complete.
 2026-11-09 23:35:11  INFO      ════════════════════════════════════════════════════════════
+2026-11-10 19:05:06  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-10 19:05:06  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-10 19:05:08  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-10 19:05:25  INFO          Requesting upload URL for dwarka__guide_m11.mp4 (20,445,265 bytes, video/mp4)
+2026-11-10 19:05:27  INFO          Uploading to R2 (timeout=300s)...
+2026-11-10 19:05:37  INFO          R2 PUT OK. Confirming...
+2026-11-10 19:05:39  INFO          Media ready: jwWcr (20,445,265 bytes · dwarka__guide_m11.mp4)
