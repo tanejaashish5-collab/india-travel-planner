@@ -240,10 +240,16 @@ for (const { row, end } of toVerify) {
       return { ok: found >= 1 && found * 2 >= cl.length, found, n: cl.length };
     };
     const ja = await judge(a), jb = await judge(b);
+    // Claims either check backed with a quote this script found on the page:
+    // the material for a trimmed version if the fix as written can't pass.
+    const supported = [];
+    for (const v of [a, b]) for (const x of v?.claims ?? [])
+      if (x.status === "SUPPORTED" && (!weakUrl || String(x.url).trim() !== weakUrl) && await quoteFound(x))
+        supported.push({ claim: x.claim, url: x.url, quote: x.quote });
     const names = { length: ja.n + jb.n };
     const confirmed = ja.found + jb.found;
     res.push({ field: c.field, a: a?.verdict ?? "NONE", b: b?.verdict ?? "NONE", reasonA: a?.reason, reasonB: b?.reason,
-      claims: names.length, confirmed, quotesOk: ja.ok && jb.ok });
+      claims: names.length, confirmed, quotesOk: ja.ok && jb.ok, supported });
   }
   const allApprove = res.every((r) => r.a === "APPROVE" && r.b === "APPROVE" && r.quotesOk);
   const bothReject = res.some((r) => r.a === "REJECT" && r.b === "REJECT");
@@ -253,13 +259,93 @@ for (const { row, end } of toVerify) {
   else decisions.push({ row, action: "hold", res, why: res.map((r) => `${r.field}: A ${r.a}, B ${r.b}, quotes ${r.confirmed}/${r.claims}`).join("; ") });
 }
 
+// ---------- 4. trim to supported claims (founder 2026-11-12: "yes") ----------
+// A held or rejected fix often has a true core with unsupported extras: the
+// Baisaran closure is on an official Anantnag notice, but the same text added
+// travel-blog claims about Betaab and Aru. Rather than lose the whole fix, a
+// writer session rewrites it from the quote-confirmed claims ONLY, and two
+// fresh verifier sessions check the trimmed text from scratch under the same
+// rules. Nothing trimmed is applied unless both approve it.
+function writerPrompt(cands) {
+  return `You edit fact boxes for NakshIQ, an India travel site. Each item below has an ORIGINAL proposed text and a list of claims that were confirmed by a verbatim quote on a source page. Rewrite each item using ONLY the confirmed claims.
+Rules: add no fact, number, date, name or place that is not in a confirmed claim. Drop anything else. Keep the house style of the original (plain sentences, no em dashes). If a confirmed claim needs a dropped claim to avoid misleading a traveller, drop both. If the confirmed claims cannot make a useful, non-misleading text for that field, or the result says the same as OLD, return null for it.
+Reply with ONLY a JSON array of {"id": "<id>", "value": "<rewritten text>" | null, "source_url": "<the url backing the main claim>"}.
+
+Items:
+${cands.map((c) => `- id ${c.short} | ${c.destination_id} | field ${c.field}\n  OLD: ${JSON.stringify(c.old)}\n  ORIGINAL: ${JSON.stringify(c.value)}\n  confirmed claims:\n${c.supported.map((x) => `    * ${x.claim} [${x.url}] "${x.quote}"`).join("\n")}`).join("\n")}`;
+}
+function runWriter(cands) {
+  const r = spawnSync("claude", ["-p", writerPrompt(cands), "--model", "sonnet", "--output-format", "json", "--max-turns", "3"],
+    { encoding: "utf8", maxBuffer: 16 * 1024 * 1024, timeout: 20 * 60 * 1000 });
+  if (r.status !== 0) { console.error(`writer exit ${r.status}: ${(r.stdout || r.stderr || "").slice(-200)}`); return []; }
+  let text; try { text = JSON.parse(r.stdout).result; } catch { text = r.stdout; }
+  const m = String(text).match(/\[\s*\{[\s\S]*\}\s*\]/);
+  try { return m ? JSON.parse(m[0]) : []; } catch { return []; }
+}
+
+const trimCands = [];
+if (verifiersRan) for (const d of decisions) {
+  if (d.action === "approve" || !d.res) continue; // date-gate rejects have no checks to build from
+  const parts = d.row.changes.filter((c) => c.field !== "notice_source_url");
+  // every field must keep at least one confirmed claim, else there is nothing to trim to
+  if (!parts.every((c) => (d.res.find((r) => r.field === c.field)?.supported ?? []).length)) continue;
+  for (const c of parts) trimCands.push({ d, c, destination_id: d.row.destination_id, field: c.field, old: c.expected, value: c.value,
+    supported: d.res.find((r) => r.field === c.field).supported, short: `t${trimCands.length + 1}` });
+}
+if (trimCands.length) {
+  console.log(`trimming ${trimCands.length} field(s) on ${new Set(trimCands.map((t) => t.d.row.id)).size} fix(es) to their confirmed claims…`);
+  const written = new Map(runWriter(trimCands).map((w) => [String(w.id).trim(), w]));
+  const trimmed = trimCands.map((t) => ({ ...t, w: written.get(t.short) }))
+    .filter((t) => t.w?.value && typeof t.w.value === "string" && t.w.value.trim() && t.w.value.trim() !== String(t.old ?? "").trim());
+  const titems = trimmed.map((t, n) => ({ id: t.short, short: `item${n + 1}`, destination_id: t.destination_id, field: t.field, old: t.old, value: t.w.value.trim(), source: t.w.source_url || t.supported[0].url }));
+  const tShort = new Map(titems.map((i) => [i.short, i.id]));
+  const A2 = titems.length ? runVerifier(titems, "A-trim") : null, B2 = titems.length ? runVerifier(titems, "B-trim") : null;
+  const m2 = (arr) => new Map((arr ?? []).map((x) => [tShort.get(String(x.id).trim()) ?? x.id, x]));
+  const vA2 = m2(A2), vB2 = m2(B2);
+  for (const d of new Set(trimmed.map((t) => t.d))) {
+    const mine = trimmed.filter((t) => t.d === d);
+    const fields = d.row.changes.filter((c) => c.field !== "notice_source_url");
+    if (mine.length !== fields.length) continue; // writer dropped a field: no partial apply
+    let pass = true; const tres = [];
+    for (const t of mine) {
+      const a = vA2.get(t.short), b = vB2.get(t.short);
+      const ok = async (v) => { const cl = v?.claims ?? []; if (!cl.length || cl.some((x) => x.status !== "SUPPORTED")) return false;
+        let f = 0; for (const x of cl) if (await quoteFound(x)) f++; return f >= 1 && f * 2 >= cl.length; };
+      const good = a?.verdict === "APPROVE" && b?.verdict === "APPROVE" && (await ok(a)) && (await ok(b));
+      tres.push(`${t.field}: A ${a?.verdict ?? "NONE"}, B ${b?.verdict ?? "NONE"}`);
+      if (!good) pass = false;
+    }
+    if (!pass) { d.why += ` | trimmed version also not confirmed (${tres.join("; ")})`; continue; }
+    const srcUrl = mine[0].w.source_url || mine[0].supported[0].url;
+    const newChanges = d.row.changes.map((c) => {
+      const t = mine.find((x) => x.field === c.field);
+      if (t) return { ...c, value: t.w.value.trim(), original_value: c.value, trimmed: true };
+      if (c.field === "notice_source_url" && srcUrl) return { ...c, value: srcUrl, original_value: c.value };
+      return c;
+    });
+    d.trimmed = mine.map((t) => `${t.field}: ${JSON.stringify(t.w.value.trim())}`);
+    // The trimmed notice gets the same date gate as any other.
+    const tn = newChanges.find((c) => c.field === "notice_text" && c.value);
+    const tEnd = tn ? windowEnd(tn.value, now) : null;
+    if (tEnd && tEnd.getTime() + 86400000 < now.getTime()) { d.why += " | trimmed notice describes a window that has ended"; continue; }
+    if (!DRY) {
+      const { error: uerr } = await s.from("destination_corrections").update({ changes: newChanges }).eq("id", d.row.id).eq("status", "pending");
+      if (uerr) { d.why += ` | trim passed but row update failed: ${uerr.message}`; continue; }
+    }
+    d.row.changes = newChanges;
+    d.end = tEnd;
+    d.action = "approve"; d.trimApproved = true;
+    d.why = `trimmed to its quote-confirmed claims; both fresh checks approved the trimmed text (${tres.join("; ")})`;
+  }
+}
+
 let applied = 0, rejected = 0, held = 0;
 for (const d of decisions) {
   if (d.action === "hold") { held++; log.push(d); continue; }
   const r = await decide(d.row.id, d.action);
   d.result = r;
   if (r.ok && !DRY) {
-    const tag = d.action === "approve" ? "applied automatically: 2 independent checks + quote check" : `rejected automatically: ${d.why}`;
+    const tag = d.action === "approve" ? (d.trimApproved ? "applied automatically after trimming to confirmed claims: 2 fresh checks + quote check" : "applied automatically: 2 independent checks + quote check") : `rejected automatically: ${d.why}`;
     await s.from("destination_corrections").update({ result: tag.slice(0, 500) }).eq("id", d.row.id);
     if (d.action === "approve") {
       applied++;
@@ -280,6 +366,7 @@ const lines = [`# Corrections auto-verify ${istDate}`, "",
 for (const d of log) {
   lines.push(`## ${d.row.destination_id}: ${d.action.toUpperCase()}${d.result ? ` (${d.result.status} ${d.result.msg})` : ""}`, "", d.why);
   if (d.expires) lines.push(`Notice expiry pulled in to ${d.expires}.`);
+  for (const t of d.trimmed ?? []) lines.push(`- TRIMMED ${t}`);
   for (const c of d.row.changes) lines.push(`- ${c.field}: ${JSON.stringify(c.expected)} -> ${JSON.stringify(c.value)}`);
   for (const r of d.res ?? []) lines.push(`- check ${r.field}: A ${r.a} (${r.reasonA ?? "-"}); B ${r.b} (${r.reasonB ?? "-"}); quotes confirmed ${r.confirmed}/${r.claims}`);
   lines.push("");
