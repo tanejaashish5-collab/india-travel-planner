@@ -112,7 +112,11 @@ function evaluate(parsed: GscAudit[]): Finding[] {
       findings.push({
         rule: "indexed_pages_drop",
         severity: "high",
-        detail: `Indexed pages dropped ${pct.toFixed(1)}% — trailing ${W}-read average ${currentAvg.toFixed(0)} vs prior ${W}-read average ${priorAvg.toFixed(0)} (sustained, not a single-sample dip). Same shape as the 2026-05-05 ISR regression.`,
+        detail: `Indexed pages dropped ${pct.toFixed(1)}% — trailing ${W}-read average ${currentAvg.toFixed(0)} vs prior ${W}-read average ${priorAvg.toFixed(0)} (sustained, not a single-sample dip).${
+          latest.date >= "2026-11-05" && latest.date <= "2026-12-16"
+            ? " Part of this is planned: the 2026-11-05 /hi noindex removed ~3,000 pages (ESTIMATED). The decline began before that (19,400 on 10-04), so it is not all explained. The agreed check is clicks, watched by hi-noindex-check (result 2026-12-16)."
+            : " Same shape as the 2026-05-05 ISR regression."
+        }`,
         data: { current_avg: currentAvg, prior_avg: priorAvg, pct_change: pct, audit_date: latest.date },
       });
     }
@@ -188,24 +192,28 @@ export async function GET(req: NextRequest) {
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (supabaseUrl && serviceKey) {
-    const supabase = createClient(supabaseUrl, serviceKey);
-    await supabase.from("ops_reports").insert({
-      job: "audit-gsc-alerts",
-      summary: {
-        audits_read: gsc.length,
-        snapshot_generated_at: (snapshots as { generated_at?: string }).generated_at,
-        latest_audit: latest.date,
-        latest_indexed: latest.indexed_pages,
-        findings,
-      },
-      alerts_count: findings.length,
-      ok: high.length === 0,
-    });
+  const supabase = supabaseUrl && serviceKey ? createClient(supabaseUrl, serviceKey) : null;
+
+  // Email once per NEW audit reading, not once per day. The GSC audit is weekly
+  // now, so 2026-11-03..11-09 sent the same 11-02 reading seven times (and the
+  // watchdog sent a "DEGRADED" mail on top each morning). A new reading, or a
+  // different set of high rules on the same reading, is news and is emailed.
+  const emailKey = `${latest.date}|${high.map((f) => f.rule).sort().join(",")}`;
+  let alreadyEmailed = false;
+  if (supabase && high.length > 0) {
+    const { data: prev } = await supabase
+      .from("ops_reports")
+      .select("summary")
+      .eq("job", "audit-gsc-alerts")
+      .order("run_at", { ascending: false })
+      .limit(14);
+    alreadyEmailed = (prev ?? []).some(
+      (r) => (r.summary as { emailed_key?: string } | null)?.emailed_key === emailKey
+    );
   }
 
   let emailed = false;
-  if (high.length > 0) {
+  if (high.length > 0 && !alreadyEmailed) {
     const resend = getResend();
     if (resend) {
       try {
@@ -224,8 +232,31 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  if (supabase) {
+    await supabase.from("ops_reports").insert({
+      job: "audit-gsc-alerts",
+      summary: {
+        audits_read: gsc.length,
+        snapshot_generated_at: (snapshots as { generated_at?: string }).generated_at,
+        latest_audit: latest.date,
+        latest_indexed: latest.indexed_pages,
+        findings,
+        high_count: high.length,
+        // Carried forward on repeat days so the dedupe window never loses it.
+        emailed_key: emailed || alreadyEmailed ? emailKey : null,
+      },
+      alerts_count: findings.length,
+      // ok = the JOB ran. Findings are this job's own output and it emails them
+      // itself; writing ok:false made the watchdog call it "ERRORED" and send a
+      // second, daily "cron health DEGRADED" mail for the same finding.
+      ok: true,
+    });
+  }
+
   return NextResponse.json({
-    ok: high.length === 0,
+    ok: true,
+    high_count: high.length,
+    already_emailed: alreadyEmailed,
     audits_read: gsc.length,
     snapshot_generated_at: (snapshots as { generated_at?: string }).generated_at,
     latest_audit: latest.date,
