@@ -32001,3 +32001,36 @@ Date range: 2026-04-15 → 2026-11-10
 2026-11-11 15:32:35  INFO      [facebook/Nakshiq] ✅ carousel published (cost) · post_id=IKDt8
 2026-11-11 15:32:35  INFO      Carousel run complete (fmt=cost, posted=True).
 2026-11-11 15:32:35  INFO      ════════════════════════════════════════════════════════════
+2026-11-11 21:33:27  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-11 21:33:27  INFO      ════════════════════════════════════════════════════════════
+2026-11-11 21:33:27  INFO      Nakshiq Autoposter · EVENING · 2026-11-11 · weekday=2
+2026-11-11 21:33:27  INFO      ════════════════════════════════════════════════════════════
+2026-11-11 21:33:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-11 21:34:06  INFO      Synced → 20 destinations · 100 traps · 4 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-11 21:34:06  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-11 21:34:07  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-11 21:34:07  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-11 21:34:07  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-11 21:34:20  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-11 21:34:20  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_guide, pillar:scenario_map_reveal, pillar:scenario_real_cost seen <2d)
+2026-11-11 21:34:20  INFO      Evening format (balance→verification): confidence_intel [0% vs target 25%] (0/15 never featured)
+2026-11-11 21:34:20  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: blog_promo
+2026-11-11 21:34:20  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 53
+2026-11-11 21:34:20  INFO      Fingerprint dedup snapshot — 45 dests in 7d · 91 (dest,fmt) pairs in 30d · 223 media in 60d
+2026-11-11 21:34:20  INFO      Article locked: Is Vrindavan in December worth it? (4/4 never featured)
+2026-11-11 21:34:21  INFO      Shared best destination locked: Mysore
+2026-11-11 21:34:21  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-11-11 21:34:21  INFO      confidence_intel for Mysore: only 0 card rows — SKIPPING
+2026-11-11 21:34:21  WARNING   [facebook/Nakshiq] confidence_intel: mysore inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'haridwar' as score_card to keep the slot live.
+2026-11-11 21:34:21  INFO      [facebook/Nakshiq] Caption ready (639 chars, dest=haridwar)
+2026-11-11 21:34:22  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-11 21:34:22  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/haridwar.mp4?v=20260915
+2026-11-11 21:34:25  INFO          Brand-stamp applied: haridwar.mp4 (8,365,004 → 4,715,226 bytes)
+2026-11-11 21:34:25  INFO          Requesting upload URL for haridwar.mp4 (4,715,226 bytes, video/mp4)
+2026-11-11 21:34:26  INFO          Uploading to R2 (timeout=300s)...
+2026-11-11 21:34:28  INFO          R2 PUT OK. Confirming...
+2026-11-11 21:34:29  INFO          Media ready: IlZM1 (4,715,226 bytes · haridwar.mp4)
+2026-11-11 21:34:29  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-11 21:34:52  INFO      [facebook/Nakshiq] ✅ Published · Outstand=gBHON · Platform=2154010605229022
+2026-11-11 21:34:52  INFO      State saved. Run complete.
+2026-11-11 21:34:52  INFO      ════════════════════════════════════════════════════════════

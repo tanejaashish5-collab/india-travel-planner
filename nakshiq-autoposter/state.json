@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-10",
-    "PdMu0_evening": "2026-11-10",
+    "PdMu0": "2026-11-11",
+    "PdMu0_evening": "2026-11-11",
     "PdMu0_carousel": "2026-11-11"
   },
-  "last_sync": "2026-11-10T20:57:21.219724+00:00",
+  "last_sync": "2026-11-11T21:34:06.772858+00:00",
   "posted_destinations": [
     {
       "destination_id": "jodhpur",
@@ -161,6 +161,10 @@
     {
       "destination_id": "tawang",
       "date": "2026-11-11"
+    },
+    {
+      "destination_id": "haridwar",
+      "date": "2026-11-11"
     }
   ],
   "posted_formats": {
@@ -188,7 +192,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_series_episode",
       "v2_arrival_intel_video",
       "data_carousel",
       "v2_weekend_escape_map",
@@ -208,7 +211,8 @@
       "v2_myth_bust_oneline",
       "v2_score_card_pov",
       "festival_alert",
-      "data_carousel"
+      "data_carousel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -11989,6 +11993,17 @@
       "destination": "tawang",
       "format": "carousel.cost",
       "media_id": "carousel_cost_2026-11-11"
+    },
+    {
+      "timestamp": "2026-11-11T21:34:52.433227+00:00",
+      "date": "2026-11-11",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "gBHON",
+      "destination": "haridwar",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "haridwar.mp4"
     }
   ],
   "theme_usage": {
@@ -12195,7 +12210,8 @@
       ],
       "haridwar": [
         "2026-06-15",
-        "2026-11-10"
+        "2026-11-10",
+        "2026-11-11"
       ],
       "valley-of-flowers": [
         "2026-06-19",
@@ -12596,7 +12612,8 @@
         "2026-09-30",
         "2026-10-24",
         "2026-10-26",
-        "2026-10-30"
+        "2026-10-30",
+        "2026-11-11"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -12906,6 +12923,9 @@
       ],
       "lonar-crater": [
         "2026-11-10"
+      ],
+      "haridwar": [
+        "2026-11-11"
       ]
     },
     "audience_tags": {
@@ -13174,7 +13194,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13188,7 +13209,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "silent-valley",
+    "shared_best": "mysore",
     "collection": "haveli-trail-rajasthan"
   },
   "manual_skip_dests": {},
