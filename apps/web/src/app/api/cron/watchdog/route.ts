@@ -39,6 +39,11 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   // below 80% AND not recovering.
   "freshness-review": 8,        // weekly (Sat) + Wed catch-up while a backlog exists
   "freshness-coverage": 8,      // weekly (Mon, with freshness-drift)
+  // Added 2026-11-11: on 11-11 both verifier sessions crashed and nothing noticed;
+  // all 21 fixes fell through to the founder unchecked. ok:false now = verifiers
+  // failed -> "errored" here. 15d, not 8, because the wrapper skips whole runs
+  // when the review backlog is clear.
+  "corrections-autoverify": 15,
   "prewarm-next-month": 32,   // monthly cron 28th 01:00 UTC
   "audit-cache-headers": 0.1, // hourly cron — 2h max gap before suspicious
   "audit-gsc-alerts": 2,      // daily cron 03:30 UTC
@@ -96,6 +101,7 @@ const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
   // First Saturday check after the 2026-09-17 deploy. Set to null once it fires.
   "audit-blog-batch": "2026-09-19T09:40:00Z",
   "road-coverage": "2026-10-06T00:00:00Z", // first wrapper run after the 10-04 deploy
+  "corrections-autoverify": "2026-11-15T08:00:00Z", // first Saturday wrapper run after this deploy
 };
 
 // How long a job may sit CONTINUOUSLY in needs_review before it escalates to

@@ -97,11 +97,33 @@ Items:
 ${items.map((i) => `- id ${i.short} | ${i.destination_id} | field ${i.field}\n  OLD: ${JSON.stringify(i.old)}\n  NEW: ${JSON.stringify(i.value)}\n  cited source: ${i.source}`).join("\n")}`;
 }
 
+// 2026-11-11: one session given all 21 items exited 1 for BOTH verifiers, so
+// nothing was checked and all 21 went to the founder. Batches of 7-9 had worked.
+// Now: batches of BATCH items, each retried once, failure reason logged.
+const BATCH = 5;
+const verifierErrors = [];
+let failedChunks = 0;
 function runVerifier(items, label) {
+  const out = [];
+  for (let i = 0; i < items.length; i += BATCH) {
+    const chunk = items.slice(i, i + BATCH);
+    let got = runVerifierOnce(chunk, `${label}${i / BATCH + 1}`);
+    if (!got) got = runVerifierOnce(chunk, `${label}${i / BATCH + 1}-retry`);
+    if (got) out.push(...got); else failedChunks++;
+  }
+  return out.length ? out : null;
+}
+function runVerifierOnce(items, label) {
   const r = spawnSync("claude", ["-p", verifierPrompt(items), "--model", "sonnet", "--output-format", "json",
     "--allowedTools", "WebSearch,WebFetch,Bash(curl:*),Bash(pdftotext:*)", "--max-turns", "120"],
     { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, timeout: 60 * 60 * 1000 });
-  if (r.status !== 0) { console.error(`verifier ${label} exit ${r.status}: ${(r.stderr || "").slice(0, 300)}`); return null; }
+  if (r.status !== 0) {
+    let why = (r.stderr || "").trim();
+    try { const j = JSON.parse(r.stdout); why = why || `${j.subtype ?? ""} ${String(j.result ?? "").slice(0, 200)}`.trim(); } catch { why = why || String(r.stdout || r.error?.message || "").slice(-300); }
+    console.error(`verifier ${label} exit ${r.status}: ${why.slice(0, 300)}`);
+    verifierErrors.push(`${label}: exit ${r.status} ${why.slice(0, 120)}`);
+    return null;
+  }
   let text;
   try { text = JSON.parse(r.stdout).result; } catch { text = r.stdout; }
   try { writeFileSync(join(RAW_DIR, `verifier-${label}.txt`), String(text)); } catch { /* audit copy only */ }
@@ -159,10 +181,10 @@ const toVerify = [];
 for (const row of pendingRows) {
   // scripts/freshness-review.mjs settle: the source is weak or would not open, so
   // this one is his call whatever a verifier says.
-  if (row.changes.some((c) => c.founder_only)) {
-    decisions.push({ row, action: "hold", why: "source is not official or named news, or would not open" });
-    continue;
-  }
+  // Weak-source fixes (founder_only) used to go straight to his email, where he
+  // pressed OK without checking anything (founder 2026-11-11: "how does it matter
+  // if I press okay or you press okay?"). They now take the same two checks, and
+  // a quote on the weak cited page itself does not count (see judge below).
   const notice = row.changes.find((c) => c.field === "notice_text" && c.value);
   const end = notice ? windowEnd(notice.value, now) : null;
   if (notice && end && end.getTime() + 86400000 < now.getTime()) {
@@ -188,6 +210,15 @@ if (items.length) {
 const byId = (arr) => new Map((arr ?? []).map((x) => [shortToId.get(String(x.id).trim()) ?? x.id, x]));
 console.log(`verifier A answered ${A?.length ?? "nothing"}, B answered ${B?.length ?? "nothing"} (raw replies in ${RAW_DIR})`);
 const vA = byId(A), vB = byId(B);
+// A crashed verifier is a system failure, not a judgement: never let it age a fix
+// into rejection, and report it as an error so the watchdog emails about it.
+const verifiersRan = !items.length || (A !== null && B !== null && failedChunks === 0);
+// Unconfirmed fixes are re-checked each run (twice a week). The founder no longer
+// approves by email: an unverified claim is not published, so after HOLD_DAYS the
+// fix is rejected and the page keeps what it said. The next weekly review can
+// queue it again with a better source.
+const HOLD_DAYS = 14;
+const ageDays = (row) => (Date.now() - new Date(row.created_at).getTime()) / 86400000;
 
 for (const { row, end } of toVerify) {
   const parts = row.changes.filter((c) => c.field !== "notice_source_url");
@@ -200,11 +231,12 @@ for (const { row, end } of toVerify) {
     // at least half of its quotes, minimum one, found verbatim on the cited page
     // by this script. Pages that are PDFs-as-images or JS-only legitimately fail
     // the machine fetch, hence half rather than all.
+    const weakUrl = c.founder_only ? String(c.source ?? "").trim() : null;
     const judge = async (v) => {
       const cl = v?.claims ?? [];
       if (!cl.length || cl.some((x) => x.status !== "SUPPORTED")) return { ok: false, found: 0, n: cl.length };
       let found = 0;
-      for (const x of cl) if (await quoteFound(x)) found++;
+      for (const x of cl) if ((!weakUrl || String(x.url).trim() !== weakUrl) && await quoteFound(x)) found++;
       return { ok: found >= 1 && found * 2 >= cl.length, found, n: cl.length };
     };
     const ja = await judge(a), jb = await judge(b);
@@ -217,6 +249,7 @@ for (const { row, end } of toVerify) {
   const bothReject = res.some((r) => r.a === "REJECT" && r.b === "REJECT");
   if (allApprove) decisions.push({ row, action: "approve", end, res, why: "both checks approved every claim; every claim quote found on its source" });
   else if (bothReject) decisions.push({ row, action: "reject", res, why: `both checks rejected: ${res.map((r) => r.reasonA).filter(Boolean).join(" / ")}` });
+  else if (verifiersRan && ageDays(row) >= HOLD_DAYS) decisions.push({ row, action: "reject", res, why: `not confirmed by two independent checks across runs for ${HOLD_DAYS}+ days; page left as it was: ` + res.map((r) => `${r.field}: A ${r.a}, B ${r.b}, quotes ${r.confirmed}/${r.claims}`).join("; ") });
   else decisions.push({ row, action: "hold", res, why: res.map((r) => `${r.field}: A ${r.a}, B ${r.b}, quotes ${r.confirmed}/${r.claims}`).join("; ") });
 }
 
@@ -243,7 +276,7 @@ for (const d of decisions) {
 
 const istDate = new Date(now.getTime() + 5.5 * 3600000).toISOString().slice(0, 10);
 const lines = [`# Corrections auto-verify ${istDate}`, "",
-  `${applied} applied, ${rejected} rejected, ${held} left for the founder${DRY ? " (DRY RUN)" : ""}.`, ""];
+  `${applied} applied, ${rejected} rejected, ${held} held for re-check next run${verifiersRan ? "" : " (VERIFIERS FAILED: " + verifierErrors.join("; ") + ")"}${DRY ? " (DRY RUN)" : ""}.`, ""];
 for (const d of log) {
   lines.push(`## ${d.row.destination_id}: ${d.action.toUpperCase()}${d.result ? ` (${d.result.status} ${d.result.msg})` : ""}`, "", d.why);
   if (d.expires) lines.push(`Notice expiry pulled in to ${d.expires}.`);
@@ -253,7 +286,7 @@ for (const d of log) {
 }
 if (OUT) writeFileSync(OUT, lines.join("\n"));
 console.log(lines.join("\n"));
-if (!DRY) await s.from("ops_reports").insert({ job: "corrections-autoverify", ok: true, alerts_count: held,
-  summary: { applied, rejected, held, total: decisions.length, verifiers_ok: items.length ? Boolean(A && B) : true,
-    detail: held ? `${held} correction(s) left for the founder's approval email` : null } });
+if (!DRY) await s.from("ops_reports").insert({ job: "corrections-autoverify", ok: verifiersRan, alerts_count: verifiersRan ? 0 : held,
+  summary: { applied, rejected, held, total: decisions.length, verifiers_ok: verifiersRan, verifier_errors: verifierErrors,
+    detail: verifiersRan ? (held ? `${held} correction(s) waiting for re-check next run` : null) : `verifier sessions failed: ${verifierErrors.join(" | ").slice(0, 300)}` } });
 console.log(`RESULT applied=${applied} rejected=${rejected} held=${held}`);

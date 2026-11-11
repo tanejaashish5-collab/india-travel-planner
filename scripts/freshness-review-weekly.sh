@@ -191,13 +191,11 @@ bash scripts/audit-commit-guard.sh -m "audit(freshness): weekly review $TODAY â€
 # Called after EVERY run, not only when this run queued something: fixes queued
 # by hand or left unanswered get re-sent twice a week until decided. The endpoint
 # sends nothing when the queue is empty.
-SECRET="$(sed -nE 's/^NEWSLETTER_SEND_SECRET=//p' apps/web/.env.local | tr -d '"')"
-if curl -sf -X POST -H "Authorization: Bearer $SECRET" https://www.nakshiq.com/api/admin/corrections/notify > "$WORK/notify-$TODAY.json"; then
-  say "approval queue: $(cat "$WORK/notify-$TODAY.json")"
-else
-  say "âŒ approval email failed"
-  notify "Freshness review: the approval email for queued page fixes failed. Click for the note." "$REPO_ROOT/$NOTE"
-fi
+# 2026-11-11 (founder: "how does it matter if I press okay or you press okay?"):
+# no approval email any more. corrections-autoverify.mjs decides every fix,
+# re-checks the unconfirmed ones each run and rejects them after 14 days, and
+# reports a verifier crash to the watchdog, which emails only for that.
+say "approval email retired 2026-11-11; auto-verify decides the queue"
 if [ -n "${OPEN_LEFT:-}" ] && [ "$OPEN_LEFT" -gt 0 ] 2>/dev/null; then
   say "escalating: $OPEN_LEFT destination(s) the settle step could not finish"
   notify "Freshness review: $OPEN_LEFT page(s) may state something no longer true and the automatic check could not settle them. Click for the note." "$REPO_ROOT/$NOTE"
