@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-11",
-    "PdMu0_evening": "2026-11-11",
+    "PdMu0": "2026-11-12",
+    "PdMu0_evening": "2026-11-12",
     "PdMu0_carousel": "2026-11-12"
   },
-  "last_sync": "2026-11-11T21:34:06.772858+00:00",
+  "last_sync": "2026-11-12T21:35:21.262873+00:00",
   "posted_destinations": [
     {
       "destination_id": "madurai",
@@ -165,6 +165,10 @@
     {
       "destination_id": "pune",
       "date": "2026-11-12"
+    },
+    {
+      "destination_id": "colva-benaulim",
+      "date": "2026-11-12"
     }
   ],
   "posted_formats": {
@@ -192,7 +196,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_arrival_intel_video",
       "data_carousel",
       "v2_weekend_escape_map",
       "v4_dw_walk_itinerary_day_by_day",
@@ -212,7 +215,8 @@
       "v2_score_card_pov",
       "festival_alert",
       "data_carousel",
-      "score_card"
+      "score_card",
+      "stays_pick"
     ]
   },
   "post_log": [
@@ -12040,6 +12044,17 @@
       "destination": "pune",
       "format": "carousel.route",
       "media_id": "carousel_route_2026-11-12"
+    },
+    {
+      "timestamp": "2026-11-12T21:35:59.005237+00:00",
+      "date": "2026-11-12",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "l3ZYN",
+      "destination": "colva-benaulim",
+      "format": "stays_pick",
+      "has_media": true,
+      "media_id": "colva-benaulim.mp4"
     }
   ],
   "theme_usage": {
@@ -12493,6 +12508,9 @@
       ],
       "silent-valley": [
         "2026-11-10"
+      ],
+      "colva-benaulim": [
+        "2026-11-12"
       ]
     },
     "morning_formats": {
@@ -12724,6 +12742,9 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
+      ],
+      "stays_pick": [
+        "2026-11-12"
       ]
     },
     "reels": {
@@ -12962,6 +12983,9 @@
       ],
       "haridwar": [
         "2026-11-11"
+      ],
+      "colva-benaulim": [
+        "2026-11-12"
       ]
     },
     "audience_tags": {
@@ -13109,6 +13133,9 @@
       ],
       "haveli-trail-rajasthan": [
         "2026-11-10"
+      ],
+      "best-stargazing-spots": [
+        "2026-11-12"
       ]
     },
     "festivals": {
@@ -13227,7 +13254,13 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "stays": {
+      "colva-benaulim": [
+        "2026-11-12"
+      ]
+    },
+    "collection_carousel_dests:best-stargazing-spots": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13241,8 +13274,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "mysore",
-    "collection": "haveli-trail-rajasthan"
+    "shared_best": "bengaluru",
+    "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-11-10",
