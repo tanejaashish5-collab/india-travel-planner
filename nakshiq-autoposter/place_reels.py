@@ -217,7 +217,7 @@ def scenery_title(place: str, state: str = ""):
     drop = {w.lower() for w in re.findall(r"[A-Za-z]+", f"{place} {state} india")}
     def ok(title: str) -> bool:
         t = re.sub(r"\.(jpe?g|png|tiff?|webp)$", "", title, flags=re.I)
-        if WILDLIFE.search(t):
+        if WILDLIFE.search(t) or ARTWORK.search(t):
             return False
         rest = [w for w in re.findall(r"[A-Za-z]+", t) if w.lower() not in drop
                 and not re.fullmatch(r"(img|dsc|dscn|dcim|pano|panoramio|photo|pic|edit|cropped|of|the|in|at|and|near|from|a)", w, re.I)]
@@ -277,6 +277,12 @@ BUILDING = re.compile(r"\b(hotel|resort|guest ?house|homestay|cottage|lodge|room
                       r"college|hospital|bank|interior|inside|museum|statue|idol|sign|signboard|board|map|car|bus|train|"
                       r"bike|portrait|selfie|people|man|woman|boy|girl|family|wedding)\b", re.I)
 
+# Old artwork, maps and pre-1980 scans are not what the place looks like now (2026-11-12: Barren
+# Island 1885 engraving map, Bharatpur 1967 painting, Bhubaneswar 1877 engraving, Mysore 1889 news
+# print, Mathura c.1768 mural, Amritsar 1860s artwork; Flow turned each into an invented scene).
+ARTWORK = re.compile(r"\b(1[5-8]\d\d|19[0-7]\d)'?s?\b|\b(engraving|painting|lithograph|sketch|drawing|illustration|"
+                     r"etching|watercolou?r|aquatint|artwork|mural|map|plate|illustrated)\b", re.I)
+
 
 def ref_credit(sb: str) -> dict:
     """The Commons record of the photo a storyboard's clips were made from. Clips with no record were
@@ -325,6 +331,14 @@ def facts_map_reveal(slug: str, today: date) -> dict:
 # pictures now come FROM the reason: each month's destination_months.note is turned into the
 # Veo prompt (only what the note says), and the note itself is the line on screen.
 # (pattern in the note, what the still shows, how the clip moves, what it sounds like)
+# 2026-11-12: "Heat haze shimmers over the ground." made Veo add smoke plumes, dust storms, sun
+# flares and swirling watermark-like rings to most of 80 clips; "Fog rolls slowly across." made
+# Kurukshetra's December fog billow like fire smoke twice. requeue_clip.py swaps the retired line
+# for the new one on every row it re-queues.
+FOG_MOTION = "A thin, even layer of fog hangs low and level and drifts very slowly."
+HEAT_MOTION = ("The hot, bright scene stays still and sharp in clear, dry air; the light, sky and colours stay "
+               "exactly as in the first frame.")    # naming smoke/dust in the prompt primes Veo to draw them
+RETIRED_MOTION = {"Fog rolls slowly across.": FOG_MOTION, "Heat haze shimmers over the ground.": HEAT_MOTION}
 CUES = [
     (r"heavy monsoon|monsoon|heavy rain|downpour|rain", "heavy monsoon rain pouring down, low dark grey clouds, wet glistening ground and puddles",
      "Heavy rain falls in sheets and low clouds drift across.", "steady heavy rain and distant thunder"),
@@ -333,8 +347,8 @@ CUES = [
      "snow only on the distant high peaks, the valley and town below dry", "Clouds drift past the snowy peaks far away.", "light wind and birdsong"),
     (r"(?<!pre-)(?<!pre )(?<!no )(?<!before )(?<!without )\b(blizzard|heavy snow|snowfall|snowbound|snow)\b(?![- ]?(free|yet|capped|clad|peaks?|line))", "deep fresh snow covering the ground, roofs and trees", "Light snow drifts down.",
      "soft wind and muffled stillness"),
-    (r"fog|mist|haze|smog", "thick drifting fog softening everything", "Fog rolls slowly across.", "a low quiet wind"),
-    (r"scorching|heatwave|extreme heat|hot\b|heat", "harsh white midday sun and shimmering heat haze", "Heat haze shimmers over the ground.",
+    (r"fog|mist|haze|smog", "thick drifting fog softening everything", FOG_MOTION, "a low quiet wind"),
+    (r"scorching|heatwave|extreme heat|hot\b|heat", "harsh white midday sun and shimmering heat haze", HEAT_MOTION,
      "dry wind and cicadas"),
     (r"clear sk|clear blue|clear view|clarity|crisp|sunny|sunshine|bright", "a clear deep-blue sky and crisp sharp light", "Soft clouds drift high and leaves stir in a light breeze.",
      "light wind and birdsong"),
