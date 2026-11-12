@@ -281,7 +281,7 @@ BUILDING = re.compile(r"\b(hotel|resort|guest ?house|homestay|cottage|lodge|room
 # Island 1885 engraving map, Bharatpur 1967 painting, Bhubaneswar 1877 engraving, Mysore 1889 news
 # print, Mathura c.1768 mural, Amritsar 1860s artwork; Flow turned each into an invented scene).
 ARTWORK = re.compile(r"\b(1[5-8]\d\d|19[0-7]\d)'?s?\b|\b(engraving|painting|lithograph|sketch|drawing|illustration|"
-                     r"etching|watercolou?r|aquatint|artwork|mural|map|plate|illustrated)\b", re.I)
+                     r"etching|watercolou?r|aquatint|artwork|mural|map|plate|illustrated|woodblock|woodcut|printed|print)\b", re.I)
 
 
 def ref_credit(sb: str) -> dict:
