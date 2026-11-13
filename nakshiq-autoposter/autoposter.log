@@ -32227,3 +32227,10 @@ Date range: 2026-04-15 → 2026-11-11
 2026-11-12 23:44:54  INFO      
 Date range: 2026-04-15 → 2026-11-12
 2026-11-12 23:44:54  INFO      ════════════════════════════════════════════════════════════
+2026-11-13 18:35:32  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-13 18:35:32  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-13 18:35:34  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-13 18:35:47  INFO          Requesting upload URL for visakhapatnam__guide_m11.mp4 (15,327,559 bytes, video/mp4)
+2026-11-13 18:35:50  INFO          Uploading to R2 (timeout=300s)...
+2026-11-13 18:36:13  INFO          R2 PUT OK. Confirming...
+2026-11-13 18:36:16  INFO          Media ready: 7mTgF (15,327,559 bytes · visakhapatnam__guide_m11.mp4)
