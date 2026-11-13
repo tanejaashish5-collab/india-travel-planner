@@ -32303,3 +32303,35 @@ Date range: 2026-04-15 → 2026-11-12
 2026-11-13 15:38:46  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=gBTpe
 2026-11-13 15:38:46  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-11-13 15:38:46  INFO      ════════════════════════════════════════════════════════════
+2026-11-13 21:00:40  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-13 21:00:40  INFO      ════════════════════════════════════════════════════════════
+2026-11-13 21:00:40  INFO      Nakshiq Autoposter · EVENING · 2026-11-13 · weekday=4
+2026-11-13 21:00:40  INFO      ════════════════════════════════════════════════════════════
+2026-11-13 21:00:40  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-13 21:01:31  INFO      Synced → 20 destinations · 100 traps · 2 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-13 21:01:31  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-13 21:01:32  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-13 21:01:32  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-13 21:01:33  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-13 21:01:46  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-13 21:01:46  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:scenario_eat_here, pillar:scenario_guide, pillar:scenario_window, pillar:verification seen <2d)
+2026-11-13 21:01:46  INFO      Evening format (balance→discovery): women_solo_brief [14% vs target 25%] (0/15 never featured)
+2026-11-13 21:01:46  INFO      Formats — IG: women_solo_brief  ·  FB: women_solo_brief  ·  Story: reality_check  ·  Audience: adventurers
+2026-11-13 21:01:46  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 53
+2026-11-13 21:01:46  INFO      Audience filter 'adventurers' → 4 destinations match.
+2026-11-13 21:01:46  INFO      Fingerprint dedup snapshot — 47 dests in 7d · 96 (dest,fmt) pairs in 30d · 229 media in 60d
+2026-11-13 21:01:46  INFO      Women-solo dest locked: Somnath (38/38 never featured)
+2026-11-13 21:01:48  INFO      Shared best destination locked: Marari Beach
+2026-11-13 21:01:48  INFO      [facebook/Nakshiq] Generating women_solo_brief post...
+2026-11-13 21:01:48  INFO      [facebook/Nakshiq] Caption ready (622 chars, dest=somnath)
+2026-11-13 21:01:48  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-13 21:01:48  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/somnath.mp4?v=20260915
+2026-11-13 21:01:51  INFO          Brand-stamp applied: somnath.mp4 (5,978,340 → 3,127,126 bytes)
+2026-11-13 21:01:51  INFO          Requesting upload URL for somnath.mp4 (3,127,126 bytes, video/mp4)
+2026-11-13 21:01:53  INFO          Uploading to R2 (timeout=300s)...
+2026-11-13 21:01:53  INFO          R2 PUT OK. Confirming...
+2026-11-13 21:01:55  INFO          Media ready: aFHtP (3,127,126 bytes · somnath.mp4)
+2026-11-13 21:01:55  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-13 21:02:15  INFO      [facebook/Nakshiq] ✅ Published · Outstand=F0UCe · Platform=1155534450263256
+2026-11-13 21:02:15  INFO      State saved. Run complete.
+2026-11-13 21:02:15  INFO      ════════════════════════════════════════════════════════════

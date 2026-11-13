@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-12",
-    "PdMu0_evening": "2026-11-12",
+    "PdMu0": "2026-11-13",
+    "PdMu0_evening": "2026-11-13",
     "PdMu0_carousel": "2026-11-13"
   },
-  "last_sync": "2026-11-12T21:35:21.262873+00:00",
+  "last_sync": "2026-11-13T21:01:31.039144+00:00",
   "posted_destinations": [
     {
       "destination_id": "prayagraj",
@@ -169,6 +169,10 @@
     {
       "destination_id": "hampi",
       "date": "2026-11-13"
+    },
+    {
+      "destination_id": "somnath",
+      "date": "2026-11-13"
     }
   ],
   "posted_formats": {
@@ -196,7 +200,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "data_carousel",
       "v2_weekend_escape_map",
       "v4_dw_walk_itinerary_day_by_day",
       "tourist_trap",
@@ -216,7 +219,8 @@
       "festival_alert",
       "data_carousel",
       "score_card",
-      "stays_pick"
+      "stays_pick",
+      "women_solo_brief"
     ]
   },
   "post_log": [
@@ -12091,6 +12095,17 @@
       "destination": "hampi",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-11-13"
+    },
+    {
+      "timestamp": "2026-11-13T21:02:15.944105+00:00",
+      "date": "2026-11-13",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "F0UCe",
+      "destination": "somnath",
+      "format": "women_solo_brief",
+      "has_media": true,
+      "media_id": "somnath.mp4"
     }
   ],
   "theme_usage": {
@@ -12547,6 +12562,9 @@
       ],
       "colva-benaulim": [
         "2026-11-12"
+      ],
+      "somnath": [
+        "2026-11-13"
       ]
     },
     "morning_formats": {
@@ -12782,6 +12800,9 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
+      ],
+      "women_solo_brief": [
+        "2026-11-13"
       ]
     },
     "reels": {
@@ -13023,6 +13044,9 @@
       ],
       "colva-benaulim": [
         "2026-11-12"
+      ],
+      "somnath": [
+        "2026-11-13"
       ]
     },
     "audience_tags": {
@@ -13089,7 +13113,8 @@
         "2026-10-09",
         "2026-10-16",
         "2026-10-30",
-        "2026-11-06"
+        "2026-11-06",
+        "2026-11-13"
       ]
     },
     "collections": {
@@ -13297,7 +13322,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "women_solo_brief": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13311,7 +13337,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "bengaluru",
+    "shared_best": "marari",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {},
