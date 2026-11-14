@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-13",
-    "PdMu0_evening": "2026-11-13",
+    "PdMu0": "2026-11-14",
+    "PdMu0_evening": "2026-11-14",
     "PdMu0_carousel": "2026-11-14"
   },
-  "last_sync": "2026-11-13T21:01:31.039144+00:00",
+  "last_sync": "2026-11-14T19:17:58.964260+00:00",
   "posted_destinations": [
     {
       "destination_id": "kurukshetra",
@@ -169,6 +169,10 @@
     {
       "destination_id": "tirthan-valley",
       "date": "2026-11-14"
+    },
+    {
+      "destination_id": "modhera",
+      "date": "2026-11-14"
     }
   ],
   "posted_formats": {
@@ -196,7 +200,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_weekend_escape_map",
       "v4_dw_walk_itinerary_day_by_day",
       "tourist_trap",
       "weekend_escape",
@@ -216,7 +219,8 @@
       "data_carousel",
       "score_card",
       "stays_pick",
-      "women_solo_brief"
+      "women_solo_brief",
+      "score_card"
     ]
   },
   "post_log": [
@@ -12120,6 +12124,35 @@
       "destination": "tirthan-valley",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-11-14"
+    },
+    {
+      "timestamp": "2026-11-14T14:37:27.663636+00:00",
+      "date": "2026-11-14",
+      "platform": "instagram",
+      "post_id": "JR8Fc",
+      "destination": "gokarna",
+      "format": "scenario_sos",
+      "media_id": "ijedl"
+    },
+    {
+      "timestamp": "2026-11-14T14:38:36.333364+00:00",
+      "date": "2026-11-14",
+      "platform": "youtube",
+      "post_id": "5T9tl",
+      "destination": "gokarna",
+      "format": "scenario_sos",
+      "media_id": "xBOPK"
+    },
+    {
+      "timestamp": "2026-11-14T19:18:45.791931+00:00",
+      "date": "2026-11-14",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "jsgnV",
+      "destination": "modhera",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "modhera.mp4"
     }
   ],
   "theme_usage": {
@@ -12552,7 +12585,8 @@
         "2026-11-02"
       ],
       "modhera": [
-        "2026-11-02"
+        "2026-11-02",
+        "2026-11-14"
       ],
       "pondicherry": [
         "2026-11-02"
@@ -12740,7 +12774,8 @@
         "2026-10-24",
         "2026-10-26",
         "2026-10-30",
-        "2026-11-11"
+        "2026-11-11",
+        "2026-11-14"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13059,6 +13094,9 @@
       ],
       "somnath": [
         "2026-11-13"
+      ],
+      "modhera": [
+        "2026-11-14"
       ]
     },
     "audience_tags": {
@@ -13103,7 +13141,8 @@
         "2026-10-17",
         "2026-10-24",
         "2026-10-31",
-        "2026-11-07"
+        "2026-11-07",
+        "2026-11-14"
       ],
       "adventurers": [
         "2026-05-29",
@@ -13334,7 +13373,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13348,7 +13388,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "marari",
+    "shared_best": "mysore",
     "collection": "best-stargazing-spots"
   },
   "manual_skip_dests": {},
