@@ -38,18 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-13",
     "PdMu0_evening": "2026-11-13",
-    "PdMu0_carousel": "2026-11-13"
+    "PdMu0_carousel": "2026-11-14"
   },
   "last_sync": "2026-11-13T21:01:31.039144+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "prayagraj",
-      "date": "2026-10-30"
-    },
-    {
-      "destination_id": "chamba",
-      "date": "2026-10-30"
-    },
     {
       "destination_id": "kurukshetra",
       "date": "2026-10-31"
@@ -173,6 +165,10 @@
     {
       "destination_id": "somnath",
       "date": "2026-11-13"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-11-14"
     }
   ],
   "posted_formats": {
@@ -12106,6 +12102,24 @@
       "format": "women_solo_brief",
       "has_media": true,
       "media_id": "somnath.mp4"
+    },
+    {
+      "timestamp": "2026-11-14T07:36:10.379928+00:00",
+      "date": "2026-11-14",
+      "platform": "youtube",
+      "post_id": "BSzz2",
+      "destination": "machilipatnam",
+      "format": "scenario_guide",
+      "media_id": "CzTlg"
+    },
+    {
+      "timestamp": "2026-11-14T14:24:13.987285+00:00",
+      "date": "2026-11-14",
+      "platform": "facebook",
+      "post_id": "ryW5B",
+      "destination": "tirthan-valley",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-11-14"
     }
   ],
   "theme_usage": {
@@ -12194,6 +12208,10 @@
         "2026-09-01",
         "2026-09-22",
         "2026-09-29"
+      ],
+      "somnath": [
+        "2026-05-28",
+        "2026-11-13"
       ],
       "ooty": [
         "2026-05-29",
@@ -12562,9 +12580,6 @@
       ],
       "colva-benaulim": [
         "2026-11-12"
-      ],
-      "somnath": [
-        "2026-11-13"
       ]
     },
     "morning_formats": {
@@ -12603,6 +12618,10 @@
       "v4_dw_walk_itinerary_day_by_day": [
         "2026-05-25",
         "2026-10-19"
+      ],
+      "women_solo_brief": [
+        "2026-05-25",
+        "2026-11-13"
       ],
       "v2_arrival_intel_video": [
         "2026-05-26",
@@ -12800,9 +12819,6 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
-      ],
-      "women_solo_brief": [
-        "2026-11-13"
       ]
     },
     "reels": {
@@ -12928,10 +12944,6 @@
         "2026-08-01",
         "2026-08-13",
         "2026-08-30"
-      ],
-      "umlingla": [
-        "2026-08-02",
-        "2026-08-15"
       ],
       "turtuk": [
         "2026-08-03",
@@ -13322,8 +13334,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "women_solo_brief": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13406,7 +13417,8 @@
       "astavinayak-yatra",
       "last-villages-of-india",
       "weekend-from-kolkata",
-      "autumn-destinations"
+      "autumn-destinations",
+      "offbeat-romantic"
     ],
     "food": [
       "Keshloor Dhaba|jagdalpur",
