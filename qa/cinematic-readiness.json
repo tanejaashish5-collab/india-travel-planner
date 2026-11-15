@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-08T22:51:18.755Z",
+  "generated_at": "2026-11-15T22:51:18.617Z",
   "totals": {
-    "A": 363,
+    "A": 368,
     "HS-B": 29,
-    "B": 141,
+    "B": 136,
     "C": 0,
     "total": 533
   },
@@ -82,17 +82,17 @@
       "state": "himachal-pradesh",
       "A": 0,
       "HS-B": 0,
-      "B": 2,
+      "B": 1,
       "C": 0,
-      "total": 2
+      "total": 1
     },
     {
       "state": "jammu-kashmir",
       "A": 0,
       "HS-B": 3,
-      "B": 3,
+      "B": 2,
       "C": 0,
-      "total": 6
+      "total": 5
     },
     {
       "state": "jharkhand",
@@ -191,14 +191,6 @@
       "total": 15
     },
     {
-      "state": "puducherry",
-      "A": 0,
-      "HS-B": 0,
-      "B": 1,
-      "C": 0,
-      "total": 1
-    },
-    {
       "state": "rajasthan",
       "A": 0,
       "HS-B": 0,
@@ -250,9 +242,9 @@
       "state": "uttarakhand",
       "A": 0,
       "HS-B": 0,
-      "B": 6,
+      "B": 4,
       "C": 0,
-      "total": 6
+      "total": 4
     },
     {
       "state": "west-bengal",
@@ -270,7 +262,7 @@
     },
     {
       "field": "stays",
-      "count": 27
+      "count": 20
     },
     {
       "field": "gems",
@@ -427,27 +419,6 @@
       ]
     },
     {
-      "id": "auroville",
-      "name": "Auroville",
-      "state": "puducherry",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "bandhavgarh",
       "name": "Bandhavgarh National Park",
       "state": "madhya-pradesh",
@@ -520,7 +491,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
-        "stays": 1
+        "stays": 2
       },
       "has": {
         "tagline": true,
@@ -528,7 +499,7 @@
       },
       "hs_confirmed": [],
       "missing": [
-        "stays:1/3"
+        "stays:2/3"
       ]
     },
     {
@@ -767,27 +738,6 @@
       ]
     },
     {
-      "id": "chail",
-      "name": "Chail",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "champaner-pavagadh",
       "name": "Champaner-Pavagadh",
       "state": "gujarat",
@@ -1016,27 +966,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:3/5",
-        "stays:2/3"
-      ]
-    },
-    {
-      "id": "dhanaulti",
-      "name": "Dhanaulti",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 7,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
         "stays:2/3"
       ]
     },
@@ -1567,27 +1496,6 @@
       ]
     },
     {
-      "id": "kishtwar",
-      "name": "Kishtwar",
-      "state": "jammu-kashmir",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "kolad",
       "name": "Kolad",
       "state": "maharashtra",
@@ -1851,7 +1759,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 4,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -2125,7 +2033,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 3,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -2252,7 +2160,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 3,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -2345,27 +2253,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "pithoragarh",
-      "name": "Pithoragarh",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 8,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "stays:2/3"
       ]
     },
     {
@@ -2590,7 +2477,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 2,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -3032,7 +2919,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 0,
-        "stays": 2
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -3040,8 +2927,7 @@
       },
       "hs_confirmed": [],
       "missing": [
-        "eats:0/5",
-        "stays:2/3"
+        "eats:0/5"
       ]
     },
     {
@@ -3679,7 +3565,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 4,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -3773,19 +3659,17 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 0,
-        "stays": 2
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "hs_confirmed": [
-        "eats",
-        "stays"
+        "eats"
       ],
       "missing": [
-        "eats:0/5",
-        "stays:2/3"
+        "eats:0/5"
       ]
     },
     {

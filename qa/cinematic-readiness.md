@@ -1,8 +1,8 @@
-# Cinematic readiness — 2026-11-08
+# Cinematic readiness — 2026-11-15
 
-Total: **533** dests · A=**363** · HS-B=**29** · B=**141** · C=**0**
+Total: **533** dests · A=**368** · HS-B=**29** · B=**136** · C=**0**
 
-Cinematic-eligible (A + HS-B): **392**
+Cinematic-eligible (A + HS-B): **397**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -11,7 +11,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Field | Dests blocked |
 |---|---:|
 | eats | 152 |
-| stays | 27 |
+| stays | 20 |
 | gems | 8 |
 
 ## By state (destinations below tier A only)
@@ -26,8 +26,8 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | goa | 0 | 0 | 9 | 0 | 9 |
 | gujarat | 0 | 0 | 14 | 0 | 14 |
 | haryana | 0 | 1 | 0 | 0 | 1 |
-| himachal-pradesh | 0 | 0 | 2 | 0 | 2 |
-| jammu-kashmir | 0 | 3 | 3 | 0 | 6 |
+| himachal-pradesh | 0 | 0 | 1 | 0 | 1 |
+| jammu-kashmir | 0 | 3 | 2 | 0 | 5 |
 | jharkhand | 0 | 0 | 1 | 0 | 1 |
 | karnataka | 0 | 0 | 10 | 0 | 10 |
 | kerala | 0 | 2 | 9 | 0 | 11 |
@@ -40,14 +40,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | mizoram | 0 | 1 | 0 | 0 | 1 |
 | nagaland | 0 | 1 | 1 | 0 | 2 |
 | odisha | 0 | 0 | 15 | 0 | 15 |
-| puducherry | 0 | 0 | 1 | 0 | 1 |
 | rajasthan | 0 | 0 | 1 | 0 | 1 |
 | sikkim | 0 | 3 | 5 | 0 | 8 |
 | tamil-nadu | 0 | 0 | 10 | 0 | 10 |
 | telangana | 0 | 0 | 9 | 0 | 9 |
 | tripura | 0 | 0 | 1 | 0 | 1 |
 | uttar-pradesh | 0 | 1 | 0 | 0 | 1 |
-| uttarakhand | 0 | 0 | 6 | 0 | 6 |
+| uttarakhand | 0 | 0 | 4 | 0 | 4 |
 | west-bengal | 0 | 0 | 1 | 0 | 1 |
 
 ## Tier C destinations (must backfill)
@@ -66,11 +65,10 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Arambol (arambol) | goa | eats:3/5 |
 | Aritar (aritar) | sikkim | eats:2/5 |
 | Athirapally Falls (athirapally) | kerala | eats:4/5 |
-| Auroville (auroville) | puducherry | stays:2/3 |
 | Bandhavgarh National Park (bandhavgarh) | madhya-pradesh | eats:4/5 |
 | Bandipur National Park (bandipur) | karnataka | eats:3/5 |
 | Baripada (baripada) | odisha | eats:4/5 |
-| Barmer (barmer) | rajasthan | stays:1/3 |
+| Barmer (barmer) | rajasthan | stays:2/3 |
 | Barnawapara (barnawapara) | chhattisgarh | eats:4/5 |
 | Basara (basara) | telangana | eats:3/5 |
 | Belum Caves (belum-caves) | andhra-pradesh | eats:3/5 · stays:1/3 |
@@ -82,7 +80,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bhongir (bhongir) | telangana | stays:2/3 |
 | Bhoramdeo (bhoramdeo) | chhattisgarh | gems:2/3 · eats:3/5 |
 | Borra Caves (borra-caves) | andhra-pradesh | eats:3/5 |
-| Chail (chail) | himachal-pradesh | stays:2/3 |
 | Champaner-Pavagadh (champaner-pavagadh) | gujarat | eats:3/5 |
 | Chandipur (chandipur) | odisha | eats:4/5 |
 | Chilika Lake (chilika-lake) | odisha | eats:4/5 |
@@ -94,7 +91,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Darjeeling (darjeeling) | west-bengal | stays:2/3 |
 | Daulatabad Fort (daulatabad) | maharashtra | eats:4/5 |
 | Deomali (deomali) | odisha | eats:3/5 · stays:2/3 |
-| Dhanaulti (dhanaulti) | uttarakhand | stays:2/3 |
 | Dhanushkodi (dhanushkodi) | tamil-nadu | eats:3/5 |
 | Dharmasthala (dharmasthala) | karnataka | eats:3/5 |
 | Dhauli (dhauli) | odisha | eats:2/5 |
@@ -120,7 +116,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Kashid (kashid) | maharashtra | eats:4/5 |
 | Khandala (khandala) | maharashtra | eats:4/5 |
 | Kiphire (kiphire) | nagaland | eats:0/5 |
-| Kishtwar (kishtwar) | jammu-kashmir | stays:2/3 |
 | Kolad (kolad) | maharashtra | eats:3/5 |
 | Kolanupaka (kolanupaka) | telangana | eats:3/5 · stays:2/3 |
 | Kuttanad (kuttanad) | kerala | eats:4/5 |
@@ -157,7 +152,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Pazhamudircholai (pazhamudircholai) | tamil-nadu | eats:0/5 |
 | Pench National Park (pench-maharashtra) | maharashtra | eats:3/5 |
 | Phodong (phodong) | sikkim | eats:0/5 |
-| Pithoragarh (pithoragarh) | uttarakhand | stays:2/3 |
 | Pochampally (pochampally) | telangana | eats:4/5 |
 | Point Calimere Wildlife Sanctuary (point-calimere) | tamil-nadu | eats:4/5 |
 | Spice Plantations (Ponda) (ponda-spice) | goa | eats:3/5 |
@@ -189,7 +183,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Talasari (talasari) | odisha | eats:2/5 |
 | Taptapani (taptapani) | odisha | eats:2/5 |
 | Tarkarli (tarkarli) | maharashtra | eats:4/5 |
-| Tashiding (tashiding) | sikkim | eats:0/5 · stays:2/3 |
+| Tashiding (tashiding) | sikkim | eats:0/5 |
 | Tharangambadi (Tranquebar) (tharangambadi) | tamil-nadu | eats:3/5 |
 | Theur (theur) | maharashtra | eats:3/5 |
 | Tiruttani (tiruttani) | tamil-nadu | eats:4/5 |
@@ -227,7 +221,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Nathu La (nathu-la) | sikkim | eats |
 | Nongriat (nongriat) | meghalaya | eats |
 | Pawapuri (pawapuri) | bihar | gems · eats |
-| Phawngpui Peak (phawngpui-peak) | mizoram | eats · stays |
+| Phawngpui Peak (phawngpui-peak) | mizoram | eats |
 | Pulicat Lake (pulicat-lake) | andhra-pradesh | eats |
 | Sinthan Top (sinthan-top) | jammu-kashmir | eats · stays |
 | Tamenglong (tamenglong) | manipur | eats |
@@ -235,4 +229,4 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Tsomgo Lake (tsomgo-lake) | sikkim | eats |
 | Umlingla (umlingla) | ladakh | eats |
 
-## Tier A destinations (magazine-ready): 363
+## Tier A destinations (magazine-ready): 368
