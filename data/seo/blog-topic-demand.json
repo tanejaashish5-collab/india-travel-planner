@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-08",
+  "generated": "2026-11-15",
   "window": {
-    "start": "2026-08-08",
-    "end": "2026-11-06"
+    "start": "2026-08-15",
+    "end": "2026-11-13"
   },
   "month_verdict_targets": [
     "december",
@@ -11,29 +11,29 @@
   ],
   "note": "Candidates only. The routine must still check the articles table + data/blog-drafts/ for an existing angle, grep vs-pairs for comparisons, and ground every claim in DB rows. blog_ranks=true means a /blog/ page already gets impressions for this query: skip unless the new article is a clearly different question. structured_page set = our own /cost, /treks, /pilgrimage or /permits page already ranks top-15: in distance_difficulty skip it (improve that page instead); in hindi_cost it is allowed, but the post must link that page and add what its table lacks. autocomplete.confirmed=true = Google suggests the phrase in India: prefer these. reddit_questions = real traveller questions; usable only when the DB can answer them.",
   "external": {
-    "autocomplete": "ok: 77 checked, 0 failed",
-    "reddit": "top ok (11); new ok (4)"
+    "autocomplete": "ok: 75 checked, 0 failed",
+    "reddit": "top ok (13); new ok (2)"
   },
   "lanes": {
     "hindi_cost": [
       {
         "query": "जैसलमेर घूमने का खर्चा",
-        "impressions": 2601,
-        "clicks": 10,
-        "avg_position": 8,
+        "impressions": 2664,
+        "clicks": 12,
+        "avg_position": 7.8,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": true,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 8
+          "position": 7.8
         }
       },
       {
         "query": "दार्जिलिंग घूमने का खर्च",
-        "impressions": 1412,
-        "clicks": 17,
-        "avg_position": 4.3,
+        "impressions": 1553,
+        "clicks": 19,
+        "avg_position": 4.2,
         "top_page": "/en/blog/darjeeling-ghumne-ka-kharcha",
         "blog_ranks": true,
         "structured_page": {
@@ -44,15 +44,15 @@
       },
       {
         "query": "मसूरी घूमने का खर्च",
-        "impressions": 978,
+        "impressions": 909,
         "clicks": 3,
-        "avg_position": 6.9,
+        "avg_position": 6.7,
         "top_page": "/hi/cost/mussoorie",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/mussoorie",
           "family": "cost",
-          "position": 6.9
+          "position": 6.7
         },
         "autocomplete": {
           "confirmed": true,
@@ -63,15 +63,15 @@
       },
       {
         "query": "jaisalmer jane ka kharcha",
-        "impressions": 729,
+        "impressions": 753,
         "clicks": 2,
-        "avg_position": 4.5,
+        "avg_position": 4.4,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 4.5
+          "position": 4.4
         },
         "autocomplete": {
           "confirmed": true,
@@ -86,7 +86,7 @@
       },
       {
         "query": "jaisalmer jane me kitna kharcha aata hai",
-        "impressions": 544,
+        "impressions": 557,
         "clicks": 3,
         "avg_position": 3.8,
         "top_page": "/hi/cost/jaisalmer",
@@ -108,22 +108,22 @@
       },
       {
         "query": "jaisalmer ghumne ka kharcha",
-        "impressions": 438,
+        "impressions": 465,
         "clicks": 1,
-        "avg_position": 5.8,
+        "avg_position": 5.6,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": true,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 5.8
+          "position": 5.6
         }
       },
       {
         "query": "manali jane ka kharcha",
-        "impressions": 349,
+        "impressions": 363,
         "clicks": 0,
-        "avg_position": 8.4,
+        "avg_position": 8.3,
         "top_page": "/hi/cost/manali",
         "blog_ranks": false,
         "structured_page": {
@@ -144,7 +144,7 @@
       },
       {
         "query": "मनाली घूमने का खर्चा",
-        "impressions": 318,
+        "impressions": 349,
         "clicks": 0,
         "avg_position": 8.3,
         "top_page": "/hi/cost/manali",
@@ -157,15 +157,15 @@
       },
       {
         "query": "jaisalmer ghumne me kitna kharcha aayega",
-        "impressions": 288,
+        "impressions": 292,
         "clicks": 1,
-        "avg_position": 5.3,
+        "avg_position": 5.2,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 5.3
+          "position": 5.2
         },
         "autocomplete": {
           "confirmed": true,
@@ -176,16 +176,37 @@
         }
       },
       {
+        "query": "darjeeling ghumne ka kharcha",
+        "impressions": 291,
+        "clicks": 6,
+        "avg_position": 3.3,
+        "top_page": "/en/blog/darjeeling-ghumne-ka-kharcha",
+        "blog_ranks": true
+      },
+      {
+        "query": "माउंट आबू घूमने का खर्चा",
+        "impressions": 291,
+        "clicks": 2,
+        "avg_position": 4.6,
+        "top_page": "/hi/cost/mount-abu",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/hi/cost/mount-abu",
+          "family": "cost",
+          "position": 4.6
+        }
+      },
+      {
         "query": "jaisalmer trip cost",
-        "impressions": 285,
+        "impressions": 259,
         "clicks": 0,
-        "avg_position": 11.1,
+        "avg_position": 10.4,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 9.4
+          "position": 9.5
         },
         "autocomplete": {
           "confirmed": true,
@@ -199,71 +220,8 @@
         }
       },
       {
-        "query": "darjeeling ghumne ka kharcha",
-        "impressions": 265,
-        "clicks": 5,
-        "avg_position": 3.3,
-        "top_page": "/en/blog/darjeeling-ghumne-ka-kharcha",
-        "blog_ranks": true
-      },
-      {
-        "query": "माउंट आबू घूमने का खर्चा",
-        "impressions": 262,
-        "clicks": 2,
-        "avg_position": 4.6,
-        "top_page": "/hi/cost/mount-abu",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/hi/cost/mount-abu",
-          "family": "cost",
-          "position": 4.6
-        }
-      },
-      {
-        "query": "jaisalmer me kitna kharcha aata hai",
-        "impressions": 229,
-        "clicks": 4,
-        "avg_position": 4.9,
-        "top_page": "/hi/cost/jaisalmer",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/jaisalmer",
-          "family": "cost",
-          "position": 4.9
-        },
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "jaisalmer me kitna kharcha aata hai",
-            "jaisalmer jane me kitna kharcha aata hai",
-            "jaisalmer ghumne me kitna kharcha aata hai",
-            "jaisalmer trip me kitna kharcha aata hai",
-            "जैसलमेर में कितना खर्चा आता है"
-          ]
-        }
-      },
-      {
-        "query": "अयोध्या घूमने का खर्च",
-        "impressions": 227,
-        "clicks": 3,
-        "avg_position": 3.7,
-        "top_page": "/hi/cost/ayodhya",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/ayodhya",
-          "family": "cost",
-          "position": 3.7
-        },
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "अयोध्या घूमने का खर्च"
-          ]
-        }
-      },
-      {
         "query": "kalpa trip budget",
-        "impressions": 225,
+        "impressions": 246,
         "clicks": 1,
         "avg_position": 5,
         "top_page": "/en/cost/kalpa",
@@ -285,16 +243,39 @@
         }
       },
       {
+        "query": "jaisalmer me kitna kharcha aata hai",
+        "impressions": 243,
+        "clicks": 4,
+        "avg_position": 4.7,
+        "top_page": "/hi/cost/jaisalmer",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/jaisalmer",
+          "family": "cost",
+          "position": 4.7
+        },
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "jaisalmer me kitna kharcha aata hai",
+            "jaisalmer jane me kitna kharcha aata hai",
+            "jaisalmer ghumne me kitna kharcha aata hai",
+            "jaisalmer trip me kitna kharcha aata hai",
+            "जैसलमेर में कितना खर्चा आता है"
+          ]
+        }
+      },
+      {
         "query": "darjeeling jane ka kharcha",
-        "impressions": 209,
+        "impressions": 233,
         "clicks": 0,
-        "avg_position": 4,
+        "avg_position": 4.1,
         "top_page": "/en/blog/darjeeling-ghumne-ka-kharcha",
         "blog_ranks": true
       },
       {
         "query": "gandikota jane ka kharcha",
-        "impressions": 199,
+        "impressions": 226,
         "clicks": 12,
         "avg_position": 1.4,
         "top_page": "/hi/cost/gandikota",
@@ -312,8 +293,21 @@
         }
       },
       {
+        "query": "manali ghumne ka kharcha",
+        "impressions": 209,
+        "clicks": 1,
+        "avg_position": 8.3,
+        "top_page": "/hi/cost/manali",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/hi/cost/manali",
+          "family": "cost",
+          "position": 8.4
+        }
+      },
+      {
         "query": "mussoorie trip cost for 3 days",
-        "impressions": 191,
+        "impressions": 209,
         "clicks": 0,
         "avg_position": 8.8,
         "top_page": "/hi/cost/mussoorie",
@@ -335,21 +329,27 @@
         }
       },
       {
-        "query": "manali ghumne ka kharcha",
-        "impressions": 185,
-        "clicks": 1,
-        "avg_position": 8.3,
-        "top_page": "/hi/cost/manali",
-        "blog_ranks": true,
+        "query": "अयोध्या घूमने का खर्च",
+        "impressions": 204,
+        "clicks": 3,
+        "avg_position": 3.2,
+        "top_page": "/hi/cost/ayodhya",
+        "blog_ranks": false,
         "structured_page": {
-          "page": "/hi/cost/manali",
+          "page": "/hi/cost/ayodhya",
           "family": "cost",
-          "position": 8.4
+          "position": 3.2
+        },
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "अयोध्या घूमने का खर्च"
+          ]
         }
       },
       {
         "query": "nainital ghumne ka kharcha",
-        "impressions": 184,
+        "impressions": 198,
         "clicks": 1,
         "avg_position": 4.2,
         "top_page": "/hi/cost/nainital",
@@ -385,15 +385,15 @@
       },
       {
         "query": "kalpa budget trip",
-        "impressions": 157,
+        "impressions": 164,
         "clicks": 0,
-        "avg_position": 7.9,
+        "avg_position": 8,
         "top_page": "/en/cost/kalpa",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/cost/kalpa",
           "family": "cost",
-          "position": 7.9
+          "position": 8
         },
         "autocomplete": {
           "confirmed": true,
@@ -407,16 +407,39 @@
         }
       },
       {
+        "query": "kedarnath jane ka kharcha",
+        "impressions": 164,
+        "clicks": 0,
+        "avg_position": 7.2,
+        "top_page": "/hi/cost/kedarnath",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/kedarnath",
+          "family": "cost",
+          "position": 7.2
+        },
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "kedarnath jane ka kharcha",
+            "kedarnath jane ka kharcha kitna hoga",
+            "kedarnath jane ka kharcha 1 person",
+            "kedarnath jane ka kharcha by train",
+            "kedarnath jane ka kharcha delhi se"
+          ]
+        }
+      },
+      {
         "query": "haflong trip cost",
-        "impressions": 156,
+        "impressions": 162,
         "clicks": 4,
-        "avg_position": 4.9,
+        "avg_position": 4.6,
         "top_page": "/en/cost/haflong",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/cost/haflong",
           "family": "cost",
-          "position": 4.9
+          "position": 4.6
         },
         "autocomplete": {
           "confirmed": true,
@@ -431,15 +454,15 @@
       },
       {
         "query": "jaisalmer kharcha kitna aata hai",
-        "impressions": 140,
+        "impressions": 148,
         "clicks": 0,
-        "avg_position": 4.8,
+        "avg_position": 4.6,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 4.8
+          "position": 4.6
         },
         "autocomplete": {
           "confirmed": true,
@@ -453,51 +476,8 @@
         }
       },
       {
-        "query": "kedarnath jane ka kharcha",
-        "impressions": 138,
-        "clicks": 0,
-        "avg_position": 7.4,
-        "top_page": "/hi/cost/kedarnath",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/kedarnath",
-          "family": "cost",
-          "position": 7.4
-        },
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "kedarnath jane ka kharcha",
-            "kedarnath jane ka kharcha kitna hoga",
-            "kedarnath jane ka kharcha 1 person",
-            "kedarnath jane ka kharcha by train",
-            "kedarnath jane ka kharcha delhi se"
-          ]
-        }
-      },
-      {
-        "query": "jaisalmer jaane mein kitna kharcha lagta hai",
-        "impressions": 120,
-        "clicks": 1,
-        "avg_position": 5.1,
-        "top_page": "/hi/cost/jaisalmer",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/jaisalmer",
-          "family": "cost",
-          "position": 5.1
-        },
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "jaisalmer jaane mein kitna kharcha lagta hai",
-            "jaisalmer jane ka kitna kharcha lagta hai"
-          ]
-        }
-      },
-      {
         "query": "landour trip cost",
-        "impressions": 118,
+        "impressions": 131,
         "clicks": 0,
         "avg_position": 9.2,
         "top_page": "/en/cost/landour",
@@ -519,8 +499,50 @@
         }
       },
       {
+        "query": "jaisalmer jaane mein kitna kharcha lagta hai",
+        "impressions": 125,
+        "clicks": 1,
+        "avg_position": 5.3,
+        "top_page": "/hi/cost/jaisalmer",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/jaisalmer",
+          "family": "cost",
+          "position": 5.3
+        },
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "jaisalmer jaane mein kitna kharcha lagta hai",
+            "jaisalmer jane ka kitna kharcha lagta hai"
+          ]
+        }
+      },
+      {
+        "query": "jaisalmer ghumne mein kitna kharcha aata hai",
+        "impressions": 124,
+        "clicks": 1,
+        "avg_position": 4.5,
+        "top_page": "/hi/cost/jaisalmer",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/jaisalmer",
+          "family": "cost",
+          "position": 4.5
+        },
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "jaisalmer ghumne mein kitna kharcha aata hai",
+            "जैसलमेर घूमने में कितना खर्चा आता है",
+            "jaisalmer mein ghumne ka kitna kharcha aata hai",
+            "jaisalmer ghumne ke liye kitna kharcha aata hai"
+          ]
+        }
+      },
+      {
         "query": "manali jane ka kharcha kitna hai",
-        "impressions": 116,
+        "impressions": 122,
         "clicks": 0,
         "avg_position": 9.4,
         "top_page": "/hi/cost/manali",
@@ -543,55 +565,33 @@
       },
       {
         "query": "जैसलमेर का खर्चा कितना है",
-        "impressions": 112,
+        "impressions": 115,
         "clicks": 1,
-        "avg_position": 4.5,
+        "avg_position": 4.4,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 4.5
-        },
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "जैसलमेर का खर्चा कितना है",
-            "जैसलमेर जाने का खर्चा कितना है",
-            "जैसलमेर घूमने का खर्चा कितना है",
-            "जैसलमेर जाने का कितना खर्चा होता है"
-          ]
-        }
-      },
-      {
-        "query": "gandikota budget",
-        "impressions": 111,
-        "clicks": 0,
-        "avg_position": 7.9,
-        "top_page": "/en/destination/gandikota",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/gandikota",
-          "family": "cost",
-          "position": 7
+          "position": 4.4
         }
       },
       {
         "query": "dzukou valley budget",
-        "impressions": 108,
+        "impressions": 114,
         "clicks": 1,
-        "avg_position": 4.1,
+        "avg_position": 3.9,
         "top_page": "/en/cost/dzukou-valley",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/cost/dzukou-valley",
           "family": "cost",
-          "position": 4.1
+          "position": 3.9
         }
       },
       {
         "query": "manali ka kharcha kitna aata hai",
-        "impressions": 107,
+        "impressions": 114,
         "clicks": 0,
         "avg_position": 8.9,
         "top_page": "/hi/cost/manali",
@@ -603,47 +603,8 @@
         }
       },
       {
-        "query": "manali ghumne me kitna kharcha aayega",
-        "impressions": 105,
-        "clicks": 0,
-        "avg_position": 9.3,
-        "top_page": "/hi/cost/manali",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/manali",
-          "family": "cost",
-          "position": 9.3
-        }
-      },
-      {
-        "query": "jaisalmer ghumne mein kitna kharcha aata hai",
-        "impressions": 104,
-        "clicks": 1,
-        "avg_position": 5,
-        "top_page": "/hi/cost/jaisalmer",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/jaisalmer",
-          "family": "cost",
-          "position": 5
-        }
-      },
-      {
-        "query": "jaisalmer ka kharcha",
-        "impressions": 103,
-        "clicks": 0,
-        "avg_position": 6.2,
-        "top_page": "/hi/cost/jaisalmer",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/jaisalmer",
-          "family": "cost",
-          "position": 6.2
-        }
-      },
-      {
         "query": "munsiyari trip cost",
-        "impressions": 102,
+        "impressions": 114,
         "clicks": 0,
         "avg_position": 8.1,
         "top_page": "/en/cost/munsiyari",
@@ -655,21 +616,60 @@
         }
       },
       {
-        "query": "mussoorie jane ka kharcha",
-        "impressions": 100,
+        "query": "gandikota budget",
+        "impressions": 110,
         "clicks": 0,
-        "avg_position": 5,
-        "top_page": "/hi/cost/mussoorie",
+        "avg_position": 7.6,
+        "top_page": "/en/destination/gandikota",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/hi/cost/mussoorie",
+          "page": "/hi/cost/gandikota",
           "family": "cost",
-          "position": 5
+          "position": 6.1
+        }
+      },
+      {
+        "query": "gandikota ghumne ka kharcha",
+        "impressions": 107,
+        "clicks": 4,
+        "avg_position": 1.5,
+        "top_page": "/hi/cost/gandikota",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/gandikota",
+          "family": "cost",
+          "position": 1.4
+        }
+      },
+      {
+        "query": "manali ghumne me kitna kharcha aayega",
+        "impressions": 107,
+        "clicks": 0,
+        "avg_position": 9.3,
+        "top_page": "/hi/cost/manali",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/manali",
+          "family": "cost",
+          "position": 9.3
+        }
+      },
+      {
+        "query": "jaisalmer ka kharcha",
+        "impressions": 106,
+        "clicks": 0,
+        "avg_position": 6.3,
+        "top_page": "/hi/cost/jaisalmer",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/jaisalmer",
+          "family": "cost",
+          "position": 6.3
         }
       },
       {
         "query": "manali jane me kitna kharcha aayega",
-        "impressions": 97,
+        "impressions": 101,
         "clicks": 0,
         "avg_position": 9,
         "top_page": "/hi/cost/manali",
@@ -681,60 +681,21 @@
         }
       },
       {
-        "query": "jaisalmer trip budget",
-        "impressions": 94,
-        "clicks": 0,
-        "avg_position": 13.5,
-        "top_page": "/hi/cost/jaisalmer",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/jaisalmer",
-          "family": "cost",
-          "position": 11
-        }
-      },
-      {
         "query": "mussoorie trip cost",
-        "impressions": 94,
+        "impressions": 99,
         "clicks": 0,
-        "avg_position": 9.6,
+        "avg_position": 9.5,
         "top_page": "/hi/cost/mussoorie",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/mussoorie",
           "family": "cost",
-          "position": 9.4
-        }
-      },
-      {
-        "query": "netarhat trip budget for 2 days",
-        "impressions": 93,
-        "clicks": 0,
-        "avg_position": 6.1,
-        "top_page": "/en/cost/netarhat",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/cost/netarhat",
-          "family": "cost",
-          "position": 6.1
-        }
-      },
-      {
-        "query": "gandikota ghumne ka kharcha",
-        "impressions": 91,
-        "clicks": 4,
-        "avg_position": 1.4,
-        "top_page": "/hi/cost/gandikota",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/gandikota",
-          "family": "cost",
-          "position": 1.4
+          "position": 9.3
         }
       },
       {
         "query": "mussoorie budget trip",
-        "impressions": 90,
+        "impressions": 98,
         "clicks": 0,
         "avg_position": 10.3,
         "top_page": "/hi/cost/mussoorie",
@@ -747,59 +708,59 @@
       },
       {
         "query": "dzukou valley trip cost",
-        "impressions": 89,
+        "impressions": 97,
         "clicks": 0,
-        "avg_position": 13.3,
+        "avg_position": 13.7,
         "top_page": "/en/cost/dzukou-valley",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/cost/dzukou-valley",
           "family": "cost",
-          "position": 12.4
+          "position": 11.7
         }
       },
       {
-        "query": "jaisalmer ka kharcha kitna hai",
-        "impressions": 89,
+        "query": "netarhat trip budget for 2 days",
+        "impressions": 95,
         "clicks": 0,
-        "avg_position": 5.3,
-        "top_page": "/hi/cost/jaisalmer",
+        "avg_position": 5.7,
+        "top_page": "/en/cost/netarhat",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/hi/cost/jaisalmer",
+          "page": "/en/cost/netarhat",
           "family": "cost",
-          "position": 5.3
+          "position": 5.7
         }
       },
       {
-        "query": "ayodhya jane me kitna kharcha aata hai",
-        "impressions": 88,
+        "query": "mumbai jane ka kharcha",
+        "impressions": 94,
         "clicks": 1,
-        "avg_position": 5.5,
-        "top_page": "/hi/cost/ayodhya",
+        "avg_position": 4.2,
+        "top_page": "/hi/cost/mumbai",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/hi/cost/ayodhya",
+          "page": "/hi/cost/mumbai",
           "family": "cost",
-          "position": 5.5
+          "position": 4.2
         }
       },
       {
-        "query": "mussoorie trip budget",
-        "impressions": 88,
+        "query": "landour budget trip",
+        "impressions": 94,
         "clicks": 0,
-        "avg_position": 10.3,
-        "top_page": "/hi/cost/mussoorie",
+        "avg_position": 8.7,
+        "top_page": "/en/cost/landour",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/hi/cost/mussoorie",
+          "page": "/en/cost/landour",
           "family": "cost",
-          "position": 9.6
+          "position": 8.7
         }
       },
       {
         "query": "mussoorie trip cost for 5 days",
-        "impressions": 87,
+        "impressions": 93,
         "clicks": 0,
         "avg_position": 9.2,
         "top_page": "/hi/cost/mussoorie",
@@ -811,47 +772,99 @@
         }
       },
       {
-        "query": "mumbai jane ka kharcha",
-        "impressions": 86,
+        "query": "jaisalmer trip budget",
+        "impressions": 92,
         "clicks": 0,
-        "avg_position": 4.3,
-        "top_page": "/hi/cost/mumbai",
+        "avg_position": 12.9,
+        "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/hi/cost/mumbai",
+          "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 4.3
+          "position": 10.9
         }
       },
       {
-        "query": "landour budget trip",
-        "impressions": 84,
+        "query": "mussoorie trip budget",
+        "impressions": 91,
         "clicks": 0,
-        "avg_position": 8.9,
-        "top_page": "/en/cost/landour",
+        "avg_position": 9.9,
+        "top_page": "/hi/cost/mussoorie",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/en/cost/landour",
+          "page": "/hi/cost/mussoorie",
           "family": "cost",
-          "position": 8.9
+          "position": 9.6
         }
       },
       {
-        "query": "munsiyari budget",
-        "impressions": 82,
+        "query": "ayodhya jane me kitna kharcha aata hai",
+        "impressions": 90,
         "clicks": 1,
-        "avg_position": 5.7,
-        "top_page": "/en/cost/munsiyari",
+        "avg_position": 5.5,
+        "top_page": "/hi/cost/ayodhya",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/en/cost/munsiyari",
+          "page": "/hi/cost/ayodhya",
           "family": "cost",
-          "position": 5.7
+          "position": 5.5
+        }
+      },
+      {
+        "query": "jaisalmer ka kharcha kitna hai",
+        "impressions": 90,
+        "clicks": 0,
+        "avg_position": 5.3,
+        "top_page": "/hi/cost/jaisalmer",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/jaisalmer",
+          "family": "cost",
+          "position": 5.3
+        }
+      },
+      {
+        "query": "kedarnath jane me kitna kharcha aata hai",
+        "impressions": 90,
+        "clicks": 0,
+        "avg_position": 8.4,
+        "top_page": "/hi/cost/kedarnath",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/kedarnath",
+          "family": "cost",
+          "position": 8.4
+        }
+      },
+      {
+        "query": "mussoorie jane ka kharcha",
+        "impressions": 88,
+        "clicks": 0,
+        "avg_position": 4.7,
+        "top_page": "/hi/cost/mussoorie",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/mussoorie",
+          "family": "cost",
+          "position": 4.7
+        }
+      },
+      {
+        "query": "mussoorie trip cost for 2 days",
+        "impressions": 87,
+        "clicks": 0,
+        "avg_position": 11.3,
+        "top_page": "/hi/cost/mussoorie",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/mussoorie",
+          "family": "cost",
+          "position": 11.3
         }
       },
       {
         "query": "manali jane me kitna kharcha aata hai",
-        "impressions": 82,
+        "impressions": 84,
         "clicks": 0,
         "avg_position": 8.8,
         "top_page": "/hi/cost/manali",
@@ -860,6 +873,32 @@
           "page": "/hi/cost/manali",
           "family": "cost",
           "position": 8.9
+        }
+      },
+      {
+        "query": "nainital jane ka kharcha",
+        "impressions": 83,
+        "clicks": 1,
+        "avg_position": 4.6,
+        "top_page": "/hi/cost/nainital",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/nainital",
+          "family": "cost",
+          "position": 4.6
+        }
+      },
+      {
+        "query": "jaisalmer jaane mein kitna kharcha aaega",
+        "impressions": 82,
+        "clicks": 0,
+        "avg_position": 4.6,
+        "top_page": "/hi/cost/jaisalmer",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/jaisalmer",
+          "family": "cost",
+          "position": 4.6
         }
       },
       {
@@ -876,34 +915,21 @@
         }
       },
       {
-        "query": "masuri jane ka kharcha",
-        "impressions": 81,
-        "clicks": 1,
-        "avg_position": 3.8,
-        "top_page": "/hi/cost/mussoorie",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/mussoorie",
-          "family": "cost",
-          "position": 3.8
-        }
-      },
-      {
         "query": "jaisalmer jaane ka kharcha",
         "impressions": 81,
         "clicks": 0,
-        "avg_position": 4.8,
+        "avg_position": 4.9,
         "top_page": "/hi/cost/jaisalmer",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/jaisalmer",
           "family": "cost",
-          "position": 4.8
+          "position": 4.9
         }
       },
       {
         "query": "jaisalmer trip cost for 3 days",
-        "impressions": 81,
+        "impressions": 80,
         "clicks": 0,
         "avg_position": 10,
         "top_page": "/hi/cost/jaisalmer",
@@ -915,181 +941,103 @@
         }
       },
       {
-        "query": "mussoorie trip cost for 2 days",
-        "impressions": 81,
-        "clicks": 0,
-        "avg_position": 11.3,
+        "query": "masuri jane ka kharcha",
+        "impressions": 77,
+        "clicks": 1,
+        "avg_position": 3.7,
         "top_page": "/hi/cost/mussoorie",
         "blog_ranks": false,
         "structured_page": {
           "page": "/hi/cost/mussoorie",
           "family": "cost",
-          "position": 11.3
+          "position": 3.7
         }
       },
       {
-        "query": "jaisalmer jaane mein kitna kharcha aaega",
-        "impressions": 79,
-        "clicks": 0,
-        "avg_position": 4.4,
-        "top_page": "/hi/cost/jaisalmer",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/jaisalmer",
-          "family": "cost",
-          "position": 4.4
-        }
-      },
-      {
-        "query": "nainital jane ka kharcha",
-        "impressions": 78,
-        "clicks": 1,
-        "avg_position": 4.6,
-        "top_page": "/hi/cost/nainital",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/hi/cost/nainital",
-          "family": "cost",
-          "position": 4.6
-        }
-      },
-      {
-        "query": "landour trip budget",
+        "query": "munsiyari budget",
         "impressions": 76,
-        "clicks": 2,
-        "avg_position": 5.1,
-        "top_page": "/en/cost/landour",
+        "clicks": 1,
+        "avg_position": 5.6,
+        "top_page": "/en/cost/munsiyari",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/en/cost/landour",
+          "page": "/en/cost/munsiyari",
           "family": "cost",
-          "position": 5.1
+          "position": 5.6
         }
       }
     ],
     "distance_difficulty": [
       {
         "query": "girnar 10,000 steps",
-        "impressions": 1374,
-        "clicks": 14,
-        "avg_position": 4.4,
+        "impressions": 1512,
+        "clicks": 15,
+        "avg_position": 4.5,
         "top_page": "/en/treks/girnar-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 4.4
+          "position": 4.5
+        }
+      },
+      {
+        "query": "gandikota distance",
+        "impressions": 1074,
+        "clicks": 0,
+        "avg_position": 7.6,
+        "top_page": "/en/destination/gandikota",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/hi/cost/gandikota",
+          "family": "cost",
+          "position": 3
         }
       },
       {
         "query": "chitrakoot parikrama distance",
-        "impressions": 942,
-        "clicks": 5,
-        "avg_position": 5.8,
+        "impressions": 976,
+        "clicks": 6,
+        "avg_position": 5.7,
         "top_page": "/en/pilgrimage/chitrakoot-parikrama",
         "blog_ranks": true,
         "structured_page": {
           "page": "/en/pilgrimage/chitrakoot-parikrama",
           "family": "pilgrimage",
-          "position": 5.9
-        }
-      },
-      {
-        "query": "girnar 10,000 steps in km",
-        "impressions": 876,
-        "clicks": 25,
-        "avg_position": 2.6,
-        "top_page": "/en/treks/girnar-trek",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/treks/girnar-trek",
-          "family": "treks",
-          "position": 2.6
+          "position": 5.7
         }
       },
       {
         "query": "kamadgiri parikrama distance",
-        "impressions": 861,
+        "impressions": 856,
         "clicks": 5,
-        "avg_position": 5.1,
+        "avg_position": 5.3,
         "top_page": "/en/pilgrimage/chitrakoot-parikrama",
         "blog_ranks": true,
         "structured_page": {
           "page": "/en/pilgrimage/chitrakoot-parikrama",
           "family": "pilgrimage",
-          "position": 5
+          "position": 5.1
         }
       },
       {
-        "query": "kamadgiri parikrama",
-        "impressions": 558,
-        "clicks": 3,
-        "avg_position": 9,
-        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/pilgrimage/chitrakoot-parikrama",
-          "family": "pilgrimage",
-          "position": 9
-        }
-      },
-      {
-        "query": "chitrakoot parikrama",
-        "impressions": 489,
-        "clicks": 2,
-        "avg_position": 9,
-        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/pilgrimage/chitrakoot-parikrama",
-          "family": "pilgrimage",
-          "position": 9
-        }
-      },
-      {
-        "query": "girnar trek",
-        "impressions": 482,
-        "clicks": 1,
-        "avg_position": 8.1,
-        "top_page": "/en/treks/girnar-trek",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/treks/girnar-trek",
-          "family": "treks",
-          "position": 8.1
-        }
-      },
-      {
-        "query": "girnar trek distance",
-        "impressions": 459,
-        "clicks": 9,
-        "avg_position": 3.3,
+        "query": "girnar 10,000 steps in km",
+        "impressions": 826,
+        "clicks": 28,
+        "avg_position": 2.2,
         "top_page": "/en/treks/girnar-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 3.1
-        }
-      },
-      {
-        "query": "tawang to bumla pass distance",
-        "impressions": 453,
-        "clicks": 0,
-        "avg_position": 9.9,
-        "top_page": "/en/treks/tawang-bumla-pass-trek",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/treks/tawang-bumla-pass-trek",
-          "family": "treks",
-          "position": 9.9
+          "position": 2.2
         }
       },
       {
         "query": "ajmer to taragarh distance",
-        "impressions": 442,
+        "impressions": 595,
         "clicks": 1,
-        "avg_position": 5.3,
+        "avg_position": 5.1,
         "top_page": "/en/blog/taragarh-fort-trek-distance-ajmer",
         "blog_ranks": true,
         "structured_page": {
@@ -1099,8 +1047,47 @@
         }
       },
       {
+        "query": "kamadgiri parikrama",
+        "impressions": 565,
+        "clicks": 3,
+        "avg_position": 8.9,
+        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/pilgrimage/chitrakoot-parikrama",
+          "family": "pilgrimage",
+          "position": 8.9
+        }
+      },
+      {
+        "query": "girnar trek",
+        "impressions": 542,
+        "clicks": 1,
+        "avg_position": 8.2,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 8.3
+        }
+      },
+      {
+        "query": "chitrakoot parikrama",
+        "impressions": 496,
+        "clicks": 2,
+        "avg_position": 8.7,
+        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/pilgrimage/chitrakoot-parikrama",
+          "family": "pilgrimage",
+          "position": 8.7
+        }
+      },
+      {
         "query": "ajmer dargah to taragarh distance",
-        "impressions": 407,
+        "impressions": 496,
         "clicks": 1,
         "avg_position": 5,
         "top_page": "/en/blog/taragarh-fort-trek-distance-ajmer",
@@ -1108,12 +1095,77 @@
         "structured_page": {
           "page": "/en/treks/taragarh-fort-trek",
           "family": "treks",
-          "position": 6.6
+          "position": 6.3
+        }
+      },
+      {
+        "query": "tawang to bumla pass distance",
+        "impressions": 494,
+        "clicks": 0,
+        "avg_position": 9.8,
+        "top_page": "/en/treks/tawang-bumla-pass-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/tawang-bumla-pass-trek",
+          "family": "treks",
+          "position": 9.8
+        }
+      },
+      {
+        "query": "girnar trek distance",
+        "impressions": 469,
+        "clicks": 10,
+        "avg_position": 2.9,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 2.8
+        }
+      },
+      {
+        "query": "vaishno devi yatra distance by foot from katra",
+        "impressions": 409,
+        "clicks": 1,
+        "avg_position": 4.2,
+        "top_page": "/en/blog/vaishno-devi-yatra-distance-how-far-is-it",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/pilgrimage/vaishno-devi",
+          "family": "pilgrimage",
+          "position": 6.8
+        }
+      },
+      {
+        "query": "girnar steps in km",
+        "impressions": 362,
+        "clicks": 2,
+        "avg_position": 3.8,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 3.8
+        }
+      },
+      {
+        "query": "taragarh ajmer height in km",
+        "impressions": 354,
+        "clicks": 1,
+        "avg_position": 8.4,
+        "top_page": "/en/treks/taragarh-fort-trek",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/treks/taragarh-fort-trek",
+          "family": "treks",
+          "position": 8.3
         }
       },
       {
         "query": "sonmarg to gurez valley distance",
-        "impressions": 376,
+        "impressions": 353,
         "clicks": 0,
         "avg_position": 10.5,
         "top_page": "/en/vs/gurez-valley-vs-sonamarg",
@@ -1130,47 +1182,21 @@
         }
       },
       {
-        "query": "taragarh ajmer height in km",
-        "impressions": 327,
-        "clicks": 1,
-        "avg_position": 8.5,
-        "top_page": "/en/treks/taragarh-fort-trek",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/treks/taragarh-fort-trek",
-          "family": "treks",
-          "position": 8.3
-        }
-      },
-      {
-        "query": "girnar steps in km",
-        "impressions": 322,
+        "query": "vaishno devi yatra distance by foot",
+        "impressions": 265,
         "clicks": 2,
-        "avg_position": 4.1,
-        "top_page": "/en/treks/girnar-trek",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/treks/girnar-trek",
-          "family": "treks",
-          "position": 4.1
-        }
-      },
-      {
-        "query": "vaishno devi yatra distance by foot from katra",
-        "impressions": 305,
-        "clicks": 1,
-        "avg_position": 4,
+        "avg_position": 4.8,
         "top_page": "/en/blog/vaishno-devi-yatra-distance-how-far-is-it",
         "blog_ranks": true,
         "structured_page": {
           "page": "/en/pilgrimage/vaishno-devi",
           "family": "pilgrimage",
-          "position": 6.8
+          "position": 9
         }
       },
       {
         "query": "ahobilam trek distance",
-        "impressions": 296,
+        "impressions": 258,
         "clicks": 0,
         "avg_position": 11.3,
         "top_page": "/en/treks/ahobilam-nava-narasimha",
@@ -1178,25 +1204,46 @@
         "structured_page": {
           "page": "/en/treks/ahobilam-nava-narasimha",
           "family": "treks",
-          "position": 10.9
+          "position": 10.6
         }
       },
       {
-        "query": "vaishno devi yatra distance by foot",
-        "impressions": 227,
-        "clicks": 1,
-        "avg_position": 4.9,
+        "query": "vaishno devi yatra distance",
+        "impressions": 255,
+        "clicks": 0,
+        "avg_position": 10,
         "top_page": "/en/blog/vaishno-devi-yatra-distance-how-far-is-it",
-        "blog_ranks": true,
+        "blog_ranks": true
+      },
+      {
+        "query": "charan paduka to ardhkuwari distance",
+        "impressions": 235,
+        "clicks": 0,
+        "avg_position": 8.6,
+        "top_page": "/en/pilgrimage/vaishno-devi",
+        "blog_ranks": false,
         "structured_page": {
           "page": "/en/pilgrimage/vaishno-devi",
           "family": "pilgrimage",
-          "position": 10.3
+          "position": 8.6
+        }
+      },
+      {
+        "query": "ajmer dargah to taragarh walking distance",
+        "impressions": 213,
+        "clicks": 4,
+        "avg_position": 5,
+        "top_page": "/en/blog/taragarh-fort-trek-distance-ajmer",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/treks/taragarh-fort-trek",
+          "family": "treks",
+          "position": 7.5
         }
       },
       {
         "query": "gurez valley to sonmarg distance",
-        "impressions": 224,
+        "impressions": 211,
         "clicks": 0,
         "avg_position": 10.3,
         "top_page": "/en/vs/gurez-valley-vs-sonamarg",
@@ -1213,16 +1260,21 @@
         }
       },
       {
-        "query": "vaishno devi yatra distance",
-        "impressions": 220,
+        "query": "girnar trek time",
+        "impressions": 208,
         "clicks": 0,
-        "avg_position": 10.1,
-        "top_page": "/en/blog/vaishno-devi-yatra-distance-how-far-is-it",
-        "blog_ranks": true
+        "avg_position": 7.7,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 7.3
+        }
       },
       {
         "query": "gurez to sonmarg distance",
-        "impressions": 215,
+        "impressions": 199,
         "clicks": 0,
         "avg_position": 10.1,
         "top_page": "/en/vs/gurez-valley-vs-sonamarg",
@@ -1239,62 +1291,23 @@
         }
       },
       {
-        "query": "charan paduka to ardhkuwari distance",
-        "impressions": 209,
+        "query": "girnar steps",
+        "impressions": 183,
         "clicks": 0,
-        "avg_position": 8.6,
-        "top_page": "/en/pilgrimage/vaishno-devi",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/pilgrimage/vaishno-devi",
-          "family": "pilgrimage",
-          "position": 8.6
-        }
-      },
-      {
-        "query": "ajmer dargah to taragarh walking distance",
-        "impressions": 194,
-        "clicks": 3,
-        "avg_position": 5.1,
-        "top_page": "/en/treks/taragarh-fort-trek",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/treks/taragarh-fort-trek",
-          "family": "treks",
-          "position": 7.4
-        }
-      },
-      {
-        "query": "girnar trek time",
-        "impressions": 190,
-        "clicks": 0,
-        "avg_position": 8.6,
+        "avg_position": 10.1,
         "top_page": "/en/treks/girnar-trek",
-        "blog_ranks": true,
+        "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 7.5
-        }
-      },
-      {
-        "query": "ahobilam trekking distance",
-        "impressions": 178,
-        "clicks": 1,
-        "avg_position": 9.6,
-        "top_page": "/en/treks/ahobilam-nava-narasimha",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/treks/ahobilam-nava-narasimha",
-          "family": "treks",
-          "position": 9.9
+          "position": 10.1
         }
       },
       {
         "query": "places to visit near agra within 500 kms",
-        "impressions": 166,
+        "impressions": 169,
         "clicks": 5,
-        "avg_position": 6.1,
+        "avg_position": 5.9,
         "top_page": "/en/weekend-from-agra",
         "blog_ranks": false,
         "autocomplete": {
@@ -1309,48 +1322,70 @@
         }
       },
       {
-        "query": "\"oswal yatrik gruh\" \"shatrunjaya\" distance",
-        "impressions": 165,
-        "clicks": 0,
-        "avg_position": 5.5,
-        "top_page": "/en/festivals/shatrunjaya-mahotsav",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": false,
-          "suggestions": []
-        }
-      },
-      {
-        "query": "girnar trek distance in km",
-        "impressions": 155,
+        "query": "girnar trek km",
+        "impressions": 157,
         "clicks": 4,
-        "avg_position": 3,
+        "avg_position": 2.6,
         "top_page": "/en/treks/girnar-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 3
+          "position": 2.6
         }
       },
       {
-        "query": "chitrakoot parikrama km",
-        "impressions": 154,
+        "query": "shikharji trek distance",
+        "impressions": 156,
         "clicks": 0,
-        "avg_position": 6,
-        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "avg_position": 7.3,
+        "top_page": "/en/blog/shikharji-height-and-parikrama-distance",
         "blog_ranks": true,
         "structured_page": {
-          "page": "/en/pilgrimage/chitrakoot-parikrama",
-          "family": "pilgrimage",
-          "position": 5.9
+          "page": "/en/treks/shikharji-parikrama",
+          "family": "treks",
+          "position": 9.6
+        }
+      },
+      {
+        "query": "ahobilam trekking distance",
+        "impressions": 155,
+        "clicks": 1,
+        "avg_position": 9.5,
+        "top_page": "/en/treks/ahobilam-nava-narasimha",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/treks/ahobilam-nava-narasimha",
+          "family": "treks",
+          "position": 9.8
+        }
+      },
+      {
+        "query": "shikharji height",
+        "impressions": 155,
+        "clicks": 0,
+        "avg_position": 7.6,
+        "top_page": "/en/blog/shikharji-height-and-parikrama-distance",
+        "blog_ranks": true
+      },
+      {
+        "query": "girnar trek distance in km",
+        "impressions": 148,
+        "clicks": 4,
+        "avg_position": 2.6,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 2.6
         }
       },
       {
         "query": "barot valley to kasol distance",
-        "impressions": 153,
+        "impressions": 145,
         "clicks": 0,
-        "avg_position": 7.1,
+        "avg_position": 6.8,
         "top_page": "/en/vs/kasol-vs-barot-valley",
         "blog_ranks": false,
         "autocomplete": {
@@ -1364,106 +1399,23 @@
         }
       },
       {
-        "query": "shikharji height",
-        "impressions": 153,
-        "clicks": 0,
-        "avg_position": 8.4,
-        "top_page": "/en/destination/shikharji",
-        "blog_ranks": true
-      },
-      {
-        "query": "girnar trek km",
-        "impressions": 152,
-        "clicks": 4,
-        "avg_position": 3.2,
-        "top_page": "/en/treks/girnar-trek",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/treks/girnar-trek",
-          "family": "treks",
-          "position": 3.2
-        }
-      },
-      {
-        "query": "shikharji trek distance",
+        "query": "edakkal caves trek distance",
         "impressions": 145,
         "clicks": 0,
-        "avg_position": 7.4,
-        "top_page": "/en/blog/shikharji-height-and-parikrama-distance",
-        "blog_ranks": true,
+        "avg_position": 9.6,
+        "top_page": "/en/treks/edakkal-cave-trek",
+        "blog_ranks": false,
         "structured_page": {
-          "page": "/en/treks/shikharji-parikrama",
+          "page": "/en/treks/edakkal-cave-trek",
           "family": "treks",
           "position": 9.6
         }
       },
       {
-        "query": "kasol to barot valley distance",
+        "query": "valparai to vagamon distance",
         "impressions": 144,
         "clicks": 0,
-        "avg_position": 8,
-        "top_page": "/en/vs/kasol-vs-barot-valley",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "kasol to barot valley distance",
-            "kasol to bir distance",
-            "jogindernagar to barot valley distance",
-            "kasol to waichin valley distance",
-            "vadodara to kasol distance"
-          ]
-        }
-      },
-      {
-        "query": "chitrakoot kamadgiri parikrama distance",
-        "impressions": 140,
-        "clicks": 1,
-        "avg_position": 4.5,
-        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/pilgrimage/chitrakoot-parikrama",
-          "family": "pilgrimage",
-          "position": 4.4
-        }
-      },
-      {
-        "query": "barot valley to tirthan valley distance",
-        "impressions": 139,
-        "clicks": 0,
-        "avg_position": 8.1,
-        "top_page": "/en/vs/tirthan-valley-vs-barot-valley",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "barot valley to tirthan valley distance",
-            "kullu to tirthan valley distance",
-            "banjar to tirthan valley distance",
-            "una to tirthan valley distance",
-            "mandi to tirthan valley distance"
-          ]
-        }
-      },
-      {
-        "query": "deomali trek",
-        "impressions": 137,
-        "clicks": 1,
-        "avg_position": 8.8,
-        "top_page": "/en/treks/deomali-trek",
-        "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/treks/deomali-trek",
-          "family": "treks",
-          "position": 8.8
-        }
-      },
-      {
-        "query": "valparai to vagamon distance",
-        "impressions": 136,
-        "clicks": 0,
-        "avg_position": 10,
+        "avg_position": 9.9,
         "top_page": "/en/vs/valparai-vs-vagamon",
         "blog_ranks": false,
         "autocomplete": {
@@ -1478,34 +1430,101 @@
         }
       },
       {
-        "query": "kamadgiri parikrama chitrakoot",
-        "impressions": 135,
-        "clicks": 1,
-        "avg_position": 7.6,
-        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "query": "kasol to barot valley distance",
+        "impressions": 143,
+        "clicks": 0,
+        "avg_position": 7.9,
+        "top_page": "/en/vs/kasol-vs-barot-valley",
         "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/pilgrimage/chitrakoot-parikrama",
-          "family": "pilgrimage",
-          "position": 7.6
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "kasol to barot valley distance",
+            "kasol to bir distance",
+            "jogindernagar to barot valley distance",
+            "kasol to waichin valley distance",
+            "vadodara to kasol distance"
+          ]
         }
       },
       {
-        "query": "girnar 10000 steps in km",
-        "impressions": 134,
-        "clicks": 5,
-        "avg_position": 2.3,
+        "query": "chitrakoot parikrama km",
+        "impressions": 141,
+        "clicks": 0,
+        "avg_position": 6,
+        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/pilgrimage/chitrakoot-parikrama",
+          "family": "pilgrimage",
+          "position": 5.9
+        }
+      },
+      {
+        "query": "lansdowne height vs mussoorie height",
+        "impressions": 140,
+        "clicks": 2,
+        "avg_position": 2.7,
+        "top_page": "/en/vs/mussoorie-vs-lansdowne",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "lansdowne height vs mussoorie height",
+            "lansdowne height from sea level",
+            "mussoorie height from sea level in feet",
+            "mussoorie height from sea level",
+            "height of highest motorable road"
+          ]
+        }
+      },
+      {
+        "query": "barot valley to tirthan valley distance",
+        "impressions": 140,
+        "clicks": 0,
+        "avg_position": 7.9,
+        "top_page": "/en/vs/tirthan-valley-vs-barot-valley",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "barot valley to tirthan valley distance",
+            "kullu to tirthan valley distance",
+            "banjar to tirthan valley distance",
+            "una to tirthan valley distance",
+            "mandi to tirthan valley distance"
+          ]
+        }
+      },
+      {
+        "query": "taragarh distance",
+        "impressions": 138,
+        "clicks": 1,
+        "avg_position": 6.4,
+        "top_page": "/en/blog/taragarh-fort-trek-distance-ajmer",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/treks/taragarh-fort-trek",
+          "family": "treks",
+          "position": 7.2
+        }
+      },
+      {
+        "query": "girnar km distance",
+        "impressions": 138,
+        "clicks": 0,
+        "avg_position": 7.3,
         "top_page": "/en/treks/girnar-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 2.3
+          "position": 7.3
         }
       },
       {
         "query": "vagamon to ponmudi distance",
-        "impressions": 133,
+        "impressions": 137,
         "clicks": 1,
         "avg_position": 8.7,
         "top_page": "/en/vs/ponmudi-vs-vagamon",
@@ -1522,52 +1541,85 @@
         }
       },
       {
-        "query": "edakkal caves trek distance",
-        "impressions": 133,
+        "query": "\"oswal yatrik gruh\" \"shatrunjaya\" distance",
+        "impressions": 134,
         "clicks": 0,
-        "avg_position": 9.6,
-        "top_page": "/en/treks/edakkal-cave-trek",
+        "avg_position": 5.8,
+        "top_page": "/en/destination/palitana/january",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": false,
+          "suggestions": []
+        }
+      },
+      {
+        "query": "kamadgiri parikrama chitrakoot",
+        "impressions": 131,
+        "clicks": 0,
+        "avg_position": 7.7,
+        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/en/treks/edakkal-cave-trek",
+          "page": "/en/pilgrimage/chitrakoot-parikrama",
+          "family": "pilgrimage",
+          "position": 7.7
+        }
+      },
+      {
+        "query": "girnar 10000 steps in km",
+        "impressions": 130,
+        "clicks": 4,
+        "avg_position": 1.9,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 9.6
+          "position": 1.9
         }
       },
       {
         "query": "pavagadh trek distance",
-        "impressions": 130,
+        "impressions": 129,
         "clicks": 0,
-        "avg_position": 6.4,
+        "avg_position": 6.2,
         "top_page": "/en/treks/pavagadh-summit-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/pavagadh-summit-trek",
           "family": "treks",
-          "position": 5.3
+          "position": 5
         }
       },
       {
-        "query": "lansdowne height vs mussoorie height",
-        "impressions": 129,
+        "query": "deomali trek",
+        "impressions": 128,
         "clicks": 1,
-        "avg_position": 2.8,
-        "top_page": "/en/vs/mussoorie-vs-lansdowne",
+        "avg_position": 8.8,
+        "top_page": "/en/treks/deomali-trek",
         "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "lansdowne height vs mussoorie height",
-            "lansdowne height from sea level",
-            "mussoorie height from sea level in feet",
-            "mussoorie height from sea level",
-            "height of highest motorable road"
-          ]
+        "structured_page": {
+          "page": "/en/treks/deomali-trek",
+          "family": "treks",
+          "position": 8.6
+        }
+      },
+      {
+        "query": "chitrakoot kamadgiri parikrama distance",
+        "impressions": 125,
+        "clicks": 1,
+        "avg_position": 4.3,
+        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/pilgrimage/chitrakoot-parikrama",
+          "family": "pilgrimage",
+          "position": 4.2
         }
       },
       {
         "query": "sirumalai to kodaikanal distance",
-        "impressions": 126,
+        "impressions": 124,
         "clicks": 0,
         "avg_position": 6.8,
         "top_page": "/en/treks/sirumalai-trek",
@@ -1579,23 +1631,10 @@
         }
       },
       {
-        "query": "taragarh distance",
-        "impressions": 124,
-        "clicks": 1,
-        "avg_position": 6.5,
-        "top_page": "/en/treks/taragarh-fort-trek",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/treks/taragarh-fort-trek",
-          "family": "treks",
-          "position": 7.4
-        }
-      },
-      {
         "query": "adilabad to srisailam distance",
         "impressions": 123,
         "clicks": 0,
-        "avg_position": 7.7,
+        "avg_position": 7.8,
         "top_page": "/en/vs/adilabad-vs-srisailam",
         "blog_ranks": false,
         "autocomplete": {
@@ -1611,33 +1650,33 @@
       },
       {
         "query": "deomali to khonsa distance",
-        "impressions": 123,
+        "impressions": 114,
         "clicks": 0,
-        "avg_position": 9.1,
+        "avg_position": 9,
         "top_page": "/en/treks/deomali-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/deomali-trek",
           "family": "treks",
-          "position": 9.1
+          "position": 9
         }
       },
       {
-        "query": "girnar km trek",
-        "impressions": 114,
-        "clicks": 1,
-        "avg_position": 4.3,
-        "top_page": "/en/treks/girnar-trek",
-        "blog_ranks": false,
+        "query": "ajmer sharif dargah to taragarh distance",
+        "impressions": 108,
+        "clicks": 0,
+        "avg_position": 5,
+        "top_page": "/en/blog/taragarh-fort-trek-distance-ajmer",
+        "blog_ranks": true,
         "structured_page": {
-          "page": "/en/treks/girnar-trek",
+          "page": "/en/treks/taragarh-fort-trek",
           "family": "treks",
-          "position": 4.3
+          "position": 5.5
         }
       },
       {
         "query": "barot to kasol distance",
-        "impressions": 110,
+        "impressions": 107,
         "clicks": 0,
         "avg_position": 8.2,
         "top_page": "/en/vs/kasol-vs-barot-valley",
@@ -1654,52 +1693,47 @@
         }
       },
       {
-        "query": "total distance of vaishno devi yatra",
-        "impressions": 108,
-        "clicks": 1,
-        "avg_position": 8.2,
+        "query": "himkoti to vaishno devi bhawan distance",
+        "impressions": 103,
+        "clicks": 0,
+        "avg_position": 10.1,
         "top_page": "/en/pilgrimage/vaishno-devi",
         "blog_ranks": true,
         "structured_page": {
           "page": "/en/pilgrimage/vaishno-devi",
           "family": "pilgrimage",
-          "position": 8.6
+          "position": 10.1
         }
       },
       {
-        "query": "girnar km distance",
-        "impressions": 108,
-        "clicks": 0,
-        "avg_position": 7.1,
+        "query": "girnar km trek",
+        "impressions": 101,
+        "clicks": 2,
+        "avg_position": 3.3,
         "top_page": "/en/treks/girnar-trek",
         "blog_ranks": false,
         "structured_page": {
           "page": "/en/treks/girnar-trek",
           "family": "treks",
-          "position": 7.1
+          "position": 3.3
         }
       },
       {
-        "query": "lansdowne to dhanaulti distance",
-        "impressions": 106,
-        "clicks": 0,
-        "avg_position": 9.4,
-        "top_page": "/en/vs/lansdowne-vs-dhanaulti",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "lansdowne to dhanaulti distance",
-            "lansdowne to dhanaulti distance by road",
-            "lansdowne to dhanaulti distance by car",
-            "dhanaulti or lansdowne which is better",
-            "distance between mussoorie to dhanaulti by road"
-          ]
+        "query": "total distance of vaishno devi yatra",
+        "impressions": 100,
+        "clicks": 1,
+        "avg_position": 8,
+        "top_page": "/en/pilgrimage/vaishno-devi",
+        "blog_ranks": true,
+        "structured_page": {
+          "page": "/en/pilgrimage/vaishno-devi",
+          "family": "pilgrimage",
+          "position": 8.4
         }
       },
       {
         "query": "sonamarg to gurez valley distance",
-        "impressions": 97,
+        "impressions": 100,
         "clicks": 0,
         "avg_position": 10,
         "top_page": "/en/vs/gurez-valley-vs-sonamarg",
@@ -1716,34 +1750,52 @@
         }
       },
       {
-        "query": "tarakote marg to ardhkuwari distance",
-        "impressions": 95,
+        "query": "lansdowne to dhanaulti distance",
+        "impressions": 99,
         "clicks": 0,
-        "avg_position": 10.3,
-        "top_page": "/en/pilgrimage/vaishno-devi",
+        "avg_position": 9.4,
+        "top_page": "/en/vs/lansdowne-vs-dhanaulti",
         "blog_ranks": false,
-        "structured_page": {
-          "page": "/en/pilgrimage/vaishno-devi",
-          "family": "pilgrimage",
-          "position": 10.3
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "lansdowne to dhanaulti distance",
+            "lansdowne to dhanaulti distance by road",
+            "lansdowne to dhanaulti distance by car",
+            "dhanaulti or lansdowne which is better",
+            "distance between mussoorie to dhanaulti by road"
+          ]
         }
       },
       {
-        "query": "kamtanath mandir chitrakoot parikrama distance",
-        "impressions": 92,
-        "clicks": 2,
-        "avg_position": 4.6,
-        "top_page": "/en/pilgrimage/chitrakoot-parikrama",
+        "query": "girnar distance in km",
+        "impressions": 98,
+        "clicks": 0,
+        "avg_position": 8,
+        "top_page": "/en/treks/girnar-trek",
         "blog_ranks": false,
         "structured_page": {
-          "page": "/en/pilgrimage/chitrakoot-parikrama",
-          "family": "pilgrimage",
-          "position": 4.6
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 8
+        }
+      },
+      {
+        "query": "girnar tracking km distance",
+        "impressions": 97,
+        "clicks": 1,
+        "avg_position": 5.6,
+        "top_page": "/en/treks/girnar-trek",
+        "blog_ranks": false,
+        "structured_page": {
+          "page": "/en/treks/girnar-trek",
+          "family": "treks",
+          "position": 5.6
         }
       },
       {
         "query": "shikharji parikrama distance",
-        "impressions": 91,
+        "impressions": 95,
         "clicks": 1,
         "avg_position": 5,
         "top_page": "/en/treks/shikharji-parikrama",
@@ -1751,76 +1803,32 @@
         "structured_page": {
           "page": "/en/treks/shikharji-parikrama",
           "family": "treks",
-          "position": 5.9
-        }
-      },
-      {
-        "query": "ponmudi to vagamon distance",
-        "impressions": 90,
-        "clicks": 0,
-        "avg_position": 7.9,
-        "top_page": "/en/vs/ponmudi-vs-vagamon",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "ponmudi to vagamon distance",
-            "kadakkal to ponmudi distance",
-            "trivandrum to ponmudi taxi fare",
-            "pollachi to vagamon distance",
-            "distance between vagamon and munnar"
-          ]
-        }
-      },
-      {
-        "query": "ajmer sharif dargah to taragarh distance",
-        "impressions": 89,
-        "clicks": 0,
-        "avg_position": 4.9,
-        "top_page": "/en/blog/taragarh-fort-trek-distance-ajmer",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/treks/taragarh-fort-trek",
-          "family": "treks",
-          "position": 5.7
-        }
-      },
-      {
-        "query": "himkoti to vaishno devi bhawan distance",
-        "impressions": 89,
-        "clicks": 0,
-        "avg_position": 10.1,
-        "top_page": "/en/pilgrimage/vaishno-devi",
-        "blog_ranks": true,
-        "structured_page": {
-          "page": "/en/pilgrimage/vaishno-devi",
-          "family": "pilgrimage",
-          "position": 10.1
-        }
-      },
-      {
-        "query": "khaliya top trek",
-        "impressions": 88,
-        "clicks": 0,
-        "avg_position": 34.7,
-        "top_page": "/en/treks/khaliya-top-trek",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "khaliya top trek",
-            "khaliya top trek distance",
-            "khaliya top trek best time to visit",
-            "khaliya top trek height in feet",
-            "khaliya top trek time"
-          ]
+          "position": 6
         }
       }
     ],
     "seasonal_timing": [
       {
+        "query": "nelliyampathy weather now",
+        "impressions": 99,
+        "clicks": 0,
+        "avg_position": 10.1,
+        "top_page": "/en/destination/nelliyampathy/september",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "nelliyampathy weather now",
+            "nelliyampathy weather today",
+            "nelliyampathy weather forecast",
+            "nelliyampathy weather report",
+            "nelliyampathy weather today rain"
+          ]
+        }
+      },
+      {
         "query": "is it raining in varkala now",
-        "impressions": 73,
+        "impressions": 74,
         "clicks": 0,
         "avg_position": 10.7,
         "top_page": "/en/destination/varkala/july",
@@ -1837,26 +1845,8 @@
         }
       },
       {
-        "query": "nelliyampathy weather now",
-        "impressions": 70,
-        "clicks": 0,
-        "avg_position": 10.2,
-        "top_page": "/en/destination/nelliyampathy/september",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "nelliyampathy weather now",
-            "nelliyampathy weather today",
-            "nelliyampathy weather forecast",
-            "nelliyampathy weather report",
-            "nelliyampathy weather today rain"
-          ]
-        }
-      },
-      {
         "query": "weather in varkala now",
-        "impressions": 64,
+        "impressions": 65,
         "clicks": 0,
         "avg_position": 8.5,
         "top_page": "/en/destination/varkala/july",
@@ -1874,33 +1864,53 @@
       },
       {
         "query": "hemkund sahib opening date",
-        "impressions": 61,
+        "impressions": 62,
         "clicks": 1,
-        "avg_position": 6.1,
+        "avg_position": 6.2,
         "top_page": "/en/destination/hemkund-sahib/november",
         "blog_ranks": false,
         "autocomplete": {
           "confirmed": true,
           "suggestions": [
             "hemkund sahib opening date",
+            "hemkund sahib opening date",
+            "hemkund sahib opening date",
             "hemkund sahib opening date and closing date",
-            "hemkund sahib opening date",
-            "hemkund sahib opening date",
             "hemkund sahib opening date"
           ]
         }
       },
       {
         "query": "is manali safe for solo female travellers",
-        "impressions": 49,
+        "impressions": 52,
         "clicks": 0,
         "avg_position": 10.2,
         "top_page": "/en/blog/solo-female-manali-guide",
         "blog_ranks": true
       },
       {
+        "query": "is chitkul open in december",
+        "impressions": 48,
+        "clicks": 0,
+        "avg_position": 4.8,
+        "top_page": "/en/blog/is-chitkul-in-december-worth-it",
+        "blog_ranks": true
+      },
+      {
+        "query": "is kodaikanal safe for children and pregnant women to visit?",
+        "impressions": 46,
+        "clicks": 0,
+        "avg_position": 8.3,
+        "top_page": "/en/with-kids/kodaikanal",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": false,
+          "suggestions": []
+        }
+      },
+      {
         "query": "is sissu open in december",
-        "impressions": 44,
+        "impressions": 45,
         "clicks": 0,
         "avg_position": 9.3,
         "top_page": "/en/destination/sissu/december",
@@ -1914,28 +1924,10 @@
         }
       },
       {
-        "query": "maredumilli temperature now",
-        "impressions": 38,
-        "clicks": 0,
-        "avg_position": 10.5,
-        "top_page": "/en/destination/maredumilli/may",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "maredumilli temperature now",
-            "maredumilli temperature today",
-            "maredumilli climate today",
-            "temperature in maredumilli",
-            "will the temperature be tonight"
-          ]
-        }
-      },
-      {
         "query": "gandikota weather now",
-        "impressions": 36,
+        "impressions": 41,
         "clicks": 0,
-        "avg_position": 7.5,
+        "avg_position": 7.6,
         "top_page": "/en/destination/gandikota",
         "blog_ranks": false,
         "autocomplete": {
@@ -1950,10 +1942,28 @@
         }
       },
       {
-        "query": "is hogenakkal falls safe for family",
-        "impressions": 31,
+        "query": "maredumilli temperature now",
+        "impressions": 37,
         "clicks": 0,
-        "avg_position": 6.8,
+        "avg_position": 10.4,
+        "top_page": "/en/destination/maredumilli/may",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "maredumilli temperature now",
+            "maredumilli temperature today",
+            "maredumilli climate today",
+            "temperature in maredumilli",
+            "will the temperature be tonight"
+          ]
+        }
+      },
+      {
+        "query": "is hogenakkal falls safe for family",
+        "impressions": 33,
+        "clicks": 0,
+        "avg_position": 6.6,
         "top_page": "/en/with-kids/hogenakkal",
         "blog_ranks": false,
         "autocomplete": {
@@ -1966,6 +1976,32 @@
             "is hogenakkal falls open tomorrow"
           ]
         }
+      },
+      {
+        "query": "nainital temperature in december first week",
+        "impressions": 32,
+        "clicks": 0,
+        "avg_position": 9.5,
+        "top_page": "/en/destination/nainital/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "nainital temperature in december first week",
+            "nainital weather in december first week",
+            "is there snowfall in nainital now",
+            "is it good to visit nainital in december",
+            "is there snowfall in nainital right now"
+          ]
+        }
+      },
+      {
+        "query": "is palitana open now",
+        "impressions": 31,
+        "clicks": 4,
+        "avg_position": 1.3,
+        "top_page": "/en/blog/is-palitana-open-right-now",
+        "blog_ranks": true
       },
       {
         "query": "manali snowfall in december",
@@ -1986,16 +2022,8 @@
         }
       },
       {
-        "query": "is chitkul open in december",
-        "impressions": 27,
-        "clicks": 0,
-        "avg_position": 4.6,
-        "top_page": "/en/blog/is-chitkul-in-december-worth-it",
-        "blog_ranks": true
-      },
-      {
         "query": "gandikota temperature now",
-        "impressions": 24,
+        "impressions": 26,
         "clicks": 0,
         "avg_position": 9.5,
         "top_page": "/en/destination/gandikota",
@@ -2012,16 +2040,8 @@
         }
       },
       {
-        "query": "is palitana open now",
-        "impressions": 23,
-        "clicks": 4,
-        "avg_position": 1.4,
-        "top_page": "/en/blog/is-palitana-open-right-now",
-        "blog_ranks": true
-      },
-      {
         "query": "climate in nelliyampathy now",
-        "impressions": 22,
+        "impressions": 23,
         "clicks": 0,
         "avg_position": 8,
         "top_page": "/en/destination/nelliyampathy/september",
@@ -2056,7 +2076,7 @@
         "query": "is morni hills safe",
         "impressions": 22,
         "clicks": 0,
-        "avg_position": 12.3,
+        "avg_position": 11.7,
         "top_page": "/en/destination/morni-hills",
         "blog_ranks": true
       },
@@ -2079,6 +2099,32 @@
         }
       },
       {
+        "query": "does it snow in kalpa in december",
+        "impressions": 18,
+        "clicks": 0,
+        "avg_position": 7.5,
+        "top_page": "/en/destination/kalpa/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "does it snow in kalpa in december",
+            "does it snow in kathmandu in december",
+            "does it snow in copenhagen in december",
+            "does it snow in kasol in december",
+            "does it snow in sikkim in december"
+          ]
+        }
+      },
+      {
+        "query": "is kashmir safe for solo female travellers",
+        "impressions": 18,
+        "clicks": 0,
+        "avg_position": 8.6,
+        "top_page": "/en/blog/kashmir-for-solo-female-what-matters",
+        "blog_ranks": true
+      },
+      {
         "query": "manali temperature in december 1st week",
         "impressions": 18,
         "clicks": 0,
@@ -2094,26 +2140,6 @@
             "manali temperature in december first week",
             "manali weather in december first week snowfall"
           ]
-        }
-      },
-      {
-        "query": "is kashmir safe for solo female travellers",
-        "impressions": 17,
-        "clicks": 0,
-        "avg_position": 8.6,
-        "top_page": "/en/blog/kashmir-for-solo-female-what-matters",
-        "blog_ranks": true
-      },
-      {
-        "query": "is kodaikanal safe for children and pregnant women to visit?",
-        "impressions": 17,
-        "clicks": 0,
-        "avg_position": 5.7,
-        "top_page": "/en/with-kids/kodaikanal",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": false,
-          "suggestions": []
         }
       },
       {
@@ -2134,10 +2160,18 @@
         }
       },
       {
+        "query": "is adi kailash open in december",
+        "impressions": 16,
+        "clicks": 0,
+        "avg_position": 6.9,
+        "top_page": "/en/destination/adi-kailash/december",
+        "blog_ranks": true
+      },
+      {
         "query": "is jagdalpur safe",
         "impressions": 16,
         "clicks": 0,
-        "avg_position": 7.6,
+        "avg_position": 6.3,
         "top_page": "/en/destination/jagdalpur",
         "blog_ranks": false,
         "autocomplete": {
@@ -2152,28 +2186,10 @@
         }
       },
       {
-        "query": "kukke weather now",
+        "query": "kukke subramanya weather now",
         "impressions": 16,
         "clicks": 0,
-        "avg_position": 10.9,
-        "top_page": "/en/destination/kukke-subramanya/july",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "kukke weather now",
-            "kukke weather today",
-            "kukke weather forecast 15 days",
-            "kukke weather forecast",
-            "kukke weather today rain"
-          ]
-        }
-      },
-      {
-        "query": "kukke subramanya weather now",
-        "impressions": 15,
-        "clicks": 0,
-        "avg_position": 9.5,
+        "avg_position": 9.6,
         "top_page": "/en/destination/kukke-subramanya/july",
         "blog_ranks": false,
         "autocomplete": {
@@ -2188,29 +2204,35 @@
         }
       },
       {
-        "query": "kufri snowfall time",
-        "impressions": 13,
+        "query": "kukke weather now",
+        "impressions": 16,
         "clicks": 0,
-        "avg_position": 46,
-        "top_page": "/en/destination/kufri",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "kufri snowfall time",
-            "kufri snowfall time today",
-            "kufri snowfall time",
-            "kufri snowfall time",
-            "kufri snowfall time in december"
-          ]
-        }
+        "avg_position": 10.6,
+        "top_page": "/en/destination/kukke-subramanya/july",
+        "blog_ranks": false
       },
       {
         "query": "nelliyampathy temperature now",
-        "impressions": 13,
+        "impressions": 15,
         "clicks": 0,
-        "avg_position": 11,
+        "avg_position": 11.1,
         "top_page": "/en/destination/nelliyampathy/november",
+        "blog_ranks": false
+      },
+      {
+        "query": "is sissu open in january",
+        "impressions": 14,
+        "clicks": 0,
+        "avg_position": 9.9,
+        "top_page": "/en/destination/sissu/january",
+        "blog_ranks": false
+      },
+      {
+        "query": "sissu in december first week",
+        "impressions": 14,
+        "clicks": 0,
+        "avg_position": 9.1,
+        "top_page": "/en/destination/sissu/december",
         "blog_ranks": false
       },
       {
@@ -2222,19 +2244,43 @@
         "blog_ranks": false
       },
       {
-        "query": "nainital temperature in december first week",
+        "query": "is chandratal closed in december",
+        "impressions": 12,
+        "clicks": 0,
+        "avg_position": 5.7,
+        "top_page": "/en/blog/is-chandratal-in-december-worth-it",
+        "blog_ranks": true
+      },
+      {
+        "query": "chettinad climate now",
         "impressions": 11,
         "clicks": 0,
-        "avg_position": 8.7,
-        "top_page": "/en/destination/nainital/december",
+        "avg_position": 10.4,
+        "top_page": "/en/destination/chettinad/july",
         "blog_ranks": false
       },
       {
-        "query": "sissu in december first week",
+        "query": "hemkund sahib opening and closing date",
         "impressions": 11,
         "clicks": 0,
-        "avg_position": 8.8,
-        "top_page": "/en/destination/sissu/december",
+        "avg_position": 7.9,
+        "top_page": "/en/destination/hemkund-sahib",
+        "blog_ranks": false
+      },
+      {
+        "query": "kufri snowfall time",
+        "impressions": 11,
+        "clicks": 0,
+        "avg_position": 48.3,
+        "top_page": "/en/destination/kufri",
+        "blog_ranks": false
+      },
+      {
+        "query": "zuluk temperature in december last week",
+        "impressions": 11,
+        "clicks": 0,
+        "avg_position": 8.4,
+        "top_page": "/en/destination/zuluk/december",
         "blog_ranks": false
       },
       {
@@ -2246,19 +2292,19 @@
         "blog_ranks": false
       },
       {
-        "query": "chettinad climate now",
+        "query": "is nainital safe to visit in december",
+        "impressions": 10,
+        "clicks": 0,
+        "avg_position": 11.1,
+        "top_page": "/en/blog/is-nainital-in-december-worth-it",
+        "blog_ranks": true
+      },
+      {
+        "query": "kukke subramanya temperature now",
         "impressions": 10,
         "clicks": 0,
         "avg_position": 10.3,
-        "top_page": "/en/destination/chettinad/july",
-        "blog_ranks": false
-      },
-      {
-        "query": "does it snow in kalpa in december",
-        "impressions": 10,
-        "clicks": 0,
-        "avg_position": 8,
-        "top_page": "/en/destination/kalpa/december",
+        "top_page": "/en/destination/kukke-subramanya/july",
         "blog_ranks": false
       },
       {
@@ -2273,9 +2319,9 @@
     "month_verdict": [
       {
         "query": "kalpa in december",
-        "impressions": 1545,
+        "impressions": 1780,
         "clicks": 8,
-        "avg_position": 7.5,
+        "avg_position": 7.2,
         "top_page": "/en/destination/kalpa/december",
         "blog_ranks": true,
         "structured_page": {
@@ -2285,28 +2331,10 @@
         }
       },
       {
-        "query": "manali weather in december",
-        "impressions": 790,
-        "clicks": 2,
-        "avg_position": 8.9,
-        "top_page": "/en/destination/manali/december",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "manali weather in december",
-            "manali weather in december",
-            "manali weather in december snowfall",
-            "manali weather in december 1st week",
-            "manali weather in december end"
-          ]
-        }
-      },
-      {
         "query": "sissu in december",
-        "impressions": 781,
+        "impressions": 869,
         "clicks": 2,
-        "avg_position": 7.1,
+        "avg_position": 7.3,
         "top_page": "/en/destination/sissu/december",
         "blog_ranks": false,
         "autocomplete": {
@@ -2321,8 +2349,34 @@
         }
       },
       {
+        "query": "manali weather in december",
+        "impressions": 774,
+        "clicks": 2,
+        "avg_position": 8.8,
+        "top_page": "/en/destination/manali/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "manali weather in december",
+            "manali weather in december",
+            "manali weather in december 1st week",
+            "manali weather in december snowfall",
+            "manali weather in december last week"
+          ]
+        }
+      },
+      {
+        "query": "pondicherry weather in december",
+        "impressions": 615,
+        "clicks": 0,
+        "avg_position": 10,
+        "top_page": "/en/destination/puducherry/december",
+        "blog_ranks": true
+      },
+      {
         "query": "manali weather december",
-        "impressions": 487,
+        "impressions": 477,
         "clicks": 1,
         "avg_position": 8.8,
         "top_page": "/en/destination/manali/december",
@@ -2339,28 +2393,10 @@
         }
       },
       {
-        "query": "pondicherry weather in december",
-        "impressions": 440,
-        "clicks": 0,
-        "avg_position": 10,
-        "top_page": "/en/destination/puducherry/december",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "pondicherry weather in december",
-            "pondicherry weather in december",
-            "pondicherry weather in december end",
-            "pondicherry weather in december",
-            "pondicherry weather in december last week"
-          ]
-        }
-      },
-      {
         "query": "sissu temperature in december",
-        "impressions": 408,
+        "impressions": 458,
         "clicks": 0,
-        "avg_position": 7.1,
+        "avg_position": 7,
         "top_page": "/en/destination/sissu/december",
         "blog_ranks": false,
         "autocomplete": {
@@ -2376,53 +2412,35 @@
       },
       {
         "query": "chandratal in december",
-        "impressions": 358,
-        "clicks": 3,
-        "avg_position": 5.3,
+        "impressions": 403,
+        "clicks": 4,
+        "avg_position": 5.2,
         "top_page": "/en/destination/chandratal/december",
         "blog_ranks": true
       },
       {
         "query": "manali temperature in december",
-        "impressions": 322,
+        "impressions": 309,
         "clicks": 0,
-        "avg_position": 8.4,
+        "avg_position": 8.3,
         "top_page": "/en/destination/manali/december",
         "blog_ranks": false,
         "autocomplete": {
           "confirmed": true,
           "suggestions": [
             "manali temperature in december",
-            "manali temperature in december",
             "manali temperature in december in celsius",
             "manali temperature in december 1st week",
-            "manali temperature in december end"
-          ]
-        }
-      },
-      {
-        "query": "mount abu weather in december",
-        "impressions": 303,
-        "clicks": 0,
-        "avg_position": 8.7,
-        "top_page": "/en/destination/mount-abu/december",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "mount abu weather in december",
-            "mount abu weather in december",
-            "mount abu weather in december snowfall",
-            "mount abu weather in december end",
-            "mount abu weather in december last week"
+            "manali temperature in december",
+            "manali temperature in december last week"
           ]
         }
       },
       {
         "query": "gulmarg in january",
-        "impressions": 257,
+        "impressions": 303,
         "clicks": 0,
-        "avg_position": 8.8,
+        "avg_position": 8.5,
         "top_page": "/en/destination/gulmarg/january",
         "blog_ranks": false,
         "autocomplete": {
@@ -2437,34 +2455,52 @@
         }
       },
       {
+        "query": "nainital in december",
+        "impressions": 302,
+        "clicks": 3,
+        "avg_position": 9,
+        "top_page": "/en/blog/is-nainital-in-december-worth-it",
+        "blog_ranks": true
+      },
+      {
         "query": "sissu weather in december",
-        "impressions": 243,
+        "impressions": 285,
         "clicks": 1,
-        "avg_position": 7.5,
+        "avg_position": 7.4,
         "top_page": "/en/destination/sissu/december",
         "blog_ranks": false,
         "autocomplete": {
           "confirmed": true,
           "suggestions": [
             "sissu weather in december",
+            "sissu weather in december",
             "sissu weather in december snowfall",
             "sissu weather in december",
-            "sissu temperature in december",
             "sissu temperature in december"
           ]
         }
       },
       {
-        "query": "nainital in december",
-        "impressions": 232,
-        "clicks": 1,
-        "avg_position": 9.1,
-        "top_page": "/en/blog/is-nainital-in-december-worth-it",
-        "blog_ranks": true
+        "query": "mount abu weather in december",
+        "impressions": 277,
+        "clicks": 0,
+        "avg_position": 8.6,
+        "top_page": "/en/destination/mount-abu/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "mount abu weather in december",
+            "mount abu weather in december",
+            "mount abu weather in december snowfall",
+            "mount abu weather in december end",
+            "mount abu weather in december last week"
+          ]
+        }
       },
       {
         "query": "kalpa temperature in december",
-        "impressions": 225,
+        "impressions": 241,
         "clicks": 0,
         "avg_position": 8.5,
         "top_page": "/en/destination/kalpa/december",
@@ -2481,8 +2517,42 @@
         }
       },
       {
+        "query": "chandratal lake in december",
+        "impressions": 222,
+        "clicks": 0,
+        "avg_position": 6.7,
+        "top_page": "/en/destination/chandratal/december",
+        "blog_ranks": true
+      },
+      {
+        "query": "nainital weather in december",
+        "impressions": 220,
+        "clicks": 0,
+        "avg_position": 9,
+        "top_page": "/en/destination/nainital/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "nainital weather in december",
+            "nainital weather in december",
+            "nainital weather in december end",
+            "nainital weather in december last week",
+            "nainital weather in december first week"
+          ]
+        }
+      },
+      {
+        "query": "chitkul temperature in december",
+        "impressions": 206,
+        "clicks": 1,
+        "avg_position": 9.8,
+        "top_page": "/en/destination/chitkul/december",
+        "blog_ranks": true
+      },
+      {
         "query": "mount abu in december",
-        "impressions": 215,
+        "impressions": 204,
         "clicks": 1,
         "avg_position": 8.9,
         "top_page": "/en/destination/mount-abu/december",
@@ -2500,7 +2570,7 @@
       },
       {
         "query": "weather in manali in december",
-        "impressions": 207,
+        "impressions": 204,
         "clicks": 0,
         "avg_position": 8.7,
         "top_page": "/en/destination/manali/december",
@@ -2517,42 +2587,16 @@
         }
       },
       {
-        "query": "nainital weather in december",
-        "impressions": 205,
-        "clicks": 0,
-        "avg_position": 9.3,
-        "top_page": "/en/destination/nainital/december",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "nainital weather in december",
-            "nainital weather in december",
-            "nainital weather in december end",
-            "nainital weather in december last week",
-            "nainital weather in december first week"
-          ]
-        }
-      },
-      {
-        "query": "chandratal lake in december",
+        "query": "chitkul in december",
         "impressions": 196,
-        "clicks": 0,
-        "avg_position": 6.9,
-        "top_page": "/en/destination/chandratal/december",
-        "blog_ranks": true
-      },
-      {
-        "query": "chitkul temperature in december",
-        "impressions": 184,
-        "clicks": 0,
-        "avg_position": 9.7,
-        "top_page": "/en/destination/chitkul/december",
+        "clicks": 1,
+        "avg_position": 6.5,
+        "top_page": "/en/blog/is-chitkul-in-december-worth-it",
         "blog_ranks": true
       },
       {
         "query": "lakshadweep in december",
-        "impressions": 160,
+        "impressions": 168,
         "clicks": 0,
         "avg_position": 9.1,
         "top_page": "/en/explore/state/lakshadweep/december",
@@ -2569,26 +2613,10 @@
         }
       },
       {
-        "query": "chitkul in december",
-        "impressions": 143,
-        "clicks": 1,
-        "avg_position": 6.5,
-        "top_page": "/en/blog/is-chitkul-in-december-worth-it",
-        "blog_ranks": true
-      },
-      {
-        "query": "adi kailash in december",
-        "impressions": 136,
-        "clicks": 0,
-        "avg_position": 6.5,
-        "top_page": "/en/destination/adi-kailash/december",
-        "blog_ranks": true
-      },
-      {
         "query": "mandi temperature in december",
-        "impressions": 126,
+        "impressions": 155,
         "clicks": 0,
-        "avg_position": 8.3,
+        "avg_position": 8.2,
         "top_page": "/en/destination/mandi/december",
         "blog_ranks": false,
         "autocomplete": {
@@ -2603,28 +2631,18 @@
         }
       },
       {
-        "query": "shimla weather in december",
-        "impressions": 121,
+        "query": "adi kailash in december",
+        "impressions": 154,
         "clicks": 0,
-        "avg_position": 9.9,
-        "top_page": "/en/destination/shimla/december",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "shimla weather in december",
-            "shimla weather in december",
-            "shimla weather in december snowfall",
-            "shimla weather in december last week",
-            "shimla weather in december 1st week"
-          ]
-        }
+        "avg_position": 6.1,
+        "top_page": "/en/destination/adi-kailash/december",
+        "blog_ranks": true
       },
       {
         "query": "zuluk in december",
-        "impressions": 108,
+        "impressions": 147,
         "clicks": 2,
-        "avg_position": 6.5,
+        "avg_position": 5.6,
         "top_page": "/en/destination/zuluk/december",
         "blog_ranks": false,
         "autocomplete": {
@@ -2639,10 +2657,28 @@
         }
       },
       {
-        "query": "weather in pondicherry in december",
-        "impressions": 106,
+        "query": "lachung temperature in december",
+        "impressions": 142,
         "clicks": 0,
-        "avg_position": 10.2,
+        "avg_position": 9.4,
+        "top_page": "/en/destination/lachung/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "lachung temperature in december",
+            "lachung temperature in december end",
+            "lachung temperature in december snowfall",
+            "lachung weather in december",
+            "lachung weather in december end"
+          ]
+        }
+      },
+      {
+        "query": "weather in pondicherry in december",
+        "impressions": 139,
+        "clicks": 0,
+        "avg_position": 10.3,
         "top_page": "/en/destination/puducherry/december",
         "blog_ranks": false,
         "autocomplete": {
@@ -2657,22 +2693,82 @@
         }
       },
       {
+        "query": "mangalore weather in december",
+        "impressions": 130,
+        "clicks": 0,
+        "avg_position": 8.8,
+        "top_page": "/en/destination/mangalore/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "mangalore weather in december",
+            "mangalore weather in december",
+            "mangalore temperature in december",
+            "is it raining in mangalore",
+            "weather in mangalore throughout the year"
+          ]
+        }
+      },
+      {
+        "query": "shimla weather in december",
+        "impressions": 121,
+        "clicks": 0,
+        "avg_position": 10.7,
+        "top_page": "/en/destination/shimla/december",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "shimla weather in december",
+            "shimla weather in december",
+            "shimla weather in december snowfall",
+            "shimla weather in december last week",
+            "shimla weather in december 1st week"
+          ]
+        }
+      },
+      {
+        "query": "nainital temperature in january",
+        "impressions": 114,
+        "clicks": 0,
+        "avg_position": 10.3,
+        "top_page": "/en/destination/nainital/january",
+        "blog_ranks": false,
+        "autocomplete": {
+          "confirmed": true,
+          "suggestions": [
+            "nainital temperature in january",
+            "nainital temperature in january",
+            "nainital temperature in january",
+            "nainital temperature in january",
+            "nainital temperature in january end"
+          ]
+        }
+      },
+      {
+        "query": "jodhpur in december",
+        "impressions": 105,
+        "clicks": 0,
+        "avg_position": 9.4,
+        "top_page": "/en/destination/jodhpur/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "chitkul weather in december",
+        "impressions": 102,
+        "clicks": 0,
+        "avg_position": 9.4,
+        "top_page": "/en/destination/chitkul/december",
+        "blog_ranks": true
+      },
+      {
         "query": "vrindavan in december",
         "impressions": 101,
         "clicks": 2,
         "avg_position": 7.1,
         "top_page": "/en/destination/vrindavan/december",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "vrindavan in december",
-            "vrindavan temperature in december",
-            "vrindavan weather in december",
-            "vrindavan weather in december",
-            "vrindavan temperature in december"
-          ]
-        }
+        "blog_ranks": false
       },
       {
         "query": "manali temperature december",
@@ -2683,278 +2779,228 @@
         "blog_ranks": true
       },
       {
-        "query": "darjeeling weather in february",
-        "impressions": 95,
-        "clicks": 2,
-        "avg_position": 6.1,
-        "top_page": "/en/destination/darjeeling/february",
-        "blog_ranks": false,
-        "autocomplete": {
-          "confirmed": true,
-          "suggestions": [
-            "darjeeling weather in february",
-            "darjeeling weather in february snowfall",
-            "darjeeling weather in february",
-            "darjeeling weather in february",
-            "darjeeling weather in february last week"
-          ]
-        }
-      },
-      {
-        "query": "sissu in december end",
-        "impressions": 92,
+        "query": "dhanaulti in december",
+        "impressions": 97,
         "clicks": 0,
-        "avg_position": 8.9,
-        "top_page": "/en/destination/sissu/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "mount abu temperature in december",
-        "impressions": 88,
-        "clicks": 0,
-        "avg_position": 10.5,
-        "top_page": "/en/destination/mount-abu/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "lachung temperature in december",
-        "impressions": 87,
-        "clicks": 0,
-        "avg_position": 9.8,
-        "top_page": "/en/destination/lachung/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "mangalore weather in december",
-        "impressions": 86,
-        "clicks": 0,
-        "avg_position": 9.1,
-        "top_page": "/en/destination/mangalore/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "chitkul weather in december",
-        "impressions": 85,
-        "clicks": 0,
-        "avg_position": 9.5,
-        "top_page": "/en/destination/chitkul/december",
-        "blog_ranks": true
-      },
-      {
-        "query": "nainital temperature in january",
-        "impressions": 80,
-        "clicks": 0,
-        "avg_position": 10.7,
-        "top_page": "/en/destination/nainital/january",
+        "avg_position": 6,
+        "top_page": "/en/destination/dhanaulti/december",
         "blog_ranks": false
       },
       {
         "query": "pondicherry in december weather",
-        "impressions": 77,
+        "impressions": 95,
         "clicks": 0,
-        "avg_position": 9.4,
+        "avg_position": 9.3,
         "top_page": "/en/destination/puducherry/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "jodhpur in december",
-        "impressions": 76,
-        "clicks": 0,
-        "avg_position": 9.8,
-        "top_page": "/en/destination/jodhpur/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "mount abu december temperature",
-        "impressions": 74,
-        "clicks": 0,
-        "avg_position": 9.9,
-        "top_page": "/en/destination/mount-abu/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "tungnath in january",
-        "impressions": 73,
-        "clicks": 0,
-        "avg_position": 7,
-        "top_page": "/en/destination/tungnath/january",
-        "blog_ranks": false
-      },
-      {
-        "query": "mount abu in december weather",
-        "impressions": 72,
-        "clicks": 0,
-        "avg_position": 8,
-        "top_page": "/en/destination/mount-abu/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "mount abu december weather",
-        "impressions": 70,
-        "clicks": 0,
-        "avg_position": 7.4,
-        "top_page": "/en/destination/mount-abu/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "mangalore in december",
-        "impressions": 64,
-        "clicks": 0,
-        "avg_position": 7.9,
-        "top_page": "/en/destination/mangalore/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "kalpa weather in december",
-        "impressions": 63,
-        "clicks": 0,
-        "avg_position": 9.4,
-        "top_page": "/en/destination/kalpa/december",
         "blog_ranks": true
       },
       {
+        "query": "sissu in december end",
+        "impressions": 91,
+        "clicks": 0,
+        "avg_position": 9,
+        "top_page": "/en/destination/sissu/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "zuluk temperature in december",
+        "impressions": 91,
+        "clicks": 0,
+        "avg_position": 7.7,
+        "top_page": "/en/destination/zuluk/december",
+        "blog_ranks": false
+      },
+      {
         "query": "nainital weather in january",
-        "impressions": 58,
+        "impressions": 89,
         "clicks": 0,
         "avg_position": 9.3,
         "top_page": "/en/destination/nainital/january",
         "blog_ranks": false
       },
       {
-        "query": "zuluk temperature in december",
-        "impressions": 58,
+        "query": "mount abu temperature in december",
+        "impressions": 87,
         "clicks": 0,
-        "avg_position": 7.9,
-        "top_page": "/en/destination/zuluk/december",
+        "avg_position": 10.4,
+        "top_page": "/en/destination/mount-abu/december",
         "blog_ranks": false
       },
       {
-        "query": "darjeeling temperature in february",
-        "impressions": 55,
+        "query": "sissu in january",
+        "impressions": 83,
         "clicks": 0,
-        "avg_position": 7.9,
+        "avg_position": 5.7,
+        "top_page": "/en/destination/sissu/january",
+        "blog_ranks": false
+      },
+      {
+        "query": "darjeeling weather in february",
+        "impressions": 80,
+        "clicks": 2,
+        "avg_position": 5.6,
         "top_page": "/en/destination/darjeeling/february",
         "blog_ranks": false
       },
       {
-        "query": "kalpa in dec",
-        "impressions": 55,
+        "query": "mangalore in december",
+        "impressions": 79,
         "clicks": 0,
-        "avg_position": 6.7,
-        "top_page": "/en/destination/kalpa/december",
-        "blog_ranks": true
-      },
-      {
-        "query": "manali temperature in december in celsius",
-        "impressions": 53,
-        "clicks": 0,
-        "avg_position": 8.2,
-        "top_page": "/en/destination/manali/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "patnitop weather in december",
-        "impressions": 50,
-        "clicks": 0,
-        "avg_position": 13,
-        "top_page": "/en/destination/patnitop/november",
+        "avg_position": 8.1,
+        "top_page": "/en/destination/mangalore/december",
         "blog_ranks": false
       },
       {
         "query": "zuluk weather in december",
-        "impressions": 50,
+        "impressions": 76,
         "clicks": 0,
-        "avg_position": 6.9,
+        "avg_position": 6.6,
         "top_page": "/en/destination/zuluk/december",
         "blog_ranks": false
       },
       {
-        "query": "dhanaulti in december",
-        "impressions": 48,
-        "clicks": 0,
-        "avg_position": 5.5,
-        "top_page": "/en/destination/dhanaulti/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "gandikota weather in december",
-        "impressions": 48,
-        "clicks": 0,
-        "avg_position": 9.5,
-        "top_page": "/en/destination/gandikota",
-        "blog_ranks": false
-      },
-      {
-        "query": "kannur weather in december",
-        "impressions": 46,
-        "clicks": 0,
-        "avg_position": 7,
-        "top_page": "/en/destination/kannur/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "pondicherry climate in december",
-        "impressions": 46,
-        "clicks": 0,
-        "avg_position": 9.4,
-        "top_page": "/en/destination/puducherry/december",
-        "blog_ranks": false
-      },
-      {
         "query": "lachung in december",
-        "impressions": 45,
-        "clicks": 0,
-        "avg_position": 10,
+        "impressions": 74,
+        "clicks": 1,
+        "avg_position": 9.9,
         "top_page": "/en/destination/lachung/december",
         "blog_ranks": false
       },
       {
-        "query": "nagaland in december",
-        "impressions": 45,
+        "query": "lachung weather in december",
+        "impressions": 72,
         "clicks": 0,
-        "avg_position": 11,
+        "avg_position": 7.2,
+        "top_page": "/en/destination/lachung/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "mount abu december temperature",
+        "impressions": 72,
+        "clicks": 0,
+        "avg_position": 9.8,
+        "top_page": "/en/destination/mount-abu/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "kalpa weather in december",
+        "impressions": 70,
+        "clicks": 0,
+        "avg_position": 9.3,
+        "top_page": "/en/destination/kalpa/december",
+        "blog_ranks": true
+      },
+      {
+        "query": "nagaland in december",
+        "impressions": 70,
+        "clicks": 0,
+        "avg_position": 10.5,
         "top_page": "/en/explore/state/nagaland/december",
         "blog_ranks": true
       },
       {
-        "query": "jibhi in february",
-        "impressions": 44,
-        "clicks": 1,
-        "avg_position": 7.8,
-        "top_page": "/en/destination/jibhi/february",
-        "blog_ranks": false
-      },
-      {
-        "query": "dudhsagar falls in december",
-        "impressions": 43,
-        "clicks": 1,
-        "avg_position": 7.3,
-        "top_page": "/en/destination/dudhsagar-falls/december",
-        "blog_ranks": false
-      },
-      {
-        "query": "is it good to visit nainital in december",
-        "impressions": 43,
+        "query": "pondicherry climate in december",
+        "impressions": 70,
         "clicks": 0,
-        "avg_position": 8.4,
-        "top_page": "/en/blog/is-nainital-in-december-worth-it",
+        "avg_position": 9.5,
+        "top_page": "/en/destination/puducherry/december",
         "blog_ranks": true
       },
       {
-        "query": "sissu december temperature",
-        "impressions": 43,
+        "query": "dhanaulti weather in december",
+        "impressions": 69,
         "clicks": 0,
-        "avg_position": 5.4,
-        "top_page": "/en/destination/sissu/december",
+        "avg_position": 6.3,
+        "top_page": "/en/destination/dhanaulti/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "mount abu december weather",
+        "impressions": 68,
+        "clicks": 0,
+        "avg_position": 7.5,
+        "top_page": "/en/destination/mount-abu/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "mount abu in december weather",
+        "impressions": 68,
+        "clicks": 0,
+        "avg_position": 8.2,
+        "top_page": "/en/destination/mount-abu/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "wayanad weather in january",
+        "impressions": 68,
+        "clicks": 0,
+        "avg_position": 6.4,
+        "top_page": "/en/destination/wayanad/january",
+        "blog_ranks": false
+      },
+      {
+        "query": "kalpa in dec",
+        "impressions": 64,
+        "clicks": 0,
+        "avg_position": 6.5,
+        "top_page": "/en/destination/kalpa/december",
+        "blog_ranks": true
+      },
+      {
+        "query": "tungnath in january",
+        "impressions": 64,
+        "clicks": 0,
+        "avg_position": 7.4,
+        "top_page": "/en/destination/tungnath/january",
         "blog_ranks": false
       },
       {
         "query": "kalpa in december end",
-        "impressions": 42,
+        "impressions": 62,
         "clicks": 1,
-        "avg_position": 7.5,
+        "avg_position": 7.1,
         "top_page": "/en/blog/is-kalpa-in-december-worth-it",
         "blog_ranks": true
+      },
+      {
+        "query": "pondicherry weather december",
+        "impressions": 62,
+        "clicks": 1,
+        "avg_position": 10.2,
+        "top_page": "/en/destination/puducherry/december",
+        "blog_ranks": true
+      },
+      {
+        "query": "wayanad in january",
+        "impressions": 61,
+        "clicks": 0,
+        "avg_position": 5.5,
+        "top_page": "/en/destination/wayanad/january",
+        "blog_ranks": false
+      },
+      {
+        "query": "is it good to visit nainital in december",
+        "impressions": 60,
+        "clicks": 0,
+        "avg_position": 8.3,
+        "top_page": "/en/blog/is-nainital-in-december-worth-it",
+        "blog_ranks": true
+      },
+      {
+        "query": "matheran in december",
+        "impressions": 60,
+        "clicks": 0,
+        "avg_position": 9.8,
+        "top_page": "/en/destination/matheran/december",
+        "blog_ranks": false
+      },
+      {
+        "query": "dudhsagar waterfall in december",
+        "impressions": 59,
+        "clicks": 1,
+        "avg_position": 7.5,
+        "top_page": "/en/destination/dudhsagar-falls/december",
+        "blog_ranks": false
       }
     ]
   },
@@ -2965,6 +3011,14 @@
       "published": "2026-11-01",
       "destinations": [
         "mumbai"
+      ]
+    },
+    {
+      "title": "Encountered a possible scam at Hazrat Nizamuddin and Nagpur railway stations. Is this a common scam?",
+      "url": "https://www.reddit.com/r/indiatravel/comments/1xpzz31/encountered_a_possible_scam_at_hazrat_nizamuddin/",
+      "published": "2026-11-07",
+      "destinations": [
+        "nagpur"
       ]
     },
     {
@@ -2984,11 +3038,39 @@
       ]
     },
     {
-      "title": "Encountered a possible scam at Hazrat Nizamuddin and Nagpur railway stations. Is this a common scam?",
-      "url": "https://www.reddit.com/r/indiatravel/comments/1xpzz31/encountered_a_possible_scam_at_hazrat_nizamuddin/",
-      "published": "2026-11-07",
+      "title": "Pondicherry or Ooty: Which one has a similar vibe as Fort Kochi?",
+      "url": "https://www.reddit.com/r/indiatravel/comments/1xw47he/pondicherry_or_ooty_which_one_has_a_similar_vibe/",
+      "published": "2026-11-14",
       "destinations": [
-        "nagpur"
+        "kochi",
+        "ooty",
+        "pondicherry"
+      ]
+    },
+    {
+      "title": "Travel agencies in Mumbai or Pune to help book a trip to Kerala?",
+      "url": "https://www.reddit.com/r/indiatravel/comments/1xuzr2m/travel_agencies_in_mumbai_or_pune_to_help_book_a/",
+      "published": "2026-11-13",
+      "destinations": [
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "title": "Meghalaya vs Mussoorie vs Shimla vs Kerala — Where should 6 friends travel in December?",
+      "url": "https://www.reddit.com/r/indiatravel/comments/1xtal91/meghalaya_vs_mussoorie_vs_shimla_vs_kerala_where/",
+      "published": "2026-11-11",
+      "destinations": [
+        "mussoorie",
+        "shimla"
+      ]
+    },
+    {
+      "title": "10 days in Northeast India over Christmas with kids (4 & 7): Assam/Meghalaya, Sikkim or Tawang?",
+      "url": "https://www.reddit.com/r/indiatravel/comments/1xr6owq/10_days_in_northeast_india_over_christmas_with/",
+      "published": "2026-11-08",
+      "destinations": [
+        "tawang"
       ]
     },
     {
@@ -3034,28 +3116,11 @@
       ]
     },
     {
-      "title": "Ayodhya or Amritsar for Diwali — how to avoid a crowd crush or stampede situation ?",
-      "url": "https://www.reddit.com/r/indiatravel/comments/1xaw0yl/ayodhya_or_amritsar_for_diwali_how_to_avoid_a/",
-      "published": "2026-10-20",
+      "title": "Need Stay Recommendations for Hampi",
+      "url": "https://www.reddit.com/r/indiatravel/comments/1xx66li/need_stay_recommendations_for_hampi/",
+      "published": "2026-11-15",
       "destinations": [
-        "amritsar",
-        "ayodhya"
-      ]
-    },
-    {
-      "title": "Has anyone been to Andhra Pradesh or Hyderabad?",
-      "url": "https://www.reddit.com/r/indiatravel/comments/1x9y7me/has_anyone_been_to_andhra_pradesh_or_hyderabad/",
-      "published": "2026-10-19",
-      "destinations": [
-        "hyderabad"
-      ]
-    },
-    {
-      "title": "10 days in Northeast India over Christmas with kids (4 & 7): Assam/Meghalaya, Sikkim or Tawang?",
-      "url": "https://www.reddit.com/r/indiatravel/comments/1xr6owq/10_days_in_northeast_india_over_christmas_with/",
-      "published": "2026-11-08",
-      "destinations": [
-        "tawang"
+        "hampi"
       ]
     },
     {
@@ -3064,22 +3129,6 @@
       "published": "2026-10-29",
       "destinations": [
         "mumbai"
-      ]
-    },
-    {
-      "title": "What is my food outlook when traveling to Bengaluru with severe food allergies to spices?",
-      "url": "https://www.reddit.com/r/indiatravel/comments/1x7ufrb/what_is_my_food_outlook_when_traveling_to/",
-      "published": "2026-10-16",
-      "destinations": [
-        "bengaluru"
-      ]
-    },
-    {
-      "title": "Need a female companion for Hampi trip! (oct 23 to Oct 27)",
-      "url": "https://www.reddit.com/r/indiatravel/comments/1x7t9xg/need_a_female_companion_for_hampi_trip_oct_23_to/",
-      "published": "2026-10-16",
-      "destinations": [
-        "hampi"
       ]
     }
   ]
