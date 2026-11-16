@@ -255,7 +255,15 @@ def ref_photo(slug: str) -> dict | None:
     dest = PHOTOS / slug / "ref.jpg"
     meta = dest.with_suffix(".json")
     if dest.exists() and meta.exists():
-        return _load(meta, None)
+        got = _load(meta, None)
+        t = re.sub(r"\.(jpe?g|png|tiff?|webp)$", "", (got or {}).get("title") or "", flags=re.I)
+        rejected = json.loads(GR.REJECT.read_text()).get("titles", []) if GR.REJECT.exists() else []
+        if not ((got or {}).get("title") in rejected or ARTWORK.search(t)):
+            return got
+        # 2026-11-16: a cached pick refused since (Barren Island's 1885 engraved map stayed cached after
+        # --photo found nothing better) is dropped, so the place is re-picked or refused, never reused.
+        for f in (dest, meta):
+            f.unlink(missing_ok=True)
     nm = name(slug)
     state = ((data().get("geo") or {}).get(slug) or {}).get("state_name") or ""
     base = scenery_title(nm, state)
