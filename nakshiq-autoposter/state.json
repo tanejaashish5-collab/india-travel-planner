@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-16",
     "PdMu0_evening": "2026-11-16",
-    "PdMu0_carousel": "2026-11-15"
+    "PdMu0_carousel": "2026-11-16"
   },
   "last_sync": "2026-11-16T16:18:59.744574+00:00",
   "posted_destinations": [
@@ -176,6 +176,10 @@
     },
     {
       "destination_id": "devprayag",
+      "date": "2026-11-16"
+    },
+    {
+      "destination_id": "palitana",
       "date": "2026-11-16"
     }
   ],
@@ -12233,6 +12237,15 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "devprayag.mp4"
+    },
+    {
+      "timestamp": "2026-11-16T17:16:40.339444+00:00",
+      "date": "2026-11-16",
+      "platform": "facebook",
+      "post_id": "ry8Y2",
+      "destination": "palitana",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-11-16"
     }
   ],
   "theme_usage": {
@@ -13534,7 +13547,15 @@
       "Guruvayur Ekadashi",
       "Chalakudy River Festival",
       "Bali Jatra",
-      "Kartik Purnima at Somnath"
+      "Kartik Purnima at Somnath",
+      "Shatrunjaya Mahotsav",
+      "Chhath Puja",
+      "Chhath Puja at Netarhat",
+      "Raas Mahotsav",
+      "Nirvana Mahotsav",
+      "Lili Parikrama (Green Circumambulation of Mount Girnar)",
+      "Mandala-Makaravilakku Pilgrimage Season",
+      "Kartik Purnima"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
