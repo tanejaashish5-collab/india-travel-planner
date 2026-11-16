@@ -32715,3 +32715,60 @@ Date range: 2026-04-15 → 2026-11-15
 2026-11-17 01:37:21  INFO          Uploading to R2 (timeout=300s)...
 2026-11-17 01:37:45  INFO          R2 PUT OK. Confirming...
 2026-11-17 01:37:48  INFO          Media ready: NFuYP (44,754,445 bytes · jaisalmer__hidden_gems__voiced__en.mp4)
+2026-11-16 16:18:18  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-16 16:18:18  INFO      ════════════════════════════════════════════════════════════
+2026-11-16 16:18:18  INFO      Nakshiq Autoposter · EVENING · 2026-11-16 · weekday=0
+2026-11-16 16:18:18  INFO      ════════════════════════════════════════════════════════════
+2026-11-16 16:18:18  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-16 16:18:30  WARNING   destinations_full month=2 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:32  WARNING   destinations_full month=4 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:36  WARNING   destinations_full month=7 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:38  WARNING   destinations_full month=9 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:39  WARNING   destinations_full month=10 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:42  WARNING   destinations_full month=12 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:42  WARNING   Nakshiq [articles] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:46  WARNING   Nakshiq [festivals] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:46  WARNING   Nakshiq [festivals] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:46  WARNING   Nakshiq [collections] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:50  WARNING   Nakshiq [eateries] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:50  WARNING   Nakshiq [stays] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:54  WARNING   Nakshiq [camping] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:54  WARNING   Nakshiq [hidden_gems] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:55  WARNING   Nakshiq [arrival] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:18:59  INFO      Synced → 20 destinations · 100 traps · 0 articles · 57 routes · 100 treks · 0 eateries · 0 stays · 100 sos · 100 viral · 0 camping · 0 gems · total catalog=533
+2026-11-16 16:18:59  INFO      brand_stamp: registered 356 destinations for overlay lookup
+2026-11-16 16:19:01  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-16 16:19:01  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-16 16:19:01  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-16 16:19:01  WARNING   destinations_full month=1 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=2 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=3 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=4 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=5 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=6 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=7 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:01  WARNING   destinations_full month=8 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-16 16:19:07  INFO      [csv_formats] 22/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-16 16:19:07  INFO      [diversity] feed: 28 → 19 options · cooldown dropped 9 (carousel, pillar:discovery, pillar:scenario_guide, pillar:scenario_hidden_gems, pillar:scenario_swap seen <2d)
+2026-11-16 16:19:07  INFO      Evening format (balance→verification): confidence_intel [14% vs target 35%] (0/15 never featured)
+2026-11-16 16:19:07  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: festival_alert  ·  Audience: backpackers
+2026-11-16 16:19:07  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-11-16 16:19:07  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-11-16 16:19:07  INFO      Fingerprint dedup snapshot — 50 dests in 7d · 96 (dest,fmt) pairs in 30d · 238 media in 60d
+2026-11-16 16:19:07  INFO      festival_alert: no active festivals — SKIPPING
+2026-11-16 16:19:09  INFO      Shared best destination locked: Mysore
+2026-11-16 16:19:09  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-11-16 16:19:09  INFO      confidence_intel for Mysore: only 0 card rows — SKIPPING
+2026-11-16 16:19:09  WARNING   [facebook/Nakshiq] confidence_intel: mysore inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'devprayag' as score_card to keep the slot live.
+2026-11-16 16:19:09  INFO      [facebook/Nakshiq] Caption ready (639 chars, dest=devprayag)
+2026-11-16 16:19:09  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-16 16:19:09  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/devprayag.mp4?v=20260915
+2026-11-16 16:19:12  INFO          Brand-stamp applied: devprayag.mp4 (9,415,677 → 4,106,155 bytes)
+2026-11-16 16:19:12  INFO          Requesting upload URL for devprayag.mp4 (4,106,155 bytes, video/mp4)
+2026-11-16 16:19:13  INFO          Uploading to R2 (timeout=300s)...
+2026-11-16 16:19:15  INFO          R2 PUT OK. Confirming...
+2026-11-16 16:19:17  INFO          Media ready: i23YY (4,106,155 bytes · devprayag.mp4)
+2026-11-16 16:19:17  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-16 16:19:48  INFO      [facebook/Nakshiq] ✅ Published · Outstand=7dFNQ · Platform=2164143274185895
+2026-11-16 16:19:48  INFO      State saved. Run complete.
+2026-11-16 16:19:48  INFO      ════════════════════════════════════════════════════════════
