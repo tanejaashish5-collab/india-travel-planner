@@ -338,7 +338,13 @@ def facts_map_reveal(slug: str, today: date) -> dict:
 FOG_MOTION = "A thin, even layer of fog hangs low and level and drifts very slowly."
 HEAT_MOTION = ("The hot, bright scene stays still and sharp in clear, dry air; the light, sky and colours stay "
                "exactly as in the first frame.")    # naming smoke/dust in the prompt primes Veo to draw them
-RETIRED_MOTION = {"Fog rolls slowly across.": FOG_MOTION, "Heat haze shimmers over the ground.": HEAT_MOTION}
+# 2026-11-16: the opener shot's "mist or smoke moves" drew grey smoke through Belum's cave and dark
+# smoke across Bhitarkanika's sunset (2 of 14 opener clips); same priming as the heat line.
+OPENER_MOTION = "water ripples, clouds drift slowly, leaves stir"
+OPENER_HOLD = "The air, light and season stay exactly as in the first frame."
+RETIRED_MOTION = {"Fog rolls slowly across.": FOG_MOTION, "Heat haze shimmers over the ground.": HEAT_MOTION,
+                  "water ripples, clouds drift, leaves stir, mist or smoke moves": OPENER_MOTION,
+                  "The light and season stay exactly as in the first frame.": OPENER_HOLD}
 CUES = [
     (r"heavy monsoon|monsoon|heavy rain|downpour|rain", "heavy monsoon rain pouring down, low dark grey clouds, wet glistening ground and puddles",
      "Heavy rain falls in sheets and low clouds drift across.", "steady heavy rain and distant thunder"),
@@ -923,9 +929,9 @@ def opener_prompts(slug: str, today: date) -> tuple[str, str, bool]:
              "vehicles, crowds or landmarks. Photorealistic, natural colour." + people
              + " No text, no signs, no watermark.")
     shot = ("The camera holds almost still with a very slow push-in. Only the natural movement of what is in "
-            "the picture: water ripples, clouds drift, leaves stir, mist or smoke moves"
+            "the picture: " + OPENER_MOTION
             + (", any distant figures in it go about their day." if busy else ". No one walks into the frame.")
-            + " The light and season stay exactly as in the first frame. Ambient sound of the place. No text.")
+            + " " + OPENER_HOLD + " Ambient sound of the place. No text.")
     return still, shot, busy
 
 
