@@ -32831,3 +32831,27 @@ Date range: 2026-04-15 → 2026-11-15
 2026-11-16 17:16:40  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=ry8Y2
 2026-11-16 17:16:40  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-11-16 17:16:40  INFO      ════════════════════════════════════════════════════════════
+2026-11-16 23:29:58  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-16 23:29:58  INFO      ════════════════════════════════════════════════════════════
+2026-11-16 23:29:58  INFO      Nakshiq Autoposter · EVENING · 2026-11-16 · weekday=0
+2026-11-16 23:29:58  INFO      ════════════════════════════════════════════════════════════
+2026-11-16 23:29:58  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-16 23:30:58  INFO      Synced → 20 destinations · 100 traps · 5 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-16 23:30:58  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-16 23:30:59  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-16 23:30:59  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-16 23:30:59  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+31 more)
+2026-11-16 23:30:59  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-16 23:31:20  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-16 23:31:20  INFO      [diversity] feed: 37 → 25 options · cooldown dropped 12 (carousel, pillar:discovery, pillar:scenario_guide, pillar:scenario_hidden_gems, pillar:scenario_swap, score seen <2d)
+2026-11-16 23:31:20  INFO      Evening format (balance→anti_trap): v2_tourist_trap_split [0% vs target 15%] (0/15 never featured)
+2026-11-16 23:31:20  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: festival_alert  ·  Audience: backpackers
+2026-11-16 23:31:20  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-11-16 23:31:20  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-11-16 23:31:20  INFO      Fingerprint dedup snapshot — 52 dests in 7d · 98 (dest,fmt) pairs in 30d · 240 media in 60d
+2026-11-16 23:31:20  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+31 more)
+2026-11-16 23:31:20  INFO      Festival locked: Wayanad Food Festival (39/42 active festivals never featured)
+2026-11-16 23:31:21  INFO      Shared best destination locked: Bengaluru
+2026-11-16 23:31:21  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-11-16 23:31:21  INFO      State saved. Run complete.
+2026-11-16 23:31:21  INFO      ════════════════════════════════════════════════════════════
