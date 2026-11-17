@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-17",
     "PdMu0_evening": "2026-11-17",
-    "PdMu0_carousel": "2026-11-16"
+    "PdMu0_carousel": "2026-11-17"
   },
   "last_sync": "2026-11-17T17:28:55.279616+00:00",
   "posted_destinations": [
@@ -160,6 +160,10 @@
     },
     {
       "destination_id": "silent-valley",
+      "date": "2026-11-17"
+    },
+    {
+      "destination_id": "tirthan-valley",
       "date": "2026-11-17"
     }
   ],
@@ -12282,6 +12286,15 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "silent-valley.mp4"
+    },
+    {
+      "timestamp": "2026-11-17T17:37:19.402953+00:00",
+      "date": "2026-11-17",
+      "platform": "facebook",
+      "post_id": "LCT7l",
+      "destination": "tirthan-valley",
+      "format": "carousel.food",
+      "media_id": "carousel_food_2026-11-17"
     }
   ],
   "theme_usage": {
@@ -13518,8 +13531,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "collection_carousel_dests:biker-friendly-stays": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13633,7 +13645,12 @@
       "Cafe-de-Riverside|kargil",
       "Manuhar Dining Hall|chittorgarh",
       "Mawlynnong Cafe (Village Entrance)|mawlynnong",
-      "Southern Souls Cafe|manali"
+      "Southern Souls Cafe|manali",
+      "The Local Kitchen|tirthan-valley",
+      "Avva's Cafe — Flavours of Southern India|bir-billing",
+      "Ekta Mall Food Court|statue-of-unity",
+      "Three Beans Coffee & Eatery|nagpur",
+      "Aaha Food Cafe|statue-of-unity"
     ]
   }
 }
