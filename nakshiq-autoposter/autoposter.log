@@ -32931,3 +32931,19 @@ Date range: 2026-04-15 → 2026-11-16
 2026-11-17 18:37:34  INFO          Media ready: IKSzl (12,180,708 bytes · guru-nanak-2026.mp4)
 2026-11-17 18:37:41  WARNING   [facebook/Nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
 2026-11-17 11:18:23  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-11-18 01:35:11  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-18 01:35:11  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-18 01:35:22  INFO          Requesting upload URL for ranikhet__map_reveal__voiced__hinglish.mp4 (58,069,882 bytes, video/mp4)
+2026-11-18 01:35:25  INFO          Uploading to R2 (timeout=300s)...
+2026-11-18 01:35:55  INFO          R2 PUT OK. Confirming...
+2026-11-18 01:35:57  INFO          Media ready: F0gwi (58,069,882 bytes · ranikhet__map_reveal__voiced__hinglish.mp4)
+2026-11-18 01:35:58  INFO          Requesting upload URL for ranikhet__map_reveal__voiced__cover.jpg (450,264 bytes, image/jpeg)
+2026-11-18 01:36:00  INFO          Uploading to R2 (timeout=120s)...
+2026-11-18 01:36:01  INFO          R2 PUT OK. Confirming...
+2026-11-18 01:36:04  INFO          Media ready: ut8YL (450,264 bytes · ranikhet__map_reveal__voiced__cover.jpg)
+2026-11-18 01:36:16  WARNING   [instagram/nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-18 01:37:45  INFO          Requesting upload URL for palampur__map_reveal__voiced__en.mp4 (93,477,778 bytes, video/mp4)
+2026-11-18 01:37:47  INFO          Uploading to R2 (timeout=300s)...
+2026-11-18 01:38:34  INFO          R2 PUT OK. Confirming...
+2026-11-18 01:38:37  INFO          Media ready: xnSMF (93,477,778 bytes · palampur__map_reveal__voiced__en.mp4)
+2026-11-18 01:38:50  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
