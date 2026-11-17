@@ -36,36 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-16",
-    "PdMu0_evening": "2026-11-16",
+    "PdMu0": "2026-11-17",
+    "PdMu0_evening": "2026-11-17",
     "PdMu0_carousel": "2026-11-16"
   },
-  "last_sync": "2026-11-16T23:30:58.576610+00:00",
+  "last_sync": "2026-11-17T17:28:55.279616+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "mandrem",
-      "date": "2026-11-02"
-    },
-    {
-      "destination_id": "modhera",
-      "date": "2026-11-02"
-    },
-    {
-      "destination_id": "pondicherry",
-      "date": "2026-11-02"
-    },
-    {
-      "destination_id": "kuttanad",
-      "date": "2026-11-02"
-    },
-    {
-      "destination_id": "devprayag",
-      "date": "2026-11-02"
-    },
-    {
-      "destination_id": "varanasi",
-      "date": "2026-11-02"
-    },
     {
       "destination_id": "marari",
       "date": "2026-11-03"
@@ -181,6 +157,10 @@
     {
       "destination_id": "palitana",
       "date": "2026-11-16"
+    },
+    {
+      "destination_id": "silent-valley",
+      "date": "2026-11-17"
     }
   ],
   "posted_formats": {
@@ -208,7 +188,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "weekend_escape",
       "emergency_intel",
       "score_card",
       "data_carousel",
@@ -228,6 +207,7 @@
       "women_solo_brief",
       "score_card",
       "collection_series",
+      "score_card",
       "score_card"
     ]
   },
@@ -12246,6 +12226,62 @@
       "destination": "palitana",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-11-16"
+    },
+    {
+      "timestamp": "2026-11-17T07:36:57.544144+00:00",
+      "date": "2026-11-17",
+      "platform": "instagram",
+      "post_id": "memwb",
+      "destination": "guru-nanak-2026",
+      "format": "scenario_longweekend",
+      "media_id": "nJsmN"
+    },
+    {
+      "timestamp": "2026-11-17T07:37:24.385366+00:00",
+      "date": "2026-11-17",
+      "platform": "youtube",
+      "post_id": "eQeLS",
+      "destination": "guru-nanak-2026",
+      "format": "scenario_longweekend",
+      "media_id": "LMA3o"
+    },
+    {
+      "timestamp": "2026-11-17T07:37:57.590340+00:00",
+      "date": "2026-11-17",
+      "platform": "facebook",
+      "post_id": "nJnTo",
+      "destination": "guru-nanak-2026",
+      "format": "scenario_longweekend",
+      "media_id": "IKSzl"
+    },
+    {
+      "timestamp": "2026-11-17T14:37:34.753420+00:00",
+      "date": "2026-11-17",
+      "platform": "instagram",
+      "post_id": "WvqfQ",
+      "destination": "ranikhet",
+      "format": "scenario_map_reveal",
+      "media_id": "F0gwi"
+    },
+    {
+      "timestamp": "2026-11-17T14:39:06.383841+00:00",
+      "date": "2026-11-17",
+      "platform": "youtube",
+      "post_id": "JHUYt",
+      "destination": "palampur",
+      "format": "scenario_map_reveal",
+      "media_id": "xnSMF"
+    },
+    {
+      "timestamp": "2026-11-17T17:29:41.969152+00:00",
+      "date": "2026-11-17",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "SRUoV",
+      "destination": "silent-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "silent-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -12699,7 +12735,8 @@
         "2026-11-10"
       ],
       "silent-valley": [
-        "2026-11-10"
+        "2026-11-10",
+        "2026-11-17"
       ],
       "colva-benaulim": [
         "2026-11-12"
@@ -12873,7 +12910,8 @@
         "2026-10-30",
         "2026-11-11",
         "2026-11-14",
-        "2026-11-16"
+        "2026-11-16",
+        "2026-11-17"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13192,6 +13230,9 @@
       ],
       "devprayag": [
         "2026-11-16"
+      ],
+      "silent-valley": [
+        "2026-11-17"
       ]
     },
     "audience_tags": {
@@ -13346,6 +13387,9 @@
       ],
       "haveli-trail-rajasthan": [
         "2026-11-10"
+      ],
+      "biker-friendly-stays": [
+        "2026-11-17"
       ]
     },
     "festivals": {
@@ -13474,7 +13518,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "collection_carousel_dests:biker-friendly-stays": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13488,8 +13533,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "bengaluru",
-    "collection": "best-stargazing-spots"
+    "shared_best": "mysore",
+    "collection": "biker-friendly-stays"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-11-10",
