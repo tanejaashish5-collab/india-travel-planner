@@ -359,7 +359,12 @@ CUES = [
     (r"landslide|washed out|flash flood|flood", "a swollen muddy stream and loose mud on the road edge", "", ""),
     (r"snow[- ]?(capped|clad|peaks?|line)|(peaks?|mountains?|range|summits?) (with|under|dusted with) snow|snow on (the )?(distant )?(peaks|mountains|range|summits)",
      "snow only on the distant high peaks, the valley and town below dry", "Clouds drift past the snowy peaks far away.", "light wind and birdsong"),
-    (r"(?<!pre-)(?<!pre )(?<!no )(?<!before )(?<!without )\b(blizzard|heavy snow|snowfall|snowbound|snow)\b(?![- ]?(free|yet|capped|clad|peaks?|line))", "deep fresh snow covering the ground, roofs and trees", "Light snow drifts down.",
+    # 2026-11-18: Lambasingi's December note says "4am snow-rime daily" (frost); the bare "snow" match
+    # asked Flow for "deep fresh snow covering the ground, roofs and trees" and it drew a snowfield
+    # with crowds, at 1,000 m in Andhra. Frost and rime get their own look, worded without "snow".
+    (r"(?<!no )(?<!without )(?<!before )\b(frost|rime)\b(?![- ]?(over|season|free))", "a thin white frost on the grass and leaves at dawn, green showing through",
+     "Soft early sunlight spreads slowly and the frost glints.", "birdsong in still cold air"),
+    (r"(?<!pre-)(?<!pre )(?<!no )(?<!before )(?<!without )\b(blizzard|heavy snow|snowfall|snowbound|snow)\b(?![- ]?(free|yet|capped|clad|peaks?|line|rime))", "deep fresh snow covering the ground, roofs and trees", "Light snow drifts down.",
      "soft wind and muffled stillness"),
     (r"fog|mist|haze|smog", "thick drifting fog softening everything", FOG_MOTION, "a low quiet wind"),
     (r"scorching|heatwave|extreme heat|hot\b|heat", "harsh white midday sun and shimmering heat haze", HEAT_MOTION,
@@ -420,6 +425,10 @@ def scene(slug: str, m: int) -> dict | None:
             sound = sound or so
     if not looks:
         return None
+    if CUES[3][1] in looks and CUES[4][1] in looks:       # real snow wins over a frost mention
+        looks.remove(CUES[3][1])
+        if motion == CUES[3][2]:
+            motion, sound = CUES[4][2], CUES[4][3]
     busy = crowded(slug, m, note)
     looks.append("busy, with crowds of small distant figures" if busy else "almost empty, no one in sight")
     return {"month": m, "note": note, "looks": looks[:4], "motion": motion or "Clouds drift slowly.",
