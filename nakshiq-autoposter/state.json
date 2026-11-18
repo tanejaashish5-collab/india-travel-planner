@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-18",
     "PdMu0_evening": "2026-11-18",
-    "PdMu0_carousel": "2026-11-17"
+    "PdMu0_carousel": "2026-11-18"
   },
   "last_sync": "2026-11-18T16:00:29.447715+00:00",
   "posted_destinations": [
@@ -180,6 +180,10 @@
     },
     {
       "destination_id": "puri",
+      "date": "2026-11-18"
+    },
+    {
+      "destination_id": "yuksom",
       "date": "2026-11-18"
     }
   ],
@@ -12349,6 +12353,15 @@
       "format": "data_carousel",
       "has_media": true,
       "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-11-18T16:39:45.623165+00:00",
+      "date": "2026-11-18",
+      "platform": "facebook",
+      "post_id": "vBlXZ",
+      "destination": "yuksom",
+      "format": "carousel.skip_list",
+      "media_id": "carousel_skip_list_2026-11-18"
     }
   ],
   "theme_usage": {
@@ -13596,8 +13609,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "articles": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
