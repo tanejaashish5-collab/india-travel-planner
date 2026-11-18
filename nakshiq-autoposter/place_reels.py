@@ -181,6 +181,10 @@ def _dist(text: str | None) -> tuple[str, int] | None:
     text carries no single place and distance (a line we cannot state honestly)."""
     if not text:
         return None
+    # 2026-11-18: "Chintapalli — 28km (no rail)" printed "28 km from the train: Chintapalli" (Lambasingi)
+    # and "None — nearest: Jammu Tawi (700km)" printed a station called "None" (Leh).
+    if re.search(r"\bno (rail|railway|train|airport|station)s?\b", text, re.I) or re.match(r"\s*(none|n/?a)\b", text, re.I):
+        return None
     kms = list(re.finditer(r"(\d[\d,]*)\s*km\b", text))
     if len(kms) != 1 or "/" in text[:kms[0].start()]:      # two distances, or "A / B": not one fact
         return None
