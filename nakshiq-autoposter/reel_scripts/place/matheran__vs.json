@@ -1,0 +1,180 @@
+{
+ "id": "matheran__vs",
+ "slug": "matheran",
+ "format": "vs",
+ "series": "vs",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "दिसंबर में माथेरान या लोनावला? मौसम दोनों जगह अच्छा है, तो फ़ैसला इस पर है कि आप कितना पैदल चलेंगे, क्योंकि माथेरान में कार जाती ही नहीं।",
+   "माथेरान चुनिए अगर सुकून चाहिए, क्योंकि कार दस्तूरी नाके पर रुक जाती है, और ऊपर आप पैदल, घोड़े पर या नेरल से टॉय ट्रेन में पहुँचते हैं।",
+   "पर यहाँ दिन भर पैदल चलना है, अच्छा कमरा करीब बासठ सौ का है, और क्रिसमस से पहले जाइए, क्योंकि आख़िरी हफ़्ते में ऐन वक़्त पर कमरा नहीं मिलता।",
+   "लोनावला चुनिए अगर साथ में बुज़ुर्ग हैं, क्योंकि व्यूपॉइंट तक गाड़ी जाती है, कमरे माथेरान से सस्ते हैं, और ठंड में लोहगढ़ का आसान ट्रेक भी हो जाता है।",
+   "पर मानसून में उल्टा है, तब लोनावला के झरने पूरे ज़ोर पर होते हैं, जबकि नेरल वाली टॉय ट्रेन बंद रहती है और माथेरान के रास्ते फिसलते हैं।",
+   "इस दिसंबर आपका वोट किसे, माथेरान या लोनावला? कमेंट में बताइए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Matheran toy train|matheran toy",
+   "hook": "Matheran or Lonavala?<br>One has <em>no cars</em>."
+  },
+  {
+   "kicker": "Pick Matheran if",
+   "lines": [
+    "You want quiet: <em>cars stop</em> at Dasturi Naka",
+    "Up by toy train from Neral, horse or on foot",
+    "Red laterite paths through forest",
+    "NakshIQ score <em>10/10</em> in December"
+   ],
+   "bg": "photo:towards Panorama Point Matheran|panorama matheran"
+  },
+  {
+   "kicker": "A good room in Matheran, December",
+   "big": "₹6,200",
+   "sub": "Expect to walk 8 to 12 km a day. Go before Christmas week: last-minute New Year stays are fully booked.",
+   "bg": "photo:King George point at Matheran|king george matheran"
+  },
+  {
+   "kicker": "Pick Lonavala if",
+   "line": "NakshIQ score <em>8/10</em> in December",
+   "lines": [
+    "Older parents along",
+    "Viewpoints you can drive to",
+    "Rooms cheaper than Matheran",
+    "Lohagad: an easy fort trek"
+   ],
+   "sub": "Weekends jam with Mumbai traffic: go Monday to Thursday.",
+   "bg": "photo:Lohagad fort|lohagad"
+  },
+  {
+   "kicker": "Monsoon: it flips",
+   "big": "Lonavala",
+   "line": "NakshIQ score <em>10/10</em> in July and August",
+   "sub": "Waterfalls everywhere. Matheran's toy train from Neral stops for the rains; paths turn slippery.",
+   "bg": "clip:matheran__two_months__s2.mp4"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "December mein",
+    "*Matheran* ya *Lonavala*?",
+    "Mausam dono jagah achha hai,",
+    "to faisla is par hai ki aap *kitna paidal* chalenge,",
+    "kyunki Matheran mein *car jaati hi nahi*."
+   ],
+   [
+    "*Matheran* chuniye agar *sukoon* chahiye,",
+    "kyunki car *Dasturi Naake* par ruk jaati hai,",
+    "aur upar aap *paidal, ghode par*",
+    "ya Neral se *toy train* mein pahunchte hain."
+   ],
+   [
+    "Par yahan *din bhar paidal* chalna hai,",
+    "achha kamra kareeb *₹6,200* ka hai,",
+    "aur *Christmas se pehle* jaaiye,",
+    "kyunki aakhri hafte mein",
+    "*ain waqt par kamra nahi* milta."
+   ],
+   [
+    "*Lonavala* chuniye agar saath mein *buzurg* hain,",
+    "kyunki *viewpoint tak gaadi* jaati hai,",
+    "kamre Matheran se *saste* hain,",
+    "aur thand mein *Lohagad* ka aasaan trek bhi ho jaata hai."
+   ],
+   [
+    "Par *monsoon* mein *ulta* hai,",
+    "tab Lonavala ke *jharne* poore zor par hote hain,",
+    "jabki Neral waali *toy train band* rehti hai",
+    "aur Matheran ke raaste *phisalte* hain."
+   ],
+   [
+    "Is December aapka *vote* kise,",
+    "*Matheran* ya *Lonavala*?",
+    "*Comment* mein bataaiye."
+   ]
+  ],
+  "en": [
+   [
+    "This December,",
+    "*Matheran* or *Lonavala*?",
+    "The weather's good in both,",
+    "so it comes down to *how much you'll walk*,",
+    "because *cars don't go* into Matheran."
+   ],
+   [
+    "Pick *Matheran* if you want *quiet*,",
+    "because cars stop at *Dasturi Naka*,",
+    "and you go up *on foot, on horseback*",
+    "or by the *toy train* from Neral."
+   ],
+   [
+    "But you'll *walk all day* here,",
+    "a good room is about *₹6,200*,",
+    "and go *before Christmas*,",
+    "because in the last week",
+    "there's *no room at the last minute*."
+   ],
+   [
+    "Pick *Lonavala* if *older parents* are coming,",
+    "because you can *drive to the viewpoints*,",
+    "rooms are *cheaper* than Matheran,",
+    "and in the cool you can do the easy *Lohagad* trek."
+   ],
+   [
+    "But in the *monsoon* it *flips*:",
+    "Lonavala's *waterfalls* are in full flow,",
+    "while the *toy train from Neral stops*",
+    "and Matheran's paths turn *slippery*."
+   ],
+   [
+    "This December, *which one gets your vote*,",
+    "*Matheran* or *Lonavala*?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "Matheran or Lonavala this December? One has no cars | NakshIQ",
+ "caption_lead": "Matheran or Lonavala this December? The weather is good in both, so it comes down to how much you'll walk. Pick Matheran for quiet: cars stop at Dasturi Naka and you go up on foot, on horseback or by the toy train from Neral, but expect to walk all day; a good room is about ₹6,200 a night, so go before Christmas week, when last-minute stays are fully booked. Pick Lonavala if older parents are along: the viewpoints are drive-to, rooms cost less than Matheran and Lohagad is an easy fort trek, though weekends jam with Mumbai traffic, and in the monsoon it flips, when Lonavala's waterfalls run and Matheran's Neral toy train stops.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 6200
+  }
+ ],
+ "facts": [
+  "reel-data matheran months.12 5=10/10 'go': 'Peak season, cool weather, holiday crowds. Book well ahead'; pack months.12 go_or_skip 'book Dec 1-22 for calm and Dec 23-31 only with 3-4 week advance reservations'; who_should_avoid 'Last-minute NYE travellers, fully booked', 'Travellers unable to walk 8-12km daily'",
+  "reel-data lonavala months.12 4=8/10 'go': 'Cool weather 8-26°C. Popular for year-end holidays'; lonavala pack months.12 'cool-dry hill-station' (so 'the weather is good in both')",
+  "matheran why_special: 'You arrive by a heritage narrow-gauge toy train from Neral (1907-era), by horse, or on foot ... red laterite paths through thick forest'; persona biker 'car-free zone. Park at Dasturi Naka.'",
+  "news check 2026-11-18, e-rickshaws: since a Supreme Court-backed scheme, e-rickshaws run from Dasturi Naka to the market and hand-pulled rickshaws were ordered out (ThePrint and SCC Online, Aug 2025; 2026 travel guides), so the reel says only that cars stop at Dasturi Naka, never the DB's 'no motors of any kind'",
+  "news check 2026-11-18, toy train: Central Railway suspends Neral-Matheran services through the monsoon (June to October) while the Aman Lodge-Matheran shuttle keeps running, and restarted the full line on 6 Nov 2025 (Free Press Journal, Deccan Herald, India TV). So the monsoon line says the toy train 'from Neral' stops, and the December line assumes the usual early-November restart (the 2026 restart notice was not found)",
+  "matheran persona elderly 'GO with caveat, walking-heavy'; lonavala persona elderly 'GO, viewpoints drive-to'",
+  "destination_costs matheran hotel-mid peak (months 10,11,12,1,2,3) typical_inr 6200 = बासठ सौ",
+  "destination_costs lonavala hotel-mid peak (months 7-12) 4450 vs matheran 6200: 'rooms cheaper than Matheran'. Lonavala's rupee figure is NOT shown or spoken (cost_gate checks the reel slug matheran only)",
+  "lonavala treks: Lohagad Fort Trek difficulty 'easy', min_age 6; pack months.12 who_should_go 'Trekkers chasing year's coolest Lohagad-Visapur conditions'",
+  "lonavala crowd_calendar: 'Weekends are bumper-to-bumper traffic from Mumbai. Come Monday-Thursday', best_day 'Mon-Thu' (card only)",
+  "monsoon: reel-data lonavala months.7 5=10/10 'Peak monsoon, Bhushi Dam overflows, waterfalls everywhere, magical fog' and months.8 5=10/10; matheran months.6 'Toy train suspended. Paths dangerous. Landslide risk', months.7 'toy train off, heavy rain, paths slippery'",
+  "NOT used: matheran months 6-8 score 0 and 'Closed, monsoon. Do not attempt' (the town stays open and the Aman Lodge shuttle runs; only the Neral line stops), so no Matheran monsoon score appears; 'only hill station in India that bans motor vehicles' and 'Asia smallest hill station' (superlatives, and e-rickshaws now run); 28 vs 38 viewpoints (the DB disagrees with itself); kids concerns 'No ATMs' and 'No phone signal' (could not confirm, likely outdated); the 2.5 km walk from the car park (kept out to hold the spoken numbers to one); Lonavala trap_swaps editorial verdicts (opinion); Bhushi Dam water play (trap_swaps: barricaded to swimmers since 2023)",
+  "PICTURE NOTE, checked 2026-11-18 with the renderer's title rules: hook -> 'Matheran Toy train.jpg' (December, train on the ridge); Matheran pick -> '... towards Panorama Point, Matheran (4174271722).jpg' (red laterite forest path); room -> 'King George point at Matheran, Raigad.jpg'; Lonavala -> 'Lohagad burj.jpg'. The only Matheran clip used is matheran__two_months__s2.mp4 (rain running over the toy-train track), under the monsoon line; the hero is not used"
+ ],
+ "spoken_numbers": [
+  "बासठ सौ (₹6,200 hotel-mid, December)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Matheran toy train|matheran toy",
+  "top_label": "MATHERAN",
+  "bottom": "photo:Lohagad fort|lohagad",
+  "bottom_label": "LONAVALA",
+  "hook": "One has no cars.|*Matheran or Lonavala?*"
+ },
+ "music": "travel-the-duel-617",
+ "music_start": 0
+}

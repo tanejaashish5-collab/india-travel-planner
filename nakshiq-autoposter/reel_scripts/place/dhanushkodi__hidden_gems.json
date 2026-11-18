@@ -1,0 +1,174 @@
+{
+ "id": "dhanushkodi__hidden_gems",
+ "slug": "dhanushkodi",
+ "format": "hidden_gems",
+ "series": "hidden_gems",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "धनुषकोडी में लोग सीधे सड़क के आख़िरी छोर तक भागते हैं, पर रास्ते में इस भुतहा शहर की असली कहानी छूट जाती है।",
+   "पहला पड़ाव, कोदंडरामस्वामी मंदिर, जो उन्नीस सौ चौंसठ के चक्रवात में भी बचा रहा, और कहते हैं यहीं विभीषण राम की शरण में आए थे, पर ज़्यादातर लोग यहाँ रुकते नहीं।",
+   "फिर पुराने शहर के खंडहर, चर्च, स्टेशन और पोस्ट ऑफ़िस की बची दीवारें, पर कहीं कोई बोर्ड नहीं, तो लोग इन्हें मलबा समझकर निकल जाते हैं।",
+   "आख़िर में अरिचल मुनई, जहाँ सड़क ख़त्म होती है और आगे राम सेतु की ओर बस समुद्र है, पर शाम पाँच बजे के बाद यहाँ किसी को रुकने नहीं दिया जाता।",
+   "दिसंबर के बीच तक बारिश थम जाती है, पर वहाँ छाँव नहीं और पानी भी टैंकर से आता है, तो सुबह जल्दी निकलिए और पानी रामेश्वरम से लेकर चलिए।",
+   "रामेश्वरम जा रहे किसी दोस्त को टैग कीजिए, ताकि वो सिर्फ़ आख़िरी छोर देखकर न लौट आए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:dhanushkodi__hero.mp4@3",
+   "hook": "A ghost town people<br><em>drive straight past?</em>"
+  },
+  {
+   "kicker": "On the way",
+   "lines": [
+    "<em>Kothandaramaswamy Temple</em>",
+    "Stood through the 1964 cyclone",
+    "Where Vibhishana is said to have come to Rama",
+    "Most day-trippers drive past it"
+   ],
+   "bg": "photo:Kothandaramar Temple Rameswaram|kothandaramar rameswaram"
+  },
+  {
+   "kicker": "The old town",
+   "lines": [
+    "<em>Church, station, post office</em>",
+    "What the 1964 cyclone left",
+    "No signboards anywhere",
+    "No shade: go early"
+   ],
+   "bg": "photo:Ruins of Dhanushkodi Church Tamil Nadu|ruins dhanushkodi church tamil"
+  },
+  {
+   "kicker": "Land's end",
+   "lines": [
+    "<em>Arichal Munai</em>",
+    "The road ends; Ram Setu lies beyond",
+    "No swimming: strong currents",
+    "Everyone out by 5 pm"
+   ],
+   "bg": "photo:Arichal Munai|arichal munai"
+  },
+  {
+   "kicker": "Go in",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "22 to 30°C, calm seas once the northeast monsoon wraps up mid-month. No shade, and drinking water comes by tanker: carry yours from Rameswaram.",
+   "bg": "clip:dhanushkodi__opener__s1.mp4"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Dhanushkodi* mein log seedhe",
+    "sadak ke *aakhri chhor* tak bhaagte hain,",
+    "par raaste mein is *bhootaha shehar*",
+    "ki *asli kahani* chhoot jaati hai."
+   ],
+   [
+    "*Pehla padaav*, *Kothandaramaswamy Mandir*,",
+    "jo *1964 ke chakravaat* mein bhi bacha raha,",
+    "aur kehte hain yahin *Vibhishan*",
+    "*Ram ki sharan* mein aaye the,",
+    "par zyadatar log *yahan rukte nahi*."
+   ],
+   [
+    "Phir *purane shehar ke khandhar*,",
+    "*church, station aur post office* ki bachi deewarein,",
+    "par kahin *koi board nahi*,",
+    "to log inhe *malba samajhkar* nikal jaate hain."
+   ],
+   [
+    "Aakhir mein *Arichal Munai*,",
+    "jahan *sadak khatam* hoti hai",
+    "aur aage *Ram Setu* ki or bas samudra hai,",
+    "par *shaam 5 baje* ke baad",
+    "yahan kisi ko *rukne nahi* diya jaata."
+   ],
+   [
+    "*December ke beech* tak baarish tham jaati hai,",
+    "par wahan *chhaanv nahi*",
+    "aur paani bhi *tanker* se aata hai,",
+    "to *subah jaldi* nikaliye",
+    "aur paani *Rameswaram* se lekar chaliye."
+   ],
+   [
+    "Rameswaram ja rahe kisi dost ko *tag* kijiye,",
+    "taaki woh sirf *aakhri chhor*",
+    "dekhkar na laut aaye."
+   ]
+  ],
+  "en": [
+   [
+    "In *Dhanushkodi* people rush straight",
+    "to the *end of the road*,",
+    "and on the way they miss",
+    "the *real story* of this *ghost town*."
+   ],
+   [
+    "*First stop*, the *Kothandaramaswamy Temple*,",
+    "which stood through the *1964 cyclone*,",
+    "and where *Vibhishana* is said",
+    "to have come to *Rama* for refuge,",
+    "yet most people *don't stop* here."
+   ],
+   [
+    "Then the *old town's ruins*:",
+    "the surviving walls of the *church, station and post office*,",
+    "but there are *no signboards*,",
+    "so people pass them off as *rubble*."
+   ],
+   [
+    "Finally *Arichal Munai*,",
+    "where the *road ends*",
+    "and there's only sea towards *Ram Setu*,",
+    "but after *5 pm*",
+    "*nobody is allowed* to stay."
+   ],
+   [
+    "By *mid-December* the rain eases,",
+    "but there's *no shade*",
+    "and even water comes by *tanker*,",
+    "so set off *early*",
+    "and carry water from *Rameswaram*."
+   ],
+   [
+    "*Tag a friend* heading to Rameswaram,",
+    "so they don't stop at",
+    "just the *end of the road*."
+   ]
+  ]
+ },
+ "title": "Dhanushkodi: the ghost town people drive past | NakshIQ",
+ "caption_lead": "Most people drive straight to Dhanushkodi's land's end and miss the ghost town on the way. Stop at the Kothandaramaswamy Temple, which stood through the 1964 cyclone and is where Vibhishana is said to have come to Rama, then walk the unsigned ruins of the church, railway station and post office early, before the sun is high. At Arichal Munai the road ends with Ram Setu beyond, but nobody may stay after 5 pm and the currents make swimming unsafe. December turns calm once the northeast monsoon wraps up mid-month; it is a day trip with no shade and water trucked in by tanker, so carry yours from Rameswaram.",
+ "cost_basis": [],
+ "facts": [
+  "gem Kothandaramaswamy Temple: why_unknown 'Most Rameswaram day-trippers head straight for Arichalmunai (the peninsula tip) and skip the Kothandaramaswamy Temple, the only structure on the Dhanushkodi side that survived the 22 December 1964 cyclone'; why_go 'Small Vishnu/Rama shrine where Vibhishana (Ravana's brother) is said to have surrendered to Rama'",
+  "news check 2026-11-18 on the temple: Wikipedia 'Kothandaramaswamy Temple' calls it the only historical structure to survive the 1964 cyclone and puts it about 13 km from Rameswaram, roughly halfway down the Dhanushkodi road. The DB's '3km before the peninsula tip' and '10 min drive west from Arichalmunai' are wrong, so no distance is voiced or carded; the voice says only 'first stop'",
+  "gem Old Dhanushkodi Town Ruins: 'the ruins of the Roman Catholic church, the post office, the railway station, the railway hospital, and the school are visible but un-signposted, most tourists walk past the foundations thinking they're modern debris'; 'No shade, go before 10am or after 4pm' (voiced as 'सुबह जल्दी', no number). The DB's '5 min walk south from Arichalmunai parking' is wrong (web check: the ruins are about 4.5 km before Arichal Munai, Wikipedia 'Dhanushkodi'); not used",
+  "why_special: 'Abandoned after the 1964 cyclone killed 1,800 people including 115 train passengers ... Ruins of railway station, church, post office still stand ... The road ends here, last point of India before Adam's Bridge.' (death toll NOT voiced)",
+  "gem Arichalmunai Land's End Point: 'Ram Setu (Adam's Bridge) starts visibly from here'; 'Beach is wild, no swimming (riptide)'; 'Open dawn-5pm (Coast Guard closes road by 5.30pm)'. Web check 2026-11-18: Tripoto 'Entry is only permitted from 6 a.m. to 5 p.m.', a traveller review on Airial 'Post 5 PM no one is allowed', Chikucab 'No one is permitted to remain at Arichal Munai after sunset'. Voice says nobody may stay after 5 pm; the agency (Coast Guard vs BSF, sources differ) is not named",
+  "reel-data dhanushkodi months.12 5=10/10: '1964 cyclone anniversary Dec 22-23. NE monsoon wraps mid-Dec. Peak after Dec 20.'; fact pack months.12 'peak season with calm seas, 22 to 30°C comfort ... plan dawn visits to avoid midday glare and tidal hazards'",
+  "eatery Arichal Munai Fish-Fry Shacks insider_tip: 'Everything except the fish is trucked in from Rameswaram, and drinking water arrives by tanker, so eat the fresh fish fry and carry your own water'; food_scene 'Carry from Rameswaram'. No business names, no food prices",
+  "no room price: the ledger has no hotel rows for dhanushkodi (a day trip; solo_female_note 'no overnight'), so cost_basis is empty; Rameswaram's rates NOT quoted (cost_gate checks the reel slug)",
+  "clips: hero only from @3 (aerial of the sand spit) under the hook, the line kept under 115 characters; opener__s1 (people wading in a shallow, calm blue sea) under the December line. Photos checked 2026-11-18: 'Kothandaramar Temple, Rameswaram' is the causeway road with the temple small on the horizon (the only Commons file of this temple the renderer's filters accept; 'Kothandaramaswamy Temple.jpg' is 2.05:1 and gets dropped, and a bare 'Kothandaramaswamy' query returns a Salem temple, so the must words pin 'kothandaramar rameswaram'); 'Ruins of Dhanushkodi Church, Tamil Nadu, India' (portrait, colour); 'Arichal Munai' (the emblem pillar)",
+  "dropped (contradicts current fact): every '4WD sand-track', '4WD suspends 3-5 days/week' and kids 'Mandatory 4WD on sand road' line. The tar road to Arichal Munai opened in 2017 (fact pack persona biker 'road opened 2017'; gem 'The 2017-built tar road ... ends in the parking lot here'; Wikipedia 'Dhanushkodi'). The month notes need a correction through the approval queue",
+  "NOT used: 'Bay of Bengal and Indian Ocean visibly meet' and 'Indian Ocean + Bay of Bengal + Arabian Sea meet' (the DB gives two different versions; geographically it is the Gulf of Mannar and Palk Strait); 'Sri Lanka visible on clear days (18km)' (Arichal Munai to Sri Lanka is about 30 km); 'NASA satellite photographs confirm'; the temple's 'actual reason is the lower elevation behind a natural dune ridge' (speculation); pier and church dates; Abdul Kalam birthplace (another reel)"
+ ],
+ "spoken_numbers": [
+  "उन्नीस सौ चौंसठ (the 1964 cyclone)",
+  "पाँच (5 pm, nobody may stay after)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Ruins of Dhanushkodi Church Tamil Nadu|ruins dhanushkodi church tamil",
+  "hook": "A ghost town people|*drive straight past?*"
+ },
+ "music": "uplifting-happy-times-1030",
+ "music_start": 0
+}

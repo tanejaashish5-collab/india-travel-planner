@@ -1,0 +1,205 @@
+{
+ "id": "auli__vs",
+ "slug": "auli",
+ "format": "vs",
+ "series": "vs",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "दिसंबर में बर्फ़ के लिए औली या चोपता? ऊँचाई दोनों की लगभग एक है, पर दिसंबर की बर्फ़ कहीं पक्की नहीं, तो देखिए बर्फ़ न मिले तो क्या बचता है।",
+   "तो औली चुनिए, क्योंकि यहाँ स्की ढलानें, चेयरलिफ़्ट और साफ़ दिन में सामने नंदा देवी है, यानी बर्फ़ कम हो तब भी सफ़र ख़ाली नहीं जाता।",
+   "यहाँ दिसंबर में अच्छा कमरा करीब छियालीस सौ का है, जनवरी में सत्तावन सौ, बस जोशीमठ धँसने के बाद रोपवे बंद हुआ था, तो पहले पता कर लीजिए।",
+   "चोपता में कमरे सस्ते हैं, पर दिसंबर में बर्फ़ से रास्ते अचानक बंद होकर कई दिन फँसा सकते हैं, और तुंगनाथ मंदिर तब तक बंद हो चुका होता है।",
+   "उसका असली मौसम अक्टूबर है, या फिर अप्रैल, जब बुरांश खिलते हैं, तब चंद्रशिला चढ़िए, और दिसंबर में बस पूरे गियर वाले अनुभवी ट्रेकर जाएँ।",
+   "आप किसकी तरफ़ हैं, बर्फ़ की उम्मीद में औली, या अक्टूबर का चोपता? कमेंट में लिखिए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Auli Bugyal Snow|auli bugyal",
+   "hook": "No snow in <em>December?</em><br>Auli or Chopta"
+  },
+  {
+   "kicker": "Pick Auli in December",
+   "lines": [
+    "Ski slopes and a chairlift",
+    "<em>Nanda Devi</em> on clear days",
+    "December score <em>10/10</em>",
+    "Snow not guaranteed in December"
+   ],
+   "bg": "clip:auli__hero.mp4"
+  },
+  {
+   "kicker": "A good room in Auli, per night",
+   "rows": [
+    [
+     "December",
+     "₹4,600"
+    ],
+    [
+     "January",
+     "₹5,700"
+    ]
+   ],
+   "sub": "The Joshimath ropeway shut in the 2023 land subsidence: check before you go, or go up by road.",
+   "bg": "photo:Mountain road in Joshimath|mountain road joshimath"
+  },
+  {
+   "kicker": "Chopta in December",
+   "big": "Wait",
+   "line": "NakshIQ score <em>6/10</em>",
+   "sub": "Rooms cost less than Auli, but snow can shut roads without warning for days. Tungnath Temple closed in early November.",
+   "bg": "photo:Winter in Chopta|winter chopta"
+  },
+  {
+   "kicker": "Pick Chopta if",
+   "lines": [
+    "You want the <em>Chandrashila</em> climb",
+    "October: clear skies, score <em>10/10</em>",
+    "April: rhododendrons, score <em>10/10</em>",
+    "December: experienced winter trekkers only"
+   ],
+   "bg": "photo:Chandrashila summit|chandrashila summit"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "December mein *barf* ke liye",
+    "*Auli* ya *Chopta*?",
+    "Oonchaai dono ki *lagbhag ek* hai,",
+    "par December ki *barf kahin pakki nahi*,",
+    "to dekhiye *barf na mile* to kya bachta hai."
+   ],
+   [
+    "To *Auli* chuniye,",
+    "kyunki yahan *ski dhalaanein, chairlift*",
+    "aur saaf din mein saamne *Nanda Devi* hai,",
+    "yaani barf kam ho tab bhi",
+    "*safar khaali nahi* jaata."
+   ],
+   [
+    "Yahan December mein achha kamra",
+    "kareeb *₹4,600* ka hai,",
+    "January mein *₹5,700*,",
+    "bas *Joshimath dhansne* ke baad",
+    "*ropeway band* hua tha,",
+    "to *pehle pata* kar lijiye."
+   ],
+   [
+    "*Chopta* mein kamre *saste* hain,",
+    "par December mein barf se",
+    "*raaste achaanak band* hokar",
+    "*kai din phansa* sakte hain,",
+    "aur *Tungnath Mandir* tab tak band ho chuka hota hai."
+   ],
+   [
+    "Uska asli mausam *October* hai,",
+    "ya phir *April*, jab *buraansh* khilte hain,",
+    "tab *Chandrashila* chadhiye,",
+    "aur December mein bas *poore gear* waale",
+    "*anubhavi trekker* jaayein."
+   ],
+   [
+    "Aap *kiski taraf* hain,",
+    "barf ki ummeed mein *Auli*,",
+    "ya *October ka Chopta*?",
+    "*Comment* mein likhiye."
+   ]
+  ],
+  "en": [
+   [
+    "For *snow* in December:",
+    "*Auli* or *Chopta*?",
+    "Both sit at about *the same height*,",
+    "but December *snow isn't certain* in either,",
+    "so ask what's left *if it doesn't come*."
+   ],
+   [
+    "Then pick *Auli*,",
+    "because it has *ski slopes, a chairlift*",
+    "and, on a clear day, *Nanda Devi* in front of you,",
+    "so even with little snow",
+    "the *trip isn't wasted*."
+   ],
+   [
+    "In December a good room here",
+    "is about *₹4,600*,",
+    "in January *₹5,700*,",
+    "but after *Joshimath's land subsidence*",
+    "the *ropeway shut*,",
+    "so *check before you go*."
+   ],
+   [
+    "*Chopta's* rooms *cost less*,",
+    "but in December snow can",
+    "*shut its roads without warning*",
+    "and *strand you for days*,",
+    "and *Tungnath Temple* is already closed by then."
+   ],
+   [
+    "Its real season is *October*,",
+    "or *April*, when the *rhododendrons* bloom:",
+    "climb *Chandrashila* then,",
+    "and in December only *experienced trekkers*",
+    "with *full winter gear* should go."
+   ],
+   [
+    "*Which side* are you on:",
+    "*Auli*, hoping for snow,",
+    "or *Chopta in October*?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "No snow in December? Auli or Chopta | NakshIQ",
+ "caption_lead": "Auli or Chopta for December? Snow is not certain at either (Uttarakhand had a near snowless December in 2025), so pick the place that still works without it. Auli has ski slopes, a chairlift and Nanda Devi on clear days; a good room is about ₹4,600 a night in December and ₹5,700 in January, and the Joshimath ropeway shut in the 2023 land subsidence, so check before you go or drive up. Chopta's rooms cost less, but in December snow can shut its roads for days and Tungnath Temple has been closed since early November; go in October for clear skies or April for the rhododendrons, and in December only as an experienced, fully equipped winter trekker.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "shoulder",
+   "value": 4600
+  },
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 5700
+  }
+ ],
+ "facts": [
+  "reel-data vs_pairs ['auli', 'chopta']; geo auli elevation 2800 m, chopta 2680 m ('ऊँचाई दोनों की लगभग एक है')",
+  "reel-data auli months.12 5=10/10: 'Snow returns, -5 to 5°C. Ski season officially opens mid-Dec. Gondola rides through snowfall are memorable. Book GMVN cottages ahead.' Snow and gondola NOT repeated: news check 2026-11-18, The Better India reported Uttarakhand logged virtually zero snowfall in December 2025 with slopes snow-free into January, and a 2026 Auli ski guide (himalayashelter.com) lists no December snow in 2023 or 2025. So the voice says December snow is not certain at either place",
+  "auli why_special: 'an actual chairlift, and a direct view of Nanda Devi (7816m)'; reel-data months.2 'Clear days give epic Nanda Devi views'; fact pack months.12 who_should_go 'Mountain lovers timing full-winter Nanda Devi views'. The voice keeps the 'clear day' condition",
+  "ropeway: news check 2026-11-18, Zee News (Jan 2023) the Joshimath-Auli ropeway was suspended 'till further orders' as land subsidence cracked the area near its tower; Pioneer Edge (Oct 2023) still closed after nine months with towers damaged; travel guides through Oct 2026 (yatrisutra, manchalamushafir, northernhimalayas) say no reopening date. No 2026 official notice found, so the voice says it shut and to check first. This contradicts the DB's gondola/cable car lines (months.12, persona family and elderly, kids 'Cable car ride'), which need a correction through the approval queue",
+  "costs auli hotel-mid: shoulder (months 3, 8, 11, 12) typical 4600 = December; peak (months 1, 2, 9, 10) typical 5700 = January",
+  "auli crowd note 'Ski season Dec-Mar gets crowded. Limited accommodation, book 2-3 weeks ahead in peak winter.' NOT voiced (the price line carries the ropeway check instead)",
+  "reel-data chopta months.12 3=6/10 'wait': 'Early winter, snow setting in'; chopta fact pack months.12 skip_reason 'Snow arrives unpredictably, roads close without warning, stranding visitors for days'; who_should_go 'Winter trekkers with prior Himalayan snow experience and full alpine gear'; who_should_avoid 'Families with children, conditions are too extreme and remote'. News check 2026-11-18: The Statesman reported 60 tourists rescued from Baniyakund and Dugalbitta near Chopta, with 20 more being evacuated, after snow blocked the highway (older report, exact year unclear); a December 2015 TripAdvisor review says snow blocked the road to Chopta",
+  "chopta costs hotel-mid low (months 1, 2, 7, 12) typical 3750 vs auli December 4600: 'चोपता में कमरे सस्ते हैं'. Chopta's rupee figure NOT voiced or shown (cost_gate checks the reel slug auli only)",
+  "chopta fact pack months.11 who_should_avoid 'Temple visitors, Tungnath closes first week of November'; news check 2026-11-18: ANI, Tungnath closed for winter on 6 November 2025, and the 2026 closing was also 6 November (The Morning Voice, PTI)",
+  "reel-data chopta months.10 5=10/10 'October is Chopta perfected. Zero rain, crystal-clear skies'; months.4 5=10/10 'Rhododendron season explodes'; trek Chandrashila Summit best_months 4, 5, 9, 10",
+  "clips: auli__hero (snow slopes, chairlift, big peak) under the 'pick Auli' line. Photos checked 2026-11-18: 'Auli Bugyal Snow' (patchy snow on the meadow, fits 'is there snow?'), 'Mountain road in Joshimath with evening sunlight on snowy peak' (the road up), 'Winter in chopta' (snow among the trees), 'Temple at Chandrashila summit'. auli__two_months__s2 (monsoon) and opener__s1 not used",
+  "NOT used: auli 'India's longest ski run (~3km)' and 'one of only 2 legitimate ski destinations' (superlatives); months.12 'Ski season officially opens mid-Dec' and verdict 'reliable snow' (see news check); kids 'Building snowmen'; chopta 'world's highest Shiva temple' and 'Uttarakhand's most photographed summit view' (superlatives); chopta biker 'Winter snow makes it impassable Dec-Mar' (too absolute next to the who_should_go list); Kanchula Korak sanctuary 'Closed December-March' (another reel); the Nanda Devi height"
+ ],
+ "spoken_numbers": [
+  "छियालीस सौ (₹4,600 hotel-mid, December)",
+  "सत्तावन सौ (₹5,700 hotel-mid, January)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "photo:Auli Bugyal Snow|auli bugyal",
+  "top_label": "AULI",
+  "bottom": "photo:Winter in Chopta|winter chopta",
+  "bottom_label": "CHOPTA",
+  "hook": "No snow in December?|*Auli or Chopta*"
+ },
+ "revisions": [
+  "2026-11-18 Claude review: line 5: rhododendrons bloom in April only, made the clause attach to April"
+ ],
+ "music": "travel-the-duel-617",
+ "music_start": 0
+}

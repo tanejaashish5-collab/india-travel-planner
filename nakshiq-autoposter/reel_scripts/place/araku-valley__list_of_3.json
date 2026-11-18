@@ -1,0 +1,179 @@
+{
+ "id": "araku-valley__list_of_3",
+ "slug": "araku-valley",
+ "format": "list_of_3",
+ "series": "list_of_3",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "अराकू मतलब ट्रेन, कॉफ़ी और बोर्रा गुफाएँ, पर पास में तीन जगहें और हैं, और एक में तो पेड़ पर बनी झोपड़ी में रात बिता सकते हैं।",
+   "पहली, विज़ाग वाली घाट सड़क पर गालिकोंडा व्यूपॉइंट, जहाँ सूरज उगते वक़्त घाटी साफ़ दिखती है, पर ये मोड़ों के बीच छोटा सा पड़ाव है, तो ड्राइवर को पहले बताइए।",
+   "दूसरी, शहर में ही ट्राइबल म्यूज़ियम, जहाँ इस इलाक़े के आदिवासियों के गहने, खेती के औज़ार और झोपड़ियों के मॉडल हैं, और ढिमसा नाच की पोशाकें भी।",
+   "और तीसरी, पद्मापुरम गार्डन, जहाँ पेड़ों पर बनी झोपड़ियों में रात रुक सकते हैं, और बागीचे में टॉय ट्रेन भी चलती है, बस झोपड़ी पहले बुक करनी होती है।",
+   "दिसंबर में ठंडक और कॉफ़ी की तुड़ाई का आख़िरी दौर है, अच्छा कमरा करीब पैंतीस सौ का है, पर क्रिसमस से नए साल तक कमरे जल्दी भर जाते हैं।",
+   "इसे सेव कर लीजिए, ताकि अराकू पहुँचकर ये जगहें छूट न जाएँ।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:araku-valley__opener__s1.mp4",
+   "hook": "Sleep in a <em>tree hut</em><br>in Araku?"
+  },
+  {
+   "kicker": "1 · Sunrise stop",
+   "lines": [
+    "<em>Galikonda Viewpoint</em>",
+    "20 km, 40 min on the Vizag-Araku ghat road",
+    "Clearest at sunrise, 6 to 7 am",
+    "Hairpin road: tell your driver first"
+   ],
+   "bg": "photo:Araku Valley from Galikonda View Point|galikonda view point"
+  },
+  {
+   "kicker": "2 · In town",
+   "lines": [
+    "<em>Araku Tribal Museum</em>",
+    "Adivasi groups of the Eastern Ghats",
+    "Jewellery, farm tools, hut models",
+    "Dhimsa dance costumes"
+   ],
+   "bg": "photo:Araku Valley Tribal Museum|valley tribal museum"
+  },
+  {
+   "kicker": "3 · A night in a tree",
+   "lines": [
+    "<em>Padmapuram Gardens</em>",
+    "3 km, 10 min from Araku bazaar",
+    "Tree-top huts for a night: book ahead",
+    "A toy train inside the garden"
+   ],
+   "bg": "photo:Padmapuram garden|padmapuram garden"
+  },
+  {
+   "kicker": "Go in",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "11 to 25°C, the tail of the coffee harvest. A good room about ₹3,500 a night. Weekends get busy; Christmas to New Year fills early.",
+   "bg": "photo:Views of Araku Valley|views araku valley"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Araku* matlab",
+    "*train, coffee* aur *Borra gufaayein*,",
+    "par paas mein *teen jagah* aur hain,",
+    "aur ek mein to *ped par bani jhopdi* mein raat bita sakte hain."
+   ],
+   [
+    "Pehli, Vizag waali ghat sadak par",
+    "*Galikonda viewpoint*,",
+    "jahan *suraj ugte waqt* ghaati saaf dikhti hai,",
+    "par ye modon ke beech *chhota sa padaav* hai,",
+    "to *driver ko pehle* bataaiye."
+   ],
+   [
+    "Doosri, shehar mein hi *Tribal Museum*,",
+    "jahan is ilaake ke aadivaasiyon ke *gehne*,",
+    "kheti ke *auzaar* aur jhopdiyon ke *model* hain,",
+    "aur *Dhimsa naach* ki poshaakein bhi."
+   ],
+   [
+    "Aur teesri, *Padmapuram Garden*,",
+    "jahan *pedon par bani jhopdiyon* mein raat ruk sakte hain,",
+    "aur baageeche mein *toy train* bhi chalti hai,",
+    "bas jhopdi *pehle book* karni hoti hai."
+   ],
+   [
+    "*December* mein thandak",
+    "aur *coffee ki tudaai* ka aakhri daur hai,",
+    "achha kamra kareeb *₹3,500* ka hai,",
+    "par *Christmas se naye saal* tak",
+    "kamre *jaldi bhar* jaate hain."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "taaki Araku pahunchkar",
+    "ye jagah *chhoot na jaayein*."
+   ]
+  ],
+  "en": [
+   [
+    "*Araku* means",
+    "the *train, the coffee* and *Borra Caves*,",
+    "but there are *three more places* nearby,",
+    "and in one you can spend the night *in a hut up a tree*."
+   ],
+   [
+    "One: on the Vizag ghat road,",
+    "*Galikonda viewpoint*,",
+    "where the valley is clear *at sunrise*,",
+    "but it's a *small stop* between hairpin bends,",
+    "so *tell your driver* in advance."
+   ],
+   [
+    "Two: right in town, the *Tribal Museum*,",
+    "with the *jewellery*,",
+    "farm *tools* and hut *models* of the area's Adivasi people,",
+    "and *Dhimsa dance* costumes too."
+   ],
+   [
+    "And three: *Padmapuram Gardens*,",
+    "where you can spend a night in *huts built up in the trees*,",
+    "and a *toy train* runs through the garden,",
+    "but the huts must be *booked ahead*."
+   ],
+   [
+    "*December* is cool,",
+    "the *tail of the coffee harvest*,",
+    "a good room is about *₹3,500*,",
+    "but from *Christmas to New Year*",
+    "rooms *fill up fast*."
+   ],
+   [
+    "*Save this*,",
+    "so that once you're in Araku",
+    "you *don't miss* these places."
+   ]
+  ]
+ },
+ "title": "3 Araku stops, one with a night in a tree | NakshIQ",
+ "caption_lead": "Araku is known for the train, the coffee and Borra Caves; here are three more stops. Galikonda viewpoint, clear at sunrise, is a small stop between hairpin bends on the Vizag ghat road, so tell your driver before you set off; the Tribal Museum in town holds Adivasi jewellery, farm tools, hut models and Dhimsa dance costumes; and Padmapuram Gardens has tree-top huts you can book for a night, plus a toy train through the garden. December is cool, at the tail of the coffee harvest, and a good room is about ₹3,500 a night, but Christmas to New Year fills early.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3500
+  }
+ ],
+ "facts": [
+  "gem Galikonda Viewpoint: 20 km, '40min by car on the Vizag-Araku ghat road'; why_go 'roadside viewpoint on the Anantagiri ghat section of the Vizag-Araku highway. Panorama over the coffee-plantation valleys; sunrise (6-7am) and post-rain afternoon (3-4pm) are the clear windows ... Hairpin road, cab driver knows the stop'; why_unknown 'Drive-by viewpoint on a fast-traffic ghat road; tour buses rarely halt unless flagged in advance'",
+  "gem Araku Tribal Museum: why_go 'museum tracing the material culture of the 19 Adivasi groups of the Eastern Ghats ... Permanent galleries on tribal jewellery, agricultural tools, hut models and Dhimsa-dance accoutrements'; destination why_special 'Tribal Museum showcases Dhimsa dance'",
+  "gem Padmapuram Botanical Gardens: 3 km, '10min by car from Araku main bazaar'; why_go 'toy train (fare not quoted), tree-top huts (overnight stay, AP Forest Dept booking)'",
+  "web check 2026-11-18 on the tree huts: Tripadvisor (2026 listing), arakutrip.in and wanderboat.ai all describe bookable tree-top huts ('hanging cottages') and a toy train in the garden, which was renovated and reopened in 2025 with a bamboo canopy walk. The booking channel is unclear (pack: AP Forest Dept; web: APTDC or the ITDA that runs the garden), so the voice says only 'book ahead'",
+  "reel-data araku-valley months.12 5=10/10 'go': 'Cool peak + coffee harvest tail. 11-25C. Christmas-NYE peak booking. Lock 8 weeks ahead.'; pack months.12 'expect weekend crowds and book accommodation ahead' (weekends on the card only)",
+  "destination_costs araku-valley hotel-mid peak (months 10,11,12,1,2,3) typical_inr 3500 = पैंतीस सौ",
+  "destination why_special names the coffee, Borra Caves and 'Kirandul-Araku train through 58 tunnels': the opening line uses them only as what Araku is known for, and makes no claim about what visitors skip",
+  "NOT used (contradicted by a web check 2026-11-18): every gem why_unknown line saying package tours skip these three. The APTDC Araku day tour lists Padmapuram Gardens, the Tribal Museum and Galikonda viewpoint among its stops (visakhapatnam.ap.gov.in tourist packages; yovizag.com), so the reel never says people miss them",
+  "NOT used (DB disagrees with web listings): Tribal Museum 'ITDA-administered', 'Open 9.30am-5pm Tue-Sun' and 'live craft demonstrations on weekends' (Holidify, museumsofindia, Wanderlog: APTDC, opened 1996, open daily; no source for weekend demos); Padmapuram 'closed Mon' and 'laid out by Madras Forest Dept in the 1930s' (web: open daily, set up in 1942 to grow vegetables for WWII troops); the museum's distance (pack 3 km, web about 200 m from the bus station), so its card gives none",
+  "NOT used: Galikonda 'Second-highest peak in the Eastern Ghats at 1,643m' (superlative, peak rankings differ by source); Lambasingi (a separate Lambasingi reel is in this batch, and 'South India ONLY sub-zero location' is a superlative); Chaparai Falls (peak flow Jul-Nov, December flow not stated); entry fees and the garden toy-train fare (no rupee figure but the room price, for cost_gate); 'Araku coffee is among India's finest' (superlative)",
+  "PICTURE NOTE, checked 2026-11-18 against the Commons API with the renderer's own title rules: Galikonda query -> 'Araku Valley from Galikonda View Point 01.jpg' (valley under cloud); museum -> 'Artistic wall at tribal museum in Araku valley.jpg' (the museum's tribal-art gate wall); Padmapuram -> 'Padmapuram gardens. Arakuvalley (21).JPG' (the garden's sculpted entrance arch, not a hut, so the card names the garden); December -> 'Views of Araku Valley, Araku in Andhra Pradesh 01.jpg' (shot in January, dry season). The opener clip araku-valley__opener__s1.mp4 is the green valley under blue sky; the hero (steam train) is not used"
+ ],
+ "spoken_numbers": [
+  "तीन (3 places)",
+  "एक (one of them)",
+  "पैंतीस सौ (₹3,500 hotel-mid, December)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "clip:araku-valley__opener__s1.mp4",
+  "hook": "Sleep in a tree hut|*in Araku?*"
+ },
+ "music": "travel-summer-fun-970",
+ "music_start": 0
+}

@@ -1,0 +1,200 @@
+{
+ "id": "lambasingi__map_reveal",
+ "slug": "lambasingi",
+ "format": "map_reveal",
+ "series": "where_is_it",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "आंध्र प्रदेश में एक गाँव है, जहाँ दिसंबर की सुबह पौधों पर पाला जम जाता है, वो भी दक्षिण भारत में।",
+   "ये है लंबसिंगी, विशाखापत्तनम से क़रीब चार घंटे दूर, पूर्वी घाट में कॉफ़ी के बागानों से घिरा एक छोटा सा गाँव।",
+   "और इसका अच्छा वक़्त अभी आ रहा है, क्योंकि दिसंबर की सुबह पौधों पर पाला चमकता है और पहाड़ियाँ धुंध में लिपटी रहती हैं।",
+   "पर जो कोई नहीं बताता, वो ये कि पाला तड़के ही जमता है, तो उसे देखने के लिए रात यहीं रुकिए, और कमरे गिने चुने हैं।",
+   "पर जुलाई अगस्त में मत जाइए, क्योंकि बरसात में पहाड़ी सड़कों पर लैंडस्लाइड होते हैं और रास्ते बंद हो जाते हैं।",
+   "और दिसंबर पीक सीज़न है, तो अच्छा कमरा साढ़े छब्बीस सौ का है, जबकि ऑफ़ सीज़न में सवा दो हज़ार का, तो जनवरी के लिए भी अभी बुक कीजिए।",
+   "हर महीने का हाल NakshIQ पर है, और उस दोस्त को टैग कीजिए जो कहता है, दक्षिण भारत में ठंड कहाँ पड़ती है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "map",
+   "hook": "Frost at dawn,<br><em>in Andhra Pradesh?</em>"
+  },
+  {
+   "bg": "photo",
+   "kicker": "Andhra Pradesh",
+   "big": "Lambasingi",
+   "lines": [
+    "<em>1,000 m</em> up in the Eastern Ghats",
+    "About <em>4 hrs</em> by road from Visakhapatnam",
+    "<em>~140 km</em> from Vizag airport at Bhogapuram"
+   ]
+  },
+  {
+   "bg": "clip:lambasingi__hero.mp4",
+   "kicker": "The next good window",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "2 to 17°C. Frost at dawn, mist on the hills. Strawberry harvest begins."
+  },
+  {
+   "bg": "photo:Morning in Lambasingi|lambasingi morning",
+   "kicker": "What nobody tells you",
+   "lines": [
+    "The frost forms in the small hours",
+    "To see it, stay the night",
+    "Rooms are few: book early"
+   ]
+  },
+  {
+   "bg": "clip:lambasingi__two_months__s2.mp4",
+   "kicker": "Skip",
+   "big": "July, August",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Monsoon landslides on the hill roads. Roads impassable."
+  },
+  {
+   "bg": "photo:Lambasingi Sunrise|lambasingi sunrise",
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "December",
+     "₹2,650"
+    ],
+    [
+     "April to September",
+     "₹2,250"
+    ]
+   ]
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Andhra Pradesh* mein ek gaon hai,",
+    "jahan December ki subah",
+    "*paudhon par paala* jam jaata hai,",
+    "wo bhi *Dakshin Bharat* mein."
+   ],
+   [
+    "Ye hai *Lambasingi*,",
+    "Visakhapatnam se qareeb *4 ghante* door,",
+    "Poorvi Ghat mein *coffee ke baagaanon* se ghira",
+    "ek chhota sa gaon."
+   ],
+   [
+    "Aur iska achha waqt *abhi aa raha* hai,",
+    "kyunki *December* ki subah paudhon par *paala chamakta* hai",
+    "aur pahaadiyan *dhundh* mein lipti rehti hain."
+   ],
+   [
+    "Par jo koi nahi batata,",
+    "wo ye ki paala *tadke hi* jamta hai,",
+    "to use dekhne ke liye *raat yahin rukiye*,",
+    "aur *kamre gine chune* hain."
+   ],
+   [
+    "Par *July August* mein mat jaaiye,",
+    "kyunki baarish mein pahaadi sadkon par",
+    "*landslide* hote hain",
+    "aur *raaste band* ho jaate hain."
+   ],
+   [
+    "Aur December *peak season* hai,",
+    "to achha kamra *₹2,650* ka hai,",
+    "jabki off season mein *₹2,250* ka,",
+    "to *January* ke liye bhi *abhi book* kijiye."
+   ],
+   [
+    "Har mahine ka haal *NakshIQ* par hai,",
+    "aur us dost ko *tag* kijiye jo kehta hai,",
+    "*Dakshin Bharat mein thand* kahan padti hai."
+   ]
+  ],
+  "en": [
+   [
+    "There's a village in *Andhra Pradesh*",
+    "where on December mornings",
+    "*frost* settles on the plants,",
+    "and that's in *South India*."
+   ],
+   [
+    "This is *Lambasingi*,",
+    "about *4 hours* from Visakhapatnam,",
+    "a small village in the *Eastern Ghats*",
+    "ringed by *coffee* plantations."
+   ],
+   [
+    "And its good time is *coming now*,",
+    "because on *December* mornings frost glitters on the plants",
+    "and the hills are wrapped in *mist*."
+   ],
+   [
+    "What nobody tells you:",
+    "the frost forms *before dawn*,",
+    "so to see it, *stay the night*,",
+    "and *rooms are few* here."
+   ],
+   [
+    "But skip *July and August*,",
+    "because in the monsoon the hill roads",
+    "get *landslides*",
+    "and *close*."
+   ],
+   [
+    "December is *peak season*,",
+    "so a good room is *₹2,650*,",
+    "while off season it's *₹2,250*,",
+    "so book *January* now too."
+   ],
+   [
+    "Every month's picture is on *NakshIQ*,",
+    "so *tag* the friend who says",
+    "*South India never gets cold*."
+   ]
+  ]
+ },
+ "title": "Frost at dawn, in Andhra Pradesh? | NakshIQ",
+ "caption_lead": "In December, Lambasingi, a small coffee and pepper village in Andhra Pradesh's Eastern Ghats about 4 hours from Visakhapatnam, wakes to frost on its plants and mist on its hills. The frost forms in the small hours, so stay the night and book early: rooms are few, and a good one is about ₹2,650 a night in December (₹2,250 in the off season). It gets very cold and medical help is far, so it is not a trip for small kids or elderly parents; skip July and August, when monsoon landslides close the hill roads.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 2650
+  },
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 2250
+  }
+ ],
+ "facts": [
+  "reel-data geo: Andhra Pradesh, elevation 1,000 m, nearest_airport 'Alluri Sitarama Raju International Airport (VTZ), Bhogapuram, ~140km' (news check 2026-11-18: commercial flights began there 17 Aug 2026 and the old Vizag airport closed to scheduled flights, Business Standard)",
+  "why_special: 'the 4-hour drive from Visakhapatnam' (the one spoken distance); 'Coffee and pepper plantations drape the hills; cloud forests wrap the mornings'; best_for_segments 'Eastern Ghats highland experience', '3,000-pop hill village' (honest_scarcity)",
+  "SCENE 2 NOTE: a written card instead of \"card\": \"place\", because the auto place card would print reel-data nearest_railhead 'Chintapalli, 28km (no rail)' as '28 km from the train: Chintapalli', and Chintapalli has no railway. The geo row needs a fix before any Lambasingi reel uses the auto card",
+  "reel-data months.12 5=10/10 'Frost peak. 2-17C. Last 7-10 days year-best rime'; fact pack months.12 'frost landscapes unavailable elsewhere in AP'; crowd_calendar 'winter frost-and-fog draw'; why_special 'cloud forests wrap the mornings'; persona photographer 'frost on tropical flora (rare)'; best_for_segments 'Dec-Feb strawberry harvest' (card only)",
+  "frost timing: reel-data months.12 '4am ... rime daily' (said as 'in the small hours'; the word snow is never used); eatery insider_tip 'Lambasingi famously freezes near dawn'. Rooms: solo_female_note 'APTDC cottage + few homestays. Thin infrastructure.'; months.11 'limited lodging'; kids.concerns 'No proper accommodation'",
+  "fact pack months.7 1=2/10 'Monsoon landslides make roads impassable and dangerous in July'; months.8 1=2/10 'Landslide risk peaks as monsoon rains saturate hillside roads'; kids.concerns 'Winding mountain road'",
+  "costs hotel-mid peak (months 11,12,1,2) typical_inr 2650; low (months 4 to 9) typical_inr 2250 (fact pack and reel-data agree); reel-data months.1 'Frost peak ... Lock 6-8 weeks ahead' (so 'book January now')",
+  "caption only: months.12 who_should_avoid 'families-with-kids', 'elderly'; kids.suitable false, concerns 'Sub-zero temperatures, dangerous for small children', 'Zero medical facilities'; emergency nearest_hospital CHC Chintapalli, km 25, nameable false (not named)",
+  "NOT used: every 'snow' line (reel-data '4am snow-rime', 'The Kashmir-of-Andhra window', best_for_segments 'Andhra Kashmir', eatery 'Kashmir of Andhra Pradesh'): Lambasingi gets frost, not snow, and 'Kashmir' would imply it; why_special 'The ONLY location south of the Vindhyas with sub-zero temps' and trap_swaps 'Only sub-zero temperatures in South India' (wrong: Ooty and Munnar record sub-zero frost in many winters); 'Recorded -2°C' and 'rare sub-zero temperatures' (the DB disagrees with itself: months.12 note 2-17C, months.11 '2-8°C'), so no temperature is spoken; trap_swaps 'Lambasingi: empty, you might be the only visitor' and crowd_level 'very low' (crowd_calendar says busiest November to January with Visakhapatnam day-trippers); 'Korra Bayalu' name story (the pack's explanation is garbled and unchecked); hidden gems Tajangi, Kothapalli, Susan Garden (unchecked, and ₹ fees); trek nearest_hospital 'Chintapalle CHC, 40km' vs emergency 25 km (disagree)",
+  "PICTURE NOTE: lambasingi__hero.mp4 (frost on coffee plants, sunrise over clouds) under the good-month line; lambasingi__two_months__s2.mp4 (monsoon, muddy stream) under the skip line; NOT two_months__s1 (shows heavy snow). Scene 2 'photo' is the place's own Commons photo ('Lambasingi Clouds View.jpg'); scenes 4 and 6 use separate pools ('Morning in Lambasingi' series, 'Lambasingi Sunrise.jpg'), checked 2026-11-18"
+ ],
+ "spoken_numbers": [
+  "चार (about 4 hours from Visakhapatnam)",
+  "साढ़े छब्बीस सौ (2,650)",
+  "सवा दो हज़ार (2,250)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "clip:lambasingi__hero.mp4@3",
+  "hook": "Frost at dawn,|*in Andhra Pradesh?*"
+ },
+ "music": "travel-feel-alive-3",
+ "music_start": 2
+}

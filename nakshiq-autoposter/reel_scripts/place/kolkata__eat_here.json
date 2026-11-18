@@ -1,0 +1,187 @@
+{
+ "id": "kolkata__eat_here",
+ "slug": "kolkata",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "दिसंबर में कोलकाता जा रहे हैं? तो जान लीजिए कि यहाँ एक मिठाई सिर्फ़ सर्दियों में मिलती है, और खाने में असली फ़र्क़ वक़्त का है।",
+   "वो है नोलेन गुड़ का संदेश, जो नवंबर से फ़रवरी तक ही मिलता है, तो भवानीपुर की पुरानी दुकान पर चखिए, और घर के लिए बेक्ड संदेश लीजिए, जो सफ़र में टिक जाता है।",
+   "फिर कॉलेज स्ट्रीट के पास किताबों के बीच एक सँकरी सीढ़ी उस कॉफ़ी अड्डे तक जाती है जहाँ सत्यजित रे बैठते थे, पर दोपहर बाद जाइए, जब पुराने अड्डेबाज़ जमते हैं।",
+   "और पार्क स्ट्रीट पर क्रिसमस की रौनक में पुराने स्विस टी-रूम में सुबह-सुबह नाश्ता कीजिए, क्योंकि वीकेंड की दोपहर वहाँ भीड़ रहती है।",
+   "दिसंबर पीक सीज़न है, तो भीड़ और दाम दोनों ऊपर हैं, और अच्छा कमरा करीब साढ़े छब्बीस सौ का पड़ता है, तो पहले बुक कीजिए।",
+   "कोलकाता में आपकी पहली प्लेट क्या होगी, संदेश, फुचका या कुछ और? कमेंट में लिखिए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:kolkata__hero.mp4",
+   "hook": "A Kolkata sweet<br>only in <em>winter?</em>"
+  },
+  {
+   "kicker": "Nolen gur sandesh",
+   "lines": [
+    "<em>Balaram Mullick & Radharaman Mullick</em>, since 1885",
+    "Bhowanipore",
+    "Date-palm jaggery: November to February only",
+    "Baked sandesh travels: take that one home"
+   ],
+   "bg": "photo:Nolen gur sandesh|nolen"
+  },
+  {
+   "kicker": "The coffee adda",
+   "lines": [
+    "<em>Indian Coffee House</em>, since 1942",
+    "Bankim Chatterjee Street, off College Street",
+    "Up the narrow stair beside the books",
+    "Skip 12 to 2; the regulars come 3 to 5"
+   ],
+   "bg": "photo:Indian Coffee House Kolkata|coffee"
+  },
+  {
+   "kicker": "Breakfast on Park Street",
+   "lines": [
+    "<em>Flurys</em>, since 1927",
+    "Opened as a Swiss tea room",
+    "English breakfast, served until 11 am",
+    "Weekend afternoons get busy: come early"
+   ],
+   "bg": "photo:Park Street in Kolkata during Christmas|park street kolkata during christmas"
+  },
+  {
+   "kicker": "A good room in Kolkata, December",
+   "big": "₹2,650",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "20 to 26°C, mild. Peak season: Christmas on Park Street, crowds and higher prices. Book ahead.",
+   "bg": "photo:Victoria Memorial Hall Kolkata|victoria memorial hall"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*December* mein Kolkata ja rahe hain?",
+    "To jaan lijiye ki yahan *ek mithai*",
+    "sirf *sardiyon* mein milti hai,",
+    "aur khaane mein asli farq",
+    "*waqt* ka hai."
+   ],
+   [
+    "Woh hai *nolen gur ka sandesh*,",
+    "jo *November se February* tak hi milta hai,",
+    "to *Bhawanipur* ki purani dukaan par chakhiye,",
+    "aur ghar ke liye *baked sandesh* lijiye,",
+    "jo *safar mein tik* jaata hai."
+   ],
+   [
+    "Phir *College Street* ke paas kitaabon ke beech",
+    "ek *sankri seedhi* us *coffee adde* tak jaati hai",
+    "jahan *Satyajit Ray* baithte the,",
+    "par *dopahar baad* jaaiye,",
+    "jab purane *addebaaz* jamte hain."
+   ],
+   [
+    "Aur *Park Street* par",
+    "*Christmas ki raunak* mein",
+    "purane *Swiss tea-room* mein",
+    "*subah-subah* naashta kijiye,",
+    "kyunki *weekend ki dopahar* wahan bheed rehti hai."
+   ],
+   [
+    "December *peak season* hai,",
+    "to *bheed aur daam* dono upar hain,",
+    "aur achha kamra kareeb *₹2,650* ka padta hai,",
+    "to *pehle book* kijiye."
+   ],
+   [
+    "Kolkata mein aapki *pehli plate* kya hogi,",
+    "*sandesh*, *phuchka* ya kuch aur?",
+    "*Comment* mein likhiye."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Kolkata* this *December*?",
+    "Then know that one *sweet* here",
+    "is only around in *winter*,",
+    "and with food, the real difference",
+    "is *timing*."
+   ],
+   [
+    "That's *nolen gur sandesh*,",
+    "only around from *November to February*,",
+    "so try it at an old shop in *Bhowanipore*,",
+    "and for home, buy the *baked sandesh*,",
+    "which *survives the journey*."
+   ],
+   [
+    "Then near *College Street*, between the books,",
+    "a *narrow stair* climbs to the *coffee haunt*",
+    "where *Satyajit Ray* used to sit,",
+    "but go in the *afternoon*,",
+    "when the old *regulars* settle in."
+   ],
+   [
+    "And on *Park Street*,",
+    "amid the *Christmas* lights,",
+    "have breakfast at the old *Swiss tea room*",
+    "*early in the morning*,",
+    "because *weekend afternoons* get crowded."
+   ],
+   [
+    "December is *peak season*,",
+    "so *crowds and prices* are both up,",
+    "and a good room is about *₹2,650*,",
+    "so *book ahead*."
+   ],
+   [
+    "What will your *first plate* in Kolkata be:",
+    "*sandesh*, *phuchka* or something else?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "Kolkata's sweet you only get in winter | NakshIQ",
+ "caption_lead": "In Kolkata, timing matters as much as the address. Nolen gur sandesh, made with date-palm jaggery, is only around from November to February: try it at Balaram Mullick & Radharaman Mullick in Bhowanipore, and buy the baked sandesh to carry home. At Indian Coffee House, up the narrow stair beside the College Street books, skip lunch hour and come in the afternoon when the adda regulars arrive; at Flurys on Park Street, go early for breakfast. December is mild peak season with Christmas on Park Street, so book ahead: a good room is about ₹2,650 a night.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 2650
+  }
+ ],
+ "facts": [
+  "eatery Balaram Mullick & Radharaman Mullick, Bhowanipore, est 1885: signature 'nolen gurer sandesh'; insider_tip 'Nolen gur (date palm jaggery) sandesh is seasonal, November to February only. The baked sandesh travels well as a gift'",
+  "dropped from that same tip: 'the soft korapak doesn't survive a flight'. Web check 2026-11-18: kora pak is the HARD-cooked sandesh and keeps longer than naram pak (Girish Ch. Dey & Nakur Ch. Nandy; Mendeley sandesh grading dataset; Banglar Misti ships korapak for long distances). The DB tip has it backwards and needs a correction through the approval queue. The voice says only that baked sandesh travels",
+  "eatery Indian Coffee House, College Street, est 1942: 'Adda haunt of Satyajit Ray, Sunil Gangopadhyay, Aparna Sen'; insider_tip 'Operates on Bankim Chatterjee Street, not College Street proper; entrance is through a narrow staircase next to the books. Skip lunch hour (12-2pm); afternoon between 3-5pm is when the real adda regulars arrive.' Voice says 'near College Street' for that reason; the hours are on the card only",
+  "eatery Flurys, Park Street, est 1927: 'Opened 1927 by Swiss partners ... as a Swiss confectionery and tea room'; insider_tip 'Breakfast is the meal Flurys does best: eggs, sausages, baked beans served until 11am. Skip the pastries on busy weekend afternoons and come for the morning quiet.' The 11 am cut-off is on the card only, not voiced",
+  "reel-data kolkata months.12 5=10/10 'Winter peak, Christmas on Park Street'; fact pack months.12 go_or_skip_verdict 'peak season with mild weather (20 to 26°C), Park Street Christmas vibrancy ... expect crowds and higher prices'",
+  "costs kolkata hotel-mid peak (months 10, 11, 12, 1, 2, 3) typical 2650",
+  "kids kid_highlights 'Eating phuchka (pani puri) at every corner' (the closer's फुचका); best_for_segments 'Mishti (rasogolla, sandesh, mishti doi)'",
+  "eatery names on cards and caption only, never in the voice; no food prices anywhere (every price_per_head range NOT used); the voice names dishes and areas, not shops",
+  "photo checks 2026-11-18 (read-only Commons query through the renderer's own title filters, thumbnails looked at): 'Nolen Gurer Sandesh Kolkata', 'Indian Coffee House, Kolkata 01' (the hall), 'Park Street in Kolkata during Christmas' (lights and crowd), 'Victoria Memorial Kolkata India'. Flurys' only usable Commons photo is a chandelier, so the Flurys scene shows Park Street at Christmas",
+  "NOT used: 6 Ballygunge Place (its tip is the hilsa thali in season, not December), Aminia (its tip is Ramadan iftar), Bhojohori Manna (fish changes on Tuesdays; saved for another reel); why_special 'the only Indian metro where walking at 10 PM still feels like a city belongs to its people' and 'world's largest book market' (superlatives); hidden_gems and the Shantiniketan swap (other series); the two_months ghat clips (nothing to do with food)"
+ ],
+ "spoken_numbers": [
+  "साढ़े छब्बीस सौ (₹2,650 hotel-mid, December)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "clip:kolkata__hero.mp4",
+  "top_label": "EVERYONE: THE BRIDGE",
+  "bottom": "photo:Nolen gur sandesh|nolen",
+  "bottom_label": "ONLY IN WINTER",
+  "hook": "A Kolkata sweet|*only in winter?*"
+ },
+ "revisions": [
+  "2026-11-18 Claude review: line 4 grammar: 'पुरानी स्विस टी-रूम का नाश्ता' -> 'पुराने स्विस टी-रूम में सुबह-सुबह नाश्ता'",
+  "2026-11-18 Claude eyeball: scene 5 photo resolved to a statue against grey sky; query narrowed to the Memorial hall"
+ ],
+ "music": "uplifting-mountains-952",
+ "music_start": 0
+}

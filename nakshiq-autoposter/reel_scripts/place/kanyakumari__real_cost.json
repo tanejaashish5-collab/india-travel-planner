@@ -1,0 +1,197 @@
+{
+ "id": "kanyakumari__real_cost",
+ "slug": "kanyakumari",
+ "format": "real_cost",
+ "series": "real_cost",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "कन्याकुमारी में एक अच्छा कमरा, दिसंबर के पीक सीज़न में बाईस सौ का, और बरसात में साढ़े अठारह सौ का, यानी फ़र्क़ बहुत छोटा है।",
+   "और बरसात की ये बचत महँगी पड़ती है, क्योंकि जून से अगस्त समंदर उछलता है, ऊँची लहरों में विवेकानंद रॉक की फ़ेरी रुक जाती है और उगता सूरज कम ही दिखता है।",
+   "जबकि दिसंबर में, ख़ासकर महीने के दूसरे हिस्से में, आसमान साफ़ और समंदर शांत रहता है, तो सूर्योदय भी साफ़ दिखता है और सूर्यास्त भी।",
+   "पर पीक सीज़न में सनराइज़ पॉइंट पर भीड़ रहती है, तो जल्दी पहुँचिए, और किनारे पर पानी में मत उतरिए, क्योंकि यहाँ धाराएँ बहुत तेज़ हैं।",
+   "टैक्सी का किराया हर सीज़न में एक जैसा है, तो बरसात की बचत बस कमरे पर है, और उतनी सी बचत के लिए सूर्योदय और फ़ेरी छोड़ना ठीक नहीं।",
+   "ये उसे भेजिए जो सस्ते कमरे के चक्कर में बरसात में कन्याकुमारी जाने की सोच रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Kanyakumari Thiruvalluvar statue and Vivekananda rock|kanyakumari",
+   "hook": "A <em>cheaper room</em> in the rain?<br>Kanyakumari's catch",
+   "kicker": "A good room, per night",
+   "rows": [
+    [
+     "December",
+     "₹2,200"
+    ],
+    [
+     "June to August",
+     "₹1,850"
+    ]
+   ]
+  },
+  {
+   "kicker": "June to August",
+   "big": "Rough sea",
+   "line": "NakshIQ score <em>4/10</em>",
+   "sub": "The Vivekananda Rock ferry stops on heavy-swell days. Sunrise is rare.",
+   "bg": "clip:kanyakumari__two_months__s1.mp4"
+  },
+  {
+   "kicker": "December",
+   "big": "Clear and calm",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "22 to 29°C. The last rains clear by mid-month. Sunrise and sunset over the sea.",
+   "bg": "photo:Kanyakumari sunrise|kanyakumari sunrise"
+  },
+  {
+   "kicker": "But know this",
+   "big": "Go early",
+   "sub": "The sunrise point gets crowded in peak season. Strong currents: no swimming at the cape.",
+   "bg": "photo:Kanyakumari beach|kanyakumari beach"
+  },
+  {
+   "kicker": "Taxi, per day",
+   "big": "₹1,800",
+   "sub": "The same in every season. The only saving is on the room.",
+   "bg": "photo:Vivekananda Rock Memorial Kanyakumari|vivekananda rock"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Kanyakumari mein ek achha kamra,",
+    "December ke *peak season* mein *₹2,200* ka,",
+    "aur baarish mein *₹1,850* ka,",
+    "yaani *farq bahut chhota* hai."
+   ],
+   [
+    "Aur baarish ki ye *bachat mehngi* padti hai,",
+    "kyunki *June se August* samandar uchhalta hai,",
+    "oonchi lehron mein *Vivekananda Rock ki ferry* ruk jaati hai",
+    "aur *ugta sooraj* kam hi dikhta hai."
+   ],
+   [
+    "Jabki *December* mein,",
+    "khaaskar mahine ke doosre hisse mein,",
+    "aasmaan *saaf* aur samandar *shaant* rehta hai,",
+    "to *sooryoday* bhi saaf dikhta hai aur *sooryast* bhi."
+   ],
+   [
+    "Par peak season mein",
+    "*sunrise point* par *bheed* rehti hai,",
+    "to *jaldi pahunchiye*,",
+    "aur kinaare par *paani mein mat utariye*,",
+    "kyunki yahan *dhaaraayein bahut tez* hain."
+   ],
+   [
+    "*Taxi* ka kiraaya har season mein *ek jaisa* hai,",
+    "to baarish ki bachat *bas kamre* par hai,",
+    "aur utni si bachat ke liye",
+    "*sooryoday aur ferry* chhodna theek nahi."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo *saste kamre* ke chakkar mein",
+    "baarish mein Kanyakumari jaane ki soch raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "A good room in Kanyakumari:",
+    "*₹2,200* in December's *peak season*,",
+    "and *₹1,850* in the monsoon,",
+    "so the *gap is tiny*."
+   ],
+   [
+    "And that monsoon saving *costs you*,",
+    "because from *June to August* the sea is rough,",
+    "the *Vivekananda Rock ferry* stops in high swell,",
+    "and you rarely see the *sunrise*."
+   ],
+   [
+    "In *December*, though,",
+    "especially in the second half,",
+    "the sky is *clear* and the sea *calm*,",
+    "so you see the *sunrise* clearly, and the *sunset* too."
+   ],
+   [
+    "But in peak season",
+    "the *sunrise point* gets *crowded*,",
+    "so *get there early*,",
+    "and *don't go into the water* at the shore,",
+    "because the *currents are very strong*."
+   ],
+   [
+    "The *taxi* costs *the same* in every season,",
+    "so the monsoon saving is *only on the room*,",
+    "and that little saving isn't worth",
+    "giving up the *sunrise and the ferry*."
+   ],
+   [
+    "*Send this* to whoever",
+    "is planning Kanyakumari *in the rain*",
+    "for a *cheaper room*."
+   ]
+  ]
+ },
+ "title": "Kanyakumari's monsoon discount isn't worth it | NakshIQ",
+ "caption_lead": "A good room in Kanyakumari costs ₹2,200 a night in December's peak season and ₹1,850 in the monsoon, and the taxi is ₹1,800 a day in every season, so the rain saves you very little. From June to August the sea is rough, the Vivekananda Rock ferry stops on heavy-swell days and the sunrise is rare. December, especially the second half, brings clear skies and a calm sea for sunrise and sunset; the sunrise point gets crowded, so go early, and don't swim at the cape, where the currents are strong.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 2200
+  },
+  {
+   "category": "hotel-mid",
+   "season": "low",
+   "value": 1850
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "peak",
+   "value": 1800
+  },
+  {
+   "category": "transport-taxi-day",
+   "season": "low",
+   "value": 1800
+  }
+ ],
+ "facts": [
+  "costs hotel-mid peak (months 10,11,12,1,2) typical_inr 2200; low (months 4,5,6,7,8) typical_inr 1850 (fact pack and reel-data costs agree). The row says 'June to August', the monsoon part of the low season. The difference, ₹350, is on the hook, title and cover only, never spoken (cost_gate: 350 is also the ledger's food-per-day low, so the figure passes the gate by coincidence, not as a ledger price)",
+  "costs transport-taxi-day typical_inr 1800 in peak, shoulder and low",
+  "reel-data months.6 2=4/10 'SW monsoon active ... Ferry suspends on heavy-swell days'; months.7 2=4/10 'Ferry irregular. Sunrise rare.'; months.8 2=4/10 'Still skip-tier'; fact pack months.6 to 8 skip_reason 'Monsoon rains make beaches unsafe and visibility poor'; kids.concerns 'Rough sea monsoon cancels ferry'; crowd_calendar off 'Jun-Sep (monsoon, rough sea)'",
+  "months.12 5=10/10 'Go in December, peak season with clear skies, calm seas, and ideal temperatures for dawn and dusk viewing'; reel-data months.12 'Peak season. 22-29C. NE monsoon wraps mid-month' (hence 'especially the second half' and the card's 'last rains clear by mid-month')",
+  "kids.concerns 'Crowded at sunrise viewpoint', 'Strong currents, no swimming'; family_verdict 'strong currents that rule out swimming ... arrive early at the viewpoint to beat crowds'; crowd_calendar peak_months 10 to 2",
+  "NOT used: why_special 'The ONLY place in India where sunrise and sunset are both over the sea' (superlative; reel-data months.4 'Sunrise + sunset from same point becomes possible' suggests it is seasonal, so the voice claims only what months.12 says, dawn and dusk viewing in December); reel-data months.12 'Christmas-NYE rate spike' (the ledger has one peak rate for October to February, and the ledger is what we quote); months.3 'Rates 25 percent below February'; April and May (also ₹1,850, but the DB disagrees on April: score 4 'go' with skip_reason 'Extreme heat and humidity'), so the reel compares December with the monsoon only; November (fact pack 'post-monsoon clarity' vs reel-data 'NE monsoon active ... Cyclone watch peak'); hotel-budget figures; food costs; hidden gems (not this series' point)",
+  "PICTURE NOTE: kanyakumari__two_months__s1.mp4 (rain over town and sea) sits only under the monsoon line; everything else is Commons photos, with must-words picked so no two scenes share a pool (checked 2026-11-18)"
+ ],
+ "spoken_numbers": [
+  "बाईस सौ (2,200)",
+  "साढ़े अठारह सौ (1,850)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Kanyakumari sunrise|kanyakumari sunrise",
+  "line": "A cheaper room in the rain?",
+  "stamp": "SKIP IT",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "revisions": [
+  "2026-11-18 Claude review: cover/title dropped the derived '₹350' (a difference, not a ledger price; it passed cost_gate only by coincidence)",
+  "2026-11-18 Claude render: scene 5 query 'Thiruvalluvar Statue Kanyakumari' found no Commons photo; now the Vivekananda Rock from the shore",
+  "2026-11-18 Claude eyeball: scene 1 photo was grey sky; now the statue and rock memorial from the shore"
+ ],
+ "music": "travel-night-sky-hip-hop-963",
+ "music_start": 12
+}

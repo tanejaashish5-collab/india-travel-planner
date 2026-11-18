@@ -1,0 +1,168 @@
+{
+ "id": "ziro-valley__skip",
+ "slug": "ziro-valley",
+ "format": "skip",
+ "series": "skip",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "ज़ीरो में आपातानी लोग धान के उन्हीं खेतों में मछलियाँ भी पालते हैं, पर दिसंबर में ये घाटी देखने का प्लान है तो रुकिए, क्योंकि सर्दी में यहाँ सब थम सा जाता है।",
+   "गाँव की ज़िंदगी घरों के अंदर सिमट जाती है, सुविधाएँ बहुत कम रह जाती हैं, और जनवरी में ज़्यादातर गेस्टहाउस और खाने की जगहें बंद मिलती हैं।",
+   "रातें शून्य से नीचे भी चली जाती हैं और पगडंडियों पर पाला जमा रहता है, तो छोटे बच्चों के साथ, या अगर ठंड आपको ज़्यादा लगती है, तो अभी मत जाइए।",
+   "और जून से अगस्त भी नहीं, क्योंकि मानसून की बारिश में सड़कें कई-कई दिन बंद रहती हैं और ट्रेक के रास्तों पर जोंक भर जाती हैं।",
+   "तो अप्रैल में रोपाई या अक्टूबर में कटाई के वक़्त जाइए, तब अच्छा कमरा करीब अड़तीस सौ का है, बस अक्टूबर में कमरे जल्दी भरते हैं।",
+   "उस दोस्त को टैग कीजिए जो नए साल पर ज़ीरो जाने की बात कर रहा है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:ziro-valley__hero.mp4",
+   "hook": "Rice fields that<br>also <em>farm fish?</em>"
+  },
+  {
+   "kicker": "December to February",
+   "big": "Wait",
+   "line": "NakshIQ score <em>6/10</em>",
+   "sub": "Village life turns inward and services thin out. January: most guesthouses and eateries shut.",
+   "bg": "photo:Ziro rice farms|ziro rice farms"
+  },
+  {
+   "kicker": "Winter nights",
+   "big": "Below 0°C",
+   "sub": "Nights can drop below freezing, with frost on the trails. Not with small children, not if you feel the cold.",
+   "bg": "photo:Old Ziro|old ziro"
+  },
+  {
+   "kicker": "June to August",
+   "big": "Skip",
+   "line": "NakshIQ score <em>2/10</em> in July",
+   "sub": "Monsoon: roads impassable for days, leeches on the trails.",
+   "bg": "clip:ziro-valley__two_months__s2.mp4"
+  },
+  {
+   "kicker": "Go instead",
+   "big": "April or October",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "April: planting in the paddies. October: harvest colour, rooms fill fast. A good room about ₹3,800 a night.",
+   "bg": "photo:Ziro and its green valley|green valley ziro"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Ziro* mein *Apatani* log",
+    "dhaan ke *unhi kheton mein machhliyaan* bhi paalte hain,",
+    "par *December* mein ye ghaati dekhne ka plan hai",
+    "to *rukiye*,",
+    "kyunki sardi mein yahan *sab tham sa* jaata hai."
+   ],
+   [
+    "*Gaon ki zindagi* gharon ke andar simat jaati hai,",
+    "*suvidhaayein* bahut kam reh jaati hain,",
+    "aur *January* mein zyaadatar",
+    "*guesthouse aur khaane ki jagah band* milti hain."
+   ],
+   [
+    "Raatein *shoonya se neeche* bhi chali jaati hain",
+    "aur pagdandiyon par *paala* jama rehta hai,",
+    "to *chhote bachchon* ke saath,",
+    "ya agar *thand* aapko zyada lagti hai,",
+    "to *abhi mat* jaaiye."
+   ],
+   [
+    "Aur *June se August* bhi nahi,",
+    "kyunki *monsoon* ki baarish mein",
+    "sadkein *kai-kai din band* rehti hain",
+    "aur trek ke raaston par *jonk* bhar jaati hain."
+   ],
+   [
+    "To *April mein ropaai*",
+    "ya *October mein kataai* ke waqt jaaiye,",
+    "tab achha kamra kareeb *₹3,800* ka hai,",
+    "bas October mein kamre *jaldi bharte* hain."
+   ],
+   [
+    "Us dost ko *tag* kijiye",
+    "jo *naye saal* par",
+    "*Ziro* jaane ki baat kar raha hai."
+   ]
+  ],
+  "en": [
+   [
+    "In *Ziro*, the *Apatani* people",
+    "raise *fish in the very same rice fields*,",
+    "but if you're planning to see the valley in *December*,",
+    "*wait*,",
+    "because in winter *everything here slows to a stop*."
+   ],
+   [
+    "*Village life* turns inward,",
+    "*services* thin right out,",
+    "and in *January*",
+    "most *guesthouses and places to eat are shut*."
+   ],
+   [
+    "Nights can drop *below zero*",
+    "and *frost* sits on the trails,",
+    "so with *small children*,",
+    "or if you *feel the cold*,",
+    "*don't go yet*."
+   ],
+   [
+    "And not *June to August* either,",
+    "because in the *monsoon* rains",
+    "the roads are *shut for days at a time*",
+    "and the trek trails fill with *leeches*."
+   ],
+   [
+    "So go for *planting in April*",
+    "or the *harvest in October*,",
+    "when a good room is about *₹3,800*,",
+    "but October rooms *fill fast*."
+   ],
+   [
+    "*Tag* the friend",
+    "who keeps talking about",
+    "*Ziro for New Year*."
+   ]
+  ]
+ },
+ "title": "Ziro's rice fields farm fish. Wait till April | NakshIQ",
+ "caption_lead": "In Ziro the Apatani raise fish in the same rice fields, but December is a wait month: village life turns inward, services thin out, and in January most guesthouses and eateries are shut. Nights can drop below freezing with frost on the trails, so not with small children or if you feel the cold, and skip June to August too, when monsoon rain shuts the roads for days and leeches fill the trails. Go for planting in April or the harvest in October, when a good room is about ₹3,800 a night; October rooms fill fast.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3800
+  }
+ ],
+ "facts": [
+  "gem 'Apatani paddy-cum-fish fields, UNESCO tentative cultural landscape' (4 km, 15 min): 'Fish (carp species) are reared in the same flooded plots that grow rice, millet sits on the elevated partition bunds ... Best in April (planting) or October (harvest)'; why_unknown 'on UNESCO's tentative World Heritage list since 2014'",
+  "web check 2026-11-18 on the fish: The Fish Site and the RGU journal give fish stocked late March to April and harvested by September; the Parampara Project says some fields also hold fish from November to February. So the reel never claims there are no fish in winter; it says only that December is a 'wait' month, and sends people to April and October as the gem does",
+  "reel-data ziro-valley months.12 3=6/10 'wait': 'December settles Ziro into winter mode. The valley is stark and beautiful, village life turns inward, and the cold keeps all but the committed away.'; pack months.12 skip_reason 'Village rhythms slow to a crawl; expect minimal services and subfreezing nights if you go'",
+  "pack months.1 3=6/10 skip_reason 'Nights plunge below freezing; most guesthouses and eateries stay shuttered in January'; reel-data months.1 'cold and empty. Apatani villages open but trails stiff with frost'; pack months.2 3=6/10 'Guesthouses still closing for winter limits accommodation options'",
+  "who_should_avoid: months.12 'families with young kids', 'cold-averse travelers'; months.1 'families with toddlers', 'cold-averse travelers'",
+  "monsoon: months.6 2=4/10 'Heavy monsoon rains make trails treacherous and leech-infested'; months.7 1=2/10 'Monsoon rains make roads impassable and leeches abundant across trekking routes'; months.8 2=4/10 'Monsoon rains make roads impassable for days at a time'",
+  "go instead: reel-data months.4 5=10/10 'Apatani rice paddy terraces at planting stage, villages welcoming. Roads from Itanagar are clear'; pack months.10 5=10/10 'peak clarity, harvest-time colour ... book accommodation now as rooms fill fast'; months.3 and 5 are 4=8/10",
+  "destination_costs ziro-valley hotel-mid peak (months 3,4,5,10,11) typical_inr 3800 = अड़तीस सौ",
+  "the DB disagrees with itself on winter cold: reel-data months.1 says '4-16°C' while the pack says nights 'plunge below freezing' (months.1) and 'subfreezing' (months.12). The voice says nights 'can' go below zero (भी) and the card says 'can drop below freezing'; no temperature range is spoken or shown",
+  "NOT used: Ziro Music Festival (September, not needed); Talley Valley (permits, 2 h drive plus a 4-6 h trek); 'India's coolest outdoor music gathering' and 'among the most intact tribal cultures' (superlatives); medical notes (persona says a basic PHC in Hapoli, the emergency block names Gyati Takka General Hospital in Ziro: the DB disagrees with itself); December or January room prices (guesthouses mostly shut in January, so a low-season price would mislead)",
+  "PICTURE NOTE, checked 2026-11-18 with the renderer's title rules: winter card -> 'Ziro rice farms.jpg' (February, bare brown fields, grey sky); nights -> 'Old Ziro.jpg' (February, grey sky over the town); go-instead -> 'Ziro and its green valley.jpg' (green terraces, July; the card names months, the photo only shows the paddies). Clips: ziro-valley__hero.mp4 (flooded paddies at sunrise) under the rice-and-fish line; ziro-valley__two_months__s2.mp4 (rain over the valley) under the monsoon line; two_months__s1 not used"
+ ],
+ "spoken_numbers": [
+  "शून्य (below 0°C)",
+  "अड़तीस सौ (₹3,800 hotel-mid, April or October)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "clip:ziro-valley__hero.mp4",
+  "hook": "Rice fields that farm fish?|*Wait till April*"
+ },
+ "music": "cinematic-a-new-life-606",
+ "music_start": 29
+}

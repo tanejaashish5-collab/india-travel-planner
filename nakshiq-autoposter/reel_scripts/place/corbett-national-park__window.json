@@ -1,0 +1,178 @@
+{
+ "id": "corbett-national-park__window",
+ "slug": "corbett-national-park",
+ "format": "window",
+ "series": "window",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "कॉर्बेट में हाथियों को कोहरे से निकलते देखना है? तो यही मौसम है, क्योंकि दिसंबर और जनवरी की सुबहें ठंडी और धुंधली होती हैं।",
+   "नवंबर के बीच तक ढिकाला समेत सारे ज़ोन खुल जाते हैं, घास छँटने से जानवर ज़्यादा दिखते हैं, और दिसंबर में बाघ पानी के आसपास ज़्यादा घूमते हैं।",
+   "पर जंगल के अंदर ढिकाला में रात रुकनी है, तो बुकिंग पैंतालीस दिन पहले खुलती है और वीकेंड पहले भरते हैं, इसलिए मंगल से गुरुवार चुनिए।",
+   "और ये मौसम हमेशा नहीं रहता, क्योंकि गर्मी में खुली जीप की दोपहरें भारी पड़ती हैं, और बरसात में ढिकाला और बिजरानी बंद रहते हैं।",
+   "तो सर्दी में जाइए, एक अच्छा कमरा करीब साढ़े छत्तीस सौ का है, बस सुबह की सफ़ारी खुली जीप में होती है, तो सबके लिए टोपी, दस्ताने और जैकेट रखिए।",
+   "इसे सेव कर लीजिए, ताकि कॉर्बेट की तारीख़ तय करते वक़्त ढिकाला की बुकिंग हाथ से न निकले।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:corbett-national-park__hero.mp4",
+   "hook": "<em>Elephants</em> out of<br>the winter fog?"
+  },
+  {
+   "kicker": "Go now",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "5 to 22°C. Cold, misty mornings. Tiger activity up near waterholes. Elephants in herds. Every zone open from mid-November.",
+   "bg": "clip:corbett-national-park__two_months__s1.mp4"
+  },
+  {
+   "kicker": "A night inside the park",
+   "lines": [
+    "<em>Dhikala</em>: forest rest houses in the grassland",
+    "Booking opens 45 days ahead",
+    "Weekends sell out first: go Tue to Thu",
+    "Basic facilities"
+   ],
+   "bg": "photo:Morning mist Dhikala Corbett|mist dhikala reserve"
+  },
+  {
+   "kicker": "The monsoon",
+   "big": "Shut",
+   "line": "NakshIQ score <em>0/10</em>",
+   "sub": "Dhikala and Bijrani close for the monsoon; the Ramganga floods the grasslands. April and May afternoons are punishing in open jeeps.",
+   "bg": "clip:corbett-national-park__two_months__s2.mp4"
+  },
+  {
+   "kicker": "A good room at Corbett, November to April",
+   "big": "₹3,650",
+   "sub": "Morning safaris start before dawn in open jeeps. Caps, gloves and a heavy jacket, kids included.",
+   "bg": "photo:Elephants Dhikala Corbett|elephants dhikala"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Corbett* mein *haathiyon* ko",
+    "*kohre se nikalte* dekhna hai?",
+    "To *yahi mausam* hai,",
+    "kyunki *December aur January* ki subahein",
+    "*thandi aur dhundhli* hoti hain."
+   ],
+   [
+    "*November ke beech* tak *Dhikala* samet",
+    "saare zone khul jaate hain,",
+    "*ghaas chhantne* se jaanwar zyada dikhte hain,",
+    "aur December mein *baagh paani ke aaspaas*",
+    "zyada ghoomte hain."
+   ],
+   [
+    "Par *jungle ke andar* Dhikala mein",
+    "*raat rukni* hai,",
+    "to booking *45 din pehle* khulti hai",
+    "aur *weekend pehle* bharte hain,",
+    "isliye *Mangal se Guruvaar* chuniye."
+   ],
+   [
+    "Aur ye mausam *hamesha nahi* rehta,",
+    "kyunki *garmi* mein khuli jeep ki *dopahrein bhaari* padti hain,",
+    "aur *barsaat* mein",
+    "*Dhikala aur Bijrani band* rehte hain."
+   ],
+   [
+    "To *sardi mein* jaaiye,",
+    "ek achha kamra kareeb *₹3,650* ka hai,",
+    "bas subah ki safari *khuli jeep* mein hoti hai,",
+    "to sabke liye",
+    "*topi, dastaane aur jacket* rakhiye."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "taaki Corbett ki *taareekh* tay karte waqt",
+    "*Dhikala ki booking* haath se na nikle."
+   ]
+  ],
+  "en": [
+   [
+    "Want to see *elephants*",
+    "*walk out of the fog* in *Corbett*?",
+    "Then *this is the season*,",
+    "because *December and January* mornings",
+    "are *cold and misty*."
+   ],
+   [
+    "By *mid-November* every zone,",
+    "*Dhikala* included, is open,",
+    "as the *grass thins* you see more animals,",
+    "and in December *tigers* move more",
+    "*around the waterholes*."
+   ],
+   [
+    "But for *a night inside the forest* at Dhikala,",
+    "booking opens *45 days ahead*",
+    "and *weekends fill first*,",
+    "so pick *Tuesday to Thursday*."
+   ],
+   [
+    "And this season *doesn't last*,",
+    "because in *summer* open-jeep *afternoons are punishing*,",
+    "and in the *monsoon*",
+    "*Dhikala and Bijrani are shut*."
+   ],
+   [
+    "So go in *winter*:",
+    "a good room is about *₹3,650*,",
+    "just know the morning safari is in an *open jeep*,",
+    "so for everyone,",
+    "pack *caps, gloves and a jacket*."
+   ],
+   [
+    "*Save this*,",
+    "so when you pick your *Corbett dates*,",
+    "the *Dhikala booking* doesn't slip away."
+   ]
+  ]
+ },
+ "title": "Corbett in winter: elephants out of the fog | NakshIQ",
+ "caption_lead": "Corbett's winter window is open: from mid-November every zone, Dhikala included, is open, December mornings are cold and misty, tigers move more around the waterholes, and in January elephants walk out of the fog. A night inside the park at Dhikala books 45 days ahead and weekends go first, so aim for Tuesday to Thursday; a good room is about ₹3,650 a night. Morning safaris start before dawn in open jeeps, so pack caps, gloves and a heavy jacket for everyone. The window closes with the heat: April and May afternoons are punishing, and Dhikala and Bijrani shut through the monsoon.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 3650
+  }
+ ],
+ "facts": [
+  "reel-data corbett-national-park months.1 5=10/10: 'Peak safari, 5-22°C. Cool misty mornings, elephants emerge from fog. Tiger sightings good in Bijrani and Dhikala zones. Book 45 days ahead for Dhikala.'",
+  "reel-data months.12 5=10/10: 'Excellent 5-22°C. Cold misty mornings give magical atmosphere. Tiger activity increases near waterholes. Elephants in herds.'",
+  "reel-data months.11 5=10/10: 'All zones open, 10-27°C. Full safari season begins. Bijrani, Dhikala, Jhirna, Durga Devi accessible. Wildlife sightings improving as grass thins.'; fact pack months.10 who_should_avoid: Dhikala 'typically doesn't open until November 15'; web check 2026-11-18: Dhikala season 15 November to 15 June (corbettonline, junglenearme)",
+  "why_special: 'Dhikala is the holy grail: grassland inside the park where you stay overnight in forest rest houses'; kids concerns 'Dhikala zone requires overnight stay, basic facilities'",
+  "45 days: months.1 note above; fact pack months.12 who_should_avoid 'Dhikala December weekends require booking exactly 45 days prior'; news check 2026-11-18: ETV Bharat (Oct 2025) quotes Corbett Tiger Reserve director Saket Badola, domestic bookings opened 45 days ahead, foreign 90. The trap_swaps editorial's '90-day-advance booking' is the foreign window; NOT used",
+  "crowd: best_day 'Tue-Thu', avoid_weekends true; fact pack months.11 who_should_avoid 'November Dhikala weekends are the hardest to book'",
+  "reel-data months.4 'Afternoons punishing on open jeeps'; months.5 'Open jeep safaris brutal midday'",
+  "reel-data months.7 'All zones closed for monsoon. Gates locked. Ramganga River floods grasslands.' CORRECTED, not repeated: web check 2026-11-18 (tusktravel, junglenearme, jimcorbett.in) says Jhirna and Dhela stay open through the monsoon while Dhikala and Bijrani close from late June. So the voice says Dhikala and Bijrani shut July to September, never 'the whole park'. The DB also disagrees with itself (crowd 'Park closed Jul-Sep' vs hidden_gems Jhirna 'Open 365 days' vs months.10 'Jhirna zone reopens mid-Oct'); needs a correction through the approval queue",
+  "costs corbett-national-park hotel-mid peak (months 11, 12, 1, 2, 3, 4) typical 3650",
+  "kids concerns '4:30 AM wake-up for morning safari'; fact pack months.12 who_should_avoid 'Cold-averse travellers: 4°C morning safaris in open jeeps are not optional'",
+  "clips: hero (misty forest stream at sunrise) under the fog hook; two_months__s1 (frosty grassland, jeeps in mist) under the December line; two_months__s2 (monsoon, swollen muddy river) only under the July to September line. Photos checked 2026-11-18: 'Morning Mist Dhikala Corbett Reserve Dec2019' and 'Elephants Grass Sal Dhikala Corbett Reserve Dec2019'",
+  "NOT used: fact pack months.12 'December is peak pricing at ₹8000-25000 per night' (contradicts the ledger's 3,650; that range is quality lodges); 'Best month for Dhikala experience' (months.2 also says 'Best month'); 'oldest national park', 'most reliable tiger density outside Ranthambore', Simlipal 'found nowhere else on Earth' (superlatives); months.2 '40-60% odds'; hidden_gems Sitabani, Jhirna, Kaladhungi (another series); every eatery (series is window)"
+ ],
+ "spoken_numbers": [
+  "पैंतालीस (45 days ahead, Dhikala booking)",
+  "साढ़े छत्तीस सौ (₹3,650 hotel-mid, November to April)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Morning mist Dhikala Corbett|mist dhikala reserve",
+  "hook": "Elephants out of|*the winter fog?*"
+ },
+ "revisions": [
+  "2026-11-18 Claude review: line 4 'July to September' implied an October reopening (Dhikala reopens mid-November): voice and card now say 'the monsoon'"
+ ],
+ "music": "uplifting-reaching-out-187",
+ "music_start": 0
+}

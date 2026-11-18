@@ -1,0 +1,167 @@
+{
+ "id": "pushkar__hidden_gems",
+ "slug": "pushkar",
+ "format": "hidden_gems",
+ "series": "hidden_gems",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft (replaces the dropped pushkar__swap draft, per review)",
+ "vo": {
+  "hi": [
+   "पुष्कर के घाट पर कोई हाथ में फूल रखकर पूजा करवाने लगे, तो पहले ही विनम्रता से मना कीजिए, क्योंकि बाद में मोटी दक्षिणा माँगी जाती है।",
+   "और घाट के ऊपर पहाड़ी पर सावित्री मंदिर है, जिसकी कथा कहती है कि उन्हीं के श्राप से ब्रह्मा जी की पूजा लगभग सिर्फ़ पुष्कर में होती है।",
+   "सूर्योदय के लिए यहाँ पैदल चढ़ने की परंपरा है, और दिसंबर में ऊपर से सुबह का नज़ारा बहुत साफ़ मिलता है, बाक़ी वक़्त रोपवे भी है।",
+   "फिर ब्रह्मा मंदिर के रास्ते में पुराने रंगजी मंदिर का गोपुरम दक्षिण भारत जैसा है, क्योंकि इसे हैदराबाद के एक मारवाड़ी सेठ ने बनवाया, पर लोग इसे बस गेट समझकर निकल जाते हैं।",
+   "दिसंबर में झील शांत रहती है पर सुबहें ठंडी, तो गरम कपड़े रखिए, अच्छा कमरा साढ़े चौबीस सौ के आसपास है, बस वीकेंड पहले बुक कीजिए।",
+   "सावित्री मंदिर तक आप पैदल चढ़ेंगे या रोपवे लेंगे? कमेंट में बताइए।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:pushkar__two_months__s1.mp4",
+   "hook": "A flower on <em>Pushkar's ghat</em>,<br>then a bill?"
+  },
+  {
+   "kicker": "Up the hill",
+   "lines": [
+    "<em>Savitri Temple</em>, Ratnagiri hill",
+    "The legend: her curse keeps Brahma's worship almost only here",
+    "Climb it, or take the ropeway"
+   ],
+   "bg": "photo:Savitri Temple Pushkar|savitri"
+  },
+  {
+   "kicker": "At sunrise",
+   "big": "Walk up",
+   "sub": "The sunrise climb is the old way up. Clear winter light in December. A ropeway runs too.",
+   "bg": "clip:pushkar__hero.mp4"
+  },
+  {
+   "kicker": "Most people walk past",
+   "lines": [
+    "<em>Old Rangji Temple</em>",
+    "A South Indian gopuram in Rajasthan",
+    "Built by a Marwari merchant from Hyderabad",
+    "On the way to the Brahma Temple"
+   ],
+   "bg": "photo:Old Rangji Temple Pushkar|rangji"
+  },
+  {
+   "kicker": "Go in",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "8 to 22°C, a calm lake, cold mornings: pack warm layers. A good room about ₹2,450. Book weekends early.",
+   "bg": "photo:Pushkar Lake|pushkar lake"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "*Pushkar* ke ghat par koi",
+    "haath mein *phool rakhkar puja* karwaane lage,",
+    "to pehle hi *vinamrata se mana* kijiye,",
+    "kyunki baad mein *moti dakshina* maangi jaati hai."
+   ],
+   [
+    "Aur ghat ke upar pahaadi par *Savitri mandir* hai,",
+    "jiski *katha* kehti hai ki unhi ke *shraap* se",
+    "*Brahma ji ki puja* lagbhag sirf Pushkar mein hoti hai."
+   ],
+   [
+    "*Sooryoday* ke liye yahan *paidal chadhne* ki parampara hai,",
+    "aur *December* mein upar se subah ka nazaara",
+    "*bahut saaf* milta hai,",
+    "baaki waqt *ropeway* bhi hai."
+   ],
+   [
+    "Phir Brahma mandir ke raaste mein",
+    "purane *Rangji mandir* ka gopuram *Dakshin Bharat* jaisa hai,",
+    "kyunki ise *Hyderabad ke ek Marwari seth* ne banwaaya,",
+    "par log ise *bas gate* samajhkar nikal jaate hain."
+   ],
+   [
+    "*December* mein jheel *shaant* rehti hai",
+    "par subahein *thandi*, to garam kapde rakhiye,",
+    "achha kamra *₹2,450* ke aaspaas hai,",
+    "bas *weekend pehle book* kijiye."
+   ],
+   [
+    "Savitri mandir tak aap *paidal chadhenge*",
+    "ya *ropeway* lenge?",
+    "*Comment* mein bataiye."
+   ]
+  ],
+  "en": [
+   [
+    "If someone on *Pushkar's ghats*",
+    "puts *flowers in your hand* and starts a puja,",
+    "*politely say no* right away,",
+    "because a *big donation* is demanded after."
+   ],
+   [
+    "And on the hill above the ghats is *Savitri Temple*,",
+    "whose *legend* says it's her *curse*",
+    "that keeps *Brahma's worship* almost only in Pushkar."
+   ],
+   [
+    "The tradition is to *walk up* for *sunrise*,",
+    "and in *December* the morning view from the top",
+    "is *very clear*,",
+    "with a *ropeway* for the rest of the day."
+   ],
+   [
+    "Then on the way to the Brahma Temple,",
+    "the *Old Rangji Temple* has a *South Indian* gopuram,",
+    "because a *Marwari merchant from Hyderabad* built it,",
+    "but people walk past it as *just a gate*."
+   ],
+   [
+    "In *December* the lake is *calm*",
+    "but mornings are *cold*, so pack warm clothes,",
+    "and a good room is about *₹2,450*,",
+    "just *book weekends early*."
+   ],
+   [
+    "Will you *climb* to Savitri Temple",
+    "or take the *ropeway*?",
+    "Tell us in the *comments*."
+   ]
+  ]
+ },
+ "title": "A flower on Pushkar's ghat, then a bill? | NakshIQ",
+ "caption_lead": "On Pushkar's ghats, if someone puts flowers in your hand and starts a puja, politely say no at once: a big donation demand follows. On Ratnagiri hill above the lake, Savitri Temple holds the legend of why Brahma is worshipped almost only in Pushkar; the sunrise climb is the old way up, and a ropeway runs too. On the way to the Brahma Temple, most people walk past the Old Rangji Temple, whose South Indian gopuram was built by a Marwari merchant from Hyderabad. December brings a calm lake and cold mornings (8 to 22°C), a good room is about ₹2,450 a night, and weekends book up, so reserve early.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 2450
+  }
+ ],
+ "facts": [
+  "flower beat: trap_swaps pushkar pain_points 'Sadhu touts at ghats run a temporary blessing scam, apply rose petals, then demand ₹2,000+ for prasad' and 'sadhus may demand ₹500 temple donation after blessing'; common_complaints 'Got blessed with rose petals, then chased for ₹2,000.'; kids.concerns 'Aggressive priests at ghats'. Voiced neutrally as 'someone', with no rupee figure (not destination_costs; cost_gate would hold it)",
+  "gem Savitri Temple: why_unknown 'The Brahma Temple gets the full pilgrim traffic; Savitri's hilltop shrine reads as a sunrise-viewpoint tick, without the curse story, the visit lands as a hike'; why_go 'Savitri arrived to find Gayatri in her place and cursed Brahma to be never worshipped, then softened it to allow worship only at Pushkar ... Savitri retreated up Ratnagiri hill ... Her temple sits on the highest hill in Pushkar ... Ropeway from 2017 ... sunrise climb is the traditional way'. Voiced as 'the legend says' and 'almost only in Pushkar', because why_special itself says 'One of very few Brahma temples in the world'",
+  "months.12 score 5 = 10/10; who_should_go 'Savitri Temple trekkers, best winter light and visibility' (voiced modestly as 'very clear', not 'best'); kids.kid_highlights 'Savitri Temple ropeway'; persona elderly 'Savitri Temple ropeway available'",
+  "news check 2026-11-18 (web): step counts for Savitri Temple disagree (pack's 650 steps vs Wikipedia's about 970, others 200 to 1,000) and ropeway ride times disagree (pack 10 minutes, travel blogs about 5), so neither is spoken or carded. Blogs say the ropeway opens around 8 am, which fits the pack's 'sunrise climb is the traditional way'",
+  "gem Old Rangji Temple: why_unknown 'Most travellers walk past the Rangji gopuram on the way to the Brahma Temple and read it as just another temple gate'; why_go 'Seth Puranmal Ganeriwala, a Marwari merchant patron from Hyderabad ... The towering gopuram (a defining feature of South Indian temple architecture)'. News check 2026-11-18: most sites and the Commons file titles ('Old Rangji temple, built in 1823 in Pushkar') say 1823, the pack and two sites say 1844, so no year is spoken or carded",
+  "reel-data pushkar months.12 5=10/10 'Peak winter 8-22°C. Cool desert nights, warm sunny days. Lake beautiful. Cafes lively. Book weekend stays.'; fact pack months.12 'a calm lake ideal for photography', who_should_avoid 'desert winter is cold (5-8°C mornings)', 'Travellers without warm clothing, nights are genuinely cold'",
+  "costs hotel-mid peak (months 11,12,1,2) typical_inr 2450 = साढ़े चौबीस सौ (fact pack and reel-data agree)",
+  "NOT used: the Ajmer swap, the Urs and the dargah (dropped on review: weak advice for most viewers, communal-comment risk, Urs dates only on devotee sites); Old Rangji 'the only Dravidian-style temple in the entire Rajasthan-Marwar belt' and 'standout Dravidian-style monument north of the Narmada' (superlatives I could not check); Savitri 'essentially one Brahma temple in India' (overstated, why_special says 'very few'); the Camel Fair trader-collapse gem and its 'Kartik Purnima Nov 24, 2026' date (the fair is over by the post date, and the reel states no lunar date); trap editorial_verdict 'tourist-trap loop disguised as spirituality' and the no-meat and no-alcohol complaints (opinion, and disrespectful to a pilgrim town); 'Hotel rates 5× during Camel Fair week'; eateries (no business names); food costs",
+  "PICTURE NOTE: scene 1 pushkar__two_months__s1.mp4 (crowded ghats with pilgrims) under the ghat line; scene 3 pushkar__hero.mp4 (sunrise over the lake, birds) under the sunrise line; NOT two_months__s2. Photos checked on Commons 2026-11-18: 'savitri' 6 files (incl. views of Pushkar from Savitri Temple, Dec 2019), 'rangji' 3 files (Old Rangji temple series), 'pushkar lake' 5 files; each scene draws from a different pool"
+ ],
+ "spoken_numbers": [
+  "साढ़े चौबीस सौ (₹2,450 hotel-mid, December)"
+ ],
+ "cover": {
+  "style": "C",
+  "top": "clip:pushkar__two_months__s1.mp4",
+  "top_label": "THE GHATS",
+  "bottom": "photo:Savitri Temple Pushkar|savitri",
+  "bottom_label": "THE HILL ABOVE",
+  "hook": "A flower on the ghat,|*then a bill?*"
+ },
+ "music": "uplifting-happy-times-1030",
+ "music_start": 0
+}

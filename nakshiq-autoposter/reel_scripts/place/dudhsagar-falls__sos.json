@@ -1,0 +1,181 @@
+{
+ "id": "dudhsagar-falls__sos",
+ "slug": "dudhsagar-falls",
+ "format": "sos",
+ "series": "sos",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "दिसंबर में दूधसागर जा रहे हैं? तो जीप पकड़ने से पहले ये बातें जान लीजिए।",
+   "पहली, झरने पर कोई सुविधा नहीं है, और नज़दीकी अस्पताल क़रीब पैंतीस किलोमीटर दूर है, तो फ़र्स्ट एड, दवाइयाँ, पानी और खाना साथ रखिए।",
+   "दूसरी, कुलेम में नेटवर्क मिलता है, पर जंगल के रास्ते पर सिग्नल आता जाता है, तो ज़रूरी कॉल वहीं से कर लीजिए।",
+   "तीसरी, झरने के पास चट्टानें फिसलन भरी हैं और नीचे के कुंड में धारा तेज़ है, तो कुंड में मत उतरिए, और ऊबड़ खाबड़ जीप का सफ़र छोटे बच्चों के लिए ठीक नहीं।",
+   "और जून से सितंबर मत आइए, क्योंकि बरसात में जीप का रास्ता बंद रहता है और पैदल रास्ते ख़तरनाक हो जाते हैं।",
+   "पर दिसंबर में मौसम सूखा है और झरने में पानी अच्छा रहता है, बस क्रिसमस से नए साल तक जीप की लंबी लाइन लगती है, तो हफ़्ते के बीच में जाइए।",
+   "इसे सेव कर लीजिए, ताकि जीप में बैठने से पहले सब याद रहे।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "clip:dudhsagar-falls__two_months__s1.mp4",
+   "hook": "Slip on <em>Dudhsagar</em>'s rocks?<br>Know this first."
+  },
+  {
+   "kicker": "1 · Hospital",
+   "big": "~35 km",
+   "line": "to the nearest hospital",
+   "sub": "No facilities at the falls. Carry first aid, your medicines, 2 litres of water and lunch.",
+   "bg": "photo:Dudhsagar waterfall|dudhsagar waterfall"
+  },
+  {
+   "kicker": "2 · Signal",
+   "big": "Patchy",
+   "line": "4G at Kulem, patchy on the forest trail",
+   "sub": "Make your important calls before you set off.",
+   "bg": "photo:Dudhsagar Falls walk|dudhsagar walk"
+  },
+  {
+   "kicker": "3 · At the falls",
+   "big": "Slippery rocks",
+   "line": "Strong current in the base pool",
+   "sub": "Don't get into the pool. The jeep ride is rough: not for small kids (8 and up only).",
+   "bg": "photo:Dudhsagar Falls lower portion|dudhsagar lower"
+  },
+  {
+   "kicker": "Skip",
+   "big": "June to September",
+   "line": "NakshIQ score <em>2/10</em>",
+   "sub": "Jeep road shut for the monsoon, footpaths unsafe. Reopens in October.",
+   "bg": "clip:dudhsagar-falls__two_months__s2.mp4"
+  },
+  {
+   "kicker": "Go in",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "16 to 28°C, dry, the falls still running strong. Christmas to New Year jeep queues run 90 minutes and more: go midweek.",
+   "bg": "photo:Dudhsagar train|dudhsagar train"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "December mein *Dudhsagar* ja rahe hain?",
+    "To *jeep* pakadne se pehle",
+    "ye baatein *jaan lijiye*."
+   ],
+   [
+    "Pehli, jharne par *koi suvidha nahi* hai,",
+    "aur nazdeeki *aspataal* qareeb *35 km* door hai,",
+    "to *first aid*, dawaiyan, paani aur khaana saath rakhiye."
+   ],
+   [
+    "Doosri, *Kulem* mein network milta hai,",
+    "par jungle ke raaste par *signal aata jaata* hai,",
+    "to *zaroori call* wahin se kar lijiye."
+   ],
+   [
+    "Teesri, jharne ke paas *chattaanein fisalan* bhari hain",
+    "aur neeche ke kund mein *dhaara tez* hai,",
+    "to *kund mein mat utariye*,",
+    "aur oobad khaabad jeep ka safar",
+    "*chhote bachchon* ke liye theek nahi."
+   ],
+   [
+    "Aur *June se September* mat aaiye,",
+    "kyunki baarish mein *jeep ka raasta band* rehta hai",
+    "aur paidal raaste *khatarnaak* ho jaate hain."
+   ],
+   [
+    "Par *December* mein mausam *sookha* hai",
+    "aur jharne mein *paani achchha* rehta hai,",
+    "bas *Christmas se naye saal* tak",
+    "jeep ki *lambi line* lagti hai,",
+    "to *hafte ke beech* mein jaaiye."
+   ],
+   [
+    "Ise *save* kar lijiye,",
+    "taaki *jeep mein baithne* se pehle",
+    "sab yaad rahe."
+   ]
+  ],
+  "en": [
+   [
+    "Going to *Dudhsagar* in December?",
+    "Before you catch the *jeep*,",
+    "*know this*."
+   ],
+   [
+    "One: there are *no facilities* at the falls,",
+    "and the nearest *hospital* is about *35 km* away,",
+    "so carry *first aid*, medicines, water and food."
+   ],
+   [
+    "Two: *Kulem* has network,",
+    "but on the forest trail the *signal comes and goes*,",
+    "so make *important calls* from there."
+   ],
+   [
+    "Three: the *rocks* by the falls are *slippery*",
+    "and the pool below has a *strong current*,",
+    "so *don't get into the pool*,",
+    "and the bumpy jeep ride",
+    "is not for *small kids*."
+   ],
+   [
+    "And don't come *June to September*,",
+    "because in the monsoon the *jeep road is shut*",
+    "and the footpaths turn *dangerous*."
+   ],
+   [
+    "But *December* is *dry*",
+    "and the falls still run *strong*,",
+    "just know from *Christmas to New Year*",
+    "the *jeep queue* is long,",
+    "so go *midweek*."
+   ],
+   [
+    "*Save this*",
+    "so you remember it all",
+    "*before you board the jeep*."
+   ]
+  ]
+ },
+ "title": "Slip on Dudhsagar's rocks? Know this first | NakshIQ",
+ "caption_lead": "Going to Dudhsagar in December? There are no facilities at the falls and the nearest hospital is about 35 km away, so carry first aid, your medicines, 2 litres of water and lunch; the phone signal works at Kulem but comes and goes on the forest trail. The rocks by the falls are slippery, the base pool has a strong current, so stay out of it, and the rough jeep ride is not for small kids. December is dry with the falls still running strong, but Christmas to New Year jeep queues can run past 90 minutes, so go midweek, and skip June to September, when the jeep road is shut.",
+ "cost_basis": [],
+ "facts": [
+  "emergency.nearest_hospital 'Sub-District Hospital, Ponda', km 35, nameable false: neither the hospital nor its town is named, in voice, cards or caption; voiced as 'नज़दीकी अस्पताल'. The pack does not say whether 35 km is measured from the falls or from Collem, so the voice says only 'about 35 km away'",
+  "kids.concerns: 'No facilities at the falls', 'Bumpy jeep ride, not for small kids', 'Strong pool currents'; food_scene.note 'Carry 2L water minimum, snacks, and packed lunch', family_dining 'none at falls'",
+  "treks[0].network_coverage: '4G at Kulem; patchy on trail.'; treks[0].warnings 'Slippery rocks near falls', 'Strong current at base pool', 'Jeep track only, no private vehicles'",
+  "kids.min_recommended_age 8; not_suitable_reason 'Suitable for adventurous kids 8+. The jeep ride is rough with river crossings. Not for toddlers' (card: '8 and up only'); persona elderly 'CAUTION, jeep bumpy'",
+  "reel-data months.6 to 9 score 1 = 2/10 skip: 6 'JEEP CLOSURE STARTS JUN 1', 7 and 8 'JEEP CLOSED', 9 'Closure lifts Oct 1'; fact pack months.7 'Monsoon rains make both access routes dangerously impassable', months.8 'trek impassable and viewing platforms unsafe'",
+  "months.12 score 5 = 10/10 'Go in December, water flow is strong, crowds are manageable on weekdays'; reel-data months.12 'Peak season. 16-28C, dry, flow strong. Christmas-NY drives jeep ticket queues 90+ min'; crowd_calendar best_day 'Weekday', avoid_weekends true, 'Weekends can have 50+ jeep queue at Collem'",
+  "news check 2026-11-18 (web; booking and status sites, not a Forest Department notice): the Collem jeep safari reopened for 2026-27 in early October (about 4 Oct), Forest Department jeeps only, life jacket compulsory, railway-track trekking banned. It supports 'reopens in October' and the caution at the pool; nothing new was added to the voice from it",
+  "NOT used: the trek block's 'Panaji Civil Hospital (60km); Margao District Hospital (50km)' (disagrees with the emergency block); fact pack months.6 'jeep road closes mid-June' vs reel-data 'Jun 1' (the voice says only June to September, which both cover); hidden gems' railway-viaduct walk ('police look away unless a train is due') and the Castle Rock rail-track trek: walking the line is unsafe and reported banned, never recommended; 'India 4th tallest' and 'one of India's most spectacular' (superlatives, not this reel's point); months.1 'the pool is swimmable' (kids.concerns and the trek warnings say strong current); eatery 'cash only' tips (business details); 'Konkan Railway' (the line past the falls is the Londa to Vasco line)",
+  "PICTURE NOTE: scene 1 clip s1 (wide falls with the rail bridge) and scene 5 clip s2 (falls in monsoon rain) per the 2026-11-18 eyeball notes; hero not used. Photo must-words chosen so each scene draws from a different Commons pool (checked 2026-11-18: 'waterfall' 14 files, 'walk' 40, 'lower' 1 'Dudhsagar Falls lower portion.JPG', 'train' 3)"
+ ],
+ "spoken_numbers": [
+  "पैंतीस (35 km)"
+ ],
+ "cover": {
+  "style": "B",
+  "image": "photo:Dudhsagar train|dudhsagar train",
+  "line": "Hurt at Dudhsagar falls?",
+  "stamp": "35 KM",
+  "focus": [
+   0.5,
+   0.5
+  ]
+ },
+ "revisions": [
+  "2026-11-18 Claude review: line 4 'stay near the edge' read as dangerous advice -> 'don't get into the pool'; line 6 'full flow' -> 'still run strong' (pack: 'water flow is strong')",
+  "2026-11-18 Claude eyeball: cards and caption still said 'stay near the edge' / 'full flow' after the voice changed; matched to the voice"
+ ],
+ "music": "cinematic-rising-sun-892",
+ "music_start": 0
+}

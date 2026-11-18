@@ -1,0 +1,183 @@
+{
+ "id": "ahmedabad__eat_here",
+ "slug": "ahmedabad",
+ "format": "eat_here",
+ "series": "eat_here",
+ "status": "approved",
+ "month": 12,
+ "origin": "Claude, 2026-11-18, batch 6 draft",
+ "vo": {
+  "hi": [
+   "अहमदाबाद का माणेक चौक सुबह सब्ज़ी मंडी होता है, दोपहर में सोने-चाँदी का बाज़ार और रात में खाने का, तो यहाँ खाने में फ़र्क़ इससे पड़ता है कि आप कब पहुँचते हैं।",
+   "सुबह खमण से शुरू कीजिए, पर उसी सुबह का लीजिए, क्योंकि इसमें प्रिज़र्वेटिव नहीं डलते और अगले दिन तक नरमी चली जाती है, और तीखा टमटम खमण भी माँगिए।",
+   "दोपहर में एलिस ब्रिज की तरफ़ काठियावाड़ी थाली खाइए, जो गुजराती थाली से कम मीठी और ज़्यादा तीखी है, पर बारह बजे तक पहुँचिए, क्योंकि फिर लाइन लगने लगती है।",
+   "और रात को माणेक चौक साढ़े नौ के बाद जाइए, जब सारे ठेले लग जाते हैं, और यहीं जन्मा घोटाला डोसा खाइए।",
+   "दिसंबर ठंडा और साफ़ रहता है, पोल की गलियों में घूमने के लिए एकदम सही, पर पीक सीज़न है, अच्छा कमरा करीब इक्यावन सौ पचास का है, तो पहले बुक कीजिए।",
+   "ये उसे भेजिए जो कहता है कि अहमदाबाद में खाने को बस ढोकला है।"
+  ]
+ },
+ "scenes": [
+  {
+   "bg": "photo:Manek Chowk Ahmedabad|manek",
+   "hook": "A gold market that<br>serves <em>dinner at night?</em>"
+  },
+  {
+   "kicker": "Morning: khaman",
+   "lines": [
+    "<em>Das Khaman</em>, since 1922",
+    "Surti khaman: soft, a little sour",
+    "No preservatives: buy it that morning",
+    "Ask for tamtam, the spicier one locals order"
+   ],
+   "bg": "photo:Khaman|khaman"
+  },
+  {
+   "kicker": "Lunch: Kathiyawadi thali",
+   "lines": [
+    "<em>Gopi Dining Hall</em>, since 1979",
+    "Ellis Bridge",
+    "Less sweet, more heat than a Gujarati thali",
+    "Queue from 12.45 pm: go at 12 or after 2"
+   ],
+   "bg": "photo:Gujarati thali|gujarati thali"
+  },
+  {
+   "kicker": "Night: Manek Chowk",
+   "lines": [
+    "Stalls fully open from <em>9.30 pm</em>",
+    "Ghotala dosa: invented here",
+    "<em>Bastiram</em> kulfi, running since 1947",
+    "Skip the Indo-Chinese carts; carry small notes"
+   ],
+   "bg": "clip:ahmedabad__hero.mp4@3"
+  },
+  {
+   "kicker": "Go in",
+   "big": "December",
+   "line": "NakshIQ score <em>10/10</em>",
+   "sub": "Cool, clear skies, right for the pol lanes. Peak season: a good room about ₹5,150 a night, so book early.",
+   "bg": "photo:Ahmedabad pol house|pol"
+  },
+  {
+   "bg": "end"
+  }
+ ],
+ "subs": {
+  "hinglish": [
+   [
+    "Ahmedabad ka *Manek Chowk*",
+    "subah *sabzi mandi* hota hai,",
+    "dopahar mein *sone-chaandi ka bazaar*",
+    "aur raat mein *khaane ka*,",
+    "to yahan khaane mein farq isse padta hai",
+    "ki aap *kab pahunchte* hain."
+   ],
+   [
+    "*Subah khaman* se shuru kijiye,",
+    "par *usi subah ka* lijiye,",
+    "kyunki ismein *preservative nahi* dalte",
+    "aur agle din tak *narmi chali* jaati hai,",
+    "aur teekha *tamtam khaman* bhi maangiye."
+   ],
+   [
+    "*Dopahar* mein Ellis Bridge ki taraf",
+    "*Kathiyawadi thali* khaaiye,",
+    "jo Gujarati thali se *kam meethi aur zyada teekhi* hai,",
+    "par *12 baje tak* pahunchiye,",
+    "kyunki phir *line* lagne lagti hai."
+   ],
+   [
+    "Aur *raat* ko Manek Chowk",
+    "*9:30 ke baad* jaaiye,",
+    "jab saare *thele lag* jaate hain,",
+    "aur yahin janma *ghotala dosa* khaaiye."
+   ],
+   [
+    "*December* *thanda aur saaf* rehta hai,",
+    "*pol ki galiyon* mein ghoomne ke liye ekdam sahi,",
+    "par *peak season* hai,",
+    "achha kamra kareeb *₹5,150* ka hai,",
+    "to *pehle book* kijiye."
+   ],
+   [
+    "Ye usse *bhejiye*",
+    "jo kehta hai ki Ahmedabad mein",
+    "khaane ko *bas dhokla* hai."
+   ]
+  ],
+  "en": [
+   [
+    "Ahmedabad's *Manek Chowk*",
+    "is a *vegetable market* in the morning,",
+    "a *gold and silver market* by afternoon",
+    "and a *food market* at night,",
+    "so what you eat here depends",
+    "on *when you show up*."
+   ],
+   [
+    "Start the *morning with khaman*,",
+    "but buy it *that same morning*,",
+    "because there are *no preservatives*",
+    "and by the next day it *loses its softness*,",
+    "and ask for the spicy *tamtam khaman* too."
+   ],
+   [
+    "At *lunch*, near Ellis Bridge,",
+    "eat a *Kathiyawadi thali*,",
+    "*less sweet and spicier* than a Gujarati thali,",
+    "but get there *by 12*,",
+    "because then the *queue* starts."
+   ],
+   [
+    "And at *night*, go to Manek Chowk",
+    "*after 9.30*,",
+    "when *every stall is set up*,",
+    "and eat the *ghotala dosa* that was born here."
+   ],
+   [
+    "*December* is *cool and clear*,",
+    "just right for the *pol lanes*,",
+    "but it's *peak season*:",
+    "a good room is about *₹5,150*,",
+    "so *book early*."
+   ],
+   [
+    "*Send this* to whoever",
+    "says the only food",
+    "in Ahmedabad is *dhokla*."
+   ]
+  ]
+ },
+ "title": "Ahmedabad's gold market that serves dinner at night | NakshIQ",
+ "caption_lead": "In Ahmedabad, when you show up decides what you eat: Manek Chowk is a vegetable market in the morning, a gold and silver market by afternoon and a food market at night. Morning: Das Khaman's Surti khaman, bought the same morning because there are no preservatives, and ask for the spicier tamtam; lunch: the Kathiyawadi thali at Gopi Dining Hall near Ellis Bridge, at 12 or after 2 to miss the queue. Night: Manek Chowk after 9.30 pm, when every stall is open, for the ghotala dosa invented there and Bastiram's kulfi. December is cool and clear, right for the pol walks, but it is peak season: a good room is about ₹5,150 a night, so book early.",
+ "cost_basis": [
+  {
+   "category": "hotel-mid",
+   "season": "peak",
+   "value": 5150
+  }
+ ],
+ "facts": [
+  "eatery Manek Chowk Night Market, Old City: why_it_matters 'City square that's a vegetable market by morning, bullion market by noon, and 100+ food stalls from 9:30pm to 2am ... The ghotala dosa is a Manek Chowk original, invented here, copied everywhere'; 'Bastiram's kulfi stall has run since 1947'; insider_tip 'Stalls don't fully open till 9:30pm; arriving at 8pm is too early ... Skip the Indian-Chinese carts ... Carry small notes; few stalls take UPI'",
+  "news check 2026-11-18: Manek Chowk's food market was shut 5 Mar to 7 Apr 2025 for drainage work and then reopened (DeshGujarat, Gujarat Samachar); 2026 guides describe it running nightly. An AMC 'happy street' redevelopment is promised with no start date found, so a temporary closure could recur; worth a look before this posts",
+  "eatery Das Khaman, Raipur Darwaja / Astodia, est 1922: 'the Surti khaman variant, softer, more sour'; insider_tip 'Buy the same morning you'll eat it, Das Khaman doesn't add preservatives and the texture goes off by next day ... Tamtam khaman is the under-ordered one, spicier, only locals ask for it'",
+  "eatery Gopi Dining Hall, Ellis Bridge, est 1979: 'The Kathiyawadi thali (spicier, less sweet than mainland Gujarati) is the order most Amdavadis come here for'; insider_tip 'Lunch is the better meal ... Queue forms from 12:45pm; go at 12 or after 2pm'",
+  "reel-data ahmedabad months.12 5=10/10 'Best month, cool, festive, clear skies'; pack months.12 'December is Ahmedabad's gold-standard heritage month'; who_should_avoid 'Visitors who can't book 8 weeks ahead at peak rates'; voiced modestly as 'just right for the pol lanes', no superlative",
+  "destination_costs ahmedabad hotel-mid peak (months 11,12,1,2) typical_inr 5150 = इक्यावन सौ पचास",
+  "no food prices anywhere (eatery price_per_head NOT used); eatery names (Das Khaman, Gopi Dining Hall, Bastiram) on cards and caption only; the voice names only places (Manek Chowk, Ellis Bridge) and dishes",
+  "NOT used: Bhatiyar Gali (strong, but a second after-9 pm stop would break the morning, noon, night run; its 'cooks of Ahmed Shah's royal kitchen in 1411' story is unverified legend); Agashiye and Honest (no timing tip that fits); 'India's first UNESCO World Heritage City' (true, not needed); 'world-famous Manek Chowk night market' (superlative); Gopi's aam ras (summer only)",
+  "PICTURE NOTE, checked 2026-11-18 with the renderer's title rules: hook -> 'Manek Chowk (Ahmedabad) 01.jpg' (the square at night with stalls); khaman -> 'Khaman Dhokla-Gujarthi Dish.JPG'; thali -> 'Gujarati Thali with Rotlo, Kadhi, Olo, Gol.jpg' (bajra rotlo and olo, a Kathiyawadi-style plate); December -> 'Desai ni Pol Ahmedabad (19).jpg'. The clip ahmedabad__hero.mp4 starts @3, past the riverfront opening, on the crowded night market under string lights; that line is 99 characters, under the 115 limit"
+ ],
+ "spoken_numbers": [
+  "बारह (12 noon)",
+  "साढ़े नौ (9.30 pm)",
+  "इक्यावन सौ पचास (₹5,150 hotel-mid, December)"
+ ],
+ "cover": {
+  "style": "A",
+  "image": "photo:Manek Chowk Ahmedabad|manek",
+  "hook": "A gold market that|*serves dinner at night?*"
+ },
+ "music": "travel-just-keep-walking-339",
+ "music_start": 33
+}
