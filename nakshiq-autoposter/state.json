@@ -36,16 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-17",
-    "PdMu0_evening": "2026-11-17",
+    "PdMu0": "2026-11-18",
+    "PdMu0_evening": "2026-11-18",
     "PdMu0_carousel": "2026-11-17"
   },
-  "last_sync": "2026-11-17T22:35:10.938864+00:00",
+  "last_sync": "2026-11-18T16:00:29.447715+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "marari",
-      "date": "2026-11-03"
-    },
     {
       "destination_id": "kumarakom",
       "date": "2026-11-04"
@@ -165,6 +161,26 @@
     {
       "destination_id": "tirthan-valley",
       "date": "2026-11-17"
+    },
+    {
+      "destination_id": "marari",
+      "date": "2026-11-18"
+    },
+    {
+      "destination_id": "mysore",
+      "date": "2026-11-18"
+    },
+    {
+      "destination_id": "bengaluru",
+      "date": "2026-11-18"
+    },
+    {
+      "destination_id": "mumbai",
+      "date": "2026-11-18"
+    },
+    {
+      "destination_id": "puri",
+      "date": "2026-11-18"
     }
   ],
   "posted_formats": {
@@ -192,7 +208,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "emergency_intel",
       "score_card",
       "data_carousel",
       "score_card",
@@ -212,7 +227,8 @@
       "score_card",
       "collection_series",
       "score_card",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -12295,6 +12311,44 @@
       "destination": "tirthan-valley",
       "format": "carousel.food",
       "media_id": "carousel_food_2026-11-17"
+    },
+    {
+      "timestamp": "2026-11-18T07:36:02.067629+00:00",
+      "date": "2026-11-18",
+      "platform": "youtube",
+      "post_id": "cMp06",
+      "destination": "konaseema",
+      "format": "scenario_guide",
+      "media_id": "jsafF"
+    },
+    {
+      "timestamp": "2026-11-18T14:36:51.518475+00:00",
+      "date": "2026-11-18",
+      "platform": "instagram",
+      "post_id": "JH5Fr",
+      "destination": "leh",
+      "format": "scenario_skip",
+      "media_id": "5TPdN"
+    },
+    {
+      "timestamp": "2026-11-18T14:37:34.879849+00:00",
+      "date": "2026-11-18",
+      "platform": "youtube",
+      "post_id": "ysYpN",
+      "destination": "leh",
+      "format": "scenario_skip",
+      "media_id": "IKYo7"
+    },
+    {
+      "timestamp": "2026-11-18T16:01:59.210594+00:00",
+      "date": "2026-11-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "8K9dd",
+      "destination": "marari",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -12323,7 +12377,8 @@
         "2026-05-20",
         "2026-05-26",
         "2026-08-27",
-        "2026-10-15"
+        "2026-10-15",
+        "2026-11-18"
       ],
       "chennai": [
         "2026-05-20",
@@ -12376,7 +12431,8 @@
         "2026-06-07",
         "2026-10-01",
         "2026-10-15",
-        "2026-10-19"
+        "2026-10-19",
+        "2026-11-18"
       ],
       "jibhi": [
         "2026-05-25",
@@ -12556,14 +12612,6 @@
         "2026-08-28",
         "2026-08-31"
       ],
-      "khardung-la": [
-        "2026-07-01",
-        "2026-07-06",
-        "2026-07-17",
-        "2026-07-21",
-        "2026-08-10",
-        "2026-08-19"
-      ],
       "khandala": [
         "2026-07-04",
         "2026-07-18",
@@ -12637,7 +12685,8 @@
         "2026-09-06"
       ],
       "mysore": [
-        "2026-09-06"
+        "2026-09-06",
+        "2026-11-18"
       ],
       "kinnaur": [
         "2026-09-06"
@@ -12674,7 +12723,8 @@
         "2026-10-24"
       ],
       "bengaluru": [
-        "2026-10-03"
+        "2026-10-03",
+        "2026-11-18"
       ],
       "rudraprayag": [
         "2026-10-04"
@@ -12759,6 +12809,9 @@
       ],
       "kumarakom": [
         "2026-11-17"
+      ],
+      "marari": [
+        "2026-11-18"
       ]
     },
     "morning_formats": {
@@ -13001,7 +13054,8 @@
         "2026-10-17",
         "2026-10-25",
         "2026-11-02",
-        "2026-11-10"
+        "2026-11-10",
+        "2026-11-18"
       ],
       "tourist_trap": [
         "2026-09-01",
@@ -13107,11 +13161,6 @@
         "2026-07-18",
         "2026-08-09",
         "2026-08-24"
-      ],
-      "khardung-la": [
-        "2026-07-06",
-        "2026-07-21",
-        "2026-08-19"
       ],
       "amboli": [
         "2026-07-16",
@@ -13249,6 +13298,9 @@
       ],
       "silent-valley": [
         "2026-11-17"
+      ],
+      "marari": [
+        "2026-11-18"
       ]
     },
     "audience_tags": {
@@ -13322,6 +13374,11 @@
       ]
     },
     "collections": {
+      "best-honeymoon": [
+        "2026-05-20",
+        "2026-07-09",
+        "2026-11-17"
+      ],
       "borders-worth-visiting": [
         "2026-05-20",
         "2026-09-24"
@@ -13406,8 +13463,10 @@
       ],
       "biker-friendly-stays": [
         "2026-11-17"
-      ],
-      "best-honeymoon": [
+      ]
+    },
+    "collection_carousel_dests:best-honeymoon": {
+      "kumarakom": [
         "2026-11-17"
       ]
     },
@@ -13538,11 +13597,7 @@
         "2026-10-22"
       ]
     },
-    "collection_carousel_dests:best-honeymoon": {
-      "kumarakom": [
-        "2026-11-17"
-      ]
-    }
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13556,11 +13611,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "bengaluru",
+    "shared_best": "marari",
     "collection": "best-honeymoon"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-11-10",
+  "data_carousel_floor_last": "2026-11-18",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
