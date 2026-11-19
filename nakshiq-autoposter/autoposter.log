@@ -33319,3 +33319,41 @@ Date range: 2026-04-15 → 2026-11-18
 2026-11-20 01:39:15  INFO          R2 PUT OK. Confirming...
 2026-11-20 01:39:17  INFO          Media ready: MznWQ (101,565,175 bytes · shillong__vs__voiced__en.mp4)
 2026-11-20 01:39:25  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-19 16:04:32  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-19 16:04:32  INFO      ════════════════════════════════════════════════════════════
+2026-11-19 16:04:32  INFO      Nakshiq Autoposter · EVENING · 2026-11-19 · weekday=3
+2026-11-19 16:04:32  INFO      ════════════════════════════════════════════════════════════
+2026-11-19 16:04:32  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-19 16:05:26  INFO      Synced → 20 destinations · 100 traps · 3 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-19 16:05:26  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-19 16:05:28  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-19 16:05:28  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-19 16:05:28  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+31 more)
+2026-11-19 16:05:28  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-19 16:05:48  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-19 16:05:48  INFO      [diversity] feed: 37 → 28 options · cooldown dropped 9 (carousel, pillar:moment, pillar:scenario_guide, pillar:scenario_list_of_3, pillar:scenario_skip, pillar:scenario_vs seen <2d)
+2026-11-19 16:05:48  INFO      Evening format (balance→anti_trap): v2_tourist_trap_split [0% vs target 15%] (0/15 never featured)
+2026-11-19 16:05:48  INFO      Formats — IG: v2_tourist_trap_split  ·  FB: v2_tourist_trap_split  ·  Story: collection_spotlight
+2026-11-19 16:05:48  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 60
+2026-11-19 16:05:48  INFO      Fingerprint dedup snapshot — 55 dests in 7d · 97 (dest,fmt) pairs in 30d · 251 media in 60d
+2026-11-19 16:05:48  INFO      Collection locked: Wettest Places on Earth (And Why You Should Visit) (73/100 never featured)
+2026-11-19 16:05:49  INFO      Shared best destination locked: Mandrem
+2026-11-19 16:05:49  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-11-19 16:05:49  INFO      [facebook/Nakshiq] Generating v2_tourist_trap_split post...
+2026-11-19 16:05:49  INFO      v2_tourist_trap_split: anandpur-sahib has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-19 16:05:49  INFO      v2_tourist_trap_split: achabal has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-19 16:05:49  INFO      v2_tourist_trap_split: munsiyari has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-19 16:05:49  INFO      v2_tourist_trap_split: gangtok has no current-month row — SKIPPING (won't render a stale November score/note)
+2026-11-19 16:05:49  INFO      [facebook/Nakshiq] Caption ready (466 chars, dest=madurai)
+2026-11-19 16:05:50  INFO      [facebook/Nakshiq] CSV video format (v2_tourist_trap_split) — using dest Ken Burns clip as fallback
+2026-11-19 16:05:50  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/madurai.mp4?v=20260915
+2026-11-19 16:05:52  INFO          Brand-stamp applied: madurai.mp4 (9,231,439 → 4,201,995 bytes)
+2026-11-19 16:05:52  INFO          Requesting upload URL for madurai.mp4 (4,201,995 bytes, video/mp4)
+2026-11-19 16:05:53  INFO          Uploading to R2 (timeout=300s)...
+2026-11-19 16:05:54  INFO          R2 PUT OK. Confirming...
+2026-11-19 16:05:56  INFO          Media ready: 4jN1F (4,201,995 bytes · madurai.mp4)
+2026-11-19 16:05:56  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-19 16:05:59  WARNING   [facebook/Nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-19 16:06:13  INFO      [facebook/Nakshiq] ✅ Published · Outstand=Zt8bm · Platform=2183868699208789
+2026-11-19 16:06:13  INFO      State saved. Run complete.
+2026-11-19 16:06:13  INFO      ════════════════════════════════════════════════════════════

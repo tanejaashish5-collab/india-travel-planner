@@ -36,16 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-18",
-    "PdMu0_evening": "2026-11-18",
+    "PdMu0": "2026-11-19",
+    "PdMu0_evening": "2026-11-19",
     "PdMu0_carousel": "2026-11-18"
   },
-  "last_sync": "2026-11-18T22:06:14.449871+00:00",
+  "last_sync": "2026-11-19T16:05:26.712588+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kumarakom",
-      "date": "2026-11-04"
-    },
     {
       "destination_id": "varanasi",
       "date": "2026-11-05"
@@ -185,6 +181,10 @@
     {
       "destination_id": "yuksom",
       "date": "2026-11-18"
+    },
+    {
+      "destination_id": "madurai",
+      "date": "2026-11-19"
     }
   ],
   "posted_formats": {
@@ -212,7 +212,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "data_carousel",
       "score_card",
       "v2_ugc_spotlight",
@@ -232,7 +231,8 @@
       "collection_series",
       "score_card",
       "score_card",
-      "data_carousel"
+      "data_carousel",
+      "v2_tourist_trap_split"
     ]
   },
   "post_log": [
@@ -12362,6 +12362,44 @@
       "destination": "yuksom",
       "format": "carousel.skip_list",
       "media_id": "carousel_skip_list_2026-11-18"
+    },
+    {
+      "timestamp": "2026-11-19T07:36:02.550127+00:00",
+      "date": "2026-11-19",
+      "platform": "youtube",
+      "post_id": "gnyqM",
+      "destination": "mawphlang",
+      "format": "scenario_guide",
+      "media_id": "eQoke"
+    },
+    {
+      "timestamp": "2026-11-19T14:37:41.247364+00:00",
+      "date": "2026-11-19",
+      "platform": "instagram",
+      "post_id": "42sRF",
+      "destination": "mysore",
+      "format": "scenario_list_of_3",
+      "media_id": "drYXY"
+    },
+    {
+      "timestamp": "2026-11-19T14:39:42.035887+00:00",
+      "date": "2026-11-19",
+      "platform": "youtube",
+      "post_id": "Wv4lj",
+      "destination": "shillong",
+      "format": "scenario_vs",
+      "media_id": "MznWQ"
+    },
+    {
+      "timestamp": "2026-11-19T16:06:13.452245+00:00",
+      "date": "2026-11-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Zt8bm",
+      "destination": "madurai",
+      "format": "v2_tourist_trap_split",
+      "has_media": true,
+      "media_id": "madurai.mp4"
     }
   ],
   "theme_usage": {
@@ -12419,7 +12457,8 @@
         "2026-06-05",
         "2026-08-04",
         "2026-10-07",
-        "2026-10-29"
+        "2026-10-29",
+        "2026-11-19"
       ],
       "mathura": [
         "2026-05-24",
@@ -12497,16 +12536,6 @@
         "2026-06-02",
         "2026-10-09",
         "2026-10-25"
-      ],
-      "keylong": [
-        "2026-06-03",
-        "2026-06-06",
-        "2026-06-21",
-        "2026-07-02",
-        "2026-07-17",
-        "2026-07-22",
-        "2026-08-19",
-        "2026-08-20"
       ],
       "nako": [
         "2026-06-04",
@@ -12916,7 +12945,8 @@
         "2026-06-15",
         "2026-06-19",
         "2026-08-04",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-11-19"
       ],
       "score_card": [
         "2026-06-01",
@@ -13091,7 +13121,8 @@
         "2026-06-05",
         "2026-08-04",
         "2026-10-07",
-        "2026-10-29"
+        "2026-10-29",
+        "2026-11-19"
       ],
       "mathura": [
         "2026-05-24",
@@ -13179,10 +13210,6 @@
         "2026-07-16",
         "2026-08-08",
         "2026-08-22"
-      ],
-      "keylong": [
-        "2026-07-22",
-        "2026-08-20"
       ],
       "adilabad": [
         "2026-08-01",
@@ -13417,9 +13444,6 @@
         "2026-06-17",
         "2026-09-29"
       ],
-      "french-india-trail": [
-        "2026-08-20"
-      ],
       "rivers-and-lakes": [
         "2026-08-25"
       ],
@@ -13476,6 +13500,9 @@
       ],
       "biker-friendly-stays": [
         "2026-11-17"
+      ],
+      "wettest-places-on-earth": [
+        "2026-11-19"
       ]
     },
     "collection_carousel_dests:best-honeymoon": {
@@ -13610,7 +13637,7 @@
         "2026-10-22"
       ]
     },
-    "articles": {}
+    "collection_carousel_dests:wettest-places-on-earth": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13625,7 +13652,7 @@
   "ugc_music_history": [],
   "last_picked": {
     "shared_best": "mandrem",
-    "collection": "best-honeymoon"
+    "collection": "wettest-places-on-earth"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-11-18",
