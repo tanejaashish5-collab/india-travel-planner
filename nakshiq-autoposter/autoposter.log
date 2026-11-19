@@ -33402,3 +33402,26 @@ Date range: 2026-04-15 → 2026-11-18
 2026-11-19 16:45:59  INFO      [facebook/Nakshiq] ✅ carousel published (best_month) · post_id=xl3er
 2026-11-19 16:45:59  INFO      Carousel run complete (fmt=best_month, posted=True).
 2026-11-19 16:45:59  INFO      ════════════════════════════════════════════════════════════
+2026-11-19 22:19:50  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-19 22:19:50  INFO      ════════════════════════════════════════════════════════════
+2026-11-19 22:19:50  INFO      Nakshiq Autoposter · EVENING · 2026-11-19 · weekday=3
+2026-11-19 22:19:50  INFO      ════════════════════════════════════════════════════════════
+2026-11-19 22:19:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-19 22:20:52  INFO      Synced → 20 destinations · 100 traps · 3 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-19 22:20:52  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-19 22:20:54  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-19 22:20:54  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-19 22:20:54  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+31 more)
+2026-11-19 22:20:54  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-19 22:21:13  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-19 22:21:13  INFO      [diversity] feed: 37 → 24 options · cooldown dropped 13 (carousel, pillar:anti_trap, pillar:moment, pillar:scenario_guide, pillar:scenario_list_of_3, pillar:scenario_skip, pillar:scenario_vs seen <2d)
+2026-11-19 22:21:13  INFO      Evening format (balance→verification): confidence_intel [12% vs target 35%] (0/15 never featured)
+2026-11-19 22:21:13  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-11-19 22:21:13  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 62
+2026-11-19 22:21:13  INFO      Fingerprint dedup snapshot — 57 dests in 7d · 98 (dest,fmt) pairs in 30d · 253 media in 60d
+2026-11-19 22:21:13  INFO      Collection locked: The Godavari Trail — India's Unknown Backwaters (72/100 never featured)
+2026-11-19 22:21:14  INFO      Shared best destination locked: Mandrem
+2026-11-19 22:21:14  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-11-19 22:21:14  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-11-19 22:21:14  INFO      State saved. Run complete.
+2026-11-19 22:21:14  INFO      ════════════════════════════════════════════════════════════
