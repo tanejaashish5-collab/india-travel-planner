@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-19",
     "PdMu0_evening": "2026-11-19",
-    "PdMu0_carousel": "2026-11-18"
+    "PdMu0_carousel": "2026-11-19"
   },
   "last_sync": "2026-11-19T16:05:26.712588+00:00",
   "posted_destinations": [
@@ -184,6 +184,10 @@
     },
     {
       "destination_id": "madurai",
+      "date": "2026-11-19"
+    },
+    {
+      "destination_id": "kumarakom",
       "date": "2026-11-19"
     }
   ],
@@ -12400,6 +12404,15 @@
       "format": "v2_tourist_trap_split",
       "has_media": true,
       "media_id": "madurai.mp4"
+    },
+    {
+      "timestamp": "2026-11-19T16:45:59.445433+00:00",
+      "date": "2026-11-19",
+      "platform": "facebook",
+      "post_id": "xl3er",
+      "destination": "kumarakom",
+      "format": "carousel.best_month",
+      "media_id": "carousel_best_month_2026-11-19"
     }
   ],
   "theme_usage": {
@@ -13636,8 +13649,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "collection_carousel_dests:wettest-places-on-earth": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
