@@ -38,14 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-19",
     "PdMu0_evening": "2026-11-19",
-    "PdMu0_carousel": "2026-11-19"
+    "PdMu0_carousel": "2026-11-20"
   },
   "last_sync": "2026-11-19T22:20:52.879297+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "varanasi",
-      "date": "2026-11-05"
-    },
     {
       "destination_id": "murudeshwar",
       "date": "2026-11-06"
@@ -189,6 +185,10 @@
     {
       "destination_id": "kumarakom",
       "date": "2026-11-19"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-11-20"
     }
   ],
   "posted_formats": {
@@ -12413,6 +12413,42 @@
       "destination": "kumarakom",
       "format": "carousel.best_month",
       "media_id": "carousel_best_month_2026-11-19"
+    },
+    {
+      "timestamp": "2026-11-20T07:36:06.639791+00:00",
+      "date": "2026-11-20",
+      "platform": "youtube",
+      "post_id": "JHGZm",
+      "destination": "nagarjuna-sagar",
+      "format": "scenario_guide",
+      "media_id": "JRWOv"
+    },
+    {
+      "timestamp": "2026-11-20T14:38:00.565134+00:00",
+      "date": "2026-11-20",
+      "platform": "instagram",
+      "post_id": "OihxM",
+      "destination": "shillong",
+      "format": "scenario_vs",
+      "media_id": "l3Fko"
+    },
+    {
+      "timestamp": "2026-11-20T14:39:00.680853+00:00",
+      "date": "2026-11-20",
+      "platform": "youtube",
+      "post_id": "vBUIc",
+      "destination": "mysore",
+      "format": "scenario_list_of_3",
+      "media_id": "me5rE"
+    },
+    {
+      "timestamp": "2026-11-20T16:22:45.316352+00:00",
+      "date": "2026-11-20",
+      "platform": "facebook",
+      "post_id": "8KYL7",
+      "destination": "dhanaulti",
+      "format": "carousel.comparison",
+      "media_id": "carousel_comparison_2026-11-20"
     }
   ],
   "theme_usage": {
@@ -12619,12 +12655,6 @@
         "2026-06-15",
         "2026-11-10",
         "2026-11-11"
-      ],
-      "valley-of-flowers": [
-        "2026-06-19",
-        "2026-08-02",
-        "2026-08-07",
-        "2026-08-21"
       ],
       "manali": [
         "2026-06-22",
@@ -13185,11 +13215,6 @@
         "2026-09-05",
         "2026-10-02"
       ],
-      "valley-of-flowers": [
-        "2026-06-19",
-        "2026-08-07",
-        "2026-08-21"
-      ],
       "yusmarg": [
         "2026-06-21",
         "2026-09-23"
@@ -13652,8 +13677,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "collection_carousel_dests:godavari-trail": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
