@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-19",
-    "PdMu0_evening": "2026-11-19",
+    "PdMu0": "2026-11-20",
+    "PdMu0_evening": "2026-11-20",
     "PdMu0_carousel": "2026-11-20"
   },
-  "last_sync": "2026-11-19T22:20:52.879297+00:00",
+  "last_sync": "2026-11-20T21:56:02.018012+00:00",
   "posted_destinations": [
     {
       "destination_id": "murudeshwar",
@@ -189,6 +189,10 @@
     {
       "destination_id": "dhanaulti",
       "date": "2026-11-20"
+    },
+    {
+      "destination_id": "dungarpur",
+      "date": "2026-11-20"
     }
   ],
   "posted_formats": {
@@ -216,7 +220,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "data_carousel",
       "score_card",
       "v2_ugc_spotlight",
       "v2_local_knows",
@@ -236,7 +239,8 @@
       "score_card",
       "score_card",
       "data_carousel",
-      "v2_tourist_trap_split"
+      "v2_tourist_trap_split",
+      "score_card"
     ]
   },
   "post_log": [
@@ -12449,6 +12453,17 @@
       "destination": "dhanaulti",
       "format": "carousel.comparison",
       "media_id": "carousel_comparison_2026-11-20"
+    },
+    {
+      "timestamp": "2026-11-20T21:56:45.663015+00:00",
+      "date": "2026-11-20",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "17IbC",
+      "destination": "dungarpur",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "dungarpur.mp4"
     }
   ],
   "theme_usage": {
@@ -12880,7 +12895,8 @@
         "2026-11-10"
       ],
       "dungarpur": [
-        "2026-11-10"
+        "2026-11-10",
+        "2026-11-20"
       ],
       "silent-valley": [
         "2026-11-10",
@@ -13066,7 +13082,8 @@
         "2026-11-11",
         "2026-11-14",
         "2026-11-16",
-        "2026-11-17"
+        "2026-11-17",
+        "2026-11-20"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13379,6 +13396,9 @@
       ],
       "marari": [
         "2026-11-18"
+      ],
+      "dungarpur": [
+        "2026-11-20"
       ]
     },
     "audience_tags": {
@@ -13448,7 +13468,8 @@
         "2026-10-16",
         "2026-10-30",
         "2026-11-06",
-        "2026-11-13"
+        "2026-11-13",
+        "2026-11-20"
       ]
     },
     "collections": {
@@ -13691,7 +13712,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "mandrem",
+    "shared_best": "ooty",
     "collection": "godavari-trail"
   },
   "manual_skip_dests": {},
