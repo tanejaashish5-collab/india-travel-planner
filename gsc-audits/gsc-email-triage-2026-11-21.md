@@ -1,7 +1,7 @@
 # GSC Email Triage — 2026-11-21
 
-Run date: 2026-11-21 ~09:32 UTC  
-Prior triage: `gsc-email-triage-2026-11-20.md` (no emails, no code changes)
+Run date: 2026-11-21 ~21:32 UTC (evening run)  
+Prior triage: `gsc-email-triage-2026-11-21.md` morning run ~09:32 UTC (no emails, no code changes)
 
 ---
 
