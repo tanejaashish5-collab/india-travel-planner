@@ -38,14 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-20",
     "PdMu0_evening": "2026-11-20",
-    "PdMu0_carousel": "2026-11-20"
+    "PdMu0_carousel": "2026-11-21"
   },
   "last_sync": "2026-11-20T21:56:02.018012+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "murudeshwar",
-      "date": "2026-11-06"
-    },
     {
       "destination_id": "dudhwa-national-park",
       "date": "2026-11-07"
@@ -193,6 +189,10 @@
     {
       "destination_id": "dungarpur",
       "date": "2026-11-20"
+    },
+    {
+      "destination_id": "pachmarhi",
+      "date": "2026-11-21"
     }
   ],
   "posted_formats": {
@@ -12464,6 +12464,42 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "dungarpur.mp4"
+    },
+    {
+      "timestamp": "2026-11-21T07:35:59.582622+00:00",
+      "date": "2026-11-21",
+      "platform": "youtube",
+      "post_id": "gnRKz",
+      "destination": "shikharji",
+      "format": "scenario_guide",
+      "media_id": "X91hF"
+    },
+    {
+      "timestamp": "2026-11-21T14:37:21.576674+00:00",
+      "date": "2026-11-21",
+      "platform": "instagram",
+      "post_id": "26uUq",
+      "destination": "munnar",
+      "format": "scenario_swap",
+      "media_id": "aZK7I"
+    },
+    {
+      "timestamp": "2026-11-21T14:38:12.244404+00:00",
+      "date": "2026-11-21",
+      "platform": "youtube",
+      "post_id": "cMx10",
+      "destination": "munnar",
+      "format": "scenario_swap",
+      "media_id": "xnbQq"
+    },
+    {
+      "timestamp": "2026-11-21T15:36:05.936951+00:00",
+      "date": "2026-11-21",
+      "platform": "facebook",
+      "post_id": "opg0t",
+      "destination": "pachmarhi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-11-21"
     }
   ],
   "theme_usage": {
@@ -12741,14 +12777,6 @@
         "2026-08-04",
         "2026-08-10",
         "2026-08-27"
-      ],
-      "amboli": [
-        "2026-07-09",
-        "2026-07-16",
-        "2026-07-25",
-        "2026-08-02",
-        "2026-08-08",
-        "2026-08-22"
       ],
       "adilabad": [
         "2026-08-01",
@@ -13260,11 +13288,6 @@
         "2026-07-18",
         "2026-08-09",
         "2026-08-24"
-      ],
-      "amboli": [
-        "2026-07-16",
-        "2026-08-08",
-        "2026-08-22"
       ],
       "adilabad": [
         "2026-08-01",
@@ -13779,7 +13802,14 @@
       "Nirvana Mahotsav",
       "Lili Parikrama (Green Circumambulation of Mount Girnar)",
       "Mandala-Makaravilakku Pilgrimage Season",
-      "Kartik Purnima"
+      "Kartik Purnima",
+      "Nagdwari Mela",
+      "Leitlangpui Music Festival",
+      "Orange and Tourism Festival",
+      "Mahakala Dance (Ralang Monastery)",
+      "Karthika Pournami Jatara",
+      "Karthigai Deepam",
+      "Kali Puja"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
