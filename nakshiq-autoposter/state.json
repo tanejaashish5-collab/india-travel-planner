@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-20",
-    "PdMu0_evening": "2026-11-20",
+    "PdMu0": "2026-11-21",
+    "PdMu0_evening": "2026-11-21",
     "PdMu0_carousel": "2026-11-21"
   },
-  "last_sync": "2026-11-20T21:56:02.018012+00:00",
+  "last_sync": "2026-11-21T20:38:17.393288+00:00",
   "posted_destinations": [
     {
       "destination_id": "dudhwa-national-park",
@@ -193,6 +193,10 @@
     {
       "destination_id": "pachmarhi",
       "date": "2026-11-21"
+    },
+    {
+      "destination_id": "deeg",
+      "date": "2026-11-21"
     }
   ],
   "posted_formats": {
@@ -220,7 +224,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "v2_ugc_spotlight",
       "v2_local_knows",
       "score_card",
@@ -240,6 +243,7 @@
       "score_card",
       "data_carousel",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card"
     ]
   },
@@ -12500,6 +12504,17 @@
       "destination": "pachmarhi",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-11-21"
+    },
+    {
+      "timestamp": "2026-11-21T20:39:00.901380+00:00",
+      "date": "2026-11-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "35WWA",
+      "destination": "deeg",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "deeg.mp4"
     }
   ],
   "theme_usage": {
@@ -12920,7 +12935,8 @@
         "2026-11-10"
       ],
       "deeg": [
-        "2026-11-10"
+        "2026-11-10",
+        "2026-11-21"
       ],
       "dungarpur": [
         "2026-11-10",
@@ -13111,7 +13127,8 @@
         "2026-11-14",
         "2026-11-16",
         "2026-11-17",
-        "2026-11-20"
+        "2026-11-20",
+        "2026-11-21"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13422,6 +13439,9 @@
       ],
       "dungarpur": [
         "2026-11-20"
+      ],
+      "deeg": [
+        "2026-11-21"
       ]
     },
     "audience_tags": {
@@ -13468,7 +13488,8 @@
         "2026-10-24",
         "2026-10-31",
         "2026-11-07",
-        "2026-11-14"
+        "2026-11-14",
+        "2026-11-21"
       ],
       "adventurers": [
         "2026-05-29",
@@ -13721,7 +13742,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "routes": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13735,7 +13757,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "ooty",
+    "shared_best": "mandrem",
     "collection": "godavari-trail"
   },
   "manual_skip_dests": {},
