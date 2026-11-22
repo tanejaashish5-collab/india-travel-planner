@@ -66,13 +66,22 @@ async function getCollection(id: string) {
   const showFood = ["food", "mixed"].includes(contentType);
   const showStays = ["stays", "mixed"].includes(contentType);
   const isCircuit = contentType === "circuit";
+  // Items may point at a full route (route_id): the card then renders the
+  // route (days, difficulty, months) and links to /routes/<id> instead of the
+  // destination. Born 2026-11-22: "Best Motorcycle Routes" listed only places.
+  const routeIds = ((data.items ?? []) as { route_id?: string }[])
+    .map((i) => i.route_id)
+    .filter((r): r is string => !!r);
 
-  const [destsResult, eatsResult, staysResult, coordsResult, allColls] = await Promise.all([
+  const [destsResult, eatsResult, staysResult, coordsResult, allColls, routesResult] = await Promise.all([
     supabase.from("destinations").select("id, name, tagline, difficulty, elevation_m, state:states(name)").in("id", destIds),
     showFood ? supabase.from("viral_eats").select("*").in("destination_id", destIds).order("name") : Promise.resolve({ data: [] }),
     showStays ? supabase.from("local_stays").select("*").in("destination_id", destIds).order("name") : Promise.resolve({ data: [] }),
     isCircuit ? supabase.from("destinations_with_coords").select("id, lat, lng").in("id", destIds) : Promise.resolve({ data: [] }),
     supabase.from("collections").select("id, name").order("name"),
+    routeIds.length
+      ? supabase.from("routes").select("id, name, days, difficulty, best_months").in("id", routeIds)
+      : Promise.resolve({ data: [] }),
   ]);
 
   const coordsMap = new Map<string, { lat: number; lng: number }>(
@@ -89,6 +98,7 @@ async function getCollection(id: string) {
     viral_eats: eatsResult.data ?? [],
     local_stays: staysResult.data ?? [],
     allCollections: allColls.data ?? [],
+    routes: routesResult.data ?? [],
   };
 }
 
@@ -104,8 +114,12 @@ export default async function CollectionDetailPage({
   const items = collection.items ?? [];
   const contentType = collection.content_type || "destinations";
   const isCircuit = contentType === "circuit";
+  const allRoutes =
+    items.length > 0 && (items as { route_id?: string }[]).every((i) => !!i.route_id);
   const countLabel = isCircuit
     ? `CIRCUIT · ${items.length} STOPS`
+    : allRoutes
+    ? `COLLECTION · ${items.length} ROUTES`
     : `COLLECTION · ${items.length} DESTINATIONS`;
 
   return (

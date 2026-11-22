@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { ShareButton } from "./share-button";
@@ -17,6 +17,23 @@ function haversineKm(a: { lat: number; lng: number }, b: { lat: number; lng: num
   const lat2 = (b.lat * Math.PI) / 180;
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+type CollectionRoute = { id: string; name: string; days: number; difficulty: string; best_months: number[] | null };
+
+/** "June to September" when the months run unbroken (wrapping Dec→Jan),
+ *  else "May, June, September, October". Months come from routes.best_months. */
+function formatMonths(months: number[], monthName: (n: number) => string, locale: string): string {
+  if (!months?.length) return "";
+  const names = months.map(monthName);
+  if (months.length === 1) return names[0];
+  const unbroken = months.every((m, i) => i === 0 || m === (months[i - 1] % 12) + 1);
+  if (unbroken && months.length > 2) {
+    return locale === "hi"
+      ? `${names[0]} से ${names[names.length - 1]} तक`
+      : `${names[0]} to ${names[names.length - 1]}`;
+  }
+  return names.join(", ");
 }
 
 export function CollectionDetail({
@@ -34,11 +51,22 @@ export function CollectionDetail({
   hideHero?: boolean;
 }) {
   const locale = useLocale();
+  const tm = useTranslations("months");
+  const tf = useTranslations("filters");
   const items = collection.items ?? [];
   const contentType = collection.content_type || "destinations";
   const destMap = Object.fromEntries(
     (collection.destinations ?? []).map((d: any) => [d.id, d]),
   );
+  const routeMap: Record<string, CollectionRoute> = Object.fromEntries(
+    ((collection.routes ?? []) as CollectionRoute[]).map((r) => [r.id, r]),
+  );
+  const allRoutes =
+    items.length > 0 &&
+    (items as { route_id?: string }[]).every((i) => !!i.route_id && !!routeMap[i.route_id]);
+  const isHi = locale === "hi";
+  const difficultyLabel = (d: string) =>
+    ["easy", "moderate", "hard", "extreme"].includes(d) ? tf(d) : d;
 
   if (contentType === "circuit") {
     return <CircuitLayout collection={collection} items={items} destMap={destMap} locale={locale} hideHero={hideHero} />;
@@ -108,7 +136,11 @@ export function CollectionDetail({
           </div>
         )}
         <div className="mt-3 text-sm text-muted-foreground">
-          {items.length} destinations in this collection
+          {allRoutes
+            ? isHi
+              ? `इस संग्रह में ${items.length} रूट`
+              : `${items.length} routes in this collection`
+            : `${items.length} destinations in this collection`}
           {collection.risk_level && (
             <span className="ml-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-background/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.08em] uppercase">
               <span className="opacity-60">Commitment:</span>
@@ -145,6 +177,48 @@ export function CollectionDetail({
           const destEats = eatsByDest[item.destination_id] ?? [];
           const destStays = staysByDest[item.destination_id] ?? [];
           const hasExtras = destEats.length > 0 || destStays.length > 0;
+          const route = item.route_id ? routeMap[item.route_id] : null;
+
+          if (route) {
+            const months = formatMonths(route.best_months ?? [], (n) => tm(String(n)), locale);
+            return (
+              <StaggerItem key={`route-${route.id}`}>
+                <HoverCard>
+                  <Link
+                    href={`/${locale}/routes/${route.id}`}
+                    className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
+                  >
+                    <div className="relative w-20 h-24 sm:w-32 sm:h-28 shrink-0 bg-muted/30">
+                      <Image
+                        src={`/images/destinations/${item.destination_id}.jpg`}
+                        alt={dest?.name ?? ""}
+                        fill
+                        sizes="(max-width: 640px) 80px, 128px"
+                        className="object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                      <div className="absolute top-1 left-1 flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs font-bold text-primary-foreground">
+                        {idx + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1 py-2.5 pr-3 sm:p-4 sm:pl-0 min-w-0">
+                      <h3 className="font-semibold text-base sm:text-lg leading-tight break-words">{route.name}</h3>
+                      <p className="mt-0.5 text-[11px] sm:text-xs text-muted-foreground">
+                        {isHi ? `${route.days} दिन` : `${route.days} days`} · {difficultyLabel(route.difficulty)}
+                        {months && <> · {isHi ? "कब: " : "Ride "}{months}</>}
+                      </p>
+                      {item.note && (
+                        <p className="mt-1 text-xs sm:text-sm text-muted-foreground">{item.note}</p>
+                      )}
+                      <p className="mt-1.5 text-xs text-primary">
+                        {isHi ? "पूरा रूट, दिन-ब-दिन →" : "Day-by-day route →"}
+                      </p>
+                    </div>
+                  </Link>
+                </HoverCard>
+              </StaggerItem>
+            );
+          }
 
           return (
             <StaggerItem key={item.destination_id}>
