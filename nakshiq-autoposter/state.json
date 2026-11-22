@@ -38,18 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-21",
     "PdMu0_evening": "2026-11-21",
-    "PdMu0_carousel": "2026-11-21"
+    "PdMu0_carousel": "2026-11-22"
   },
   "last_sync": "2026-11-21T20:38:17.393288+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "dudhwa-national-park",
-      "date": "2026-11-07"
-    },
-    {
-      "destination_id": "mathura",
-      "date": "2026-11-07"
-    },
     {
       "destination_id": "gangotri",
       "date": "2026-11-08"
@@ -197,6 +189,10 @@
     {
       "destination_id": "deeg",
       "date": "2026-11-21"
+    },
+    {
+      "destination_id": "dwarka",
+      "date": "2026-11-22"
     }
   ],
   "posted_formats": {
@@ -12515,6 +12511,42 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "deeg.mp4"
+    },
+    {
+      "timestamp": "2026-11-22T07:35:58.309422+00:00",
+      "date": "2026-11-22",
+      "platform": "youtube",
+      "post_id": "NZ4KS",
+      "destination": "silvassa",
+      "format": "scenario_guide",
+      "media_id": "2YtVf"
+    },
+    {
+      "timestamp": "2026-11-22T14:37:24.107065+00:00",
+      "date": "2026-11-22",
+      "platform": "instagram",
+      "post_id": "BJCfD",
+      "destination": "jodhpur",
+      "format": "scenario_eat_here",
+      "media_id": "xnGhO"
+    },
+    {
+      "timestamp": "2026-11-22T14:38:10.229207+00:00",
+      "date": "2026-11-22",
+      "platform": "youtube",
+      "post_id": "QwAgn",
+      "destination": "jodhpur",
+      "format": "scenario_eat_here",
+      "media_id": "eQF6c"
+    },
+    {
+      "timestamp": "2026-11-22T15:35:17.664418+00:00",
+      "date": "2026-11-22",
+      "platform": "facebook",
+      "post_id": "NZnGC",
+      "destination": "dwarka",
+      "format": "carousel.window",
+      "media_id": "carousel_window_2026-11-22"
     }
   ],
   "theme_usage": {
@@ -12802,10 +12834,6 @@
         "2026-08-02",
         "2026-08-15",
         "2026-08-28"
-      ],
-      "hanle": [
-        "2026-08-10",
-        "2026-08-23"
       ],
       "kanchipuram": [
         "2026-08-27"
@@ -13315,9 +13343,6 @@
         "2026-08-12",
         "2026-08-29"
       ],
-      "hanle": [
-        "2026-08-23"
-      ],
       "hyderabad": [
         "2026-08-26"
       ],
@@ -13742,8 +13767,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "routes": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
