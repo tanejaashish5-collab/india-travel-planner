@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:51:18.617Z",
+  "generated_at": "2026-11-22T22:51:18.084Z",
   "totals": {
     "A": 368,
     "HS-B": 29,
@@ -262,7 +262,7 @@
     },
     {
       "field": "stays",
-      "count": 20
+      "count": 18
     },
     {
       "field": "gems",
@@ -768,7 +768,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 4,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -2075,7 +2075,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 4,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -2117,7 +2117,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 2,
-        "stays": 2
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -2125,8 +2125,7 @@
       },
       "hs_confirmed": [],
       "missing": [
-        "eats:2/5",
-        "stays:2/3"
+        "eats:2/5"
       ]
     },
     {
@@ -2750,7 +2749,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 3,
-        "stays": 2
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -2758,8 +2757,7 @@
       },
       "hs_confirmed": [],
       "missing": [
-        "eats:3/5",
-        "stays:2/3"
+        "eats:3/5"
       ]
     },
     {
@@ -3151,7 +3149,7 @@
         "months_prose": 12,
         "gems": 4,
         "eats": 4,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,

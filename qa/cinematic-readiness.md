@@ -1,4 +1,4 @@
-# Cinematic readiness — 2026-11-15
+# Cinematic readiness — 2026-11-22
 
 Total: **533** dests · A=**368** · HS-B=**29** · B=**136** · C=**0**
 
@@ -11,7 +11,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Field | Dests blocked |
 |---|---:|
 | eats | 152 |
-| stays | 20 |
+| stays | 18 |
 | gems | 8 |
 
 ## By state (destinations below tier A only)
@@ -145,7 +145,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Old Goa (old-goa) | goa | eats:3/5 |
 | Omkareshwar (omkareshwar) | madhya-pradesh | eats:4/5 |
 | Orchha (orchha) | madhya-pradesh | eats:4/5 |
-| Ozar (ozar) | maharashtra | eats:2/5 · stays:2/3 |
+| Ozar (ozar) | maharashtra | eats:2/5 |
 | Pachmarhi (pachmarhi) | madhya-pradesh | eats:4/5 |
 | Pali (Raigad) (pali-raigad) | maharashtra | eats:3/5 |
 | Palitana (palitana) | gujarat | eats:4/5 |
@@ -175,7 +175,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Silent Valley National Park (silent-valley) | kerala | eats:3/5 |
 | Simlipal (simlipal) | odisha | eats:3/5 |
 | Siolim (siolim) | goa | eats:4/5 |
-| Sirpur (sirpur) | chhattisgarh | eats:3/5 · stays:2/3 |
+| Sirpur (sirpur) | chhattisgarh | eats:3/5 |
 | Srikalahasti (srikalahasti) | andhra-pradesh | eats:3/5 |
 | Srirangam (srirangam) | tamil-nadu | eats:4/5 |
 | Swamimalai (swamimalai) | tamil-nadu | eats:1/5 |
