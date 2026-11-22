@@ -36,11 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-21",
-    "PdMu0_evening": "2026-11-21",
+    "PdMu0": "2026-11-22",
+    "PdMu0_evening": "2026-11-22",
     "PdMu0_carousel": "2026-11-22"
   },
-  "last_sync": "2026-11-21T20:38:17.393288+00:00",
+  "last_sync": "2026-11-22T20:50:54.972438+00:00",
   "posted_destinations": [
     {
       "destination_id": "gangotri",
@@ -193,6 +193,10 @@
     {
       "destination_id": "dwarka",
       "date": "2026-11-22"
+    },
+    {
+      "destination_id": "kuttanad",
+      "date": "2026-11-22"
     }
   ],
   "posted_formats": {
@@ -220,7 +224,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_ugc_spotlight",
       "v2_local_knows",
       "score_card",
       "v2_cost_index_handwritten",
@@ -239,6 +242,7 @@
       "score_card",
       "data_carousel",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card"
     ]
@@ -12547,6 +12551,17 @@
       "destination": "dwarka",
       "format": "carousel.window",
       "media_id": "carousel_window_2026-11-22"
+    },
+    {
+      "timestamp": "2026-11-22T20:51:44.128233+00:00",
+      "date": "2026-11-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "d4LRM",
+      "destination": "kuttanad",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "kuttanad.mp4"
     }
   ],
   "theme_usage": {
@@ -12951,7 +12966,8 @@
         "2026-11-02"
       ],
       "kuttanad": [
-        "2026-11-02"
+        "2026-11-02",
+        "2026-11-22"
       ],
       "murudeshwar": [
         "2026-11-06"
@@ -13156,7 +13172,8 @@
         "2026-11-16",
         "2026-11-17",
         "2026-11-20",
-        "2026-11-21"
+        "2026-11-21",
+        "2026-11-22"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13467,6 +13484,9 @@
       ],
       "deeg": [
         "2026-11-21"
+      ],
+      "kuttanad": [
+        "2026-11-22"
       ]
     },
     "audience_tags": {
@@ -13781,7 +13801,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "mandrem",
+    "shared_best": "ooty",
     "collection": "godavari-trail"
   },
   "manual_skip_dests": {},
