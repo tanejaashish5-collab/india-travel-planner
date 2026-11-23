@@ -406,13 +406,13 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 2.5,
+      "average_engagement_rate": 2.6785714285714284,
       "total_comments": 0,
       "total_impressions": 0,
-      "total_likes": 3,
-      "total_reach": 120,
+      "total_likes": 6,
+      "total_reach": 224,
       "total_shares": 0,
-      "total_views": 127
+      "total_views": 240
     },
     "destination": "munnar",
     "format": "scenario_swap",
@@ -420,17 +420,17 @@
       "comments": 0,
       "engagement_total": 0,
       "impressions": 0,
-      "likes": 3,
-      "reach": 120,
+      "likes": 6,
+      "reach": 224,
       "saves": 0,
       "shares": 0,
-      "views": 127
+      "views": 240
     },
     "network": "instagram",
     "platform_post_id": "17916631530502567",
     "post_id": "26uUq",
     "published_at": "2026-11-21T14:37:20.299Z",
-    "pulled_at": "2026-11-22T01:27:01.159695+00:00",
+    "pulled_at": "2026-11-23T01:51:29.299447+00:00",
     "utm_content": "scenario_swap"
   },
   "2709S": {
@@ -1329,7 +1329,7 @@
     "platform_post_id": "18064116158802174",
     "post_id": "42sRF",
     "published_at": "2026-11-19T14:37:35.162Z",
-    "pulled_at": "2026-11-22T01:26:43.888370+00:00",
+    "pulled_at": "2026-11-23T01:51:13.703668+00:00",
     "utm_content": "scenario_list_of_3"
   },
   "497fF": {
@@ -3065,7 +3065,7 @@
     "platform_post_id": "1040562729145369_122129580818700092",
     "post_id": "8K9dd",
     "published_at": "2026-11-18T16:01:58.857Z",
-    "pulled_at": "2026-11-22T01:26:37.545140+00:00",
+    "pulled_at": "2026-11-23T01:51:07.903775+00:00",
     "utm_content": "marari-data_carousel-20261118"
   },
   "8KYL7": {
@@ -3096,7 +3096,7 @@
     "platform_post_id": "1040562729145369_122129790332700092",
     "post_id": "8KYL7",
     "published_at": "2026-11-20T16:23:04.058Z",
-    "pulled_at": "2026-11-22T01:26:56.414096+00:00",
+    "pulled_at": "2026-11-23T01:51:24.737409+00:00",
     "utm_content": "dhanaulti-carousel_comparison-20261120"
   },
   "8cJPI": {
@@ -4586,6 +4586,37 @@
     "published_at": "2026-06-28T08:03:01.485Z",
     "pulled_at": "2026-07-04T22:15:26.289451+00:00",
     "utm_content": "auli-yt_short-20260628"
+  },
+  "BJCfD": {
+    "account": "nakshiq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 5.361930294906166,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 16,
+      "total_reach": 1119,
+      "total_shares": 18,
+      "total_views": 1235
+    },
+    "destination": "jodhpur",
+    "format": "scenario_eat_here",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 16,
+      "reach": 1119,
+      "saves": 26,
+      "shares": 18,
+      "views": 1235
+    },
+    "network": "instagram",
+    "platform_post_id": "17968019640207533",
+    "post_id": "BJCfD",
+    "published_at": "2026-11-22T14:37:15.807Z",
+    "pulled_at": "2026-11-23T01:51:36.917168+00:00",
+    "utm_content": "scenario_eat_here"
   },
   "BKTWU": {
     "account": "nakshiq",
@@ -7374,7 +7405,7 @@
     "platform_post_id": "18116713763112420",
     "post_id": "JH5Fr",
     "published_at": "2026-11-18T14:36:47.398Z",
-    "pulled_at": "2026-11-22T01:26:33.696135+00:00",
+    "pulled_at": "2026-11-23T01:51:03.548681+00:00",
     "utm_content": "scenario_skip"
   },
   "JHGZm": {
@@ -7387,7 +7418,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 23
+      "total_views": 27
     },
     "destination": "nagarjuna-sagar",
     "format": "scenario_guide",
@@ -7399,13 +7430,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 23
+      "views": 27
     },
     "network": "youtube",
     "platform_post_id": "7GpOe6j96WA",
     "post_id": "JHGZm",
     "published_at": "2026-11-20T07:36:01.872Z",
-    "pulled_at": "2026-11-22T01:26:49.911917+00:00",
+    "pulled_at": "2026-11-23T01:51:18.419812+00:00",
     "utm_content": "scenario_guide"
   },
   "JHUYt": {
@@ -7436,7 +7467,7 @@
     "platform_post_id": "0IlHursTeuU",
     "post_id": "JHUYt",
     "published_at": "2026-11-17T14:38:58.150Z",
-    "pulled_at": "2026-11-22T01:26:27.349513+00:00",
+    "pulled_at": "2026-11-23T01:50:57.532612+00:00",
     "utm_content": "scenario_map_reveal"
   },
   "JMBl3": {
@@ -8242,7 +8273,7 @@
     "platform_post_id": "1040562729145369_122129489624700092",
     "post_id": "LCT7l",
     "published_at": "2026-11-17T17:37:38.289Z",
-    "pulled_at": "2026-11-22T01:26:29.255907+00:00",
+    "pulled_at": "2026-11-23T01:50:59.647729+00:00",
     "utm_content": "tirthan-valley-carousel_food-20261117"
   },
   "LGbty": {
@@ -9423,6 +9454,37 @@
     "pulled_at": "2026-08-11T22:10:10.272810+00:00",
     "utm_content": "mizoram-tourist_map-20260806"
   },
+  "NZ4KS": {
+    "account": "@naksh-iq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 0,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 25
+    },
+    "destination": "silvassa",
+    "format": "scenario_guide",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 0,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 25
+    },
+    "network": "youtube",
+    "platform_post_id": "jvVVLlBk3v0",
+    "post_id": "NZ4KS",
+    "published_at": "2026-11-22T07:35:53.427Z",
+    "pulled_at": "2026-11-23T01:51:33.504331+00:00",
+    "utm_content": "scenario_guide"
+  },
   "NdOra": {
     "account": "Nakshiq",
     "account_count": 1,
@@ -9985,13 +10047,13 @@
     "account": "nakshiq",
     "account_count": 1,
     "aggregated": {
-      "average_engagement_rate": 50,
+      "average_engagement_rate": 40,
       "total_comments": 0,
       "total_impressions": 0,
       "total_likes": 2,
-      "total_reach": 4,
+      "total_reach": 5,
       "total_shares": 0,
-      "total_views": 5
+      "total_views": 7
     },
     "destination": "shillong",
     "format": "scenario_vs",
@@ -10000,16 +10062,16 @@
       "engagement_total": 0,
       "impressions": 0,
       "likes": 2,
-      "reach": 4,
+      "reach": 5,
       "saves": 0,
       "shares": 0,
-      "views": 5
+      "views": 7
     },
     "network": "instagram",
     "platform_post_id": "18032925458857566",
     "post_id": "OihxM",
     "published_at": "2026-11-20T14:37:57.562Z",
-    "pulled_at": "2026-11-22T01:26:52.732058+00:00",
+    "pulled_at": "2026-11-23T01:51:21.116407+00:00",
     "utm_content": "scenario_vs"
   },
   "OxbjV": {
@@ -10848,6 +10910,37 @@
     "published_at": "2026-07-15T09:27:23.842Z",
     "pulled_at": "2026-07-21T22:17:27.903907+00:00",
     "utm_content": "lamayuru-carousel_persona-20260715"
+  },
+  "QwAgn": {
+    "account": "@naksh-iq",
+    "account_count": 1,
+    "aggregated": {
+      "average_engagement_rate": 0,
+      "total_comments": 0,
+      "total_impressions": 0,
+      "total_likes": 0,
+      "total_reach": 0,
+      "total_shares": 0,
+      "total_views": 129
+    },
+    "destination": "jodhpur",
+    "format": "scenario_eat_here",
+    "metrics": {
+      "comments": 0,
+      "engagement_total": 0,
+      "impressions": 0,
+      "likes": 0,
+      "reach": 0,
+      "saves": 0,
+      "shares": 0,
+      "views": 129
+    },
+    "network": "youtube",
+    "platform_post_id": "oXnDYbY9mHc",
+    "post_id": "QwAgn",
+    "published_at": "2026-11-22T14:38:07.400Z",
+    "pulled_at": "2026-11-23T01:51:38.369669+00:00",
+    "utm_content": "scenario_eat_here"
   },
   "R7oUH": {
     "account": "@naksh-iq",
@@ -12582,7 +12675,7 @@
     "platform_post_id": "Wl_-M0s5g6Y",
     "post_id": "Wv4lj",
     "published_at": "2026-11-19T14:39:32.547Z",
-    "pulled_at": "2026-11-22T01:26:45.733987+00:00",
+    "pulled_at": "2026-11-23T01:51:15.242109+00:00",
     "utm_content": "scenario_vs"
   },
   "WvqfQ": {
@@ -12613,7 +12706,7 @@
     "platform_post_id": "17928474501204309",
     "post_id": "WvqfQ",
     "published_at": "2026-11-17T14:37:26.194Z",
-    "pulled_at": "2026-11-22T01:26:25.527553+00:00",
+    "pulled_at": "2026-11-23T01:50:55.529429+00:00",
     "utm_content": "scenario_map_reveal"
   },
   "X4cPy": {
@@ -14566,7 +14659,7 @@
     "platform_post_id": "yIJmUwcv4NI",
     "post_id": "cMp06",
     "published_at": "2026-11-18T07:35:56.857Z",
-    "pulled_at": "2026-11-22T01:26:31.089982+00:00",
+    "pulled_at": "2026-11-23T01:51:01.034135+00:00",
     "utm_content": "scenario_guide"
   },
   "cMx10": {
@@ -14597,7 +14690,7 @@
     "platform_post_id": "3vLm-bmhKQ8",
     "post_id": "cMx10",
     "published_at": "2026-11-21T14:38:09.384Z",
-    "pulled_at": "2026-11-22T01:27:02.982822+00:00",
+    "pulled_at": "2026-11-23T01:51:30.665488+00:00",
     "utm_content": "scenario_swap"
   },
   "cN9ND": {
@@ -15447,7 +15540,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 61
+      "total_views": 63
     },
     "destination": "guru-nanak-2026",
     "format": "scenario_longweekend",
@@ -15459,13 +15552,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 61
+      "views": 63
     },
     "network": "youtube",
     "platform_post_id": "n4qFSSCD_Rk",
     "post_id": "eQeLS",
     "published_at": "2026-11-17T07:37:18.162Z",
-    "pulled_at": "2026-11-22T01:26:20.195964+00:00",
+    "pulled_at": "2026-11-23T01:50:49.337800+00:00",
     "utm_content": "scenario_longweekend"
   },
   "eQgJi": {
@@ -15496,7 +15589,7 @@
     "platform_post_id": "18033722408684867",
     "post_id": "eQgJi",
     "published_at": "2026-11-16T14:37:02.380Z",
-    "pulled_at": "2026-11-22T01:26:11.297365+00:00",
+    "pulled_at": "2026-11-23T01:50:40.893820+00:00",
     "utm_content": "scenario_hidden_gems"
   },
   "eRpmr": {
@@ -16780,7 +16873,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 21
+      "total_views": 29
     },
     "destination": "shikharji",
     "format": "scenario_guide",
@@ -16792,13 +16885,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 21
+      "views": 29
     },
     "network": "youtube",
     "platform_post_id": "VMRUyunVnIk",
     "post_id": "gnRKz",
     "published_at": "2026-11-21T07:35:53.985Z",
-    "pulled_at": "2026-11-22T01:26:58.161555+00:00",
+    "pulled_at": "2026-11-23T01:51:26.565415+00:00",
     "utm_content": "scenario_guide"
   },
   "gnyqM": {
@@ -16811,7 +16904,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 26
+      "total_views": 27
     },
     "destination": "mawphlang",
     "format": "scenario_guide",
@@ -16823,13 +16916,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 26
+      "views": 27
     },
     "network": "youtube",
     "platform_post_id": "4IAL_rcALl0",
     "post_id": "gnyqM",
     "published_at": "2026-11-19T07:35:57.369Z",
-    "pulled_at": "2026-11-22T01:26:41.376911+00:00",
+    "pulled_at": "2026-11-23T01:51:10.770448+00:00",
     "utm_content": "scenario_guide"
   },
   "goQpx": {
@@ -19030,7 +19123,7 @@
     "platform_post_id": "18376121536245512",
     "post_id": "memwb",
     "published_at": "2026-11-17T07:36:50.511Z",
-    "pulled_at": "2026-11-22T01:26:18.248367+00:00",
+    "pulled_at": "2026-11-23T01:50:47.816388+00:00",
     "utm_content": "scenario_longweekend"
   },
   "mgDZ3": {
@@ -19371,7 +19464,7 @@
     "platform_post_id": "1938209140676363",
     "post_id": "nJnTo",
     "published_at": "2026-11-17T07:37:53.121Z",
-    "pulled_at": "2026-11-22T01:26:22.963940+00:00",
+    "pulled_at": "2026-11-23T01:50:52.175795+00:00",
     "utm_content": "scenario_longweekend"
   },
   "nMNWl": {
@@ -20363,7 +20456,7 @@
     "platform_post_id": "1040562729145369_122129885132700092",
     "post_id": "opg0t",
     "published_at": "2026-11-21T15:36:25.795Z",
-    "pulled_at": "2026-11-22T01:27:04.937633+00:00",
+    "pulled_at": "2026-11-23T01:51:32.130927+00:00",
     "utm_content": "pachmarhi-carousel_festival-20261121"
   },
   "p9s2M": {
@@ -20593,7 +20686,7 @@
       "total_likes": 0,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 109
+      "total_views": 110
     },
     "destination": "jaisalmer",
     "format": "scenario_hidden_gems",
@@ -20605,13 +20698,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 109
+      "views": 110
     },
     "network": "youtube",
     "platform_post_id": "yF2L4axAqFg",
     "post_id": "pWatD",
     "published_at": "2026-11-16T14:38:02.038Z",
-    "pulled_at": "2026-11-22T01:26:13.090525+00:00",
+    "pulled_at": "2026-11-23T01:50:42.491352+00:00",
     "utm_content": "scenario_hidden_gems"
   },
   "pXocM": {
@@ -21572,7 +21665,7 @@
     "platform_post_id": "1040562729145369_122129380856700092",
     "post_id": "ry8Y2",
     "published_at": "2026-11-16T17:17:36.459Z",
-    "pulled_at": "2026-11-22T01:26:15.818774+00:00",
+    "pulled_at": "2026-11-23T01:50:45.190398+00:00",
     "utm_content": "palitana-carousel_festival-20261116"
   },
   "ryW5B": {
@@ -22192,7 +22285,7 @@
     "platform_post_id": "Epak9KcWCtI",
     "post_id": "vBUIc",
     "published_at": "2026-11-20T14:38:56.794Z",
-    "pulled_at": "2026-11-22T01:26:54.531743+00:00",
+    "pulled_at": "2026-11-23T01:51:22.525841+00:00",
     "utm_content": "scenario_list_of_3"
   },
   "vBlXZ": {
@@ -22223,7 +22316,7 @@
     "platform_post_id": "1040562729145369_122129584040700092",
     "post_id": "vBlXZ",
     "published_at": "2026-11-18T16:40:18.713Z",
-    "pulled_at": "2026-11-22T01:26:39.530793+00:00",
+    "pulled_at": "2026-11-23T01:51:09.391589+00:00",
     "utm_content": "yuksom-carousel_skip_list-20261118"
   },
   "vDSog": {
@@ -23339,7 +23432,7 @@
     "platform_post_id": "1040562729145369_122129689886700092",
     "post_id": "xl3er",
     "published_at": "2026-11-19T16:46:33.990Z",
-    "pulled_at": "2026-11-22T01:26:48.126210+00:00",
+    "pulled_at": "2026-11-23T01:51:16.979790+00:00",
     "utm_content": "kumarakom-carousel_best_month-20261119"
   },
   "xnwYJ": {
@@ -23848,7 +23941,7 @@
       "total_likes": 1,
       "total_reach": 0,
       "total_shares": 0,
-      "total_views": 28
+      "total_views": 30
     },
     "destination": "leh",
     "format": "scenario_skip",
@@ -23860,13 +23953,13 @@
       "reach": 0,
       "saves": 0,
       "shares": 0,
-      "views": 28
+      "views": 30
     },
     "network": "youtube",
     "platform_post_id": "8Ued8lIUlRo",
     "post_id": "ysYpN",
     "published_at": "2026-11-18T14:37:30.692Z",
-    "pulled_at": "2026-11-22T01:26:35.537947+00:00",
+    "pulled_at": "2026-11-23T01:51:05.368786+00:00",
     "utm_content": "scenario_skip"
   },
   "ywNB0": {
