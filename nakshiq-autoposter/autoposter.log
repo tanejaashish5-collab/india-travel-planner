@@ -33954,3 +33954,10 @@ Date range: 2026-04-15 → 2026-11-21
 2026-11-22 23:42:06  INFO      
 Date range: 2026-04-15 → 2026-11-22
 2026-11-22 23:42:06  INFO      ════════════════════════════════════════════════════════════
+2026-11-23 18:35:11  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-23 18:35:11  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-23 18:35:23  INFO          Requesting upload URL for srisailam__guide_m11.mp4 (19,282,747 bytes, video/mp4)
+2026-11-23 18:35:26  INFO          Uploading to R2 (timeout=300s)...
+2026-11-23 18:35:35  INFO          R2 PUT OK. Confirming...
+2026-11-23 18:35:38  INFO          Media ready: drT7d (19,282,747 bytes · srisailam__guide_m11.mp4)
+2026-11-23 18:35:48  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
