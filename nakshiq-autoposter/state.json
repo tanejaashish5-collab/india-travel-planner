@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-23",
     "PdMu0_evening": "2026-11-23",
-    "PdMu0_carousel": "2026-11-22"
+    "PdMu0_carousel": "2026-11-23"
   },
   "last_sync": "2026-11-23T18:42:26.196814+00:00",
   "posted_destinations": [
@@ -188,6 +188,10 @@
     },
     {
       "destination_id": "bengaluru",
+      "date": "2026-11-23"
+    },
+    {
+      "destination_id": "chennai",
       "date": "2026-11-23"
     }
   ],
@@ -12574,6 +12578,15 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "bengaluru.mp4"
+    },
+    {
+      "timestamp": "2026-11-23T19:27:08.035572+00:00",
+      "date": "2026-11-23",
+      "platform": "facebook",
+      "post_id": "EmH1J",
+      "destination": "chennai",
+      "format": "carousel.persona",
+      "media_id": "carousel_persona_2026-11-23"
     }
   ],
   "theme_usage": {
