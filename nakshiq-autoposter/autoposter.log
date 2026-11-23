@@ -33962,3 +33962,39 @@ Date range: 2026-04-15 → 2026-11-22
 2026-11-23 18:35:38  INFO          Media ready: drT7d (19,282,747 bytes · srisailam__guide_m11.mp4)
 2026-11-23 18:35:48  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
 2026-11-23 11:25:52  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-11-23 18:41:37  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-23 18:41:37  INFO      ════════════════════════════════════════════════════════════
+2026-11-23 18:41:37  INFO      Nakshiq Autoposter · EVENING · 2026-11-23 · weekday=0
+2026-11-23 18:41:37  INFO      ════════════════════════════════════════════════════════════
+2026-11-23 18:41:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-23 18:42:26  INFO      Synced → 20 destinations · 100 traps · 5 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-23 18:42:26  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-23 18:42:27  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-23 18:42:27  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-23 18:42:27  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+32 more)
+2026-11-23 18:42:27  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-23 18:42:45  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-23 18:42:45  INFO      Evening format (balance→verification): confidence_intel [0% vs target 35%] (0/15 never featured)
+2026-11-23 18:42:45  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: festival_alert  ·  Audience: backpackers
+2026-11-23 18:42:45  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 57
+2026-11-23 18:42:45  INFO      Audience filter 'backpackers' → no matches, using full pool.
+2026-11-23 18:42:45  INFO      Fingerprint dedup snapshot — 54 dests in 7d · 98 (dest,fmt) pairs in 30d · 262 media in 60d
+2026-11-23 18:42:45  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+32 more)
+2026-11-23 18:42:45  INFO      Festival locked: Vaikuntha Ekadasi at Bhadrachalam (39/42 active festivals never featured)
+2026-11-23 18:42:46  INFO      Shared best destination locked: Jim Corbett National Park
+2026-11-23 18:42:46  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-11-23 18:42:46  INFO      confidence_intel for Jim Corbett National Park: only 0 card rows — SKIPPING
+2026-11-23 18:42:47  WARNING   [facebook/Nakshiq] confidence_intel: corbett-national-park inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'bengaluru' as score_card to keep the slot live.
+2026-11-23 18:42:47  INFO      [facebook/Nakshiq] Caption ready (600 chars, dest=bengaluru)
+2026-11-23 18:42:47  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-23 18:42:47  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bengaluru.mp4?v=20260915
+2026-11-23 18:42:49  INFO          Brand-stamp applied: bengaluru.mp4 (5,463,085 → 2,538,481 bytes)
+2026-11-23 18:42:49  INFO          Requesting upload URL for bengaluru.mp4 (2,538,481 bytes, video/mp4)
+2026-11-23 18:42:51  INFO          Uploading to R2 (timeout=300s)...
+2026-11-23 18:42:53  INFO          R2 PUT OK. Confirming...
+2026-11-23 18:42:55  INFO          Media ready: 7doH3 (2,538,481 bytes · bengaluru.mp4)
+2026-11-23 18:42:55  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-23 18:43:00  WARNING   [facebook/Nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-23 18:43:08  INFO      [facebook/Nakshiq] ✅ Published · Outstand=8KFuy · Platform=1128470089888608
+2026-11-23 18:43:08  INFO      State saved. Run complete.
+2026-11-23 18:43:08  INFO      ════════════════════════════════════════════════════════════
