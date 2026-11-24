@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-24",
     "PdMu0_evening": "2026-11-24",
-    "PdMu0_carousel": "2026-11-23"
+    "PdMu0_carousel": "2026-11-24"
   },
   "last_sync": "2026-11-24T18:09:15.669964+00:00",
   "posted_destinations": [
@@ -188,6 +188,10 @@
     },
     {
       "destination_id": "mumbai",
+      "date": "2026-11-24"
+    },
+    {
+      "destination_id": "varanasi",
       "date": "2026-11-24"
     }
   ],
@@ -12612,6 +12616,15 @@
       "destination": "manali",
       "format": "scenario_map_reveal",
       "media_id": "KkdPt"
+    },
+    {
+      "timestamp": "2026-11-24T19:04:34.039159+00:00",
+      "date": "2026-11-24",
+      "platform": "facebook",
+      "post_id": "n3dFz",
+      "destination": "varanasi",
+      "format": "carousel.festival",
+      "media_id": "carousel_festival_2026-11-24"
     }
   ],
   "theme_usage": {
@@ -13806,9 +13819,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "hidden_gem_reveal": {},
-    "collection_carousel_dests:ap-buddhist-trail": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13842,22 +13853,6 @@
   },
   "carousel_seen": {
     "festival": [
-      "Marwar Festival",
-      "Kullu Dussehra",
-      "Paragliding World Cup",
-      "Meera Mahotsav",
-      "Lansdowne Autumn Festival",
-      "Bhimakali Dussehra",
-      "Chamba Dussehra",
-      "Hanle Stargazing Festival",
-      "Prayagraj Rasa Leela",
-      "Chitrakoot Deepotsav",
-      "Kishtwar Saffron Festival",
-      "Wildlife Week",
-      "Gangotri Diwali (Temple Closing)",
-      "Tihar (Deepawali)",
-      "Nainital Autumn Festival",
-      "Kinnaur Dussehra (Fulaich)",
       "Dev Deepawali",
       "Pushkar Camel Fair",
       "Deepotsav",
@@ -13865,38 +13860,7 @@
       "Matsya Festival",
       "Lucknow Festival",
       "Chandigarh Carnival",
-      "Rudraprayag Kartik Purnima Mela",
-      "Dudhwa Tharu Cultural Festival",
-      "Manikaran Guru Nanak Birthday",
-      "Darjeeling Tea & Tourism Festival",
-      "Sarnath Light & Sound Show Season",
-      "Sangai Festival",
-      "Wangala (100 Drums Festival)",
-      "Nongkrem Dance",
-      "Cherry Blossom Festival",
-      "Hampi Utsav (Vijaya Utsav)",
-      "Kadalekai Parishe (Groundnut Fair)",
-      "Laksha Deepotsava",
-      "Theyyam Season",
-      "Guruvayur Ekadashi",
-      "Chalakudy River Festival",
-      "Bali Jatra",
-      "Kartik Purnima at Somnath",
-      "Shatrunjaya Mahotsav",
-      "Chhath Puja",
-      "Chhath Puja at Netarhat",
-      "Raas Mahotsav",
-      "Nirvana Mahotsav",
-      "Lili Parikrama (Green Circumambulation of Mount Girnar)",
-      "Mandala-Makaravilakku Pilgrimage Season",
-      "Kartik Purnima",
-      "Nagdwari Mela",
-      "Leitlangpui Music Festival",
-      "Orange and Tourism Festival",
-      "Mahakala Dance (Ralang Monastery)",
-      "Karthika Pournami Jatara",
-      "Karthigai Deepam",
-      "Kali Puja"
+      "Rudraprayag Kartik Purnima Mela"
     ],
     "collection": [
       "dwadasa-jyotirlinga",
