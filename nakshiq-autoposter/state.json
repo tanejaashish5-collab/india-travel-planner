@@ -40,7 +40,7 @@
     "PdMu0_evening": "2026-11-24",
     "PdMu0_carousel": "2026-11-23"
   },
-  "last_sync": "2026-11-24T01:48:00.400635+00:00",
+  "last_sync": "2026-11-24T18:09:15.669964+00:00",
   "posted_destinations": [
     {
       "destination_id": "chennai",
@@ -12594,6 +12594,24 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "mumbai.mp4"
+    },
+    {
+      "timestamp": "2026-11-24T14:37:37.372871+00:00",
+      "date": "2026-11-24",
+      "platform": "instagram",
+      "post_id": "eyPSC",
+      "destination": "manali",
+      "format": "scenario_map_reveal",
+      "media_id": "buU2F"
+    },
+    {
+      "timestamp": "2026-11-24T14:38:27.675855+00:00",
+      "date": "2026-11-24",
+      "platform": "youtube",
+      "post_id": "VFkA7",
+      "destination": "manali",
+      "format": "scenario_map_reveal",
+      "media_id": "KkdPt"
     }
   ],
   "theme_usage": {
@@ -13657,6 +13675,9 @@
       ],
       "weekend-from-kolkata": [
         "2026-11-24"
+      ],
+      "ap-buddhist-trail": [
+        "2026-11-24"
       ]
     },
     "collection_carousel_dests:best-honeymoon": {
@@ -13786,7 +13807,8 @@
         "2026-10-22"
       ]
     },
-    "collection_carousel_dests:weekend-from-kolkata": {}
+    "hidden_gem_reveal": {},
+    "collection_carousel_dests:ap-buddhist-trail": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13800,8 +13822,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "ooty",
-    "collection": "weekend-from-kolkata"
+    "shared_best": "corbett-national-park",
+    "collection": "ap-buddhist-trail"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-11-18",
