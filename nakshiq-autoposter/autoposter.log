@@ -34039,3 +34039,38 @@ Date range: 2026-04-15 → 2026-11-22
 2026-11-23 19:27:08  INFO      [facebook/Nakshiq] ✅ carousel published (persona) · post_id=EmH1J
 2026-11-23 19:27:08  INFO      Carousel run complete (fmt=persona, posted=True).
 2026-11-23 19:27:08  INFO      ════════════════════════════════════════════════════════════
+2026-11-24 01:47:11  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-24 01:47:11  INFO      ════════════════════════════════════════════════════════════
+2026-11-24 01:47:11  INFO      Nakshiq Autoposter · EVENING · 2026-11-24 · weekday=1
+2026-11-24 01:47:11  INFO      ════════════════════════════════════════════════════════════
+2026-11-24 01:47:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-24 01:48:00  INFO      Synced → 20 destinations · 100 traps · 4 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-24 01:48:00  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-24 01:48:02  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-24 01:48:02  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-24 01:48:02  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+32 more)
+2026-11-24 01:48:02  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-24 01:48:19  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-24 01:48:19  INFO      Evening format (balance→verification): confidence_intel [0% vs target 35%] (0/15 never featured)
+2026-11-24 01:48:19  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: collection_spotlight
+2026-11-24 01:48:19  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 55
+2026-11-24 01:48:19  INFO      Fingerprint dedup snapshot — 53 dests in 7d · 96 (dest,fmt) pairs in 30d · 258 media in 60d
+2026-11-24 01:48:19  INFO      Collection locked: Weekend Getaways from Kolkata (Under 8 Hours) (72/100 never featured)
+2026-11-24 01:48:20  INFO      Shared best destination locked: Ooty (Udagamandalam)
+2026-11-24 01:48:20  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-11-24 01:48:20  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-11-24 01:48:20  INFO      confidence_intel for Ooty (Udagamandalam): only 0 card rows — SKIPPING
+2026-11-24 01:48:20  WARNING   [facebook/Nakshiq] confidence_intel: ooty inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'mumbai' as score_card to keep the slot live.
+2026-11-24 01:48:20  INFO      [facebook/Nakshiq] Caption ready (542 chars, dest=mumbai)
+2026-11-24 01:48:21  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-24 01:48:21  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mumbai.mp4?v=20260915
+2026-11-24 01:48:23  INFO          Brand-stamp applied: mumbai.mp4 (3,075,226 → 1,666,661 bytes)
+2026-11-24 01:48:23  INFO          Requesting upload URL for mumbai.mp4 (1,666,661 bytes, video/mp4)
+2026-11-24 01:48:24  INFO          Uploading to R2 (timeout=300s)...
+2026-11-24 01:48:26  INFO          R2 PUT OK. Confirming...
+2026-11-24 01:48:28  INFO          Media ready: MzYsL (1,666,661 bytes · mumbai.mp4)
+2026-11-24 01:48:28  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-24 01:48:36  WARNING   [facebook/Nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-24 01:48:50  INFO      [facebook/Nakshiq] ✅ Published · Outstand=BJ0jp · Platform=29198398629819176
+2026-11-24 01:48:50  INFO      State saved. Run complete.
+2026-11-24 01:48:50  INFO      ════════════════════════════════════════════════════════════

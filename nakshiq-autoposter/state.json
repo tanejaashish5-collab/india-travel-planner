@@ -36,20 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-23",
-    "PdMu0_evening": "2026-11-23",
+    "PdMu0": "2026-11-24",
+    "PdMu0_evening": "2026-11-24",
     "PdMu0_carousel": "2026-11-23"
   },
-  "last_sync": "2026-11-23T18:42:26.196814+00:00",
+  "last_sync": "2026-11-24T01:48:00.400635+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-11-09"
-    },
-    {
-      "destination_id": "ravangla",
-      "date": "2026-11-09"
-    },
     {
       "destination_id": "chennai",
       "date": "2026-11-10"
@@ -193,6 +185,10 @@
     {
       "destination_id": "chennai",
       "date": "2026-11-23"
+    },
+    {
+      "destination_id": "mumbai",
+      "date": "2026-11-24"
     }
   ],
   "posted_formats": {
@@ -220,7 +216,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "v2_cost_index_handwritten",
       "data_carousel",
       "v2_route_animated_map",
@@ -237,6 +232,7 @@
       "score_card",
       "data_carousel",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -12587,6 +12583,17 @@
       "destination": "chennai",
       "format": "carousel.persona",
       "media_id": "carousel_persona_2026-11-23"
+    },
+    {
+      "timestamp": "2026-11-24T01:48:50.833772+00:00",
+      "date": "2026-11-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "BJ0jp",
+      "destination": "mumbai",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "mumbai.mp4"
     }
   ],
   "theme_usage": {
@@ -12616,7 +12623,8 @@
         "2026-05-26",
         "2026-08-27",
         "2026-10-15",
-        "2026-11-18"
+        "2026-11-18",
+        "2026-11-24"
       ],
       "chennai": [
         "2026-05-20",
@@ -12742,16 +12750,6 @@
         "2026-07-20",
         "2026-09-22"
       ],
-      "courtallam": [
-        "2026-06-05",
-        "2026-06-07",
-        "2026-06-12",
-        "2026-06-28",
-        "2026-07-09",
-        "2026-07-25",
-        "2026-08-19",
-        "2026-08-25"
-      ],
       "kaza": [
         "2026-06-07",
         "2026-06-23",
@@ -12834,13 +12832,6 @@
         "2026-08-14",
         "2026-08-28",
         "2026-08-31"
-      ],
-      "tso-moriri": [
-        "2026-07-07",
-        "2026-07-17",
-        "2026-07-23",
-        "2026-08-19",
-        "2026-08-25"
       ],
       "igatpuri": [
         "2026-07-09",
@@ -13193,7 +13184,8 @@
         "2026-11-20",
         "2026-11-21",
         "2026-11-22",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-24"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13311,7 +13303,8 @@
       "mumbai": [
         "2026-05-26",
         "2026-08-27",
-        "2026-10-15"
+        "2026-10-15",
+        "2026-11-24"
       ],
       "chennai": [
         "2026-05-26",
@@ -13330,12 +13323,6 @@
       "darjeeling": [
         "2026-06-11",
         "2026-10-11"
-      ],
-      "courtallam": [
-        "2026-06-12",
-        "2026-07-09",
-        "2026-07-25",
-        "2026-08-25"
       ],
       "pahalgam": [
         "2026-06-14",
@@ -13608,9 +13595,6 @@
         "2026-06-17",
         "2026-09-29"
       ],
-      "rivers-and-lakes": [
-        "2026-08-25"
-      ],
       "pancha-bhoota-stalams": [
         "2026-08-27"
       ],
@@ -13670,6 +13654,9 @@
       ],
       "godavari-trail": [
         "2026-11-19"
+      ],
+      "weekend-from-kolkata": [
+        "2026-11-24"
       ]
     },
     "collection_carousel_dests:best-honeymoon": {
@@ -13731,11 +13718,6 @@
     "collection_carousel_dests:photography-spots": {
       "kalpa": [
         "2026-09-29"
-      ]
-    },
-    "collection_carousel_dests:rivers-and-lakes": {
-      "tso-moriri": [
-        "2026-08-25"
       ]
     },
     "collection_carousel_dests:deccan-food-trail": {
@@ -13803,7 +13785,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "collection_carousel_dests:weekend-from-kolkata": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13817,8 +13800,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "corbett-national-park",
-    "collection": "godavari-trail"
+    "shared_best": "ooty",
+    "collection": "weekend-from-kolkata"
   },
   "manual_skip_dests": {},
   "data_carousel_floor_last": "2026-11-18",
