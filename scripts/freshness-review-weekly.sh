@@ -123,6 +123,19 @@ fi
 # Append the authoritative outcome (what the wrapper actually stamped) to the note.
 { echo; echo "## Wrapper outcome"; echo; echo '```'; cat "$WORK/apply-$TODAY.log"; echo '```'; } >> "$NOTE"
 
+# SECOND PASS (2026-11-24). On 11-21 the session left 28 of 41 ids out and stopped
+# after 27 minutes (watchdog: silent failure). The procedure already asks for a second
+# research wave; this runs one on ONLY the ids left out, with the copy of the retry
+# script pinned to this run's start commit. It appends its own section to the note.
+RETRY_SH="scripts/.freshness-review-retry.pinned-$$.sh"
+if git show "$START_SHA:scripts/freshness-review-retry.sh" > "$RETRY_SH" 2>/dev/null; then
+  bash "$RETRY_SH" "$TODAY" "$START_SHA" > "$WORK/retry-$TODAY.log" 2>&1
+  RETRY_LINE="$(grep -E '^RETRY ' "$WORK/retry-$TODAY.log" | tail -1)"
+  say "second pass: ${RETRY_LINE:-no result line}"
+  case "$RETRY_LINE" in "RETRY RESULT "*) RESULT_LINE="$RESULT_LINE | 2nd pass ${RETRY_LINE#RETRY RESULT }";; esac
+fi
+rm -f "$RETRY_SH"
+
 # SETTLE OPEN ITEMS (founder 2026-11-02). A separate session re-researches anything
 # still flagged, from scratch, because earlier flags were often the reviewer's own
 # error. It writes a verdict file only; the settle command pinned to the run's start
