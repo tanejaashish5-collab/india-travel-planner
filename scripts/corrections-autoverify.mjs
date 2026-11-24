@@ -47,6 +47,12 @@ const ONLY = args.includes("--only") ? args[args.indexOf("--only") + 1] : null; 
 const SITE = "https://www.nakshiq.com";
 const NOTICE_DAYS = 21;
 const RAW_DIR = mkdtempSync(join(tmpdir(), "autoverify-"));
+// Verifier sessions must run on the Max plan, never per-token billing.
+// --env-file=apps/web/.env.local puts ANTHROPIC_API_KEY into process.env, and a
+// `claude -p` child that inherits it bills that key instead. 2026-11-17 and 11-21:
+// every verifier died on the key's spend cap and 31 fixes were held. Strip it.
+const CLAUDE_ENV = { ...process.env };
+for (const k of ["ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN"]) delete CLAUDE_ENV[k];
 
 const s = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 const SECRET = (process.env.NEWSLETTER_SEND_SECRET || "").trim();
@@ -116,7 +122,7 @@ function runVerifier(items, label) {
 function runVerifierOnce(items, label) {
   const r = spawnSync("claude", ["-p", verifierPrompt(items), "--model", "sonnet", "--output-format", "json",
     "--allowedTools", "WebSearch,WebFetch,Bash(curl:*),Bash(pdftotext:*)", "--max-turns", "120"],
-    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, timeout: 60 * 60 * 1000 });
+    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, timeout: 60 * 60 * 1000, env: CLAUDE_ENV });
   if (r.status !== 0) {
     let why = (r.stderr || "").trim();
     try { const j = JSON.parse(r.stdout); why = why || `${j.subtype ?? ""} ${String(j.result ?? "").slice(0, 200)}`.trim(); } catch { why = why || String(r.stdout || r.error?.message || "").slice(-300); }
@@ -276,7 +282,7 @@ ${cands.map((c) => `- id ${c.short} | ${c.destination_id} | field ${c.field}\n  
 }
 function runWriter(cands) {
   const r = spawnSync("claude", ["-p", writerPrompt(cands), "--model", "sonnet", "--output-format", "json", "--max-turns", "3"],
-    { encoding: "utf8", maxBuffer: 16 * 1024 * 1024, timeout: 20 * 60 * 1000 });
+    { encoding: "utf8", maxBuffer: 16 * 1024 * 1024, timeout: 20 * 60 * 1000, env: CLAUDE_ENV });
   if (r.status !== 0) { console.error(`writer exit ${r.status}: ${(r.stdout || r.stderr || "").slice(-200)}`); return []; }
   let text; try { text = JSON.parse(r.stdout).result; } catch { text = r.stdout; }
   const m = String(text).match(/\[\s*\{[\s\S]*\}\s*\]/);

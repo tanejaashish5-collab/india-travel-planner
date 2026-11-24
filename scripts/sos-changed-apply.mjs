@@ -38,6 +38,11 @@ import { extractPageTokens, normalisePhone, numberMatchesPage, rowPhones, urlsFo
 const args = process.argv.slice(2);
 const flag = (n) => (args.includes(n) ? args[args.indexOf(n) + 1] : null);
 const DRY = args.includes("--dry");
+// Verifier sessions run on the Max plan, never per-token billing: --env-file puts
+// ANTHROPIC_API_KEY into process.env and a `claude -p` child would bill it (the
+// 2026-11-17/21 corrections-autoverify failure). Strip it for children.
+const CLAUDE_ENV = { ...process.env };
+for (const k of ["ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN"]) delete CLAUDE_ENV[k];
 const s = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 const COLS = "destination_id, verified, verified_date, source_url, source_map, auto_verify_status, auto_verify_note, auto_verify_fail_streak, auto_verified_at, " + PHONE_FIELDS.join(", ");
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36";
@@ -106,7 +111,7 @@ ${items.map((i) => `- id ${i.id} | ${i.destination_id} | field ${i.field}\n  STO
 function runVerifier(items, label) {
   const r = spawnSync("claude", ["-p", verifierPrompt(items), "--model", "sonnet", "--output-format", "json",
     "--allowedTools", "WebFetch,Bash(curl:*)", "--max-turns", "60"],
-    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, timeout: 30 * 60 * 1000 });
+    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, timeout: 30 * 60 * 1000, env: CLAUDE_ENV });
   if (r.status !== 0) { console.error(`verifier ${label} exit ${r.status}: ${(r.stderr || "").slice(0, 300)}`); return []; }
   let text;
   try { text = JSON.parse(r.stdout).result; } catch { text = r.stdout; }
