@@ -34221,3 +34221,26 @@ Date range: 2026-04-15 → 2026-11-24
 2026-11-24 19:04:34  INFO      [facebook/Nakshiq] ✅ carousel published (festival) · post_id=n3dFz
 2026-11-24 19:04:34  INFO      Carousel run complete (fmt=festival, posted=True).
 2026-11-24 19:04:34  INFO      ════════════════════════════════════════════════════════════
+2026-11-24 23:37:11  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-24 23:37:11  INFO      ════════════════════════════════════════════════════════════
+2026-11-24 23:37:11  INFO      Nakshiq Autoposter · EVENING · 2026-11-24 · weekday=1
+2026-11-24 23:37:11  INFO      ════════════════════════════════════════════════════════════
+2026-11-24 23:37:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-24 23:37:57  INFO      Synced → 20 destinations · 100 traps · 4 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-24 23:37:57  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-24 23:37:58  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-24 23:37:58  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-24 23:37:58  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+32 more)
+2026-11-24 23:37:58  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-24 23:38:14  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-24 23:38:14  INFO      Evening format (balance→discovery): hidden_gem_reveal [0% vs target 25%] (0/15 never featured)
+2026-11-24 23:38:14  INFO      Formats — IG: hidden_gem_reveal  ·  FB: hidden_gem_reveal  ·  Story: collection_spotlight
+2026-11-24 23:38:14  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 57
+2026-11-24 23:38:14  INFO      Fingerprint dedup snapshot — 56 dests in 7d · 98 (dest,fmt) pairs in 30d · 261 media in 60d
+2026-11-24 23:38:14  INFO      Collection locked: French India Heritage Trail (70/100 never featured)
+2026-11-24 23:38:14  INFO      Hidden gem locked: Kalatop Wildlife Sanctuary Trek (near Dalhousie) (38/38 never featured)
+2026-11-24 23:38:15  INFO      Shared best destination locked: Ooty (Udagamandalam)
+2026-11-24 23:38:15  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-11-24 23:38:15  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-11-24 23:38:15  INFO      State saved. Run complete.
+2026-11-24 23:38:15  INFO      ════════════════════════════════════════════════════════════
