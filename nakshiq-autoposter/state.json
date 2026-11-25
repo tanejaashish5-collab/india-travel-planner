@@ -40,7 +40,7 @@
     "PdMu0_evening": "2026-11-24",
     "PdMu0_carousel": "2026-11-24"
   },
-  "last_sync": "2026-11-24T23:37:57.604112+00:00",
+  "last_sync": "2026-11-25T17:36:57.133137+00:00",
   "posted_destinations": [
     {
       "destination_id": "chennai",
@@ -12629,10 +12629,6 @@
   ],
   "theme_usage": {
     "destinations": {
-      "hyderabad": [
-        "2026-05-18",
-        "2026-08-26"
-      ],
       "chopta": [
         "2026-05-19",
         "2026-05-20",
@@ -13045,11 +13041,6 @@
       ]
     },
     "morning_formats": {
-      "arrival_intel": [
-        "2026-05-18",
-        "2026-05-20",
-        "2026-08-26"
-      ],
       "tourist_map": [
         "2026-05-22",
         "2026-06-15",
@@ -13392,9 +13383,6 @@
         "2026-08-12",
         "2026-08-29"
       ],
-      "hyderabad": [
-        "2026-08-26"
-      ],
       "lonavala": [
         "2026-08-27"
       ],
@@ -13626,6 +13614,10 @@
         "2026-06-17",
         "2026-09-29"
       ],
+      "french-india-trail": [
+        "2026-08-20",
+        "2026-11-24"
+      ],
       "pancha-bhoota-stalams": [
         "2026-08-27"
       ],
@@ -13690,9 +13682,6 @@
         "2026-11-24"
       ],
       "ap-buddhist-trail": [
-        "2026-11-24"
-      ],
-      "french-india-trail": [
         "2026-11-24"
       ]
     },
@@ -13823,8 +13812,7 @@
         "2026-10-22"
       ]
     },
-    "hidden_gem_reveal": {},
-    "collection_carousel_dests:french-india-trail": {}
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13838,7 +13826,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "ooty",
+    "shared_best": "corbett-national-park",
     "collection": "french-india-trail"
   },
   "manual_skip_dests": {},
