@@ -36,36 +36,12 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-24",
-    "PdMu0_evening": "2026-11-24",
+    "PdMu0": "2026-11-25",
+    "PdMu0_evening": "2026-11-25",
     "PdMu0_carousel": "2026-11-24"
   },
-  "last_sync": "2026-11-25T17:36:57.133137+00:00",
+  "last_sync": "2026-11-25T23:13:37.176520+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "chennai",
-      "date": "2026-11-10"
-    },
-    {
-      "destination_id": "lonar-crater",
-      "date": "2026-11-10"
-    },
-    {
-      "destination_id": "deeg",
-      "date": "2026-11-10"
-    },
-    {
-      "destination_id": "haridwar",
-      "date": "2026-11-10"
-    },
-    {
-      "destination_id": "dungarpur",
-      "date": "2026-11-10"
-    },
-    {
-      "destination_id": "silent-valley",
-      "date": "2026-11-10"
-    },
     {
       "destination_id": "tawang",
       "date": "2026-11-11"
@@ -193,6 +169,10 @@
     {
       "destination_id": "varanasi",
       "date": "2026-11-24"
+    },
+    {
+      "destination_id": "puri",
+      "date": "2026-11-25"
     }
   ],
   "posted_formats": {
@@ -220,7 +200,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "v2_cost_index_handwritten",
       "data_carousel",
       "v2_route_animated_map",
       "v2_myth_bust_oneline",
@@ -236,6 +215,7 @@
       "score_card",
       "data_carousel",
       "v2_tourist_trap_split",
+      "score_card",
       "score_card",
       "score_card",
       "score_card",
@@ -12625,6 +12605,17 @@
       "destination": "varanasi",
       "format": "carousel.festival",
       "media_id": "carousel_festival_2026-11-24"
+    },
+    {
+      "timestamp": "2026-11-25T23:14:34.011408+00:00",
+      "date": "2026-11-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "26lrK",
+      "destination": "puri",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "puri.mp4"
     }
   ],
   "theme_usage": {
@@ -12706,7 +12697,8 @@
         "2026-10-01",
         "2026-10-15",
         "2026-10-19",
-        "2026-11-18"
+        "2026-11-18",
+        "2026-11-25"
       ],
       "jibhi": [
         "2026-05-25",
@@ -13207,7 +13199,8 @@
         "2026-11-21",
         "2026-11-22",
         "2026-11-23",
-        "2026-11-24"
+        "2026-11-24",
+        "2026-11-25"
       ],
       "v2_score_card_pov": [
         "2026-06-02",
@@ -13441,7 +13434,8 @@
         "2026-10-17"
       ],
       "puri": [
-        "2026-10-19"
+        "2026-10-19",
+        "2026-11-25"
       ],
       "mukteshwar": [
         "2026-10-20"
@@ -13811,7 +13805,8 @@
       "sarahan": [
         "2026-10-22"
       ]
-    }
+    },
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13825,7 +13820,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "corbett-national-park",
+    "shared_best": "ooty",
     "collection": "french-india-trail"
   },
   "manual_skip_dests": {},

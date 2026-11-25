@@ -34374,3 +34374,38 @@ Date range: 2026-04-15 → 2026-11-24
 2026-11-25 18:12:11  WARNING   [facebook/Nakshiq] carousel post failed (API rejected).
 2026-11-25 18:12:11  INFO      Carousel run complete (fmt=cost, posted=False).
 2026-11-25 18:12:11  INFO      ════════════════════════════════════════════════════════════
+2026-11-25 23:12:33  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-25 23:12:33  INFO      ════════════════════════════════════════════════════════════
+2026-11-25 23:12:33  INFO      Nakshiq Autoposter · EVENING · 2026-11-25 · weekday=2
+2026-11-25 23:12:33  INFO      ════════════════════════════════════════════════════════════
+2026-11-25 23:12:33  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-25 23:13:37  INFO      Synced → 20 destinations · 100 traps · 4 articles · 57 routes · 100 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 90 camping · 50 gems · total catalog=533
+2026-11-25 23:13:37  INFO      brand_stamp: registered 443 destinations for overlay lookup
+2026-11-25 23:13:38  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-25 23:13:38  INFO      Active accounts: ['facebook/Nakshiq']
+2026-11-25 23:13:38  INFO      Festivals filtered (past/post-window): Dev Deepawali, Pushkar Camel Fair, Deepotsav, Bundi Utsav, Matsya Festival, Lucknow Festival, Chandigarh Carnival, Rudraprayag Kartik Purnima Mela (+32 more)
+2026-11-25 23:13:39  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-11-25 23:13:47  WARNING   destinations_full month=6 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-25 23:13:58  INFO      [csv_formats] 25/38 CSV formats eligible this run (asset present + data resolves)
+2026-11-25 23:13:58  INFO      Evening format (balance→verification): confidence_intel [0% vs target 35%] (0/15 never featured)
+2026-11-25 23:13:58  INFO      Formats — IG: confidence_intel  ·  FB: confidence_intel  ·  Story: blog_promo
+2026-11-25 23:13:58  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 56
+2026-11-25 23:13:58  INFO      Fingerprint dedup snapshot — 55 dests in 7d · 96 (dest,fmt) pairs in 30d · 260 media in 60d
+2026-11-25 23:13:58  INFO      Article locked: Shatrunjaya hill climb distance: how far is it from Palitana? (4/4 never featured)
+2026-11-25 23:14:00  INFO      Shared best destination locked: Ooty (Udagamandalam)
+2026-11-25 23:14:00  INFO      [facebook/Nakshiq] Generating confidence_intel post...
+2026-11-25 23:14:00  INFO      confidence_intel for Ooty (Udagamandalam): only 0 card rows — SKIPPING
+2026-11-25 23:14:00  WARNING   [facebook/Nakshiq] confidence_intel: ooty inside its cooldown (in-season pool exhausted) — relaxed to stalest dest 'puri' as score_card to keep the slot live.
+2026-11-25 23:14:00  INFO      [facebook/Nakshiq] Caption ready (534 chars, dest=puri)
+2026-11-25 23:14:01  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-11-25 23:14:01  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/puri.mp4?v=20260915
+2026-11-25 23:14:03  INFO          Brand-stamp applied: puri.mp4 (12,360,500 → 6,786,492 bytes)
+2026-11-25 23:14:03  INFO          Requesting upload URL for puri.mp4 (6,786,492 bytes, video/mp4)
+2026-11-25 23:14:06  INFO          Uploading to R2 (timeout=300s)...
+2026-11-25 23:14:09  INFO          R2 PUT OK. Confirming...
+2026-11-25 23:14:11  INFO          Media ready: eQfxh (6,786,492 bytes · puri.mp4)
+2026-11-25 23:14:11  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-11-25 23:14:19  WARNING   [facebook/Nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-25 23:14:34  INFO      [facebook/Nakshiq] ✅ Published · Outstand=26lrK · Platform=1855318752270870
+2026-11-25 23:14:34  INFO      State saved. Run complete.
+2026-11-25 23:14:34  INFO      ════════════════════════════════════════════════════════════
