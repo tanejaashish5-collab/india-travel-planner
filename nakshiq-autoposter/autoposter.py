@@ -26,6 +26,15 @@ import requests
 from datetime import datetime, timezone, date, timedelta
 from pathlib import Path
 
+# 2026-11-26: since 2026-11-25, Vercel Bot Protection on nakshiq.com answers 429 to any
+# User-Agent without "NakshIQ" in it (the bypass rule matches that token). Pages AND
+# /images/ are covered. The default python-requests UA blocked every post on 11-25.
+# This sets the default UA for every requests call in this process, including the
+# modules autoposter loads (carousel_studio, guide_reel, ...). Headers passed
+# explicitly to a call still win.
+NAKSHIQ_UA = "NakshIQ-Autoposter/1.0 (+https://www.nakshiq.com)"
+requests.utils.default_user_agent = lambda name="": NAKSHIQ_UA
+
 # 2026-05-20: v2/v3/v4 CSV-driven formats. Lazily loaded on first call to
 # get_csv_specs() so logging.basicConfig (further below) is already wired and
 # load-time INFO messages route to the autoposter.log file. Asset-presence in
@@ -6650,7 +6659,9 @@ def _healthcheck_url(url: str, timeout: float = 6.0) -> tuple[bool, int]:
     if url in _HEALTHCHECK_CACHE:
         return _HEALTHCHECK_CACHE[url]
     try:
-        r = requests.head(url, allow_redirects=True, timeout=timeout)
+        # The UA must contain "NakshIQ" (Bot Protection bypass, see NAKSHIQ_UA).
+        r = requests.head(url, allow_redirects=True, timeout=timeout,
+                          headers={"User-Agent": NAKSHIQ_UA})
         status = r.status_code
         ok = 200 <= status < 400
     except requests.RequestException:
