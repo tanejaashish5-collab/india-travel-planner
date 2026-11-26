@@ -36,20 +36,11 @@
     "m8EAd_yt_short_count": 1,
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
-    "PdMu0": "2026-11-25",
-    "PdMu0_evening": "2026-11-25",
-    "PdMu0_carousel": "2026-11-24"
+    "PdMu0": "2026-11-26",
+    "PdMu0_evening": "2026-11-26"
   },
-  "last_sync": "2026-11-25T23:13:37.176520+00:00",
+  "last_sync": "2026-11-26T17:17:33.780546+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "tawang",
-      "date": "2026-11-11"
-    },
-    {
-      "destination_id": "haridwar",
-      "date": "2026-11-11"
-    },
     {
       "destination_id": "pune",
       "date": "2026-11-12"
@@ -173,6 +164,22 @@
     {
       "destination_id": "puri",
       "date": "2026-11-25"
+    },
+    {
+      "destination_id": "corbett-national-park",
+      "date": "2026-11-26"
+    },
+    {
+      "destination_id": "ooty",
+      "date": "2026-11-26"
+    },
+    {
+      "destination_id": "mandrem",
+      "date": "2026-11-26"
+    },
+    {
+      "destination_id": "lonar-crater",
+      "date": "2026-11-26"
     }
   ],
   "posted_formats": {
@@ -200,7 +207,6 @@
       "festival_alert"
     ],
     "PdMu0": [
-      "data_carousel",
       "v2_route_animated_map",
       "v2_myth_bust_oneline",
       "v2_score_card_pov",
@@ -220,7 +226,8 @@
       "score_card",
       "score_card",
       "score_card",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -12616,6 +12623,44 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "puri.mp4"
+    },
+    {
+      "timestamp": "2026-11-26T07:36:05.873340+00:00",
+      "date": "2026-11-26",
+      "platform": "youtube",
+      "post_id": "eyxek",
+      "destination": "tura",
+      "format": "scenario_guide",
+      "media_id": "xnqyp"
+    },
+    {
+      "timestamp": "2026-11-26T14:37:48.976942+00:00",
+      "date": "2026-11-26",
+      "platform": "instagram",
+      "post_id": "HTRUI",
+      "destination": "kolkata",
+      "format": "scenario_eat_here",
+      "media_id": "Rak4L"
+    },
+    {
+      "timestamp": "2026-11-26T14:39:20.669276+00:00",
+      "date": "2026-11-26",
+      "platform": "youtube",
+      "post_id": "mrfP4",
+      "destination": "tawang",
+      "format": "scenario_window",
+      "media_id": "ryvuG"
+    },
+    {
+      "timestamp": "2026-11-26T17:18:53.310912+00:00",
+      "date": "2026-11-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "VFVif",
+      "destination": "corbett-national-park",
+      "format": "data_carousel",
+      "has_media": true,
+      "media_id": "data_carousel_01_title.jpg"
     }
   ],
   "theme_usage": {
@@ -12713,7 +12758,8 @@
       "ooty": [
         "2026-05-29",
         "2026-09-04",
-        "2026-09-27"
+        "2026-09-27",
+        "2026-11-26"
       ],
       "devprayag": [
         "2026-05-31",
@@ -12799,13 +12845,6 @@
         "2026-06-11",
         "2026-10-11"
       ],
-      "lonavala": [
-        "2026-06-12",
-        "2026-07-09",
-        "2026-07-25",
-        "2026-08-19",
-        "2026-08-27"
-      ],
       "haridwar": [
         "2026-06-15",
         "2026-11-10",
@@ -12858,16 +12897,6 @@
         "2026-08-10",
         "2026-08-28"
       ],
-      "zanskar": [
-        "2026-07-09",
-        "2026-07-12",
-        "2026-07-16",
-        "2026-07-21",
-        "2026-07-29",
-        "2026-08-04",
-        "2026-08-10",
-        "2026-08-27"
-      ],
       "adilabad": [
         "2026-08-01",
         "2026-08-13",
@@ -12877,9 +12906,6 @@
         "2026-08-02",
         "2026-08-15",
         "2026-08-28"
-      ],
-      "kanchipuram": [
-        "2026-08-27"
       ],
       "tirupati": [
         "2026-09-03"
@@ -12985,7 +13011,8 @@
         "2026-10-22"
       ],
       "mandrem": [
-        "2026-11-02"
+        "2026-11-02",
+        "2026-11-26"
       ],
       "modhera": [
         "2026-11-02",
@@ -13005,7 +13032,8 @@
         "2026-11-09"
       ],
       "lonar-crater": [
-        "2026-11-10"
+        "2026-11-10",
+        "2026-11-26"
       ],
       "deeg": [
         "2026-11-10",
@@ -13030,6 +13058,9 @@
       ],
       "marari": [
         "2026-11-18"
+      ],
+      "corbett-national-park": [
+        "2026-11-26"
       ]
     },
     "morning_formats": {
@@ -13056,10 +13087,6 @@
         "2026-05-24",
         "2026-06-19",
         "2026-09-29"
-      ],
-      "v3_tl_editorial_listicle": [
-        "2026-05-25",
-        "2026-08-27"
       ],
       "route_spotlight_short": [
         "2026-05-25",
@@ -13275,7 +13302,8 @@
         "2026-10-25",
         "2026-11-02",
         "2026-11-10",
-        "2026-11-18"
+        "2026-11-18",
+        "2026-11-26"
       ],
       "tourist_trap": [
         "2026-09-01",
@@ -13375,9 +13403,6 @@
       "kaza": [
         "2026-08-12",
         "2026-08-29"
-      ],
-      "lonavala": [
-        "2026-08-27"
       ],
       "jibhi": [
         "2026-09-01",
@@ -13502,6 +13527,9 @@
       ],
       "kuttanad": [
         "2026-11-22"
+      ],
+      "corbett-national-park": [
+        "2026-11-26"
       ]
     },
     "audience_tags": {
@@ -13612,9 +13640,6 @@
         "2026-08-20",
         "2026-11-24"
       ],
-      "pancha-bhoota-stalams": [
-        "2026-08-27"
-      ],
       "buddhist-circuit-complete": [
         "2026-09-01"
       ],
@@ -13677,6 +13702,9 @@
       ],
       "ap-buddhist-trail": [
         "2026-11-24"
+      ],
+      "spring-destinations": [
+        "2026-11-26"
       ]
     },
     "collection_carousel_dests:best-honeymoon": {
@@ -13806,7 +13834,7 @@
         "2026-10-22"
       ]
     },
-    "articles": {}
+    "collection_carousel_dests:spring-destinations": {}
   },
   "infographic": {
     "last_topic_idx": 1,
@@ -13820,11 +13848,11 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "ooty",
-    "collection": "french-india-trail"
+    "shared_best": "corbett-national-park",
+    "collection": "spring-destinations"
   },
   "manual_skip_dests": {},
-  "data_carousel_floor_last": "2026-11-18",
+  "data_carousel_floor_last": "2026-11-26",
   "reel_studio_routes": {
     "khardung-la-nubra-circuit": "2026-08-05",
     "ladakh-manali-biker": "2026-08-07",
