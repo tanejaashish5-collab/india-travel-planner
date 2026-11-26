@@ -37,7 +37,8 @@
     "xS5s8_yt_short_count": 2,
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-26",
-    "PdMu0_evening": "2026-11-26"
+    "PdMu0_evening": "2026-11-26",
+    "PdMu0_carousel": "2026-11-26"
   },
   "last_sync": "2026-11-26T17:17:33.780546+00:00",
   "posted_destinations": [
@@ -179,6 +180,10 @@
     },
     {
       "destination_id": "lonar-crater",
+      "date": "2026-11-26"
+    },
+    {
+      "destination_id": "amritsar",
       "date": "2026-11-26"
     }
   ],
@@ -12661,6 +12666,15 @@
       "format": "data_carousel",
       "has_media": true,
       "media_id": "data_carousel_01_title.jpg"
+    },
+    {
+      "timestamp": "2026-11-26T17:54:36.502143+00:00",
+      "date": "2026-11-26",
+      "platform": "facebook",
+      "post_id": "EmE5z",
+      "destination": "amritsar",
+      "format": "carousel.cost",
+      "media_id": "carousel_cost_2026-11-26"
     }
   ],
   "theme_usage": {
@@ -13833,8 +13847,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "collection_carousel_dests:spring-destinations": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
