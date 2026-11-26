@@ -36,7 +36,9 @@ const { config } = await import("dotenv");
 config({ path: path.join(ROOT, "apps", "web", ".env.local"), quiet: true });
 
 const SITE = "https://www.nakshiq.com";
-const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36";
+// "NakshIQ-" token: Vercel Bot Protection (Challenge since 2026-11-25) answers 429
+// to any UA without it, which would read as "site still down" here.
+const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 NakshIQ-RecoveryCheck/1.0";
 
 // Pages observed hanging at 2026-09-20 22:0x while the gateway was degraded.
 // They are the canaries: each had an expired ISR cache, so serving them again

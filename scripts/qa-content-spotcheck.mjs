@@ -65,7 +65,8 @@ const result = {
 async function fetchPage(slug) {
   const url = `${BASE}/en/destination/${slug}`;
   try {
-    const res = await fetch(url, { redirect: "follow" });
+    // NakshIQ- UA: Vercel Bot Protection (Challenge since 2026-11-25) 429s a bare Node fetch.
+    const res = await fetch(url, { redirect: "follow", headers: { "User-Agent": "NakshIQ-QA-Spotcheck/1.0" } });
     return { ok: res.ok, status: res.status, text: await res.text(), url };
   } catch (e) {
     return { ok: false, status: 0, text: "", url, error: String(e) };
