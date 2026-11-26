@@ -34462,3 +34462,10 @@ Date range: 2026-04-15 → 2026-11-24
 2026-11-26 01:51:51  INFO      
 Date range: 2026-04-15 → 2026-11-25
 2026-11-26 01:51:51  INFO      ════════════════════════════════════════════════════════════
+2026-11-26 18:35:13  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-26 18:35:13  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-26 18:35:24  INFO          Requesting upload URL for tura__guide_m11.mp4 (31,310,965 bytes, video/mp4)
+2026-11-26 18:35:27  INFO          Uploading to R2 (timeout=300s)...
+2026-11-26 18:35:42  INFO          R2 PUT OK. Confirming...
+2026-11-26 18:35:45  INFO          Media ready: xnqyp (31,310,965 bytes · tura__guide_m11.mp4)
+2026-11-26 18:35:57  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
