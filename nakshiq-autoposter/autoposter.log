@@ -34470,3 +34470,19 @@ Date range: 2026-04-15 → 2026-11-25
 2026-11-26 18:35:45  INFO          Media ready: xnqyp (31,310,965 bytes · tura__guide_m11.mp4)
 2026-11-26 18:35:57  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
 2026-11-26 11:36:28  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-11-27 01:35:12  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-27 01:35:12  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-27 01:35:25  INFO          Requesting upload URL for kolkata__eat_here__voiced__hinglish.mp4 (41,836,602 bytes, video/mp4)
+2026-11-27 01:35:27  INFO          Uploading to R2 (timeout=300s)...
+2026-11-27 01:36:01  INFO          R2 PUT OK. Confirming...
+2026-11-27 01:36:05  INFO          Media ready: Rak4L (41,836,602 bytes · kolkata__eat_here__voiced__hinglish.mp4)
+2026-11-27 01:36:05  INFO          Requesting upload URL for kolkata__eat_here__voiced__cover.jpg (425,864 bytes, image/jpeg)
+2026-11-27 01:36:08  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 01:36:11  INFO          R2 PUT OK. Confirming...
+2026-11-27 01:36:14  INFO          Media ready: 3H9vL (425,864 bytes · kolkata__eat_here__voiced__cover.jpg)
+2026-11-27 01:36:24  WARNING   [instagram/nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-27 01:37:58  INFO          Requesting upload URL for tawang__window__voiced__en.mp4 (52,996,409 bytes, video/mp4)
+2026-11-27 01:38:01  INFO          Uploading to R2 (timeout=300s)...
+2026-11-27 01:39:01  INFO          R2 PUT OK. Confirming...
+2026-11-27 01:39:04  INFO          Media ready: ryvuG (52,996,409 bytes · tawang__window__voiced__en.mp4)
+2026-11-27 01:39:12  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
