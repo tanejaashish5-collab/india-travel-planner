@@ -34655,3 +34655,10 @@ Date range: 2026-04-15 → 2026-11-25
 2026-11-27 01:48:40  INFO      
 Date range: 2026-04-15 → 2026-11-26
 2026-11-27 01:48:40  INFO      ════════════════════════════════════════════════════════════
+2026-11-27 18:35:44  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-27 18:35:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-27 18:35:54  INFO          Requesting upload URL for bengaluru__guide_m11.mp4 (16,261,240 bytes, video/mp4)
+2026-11-27 18:35:56  INFO          Uploading to R2 (timeout=300s)...
+2026-11-27 18:36:05  INFO          R2 PUT OK. Confirming...
+2026-11-27 18:36:08  INFO          Media ready: oGRL4 (16,261,240 bytes · bengaluru__guide_m11.mp4)
+2026-11-27 18:36:20  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
