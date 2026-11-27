@@ -34663,3 +34663,19 @@ Date range: 2026-04-15 → 2026-11-26
 2026-11-27 18:36:08  INFO          Media ready: oGRL4 (16,261,240 bytes · bengaluru__guide_m11.mp4)
 2026-11-27 18:36:20  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
 2026-11-27 11:32:58  INFO      LEGACY REELS OFF (nakshiq-autoposter/LEGACY_REELS_OFF) — --yt-short stands down
+2026-11-28 01:35:25  INFO      Facebook mirror disabled (NAKSHIQ_FB_ENABLED!=1) — skipping Nakshiq
+2026-11-28 01:35:25  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-28 01:35:36  INFO          Requesting upload URL for corbett-national-park__window__voiced__hinglish.mp4 (60,118,596 bytes, video/mp4)
+2026-11-28 01:35:40  INFO          Uploading to R2 (timeout=300s)...
+2026-11-28 01:36:07  INFO          R2 PUT OK. Confirming...
+2026-11-28 01:36:11  INFO          Media ready: S6yC0 (60,118,596 bytes · corbett-national-park__window__voiced__hinglish.mp4)
+2026-11-28 01:36:11  INFO          Requesting upload URL for corbett-national-park__window__voiced__cover.jpg (349,809 bytes, image/jpeg)
+2026-11-28 01:36:14  INFO          Uploading to R2 (timeout=120s)...
+2026-11-28 01:36:18  INFO          R2 PUT OK. Confirming...
+2026-11-28 01:36:20  INFO          Media ready: xnO6A (349,809 bytes · corbett-national-park__window__voiced__cover.jpg)
+2026-11-28 01:36:29  WARNING   [instagram/nakshiq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
+2026-11-28 01:38:01  INFO          Requesting upload URL for kolkata__eat_here__voiced__en.mp4 (41,830,722 bytes, video/mp4)
+2026-11-28 01:38:03  INFO          Uploading to R2 (timeout=300s)...
+2026-11-28 01:38:22  INFO          R2 PUT OK. Confirming...
+2026-11-28 01:38:25  INFO          Media ready: drtwj (41,830,722 bytes · kolkata__eat_here__voiced__en.mp4)
+2026-11-28 01:38:32  WARNING   [youtube/@naksh-iq] Outstand warnings: ["Ignored unrecognised key 'id' in 'containers[0].media[0]'. Accepted keys: url, filename, altText."]
