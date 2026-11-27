@@ -34750,3 +34750,53 @@ Date range: 2026-04-15 → 2026-11-26
 2026-11-27 17:01:41  INFO      [facebook/Nakshiq] ✅ Published · Outstand=7vt2E · Platform=1040562729145369_122130578540700092
 2026-11-27 17:01:41  INFO      State saved. Run complete.
 2026-11-27 17:01:41  INFO      ════════════════════════════════════════════════════════════
+2026-11-27 17:36:20  INFO      Facebook-only slot — Instagram is excluded from this run.
+2026-11-27 17:36:21  INFO      ════════════════════════════════════════════════════════════
+2026-11-27 17:36:21  INFO      Nakshiq Autoposter · CAROUSEL · 2026-11-27
+2026-11-27 17:36:21  INFO      ════════════════════════════════════════════════════════════
+2026-11-27 17:36:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-11-27 17:36:33  WARNING   destinations_full month=3 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:33  WARNING   destinations_full month=4 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:40  WARNING   destinations_full month=9 fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:46  WARNING   Nakshiq [articles] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:53  WARNING   Nakshiq [routes] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:53  WARNING   Nakshiq [treks] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:57  WARNING   Nakshiq [emergency] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:36:59  WARNING   Nakshiq [camping] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:37:01  WARNING   Nakshiq [arrival] fetch failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-27 17:37:04  INFO      Synced → 20 destinations · 100 traps · 0 articles · 0 routes · 0 treks · 100 eateries · 100 stays · 0 sos · 100 viral · 0 camping · 50 gems · total catalog=533
+2026-11-27 17:37:15  INFO      Carousel built: fmt=collection, 7 slides, primary=kasauli
+2026-11-27 17:37:15  INFO          Requesting upload URL for carousel_collection_2026-11-27_01.jpg (285,752 bytes, image/jpeg)
+2026-11-27 17:37:17  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:18  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:20  INFO          Media ready: 4jX8D (285,752 bytes · carousel_collection_2026-11-27_01.jpg)
+2026-11-27 17:37:20  INFO          Requesting upload URL for carousel_collection_2026-11-27_02.jpg (254,406 bytes, image/jpeg)
+2026-11-27 17:37:21  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:22  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:24  INFO          Media ready: LMDHd (254,406 bytes · carousel_collection_2026-11-27_02.jpg)
+2026-11-27 17:37:24  INFO          Requesting upload URL for carousel_collection_2026-11-27_03.jpg (248,968 bytes, image/jpeg)
+2026-11-27 17:37:25  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:26  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:28  INFO          Media ready: 1AaVr (248,968 bytes · carousel_collection_2026-11-27_03.jpg)
+2026-11-27 17:37:28  INFO          Requesting upload URL for carousel_collection_2026-11-27_04.jpg (237,050 bytes, image/jpeg)
+2026-11-27 17:37:29  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:30  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:31  INFO          Media ready: oGH6v (237,050 bytes · carousel_collection_2026-11-27_04.jpg)
+2026-11-27 17:37:31  INFO          Requesting upload URL for carousel_collection_2026-11-27_05.jpg (252,292 bytes, image/jpeg)
+2026-11-27 17:37:33  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:34  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:35  INFO          Media ready: JRjQ7 (252,292 bytes · carousel_collection_2026-11-27_05.jpg)
+2026-11-27 17:37:35  INFO          Requesting upload URL for carousel_collection_2026-11-27_06.jpg (253,080 bytes, image/jpeg)
+2026-11-27 17:37:36  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:37  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:39  INFO          Media ready: 7duFk (253,080 bytes · carousel_collection_2026-11-27_06.jpg)
+2026-11-27 17:37:39  INFO          Requesting upload URL for carousel_collection_2026-11-27_07.jpg (256,563 bytes, image/jpeg)
+2026-11-27 17:37:40  INFO          Uploading to R2 (timeout=120s)...
+2026-11-27 17:37:41  INFO          R2 PUT OK. Confirming...
+2026-11-27 17:37:42  INFO          Media ready: IKgOa (256,563 bytes · carousel_collection_2026-11-27_07.jpg)
+2026-11-27 17:37:42  INFO      Carousel: 7 slides uploaded.
+2026-11-27 17:37:44  WARNING   Ignoring non-NakshIQ account in shared Outstand workspace: youtube/@chanakyasutra-t8o (xS5s8)
+2026-11-27 17:37:44  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-11-27 17:37:48  INFO      [facebook/Nakshiq] ✅ carousel published (collection) · post_id=aEM9v
+2026-11-27 17:37:48  INFO      Carousel run complete (fmt=collection, posted=True).
+2026-11-27 17:37:48  INFO      ════════════════════════════════════════════════════════════

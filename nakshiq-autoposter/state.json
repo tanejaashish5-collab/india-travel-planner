@@ -38,7 +38,7 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-27",
     "PdMu0_evening": "2026-11-27",
-    "PdMu0_carousel": "2026-11-26"
+    "PdMu0_carousel": "2026-11-27"
   },
   "last_sync": "2026-11-27T17:00:24.200521+00:00",
   "posted_destinations": [
@@ -180,6 +180,10 @@
     },
     {
       "destination_id": "ooty",
+      "date": "2026-11-27"
+    },
+    {
+      "destination_id": "kasauli",
       "date": "2026-11-27"
     }
   ],
@@ -12709,6 +12713,15 @@
       "format": "v4_dw_archival_modern_carousel",
       "has_media": true,
       "media_id": "ooty.jpg"
+    },
+    {
+      "timestamp": "2026-11-27T17:37:48.855297+00:00",
+      "date": "2026-11-27",
+      "platform": "facebook",
+      "post_id": "aEM9v",
+      "destination": "kasauli",
+      "format": "carousel.collection",
+      "media_id": "carousel_collection_2026-11-27"
     }
   ],
   "theme_usage": {
@@ -13129,6 +13142,10 @@
         "2026-05-25",
         "2026-11-13"
       ],
+      "v4_dw_archival_modern_carousel": [
+        "2026-05-25",
+        "2026-11-27"
+      ],
       "v2_arrival_intel_video": [
         "2026-05-26",
         "2026-10-15"
@@ -13337,9 +13354,6 @@
       "tourist_trap": [
         "2026-09-01",
         "2026-10-20"
-      ],
-      "v4_dw_archival_modern_carousel": [
-        "2026-11-27"
       ]
     },
     "reels": {
@@ -13915,7 +13929,8 @@
       "last-villages-of-india",
       "weekend-from-kolkata",
       "autumn-destinations",
-      "offbeat-romantic"
+      "offbeat-romantic",
+      "weekend-from-chandigarh"
     ],
     "food": [
       "Keshloor Dhaba|jagdalpur",
