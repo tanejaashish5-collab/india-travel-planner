@@ -38,18 +38,10 @@
     "JMl93_yt_short_count": 1,
     "PdMu0": "2026-11-27",
     "PdMu0_evening": "2026-11-27",
-    "PdMu0_carousel": "2026-11-27"
+    "PdMu0_carousel": "2026-11-28"
   },
   "last_sync": "2026-11-27T22:51:20.839786+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "hampi",
-      "date": "2026-11-13"
-    },
-    {
-      "destination_id": "somnath",
-      "date": "2026-11-13"
-    },
     {
       "destination_id": "tirthan-valley",
       "date": "2026-11-14"
@@ -185,6 +177,10 @@
     {
       "destination_id": "kasauli",
       "date": "2026-11-27"
+    },
+    {
+      "destination_id": "pune",
+      "date": "2026-11-28"
     }
   ],
   "posted_formats": {
@@ -12722,6 +12718,42 @@
       "destination": "kasauli",
       "format": "carousel.collection",
       "media_id": "carousel_collection_2026-11-27"
+    },
+    {
+      "timestamp": "2026-11-28T07:36:07.487640+00:00",
+      "date": "2026-11-28",
+      "platform": "youtube",
+      "post_id": "ko5YE",
+      "destination": "mumbai",
+      "format": "scenario_guide",
+      "media_id": "gBg3s"
+    },
+    {
+      "timestamp": "2026-11-28T14:38:00.336226+00:00",
+      "date": "2026-11-28",
+      "platform": "instagram",
+      "post_id": "5G19e",
+      "destination": "dhanushkodi",
+      "format": "scenario_hidden_gems",
+      "media_id": "SR3pE"
+    },
+    {
+      "timestamp": "2026-11-28T14:39:02.570958+00:00",
+      "date": "2026-11-28",
+      "platform": "youtube",
+      "post_id": "pPzY7",
+      "destination": "corbett-national-park",
+      "format": "scenario_window",
+      "media_id": "C0Z4P"
+    },
+    {
+      "timestamp": "2026-11-28T16:22:48.815133+00:00",
+      "date": "2026-11-28",
+      "platform": "facebook",
+      "post_id": "H1THv",
+      "destination": "pune",
+      "format": "carousel.route",
+      "media_id": "carousel_route_2026-11-28"
     }
   ],
   "theme_usage": {
@@ -12876,15 +12908,6 @@
         "2026-07-02",
         "2026-07-20",
         "2026-09-22"
-      ],
-      "kaza": [
-        "2026-06-07",
-        "2026-06-23",
-        "2026-06-25",
-        "2026-08-10",
-        "2026-08-12",
-        "2026-08-28",
-        "2026-08-29"
       ],
       "tosamaidan": [
         "2026-06-09",
@@ -13439,10 +13462,6 @@
         "2026-08-13",
         "2026-08-30"
       ],
-      "kaza": [
-        "2026-08-12",
-        "2026-08-29"
-      ],
       "jibhi": [
         "2026-09-01",
         "2026-09-22"
@@ -13877,8 +13896,7 @@
       "sarahan": [
         "2026-10-22"
       ]
-    },
-    "tourist_trap_alts": {}
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
